@@ -1,0 +1,19 @@
+{
+    "login": {
+        "userNamePlaceHolder": "User Name",
+        "passwordPlaceHolder": "Password",
+        "forgotPassword": "Forgot Password",
+        "loginError": "Invalid Credentials",
+        "loginButton": "Login"
+    },
+    "nav": {
+        "setup": "Setup",
+        "transaction": "Transaction",
+        "routine": "Routine",
+        "dashboard": "Dashboard",
+        "query": "Query",
+        "notifications": "Notifications",
+        "settings": "Settings",
+        "logout": "Logout"
+    }
+}

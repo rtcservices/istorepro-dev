@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { Link as RouterLink } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { Link as RouterLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import {
   AppBar,
   Toolbar,
@@ -8,64 +9,65 @@ import {
   IconButton,
   Drawer,
   Link,
-  MenuItem
-} from "@material-ui/core";
-import MenuIcon from "@material-ui/icons/Menu";
-import NotificationsIcon from "@material-ui/icons/Notifications";
-import SettingsIcon from "@material-ui/icons/Settings";
+  MenuItem,
+} from '@material-ui/core';
+import MenuIcon from '@material-ui/icons/Menu';
+import NotificationsIcon from '@material-ui/icons/Notifications';
+import SettingsIcon from '@material-ui/icons/Settings';
 
-import classes from "./MainHeader.module.css";
-import siteLogo from "../../assets/images/logo.png";
+import classes from './MainNavigation.module.css';
+import siteLogo from '../../assets/images/logo.png';
 
-const headersData = [
-  {
-    label: "Setup",
-    href: "/setup",
-  },
-  {
-    label: "Transaction",
-    href: "/transaction",
-  },
-  {
-    label: "Routine",
-    href: "/routine",
-  },
-  {
-    label: "DashBoard",
-    href: "/dashboard",
-  },
-  {
-    label: "Query",
-    href: "/query",
-  },
-];
 
 const useStyles = makeStyles(() => ({
   header: {
-    paddingRight: "20px",
-    paddingLeft: "20px",
-    "@media (max-width: 900px)": {
+    paddingRight: '20px',
+    paddingLeft: '20px',
+    '@media (max-width: 900px)': {
       paddingLeft: 0,
     },
   },
   menuButton: {
     fontWeight: 700,
-    size: "18px",
-    marginLeft: "30px",
+    size: '18px',
+    marginLeft: '30px',
   },
   toolbar: {
-    display: "flex",
-    justifyContent: "space-between",
+    display: 'flex',
+    justifyContent: 'space-between',
   },
   drawerContainer: {
-    backgroundColor: "#e6e6e6",
-    color: "#449ad1",
-    padding: "20px 30px",
-    height: "100%",
+    backgroundColor: '#e6e6e6',
+    color: '#449ad1',
+    padding: '20px 30px',
+    height: '100%',
   },
 }));
 
-export default function MainHeader() {
+const MainNavigation = (props) => {
+  const { t } = useTranslation();
+  const headersData = [
+    {
+      label: t('nav.setup'),
+      href: '/setup',
+    },
+    {
+      label: t('nav.transaction'),
+      href: '/transaction',
+    },
+    {
+      label: t('nav.routine'),
+      href: '/routine',
+    },
+    {
+      label: t('nav.dashboard'),
+      href: '/dashboard',
+    },
+    {
+      label: t('nav.query'),
+      href: '/query',
+    },
+  ];
   const { header, menuButton, toolbar, drawerContainer } = useStyles();
 
   const [headerState, setHeaderState] = useState({
@@ -84,34 +86,42 @@ export default function MainHeader() {
 
     setResponsiveness();
 
-    window.addEventListener("resize", () => setResponsiveness());
+    window.addEventListener('resize', () => setResponsiveness());
 
     return () => {
-      window.removeEventListener("resize", () => setResponsiveness());
+      window.removeEventListener('resize', () => setResponsiveness());
     };
   }, []);
+
+  const logoutClickHandler = () => {
+    props.onLogout();
+  };
 
   const displayDesktop = () => {
     return (
       <Toolbar className={toolbar}>
         <div>
           {
-            <img
-              src={siteLogo}
-              alt="Site Logo"
-              className={classes.appBar__Logo}
-            /> 
+            <Link to='/home'>
+              <img
+                src={siteLogo}
+                alt='Site Logo'
+                className={classes.appBar__Logo}
+              />
+            </Link>
           }
           {getMenuButtons()}
         </div>
         <div>
-          <IconButton color="inherit">
+          <IconButton color='inherit'>
             <NotificationsIcon />
           </IconButton>
-          <IconButton color="inherit">
+          <IconButton color='inherit'>
             <SettingsIcon />
           </IconButton>
-          <Button color="inherit">Logout</Button>
+          <Button color='inherit' onClick={logoutClickHandler}>
+          {t('nav.logout')}
+          </Button>
         </div>
       </Toolbar>
     );
@@ -127,10 +137,10 @@ export default function MainHeader() {
       <Toolbar>
         <IconButton
           {...{
-            edge: "start",
-            color: "inherit",
-            "aria-label": "menu",
-            "aria-haspopup": "true",
+            edge: 'start',
+            color: 'inherit',
+            'aria-label': 'menu',
+            'aria-haspopup': 'true',
             onClick: handleDrawerOpen,
           }}
         >
@@ -139,7 +149,7 @@ export default function MainHeader() {
 
         <Drawer
           {...{
-            anchor: "left",
+            anchor: 'left',
             open: drawerOpen,
             onClose: handleDrawerClose,
           }}
@@ -150,7 +160,7 @@ export default function MainHeader() {
         <div>
           <img
             src={siteLogo}
-            alt="Site Logo"
+            alt='Site Logo'
             className={classes.appBar__Logo}
           />
         </div>
@@ -165,8 +175,8 @@ export default function MainHeader() {
           {...{
             component: RouterLink,
             to: href,
-            color: "inherit",
-            style: { textDecoration: "none" },
+            color: 'inherit',
+            style: { textDecoration: 'none' },
             key: label,
           }}
         >
@@ -182,7 +192,7 @@ export default function MainHeader() {
         <Button
           {...{
             key: label,
-            color: "inherit",
+            color: 'inherit',
             to: href,
             component: RouterLink,
             className: menuButton,
@@ -201,4 +211,5 @@ export default function MainHeader() {
       </AppBar>
     </header>
   );
-}
+};
+export default MainNavigation;

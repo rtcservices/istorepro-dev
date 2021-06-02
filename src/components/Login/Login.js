@@ -1,16 +1,30 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
+import { Link, useHistory, useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faKey, faUser } from "@fortawesome/free-solid-svg-icons";
 import classes from "./Login.module.css";
 
 const Login = (props) => {
+  const [loginFormInvalid, setLoginFormInvalid] = useState(false);
   const [enteredUserName, setEnteredUserName] = useState("");
   const [enteredPassword, setEnteredPassword] = useState("");
-
+  
+  const history = useHistory();
+  const { locale } = useParams();
+  const { i18n, t } = useTranslation();
+  const { onLocaleChange, onLogin } = props;
   const submitHandler = (event) => {
     event.preventDefault();
-    props.onLogin(enteredUserName, enteredPassword);
+
+    if((enteredUserName === "japan" && enteredPassword === "1234")
+    || (enteredUserName === "english" && enteredPassword === "1234")) {
+      onLocaleChange(enteredUserName === "japan" ? "jp": "en");
+      onLogin(enteredUserName, enteredPassword);
+      history.push('/home');
+    } else {
+      setLoginFormInvalid(true);
+    }
   };
   const userNameChangeHandler = (event) => {
     setEnteredUserName(event.target.value);
@@ -20,11 +34,18 @@ const Login = (props) => {
     setEnteredPassword(event.target.value);
   };
 
+  useEffect(() => {
+    if (locale) {
+      localStorage.setItem("locale", locale);
+      i18n.changeLanguage(locale);
+    }
+  }, [locale, i18n]);
+
   return (
     <React.Fragment>
       <nav className={classes["language-bar"]}>
-        <a href="#japanese">日本人</a>
-        <a href="#english">English</a>
+        <Link to="/login/jp">日本人</Link>
+        <Link to="/login/en">English</Link>
       </nav>
       <main className={`${classes["container"]}`}>
         <form onSubmit={submitHandler}>
@@ -42,7 +63,7 @@ const Login = (props) => {
                 <div className="input-group-area">
                   <input
                     type="text"
-                    placeholder="User Name"
+                    placeholder={t("login.userNamePlaceHolder")}
                     value={enteredUserName}
                     onChange={userNameChangeHandler}
                   />
@@ -55,7 +76,7 @@ const Login = (props) => {
                 <div className="input-group-area">
                   <input
                     type="password"
-                    placeholder="Password"
+                    placeholder={t("login.passwordPlaceHolder")}
                     value={enteredPassword}
                     onChange={passwordChangeHandler}
                   />
@@ -66,11 +87,14 @@ const Login = (props) => {
                   href="#forgot-password"
                   className={classes["forgot-password"]}
                 >
-                  Forgot Password
+                  {t("login.forgotPassword")}
                 </a>
               </div>
+              {loginFormInvalid && <span className={classes["login-error"]}>
+                {t("login.loginError")}
+              </span> }
               <button className={`btn btn-main ${classes["login-button"]}`}>
-                Login
+                {t("login.forgotPassword")}
               </button>
             </div>
           </div>
