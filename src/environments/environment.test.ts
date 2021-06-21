@@ -6,7 +6,7 @@
 const packageJson = require('../../package.json');
 
 export const environment = {
-  appName: 'iStoreProBE',
+  appName: 'istorepro-be',
   envName: 'TEST',
   production: false,
   test: true,

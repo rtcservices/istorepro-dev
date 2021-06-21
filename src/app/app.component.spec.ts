@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'iStoreProBE'`, () => {
+  it(`should have as title 'istorepro-be'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('iStoreProBE');
+    expect(app.title).toEqual('istorepro-be');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('iStoreProBE app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('istorepro-be app is running!');
   });
 });
