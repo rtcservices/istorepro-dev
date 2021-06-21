@@ -1,7 +1,0 @@
-.appBar {
-  background-color: var(--grey-color) !important;
-  color: var(--blue-color) !important;
-}
-.appBar__Logo {
-  height: 60px;
-}
