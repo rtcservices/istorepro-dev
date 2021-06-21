@@ -1,0 +1,72 @@
+@import "./assets/scss/mat-table.scss";
+:root {
+  --blue: #3f51b5;
+  --white: #fff;
+
+  --grey-color: rgba(230, 230, 230, 1);
+  --pink-color: rgba(189, 31, 101, 1);
+  --green-color: rgba(91, 134, 59, 1);
+  --blue-color: rgba(68, 154, 209, 1);
+  --black-color: rgba(35, 31, 32, 1);
+
+  --bs-blue: #0d6efd;
+  --bs-indigo: #6610f2;
+  --bs-purple: #6f42c1;
+  --bs-pink: #d63384;
+  --bs-red: #dc3545;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #ffc107;
+  --bs-green: #198754;
+  --bs-teal: #20c997;
+  --bs-cyan: #0dcaf0;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-primary: #0d6efd;
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  font-family: "Roboto", sans-serif !important;
+  background: #fff;
+}
+html, body {
+  height: 100%;
+}
+body {
+  background-color: rgba(250, 250, 250, 1);
+  color: rgba(0,0,0,.87);
+  margin: 0;
+  font-size: 16px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.spacer {
+  flex: 1 1 auto;
+}
+.scanned-input {
+  background-color: #ebf5eb !important;
+  caret-color: #008000 !important;
+}
+.high-shadow {
+  box-shadow: 0 11px 15px -7px rgb(0 0 0 / 20%), 0 24px 38px 3px rgb(0 0 0 / 14%), 0 9px 46px 8px rgb(0 0 0 / 12%) !important;
+}
+.bread-crumb {
+  background-color: var(--blue);
+  color: var(--white);
+  height: 40px;
+  h2{
+    padding-top: 5px;
+    padding-left: 20px;
+  }
+}

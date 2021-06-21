@@ -1,0 +1,11 @@
+<mat-toolbar color="primary" class="app-navbar mat-elevation-z6">
+  <a [routerLink]="['/auth']">
+    <img src="../../../../assets/images/be-logo-vector.svg" class="app-logo">
+  </a>
+  <span class="spacer"></span>
+  <a [routerLink]="['/auth/login/jp']" class="lang-link">日本語</a>
+  <a [routerLink]="['/auth/login/en']" class="lang-link">English</a>
+</mat-toolbar>
+<main class="main">
+  <router-outlet></router-outlet>
+</main>

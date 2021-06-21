@@ -1,0 +1,47 @@
+<div class="login-container">
+  <section class="login-banner" fxShow fxHide.lt-md></section>
+  <section fxLayoutAlign="center center">
+    <mat-card class="login-card high-shadow">
+      <h1>{{ 'login.title' | translate }}</h1>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+        <mat-form-field appearance="standard">
+          <mat-label>{{ 'login.userNameLabel' | translate }}</mat-label>
+          <input matInput required type="text"
+            formControlName="username">
+          <mat-icon matPrefix>person</mat-icon>
+          <mat-error *ngIf="loginFormControl.username.invalid">{{'login.userNameError' | translate}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="standard">
+          <mat-label>{{ 'login.passwordLabel' | translate }}</mat-label>
+          <input matInput required type="password"
+            formControlName="password">
+          <mat-icon matPrefix>lock</mat-icon>
+          <mat-error *ngIf="loginFormControl.username.invalid">{{'login.passwordError' | translate}}</mat-error>
+        </mat-form-field>
+        <mat-error *ngIf="loginInvalid">
+          {{'login.loginFormError' | translate}}
+        </mat-error>
+        <div fxLayoutAlign="space-between center">
+          <div class="login-button-container">
+            <button mat-raised-button color="primary"
+              type="submit"
+            >
+              {{ 'login.title' | translate }}
+            </button>
+            <!-- <button mat-raised-button color="accent"
+              type="cancel"
+              (click)="onLoginReset()"
+            >
+              {{ 'login.login' | translate }}
+            </button> -->
+          </div>
+          <a
+            [routerLink]="['/auth/forgot-password']"
+          >
+            {{ 'login.forgotPassword' | translate }}
+          </a>
+        </div>
+      </form>
+    </mat-card>
+  </section>
+</div>

@@ -1,0 +1,28 @@
+.login-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  >section{
+    flex: 1;
+  }
+  .login-banner {
+    background-image: url('../../../../assets/images/login-logo-blue.png');
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center;
+  }
+  .login-card {
+    max-width: 550px;
+    width: 80%;
+    .login-form {
+      mat-form-field{
+        display: block;
+        margin-bottom: 1rem;
+      }
+      .login-button-container button{
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
+  }
+}

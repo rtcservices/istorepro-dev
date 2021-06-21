@@ -1,0 +1,56 @@
+<mat-toolbar color="primary" class="app-navbar mat-elevation-z6">
+  <button mat-icon-button (click)="sidenav.toggle()" fxShow fxHide.gt-sm>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <a [routerLink]="['/transactions']">
+    <img src="../../../../assets/images/be-logo-vector.svg" class="app-logo">
+  </a>
+  <div fxHide fxShow.gt-sm>
+    <button mat-button [matMenuTriggerFor]="setupMenu">
+      {{'menu.setup' | translate}} <mat-icon>expand_more</mat-icon>
+    </button>
+    <mat-menu #setupMenu="matMenu">
+      <a mat-menu-item [routerLink]="['/setup/add']" disabled>{{'general.add' | translate }}</a>
+      <a mat-menu-item [routerLink]="['/setup/search']" disabled>{{'general.search' | translate }}</a>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="transactionMenu">
+      {{'menu.transactions' | translate}}  <mat-icon>expand_more</mat-icon>
+    </button>
+    <mat-menu #transactionMenu="matMenu">
+      <a mat-menu-item [routerLink]="['/transactions/receipt']">{{'menu.transactionsReceipt' | translate}}</a>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="routineMenu">
+      {{'menu.routine' | translate}}  <mat-icon>expand_more</mat-icon>
+    </button>
+    <mat-menu #routineMenu="matMenu">
+      <a mat-menu-item [routerLink]="['/routine/add']" disabled>{{'general.add' | translate }}</a>
+      <a mat-menu-item [routerLink]="['/routine/search']" disabled>{{ 'general.search' | translate }}</a>
+    </mat-menu>
+    <button mat-button>{{'menu.dashboard' | translate}} </button>
+    <button mat-button>{{'menu.query' | translate}} </button>
+  </div>
+  <span class="spacer"></span>
+  <button mat-icon-button
+    [matTooltip]="notificationsTranslated">
+    <mat-icon matBadge="15" matBadgeColor="warn">notifications</mat-icon>
+  </button>
+  <button mat-icon-button
+    [matTooltip]="settingsTranslated">
+    <mat-icon>settings</mat-icon>
+  </button>
+  <button mat-icon-button
+    [matTooltip]="logoutTranslated"
+    (click)="logOut()">
+    <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-sidenav-container class="main">
+  <mat-sidenav #sidenav>
+    <mat-nav-list *ngIf="headerNavItems">
+      <rtc-nav-list-item *ngFor="let item of headerNavItems" [item]="item"></rtc-nav-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

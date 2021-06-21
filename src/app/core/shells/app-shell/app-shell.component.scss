@@ -1,0 +1,16 @@
+.app-navbar {
+  position: fixed;
+  background-color: var(--blue);
+  color: var(--white);
+  height: 55px;
+  z-index: 2;
+}
+.app-logo{
+  height: 50px;
+}
+.main {
+  display: block;
+  height: calc(100% - 55px);
+  padding-top: 55px;
+  width: 100%;
+}

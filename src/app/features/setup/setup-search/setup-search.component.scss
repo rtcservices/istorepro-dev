@@ -1,0 +1,48 @@
+
+
+select.emp-design-select option[disabled]:first-child {
+	display: none;
+}
+
+.btn-blue{
+  background-color: rgba(68, 154, 209, 1);
+  color: white;
+  float: right !important;
+}
+
+.btn-grey{
+  background-color: rgb(124, 124, 124);
+  color: white;
+  float: right !important;
+}
+
+.emp-child-list{
+  border: 1px solid grey;
+  width: 80%;
+  margin: auto;
+}
+
+.offcanvas.offcanvas-end{
+  width: 70% !important;
+}
+
+.form-control.GRN
+{
+  border-color: green;
+  background-color: rgb(235, 245, 235);
+}
+
+.chckItem{
+  width: 20px !important;
+}
+
+.itemDecription{
+  width: 60% !important;
+}
+
+.card-header{
+  background: #73add3;
+  font-size: large;
+  font-weight: 500;
+  color: white;
+}

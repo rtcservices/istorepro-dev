@@ -1,0 +1,18 @@
+.app-navbar {
+  background-color: var(--blue);
+  color: var(--white);
+  height: 55px;
+  .app-logo{
+    height: 50px;
+  }
+  .lang-link {
+    color: var(--white);
+    font-size: 1rem;
+    margin-left: 10px;
+  }
+}
+.main {
+  display: block;
+  height: calc(100% - 55px);
+  width: 100%;
+}
