@@ -33,12 +33,18 @@
 }
 
 @media only screen and (max-width: 600px) {
-    .login-button-container {
+  .dvlogin {
+    display: block !important;
+    a {
+      float: right;
+      margin-top: 15px;
+    }
+  }
+  .login-button-container {
     text-align: center;
-    width: 66%;
-    .login-button-container button {
-      width: 145%;
-      display: block;
+    width: 100% !important;
+    button {
+      width: 90%;
     }
   }
 }
