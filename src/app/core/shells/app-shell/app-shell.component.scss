@@ -4,7 +4,30 @@
   color: var(--white);
   height: 55px;
   z-index: 2;
+  .site-logo {
+    background-color: var(--white);
+    height: 55px;
+    width: 240px;
+    margin-left: -16px;
+    padding-right: 25px;
+    .vl-blue {
+      float: left;
+      border-left: 2px solid var(--blue);
+      height: 45px;
+      margin-top: 4px !important;
+    }
+  }
 }
+#left {
+  float: left;
+}
+#right {
+  float: right;
+}
+#center {
+  margin: 0 auto;
+}
+
 .app-logo{
   height: 50px;
 }

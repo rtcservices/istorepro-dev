@@ -1,10 +1,14 @@
 <mat-toolbar color="primary" class="app-navbar mat-elevation-z6">
-  <button mat-icon-button (click)="sidenav.toggle()" fxShow fxHide.gt-sm>
-    <mat-icon>menu</mat-icon>
-  </button>
-  <a [routerLink]="['/transactions']">
-    <img src="../../../../assets/images/be-logo-vector.svg" class="app-logo">
-  </a>
+  <div class="site-logo">
+    <button mat-icon-button (click)="sidenav.toggle()" fxShow fxHide.gt-sm>
+      <mat-icon>menu</mat-icon>
+    </button>
+    <a [routerLink]="['/auth']">
+      <img src="../../../../assets/images/Main-Logo.JPG" id="left" class="app-logo">
+      <div class="vl-blue" id="center"></div>
+      <img src="../../../../assets/images/Be-Logo.PNG" id="right" class="app-logo">
+    </a>
+  </div>
   <div fxHide fxShow.gt-sm>
     <button mat-button [matMenuTriggerFor]="setupMenu">
       {{'menu.setup' | translate}} <mat-icon>expand_more</mat-icon>
@@ -33,7 +37,7 @@
   <button mat-icon-button
     [matTooltip]="notificationsTranslated">
     <mat-icon class="bell">notifications</mat-icon>
-    <span matBadge="15" matBadgeColor="warn"></span>
+    <span matBadge="15" matBadgeSize="small" matBadgeColor="warn"></span>
   </button>
   <button mat-icon-button 
     [matTooltip]="settingsTranslated">
