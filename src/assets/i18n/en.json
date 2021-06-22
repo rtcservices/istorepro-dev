@@ -12,7 +12,7 @@
   },
   "login": {
     "title": "Login",
-    "userNameLabel": "User Name",
+    "userNameLabel": "Login ID",
     "userNameError": "Please provide a valid username",
     "passwordLabel": "Password",
     "passwordError": "Please provide a valid password",
@@ -21,11 +21,12 @@
   },
   "forgotPassword": {
     "title": "Reset Password",
-    "description": "Enter your email, we'll send you a link to get back into your account.",
+    "loginIdLabel": "Login ID",
+    "loginIdError": "Please provide a valid Login ID",
     "emailLabel": "Email",
     "emailError": "Please provide a valid Email",
     "forgotPasswordFormError": "No Account found with this Email",
-    "buttonLabel":"Send Login Link",
+    "buttonLabel":"Reset",
     "back":"Back to Login"
   },
   "menu": {

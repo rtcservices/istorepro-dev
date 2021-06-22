@@ -2,7 +2,6 @@
   <section class="login-banner" fxShow fxHide.lt-md></section>
   <section fxLayoutAlign="center center">
     <mat-card class="login-card high-shadow">
-      <h1>{{ 'login.title' | translate }}</h1>
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
         <mat-form-field appearance="standard">
           <mat-label>{{ 'login.userNameLabel' | translate }}</mat-label>
@@ -23,17 +22,12 @@
         </mat-error>
         <div fxLayoutAlign="space-between center">
           <div class="login-button-container">
-            <button mat-raised-button color="primary"
+            <button mat-raised-button
               type="submit"
             >
+            <mat-icon>input</mat-icon>
               {{ 'login.title' | translate }}
             </button>
-            <!-- <button mat-raised-button color="accent"
-              type="cancel"
-              (click)="onLoginReset()"
-            >
-              {{ 'login.login' | translate }}
-            </button> -->
           </div>
           <a
             [routerLink]="['/auth/forgot-password']"

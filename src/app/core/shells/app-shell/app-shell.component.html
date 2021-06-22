@@ -32,11 +32,12 @@
   <span class="spacer"></span>
   <button mat-icon-button
     [matTooltip]="notificationsTranslated">
-    <mat-icon matBadge="15" matBadgeColor="warn">notifications</mat-icon>
+    <mat-icon class="bell">notifications</mat-icon>
+    <span matBadge="15" matBadgeColor="warn"></span>
   </button>
-  <button mat-icon-button
+  <button mat-icon-button 
     [matTooltip]="settingsTranslated">
-    <mat-icon>settings</mat-icon>
+    <mat-icon class="settings">settings</mat-icon>
   </button>
   <button mat-icon-button
     [matTooltip]="logoutTranslated"

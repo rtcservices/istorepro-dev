@@ -2,27 +2,43 @@
   display: flex;
   width: 100%;
   height: 100%;
-  >section{
+  > section {
     flex: 1;
   }
   .login-banner {
-    background-image: url('../../../../assets/images/login-logo-blue.png');
-    background-repeat:no-repeat;
-    background-size:contain;
-    background-position:center;
+    background-image: url("../../../../assets/images/login-logo-blue.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
   }
   .login-card {
     max-width: 550px;
     width: 80%;
     .login-form {
-      mat-form-field{
+      mat-form-field {
         display: block;
         margin-bottom: 1rem;
       }
-      .login-button-container button{
+      .login-button-container button {
         padding-left: 1rem;
         padding-right: 1rem;
+        background-color: var(--blue);
+        color: var(--white);
       }
+      .login-button-container button .mat-icon {
+        padding-right: 2rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+    .login-button-container {
+    text-align: center;
+    width: 66%;
+    .login-button-container button {
+      width: 145%;
+      display: block;
     }
   }
 }

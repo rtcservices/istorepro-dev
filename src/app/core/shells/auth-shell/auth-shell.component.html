@@ -1,7 +1,11 @@
 <mat-toolbar color="primary" class="app-navbar mat-elevation-z6">
-  <a [routerLink]="['/auth']">
-    <img src="../../../../assets/images/be-logo-vector.svg" class="app-logo">
-  </a>
+  <div class="site-logo">
+    <a [routerLink]="['/auth']">
+      <img src="../../../../assets/images/Main-Logo.JPG" id="left" class="app-logo">
+      <div class="vl-blue" id="center"></div>
+      <img src="../../../../assets/images/Be-Logo.PNG" id="right" class="app-logo">
+    </a>
+  </div>
   <span class="spacer"></span>
   <a [routerLink]="['/auth/login/jp']" class="lang-link">日本語</a>
   <a [routerLink]="['/auth/login/en']" class="lang-link">English</a>

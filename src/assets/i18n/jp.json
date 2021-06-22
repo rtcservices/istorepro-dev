@@ -12,7 +12,7 @@
   },
   "login": {
     "title": "ログイン",
-    "userNameLabel": "ユーザー名",
+    "userNameLabel": "ログインID",
     "userNameError": "有効なユーザー名を入力してください",
     "passwordLabel": "パスワード",
     "passwordError": "有効なパスワードを入力してください",
@@ -21,11 +21,12 @@
   },
   "forgotPassword": {
     "title": "パスワードを再設定する",
-    "description": "メールアドレスを入力してください。アカウントに戻るためのリンクをお送りします。",
+    "loginIdLabel": "ログインID",
+    "loginIdError": "有効なログインIDを入力してください",
     "emailLabel": "Eメール",
     "emailError": "有効なメールアドレスを入力してください",
     "forgotPasswordFormError": "このメールではアカウントが見つかりません",
-    "buttonLabel":"ログインリンクを送信",
+    "buttonLabel":"リセット",
     "back":"ログインに戻る"
   },
   "menu": {

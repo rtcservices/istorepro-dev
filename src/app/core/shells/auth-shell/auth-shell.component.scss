@@ -2,12 +2,25 @@
   background-color: var(--blue);
   color: var(--white);
   height: 55px;
-  .app-logo{
+  .site-logo {
+    background-color: var(--white);
+    height: 55px;
+    width: 240px;
+    margin-left: -16px;
+    padding-right: 25px;
+    .vl-blue {
+      float: left;
+      border-left: 2px solid var(--blue);
+      height: 45px;
+      margin-top: 4px !important;
+    }
+  }
+  .app-logo {
     height: 50px;
   }
   .lang-link {
     color: var(--white);
-    font-size: 1rem;
+    font-size: 0.8rem;
     margin-left: 10px;
   }
 }
@@ -15,4 +28,14 @@
   display: block;
   height: calc(100% - 55px);
   width: 100%;
+}
+
+#left {
+  float: left;
+}
+#right {
+  float: right;
+}
+#center {
+  margin: 0 auto;
 }
