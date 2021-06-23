@@ -3,9 +3,9 @@ import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
-import { AuthService } from '../../../core/services/auth.service';
-import { SiteTranslateService } from '../../../core/services/site-translate.service';
-import { TitleService } from '../../../core/services/title.service';
+import { AuthService } from '../../../services/auth.service';
+import { SiteTranslateService } from '../../../services/site-translate.service';
+import { TitleService } from '../../../services/title.service';
 
 @Component({
   selector: 'rtc-forgot-password',

@@ -2,8 +2,8 @@ import {Component, HostBinding, Input, OnInit} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {Router} from '@angular/router';
 
-import { HeaderNavItem } from '../../models/header-nav-item.model';
-import { HeaderNavService } from '../../services/header-nav.service';
+import { HeaderNavItem } from '../../../models/header-nav-item.model';
+import { HeaderNavService } from '../../../services/header-nav.service';
 
 @Component({
   selector: 'rtc-nav-list-item',

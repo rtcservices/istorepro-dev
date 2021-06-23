@@ -5,7 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 
 import { slideInAnimation } from './core/animations/route.animations';
 
-import { SiteTranslateService } from './core/services/site-translate.service';
+import { SiteTranslateService } from './services/site-translate.service';
 
 @Component({
   selector: 'rtc-root',

@@ -2,9 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
-import { HeaderNavItem } from '../../models/header-nav-item.model';
-import { AuthService } from '../../services/auth.service';
-import { HeaderNavService } from '../../services/header-nav.service';
+import { HeaderNavItem } from '../../../models/header-nav-item.model';
+import { AuthService } from '../../../services/auth.service';
+import { HeaderNavService } from '../../../services/header-nav.service';
 
 @Component({
   selector: 'rtc-app-shell',

@@ -11,7 +11,7 @@ import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@ang
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 import { TranslateService } from '@ngx-translate/core';
-import { TitleService } from '../../../core/services/title.service';
+import { TitleService } from '../../../services/title.service';
 import { defaultTransactionReceipt, TransactionReceiptModel } from '../models/transaction-receipt.model';
 import { MatTableDataSource } from '@angular/material/table';
 import { TransactionReceiptModalComponent } from '../transaction-receipt-modal/transaction-receipt-modal.component';
