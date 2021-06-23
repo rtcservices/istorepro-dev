@@ -10,16 +10,18 @@
     display: flex;
     height: 50px;
     width: 270px;
-    .app-logo{
+    .app-logo {
+      width: 250px;
       background-color: var(--white);
+      clip-path: polygon(0 0, 100% 0%, calc(100% - 32px) 100%, 0% 100%);
       img {
         height: 50px;
       }
     }
     .brand-spacer {
       border-left: 2px solid var(--blue);
-      margin-left:.25rem;
-      margin-right:.25rem;
+      margin-left: 0.25rem;
+      margin-right: 0.25rem;
     }
   }
 }
@@ -35,7 +37,7 @@
 }
 
 .settings {
-  transition: transform .7s ease-in-out;
+  transition: transform 0.7s ease-in-out;
 }
 .settings:hover {
   transform: rotate(1turn);
@@ -52,61 +54,168 @@
 }
 
 @keyframes ring {
-  0% { -webkit-transform: rotateZ(0); }
-  1% { -webkit-transform: rotateZ(30deg); }
-  3% { -webkit-transform: rotateZ(-28deg); }
-  5% { -webkit-transform: rotateZ(34deg); }
-  7% { -webkit-transform: rotateZ(-32deg); }
-  9% { -webkit-transform: rotateZ(30deg); }
-  11% { -webkit-transform: rotateZ(-28deg); }
-  13% { -webkit-transform: rotateZ(26deg); }
-  15% { -webkit-transform: rotateZ(-24deg); }
-  17% { -webkit-transform: rotateZ(22deg); }
-  19% { -webkit-transform: rotateZ(-20deg); }
-  21% { -webkit-transform: rotateZ(18deg); }
-  23% { -webkit-transform: rotateZ(-16deg); }
-  25% { -webkit-transform: rotateZ(14deg); }
-  27% { -webkit-transform: rotateZ(-12deg); }
-  29% { -webkit-transform: rotateZ(10deg); }
-  31% { -webkit-transform: rotateZ(-8deg); }
-  33% { -webkit-transform: rotateZ(6deg); }
-  35% { -webkit-transform: rotateZ(-4deg); }
-  37% { -webkit-transform: rotateZ(2deg); }
-  39% { -webkit-transform: rotateZ(-1deg); }
-  41% { -webkit-transform: rotateZ(1deg); }
-  43% { -webkit-transform: rotateZ(0); }
-  100% { -webkit-transform: rotateZ(0); }
+  0% {
+    -webkit-transform: rotateZ(0);
+  }
+  1% {
+    -webkit-transform: rotateZ(30deg);
+  }
+  3% {
+    -webkit-transform: rotateZ(-28deg);
+  }
+  5% {
+    -webkit-transform: rotateZ(34deg);
+  }
+  7% {
+    -webkit-transform: rotateZ(-32deg);
+  }
+  9% {
+    -webkit-transform: rotateZ(30deg);
+  }
+  11% {
+    -webkit-transform: rotateZ(-28deg);
+  }
+  13% {
+    -webkit-transform: rotateZ(26deg);
+  }
+  15% {
+    -webkit-transform: rotateZ(-24deg);
+  }
+  17% {
+    -webkit-transform: rotateZ(22deg);
+  }
+  19% {
+    -webkit-transform: rotateZ(-20deg);
+  }
+  21% {
+    -webkit-transform: rotateZ(18deg);
+  }
+  23% {
+    -webkit-transform: rotateZ(-16deg);
+  }
+  25% {
+    -webkit-transform: rotateZ(14deg);
+  }
+  27% {
+    -webkit-transform: rotateZ(-12deg);
+  }
+  29% {
+    -webkit-transform: rotateZ(10deg);
+  }
+  31% {
+    -webkit-transform: rotateZ(-8deg);
+  }
+  33% {
+    -webkit-transform: rotateZ(6deg);
+  }
+  35% {
+    -webkit-transform: rotateZ(-4deg);
+  }
+  37% {
+    -webkit-transform: rotateZ(2deg);
+  }
+  39% {
+    -webkit-transform: rotateZ(-1deg);
+  }
+  41% {
+    -webkit-transform: rotateZ(1deg);
+  }
+  43% {
+    -webkit-transform: rotateZ(0);
+  }
+  100% {
+    -webkit-transform: rotateZ(0);
+  }
 }
 
 @keyframes ring-hover {
-  0% { -webkit-transform: rotateZ(0); }
-  1% { -webkit-transform: rotateZ(30deg); }
-  3% { -webkit-transform: rotateZ(-28deg); }
-  5% { -webkit-transform: rotateZ(34deg); }
-  7% { -webkit-transform: rotateZ(-32deg); }
-  9% { -webkit-transform: rotateZ(30deg); }
-  11% { -webkit-transform: rotateZ(-28deg); }
-  13% { -webkit-transform: rotateZ(26deg); }
-  15% { -webkit-transform: rotateZ(-24deg); }
-  17% { -webkit-transform: rotateZ(22deg); }
-  19% { -webkit-transform: rotateZ(-20deg); }
-  21% { -webkit-transform: rotateZ(18deg); }
-  23% { -webkit-transform: rotateZ(-16deg); }
-  25% { -webkit-transform: rotateZ(14deg); }
-  27% { -webkit-transform: rotateZ(-12deg); }
-  29% { -webkit-transform: rotateZ(10deg); }
-  31% { -webkit-transform: rotateZ(-8deg); }
-  33% { -webkit-transform: rotateZ(6deg); }
-  35% { -webkit-transform: rotateZ(-4deg); }
-  37% { -webkit-transform: rotateZ(2deg); }
-  39% { -webkit-transform: rotateZ(-1deg); }
-  41% { -webkit-transform: rotateZ(1deg); }
-  43% { -webkit-transform: rotateZ(0); }
-  100% { -webkit-transform: rotateZ(0); }
+  0% {
+    -webkit-transform: rotateZ(0);
+  }
+  1% {
+    -webkit-transform: rotateZ(30deg);
+  }
+  3% {
+    -webkit-transform: rotateZ(-28deg);
+  }
+  5% {
+    -webkit-transform: rotateZ(34deg);
+  }
+  7% {
+    -webkit-transform: rotateZ(-32deg);
+  }
+  9% {
+    -webkit-transform: rotateZ(30deg);
+  }
+  11% {
+    -webkit-transform: rotateZ(-28deg);
+  }
+  13% {
+    -webkit-transform: rotateZ(26deg);
+  }
+  15% {
+    -webkit-transform: rotateZ(-24deg);
+  }
+  17% {
+    -webkit-transform: rotateZ(22deg);
+  }
+  19% {
+    -webkit-transform: rotateZ(-20deg);
+  }
+  21% {
+    -webkit-transform: rotateZ(18deg);
+  }
+  23% {
+    -webkit-transform: rotateZ(-16deg);
+  }
+  25% {
+    -webkit-transform: rotateZ(14deg);
+  }
+  27% {
+    -webkit-transform: rotateZ(-12deg);
+  }
+  29% {
+    -webkit-transform: rotateZ(10deg);
+  }
+  31% {
+    -webkit-transform: rotateZ(-8deg);
+  }
+  33% {
+    -webkit-transform: rotateZ(6deg);
+  }
+  35% {
+    -webkit-transform: rotateZ(-4deg);
+  }
+  37% {
+    -webkit-transform: rotateZ(2deg);
+  }
+  39% {
+    -webkit-transform: rotateZ(-1deg);
+  }
+  41% {
+    -webkit-transform: rotateZ(1deg);
+  }
+  43% {
+    -webkit-transform: rotateZ(0);
+  }
+  100% {
+    -webkit-transform: rotateZ(0);
+  }
 }
 
 @media only screen and (max-width: 600px) {
   .logout-button {
     padding-right: 10px;
+  }
+}
+
+@media only screen and (min-device-width: 834px) and (max-device-width: 1112px) and (-webkit-min-device-pixel-ratio: 2) {
+  .menu-bar {
+    width: 50% !important;
+    .mat-button {
+      min-width: 0px;
+      line-height: 0px;
+      padding: 2.5px;
+    }
   }
 }

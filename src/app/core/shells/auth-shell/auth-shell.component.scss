@@ -4,14 +4,12 @@
   height: 55px;
   .app-brand {
     background-color: var(--white);
+    clip-path: polygon(0 0, 100% 0%, calc(100% - 32px) 100%, 0% 100%);
     height: 55px;
     width: 270px;
     margin-left: -10px;
     padding-right: 30px;
     margin: 0 0 0 -20px;
-    -webkit-transform: skew(-20deg);
-       -moz-transform: skew(-20deg);
-         -o-transform: skew(-20deg);
     .vl-blue {
       float: left;
       border-left: 2px solid var(--blue);
@@ -22,9 +20,7 @@
   }
   .app-logo {
     height: 50px;
-    -webkit-transform: skew(20deg);
-    -moz-transform: skew(20deg);
-      -o-transform: skew(20deg);
+
   }
   .lang-link {
     color: var(--white);
