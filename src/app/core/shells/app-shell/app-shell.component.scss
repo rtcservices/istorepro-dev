@@ -58,11 +58,6 @@
     margin-bottom: .25rem;;
   }
 }
-
-// span.mat-button-wrapper{
-//   font-size: 20px !important;
-// }
-
 .settings {
   transition: transform 0.7s ease-in-out;
 }
@@ -243,6 +238,9 @@
       min-width: 0px;
       line-height: 0px;
       padding: 2.5px;
+    }
+    button > span.mat-icon {
+      font-size: 30px;
     }
   }
 }
