@@ -3,14 +3,18 @@ import { CommonModule } from '@angular/common';
 import { SetupRoutingModule } from './setup-routing.module';
 import { SharedModule } from '../../shared/shared.module';
 
-import { SetupAddComponent } from './setup-add/setup-add.component';
-import { SetupSearchComponent } from './setup-search/setup-search.component';
+import { SetupCompanyComponent } from './setup-company/setup-company.component';
+import { SetupWarehouseComponent } from './setup-warehouse/setup-warehouse.component';
+import { SetupOwnerComponent } from './setup-owner/setup-owner.component';
+import { SetupSecurityComponent } from './setup-security/setup-security.component';
 
 
 @NgModule({
   declarations: [
-    SetupAddComponent,
-    SetupSearchComponent
+    SetupCompanyComponent,
+    SetupWarehouseComponent,
+    SetupOwnerComponent,
+    SetupSecurityComponent
   ],
   imports: [
     CommonModule,

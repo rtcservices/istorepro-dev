@@ -19,15 +19,61 @@ const routes: Routes = [
     canActivateChild: [AuthGuard]
   },
   {
-    path: 'transactions',
+    path: 'base',
     loadChildren: () =>
-      import('./features/transactions/transactions.module').then(
-        (m) => m.TransactionsModule
-      ),
-      component: AppShellComponent,
-      canActivateChild: [AuthGuard]
+      import('./features/base/base.module').then((m) => m.BaseModule),
+    component: AppShellComponent,
+    canActivateChild: [AuthGuard]
   },
-  { path: '', redirectTo: 'transactions', pathMatch: 'full' },
+  {
+    path: 'operations',
+    loadChildren: () =>
+      import('./features/operations/operations.module').then(
+        (m) => m.OperationsModule
+      ),
+    component: AppShellComponent,
+    canActivateChild: [AuthGuard]
+  },
+  {
+    path: 'scans',
+    loadChildren: () =>
+      import('./features/scans/scans.module').then((m) => m.ScansModule),
+    component: AppShellComponent,
+    canActivateChild: [AuthGuard]
+  },
+  {
+    path: 'routines',
+    loadChildren: () =>
+      import('./features/routines/routines.module').then(
+        (m) => m.RoutinesModule
+      ),
+    component: AppShellComponent,
+    canActivateChild: [AuthGuard]
+  },
+  {
+    path: 'query',
+    loadChildren: () =>
+      import('./features/query/query.module').then((m) => m.QueryModule),
+    component: AppShellComponent,
+    canActivateChild: [AuthGuard]
+  },
+  {
+    path: 'dashboards',
+    loadChildren: () =>
+      import('./features/dashboards/dashboards.module').then(
+        (m) => m.DashboardsModule
+      ),
+    component: AppShellComponent,
+    canActivateChild: [AuthGuard]
+  },
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./features/admin/admin.module').then((m) => m.AdminModule),
+    component: AppShellComponent,
+    canActivateChild: [AuthGuard]
+  },
+  { path: '', redirectTo: 'setup', pathMatch: 'full' },
   { path: '**', redirectTo: 'auth/login' }
 ];
 

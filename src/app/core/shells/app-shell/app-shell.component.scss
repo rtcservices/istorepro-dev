@@ -36,6 +36,29 @@
   }
 }
 
+.notification-item {
+  padding-right:0.5rem;
+  padding-left:0.5rem;
+  &:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+  }
+  img {
+    border-radius: 50%;
+    height: 24px;
+    margin-right: 0.5rem;
+    width: 24px;
+  }
+  span {
+    font-weight: bold;
+  }
+  small {
+    color: var(--bs-gray-dark);
+    display: block;
+    font-style: italic;
+    margin-bottom: .25rem;;
+  }
+}
+
 .settings {
   transition: transform 0.7s ease-in-out;
 }
@@ -48,10 +71,10 @@
   transform-origin: 50% 4px;
 }
 
-.bell:hover {
-  animation: ring-hover 5s;
-  animation-iteration-count: infinite;
-}
+// .bell:hover {
+//   animation: ring-hover 5s;
+//   animation-iteration-count: infinite;
+// }
 
 @keyframes ring {
   0% {

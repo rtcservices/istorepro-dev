@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   submitted = false;
   loginInvalid = false;
-  homeUrl = '/transactions';
+  homeUrl = '/setup';
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
