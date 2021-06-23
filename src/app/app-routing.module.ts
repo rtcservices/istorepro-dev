@@ -74,6 +74,15 @@ const routes: Routes = [
     canActivateChild: [AuthGuard]
   },
   { path: '', redirectTo: 'setup', pathMatch: 'full' },
+  {
+    path: 'settings',
+    loadChildren: () =>
+      import('./features/settings/settings.module').then(
+        (m) => m.SettingsModule
+      ),
+    component: AppShellComponent,
+    canActivateChild: [AuthGuard]
+  },
   { path: '**', redirectTo: 'auth/login' }
 ];
 

@@ -288,4 +288,7 @@ export class AppShellComponent implements OnInit {
     this.router.navigateByUrl('["/auth/login"]')
   }
 
+  goToSettings() {
+    this.router.navigateByUrl('["/settings/profile"]')
+  }
 }

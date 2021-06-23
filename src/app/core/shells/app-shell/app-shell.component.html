@@ -92,7 +92,8 @@
   </mat-menu>
 
   <button mat-icon-button
-    [matTooltip]="settingsTranslated">
+    [matTooltip]="settingsTranslated"
+    (click)="goToSettings()">
     <mat-icon class="settings">settings</mat-icon>
   </button>
   <button mat-icon-button class="logout-button"
