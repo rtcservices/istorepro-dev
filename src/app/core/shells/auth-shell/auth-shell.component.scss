@@ -2,7 +2,7 @@
   background-color: var(--blue);
   color: var(--white);
   height: 55px;
-  .site-logo {
+  .app-brand {
     background-color: var(--white);
     height: 55px;
     width: 270px;
@@ -49,7 +49,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .site-logo {
+  .app-brand {
     position: absolute;
     background-color: var(--white);
     height: 55px;

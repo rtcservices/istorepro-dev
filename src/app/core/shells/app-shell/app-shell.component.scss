@@ -3,47 +3,35 @@
   background-color: var(--blue);
   color: var(--white);
   height: 55px;
+  padding-left: 0;
+  padding-right: 0;
   z-index: 2;
-  .site-logo {
-    background-color: var(--white);
-    height: 55px;
+  .app-brand {
+    display: flex;
+    height: 50px;
     width: 270px;
-    margin-left: -16px;
-    padding-right: 30px;
-    margin: 0 0 0 -20px;
-    -webkit-transform: skew(-20deg);
-       -moz-transform: skew(-20deg);
-         -o-transform: skew(-20deg);
-    .vl-blue {
-      float: left;
-      border-left: 2px solid var(--blue);
-      height: 45px;
-      margin-top: 4px !important;
-      margin-left: 9px !important;
-    }
     .app-logo{
-      height: 50px;
-      -webkit-transform: skew(20deg);
-      -moz-transform: skew(20deg);
-        -o-transform: skew(20deg);
+      background-color: var(--white);
+      img {
+        height: 50px;
+      }
+    }
+    .brand-spacer {
+      border-left: 2px solid var(--blue);
+      margin-left:.25rem;
+      margin-right:.25rem;
     }
   }
 }
-#left {
-  float: left;
-}
-#right {
-  float: right;
-}
-#center {
-  margin: 0 auto;
-}
 
-.main {
+.site-container {
   display: block;
   height: calc(100% - 55px);
   padding-top: 55px;
   width: 100%;
+  .site-nav {
+    min-width: 250px !important;
+  }
 }
 
 .settings {
@@ -118,12 +106,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .site-logo {
-   
-    .vl-blue {
-      
-    }
-    .app-logo{
-    }
+  .logout-button {
+    padding-right: 10px;
   }
 }

@@ -1,12 +1,12 @@
 <mat-toolbar color="primary" class="app-navbar mat-elevation-z6">
-  <div class="site-logo">
+  <div class="app-brand">
     <button mat-icon-button (click)="sidenav.toggle()" fxShow fxHide.gt-sm>
       <mat-icon>menu</mat-icon>
     </button>
-    <a [routerLink]="['/auth']">
-      <img src="../../../../assets/images/Main-Logo.JPG" id="left" class="app-logo">
-      <div class="vl-blue" id="center"></div>
-      <img src="../../../../assets/images/Be-Logo.PNG" id="right" class="app-logo">
+    <a [routerLink]="['/auth']" class="app-logo">
+      <img src="../../../../assets/images/istore-logo.jpg">
+      <span class="brand-spacer"></span>
+      <img src="../../../../assets/images/be-logo.png">
     </a>
   </div>
   <div fxHide fxShow.gt-sm>
@@ -14,24 +14,67 @@
       {{'menu.setup' | translate}} <mat-icon>expand_more</mat-icon>
     </button>
     <mat-menu #setupMenu="matMenu">
-      <a mat-menu-item [routerLink]="['/setup/add']" disabled>{{'general.add' | translate }}</a>
-      <a mat-menu-item [routerLink]="['/setup/search']" disabled>{{'general.search' | translate }}</a>
+      <a mat-menu-item [routerLink]="['/setup/company']">{{'menu.setupCompany' | translate }}</a>
+      <a mat-menu-item [routerLink]="['/setup/warehouse']">{{'menu.setupWarehouse' | translate }}</a>
+      <a mat-menu-item [routerLink]="['/setup/owner']">{{'menu.setupOwner' | translate }}</a>
+      <a mat-menu-item [routerLink]="['/setup/security']">{{'menu.setupSecurity' | translate }}</a>
     </mat-menu>
-    <button mat-button [matMenuTriggerFor]="transactionMenu">
-      {{'menu.transactions' | translate}}  <mat-icon>expand_more</mat-icon>
+    <button mat-button [matMenuTriggerFor]="baseMenu">
+      {{'menu.base' | translate}}  <mat-icon>expand_more</mat-icon>
     </button>
-    <mat-menu #transactionMenu="matMenu">
-      <a mat-menu-item [routerLink]="['/transactions/receipt']">{{'menu.transactionsReceipt' | translate}}</a>
+    <mat-menu #baseMenu="matMenu">
+      <a mat-menu-item [routerLink]="['/base/item-type']">{{'menu.baseItemType' | translate}}</a>
+      <a mat-menu-item [routerLink]="['/base/item']">{{'menu.baseItem' | translate}}</a>
+      <a mat-menu-item [routerLink]="['/base/storage-type']">{{'menu.baseStorageType' | translate}}</a>
+      <a mat-menu-item [routerLink]="['/base/zone']">{{'menu.baseZone' | translate}}</a>
+      <a mat-menu-item [routerLink]="['/base/location']">{{'menu.baseLocation' | translate}}</a>
+      <a mat-menu-item [routerLink]="['/base/reason']">{{'menu.baseReason' | translate}}</a>
     </mat-menu>
-    <button mat-button [matMenuTriggerFor]="routineMenu">
-      {{'menu.routine' | translate}}  <mat-icon>expand_more</mat-icon>
+    <button mat-button [matMenuTriggerFor]="operationsMenu">
+      {{'menu.operations' | translate}}  <mat-icon>expand_more</mat-icon>
     </button>
-    <mat-menu #routineMenu="matMenu">
-      <a mat-menu-item [routerLink]="['/routine/add']" disabled>{{'general.add' | translate }}</a>
-      <a mat-menu-item [routerLink]="['/routine/search']" disabled>{{ 'general.search' | translate }}</a>
+    <mat-menu #operationsMenu="matMenu">
+      <a mat-menu-item [routerLink]="['/operations/receipt']">{{'menu.operationsReceipt' | translate}}</a>
+      <a mat-menu-item [routerLink]="['/operations/location-management']">{{'menu.operationsLocationManagement' | translate}}</a>
+      <a mat-menu-item [routerLink]="['/operations/heat-map']">{{'menu.operationsHeatMap' | translate}}</a>
+      <a mat-menu-item [routerLink]="['/operations/delivery']">{{'menu.operationsDelivery' | translate}}</a>
     </mat-menu>
-    <button mat-button>{{'menu.dashboard' | translate}} </button>
-    <button mat-button>{{'menu.query' | translate}} </button>
+    <button mat-button [matMenuTriggerFor]="scansMenu">
+      {{'menu.scans' | translate}}  <mat-icon>expand_more</mat-icon>
+    </button>
+    <mat-menu #scansMenu="matMenu">
+      <a mat-menu-item [routerLink]="['/scans/double-scan']">{{'menu.scansDoubleScan' | translate}}</a>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="routinesMenu">
+      {{'menu.routines' | translate}}  <mat-icon>expand_more</mat-icon>
+    </button>
+    <mat-menu #routinesMenu="matMenu">
+      <a mat-menu-item [routerLink]="['/routines/inventory-audit']">{{'menu.routinesInventoryAudit' | translate}}</a>
+      <a mat-menu-item [routerLink]="['/routines/stock-adjust']">{{'menu.routinesStockAdjust' | translate}}</a>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="queryMenu">
+      {{'menu.query' | translate}}  <mat-icon>expand_more</mat-icon>
+    </button>
+    <mat-menu #queryMenu="matMenu">
+      <a mat-menu-item [routerLink]="['/query/stock']">{{'menu.queryStock' | translate}}</a>
+      <a mat-menu-item [routerLink]="['/query/transactions']">{{'menu.queryTransactions' | translate}}</a>
+      <a mat-menu-item [routerLink]="['/query/documents']">{{'menu.queryDocuments' | translate}}</a>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="dashboardsMenu">
+      {{'menu.dashboards' | translate}}  <mat-icon>expand_more</mat-icon>
+    </button>
+    <mat-menu #dashboardsMenu="matMenu">
+      <a mat-menu-item [routerLink]="['/dashboards/mis']">{{'menu.dashboardsMIS' | translate}}</a>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="adminMenu">
+      {{'menu.admin' | translate}}  <mat-icon>expand_more</mat-icon>
+    </button>
+    <mat-menu #adminMenu="matMenu">
+      <a mat-menu-item [routerLink]="['/admin/system-control']">{{'menu.adminSystemControl' | translate}}</a>
+      <a mat-menu-item [routerLink]="['/admin/consistency']">{{'menu.adminConsistency' | translate}}</a>
+      <a mat-menu-item [routerLink]="['/admin/login-audit']">{{'menu.adminLoginAudit' | translate}}</a>
+      <a mat-menu-item [routerLink]="['/admin/audit-trail']">{{'menu.adminAuditTrail' | translate}}</a>
+    </mat-menu>
   </div>
   <span class="spacer"></span>
   <button mat-icon-button
@@ -39,18 +82,18 @@
     <mat-icon class="bell">notifications</mat-icon>
     <span matBadge="15" matBadgeSize="small" matBadgeColor="warn"></span>
   </button>
-  <button mat-icon-button 
+  <button mat-icon-button
     [matTooltip]="settingsTranslated">
     <mat-icon class="settings">settings</mat-icon>
   </button>
-  <button mat-icon-button
+  <button mat-icon-button class="logout-button"
     [matTooltip]="logoutTranslated"
     (click)="logOut()">
     <mat-icon>logout</mat-icon>
   </button>
 </mat-toolbar>
-<mat-sidenav-container class="main">
-  <mat-sidenav #sidenav>
+<mat-sidenav-container class="site-container">
+  <mat-sidenav #sidenav class="side-nav">
     <mat-nav-list *ngIf="headerNavItems">
       <rtc-nav-list-item *ngFor="let item of headerNavItems" [item]="item"></rtc-nav-list-item>
     </mat-nav-list>

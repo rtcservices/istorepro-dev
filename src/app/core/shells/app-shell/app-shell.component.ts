@@ -37,46 +37,148 @@ export class AppShellComponent implements OnInit {
           displayName: this.translate.instant('menu.setup'),
           children: [
             {
-              displayName: this.translate.instant('general.add'),
-              route: 'setup/add',
+              displayName: this.translate.instant('menu.setupCompany'),
+              route: 'setup/company',
             },
             {
-              displayName: this.translate.instant('general.search'),
-              route: 'setup/search',
+              displayName: this.translate.instant('menu.setupWarehouse'),
+              route: 'setup/warehouse',
+            },
+            {
+              displayName: this.translate.instant('menu.setupOwner'),
+              route: 'setup/owner',
+            },
+            {
+              displayName: this.translate.instant('menu.setupSecurity'),
+              route: 'setup/security',
             }
           ]
         },
         {
-          displayName: this.translate.instant('menu.transactions'),
+          displayName: this.translate.instant('menu.base'),
           route: '',
           children: [
             {
-              displayName: this.translate.instant('menu.transactionsReceipt'),
-              route: 'transactions/receipt'
-            }
+              displayName: this.translate.instant('menu.baseItemType'),
+              route: 'base/item-type'
+            },
+            {
+              displayName: this.translate.instant('menu.baseItem'),
+              route: 'base/item'
+            },
+            {
+              displayName: this.translate.instant('menu.baseStorageType'),
+              route: 'base/storage-type'
+            },
+            {
+              displayName: this.translate.instant('menu.baseZone'),
+              route: 'base/zone'
+            },
+            {
+              displayName: this.translate.instant('menu.baseLocation'),
+              route: 'base/location'
+            },
+            {
+              displayName: this.translate.instant('menu.baseReason'),
+              route: 'base/reason'
+            },
           ]
         },
         {
-          displayName: this.translate.instant('menu.routine'),
+          displayName: this.translate.instant('menu.operations'),
           route: '',
           children: [
             {
-              displayName: this.translate.instant('general.add'),
-              route: 'routine/add'
+              displayName: this.translate.instant('menu.operationsReceipt'),
+              route: 'operations/receipt'
             },
             {
-              displayName: this.translate.instant('general.search'),
-              route: 'routine/search'
+              displayName: this.translate.instant('menu.operationsLocationManagement'),
+              route: 'operations/location-management'
+            },
+            {
+              displayName: this.translate.instant('menu.operationsHeatMap'),
+              route: 'operations/heat-map'
+            },
+            {
+              displayName: this.translate.instant('menu.operationsDelivery'),
+              route: 'operations/delivery'
             }
           ]
         },
         {
-          displayName: this.translate.instant('menu.dashboard'),
-          route: 'dashboard'
+          displayName: this.translate.instant('menu.scans'),
+          route: '',
+          children: [
+            {
+              displayName: this.translate.instant('menu.scansDoubleScan'),
+              route: 'scans/double-scan'
+            }
+          ]
+        },
+        {
+          displayName: this.translate.instant('menu.routines'),
+          route: '',
+          children: [
+            {
+              displayName: this.translate.instant('menu.routinesInventoryAudit'),
+              route: 'routines/inventory-audit'
+            },
+            {
+              displayName: this.translate.instant('menu.routinesStockAdjust'),
+              route: 'routines/stock-adjust'
+            }
+          ]
         },
         {
           displayName: this.translate.instant('menu.query'),
-          route: 'query'
+          route: '',
+          children: [
+            {
+              displayName: this.translate.instant('menu.queryStock'),
+              route: 'query/stock'
+            },
+            {
+              displayName: this.translate.instant('menu.queryTransactions'),
+              route: 'query/transactions'
+            },
+            {
+              displayName: this.translate.instant('menu.queryDocuments'),
+              route: 'query/documents'
+            }
+          ]
+        },
+        {
+          displayName: this.translate.instant('menu.dashboards'),
+          route: '',
+          children: [
+            {
+              displayName: this.translate.instant('menu.dashboardsMIS'),
+              route: 'dashboards/mis'
+            }
+          ]
+        },
+        {
+          displayName: this.translate.instant('menu.admin'),
+          route: '',
+          children: [
+            {
+              displayName: this.translate.instant('menu.adminSystemControl'),
+              route: 'admin/system-control'
+            },
+            {
+              displayName: this.translate.instant('menu.adminConsistency'),
+              route: 'admin/consistency'
+            },
+            {
+              displayName: this.translate.instant('menu.adminLoginAudit'),
+              route: 'admin/login-audit'
+            },
+            {
+              displayName: this.translate.instant('menu.adminAuditTrail'),
+              route: 'admin/audit-trail'
+            }
+          ]
         }
       ];
     });
