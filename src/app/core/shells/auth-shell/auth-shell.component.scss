@@ -5,18 +5,26 @@
   .site-logo {
     background-color: var(--white);
     height: 55px;
-    width: 240px;
-    margin-left: -16px;
-    padding-right: 25px;
+    width: 270px;
+    margin-left: -10px;
+    padding-right: 30px;
+    margin: 0 0 0 -20px;
+    -webkit-transform: skew(-20deg);
+       -moz-transform: skew(-20deg);
+         -o-transform: skew(-20deg);
     .vl-blue {
       float: left;
       border-left: 2px solid var(--blue);
       height: 45px;
+      margin-left: 9px !important;
       margin-top: 4px !important;
     }
   }
   .app-logo {
     height: 50px;
+    -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg);
+      -o-transform: skew(20deg);
   }
   .lang-link {
     color: var(--white);
@@ -38,4 +46,26 @@
 }
 #center {
   margin: 0 auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .site-logo {
+    position: absolute;
+    background-color: var(--white);
+    height: 55px;
+    width: 270px;
+    margin-left: -16px;
+    padding-right: 30px;
+    margin: 0 0 0 -20px;
+    .vl-blue {
+      float: left;
+      border-left: 2px solid var(--blue);
+      height: 45px;
+      margin-top: 4px !important;
+      margin-left: 9px !important;
+    }
+    .app-logo{
+      height: 50px;
+    }
+  }
 }

@@ -7,14 +7,25 @@
   .site-logo {
     background-color: var(--white);
     height: 55px;
-    width: 240px;
+    width: 270px;
     margin-left: -16px;
-    padding-right: 25px;
+    padding-right: 30px;
+    margin: 0 0 0 -20px;
+    -webkit-transform: skew(-20deg);
+       -moz-transform: skew(-20deg);
+         -o-transform: skew(-20deg);
     .vl-blue {
       float: left;
       border-left: 2px solid var(--blue);
       height: 45px;
       margin-top: 4px !important;
+      margin-left: 9px !important;
+    }
+    .app-logo{
+      height: 50px;
+      -webkit-transform: skew(20deg);
+      -moz-transform: skew(20deg);
+        -o-transform: skew(20deg);
     }
   }
 }
@@ -28,9 +39,6 @@
   margin: 0 auto;
 }
 
-.app-logo{
-  height: 50px;
-}
 .main {
   display: block;
   height: calc(100% - 55px);
@@ -107,4 +115,15 @@
   41% { -webkit-transform: rotateZ(1deg); }
   43% { -webkit-transform: rotateZ(0); }
   100% { -webkit-transform: rotateZ(0); }
+}
+
+@media only screen and (max-width: 600px) {
+  .site-logo {
+   
+    .vl-blue {
+      
+    }
+    .app-logo{
+    }
+  }
 }
