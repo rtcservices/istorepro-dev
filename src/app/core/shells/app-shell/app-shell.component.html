@@ -81,7 +81,7 @@
     [matTooltip]="notificationsTranslated"
     [matMenuTriggerFor]="notificationMenu">
     <mat-icon class="bell">notifications</mat-icon>
-    <span matBadge="15" matBadgeSize="small" matBadgeColor="warn"></span>
+    <span matBadge="15" matBadgeSize="medium" class="mat-badge" matBadgeColor="warn"></span>
   </button>
   <mat-menu #notificationMenu="matMenu" xPosition="before" class="notification-menu">
     <div *ngFor="let n of notifications;" class="notification-item">

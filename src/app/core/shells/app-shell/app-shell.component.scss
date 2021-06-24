@@ -28,7 +28,7 @@
 
 .site-container {
   display: block;
-  height: calc(100% - 55px);
+  height: 100%;
   padding-top: 55px;
   width: 100%;
   .site-nav {
@@ -37,10 +37,10 @@
 }
 
 .notification-item {
-  padding-right:0.5rem;
-  padding-left:0.5rem;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
   &:hover {
-    box-shadow: 0 0 11px rgba(33,33,33,.2);
+    box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
   }
   img {
     border-radius: 50%;
@@ -55,7 +55,7 @@
     color: var(--bs-gray-dark);
     display: block;
     font-style: italic;
-    margin-bottom: .25rem;;
+    margin-bottom: 0.25rem;
   }
 }
 .settings {
@@ -68,6 +68,10 @@
 .bell {
   animation: ring 5s;
   transform-origin: 50% 4px;
+}
+
+.mat-badge {
+  margin-left: 4px !important;
 }
 
 // .bell:hover {
@@ -225,9 +229,34 @@
   }
 }
 
+// @media only screen and (min-width: 300px) and (max-width: 460px) {
+//   .app-logo {
+//     width: 250px;
+//     max-width: 80%;
+//     height: auto;
+//     margin: 0 !important;
+//     padding: 0 !important;
+//     img {
+//       padding: 0 !important;
+//       margin: 0 !important;
+//       max-width: 70% !important;
+//       height: auto;
+//     }
+//   }
+// }
+
 @media only screen and (max-width: 600px) {
   .logout-button {
     padding-right: 10px;
+  }
+  .app-logo {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%) !important;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 960px) {
+  .app-logo {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%) !important;
   }
 }
 
