@@ -56,4 +56,14 @@
   .login-banner {
     display: none;
   }
+  .login-card {
+    max-width: 700px !important;
+    width: 90% !important; 
+  }
+  .login-button-container {
+    width: 60% !important;
+    button {
+      width: 50%;
+    }
+  }
 }
