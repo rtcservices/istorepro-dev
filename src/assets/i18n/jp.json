@@ -12,7 +12,7 @@
     "copyright": "全著作権所有"
   },
   "login": {
-    "title": "ログイン",
+    "title": "サインイン",
     "userNameLabel": "ログインID",
     "userNameError": "有効なユーザー名を入力してください",
     "passwordLabel": "パスワード",
