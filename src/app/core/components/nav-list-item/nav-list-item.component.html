@@ -1,7 +1,11 @@
 <a mat-list-item [ngStyle]="{'padding-left': (depth * 12) + 'px'}" (click)="onItemSelected(item)"
-   [ngClass]="{'active': item.route ? router.isActive(item.route, true): false, 'expanded': expanded}"
+   [ngClass]="{'active-link': item.route ? router.isActive(item.route, true): false, 'expanded': expanded}"
    class="menu-list-item">
-  {{item.displayName}}
+   <ng-container *ngIf="item.children && item.children.length; then first else second"></ng-container>
+  <ng-template #first>{{item.displayName}}</ng-template>
+  <ng-template #second>
+    <span class="mat-leaf-node">{{item.displayName}}</span>
+  </ng-template>
   <span fxFlex *ngIf="item.children && item.children.length">
     <span fxFlex></span>
     <mat-icon [@indicatorRotate]="expanded ? 'expanded': 'collapsed'">

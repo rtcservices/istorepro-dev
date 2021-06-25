@@ -66,6 +66,7 @@
     "adminAuditTrail": "Audit Trail",
     "notifications": "Notifications",
     "settings": "Settings",
+    "settingsProfile": "Profile",
     "logout": "Logout"
   },
   "transactions":{

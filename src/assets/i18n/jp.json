@@ -66,6 +66,7 @@
     "adminAuditTrail": "監査証跡",
     "notifications": "通知",
     "settings": "設定",
+    "settingsProfile": "プロフィール",
     "logout": "ログアウト"
   },
   "transactions":{

@@ -22,8 +22,8 @@
       .login-button-container button {
         padding-left: 1rem;
         padding-right: 1rem;
-        background-color: var(--blue);
-        color: var(--white);
+        background-color: var(--site-blue);
+        color: var(--site-white);
       }
       .login-button-container button .mat-icon {
         padding-right: 2rem;
@@ -32,7 +32,7 @@
   }
 }
 .dvlogin a {
-  color: var(--blue) !important;
+  color: var(--site-blue) !important;
   font-size: 15px;
 }
 
@@ -58,7 +58,7 @@
   }
   .login-card {
     max-width: 700px !important;
-    width: 90% !important; 
+    width: 90% !important;
   }
   .login-button-container {
     width: 60% !important;

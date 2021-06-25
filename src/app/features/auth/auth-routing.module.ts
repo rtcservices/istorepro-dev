@@ -17,7 +17,7 @@ const routes: Routes = [
   {
     path: 'forgot-password',
     component: ForgotPasswordComponent,
-    data: { animation: 'LoginPage' }
+    data: { animation: 'ForgotPasswordPage' }
   },
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];

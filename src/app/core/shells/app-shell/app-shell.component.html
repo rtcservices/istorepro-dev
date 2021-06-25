@@ -3,7 +3,7 @@
     <button mat-icon-button (click)="sidenav.toggle()" fxShow fxHide.gt-sm>
       <mat-icon>menu</mat-icon>
     </button>
-    <a [routerLink]="['/auth']" class="app-logo">
+    <a [routerLink]="['/setup']" class="app-logo">
       <img src="../../../../assets/images/istorepro-logo.jpg">
       <span class="brand-spacer"></span>
       <img src="../../../../assets/images/be-logo.png">
@@ -13,67 +13,67 @@
     <button mat-button [matMenuTriggerFor]="setupMenu">
       {{'menu.setup' | translate}} <mat-icon>expand_more</mat-icon>
     </button>
-    <mat-menu #setupMenu="matMenu">
-      <a mat-menu-item [routerLink]="['/setup/company']">{{'menu.setupCompany' | translate }}</a>
-      <a mat-menu-item [routerLink]="['/setup/warehouse']">{{'menu.setupWarehouse' | translate }}</a>
-      <a mat-menu-item [routerLink]="['/setup/owner']">{{'menu.setupOwner' | translate }}</a>
-      <a mat-menu-item [routerLink]="['/setup/security']">{{'menu.setupSecurity' | translate }}</a>
+    <mat-menu #setupMenu="matMenu" backdropClass="top-menu">
+      <a mat-menu-item routerLinkActive="active-link" [routerLink]="['/setup/company']">{{'menu.setupCompany' | translate }}</a>
+      <a mat-menu-item routerLinkActive="active-link" [routerLink]="['/setup/warehouse']">{{'menu.setupWarehouse' | translate }}</a>
+      <a mat-menu-item routerLinkActive="active-link" [routerLink]="['/setup/owner']">{{'menu.setupOwner' | translate }}</a>
+      <a mat-menu-item routerLinkActive="active-link" [routerLink]="['/setup/security']">{{'menu.setupSecurity' | translate }}</a>
     </mat-menu>
     <button mat-button [matMenuTriggerFor]="baseMenu">
       {{'menu.base' | translate}}  <mat-icon>expand_more</mat-icon>
     </button>
-    <mat-menu #baseMenu="matMenu">
-      <a mat-menu-item [routerLink]="['/base/item-type']">{{'menu.baseItemType' | translate}}</a>
-      <a mat-menu-item [routerLink]="['/base/item']">{{'menu.baseItem' | translate}}</a>
-      <a mat-menu-item [routerLink]="['/base/storage-type']">{{'menu.baseStorageType' | translate}}</a>
-      <a mat-menu-item [routerLink]="['/base/zone']">{{'menu.baseZone' | translate}}</a>
-      <a mat-menu-item [routerLink]="['/base/location']">{{'menu.baseLocation' | translate}}</a>
-      <a mat-menu-item [routerLink]="['/base/reason']">{{'menu.baseReason' | translate}}</a>
+    <mat-menu #baseMenu="matMenu" backdropClass="top-menu">
+      <a mat-menu-item routerLinkActive="active-link" [routerLink]="['/base/item-type']">{{'menu.baseItemType' | translate}}</a>
+      <a mat-menu-item routerLinkActive="active-link" [routerLink]="['/base/item']">{{'menu.baseItem' | translate}}</a>
+      <a mat-menu-item routerLinkActive="active-link" [routerLink]="['/base/storage-type']">{{'menu.baseStorageType' | translate}}</a>
+      <a mat-menu-item routerLinkActive="active-link" [routerLink]="['/base/zone']">{{'menu.baseZone' | translate}}</a>
+      <a mat-menu-item routerLinkActive="active-link" [routerLink]="['/base/location']">{{'menu.baseLocation' | translate}}</a>
+      <a mat-menu-item routerLinkActive="active-link" [routerLink]="['/base/reason']">{{'menu.baseReason' | translate}}</a>
     </mat-menu>
     <button mat-button [matMenuTriggerFor]="operationsMenu">
       {{'menu.operations' | translate}}  <mat-icon>expand_more</mat-icon>
     </button>
-    <mat-menu #operationsMenu="matMenu">
-      <a mat-menu-item [routerLink]="['/operations/receipt']">{{'menu.operationsReceipt' | translate}}</a>
-      <a mat-menu-item [routerLink]="['/operations/location-management']">{{'menu.operationsLocationManagement' | translate}}</a>
-      <a mat-menu-item [routerLink]="['/operations/heat-map']">{{'menu.operationsHeatMap' | translate}}</a>
-      <a mat-menu-item [routerLink]="['/operations/delivery']">{{'menu.operationsDelivery' | translate}}</a>
+    <mat-menu #operationsMenu="matMenu" backdropClass="top-menu">
+      <a mat-menu-item routerLinkActive="active-link" [routerLink]="['/operations/receipt']">{{'menu.operationsReceipt' | translate}}</a>
+      <a mat-menu-item routerLinkActive="active-link" [routerLink]="['/operations/location-management']">{{'menu.operationsLocationManagement' | translate}}</a>
+      <a mat-menu-item routerLinkActive="active-link" [routerLink]="['/operations/heat-map']">{{'menu.operationsHeatMap' | translate}}</a>
+      <a mat-menu-item routerLinkActive="active-link" [routerLink]="['/operations/delivery']">{{'menu.operationsDelivery' | translate}}</a>
     </mat-menu>
     <button mat-button [matMenuTriggerFor]="scansMenu">
       {{'menu.scans' | translate}}  <mat-icon>expand_more</mat-icon>
     </button>
-    <mat-menu #scansMenu="matMenu">
-      <a mat-menu-item [routerLink]="['/scans/double-scan']">{{'menu.scansDoubleScan' | translate}}</a>
+    <mat-menu #scansMenu="matMenu" backdropClass="top-menu">
+      <a mat-menu-item routerLinkActive="active-link" [routerLink]="['/scans/double-scan']">{{'menu.scansDoubleScan' | translate}}</a>
     </mat-menu>
     <button mat-button [matMenuTriggerFor]="routinesMenu">
       {{'menu.routines' | translate}}  <mat-icon>expand_more</mat-icon>
     </button>
-    <mat-menu #routinesMenu="matMenu">
-      <a mat-menu-item [routerLink]="['/routines/inventory-audit']">{{'menu.routinesInventoryAudit' | translate}}</a>
-      <a mat-menu-item [routerLink]="['/routines/stock-adjust']">{{'menu.routinesStockAdjust' | translate}}</a>
+    <mat-menu #routinesMenu="matMenu" backdropClass="top-menu">
+      <a mat-menu-item routerLinkActive="active-link" [routerLink]="['/routines/inventory-audit']">{{'menu.routinesInventoryAudit' | translate}}</a>
+      <a mat-menu-item routerLinkActive="active-link" [routerLink]="['/routines/stock-adjust']">{{'menu.routinesStockAdjust' | translate}}</a>
     </mat-menu>
     <button mat-button [matMenuTriggerFor]="queryMenu">
       {{'menu.query' | translate}}  <mat-icon>expand_more</mat-icon>
     </button>
-    <mat-menu #queryMenu="matMenu">
-      <a mat-menu-item [routerLink]="['/query/stock']">{{'menu.queryStock' | translate}}</a>
-      <a mat-menu-item [routerLink]="['/query/transactions']">{{'menu.queryTransactions' | translate}}</a>
-      <a mat-menu-item [routerLink]="['/query/documents']">{{'menu.queryDocuments' | translate}}</a>
+    <mat-menu #queryMenu="matMenu" backdropClass="top-menu">
+      <a mat-menu-item routerLinkActive="active-link" [routerLink]="['/query/stock']">{{'menu.queryStock' | translate}}</a>
+      <a mat-menu-item routerLinkActive="active-link" [routerLink]="['/query/transactions']">{{'menu.queryTransactions' | translate}}</a>
+      <a mat-menu-item routerLinkActive="active-link" [routerLink]="['/query/documents']">{{'menu.queryDocuments' | translate}}</a>
     </mat-menu>
     <button mat-button [matMenuTriggerFor]="dashboardsMenu">
       {{'menu.dashboards' | translate}}  <mat-icon>expand_more</mat-icon>
     </button>
-    <mat-menu #dashboardsMenu="matMenu">
-      <a mat-menu-item [routerLink]="['/dashboards/mis']">{{'menu.dashboardsMIS' | translate}}</a>
+    <mat-menu #dashboardsMenu="matMenu" backdropClass="top-menu">
+      <a mat-menu-item routerLinkActive="active-link" [routerLink]="['/dashboards/mis']">{{'menu.dashboardsMIS' | translate}}</a>
     </mat-menu>
     <button mat-button [matMenuTriggerFor]="adminMenu">
       {{'menu.admin' | translate}}  <mat-icon>expand_more</mat-icon>
     </button>
-    <mat-menu #adminMenu="matMenu">
-      <a mat-menu-item [routerLink]="['/admin/system-control']">{{'menu.adminSystemControl' | translate}}</a>
-      <a mat-menu-item [routerLink]="['/admin/consistency']">{{'menu.adminConsistency' | translate}}</a>
-      <a mat-menu-item [routerLink]="['/admin/login-audit']">{{'menu.adminLoginAudit' | translate}}</a>
-      <a mat-menu-item [routerLink]="['/admin/audit-trail']">{{'menu.adminAuditTrail' | translate}}</a>
+    <mat-menu #adminMenu="matMenu" backdropClass="top-menu">
+      <a mat-menu-item routerLinkActive="active-link" [routerLink]="['/admin/system-control']">{{'menu.adminSystemControl' | translate}}</a>
+      <a mat-menu-item routerLinkActive="active-link" [routerLink]="['/admin/consistency']">{{'menu.adminConsistency' | translate}}</a>
+      <a mat-menu-item routerLinkActive="active-link" [routerLink]="['/admin/login-audit']">{{'menu.adminLoginAudit' | translate}}</a>
+      <a mat-menu-item routerLinkActive="active-link" [routerLink]="['/admin/audit-trail']">{{'menu.adminAuditTrail' | translate}}</a>
     </mat-menu>
   </div>
   <span class="spacer"></span>
@@ -90,15 +90,17 @@
      <small>{{n.subTitle}}</small>
     </div>
   </mat-menu>
-
   <button mat-icon-button
     [matTooltip]="settingsTranslated"
-    (click)="goToSettings()">
+    [matMenuTriggerFor]="settingsMenu">
     <mat-icon class="settings">settings</mat-icon>
   </button>
+  <mat-menu #settingsMenu="matMenu" backdropClass="top-menu">
+    <a mat-menu-item routerLinkActive="active-link" [routerLink]="['/settings/profile']">{{'menu.adminSystemControl' | translate}}</a>
+  </mat-menu>
   <button mat-icon-button class="logout-button"
     [matTooltip]="logoutTranslated"
-    (click)="logOut()">
+    (click)="logout()">
     <mat-icon>logout</mat-icon>
   </button>
 </mat-toolbar>
@@ -108,7 +110,7 @@
       <rtc-nav-list-item *ngFor="let item of headerNavItems" [item]="item"></rtc-nav-list-item>
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content>
-    <router-outlet></router-outlet>
+  <mat-sidenav-content [@routeAnimations]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -1,35 +1,37 @@
 @import "./assets/scss/mat-table.scss";
 :root {
-  --blue: #014789;
-  --white: #fff;
+  --grey-logo-color: rgba(230, 230, 230, 1);
+  --pink-logo-color: rgba(189, 31, 101, 1);
+  --green-logo-color: rgba(91, 134, 59, 1);
+  --blue-logo-color: rgba(68, 154, 209, 1);
+  --black-logo-color: rgba(35, 31, 32, 1);
 
-  --grey-color: rgba(230, 230, 230, 1);
-  --pink-color: rgba(189, 31, 101, 1);
-  --green-color: rgba(91, 134, 59, 1);
-  --blue-color: rgba(68, 154, 209, 1);
-  --black-color: rgba(35, 31, 32, 1);
+  --mat-primary: #014789;
+  --mat-accent: #014789;
+  --mat-danger: #014789;
 
-  --bs-blue: #0d6efd;
-  --bs-indigo: #6610f2;
-  --bs-purple: #6f42c1;
-  --bs-pink: #d63384;
-  --bs-red: #dc3545;
-  --bs-orange: #fd7e14;
-  --bs-yellow: #ffc107;
-  --bs-green: #198754;
-  --bs-teal: #20c997;
-  --bs-cyan: #0dcaf0;
-  --bs-white: #fff;
-  --bs-gray: #6c757d;
-  --bs-gray-dark: #343a40;
-  --bs-primary: #0d6efd;
-  --bs-secondary: #6c757d;
-  --bs-success: #198754;
-  --bs-info: #0dcaf0;
-  --bs-warning: #ffc107;
-  --bs-danger: #dc3545;
-  --bs-light: #f8f9fa;
-  --bs-dark: #212529;
+  --site-blue: rgb(1,71,137);
+  --site-hover-blue: rgb(1,71,137, 0.5);
+  --site-indigo: #6610f2;
+  --site-purple: #6f42c1;
+  --site-pink: #d63384;
+  --site-red: #dc3545;
+  --site-orange: #fd7e14;
+  --site-yellow: #ffc107;
+  --site-green: #198754;
+  --site-teal: #20c997;
+  --site-cyan: #0dcaf0;
+  --site-white: #fff;
+  --site-gray: #6c757d;
+  --site-gray-dark: #343a40;
+  --site-primary: #014789;
+  --site-secondary: #6c757d;
+  --site-success: #198754;
+  --site-info: #0dcaf0;
+  --site-warning: #ffc107;
+  --site-danger: #dc3545;
+  --site-light: #f8f9fa;
+  --site-dark: #212529;
 }
 * {
   box-sizing: border-box;
@@ -63,17 +65,32 @@ body {
 }
 .scanned-input {
   background-color: #ebf5eb !important;
-  caret-color: #008000 !important;
+  caret-color: var(--site-success) !important;
 }
 .high-shadow {
   box-shadow: 0 11px 15px -7px rgb(0 0 0 / 20%), 0 24px 38px 3px rgb(0 0 0 / 14%), 0 9px 46px 8px rgb(0 0 0 / 12%) !important;
 }
-.bread-crumb {
-  background-color: var(--blue);
-  color: var(--white);
-  height: 40px;
-  h2 {
-    padding-top: 5px;
-    padding-left: 20px;
+
+.top-menu+*  {
+  .mat-menu-panel {
+    a.mat-menu-item {
+      &:hover,
+      &.active-link {
+        color: var(--site-white);
+        background-color: var(--blue-logo-color);
+      }
+    }
+  }
+}
+.side-nav {
+  .mat-list-item-content {
+    .mat-leaf-node {
+      color: var(--blue-logo-color);
+      &:hover,
+      &.active-link {
+        color: var(--site-white);
+        background-color: var(--blue-logo-color);
+      }
+    }
   }
 }

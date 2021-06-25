@@ -1,18 +1,23 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import {Router, RouterOutlet} from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+
+import { slideInAnimation } from '../../../animations/animations';
 
 import { HeaderNavItem } from '../../../models/header-nav-item.model';
 import { NotificationModel } from '../../../models/notification.model';
 
 import { AuthService } from '../../../services/auth.service';
 import { HeaderNavService } from '../../../services/header-nav.service';
-
 @Component({
   selector: 'rtc-app-shell',
   templateUrl: './app-shell.component.html',
-  styleUrls: ['./app-shell.component.scss']
+  styleUrls: ['./app-shell.component.scss'],
+  animations: [
+    slideInAnimation
+  ]
 })
+
 export class AppShellComponent implements OnInit {
   headerNavItems!: HeaderNavItem[];
   menu: any;
@@ -131,6 +136,7 @@ export class AppShellComponent implements OnInit {
 
     });
   }
+
   setHeaderNavItems() {
     this.headerNavItems = [
       {
@@ -283,12 +289,16 @@ export class AppShellComponent implements OnInit {
     ];
   }
 
-  async logOut() {
+  async prepareRoute(outlet: RouterOutlet) {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
+  }
+
+  async logout() {
     this.authService.logout();
     this.router.navigateByUrl('["/auth/login"]')
   }
 
-  goToSettings() {
+  async goToSettings() {
     this.router.navigateByUrl('["/settings/profile"]')
   }
 }

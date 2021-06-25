@@ -1,7 +1,7 @@
 .app-navbar {
   position: fixed;
-  background-color: var(--blue);
-  color: var(--white);
+  background-color: var(--site-blue);
+  color: var(--site-white);
   height: 55px;
   padding-left: 0;
   padding-right: 0;
@@ -12,14 +12,14 @@
     width: 270px;
     .app-logo {
       width: 250px;
-      background-color: var(--white);
+      background-color: var(--site-white);
       clip-path: polygon(0 0, 100% 0%, calc(100% - 32px) 100%, 0% 100%);
       img {
         height: 50px;
       }
     }
     .brand-spacer {
-      border-left: 2px solid var(--blue);
+      border-left: 2px solid var(--site-blue);
       margin-left: 0.25rem;
       margin-right: 0.25rem;
     }
@@ -52,7 +52,7 @@
     font-weight: bold;
   }
   small {
-    color: var(--bs-gray-dark);
+    color: var(--site-gray-dark);
     display: block;
     font-style: italic;
     margin-bottom: 0.25rem;

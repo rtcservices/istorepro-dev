@@ -1,19 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
 import { TranslateService } from '@ngx-translate/core';
-
-import { slideInAnimation } from './core/animations/route.animations';
 
 import { SiteTranslateService } from './services/site-translate.service';
 
 @Component({
   selector: 'rtc-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  animations: [
-    slideInAnimation
-  ]
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   constructor(
@@ -23,9 +17,5 @@ export class AppComponent {
       this.translate.setDefaultLang(this.siteTranslate.defaultLanguage);
       const language = localStorage.getItem('site-lang') || this.siteTranslate.defaultLanguage;
       this.translate.use(language);
-  }
-
-  prepareRoute(outlet: RouterOutlet) {
-    return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
   }
 }

@@ -10,8 +10,8 @@
   <a [routerLink]="['/auth/login/jp']" class="lang-link">日本語</a>
   <a [routerLink]="['/auth/login/en']" class="lang-link">English</a>
 </mat-toolbar>
-<main class="main">
-  <router-outlet></router-outlet>
+<main class="main" [@routeAnimations]="prepareRoute(outlet)">
+  <router-outlet #outlet="outlet"></router-outlet>
 </main>
 <div class="footer">
     <img src="../../../../assets/images/gemini-logo-white.png" />
