@@ -69,39 +69,12 @@
     "settingsProfile": "プロフィール",
     "logout": "ログアウト"
   },
-  "transactions":{
-    "title": "取引",
-    "receipt": {
-      "pageTitle": "取引領収書",
-      "whLabel" : "WH",
-      "whError" : "有効なWHを入力してください",
-      "ownerLabel" : "オーナー",
-      "ownerError" : "有効な所有者を入力してください",
-      "grnLabel" : "GRN",
-      "grnError" : "有効な GRN を入力してください",
-      "addDateLabel" : "日付",
-      "addDateError" : "有効な日付を入力してください",
-      "refNoLabel" : "整理番号",
-      "refNoError" : "有効な参照番号を入力してください。",
-      "remarksLabel" : "備考",
-      "remarksError" : "有効なコメントを入力してください",
-      "addItemButtonLabel" : "アイテムを追加",
-      "labelButtonLabel" : "ラベル",
-      "grnrButtonLabel" : "GRN(R)",
-      "grnButtonLabel" : "GRN",
-      "tblHeaderItem" : "項目",
-      "tblHeaderSku" : "スク",
-      "tblHeaderQuantity" : "量",
-      "tblHeaderWeight" : "重量",
-      "tblHeaderVolume" : "ボリューム",
-      "tblHeaderManufactureDate" : "製造年月日",
-      "tblHeaderExpiry" : "有効期限",
-      "tblHeaderBatchNo" : "バッチ番号",
-      "tblHeaderRemarks" : "リマーク"
-    },
-    "addReceiptModal":{
-      "tblHeaderItem" : "項目",
-      "tblHeaderSKU" : "SKU"
+  "setup":{
+    "company": {
+      "companyCode": "Company Code",
+      "companyName": "Company Name",
+      "invalidCompanyCode": "Invlid Company Code",
+      "invalidCompanyName": "Invlid Company Name"
     }
   }
 }

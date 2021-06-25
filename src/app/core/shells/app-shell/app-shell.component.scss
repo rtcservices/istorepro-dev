@@ -30,7 +30,8 @@
       &:hover,
       &.active {
         border-radius: 0px;
-        box-shadow: inset 1px 0 0 var(--site-white);
+        //box-shadow: inset 1px 0 0 var(--site-white);
+        border-left: 1px solid var(--site-white);
         transform:scale(1.1);
       }
     }
@@ -291,4 +292,7 @@
   .side-nav{
     margin-top: 50px;
   }
+}
+.app-container {
+  padding: 0.25rem;
 }

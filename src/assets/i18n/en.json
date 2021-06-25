@@ -69,39 +69,12 @@
     "settingsProfile": "Profile",
     "logout": "Logout"
   },
-  "transactions":{
-    "title": "Transactions",
-    "receipt": {
-      "pageTitle": "Transaction Receipt",
-      "whLabel" : "WH",
-      "whError" : "Please provide a valid WH",
-      "ownerLabel" : "Owner",
-      "ownerError" : "Please provide a valid Owner",
-      "grnLabel" : "GRN",
-      "grnError" : "Please provide a valid GRN",
-      "addDateLabel" : "Date",
-      "addDateError" : "Please provide a valid Date",
-      "refNoLabel" : "Ref No.",
-      "refNoError" : "Please provide a valid Ref No.",
-      "remarksLabel" : "Remarks",
-      "remarksError" : "Please provide a valid Remarks",
-      "addItemButtonLabel" : "Add Item",
-      "labelButtonLabel" : "Label",
-      "grnrButtonLabel" : "GRN(R)",
-      "grnButtonLabel" : "GRN",
-      "tblHeaderItem" : "Item",
-      "tblHeaderSku" : "SKU",
-      "tblHeaderQuantity" : "Quantity",
-      "tblHeaderWeight" : "Weight",
-      "tblHeaderVolume" : "Volume",
-      "tblHeaderManufactureDate" : "Mfg. Date",
-      "tblHeaderExpiry" : "Expiry",
-      "tblHeaderBatchNo" : "Batch No.",
-      "tblHeaderRemarks" : "Remark"
-    },
-    "addReceiptModal":{
-      "tblHeaderItem" : "Item",
-      "tblHeaderSKU" : "SKU"
+  "setup":{
+    "company": {
+      "companyCode": "Company Code",
+      "companyName": "Company Name",
+      "invalidCompanyCode": "Invlid Company Code",
+      "invalidCompanyName": "Invlid Company Name"
     }
   }
 }
