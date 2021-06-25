@@ -262,11 +262,17 @@
   .app-logo {
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%) !important;
   }
+  .side-nav{
+    margin-top: 50px;
+  }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 960px) {
   .app-logo {
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%) !important;
+  }
+  .side-nav{
+    margin-top: 50px;
   }
 }
 
@@ -281,5 +287,8 @@
     button > span.mat-icon {
       font-size: 30px;
     }
+  }
+  .side-nav{
+    margin-top: 50px;
   }
 }
