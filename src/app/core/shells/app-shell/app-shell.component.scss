@@ -24,6 +24,17 @@
       margin-right: 0.25rem;
     }
   }
+  .menu-bar {
+    &>button[mat-button] {
+      transition: all .25s ease;
+      &:hover,
+      &.active {
+        border-radius: 0px;
+        box-shadow: inset 1px 0 0 var(--site-white);
+        transform:scale(1.1);
+      }
+    }
+  }
 }
 
 .site-container {

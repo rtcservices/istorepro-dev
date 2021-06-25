@@ -3,16 +3,6 @@
   flex-direction: column;
   outline: none;
   width: 100%;
-
-  .mat-list-item.active-link {
-    background-color: mat-color(var(--site-blue), 50);
-  }
-  &:hover,
-  &:focus {
-    >.mat-list-item:not(.expanded) {
-      background-color: mat-color(var(--site-blue), 100) !important;
-    }
-  }
 }
 
 .mat-list-item {
