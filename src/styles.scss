@@ -78,6 +78,7 @@ body {
       &.active-link {
         color: var(--site-white);
         background-color: var(--blue-logo-color);
+        transform: scale(1.1);
       }
     }
   }
