@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { slideInAnimation } from '../../../animations/animations';
 
+import { environment } from '../../../../environments/environment';
+import { slideInAnimation } from '../../../animations/animations';
 @Component({
   selector: 'rtc-auth-shell',
   templateUrl: './auth-shell.component.html',
@@ -12,9 +13,14 @@ import { slideInAnimation } from '../../../animations/animations';
 })
 export class AuthShellComponent implements OnInit {
 
+  appVersion = '';
+  appTimeStamp = '';
+
   constructor() { }
 
   ngOnInit(): void {
+    this.appVersion = environment.appVersion;
+    this.appTimeStamp = environment.appTimeStamp;
   }
 
   async prepareRoute(outlet: RouterOutlet) {

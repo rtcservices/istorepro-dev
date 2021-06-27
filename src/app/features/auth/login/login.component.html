@@ -1,6 +1,10 @@
 <div class="login-container">
   <section class="login-banner" fxShow fxHide.lt-md></section>
-  <section fxLayoutAlign="center center">
+  <section fxLayout="column" fxLayoutAlign="center center">
+    <figure fxHide.gt-md class="mobile-brand">
+      <img src="../../../../assets/images/be-logo.png"
+           alt="BE Logo">
+    </figure>
     <mat-card class="login-card high-shadow">
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
         <mat-form-field appearance="standard">

@@ -21,9 +21,12 @@ import { HeaderNavService } from '../../../services/header-nav.service';
 export class AppShellComponent implements OnInit {
   headerNavItems!: HeaderNavItem[];
   menu: any;
+
+  userAccountTranslated = '';
   notificationsTranslated = '';
   settingsTranslated = '';
   logoutTranslated = '';
+
   notifications: NotificationModel[] = [];
 
   constructor(
@@ -128,6 +131,7 @@ export class AppShellComponent implements OnInit {
     const language = this.translate.currentLang;
     this.translate.use(language).subscribe((res) => {
 
+      this.userAccountTranslated = this.translate.instant('menu.userAccount');
       this.notificationsTranslated = this.translate.instant('menu.notifications');
       this.settingsTranslated = this.translate.instant('menu.settings');
       this.logoutTranslated = this.translate.instant('menu.logout');

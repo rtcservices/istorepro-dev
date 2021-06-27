@@ -64,9 +64,10 @@
     "adminConsistency": "Consistency",
     "adminLoginAudit": "Login Audit",
     "adminAuditTrail": "Audit Trail",
+    "userAccount": "User Acccount",
+    "userAccountProfile": "Profile",
     "notifications": "Notifications",
     "settings": "Settings",
-    "settingsProfile": "Profile",
     "logout": "Logout"
   },
   "setup":{
