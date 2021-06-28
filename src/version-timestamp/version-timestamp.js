@@ -33,7 +33,7 @@ try {
       'src/environments/environment.prod.ts',
       'src/environments/environment.test.ts'
     ],
-    from: [/appVersion: '(.*)'/g, /timeStamp: '(.*)'/g],
+    from: [/appVersion: '(.*)'/g, /appTimeStamp: '(.*)'/g],
     to: ["appVersion: '" + newVersion + "'", "appTimeStamp: '" + newTimeStamp + "'"],
     allowEmptyPaths: false
   };
