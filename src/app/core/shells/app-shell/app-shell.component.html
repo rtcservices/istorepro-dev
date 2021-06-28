@@ -1,6 +1,6 @@
 <mat-toolbar color="primary" class="app-navbar mat-elevation-z6">
   <div class="app-brand">
-    <button mat-icon-button (click)="sidenav.toggle()" fxShow fxHide.gt-sm>
+    <button mat-icon-button (click)="sidenav.toggle()" fxShow fxHide.gt-lg>
       <mat-icon>menu</mat-icon>
     </button>
     <a [routerLink]="['/setup']" class="app-logo">
@@ -9,7 +9,7 @@
       <img src="../../../../assets/images/be-logo.png">
     </a>
   </div>
-  <div fxHide fxShow.gt-sm class="menu-bar">
+  <div fxHide fxShow.gt-lg class="menu-bar">
     <button mat-button [matMenuTriggerFor]="setupMenu">
       {{'menu.setup' | translate}} <mat-icon>expand_more</mat-icon>
     </button>

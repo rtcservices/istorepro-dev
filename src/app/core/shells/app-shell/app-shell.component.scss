@@ -83,16 +83,19 @@
   height: 100%;
   padding-top: 55px;
   width: 100%;
-  .site-nav {
+  .side-nav {
     min-width: 250px !important;
     @include breakpoint(tablet) {
-      margin-top: 50px;
+      margin-top: 50px !important;
     }
     @include breakpoint(phablet) {
-      margin-top: 50px;
+      margin-top: 50px !important;
     }
     @include breakpoint(mobileonly) {
-      margin-top: 50px;
+      margin-top: 50px !important;
+    }
+    @include breakpoint(phablet) {
+      margin-top: 50px !important;
     }
   }
 }
