@@ -78,9 +78,24 @@
     "company": {
       "companyCode": "Company Code",
       "companyName": "Company Name",
-      "invalidCompanyCode": "Invlid Company Code",
-      "invalidCompanyName": "Invlid Company Name",
-      "codeOrNameError": "Select either Company Code or Company Name"
+      "invalidCompanyCode": "Invalid Company Code",
+      "invalidCompanyName": "Invalid Company Name",
+      "codeOrNameError": "Select either Company Code or Company Name",
+      "address1" : "Address 1",
+      "address2" : "Address 2",
+      "address3" : "Address 3",
+      "address4" : "Address 4",
+      "telephone" : "Telephone",
+      "fax" : "Fax",
+      "sector" : "Sector",
+      "email" : "Email",
+      "contactPerson" : "Contact Person",
+      "website" : "Website",
+      "suspendOperation" : "Suspend Operation",
+      "companyLogo" : "Company Logo",
+      "whAvailableUsed" : "WH  Available/Used",
+      "userAvailableUsed" : "User Available/Used",
+      "licenseAlertEmail" : "License Alert Email"
     }
   }
 }

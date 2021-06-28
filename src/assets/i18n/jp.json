@@ -12,8 +12,8 @@
     "copyright": "全著作権所有"
   },
   "error": {
-    "form": "Form has invalid entries",
-    "field": "Field has invalid entries"
+    "form": "フォームに無効なエントリがあります",
+    "field": "フィールドに無効なエントリがあります"
   },
   "login": {
     "title": "サインイン",
@@ -76,11 +76,26 @@
   },
   "setup":{
     "company": {
-      "companyCode": "Company Code",
-      "companyName": "Company Name",
-      "invalidCompanyCode": "Invlid Company Code",
-      "invalidCompanyName": "Invlid Company Name",
-      "codeOrNameError": "Select either Company Code or Company Name"
+      "companyCode": "会社コード",
+      "companyName": "会社名",
+      "invalidCompanyCode": "無効な会社コード",
+      "invalidCompanyName": "会社名が無効です",
+      "codeOrNameError": "会社コードまたは会社名のいずれかを選択します",
+      "address1" : "住所 1",
+      "address2" : "住所 2",
+      "address3" : "住所 3",
+      "address4" : "住所 4",
+      "telephone" : "電話",
+      "fax" : "ファックス",
+      "sector" : "セクタ",
+      "email" : "Eメール",
+      "contactPerson" : "連絡窓口",
+      "website" : "ウェブサイト",
+      "suspendOperation" : "操作を一時停止します",
+      "companyLogo" : "会社のロゴ",
+      "whAvailableUsed" : "WH利用可能/使用済み",
+      "userAvailableUsed" : "利用可能な/使用されたユーザー",
+      "licenseAlertEmail" : "ライセンスアラートメール"
     }
   }
 }
