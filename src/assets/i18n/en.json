@@ -11,6 +11,10 @@
     "update": "Update",
     "copyright": "All rights reserved"
   },
+  "error": {
+    "form": "Form has invalid entries",
+    "field": "Field has invalid entries"
+  },
   "login": {
     "title": "Sign In",
     "userNameLabel": "Login ID",
@@ -75,7 +79,8 @@
       "companyCode": "Company Code",
       "companyName": "Company Name",
       "invalidCompanyCode": "Invlid Company Code",
-      "invalidCompanyName": "Invlid Company Name"
+      "invalidCompanyName": "Invlid Company Name",
+      "codeOrNameError": "Select either Company Code or Company Name"
     }
   }
 }

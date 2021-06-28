@@ -11,6 +11,10 @@
     "update": "更新",
     "copyright": "全著作権所有"
   },
+  "error": {
+    "form": "Form has invalid entries",
+    "field": "Field has invalid entries"
+  },
   "login": {
     "title": "サインイン",
     "userNameLabel": "ログインID",
@@ -75,7 +79,8 @@
       "companyCode": "Company Code",
       "companyName": "Company Name",
       "invalidCompanyCode": "Invlid Company Code",
-      "invalidCompanyName": "Invlid Company Name"
+      "invalidCompanyName": "Invlid Company Name",
+      "codeOrNameError": "Select either Company Code or Company Name"
     }
   }
 }

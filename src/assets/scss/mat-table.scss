@@ -1,43 +1,21 @@
+@import './site-variables.scss';
 .mat-header-cell{
-    background-color: var(--site-blue);
+    background-color: $mat-primary;
     color: var(--site-white);
-    border-left: 1px solid var(--site-white);
-    padding-left: 20px !important;
+    border-left: 1px solid $site-white;
+    font-size: 1.2rem;
+    padding-left: 10px !important;
 }
-
 .mat-cell{
     border-left: 1px solid #e0e0e0;
     border-right: 1px solid #e0e0e0;
-    padding-left: 20px !important;
+    padding-left: 10px !important;
 }
-
-tr.mat-header-row
-{
-    height: 45px !important;
-}
-
-tr.mat-row
-{
-    height: 40px !important;
-}
-
-tr.mat-footer-row {
-    height: 45px!important;
-}
-
-.mat-footer-cell{
-    padding-left: 20px !important;
-    font-weight: 500;
-}
-
-td.mat-cell > div > input{
-    border-bottom: 1px solid #e0e0e0 !important;
-    margin-bottom: 10px;
-    width: 88%;
-}
-
-td.mat-cell input{
-    border-bottom: 1px solid #e0e0e0 !important;
-    margin-bottom: 3px;
-    width: 88%;
+.empty-table {
+  border: 1px solid $pale-border;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1px;
+  padding: 1rem 0;
 }
