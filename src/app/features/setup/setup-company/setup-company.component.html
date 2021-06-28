@@ -1,6 +1,110 @@
 <mat-tab-group #setupCompanyTab>
   <mat-tab label="Data">
+    <form fxLayout="column" [formGroup]="dataCompanyForm" (ngSubmit)="onDataCompanySubmit()">
+    <mat-card>
+      <mat-card-content>
+        <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+          <div fxLayout="row" fxLayoutGap="10px">
+            <mat-form-field appearance="standard" fxFlex>
+              <mat-label>{{ 'setup.company.companyCode' | translate }}</mat-label>
+              <input matInput type="text"
+                formControlName="companyCode">
+              <mat-error *ngIf="dataCompanyFormControls.companyCode.invalid">{{'error.field' | translate}}</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="standard" fxFlex>
+              <mat-label>{{ 'setup.company.companyName' | translate }}</mat-label>
+              <input matInput type="text"
+                formControlName="companyName">
+              <mat-error *ngIf="dataCompanyFormControls.companyName.invalid">{{'error.field' | translate}}</mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout="row" fxLayoutGap="10px">
+            <mat-form-field appearance="standard" fxFlex>
+              <mat-label>{{ 'setup.company.address1' | translate }}</mat-label>
+              <input matInput type="text"
+                formControlName="address1">
+              <mat-error *ngIf="dataCompanyFormControls.address1.invalid">{{'error.field' | translate}}</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="standard" fxFlex>
+              <mat-label>{{ 'setup.company.address2' | translate }}</mat-label>
+              <input matInput type="text"
+                formControlName="address2">
+              <mat-error *ngIf="dataCompanyFormControls.address2.invalid">{{'error.field' | translate}}</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
 
+        <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+          <div fxLayout="row" fxLayoutGap="10px">
+            <mat-form-field appearance="standard" fxFlex>
+              <mat-label>{{ 'setup.company.telephone' | translate }}</mat-label>
+              <input matInput type="text"
+                formControlName="telephone">
+              <mat-error *ngIf="dataCompanyFormControls.telephone.invalid">{{'error.field' | translate}}</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="standard" fxFlex>
+              <mat-label>{{ 'setup.company.fax' | translate }}</mat-label>
+              <input matInput type="text"
+                formControlName="fax">
+              <mat-error *ngIf="dataCompanyFormControls.fax.invalid">{{'error.field' | translate}}</mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout="row" fxLayoutGap="10px">
+            <mat-form-field appearance="standard" fxFlex>
+              <mat-label>{{ 'setup.company.address3' | translate }}</mat-label>
+              <input matInput type="text"
+                formControlName="address3">
+              <mat-error *ngIf="dataCompanyFormControls.address3.invalid">{{'error.field' | translate}}</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="standard" fxFlex>
+              <mat-label>{{ 'setup.company.address4' | translate }}</mat-label>
+              <input matInput type="text"
+                formControlName="address4">
+              <mat-error *ngIf="dataCompanyFormControls.address4.invalid">{{'error.field' | translate}}</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+          <div fxLayout="row" fxLayoutGap="10px">
+            <mat-form-field appearance="standard" fxFlex>
+              <mat-label>{{ 'setup.company.sector' | translate }}</mat-label>
+              <input matInput type="text"
+                formControlName="sector">
+              <mat-error *ngIf="dataCompanyFormControls.sector.invalid">{{'error.field' | translate}}</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="standard" fxFlex>
+              <mat-label>{{ 'setup.company.email' | translate }}</mat-label>
+              <input matInput type="text"
+                formControlName="email">
+              <mat-error *ngIf="dataCompanyFormControls.email.invalid">{{'error.field' | translate}}</mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout="row" fxLayoutGap="10px">
+            <mat-form-field appearance="standard" fxFlex>
+              <mat-label>{{ 'setup.company.contactPerson' | translate }}</mat-label>
+              <input matInput type="text"
+                formControlName="contactPerson">
+              <mat-error *ngIf="dataCompanyFormControls.contactPerson.invalid">{{'error.field' | translate}}</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="standard" fxFlex>
+              <mat-label>{{ 'setup.company.website' | translate }}</mat-label>
+              <input matInput type="text"
+                formControlName="website">
+              <mat-error *ngIf="dataCompanyFormControls.website.invalid">{{'error.field' | translate}}</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+      <div fxLayoutAlign="end center" class="form-four-button-container">
+        <button mat-raised-button color="primary" type="submit" (click)="saveCompanyData()"><mat-icon>save</mat-icon></button>
+        <button mat-raised-button color="accent" type="button" (click)="deleteCompanyData()"><mat-icon>delete</mat-icon></button>
+        <button mat-raised-button color="accent" type="reset" (click)="clearCompanyData()"><mat-icon>restart_alt</mat-icon></button>
+      </div>
+      </mat-card-actions>
+    </mat-card>
+    </form>
   </mat-tab>
   <mat-tab label="Search">
     <form fxLayout="column" [formGroup]="searchCompanyForm" (ngSubmit)="onSearchCompanySubmit()">

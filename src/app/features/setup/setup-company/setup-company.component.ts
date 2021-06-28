@@ -21,10 +21,8 @@ export class SetupCompanyComponent implements OnInit {
 
   @ViewChild("setupCompanyTab", { static: false }) setupCompanyTab!: MatTabGroup;
   searchCompanyForm! : FormGroup;
-  searchDataSource: SetupCompanyModel[] = [];
 
-  dummyDataModel: SetupCompanyModel = { companyCode: 'GEM1234', companyName: 'Gemini Software' };
-  dataModel!: SetupCompanyModel;
+  searchDataSource: SetupCompanyModel[] = [];
   dummySearchModel: SetupCompanyModel[] = [
     { companyCode: 'GEM1234', companyName: 'Gemini Software' },
     { companyCode: 'INFY1234', companyName: 'Infosys' },
@@ -34,6 +32,11 @@ export class SetupCompanyComponent implements OnInit {
     { companyCode: 'EY1234', companyName: 'Ernst & Young' },
     { companyCode: 'MS1234', companyName: 'Microsoft' }
   ];
+
+  dataCompanyForm!: FormGroup;
+  dummyDataModel: SetupCompanyModel = { companyCode: 'GEM1234', companyName: 'Gemini Software' };
+  companyDataModel!: SetupCompanyModel;
+
   displayedColumns = [
     'companyCode',
     'companyName',
@@ -49,7 +52,8 @@ export class SetupCompanyComponent implements OnInit {
     private translate: TranslateService,
     private titleService: TitleService,
     private notification: NotificationService){
-    this.createSearchCompanyForm();
+      this.createDataCompanyForm();
+      this.createSearchCompanyForm();
   }
 
   ngOnInit(): void {
@@ -63,8 +67,28 @@ export class SetupCompanyComponent implements OnInit {
           'setup.company.codeOrNameError'
         );
       });
-    this.dataModel = this.dummyDataModel;
-    setTimeout(() => { this.setupCompanyTab.selectedIndex = 1}, 100);
+    this.companyDataModel = this.dummyDataModel;
+  }
+  createDataCompanyForm() {
+    this.dataCompanyForm = this.fb.group({
+      companyCode : ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      companyName : ['', [Validators.required, Validators.pattern(patternsHelper.alphanumeric)]],
+      address1 : ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      address2 : ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      address3 : ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      address4 : ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      telephone : ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      fax : ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      sector : ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      email : ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      contactPerson : ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      website : ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      suspendOperation : false,
+      companyLogo : '',
+    });
+  }
+  get dataCompanyFormControls() {
+    return this.dataCompanyForm.controls;
   }
 
   createSearchCompanyForm() {
@@ -83,7 +107,9 @@ export class SetupCompanyComponent implements OnInit {
     if (!tabGroup || !(tabGroup instanceof MatTabGroup)) return;
     tabGroup.selectedIndex = 0;
   }
+  onDataCompanySubmit() {
 
+  }
   onSearchCompanySubmit() {
 
     if (!this.searchCompanyForm.valid) {
@@ -112,4 +138,13 @@ export class SetupCompanyComponent implements OnInit {
     console.log(item);
   }
 
+  saveCompanyData(){
+
+  }
+  deleteCompanyData(){
+
+  }
+  clearCompanyData(){
+
+  }
 }
