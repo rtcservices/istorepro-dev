@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
 import { AuthService } from '../../../services/auth.service';
+import { LoaderService } from '../../../services/loader.service';
 import { SiteTranslateService } from '../../../services/site-translate.service';
 import { TitleService } from '../../../services/title.service';
 
@@ -14,6 +15,7 @@ import { TitleService } from '../../../services/title.service';
 })
 
 export class ForgotPasswordComponent implements OnInit {
+  loginUrl = '/auth/login';
   forgotPasswordForm!: FormGroup;
   submitted = false;
   emailInvalid = false;
@@ -23,6 +25,7 @@ export class ForgotPasswordComponent implements OnInit {
     private router: Router,
     private translate: TranslateService,
     private authService: AuthService,
+    private loader: LoaderService,
     private siteTranslateService: SiteTranslateService,
     private titleService: TitleService
   ) { }
@@ -56,5 +59,12 @@ export class ForgotPasswordComponent implements OnInit {
   async onSubmit(): Promise<void> {
     this.submitted = true;
     this.emailInvalid = false;
+  }
+  gotoLoginPage(): void {
+    this.loader.show();
+    setTimeout(() => {
+      this.router.navigate([this.loginUrl]);
+      this.loader.hide();
+    }, 500);
   }
 }

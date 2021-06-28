@@ -33,11 +33,16 @@
               {{ 'login.title' | translate }}
             </button>
           </div>
-          <a
+
+          <button mat-button color="primary"
+            type="button"
+            (click)="gotoForgotPasswordPage()">
+            {{ 'login.forgotPassword' | translate }}</button>
+          <!-- <a
             [routerLink]="['/auth/forgot-password']"
           >
             {{ 'login.forgotPassword' | translate }}
-          </a>
+          </a> -->
         </div>
       </form>
     </mat-card>

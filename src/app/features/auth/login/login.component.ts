@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
 import { AuthService } from '../../../services/auth.service';
+import { LoaderService } from '../../../services/loader.service';
 import { SiteTranslateService } from '../../../services/site-translate.service';
 import { TitleService } from '../../../services/title.service';
 
@@ -17,6 +18,7 @@ export class LoginComponent implements OnInit {
   submitted = false;
   loginInvalid = false;
   homeUrl = '/setup';
+  forgotPasswordUrl = '/auth/forgot-password';
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
@@ -24,7 +26,8 @@ export class LoginComponent implements OnInit {
     private translate: TranslateService,
     private authService: AuthService,
     private siteTranslateService: SiteTranslateService,
-    private titleService: TitleService
+    private titleService: TitleService,
+    private loader: LoaderService
   ) {
   }
 
@@ -66,7 +69,12 @@ export class LoginComponent implements OnInit {
           const language = username === 'japan' ? 'jp' : 'en';
           this.translate.use(language);
           localStorage.setItem('site-lang', language)
-          await this.router.navigate([this.homeUrl]);
+          this.loader.show();
+          this.router.navigate([this.homeUrl]);
+          setTimeout(() => {
+            this.loader.hide();
+          }, 1500);
+
         } else {
           this.loginInvalid = true;
         }
@@ -78,5 +86,12 @@ export class LoginComponent implements OnInit {
   async onLoginReset(): Promise<void> {
     this.setLoginFormValues();
     this.loginForm.reset(this.loginForm.value);
+  }
+  gotoForgotPasswordPage(): void {
+    this.loader.show();
+    setTimeout(() => {
+      this.router.navigate([this.forgotPasswordUrl]);
+      this.loader.hide();
+    }, 500);
   }
 }
