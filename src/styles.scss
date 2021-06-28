@@ -73,16 +73,19 @@ body {
 
 .top-menu+*  {
   .mat-menu-panel {
-    a.mat-menu-item {
+    a.mat-menu-item {      
+      transition: all .25s ease;
+      transform: scale(0.8);
       &:hover,
       &.active-link {
         color: var(--site-white);
         background-color: var(--blue-logo-color);
-        transform: scale(1.1);
+        transform: scale(1.0);
       }
     }
   }
 }
+
 .side-nav {
   .mat-list-item-content {
     .mat-leaf-node {
