@@ -1,3 +1,9 @@
+@import "../../../../assets/scss/site-variables.scss";
+
+.app-container {
+  padding: 0.25rem;
+}
+
 .app-navbar {
   position: fixed;
   background-color: var(--site-blue);
@@ -14,25 +20,59 @@
       width: 250px;
       background-color: var(--site-white);
       clip-path: polygon(0 0, 100% 0%, calc(100% - 32px) 100%, 0% 100%);
+      @include breakpoint(phablet) {
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%) !important;
+      }
+      @include breakpoint(mobileonly) {
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%) !important;
+        width: 165px !important;
+      }
       img {
         height: 50px;
+        @include breakpoint(mobileonly) {
+          height: 35px !important;
+          margin-top: 6px !important;
+        }
       }
     }
     .brand-spacer {
       border-left: 2px solid var(--site-blue);
       margin-left: 0.25rem;
       margin-right: 0.25rem;
+      @include breakpoint(tablet) {
+        display: none;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      @include breakpoint(mobileonly) {
+        display: none;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
     }
   }
   .menu-bar {
-    &>button[mat-button] {
-      transition: all .25s ease;
+    @include breakpoint(tablet) {
+      width: 50% !important;
+    }
+    & > button[mat-button] {
+      transition: all 0.25s ease;
+      @include breakpoint(tablet) {
+        min-width: 0px;
+        line-height: 0px;
+        padding: 2.5px;
+      }
       &:hover,
       &.active {
         border-radius: 0px;
         border-left: 1px solid var(--site-white);
         border-right: 1px solid var(--site-white);
-        transform:scale(1.2);
+        transform: scale(1.2);
+      }
+    }
+    button > span.mat-icon {
+      @include breakpoint(tablet) {
+        font-size: 30px;
       }
     }
   }
@@ -45,6 +85,15 @@
   width: 100%;
   .site-nav {
     min-width: 250px !important;
+    @include breakpoint(tablet) {
+      margin-top: 50px;
+    }
+    @include breakpoint(phablet) {
+      margin-top: 50px;
+    }
+    @include breakpoint(mobileonly) {
+      margin-top: 50px;
+    }
   }
 }
 
@@ -84,6 +133,12 @@
 
 .mat-badge {
   margin-left: 4px !important;
+}
+
+.logout-button {
+  @include breakpoint(mobileonly) {
+    padding-right: 10px;
+  }
 }
 
 @keyframes ring {
@@ -159,60 +214,4 @@
   100% {
     -webkit-transform: rotateZ(0);
   }
-}
-
-@media only screen and (min-width: 250px) and (max-width: 370px) {
-  .app-logo {
-    width: 165px !important;
-    img {
-      height: 35px !important;
-      margin-top: 6px !important;
-    }
-  }
-  .brand-spacer{
-    display: none;
-    margin: 0;
-    padding : 0;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .logout-button {
-    padding-right: 10px;
-  }
-  .app-logo {
-    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%) !important;
-  }
-  .side-nav{
-    margin-top: 50px;
-  }
-}
-
-@media only screen and (min-width: 600px) and (max-width: 960px) {
-  .app-logo {
-    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%) !important;
-  }
-  .side-nav{
-    margin-top: 50px;
-  }
-}
-
-@media only screen and (min-device-width: 834px) and (max-device-width: 1112px) and (-webkit-min-device-pixel-ratio: 2) {
-  .menu-bar {
-    width: 50% !important;
-    .mat-button {
-      min-width: 0px;
-      line-height: 0px;
-      padding: 2.5px;
-    }
-    button > span.mat-icon {
-      font-size: 30px;
-    }
-  }
-  .side-nav{
-    margin-top: 50px;
-  }
-}
-.app-container {
-  padding: 0.25rem;
 }

@@ -1,3 +1,5 @@
+@import "../../../../assets/scss/site-variables.scss";
+
 .login-container {
   display: flex;
   width: 100%;
@@ -10,66 +12,71 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+    @include breakpoint(tablet) {
+      display: none;
+    }
   }
   .mobile-brand {
     img {
       padding-top: 30px;
       width: 150px;
+      @include breakpoint(mobileonly) {
+        height: 100px;
+        width: auto;
+      }
     }
   }
+
   .login-card {
     max-width: 550px;
     width: 80%;
+    @include breakpoint(tablet) {
+      max-width: 700px !important;
+      width: 90% !important;
+    }
     .login-form {
       mat-form-field {
         display: block;
         margin-bottom: 1rem;
       }
-      .login-button-container button {
-        padding-left: 1rem;
-        padding-right: 1rem;
-        background-color: var(--site-blue);
-        color: var(--site-white);
-      }
-      .login-button-container button .mat-icon {
-        padding-right: 2rem;
+      .login-button-container {
+        @include breakpoint(tablet) {
+          width: 60% !important;
+        }
+        @include breakpoint(mobileonly) {
+          text-align: center;
+          width: 100% !important;
+        }
+        button {
+          padding-left: 1rem;
+          padding-right: 1rem;
+          background-color: var(--site-blue);
+          color: var(--site-white);
+          @include breakpoint(tablet) {
+            width: 50% !important;
+          }
+          @include breakpoint(mobileonly) {
+            width: 90%;
+          }
+        }
+        .login-button-container button .mat-icon {
+          padding-right: 2rem;
+        }
       }
     }
   }
-}
-.dvlogin a {
-  color: var(--site-blue) !important;
-  font-size: 15px;
 }
 
-@media only screen and (max-width: 600px) {
-  .dvlogin {
+.dvlogin {
+  @include breakpoint(mobileonly) {
     display: block !important;
-    a {
+  }
+  a {
+    color: var(--site-blue) !important;
+    font-size: 15px;
+    @include breakpoint(mobileonly) {
       float: right;
       margin-top: 15px;
-    }
-  }
-  .login-button-container {
-    text-align: center;
-    width: 100% !important;
-    button {
-      width: 90%;
-    }
-  }
-}
-@media only screen and (min-device-width: 834px) and (max-device-width: 1112px) and (-webkit-min-device-pixel-ratio: 2) {
-  .login-banner {
-    display: none;
-  }
-  .login-card {
-    max-width: 700px !important;
-    width: 90% !important;
-  }
-  .login-button-container {
-    width: 60% !important;
-    button {
-      width: 50%;
     }
   }
 }

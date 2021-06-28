@@ -1,3 +1,5 @@
+@import "../../../../assets/scss/site-variables.scss";
+
 .app-navbar {
   background-color: var(--site-blue);
   color: var(--site-white);
@@ -9,6 +11,10 @@
     height: 50px;
     width: 250px;
     margin-left: -20px;
+    @include breakpoint(mobileonly) {
+      clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%) !important;
+      width: 230px !important;
+    }
     .vl-blue {
       float: left;
       border-left: 2px solid var(--site-blue);
@@ -16,6 +22,20 @@
       margin-right: 5px !important;
       margin-left: 5px !important;
       margin-top: 10px !important;
+      @include breakpoint(mobileonly) {
+        margin-right: 1px !important;
+      }
+    }
+    a {
+      @include breakpoint(mobileonly) {
+        width: 230px !important;
+        padding: 0% !important;
+      }
+    }
+    img:nth-child(3) {
+      @include breakpoint(mobileonly) {
+        margin-right: 7px;
+      }
     }
   }
   .app-logo {
@@ -43,24 +63,6 @@
   margin: 0 auto;
 }
 
-@media only screen and (min-width: 300px) and (max-width: 600px) {
-  .app-brand {
-    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%) !important;
-  }
-  .app-brand {
-    width: 230px !important;
-    a {
-      width: 230px !important;
-      padding: 0% !important;
-    }
-    .vl-blue {
-      margin-right: 1px !important;
-    }
-    img:nth-child(3){
-      margin-right: 7px;
-    }
-  }
-}
 .footer {
   background-color: var(--site-blue);
   color: var(--site-white);

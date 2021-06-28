@@ -26,7 +26,7 @@ $pale-border: #271e12;
      @media (min-width: 64em) { @content ; }
   }
     @else if $point == tablet {
-     @media (min-width: 50em) { @content ; }
+     @media (min-device-width: 834px) and (max-device-width: 1112px) and (-webkit-min-device-pixel-ratio: 2) { @content ; }
   }
    @else if $point == phablet {
      @media (min-width: 37.5em)  { @content ; }
