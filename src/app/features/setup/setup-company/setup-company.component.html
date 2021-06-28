@@ -29,17 +29,17 @@
       </mat-card-actions>
     </mat-card>
     </form>
-    <mat-card class="mat-elevation-z8">
+    <mat-card class="mat-elevation-z10">
       <mat-card-content>
         <table mat-table [dataSource]="searchDataSource" class="mat-elevation-z8 search-table">
 
-          <!-- Name Column -->
+          <!-- Code Column -->
           <ng-container matColumnDef="companyCode">
             <th mat-header-cell *matHeaderCellDef> Company Code </th>
             <td mat-cell *matCellDef="let element"> {{element.companyCode}} </td>
           </ng-container>
 
-          <!-- Weight Column -->
+          <!-- Name Column -->
           <ng-container matColumnDef="companyName">
             <th mat-header-cell *matHeaderCellDef> Company Name </th>
             <td mat-cell *matCellDef="let element"> {{element.companyName}} </td>
