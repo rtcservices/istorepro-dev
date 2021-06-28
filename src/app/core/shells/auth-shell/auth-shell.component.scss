@@ -15,27 +15,14 @@
       clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%) !important;
       width: 230px !important;
     }
-    .vl-blue {
-      float: left;
-      border-left: 2px solid var(--site-blue);
-      height: 25px;
-      margin-right: 5px !important;
-      margin-left: 5px !important;
-      margin-top: 10px !important;
-      @include breakpoint(mobileonly) {
-        margin-right: 1px !important;
-      }
-    }
     a {
       @include breakpoint(mobileonly) {
         width: 230px !important;
         padding: 0% !important;
       }
     }
-    img:nth-child(3) {
-      @include breakpoint(mobileonly) {
-        margin-right: 7px;
-      }
+    img:nth-child(1) {
+      margin-left: 8px;
     }
   }
   .app-logo {
@@ -51,16 +38,6 @@
   display: block;
   height: calc(100% - 175px);
   width: 100%;
-}
-
-#left {
-  float: left;
-}
-#right {
-  float: right;
-}
-#center {
-  margin: 0 auto;
 }
 
 .footer {

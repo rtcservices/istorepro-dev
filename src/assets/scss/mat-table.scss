@@ -4,7 +4,7 @@
     background-color: $mat-primary;
     color: var(--site-white);
     border-left: 1px solid $site-white;
-    font-size: 18px;
+    font-size: 15px;
     padding-left: 10px !important;
     @include breakpoint(mobileonly) {
       font-size: 15px;

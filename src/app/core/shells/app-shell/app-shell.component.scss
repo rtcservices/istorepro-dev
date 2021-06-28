@@ -17,12 +17,10 @@
     height: 50px;
     width: 270px;
     .app-logo {
+      padding-left: 9px;
       width: 250px;
       background-color: var(--site-white);
-      clip-path: polygon(0 0, 100% 0%, calc(100% - 32px) 100%, 0% 100%);
-      @include breakpoint(phablet) {
-        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%) !important;
-      }
+      clip-path: polygon(0 0, 100% 0%, calc(100% - 32px) 100%, 0% 100%) !important;
       @include breakpoint(mobileonly) {
         clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%) !important;
         width: 165px !important;
@@ -33,21 +31,6 @@
           height: 35px !important;
           margin-top: 6px !important;
         }
-      }
-    }
-    .brand-spacer {
-      border-left: 2px solid var(--site-blue);
-      margin-left: 0.25rem;
-      margin-right: 0.25rem;
-      @include breakpoint(tablet) {
-        display: none;
-        margin: 0 !important;
-        padding: 0 !important;
-      }
-      @include breakpoint(mobileonly) {
-        display: none;
-        margin: 0 !important;
-        padding: 0 !important;
       }
     }
   }
@@ -217,4 +200,10 @@
   100% {
     -webkit-transform: rotateZ(0);
   }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 980px) {
+    a.app-logo {
+      clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%) !important;
+    }
 }
