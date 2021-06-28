@@ -27,6 +27,7 @@ import { AppComponent } from './app.component';
 import { NavListItemComponent } from './core/components/nav-list-item/nav-list-item.component';
 import { AuthShellComponent } from './core/shells/auth-shell/auth-shell.component';
 import { AppShellComponent } from './core/shells/app-shell/app-shell.component';
+import { LoadingComponent } from './core/components/loading/loading.component';
 
 export function httpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(
@@ -41,7 +42,8 @@ export function httpLoaderFactory(http: HttpClient) {
     AppComponent,
     NavListItemComponent,
     AuthShellComponent,
-    AppShellComponent
+    AppShellComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

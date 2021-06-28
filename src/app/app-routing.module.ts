@@ -83,6 +83,15 @@ const routes: Routes = [
     component: AppShellComponent,
     canActivateChild: [AuthGuard]
   },
+  {
+    path: 'user-account',
+    loadChildren: () =>
+      import('./features/user-account/user-account.module').then(
+        (m) => m.UserAccountModule
+      ),
+      component: AppShellComponent,
+      canActivateChild: [AuthGuard]
+  },
   { path: '**', redirectTo: 'auth/login' }
 ];
 

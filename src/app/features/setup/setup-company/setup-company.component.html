@@ -1,10 +1,11 @@
-<mat-tab-group>
+<mat-tab-group #setupCompanyTab>
   <mat-tab label="Data">
 
   </mat-tab>
   <mat-tab label="Search">
-    <div class="filter high-shadow">
-      <form fxLayout="column" [formGroup]="searchCompanyForm">
+    <form fxLayout="column" [formGroup]="searchCompanyForm">
+    <mat-card>
+      <mat-card-content>
         <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
           <mat-form-field appearance="standard" fxFlex>
             <mat-label>{{ 'setup.company.companyCode' | translate }}</mat-label>
@@ -18,13 +19,17 @@
               formControlName="companyName">
             <mat-error *ngIf="searchCompanyFormControls.companyName.invalid">{{'setup.company.invalidCompanyName' | translate}}</mat-error>
           </mat-form-field>
-          <div fxflex fxLayoutAlign.gt-sm="end center" class="filter-button-container">
-            <button mat-raised-button color="primary"><mat-icon>search</mat-icon>{{'general.search' | translate}}</button>
-            <button mat-raised-button color="accent"><mat-icon>restore_page</mat-icon>{{'general.clear' | translate}}</button>
-          </div>
         </div>
-      </form>
-    </div>
+      </mat-card-content>
+      <mat-card-actions>
+      <div fxLayoutAlign="end center" class="form-four-button-container">
+        <button mat-raised-button color="primary"><mat-icon>search</mat-icon></button>
+        <button mat-raised-button color="accent"><mat-icon>restart_alt</mat-icon></button>
+      </div>
+      </mat-card-actions>
+    </mat-card>
+    </form>
+    <button mat-raised-button (click)="searchItemClick()">Data</button>
 
     <!-- <table
     mat-table

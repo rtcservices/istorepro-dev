@@ -64,9 +64,10 @@
     "adminConsistency": "一貫性",
     "adminLoginAudit": "ログイン監査",
     "adminAuditTrail": "監査証跡",
+    "userAccount": "ユーザーアカウント",
+    "userAccountProfile": "プロフィール",
     "notifications": "通知",
     "settings": "設定",
-    "settingsProfile": "プロフィール",
     "logout": "ログアウト"
   },
   "setup":{

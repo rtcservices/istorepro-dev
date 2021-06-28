@@ -1,0 +1,44 @@
+@mixin align-center {
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+.loading-overlay {
+  @include align-center;
+	background: rgba(0,0,0,.8);
+	display: flex;
+	z-index: var(--z-overlay);
+  overflow: hidden;
+  .logo {
+    @include align-center;
+    height: 100px;
+    width: 100px;
+    background: url(../../../../assets/images/be-spinner-logo.png) center center no-repeat;
+  }
+  .spinner {
+    @include align-center;
+    height: 200px;
+    width: 200px;
+    animation: rotate 2s linear infinite;
+    transform-origin: center center;
+    .path {
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0;
+      animation: dash 1.5s ease-in-out infinite;
+      stroke-linecap: round;
+      stroke: #ddd;
+    }
+  }
+  .text {
+    @include align-center;
+    color: var(--site-white);
+    font-size: 1.2rem;
+    height: 100px;
+    padding-top: 200px;
+    text-align: center;
+    width: 350px;
+  }
+}

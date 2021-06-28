@@ -1,0 +1,47 @@
+/*VARIABLES*/
+
+$mat-primary: #014789;
+$mat-accent: #be235f;
+$mat-warn: #f44336;
+
+$logo-red: #bd1f65;
+$logo-blue: #449ad1;
+$logo-green: #5b863b;
+$logo-gray: #e6e6e6;
+$logo-black: #231f20;
+
+$site-black: rgba(0, 0, 0, 0.87);
+$site-white: #fff;
+$site-bg-white: #fafafa;
+
+$pale-border: #271e12;
+
+/*BREAKPOINTS*/
+
+ @mixin breakpoint($point) {
+   @if $point == desktop {
+     @media (min-width: 70em) { @content ; }
+  }
+   @else if $point == laptop {
+     @media (min-width: 64em) { @content ; }
+  }
+    @else if $point == tablet {
+     @media (min-width: 50em) { @content ; }
+  }
+   @else if $point == phablet {
+     @media (min-width: 37.5em)  { @content ; }
+  }
+  @else if $point == mobileonly {
+     @media (max-width: 37.5em)  { @content ; }
+
+  }
+}
+
+/*Z-INDEX*/
+$zindex: (
+  modal     : 9000,
+  overlay   : 8000,
+  dropdown  : 7000,
+  header    : 6000,
+  footer    : 5000
+);

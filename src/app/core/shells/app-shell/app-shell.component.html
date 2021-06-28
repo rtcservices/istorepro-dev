@@ -78,6 +78,14 @@
   </div>
   <span class="spacer"></span>
   <button mat-icon-button
+    [matTooltip]="userAccountTranslated"
+    [matMenuTriggerFor]="userAccountMenu">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <mat-menu #userAccountMenu="matMenu" backdropClass="top-menu">
+    <a mat-menu-item routerLinkActive="active-link" [routerLink]="['/account/profile']">{{'menu.userAccountProfile' | translate}}</a>
+  </mat-menu>
+  <button mat-icon-button
     [matTooltip]="notificationsTranslated"
     [matMenuTriggerFor]="notificationMenu">
     <mat-icon class="bell">notifications</mat-icon>
@@ -91,13 +99,10 @@
     </div>
   </mat-menu>
   <button mat-icon-button
-    [matTooltip]="settingsTranslated"
-    [matMenuTriggerFor]="settingsMenu">
+    [matTooltip]="settingsTranslated">
     <mat-icon class="settings">settings</mat-icon>
   </button>
-  <mat-menu #settingsMenu="matMenu" backdropClass="top-menu">
-    <a mat-menu-item routerLinkActive="active-link" [routerLink]="['/settings/profile']">{{'menu.settingsProfile' | translate}}</a>
-  </mat-menu>
+
   <button mat-icon-button class="logout-button"
     [matTooltip]="logoutTranslated"
     (click)="logout()">
@@ -114,3 +119,5 @@
     <router-outlet #outlet="outlet" class="app-container"></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
+
+<rtc-loading></rtc-loading>
