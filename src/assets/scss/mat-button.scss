@@ -1,0 +1,10 @@
+@import './site-variables.scss';
+.primary-button {
+  background-color: $mat-primary;
+}
+.red-button {
+  background-color: $mat-warn;
+}
+.green-button {
+  background-color: $logo-green;
+}
