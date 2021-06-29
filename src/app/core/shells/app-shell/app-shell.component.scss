@@ -45,6 +45,7 @@
     margin-left: 20px;
     @include breakpoint(tablet) {
       width: 50% !important;
+      margin-left: 0 !important;
     }
     & > button[mat-button] {
       transition: all 0.25s ease;
@@ -212,5 +213,9 @@
 @media only screen and (min-width: 1020px) and (max-width: 1410px) {
   .app-brand {
     width: 383px !important;
+  }
+  .menu-bar  > button[mat-button] {
+    margin: 0 !important;
+    padding: 03px !important;
   }
 }
