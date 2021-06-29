@@ -25,6 +25,9 @@
         clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%) !important;
         width: 165px !important;
       }
+      @include breakpoint(tablet) {
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%) !important;
+      }
       img {
         height: 50px;
         @include breakpoint(mobileonly) {
@@ -40,10 +43,11 @@
     }
     & > button[mat-button] {
       transition: all 0.25s ease;
+      margin-right: 5px !important;
       @include breakpoint(tablet) {
         min-width: 0px;
         line-height: 0px;
-        padding: 2.5px;
+        padding: 2.5px;       
       }
       &:hover,
       &.active {
@@ -202,8 +206,8 @@
   }
 }
 
-@media only screen and (min-width: 600px) and (max-width: 980px) {
-    a.app-logo {
-      clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%) !important;
-    }
-}
+// @media only screen and (min-width: 600px) and (max-width: 980px) {
+//     a.app-logo {
+//       clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%) !important;
+//     }
+// }
