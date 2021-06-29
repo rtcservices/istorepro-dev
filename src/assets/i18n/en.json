@@ -13,7 +13,8 @@
   },
   "error": {
     "form": "Form has invalid entries",
-    "field": "Field has invalid entries"
+    "field": "Invalid entry",
+    "filter": "Enter atleast one filter"
   },
   "login": {
     "title": "Sign In",
