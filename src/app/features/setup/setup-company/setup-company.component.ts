@@ -20,8 +20,8 @@ import { TitleService } from '../../../services/title.service';
 export class SetupCompanyComponent implements OnInit {
 
   @ViewChild("setupCompanyTab", { static: false }) setupCompanyTab!: MatTabGroup;
-  searchCompanyForm! : FormGroup;
 
+  searchCompanyForm! : FormGroup;
   searchDataSource: SetupCompanyModel[] = [];
   dummySearchModel: SetupCompanyModel[] = [
     { companyCode: 'GEM1234', companyName: 'Gemini Software' },
@@ -34,13 +34,15 @@ export class SetupCompanyComponent implements OnInit {
   ];
 
   dataCompanyForm!: FormGroup;
-  dummyDataModel: SetupCompanyModel = { companyCode: 'GEM1234', companyName: 'Gemini Software' };
   companyDataModel!: SetupCompanyModel;
+  dummyDataModel: SetupCompanyModel = { companyCode: 'GEM1234', companyName: 'Gemini Software' };
 
   displayedColumns = [
     'companyCode',
     'companyName'
   ];
+
+  sectors = ['Sector 1', 'Sector 2', 'Sector 3', 'Sector 4', 'Sector 5', ]
 
   formErrorTranslated = '';
   codeOrNameErrorTranslated = '';
@@ -72,14 +74,14 @@ export class SetupCompanyComponent implements OnInit {
     this.dataCompanyForm = this.fb.group({
       companyCode : ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       companyName : ['', [Validators.required, Validators.pattern(patternsHelper.alphanumeric)]],
-      address1 : ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      address1 : ['', [Validators.required, Validators.pattern(patternsHelper.alphanumeric)]],
       address2 : ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       address3 : ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       address4 : ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       telephone : ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       fax : ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       sector : ['', [Validators.pattern(patternsHelper.alphanumeric)]],
-      email : ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      email : ['', [Validators.required, Validators.pattern(patternsHelper.alphanumeric)]],
       contactPerson : ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       website : ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       suspendOperation : false,
