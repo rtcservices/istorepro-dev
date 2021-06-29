@@ -1,6 +1,6 @@
 <mat-tab-group #setupCompanyTab>
   <mat-tab label="Data">
-    <div fxLayout="row" fxLayout.sm="column" fxFlexFill>
+    <div fxLayout="row" fxLayout.sm="column" fxLayoutAlign="stretch" fxLayoutGap="5px" class="company-data">
       <div fxFlex="70%">
         <form fxLayout="column" [formGroup]="dataCompanyForm" (ngSubmit)="onDataCompanySubmit()">
           <mat-card>
@@ -85,7 +85,37 @@
         </form>
       </div>
       <div fxFlex="30%">
-        LOGO GOES HERE
+        <mat-card fxLayout="column" class="h-100">
+          <div fxFlex fxLayoutAlign="center center">
+            <div class="company-logo">
+              <h2>Company Logo</h2>
+              <img [src]="companyLogo"/>
+            </div>
+          </div>
+          <div fxFlex="120px" fxLayoutAlign=" end">
+            <table class="site-table w-100">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Available</th>
+                  <th>Used</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>WH</td>
+                  <td>100</td>
+                  <td>47</td>
+                </tr>
+                <tr>
+                  <td>User</td>
+                  <td>100</td>
+                  <td>47</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </mat-card>
       </div>
     </div>
   </mat-tab>

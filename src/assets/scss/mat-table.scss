@@ -10,9 +10,10 @@
       font-size: 15px;
     }
 }
+
 .mat-cell{
-    border-left: 1px solid #e0e0e0;
-    border-right: 1px solid #e0e0e0;
+    border-left: 1px solid $pale-border;
+    border-right: 1px solid $pale-border;
     padding-left: 10px !important;
 }
 .empty-table {
@@ -30,4 +31,15 @@ tr.mat-header-row {
 
 tr.mat-row {
   height: 30px !important;
+}
+.site-table {
+  border-collapse: collapse;
+}
+.site-table th {
+  background-color: $mat-primary;
+  color: $site-white;
+  border: 1px solid $site-white;
+}
+.site-table td{
+  border: 1px solid $pale-border;
 }
