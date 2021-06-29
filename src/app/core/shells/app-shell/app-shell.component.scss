@@ -15,15 +15,14 @@
   .app-brand {
     display: flex;
     height: 50px;
-    width: 270px;
+    width: 345px;
     .app-logo {
       padding-left: 9px;
-      width: 250px;
+      width: 100%;
       background-color: $site-white;
       clip-path: polygon(0 0, 100% 0%, calc(100% - 32px) 100%, 0% 100%) !important;
       @include breakpoint(mobileonly) {
         clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%) !important;
-        width: 165px !important;
       }
       @include breakpoint(tablet) {
         clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%) !important;
@@ -31,8 +30,8 @@
       img {
         height: 50px;
         @include breakpoint(mobileonly) {
-          height: 35px !important;
-          margin-top: 6px !important;
+          height: 26px !important;
+          margin-top: 13px !important;
         }
       }
     }
@@ -47,7 +46,7 @@
       @include breakpoint(tablet) {
         min-width: 0px;
         line-height: 0px;
-        padding: 2.5px;       
+        padding: 2.5px;
       }
       &:hover,
       &.active {
@@ -65,7 +64,7 @@
   }
 }
 
-.user-avatar{
+.user-avatar {
   border-radius: 50%;
 }
 
