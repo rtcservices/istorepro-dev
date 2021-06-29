@@ -137,7 +137,7 @@ export class SetupCompanyComponent implements OnInit {
       setTimeout(() => {
         this.searchDataSource = [...this.dummySearchModel];
         this.loader.hide();
-      }, 1500);
+      }, 500);
     }
   }
   clearSearch() {

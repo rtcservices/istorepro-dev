@@ -1,13 +1,27 @@
 @import './variables.scss';
+.link-button {
+  &:hover {
+    text-decoration: underline;
+  }
+}
 .primary-button {
+  color: $site-primary;
+}
+.red-button {
+  color: $site-warn;
+}
+.green-button {
+  color: $logo-green;
+}
+.primary-raised-button {
   background-color: $site-primary;
   color: $site-white;
 }
-.red-button {
+.red-raised-button {
   background-color: $site-warn;
   color: $site-white;
 }
-.green-button {
+.green-raised-button {
   background-color: $logo-green;
   color: $site-white;
 }

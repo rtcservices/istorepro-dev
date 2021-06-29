@@ -172,13 +172,13 @@
       <mat-card>
         <mat-card-content>
           <div class="form-three-button-container">
-            <button mat-raised-button class="primary-button" type="submit" (click)="saveCompanyData()">
+            <button mat-raised-button class="primary-raised-button" type="submit" (click)="saveCompanyData()">
               <mat-icon>task_alt</mat-icon>
             </button>
-            <button mat-raised-button class="red-button" type="button" (click)="deleteCompanyData()">
+            <button mat-raised-button class="red-raised-button" type="button" (click)="deleteCompanyData()">
               <mat-icon>remove_circle_outline</mat-icon>
             </button>
-            <button mat-raised-button class="green-button" type="reset" (click)="clearCompanyData()">
+            <button mat-raised-button class="green-raised-button" type="reset" (click)="clearCompanyData()">
               <mat-icon>loop</mat-icon>
             </button>
           </div>
@@ -213,10 +213,10 @@
       <mat-card class="search-container">
         <mat-card-content>
           <div class="form-button-container">
-            <button mat-raised-button class="primary-button" type="submit">
+            <button mat-raised-button class="primary-raised-button" type="submit">
               <mat-icon>search</mat-icon>
             </button>
-            <button mat-raised-button class="green-button" type="reset" (click)="clearSearch()">
+            <button mat-raised-button class="green-raised-button" type="reset" (click)="clearSearch()">
               <mat-icon>restart_alt</mat-icon>
             </button>
           </div>
@@ -228,10 +228,9 @@
         <table mat-table [dataSource]="searchDataSource" class="mat-elevation-z8 search-table">
           <ng-container matColumnDef="companyCode">
             <th mat-header-cell *matHeaderCellDef>Company Code</th>
-            <td mat-cell *matCellDef="let element">
-              <a href="#">
-                {{ element.companyCode }}
-              </a>
+            <td mat-cell *matCellDef="let element; let idx=index">
+              <button mat-button disableRipple class="primary-button link-button"
+                (click)="onViewCompany($event, element, idx)">{{ element.companyCode }}</button>
             </td>
           </ng-container>
           <ng-container matColumnDef="companyName">
