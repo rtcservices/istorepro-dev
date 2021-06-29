@@ -39,8 +39,7 @@ export class SetupCompanyComponent implements OnInit {
 
   displayedColumns = [
     'companyCode',
-    'companyName',
-    'action'
+    'companyName'
   ];
 
   formErrorTranslated = '';
