@@ -1,27 +1,6 @@
 @import './assets/scss/variables.scss';
 @import './assets/scss/mat-table.scss';
 @import './assets/scss/mat-header-nav.scss';
-// :root {
-//   --grey-logo-color: rgba(230, 230, 230, 1);
-//   --pink-logo-color: rgba(189, 31, 101, 1);
-//   --green-logo-color: rgba(91, 134, 59, 1);
-//   --blue-logo-color: rgba(68, 154, 209, 1);
-//   --black-logo-color: rgba(35, 31, 32, 1);
-
-//   --mat-primary: #014789;
-//   --mat-accent: #014789;
-//   --mat-danger: #014789;
-
-//   --site-blue: rgb(1, 71, 137);
-//   --site-hover-blue: rgb(1, 71, 137, 0.5);
-//   --site-white: #fff;
-//   --site-gray: #6c757d;
-//   --site-light: #f8f9fa;
-//   --site-dark: #212529;
-
-//   --z-overlay: 8000;
-//   --z-modal: 9000;
-// }
 * {
   box-sizing: border-box;
 }
