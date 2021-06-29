@@ -1,5 +1,3 @@
-
-
 .top-menu + * {
   .mat-menu-panel {
     a.mat-menu-item {
@@ -18,7 +16,7 @@
 .side-nav {
   .mat-list-item-content {
     .mat-leaf-node {
-      color: $mat-primary;
+      color: $site-primary;
       &:hover,
       &.active-link {
         color: $site-white;

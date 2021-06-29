@@ -1,23 +1,23 @@
 @import './variables.scss';
 
-.mat-header-cell{
-    background-color: $mat-primary;
-    color: $site-white;
-    border-left: 1px solid $site-white;
+.mat-header-cell {
+  background-color: $site-primary;
+  color: $site-white;
+  border-left: 1px solid $site-white;
+  font-size: 15px;
+  padding-left: 10px !important;
+  @include breakpoint(mobileonly) {
     font-size: 15px;
-    padding-left: 10px !important;
-    @include breakpoint(mobileonly) {
-      font-size: 15px;
-    }
+  }
 }
 
-.mat-cell{
-    border-left: 1px solid $pale-border;
-    border-right: 1px solid $pale-border;
-    padding-left: 10px !important;
+.mat-cell {
+  border-left: 1px solid $site-light-gray;
+  border-right: 1px solid $site-light-gray;
+  padding-left: 10px !important;
 }
 .empty-table {
-  border: 1px solid $pale-border;
+  border: 1px solid $site-light-gray;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,11 +35,16 @@ tr.mat-row {
 .site-table {
   border-collapse: collapse;
 }
-.site-table th {
-  background-color: $mat-primary;
-  color: $site-white;
-  border: 1px solid $site-white;
+.site-table th,
+.site-table td {
+  padding-left: 0.25rem;
 }
-.site-table td{
-  border: 1px solid $pale-border;
+.site-table th {
+  color: $site-white;
+  background-color: $site-primary;
+  border: 1px solid $site-white;
+  text-align: left;
+}
+.site-table td {
+  border: 1px solid $site-light-gray;
 }

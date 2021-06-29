@@ -188,7 +188,7 @@
   </mat-tab>
   <mat-tab label="Search">
     <form fxLayout="column" [formGroup]="searchCompanyForm" (ngSubmit)="onSearchCompanySubmit()" class="slim-form">
-      <mat-card>
+      <mat-card class="filter-container">
         <mat-card-content>
           <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
             <mat-form-field appearance="outline" fxFlex>
@@ -210,9 +210,9 @@
           </div>
         </mat-card-content>
       </mat-card>
-      <mat-card>
+      <mat-card class="search-container">
         <mat-card-content>
-          <div class="form-four-button-container">
+          <div class="form-button-container">
             <button mat-raised-button class="primary-button" type="submit">
               <mat-icon>search</mat-icon>
             </button>
@@ -244,9 +244,9 @@
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
           <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
         </table>
-        <div *ngIf="searchDataSource.length === 0" class="empty-table">
+        <small *ngIf="searchDataSource.length === 0" class="empty-table">
           No records found
-        </div>
+        </small>
       </mat-card-content>
     </mat-card>
   </mat-tab>
