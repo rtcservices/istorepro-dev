@@ -89,7 +89,8 @@
           <div fxFlex fxLayoutAlign="center center">
             <div class="company-logo">
               <h2>Company Logo</h2>
-              <img [src]="companyLogo"/>
+              <img [src]="companyLogo" (click)="file.click()"/>
+              <input type="file" style="display:none" #file/> 
             </div>
           </div>
           <div fxFlex="120px" fxLayoutAlign=" end">
@@ -179,3 +180,17 @@
     </mat-card>
   </mat-tab>
 </mat-tab-group>
+<script>
+  function myFunction() {
+    alert('click event occured');
+}
+  window.onload = function () {
+    console.log("test");
+      var fileupload = document.getElementById("companyLogoUpload");
+      var image = document.getElementById("companyLogo");
+      image.onclick = function () {
+        console.log("");
+          fileupload.click();
+      };
+  };
+</script>
