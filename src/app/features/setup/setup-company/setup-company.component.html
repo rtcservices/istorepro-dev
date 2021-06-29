@@ -1,6 +1,6 @@
 <mat-tab-group #setupCompanyTab>
   <mat-tab label="Data">
-    <div fxLayout="row" fxLayout.sm="column" fxLayoutAlign="stretch" fxLayoutGap="5px" class="company-data">
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="stretch" fxLayoutGap="5px" class="company-data">
       <div fxFlex="70%">
         <form fxLayout="column" [formGroup]="dataCompanyForm" (ngSubmit)="onDataCompanySubmit()">
           <mat-card>
