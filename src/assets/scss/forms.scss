@@ -1,0 +1,19 @@
+@import './variables.scss';
+
+
+.form-button-container {
+  button {
+    @include breakpoint(mobileonly) {
+      width: 33%;
+    }
+  }
+}
+
+.form-four-button-container {
+  margin-bottom: 6px;
+  button {
+    @include breakpoint(mobileonly) {
+      width: 25%;
+    }
+  }
+}

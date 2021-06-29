@@ -1,0 +1,29 @@
+
+
+.top-menu + * {
+  .mat-menu-panel {
+    a.mat-menu-item {
+      transition: all 0.25s ease;
+      transform: scale(0.9);
+      &:hover,
+      &.active-link {
+        color: var(--site-white);
+        background-color: var(--blue-logo-color);
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+.side-nav {
+  .mat-list-item-content {
+    .mat-leaf-node {
+      color: var(--mat-primary);
+      &:hover,
+      &.active-link {
+        color: var(--site-white);
+        background-color: var(--blue-logo-color);
+      }
+    }
+  }
+}
