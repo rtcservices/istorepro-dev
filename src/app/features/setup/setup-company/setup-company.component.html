@@ -188,71 +188,73 @@
               <input type="file" style="display: none" #file />
             </div>
           </div>
-          <div fxFlex="120px" fxLayoutGap="5px" class="pt-1 top-border">
-            <div fxFlex="49">
-              <p>{{ 'general.license' | translate }}</p>
-              <table class="site-table w-100">
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th>{{ 'general.available' | translate }}</th>
-                    <th>{{ 'general.used' | translate }}</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>{{ 'general.user' | translate }}</td>
-                    <td>100</td>
-                    <td>47</td>
-                  </tr>
-                  <tr>
-                    <td>{{ 'general.warehouse' | translate }}</td>
-                    <td>100</td>
-                    <td>47</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div fxFlex="49">
-              <form
-                fxLayout="column"
-                [formGroup]="dataCompanyForm"
-                class="slim-form"
-              >
-                <mat-checkbox formControlName="licenseSubscriptionAlert">{{
-                  'setup.company.licenseSubscriptionAlert' | translate
-                }}</mat-checkbox>
-
-                <div fxLayout="row" fxLayoutGap="2px" style="height: 40px">
-                  <mat-form-field appearance="outline" fxFlex="70">
-                    <mat-label>{{
-                      'setup.company.licenseAlertLimit' | translate
-                    }}</mat-label>
-                    <input
-                      matInput
-                      type="text"
-                      formControlName="licenseAlertLimit"
-                    />
-                  </mat-form-field>
-                  <mat-form-field appearance="outline" fxFlex="29">
-                    <mat-select
-                      type="text"
-                      formControlName="licenseAlertLimitType"
-                    >
-                      <mat-option value=""></mat-option>
-                      <mat-option value="days">DAYS</mat-option>
-                    </mat-select>
-                  </mat-form-field>
-                </div>
-                <mat-form-field
-                  appearance="outline"
-                  fxFlex="32"
-                  style="margin-top: 0"
+          <div fxFlex="120px" fxFlex.lt-md="220px" class="pt-1 top-border">
+            <div fxLayout.lt-md="column" fxLayoutGap="5px">
+              <div fxFlex="49">
+                <p>{{ 'general.license' | translate }}</p>
+                <table class="site-table w-100">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>{{ 'general.available' | translate }}</th>
+                      <th>{{ 'general.used' | translate }}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>{{ 'general.user' | translate }}</td>
+                      <td>100</td>
+                      <td>47</td>
+                    </tr>
+                    <tr>
+                      <td>{{ 'general.warehouse' | translate }}</td>
+                      <td>100</td>
+                      <td>47</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div fxFlex="49">
+                <form
+                  fxLayout="column"
+                  [formGroup]="dataCompanyForm"
+                  class="slim-form"
                 >
-                  <mat-label>{{ 'general.email' | translate }}</mat-label>
-                  <input matInput type="text" formControlName="licenseEmail" />
-                </mat-form-field>
-              </form>
+                  <mat-checkbox formControlName="licenseSubscriptionAlert">{{
+                    'setup.company.licenseSubscriptionAlert' | translate
+                  }}</mat-checkbox>
+
+                  <div fxLayout="row" fxLayoutGap="2px" style="height: 40px">
+                    <mat-form-field appearance="outline" fxFlex="70">
+                      <mat-label>{{
+                        'setup.company.licenseAlertLimit' | translate
+                      }}</mat-label>
+                      <input
+                        matInput
+                        type="text"
+                        formControlName="licenseAlertLimit"
+                      />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" fxFlex="29">
+                      <mat-select
+                        type="text"
+                        formControlName="licenseAlertLimitType"
+                      >
+                        <mat-option value=""></mat-option>
+                        <mat-option value="days">DAYS</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                  <mat-form-field
+                    appearance="outline"
+                    fxFlex="32"
+                    style="margin-top: 0"
+                  >
+                    <mat-label>{{ 'general.email' | translate }}</mat-label>
+                    <input matInput type="text" formControlName="licenseEmail" />
+                  </mat-form-field>
+                </form>
+              </div>
             </div>
           </div>
         </mat-card>
