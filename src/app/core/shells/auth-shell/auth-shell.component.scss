@@ -15,6 +15,9 @@
       clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%) !important;
       width: 230px !important;
     }
+    @include breakpoint(tablet) {
+      clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%) !important;
+    }
     a {
       @include breakpoint(mobileonly) {
         width: 230px !important;
