@@ -1,18 +1,30 @@
 @import '../../../../assets/scss/buttons.scss';
-
-.search-table{
+@import '../../../../assets/scss/variables.scss';
+.search-table {
   width: 100%;
 }
 .mat-column-action {
   width: 50px;
 }
-.company-data{
+.company-data {
   padding-bottom: 2px;
   padding-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 .company-logo {
-  text-align: center;
   img {
     cursor: pointer;
+    border: 1px solid $pale-border;
+    padding: 0.25rem;
+    &:hover {
+      border-color: $site-black;
+    }
   }
+}
+.license,
+.license-subscription {
+  border: 1px solid $pale-border;
+  margin-top: 0.25rem;
+  padding: 0.25rem;
 }

@@ -4,13 +4,16 @@
   font-size: 12px;
 }
 
-.slim-form mat-form-field.mat-form-field.mat-form-field-appearance-outline
+.slim-form
+  mat-form-field.mat-form-field.mat-form-field-appearance-outline
   > div.mat-form-field-wrapper
   > div.mat-form-field-flex
   > div.mat-form-field-infix {
   padding: 0.4em 0px;
 }
-.slim-form mat-form-field.mat-form-field.mat-form-field-appearance-outline
+
+.slim-form
+  mat-form-field.mat-form-field.mat-form-field-appearance-outline
   > div.mat-form-field-wrapper
   > div.mat-form-field-flex
   > div.mat-form-field-infix
@@ -18,7 +21,8 @@
   top: -1.5em;
 }
 
-.slim-form .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
+.slim-form
+  .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
   .mat-form-field-label {
   transform: translateY(-1.1em) scale(0.75);
   width: 133.33333%;
@@ -29,7 +33,19 @@
 }
 
 .form-button-container {
+  text-align: right;
   button {
+    margin-left: 0.5rem;
+    @include breakpoint(mobileonly) {
+      width: 33%;
+    }
+  }
+}
+
+.form-three-button-container {
+  text-align: right;
+  button {
+    margin-left: 0.5rem;
     @include breakpoint(mobileonly) {
       width: 33%;
     }
@@ -37,8 +53,9 @@
 }
 
 .form-four-button-container {
-  margin-bottom: 6px;
+  text-align: right;
   button {
+    margin-left: 0.5rem;
     @include breakpoint(mobileonly) {
       width: 25%;
     }

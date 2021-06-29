@@ -1,6 +1,7 @@
 @import './assets/scss/variables.scss';
 @import './assets/scss/mat-forms.scss';
 @import './assets/scss/mat-table.scss';
+@import './assets/scss/utilities.scss';
 @import './assets/scss/mat-header-nav.scss';
 * {
   box-sizing: border-box;
@@ -15,15 +16,6 @@ body {
   font-size: 16px;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
   margin: 0;
-}
-.h-100 {
-  height: 100%;
-}
-.w-100 {
-  width: 100%;
-}
-.pt-1 {
-  padding-top: .25rem;
 }
 .top-border {
   border-top: 1px solid $pale-border;
@@ -40,9 +32,10 @@ body {
     0 24px 38px 3px rgb(0 0 0 / 14%), 0 9px 46px 8px rgb(0 0 0 / 12%) !important;
 }
 .high-red-shadow {
-  box-shadow: 0 11px 15px -7px rgb(189 31 101 / 20%), 0 24px 38px 3px rgb(189 31 101 / 14%), 0 9px 46px 8px rgb(189 31 101 / 12%) !important;
+  box-shadow: 0 11px 15px -7px rgb(189 31 101 / 20%),
+    0 24px 38px 3px rgb(189 31 101 / 14%), 0 9px 46px 8px rgb(189 31 101 / 12%) !important;
 }
 
-.high-blue-border{
+.high-blue-border {
   border: 1px solid $mat-primary;
 }
