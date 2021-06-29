@@ -9,7 +9,12 @@
     "save": "セーブ0",
     "search": "探す",
     "update": "更新",
-    "copyright": "全著作権所有"
+    "copyright": "全著作権所有",
+    "user": "ユーザー",
+    "warehouse": "倉庫",
+    "available": "利用可能",
+    "used": "中古",
+    "email": "Eメール"
   },
   "error": {
     "form": "フォームに無効なエントリがあります",
@@ -94,9 +99,9 @@
       "website" : "ウェブサイト",
       "suspendOperation" : "操作を一時停止します",
       "companyLogo" : "会社のロゴ",
-      "whAvailableUsed" : "WH利用可能/使用済み",
-      "userAvailableUsed" : "利用可能な/使用されたユーザー",
-      "licenseAlertEmail" : "ライセンスアラートメール"
+      "license" : "ライセンス",
+      "licenseSubscriptionAlert" : "ライセンス/サブスクリプションアラート？",
+      "licenseAlertLimit" : "アラート制限"
     }
   }
 }
