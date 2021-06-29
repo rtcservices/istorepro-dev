@@ -1,4 +1,5 @@
 @import './assets/scss/variables.scss';
+@import './assets/scss/mat-forms.scss';
 @import './assets/scss/mat-table.scss';
 @import './assets/scss/mat-header-nav.scss';
 * {
@@ -20,6 +21,12 @@ body {
 }
 .w-100 {
   width: 100%;
+}
+.pt-1 {
+  padding-top: .25rem;
+}
+.top-border {
+  border-top: 1px solid $pale-border;
 }
 .spacer {
   flex: 1 1 auto;

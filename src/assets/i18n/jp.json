@@ -15,11 +15,8 @@
     "available": "利用可能",
     "used": "中古",
     "email": "Eメール",
-    "license": {
-      "license" : "ライセンス",
-      "licenseSubscriptionAlert" : "ライセンス/サブスクリプションアラート？",
-      "licenseAlertLimit" : "アラート制限"
-    }
+    "license": "ライセンス",
+    "security": "セキュリティ"
   },
   "error": {
     "form": "フォームに無効なエントリがあります",
@@ -103,7 +100,9 @@
       "contactPerson" : "連絡窓口",
       "website" : "ウェブサイト",
       "suspendOperation" : "操作を一時停止します",
-      "companyLogo" : "会社のロゴ"
+      "companyLogo" : "会社のロゴ",
+      "licenseSubscriptionAlert" : "ライセンス/サブスクリプションアラート？",
+      "licenseAlertLimit" : "アラート制限"
     }
   }
 }

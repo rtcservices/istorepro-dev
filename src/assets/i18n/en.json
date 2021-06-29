@@ -15,11 +15,8 @@
     "available": "Available",
     "used": "Used",
     "email": "E-mail",
-    "license": {
-      "license": "License",
-      "licenseSubscriptionAlert": "License/Subscription Alert ?",
-      "licenseAlertLimit": "Alert Limit"
-    }
+    "license":"License",
+    "security": "Security"
   },
   "error": {
     "form": "Form has invalid entries",
@@ -103,7 +100,9 @@
       "contactPerson": "Contact Person",
       "website": "Website",
       "suspendOperation": "Suspend Operation",
-      "companyLogo": "Company Logo"
+      "companyLogo": "Company Logo",
+      "licenseSubscriptionAlert": "License/Subscription Alert ?",
+      "licenseAlertLimit": "Alert Limit"
     }
   }
 }

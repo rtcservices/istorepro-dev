@@ -87,6 +87,10 @@ export class SetupCompanyComponent implements OnInit {
       website : ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       suspendOperation : false,
       companyLogo : '',
+      licenseSubscriptionAlert : false,
+      licenseAlertLimit : '',
+      licenseAlertLimitType : 'days',
+      licenseEmail : '',
     });
   }
   get dataCompanyFormControls() {
