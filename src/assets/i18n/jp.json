@@ -14,7 +14,12 @@
     "warehouse": "倉庫",
     "available": "利用可能",
     "used": "中古",
-    "email": "Eメール"
+    "email": "Eメール",
+    "license": {
+      "license" : "ライセンス",
+      "licenseSubscriptionAlert" : "ライセンス/サブスクリプションアラート？",
+      "licenseAlertLimit" : "アラート制限"
+    }
   },
   "error": {
     "form": "フォームに無効なエントリがあります",
@@ -98,10 +103,7 @@
       "contactPerson" : "連絡窓口",
       "website" : "ウェブサイト",
       "suspendOperation" : "操作を一時停止します",
-      "companyLogo" : "会社のロゴ",
-      "license" : "ライセンス",
-      "licenseSubscriptionAlert" : "ライセンス/サブスクリプションアラート？",
-      "licenseAlertLimit" : "アラート制限"
+      "companyLogo" : "会社のロゴ"
     }
   }
 }
