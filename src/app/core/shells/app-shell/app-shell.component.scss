@@ -210,8 +210,8 @@
   }
 }
 
-// @media only screen and (min-width: 600px) and (max-width: 980px) {
-//     a.app-logo {
-//       clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%) !important;
-//     }
-// }
+@media only screen and (min-width: 1020px) and (max-width: 1410px) {
+  .app-brand {
+      width: 383px !important;
+    }
+}
