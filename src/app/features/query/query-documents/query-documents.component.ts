@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'rtc-query-documents',
+  selector: 'ibe-query-documents',
   templateUrl: './query-documents.component.html',
   styleUrls: ['./query-documents.component.scss']
 })

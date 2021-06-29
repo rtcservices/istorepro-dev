@@ -6,7 +6,7 @@ import { SiteGeolocationPosition } from './models/geolocation-position.model';
 import { SiteTranslateService } from './services/site-translate.service';
 
 @Component({
-  selector: 'rtc-root',
+  selector: 'ibe-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

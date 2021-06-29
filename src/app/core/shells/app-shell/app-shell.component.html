@@ -111,7 +111,7 @@
 <mat-sidenav-container class="site-container">
   <mat-sidenav #sidenav class="side-nav">
     <mat-nav-list *ngIf="headerNavItems">
-      <rtc-nav-list-item *ngFor="let item of headerNavItems" [item]="item"></rtc-nav-list-item>
+      <ibe-nav-list-item *ngFor="let item of headerNavItems" [item]="item"></ibe-nav-list-item>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content [@routeAnimations]="prepareRoute(outlet)">
@@ -119,4 +119,4 @@
   </mat-sidenav-content>
 </mat-sidenav-container>
 
-<rtc-loading></rtc-loading>
+<ibe-loading></ibe-loading>

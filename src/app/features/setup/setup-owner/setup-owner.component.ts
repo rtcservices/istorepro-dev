@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'rtc-setup-owner',
+  selector: 'ibe-setup-owner',
   templateUrl: './setup-owner.component.html',
   styleUrls: ['./setup-owner.component.scss']
 })

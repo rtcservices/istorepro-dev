@@ -13,7 +13,7 @@ import { SiteTranslateService } from '../../../services/site-translate.service';
 import { TitleService } from '../../../services/title.service';
 
 @Component({
-  selector: 'rtc-setup-company',
+  selector: 'ibe-setup-company',
   templateUrl: './setup-company.component.html',
   styleUrls: ['./setup-company.component.scss']
 })

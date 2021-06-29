@@ -10,7 +10,7 @@ import { NotificationModel } from '../../../models/notification.model';
 import { AuthService } from '../../../services/auth.service';
 import { HeaderNavService } from '../../../services/header-nav.service';
 @Component({
-  selector: 'rtc-app-shell',
+  selector: 'ibe-app-shell',
   templateUrl: './app-shell.component.html',
   styleUrls: ['./app-shell.component.scss'],
   animations: [
