@@ -1,5 +1,7 @@
 @import './variables.scss';
 .link-button {
+  font-size: 12px;
+  line-height: 24px;
   &:hover {
     text-decoration: underline;
   }
