@@ -50,8 +50,8 @@
         button {
           padding-left: 1rem;
           padding-right: 1rem;
-          background-color: var(--site-blue);
-          color: var(--site-white);
+          background-color: $mat-primary;
+          color: $site-white;
           @include breakpoint(tablet) {
             width: 50% !important;
           }
@@ -72,7 +72,7 @@
     display: block !important;
   }
   a {
-    color: var(--site-blue) !important;
+    color: $mat-primary !important;
     font-size: 15px;
     @include breakpoint(mobileonly) {
       float: right;

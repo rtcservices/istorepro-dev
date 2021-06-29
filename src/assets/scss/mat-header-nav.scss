@@ -7,8 +7,8 @@
       transform: scale(0.9);
       &:hover,
       &.active-link {
-        color: var(--site-white);
-        background-color: var(--blue-logo-color);
+        color: $site-white;
+        background-color: $logo-blue;
         transform: scale(1);
       }
     }
@@ -18,11 +18,11 @@
 .side-nav {
   .mat-list-item-content {
     .mat-leaf-node {
-      color: var(--mat-primary);
+      color: $mat-primary;
       &:hover,
       &.active-link {
-        color: var(--site-white);
-        background-color: var(--blue-logo-color);
+        color: $site-white;
+        background-color: $logo-blue;
       }
     }
   }

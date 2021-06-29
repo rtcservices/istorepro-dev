@@ -1,12 +1,12 @@
 @import "../../../../assets/scss/variables.scss";
 
 .app-navbar {
-  background-color: var(--site-blue);
-  color: var(--site-white);
+  background-color: $mat-primary;
+  color: $site-white;
   height: 55px;
   .app-brand {
     display: flex;
-    background-color: var(--site-white);
+    background-color: $site-white;
     clip-path: polygon(0 0, 100% 0%, calc(100% - 32px) 100%, 0% 100%);
     height: 50px;
     width: 250px;
@@ -32,7 +32,7 @@
     height: 50px;
   }
   .lang-link {
-    color: var(--site-white);
+    color: $site-white;
     font-size: 0.8rem;
     margin-left: 10px;
   }
@@ -44,8 +44,8 @@
 }
 
 .footer {
-  background-color: var(--site-blue);
-  color: var(--site-white);
+  background-color: $mat-primary;
+  color: $site-white;
   display: flex;
   flex-direction: column;
   font-size: 12px;
@@ -58,13 +58,13 @@
   }
 }
 .app-version {
-  color: var(--site-blue);
+  color: $mat-primary;
   position: fixed;
   top: 60px;
   right: 5px;
 }
 .app-timestamp {
-  color: var(--site-white);
+  color: $site-white;
   position: fixed;
   bottom: 5px;
   right: 5px;

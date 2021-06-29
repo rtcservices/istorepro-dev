@@ -2,7 +2,7 @@
 
 .mat-header-cell{
     background-color: $mat-primary;
-    color: var(--site-white);
+    color: $site-white;
     border-left: 1px solid $site-white;
     font-size: 15px;
     padding-left: 10px !important;

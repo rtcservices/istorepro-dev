@@ -42,7 +42,7 @@ body {
 }
 .scanned-input {
   background-color: #ebf5eb !important;
-  caret-color: var(--site-success) !important;
+  caret-color: $logo-green !important;
 }
 .high-shadow {
   box-shadow: 0 11px 15px -7px rgb(0 0 0 / 20%),
@@ -53,5 +53,5 @@ body {
 }
 
 .high-blue-border{
-  border: 1px solid var(--mat-primary);
+  border: 1px solid $mat-primary;
 }

@@ -6,8 +6,8 @@
 
 .app-navbar {
   position: fixed;
-  background-color: var(--site-blue);
-  color: var(--site-white);
+  background-color: $mat-primary;
+  color: $site-white;
   height: 55px;
   padding-left: 0;
   padding-right: 0;
@@ -19,7 +19,7 @@
     .app-logo {
       padding-left: 9px;
       width: 250px;
-      background-color: var(--site-white);
+      background-color: $site-white;
       clip-path: polygon(0 0, 100% 0%, calc(100% - 32px) 100%, 0% 100%) !important;
       @include breakpoint(mobileonly) {
         clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%) !important;
@@ -52,8 +52,8 @@
       &:hover,
       &.active {
         border-radius: 0px;
-        border-left: 1px solid var(--site-white);
-        border-right: 1px solid var(--site-white);
+        border-left: 1px solid $site-white;
+        border-right: 1px solid $site-white;
         transform: scale(1.2);
       }
     }
@@ -103,7 +103,7 @@
     font-weight: bold;
   }
   small {
-    color: var(--site-gray-dark);
+    color: $site-grey;
     display: block;
     font-style: italic;
     margin-bottom: 0.25rem;
