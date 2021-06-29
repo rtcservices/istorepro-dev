@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'rtc-base-item',
+  selector: 'ibe-base-item',
   templateUrl: './base-item.component.html',
   styleUrls: ['./base-item.component.scss']
 })

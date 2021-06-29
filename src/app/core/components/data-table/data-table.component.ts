@@ -5,7 +5,7 @@ import { MatTable } from '@angular/material/table';
 import { DataTableDataSource, DataTableItem } from './data-table-datasource';
 
 @Component({
-  selector: 'rtc-data-table',
+  selector: 'ibe-data-table',
   templateUrl: './data-table.component.html',
   styleUrls: ['./data-table.component.scss']
 })

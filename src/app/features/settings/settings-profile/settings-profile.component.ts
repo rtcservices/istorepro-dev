@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'rtc-settings-profile',
+  selector: 'ibe-settings-profile',
   templateUrl: './settings-profile.component.html',
   styleUrls: ['./settings-profile.component.scss']
 })

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'rtc-admin-login-audit',
+  selector: 'ibe-admin-login-audit',
   templateUrl: './admin-login-audit.component.html',
   styleUrls: ['./admin-login-audit.component.scss']
 })

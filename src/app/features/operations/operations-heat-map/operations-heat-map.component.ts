@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'rtc-operations-heat-map',
+  selector: 'ibe-operations-heat-map',
   templateUrl: './operations-heat-map.component.html',
   styleUrls: ['./operations-heat-map.component.scss']
 })

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'rtc-scans-double-scan',
+  selector: 'ibe-scans-double-scan',
   templateUrl: './scans-double-scan.component.html',
   styleUrls: ['./scans-double-scan.component.scss']
 })

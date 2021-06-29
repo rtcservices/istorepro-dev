@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'rtc-query-transactions',
+  selector: 'ibe-query-transactions',
   templateUrl: './query-transactions.component.html',
   styleUrls: ['./query-transactions.component.scss']
 })

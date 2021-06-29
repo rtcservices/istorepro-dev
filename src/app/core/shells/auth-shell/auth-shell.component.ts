@@ -4,7 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { environment } from '../../../../environments/environment';
 import { slideInAnimation } from '../../../animations/animations';
 @Component({
-  selector: 'rtc-auth-shell',
+  selector: 'ibe-auth-shell',
   templateUrl: './auth-shell.component.html',
   styleUrls: ['./auth-shell.component.scss'],
   animations: [

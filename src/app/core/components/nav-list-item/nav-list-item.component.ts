@@ -6,7 +6,7 @@ import { HeaderNavItem } from '../../../models/header-nav-item.model';
 import { HeaderNavService } from '../../../services/header-nav.service';
 
 @Component({
-  selector: 'rtc-nav-list-item',
+  selector: 'ibe-nav-list-item',
   templateUrl: './nav-list-item.component.html',
   styleUrls: ['./nav-list-item.component.scss'],
   animations: [

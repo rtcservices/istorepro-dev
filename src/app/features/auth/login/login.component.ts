@@ -9,7 +9,7 @@ import { SiteTranslateService } from '../../../services/site-translate.service';
 import { TitleService } from '../../../services/title.service';
 
 @Component({
-  selector: 'rtc-login',
+  selector: 'ibe-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })

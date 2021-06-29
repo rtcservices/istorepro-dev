@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'rtc-operations-delivery',
+  selector: 'ibe-operations-delivery',
   templateUrl: './operations-delivery.component.html',
   styleUrls: ['./operations-delivery.component.scss']
 })

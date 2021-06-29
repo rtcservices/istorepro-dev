@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'rtc-dashboards-mis',
+  selector: 'ibe-dashboards-mis',
   templateUrl: './dashboards-mis.component.html',
   styleUrls: ['./dashboards-mis.component.scss']
 })

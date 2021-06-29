@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'rtc-routines-stock-adjust',
+  selector: 'ibe-routines-stock-adjust',
   templateUrl: './routines-stock-adjust.component.html',
   styleUrls: ['./routines-stock-adjust.component.scss']
 })

@@ -9,7 +9,7 @@ import { SiteTranslateService } from '../../../services/site-translate.service';
 import { TitleService } from '../../../services/title.service';
 
 @Component({
-  selector: 'rtc-forgot-password',
+  selector: 'ibe-forgot-password',
   templateUrl: './forgot-password.component.html',
   styleUrls: ['./forgot-password.component.scss']
 })
