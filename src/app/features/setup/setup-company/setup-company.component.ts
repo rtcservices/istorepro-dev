@@ -43,6 +43,7 @@ export class SetupCompanyComponent implements OnInit {
   ];
 
   sectors = ['Sector 1', 'Sector 2', 'Sector 3', 'Sector 4', 'Sector 5', ]
+  companyLogo = '../../../../assets/images/company-logo-236x81.jpg';
 
   formErrorTranslated = '';
   codeOrNameErrorTranslated = '';
