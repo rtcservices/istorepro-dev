@@ -17,25 +17,24 @@ body {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
   margin: 0;
 }
-.top-border {
-  border-top: 1px solid $pale-border;
+small {
+  color: $site-black;
+  display: block;
+  font-style: italic;
+  font-size: 0.8rem;
+  margin-bottom: 0.25rem;
+}
+.primary-border {
+  border: 1px solid $site-primary;
 }
 .spacer {
   flex: 1 1 auto;
 }
 .scanned-input {
-  background-color: $scanned-bg !important;
+  background-color: $scanned-input-bg !important;
   caret-color: $logo-green !important;
 }
 .high-shadow {
   box-shadow: 0 11px 15px -7px rgb(0 0 0 / 20%),
     0 24px 38px 3px rgb(0 0 0 / 14%), 0 9px 46px 8px rgb(0 0 0 / 12%) !important;
-}
-.high-red-shadow {
-  box-shadow: 0 11px 15px -7px rgb(189 31 101 / 20%),
-    0 24px 38px 3px rgb(189 31 101 / 14%), 0 9px 46px 8px rgb(189 31 101 / 12%) !important;
-}
-
-.high-blue-border {
-  border: 1px solid $mat-primary;
 }

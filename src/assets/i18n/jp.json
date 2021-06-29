@@ -21,7 +21,7 @@
   "error": {
     "form": "フォームに無効なエントリがあります",
     "field": "無効なエントリ",
-    "filter": "少なくとも1つのフィルターを入力してください"
+    "filter": "フィルタを入力してください"
   },
   "login": {
     "title": "サインイン",
@@ -39,8 +39,8 @@
     "emailLabel": "Eメール",
     "emailError": "有効なメールアドレスを入力してください",
     "forgotPasswordFormError": "このメールではアカウントが見つかりません",
-    "buttonLabel":"リセット",
-    "back":"ログインに戻る"
+    "buttonLabel": "リセット",
+    "back": "ログインに戻る"
   },
   "menu": {
     "setup": "セットアップ",
@@ -82,27 +82,24 @@
     "settings": "設定",
     "logout": "ログアウト"
   },
-  "setup":{
+  "setup": {
     "company": {
       "companyCode": "会社コード",
       "companyName": "会社名",
-      "invalidCompanyCode": "無効な会社コード",
-      "invalidCompanyName": "会社名が無効です",
-      "codeOrNameError": "会社コードまたは会社名のいずれかを選択します",
-      "address1" : "住所 1",
-      "address2" : "住所 2",
-      "address3" : "住所 3",
-      "address4" : "住所 4",
-      "telephone" : "電話",
-      "fax" : "ファックス",
-      "sector" : "セクタ",
-      "email" : "Eメール",
-      "contactPerson" : "連絡窓口",
-      "website" : "ウェブサイト",
-      "suspendOperation" : "操作を一時停止します",
-      "companyLogo" : "会社のロゴ",
-      "licenseSubscriptionAlert" : "ライセンス/サブスクリプションアラート？",
-      "licenseAlertLimit" : "アラート制限"
+      "address1": "住所 1",
+      "address2": "住所 2",
+      "address3": "住所 3",
+      "address4": "住所 4",
+      "telephone": "電話",
+      "fax": "ファックス",
+      "sector": "セクタ",
+      "email": "Eメール",
+      "contactPerson": "連絡窓口",
+      "website": "ウェブサイト",
+      "suspendOperation": "操作を一時停止します",
+      "companyLogo": "会社のロゴ",
+      "licenseSubscriptionAlert": "ライセンス/サブスクリプションアラート？",
+      "licenseAlertLimit": "アラート制限"
     }
   }
 }

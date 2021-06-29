@@ -18,10 +18,10 @@ import { TitleService } from '../../../services/title.service';
   styleUrls: ['./setup-company.component.scss']
 })
 export class SetupCompanyComponent implements OnInit {
+  @ViewChild('setupCompanyTab', { static: false })
+  setupCompanyTab!: MatTabGroup;
 
-  @ViewChild("setupCompanyTab", { static: false }) setupCompanyTab!: MatTabGroup;
-
-  searchCompanyForm! : FormGroup;
+  searchCompanyForm!: FormGroup;
   searchDataSource: SetupCompanyModel[] = [];
   dummySearchModel: SetupCompanyModel[] = [
     { companyCode: 'GEM1234', companyName: 'Gemini Software' },
@@ -35,62 +35,68 @@ export class SetupCompanyComponent implements OnInit {
 
   dataCompanyForm!: FormGroup;
   companyDataModel!: SetupCompanyModel;
-  dummyDataModel: SetupCompanyModel = { companyCode: 'GEM1234', companyName: 'Gemini Software' };
+  dummyDataModel: SetupCompanyModel = {
+    companyCode: 'GEM1234',
+    companyName: 'Gemini Software'
+  };
 
-  displayedColumns = [
-    'companyCode',
-    'companyName'
-  ];
+  displayedColumns = ['companyCode', 'companyName'];
 
-  sectors = ['Sector 1', 'Sector 2', 'Sector 3', 'Sector 4', 'Sector 5', ]
+  sectors = ['Sector 1', 'Sector 2', 'Sector 3', 'Sector 4', 'Sector 5'];
   companyLogo = '../../../../assets/images/company-logo-236x81.jpg';
 
   formErrorTranslated = '';
-  codeOrNameErrorTranslated = '';
+  filterErrorTranslated = '';
   constructor(
     private fb: FormBuilder,
     private loader: LoaderService,
     private siteTranslateService: SiteTranslateService,
     private translate: TranslateService,
     private titleService: TitleService,
-    private notification: NotificationService){
-      this.createDataCompanyForm();
-      this.createSearchCompanyForm();
+    private notification: NotificationService
+  ) {
+    this.createDataCompanyForm();
+    this.createSearchCompanyForm();
   }
 
   ngOnInit(): void {
     this.titleService.changeTitleTranslated('menu.setupCompany');
     const language = this.siteTranslateService.defaultLanguage;
-      this.translate.use(language).subscribe((res) => {
-        this.formErrorTranslated = this.translate.instant(
-          'error.form'
-        );
-        this.codeOrNameErrorTranslated = this.translate.instant(
-          'setup.company.codeOrNameError'
-        );
-      });
+    this.translate.use(language).subscribe((res) => {
+      this.formErrorTranslated = this.translate.instant('error.form');
+      this.filterErrorTranslated = this.translate.instant('error.filter');
+    });
     this.companyDataModel = this.dummyDataModel;
   }
   createDataCompanyForm() {
     this.dataCompanyForm = this.fb.group({
-      companyCode : ['', [Validators.pattern(patternsHelper.alphanumeric)]],
-      companyName : ['', [Validators.required, Validators.pattern(patternsHelper.alphanumeric)]],
-      address1 : ['', [Validators.required, Validators.pattern(patternsHelper.alphanumeric)]],
-      address2 : ['', [Validators.pattern(patternsHelper.alphanumeric)]],
-      address3 : ['', [Validators.pattern(patternsHelper.alphanumeric)]],
-      address4 : ['', [Validators.pattern(patternsHelper.alphanumeric)]],
-      telephone : ['', [Validators.pattern(patternsHelper.alphanumeric)]],
-      fax : ['', [Validators.pattern(patternsHelper.alphanumeric)]],
-      sector : ['', [Validators.pattern(patternsHelper.alphanumeric)]],
-      email : ['', [Validators.required, Validators.pattern(patternsHelper.alphanumeric)]],
-      contactPerson : ['', [Validators.pattern(patternsHelper.alphanumeric)]],
-      website : ['', [Validators.pattern(patternsHelper.alphanumeric)]],
-      suspendOperation : false,
-      companyLogo : '',
-      licenseSubscriptionAlert : false,
-      licenseAlertLimit : '',
-      licenseAlertLimitType : 'days',
-      licenseEmail : '',
+      companyCode: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      companyName: [
+        '',
+        [Validators.required, Validators.pattern(patternsHelper.alphanumeric)]
+      ],
+      address1: [
+        '',
+        [Validators.required, Validators.pattern(patternsHelper.alphanumeric)]
+      ],
+      address2: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      address3: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      address4: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      telephone: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      fax: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      sector: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      email: [
+        '',
+        [Validators.required, Validators.pattern(patternsHelper.alphanumeric)]
+      ],
+      contactPerson: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      website: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      suspendOperation: false,
+      companyLogo: '',
+      licenseSubscriptionAlert: false,
+      licenseAlertLimit: '',
+      licenseAlertLimitType: 'days',
+      licenseEmail: ''
     });
   }
   get dataCompanyFormControls() {
@@ -99,8 +105,8 @@ export class SetupCompanyComponent implements OnInit {
 
   createSearchCompanyForm() {
     this.searchCompanyForm = this.fb.group({
-      companyCode : ['', [Validators.pattern(patternsHelper.alphanumeric)]],
-      companyName : ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      companyCode: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      companyName: ['', [Validators.pattern(patternsHelper.alphanumeric)]]
     });
   }
 
@@ -113,19 +119,18 @@ export class SetupCompanyComponent implements OnInit {
     if (!tabGroup || !(tabGroup instanceof MatTabGroup)) return;
     tabGroup.selectedIndex = 0;
   }
-  onDataCompanySubmit() {
-
-  }
+  onDataCompanySubmit() {}
   onSearchCompanySubmit() {
-
     if (!this.searchCompanyForm.valid) {
       this.notification.error(this.formErrorTranslated);
       return;
     }
-    const companyCode:string = this.searchCompanyForm.get('companyCode')?.value || '';
-    const companyName:string = this.searchCompanyForm.get('companyName')?.value || '';
-    if(companyCode.trim() === '' && companyName.trim() === '') {
-      this.notification.error(this.codeOrNameErrorTranslated);
+    const companyCode: string =
+      this.searchCompanyForm.get('companyCode')?.value || '';
+    const companyName: string =
+      this.searchCompanyForm.get('companyName')?.value || '';
+    if (companyCode.trim() === '' && companyName.trim() === '') {
+      this.notification.error(this.filterErrorTranslated);
       return;
     } else {
       this.loader.show();
@@ -144,13 +149,9 @@ export class SetupCompanyComponent implements OnInit {
     console.log(item);
   }
 
-  saveCompanyData(){
-
-  }
-  deleteCompanyData(){
-
-  }
-  clearCompanyData(){
+  saveCompanyData() {}
+  deleteCompanyData() {}
+  clearCompanyData() {
     this.dataCompanyForm.reset();
   }
 }

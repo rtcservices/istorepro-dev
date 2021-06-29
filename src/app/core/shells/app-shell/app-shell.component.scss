@@ -1,4 +1,4 @@
-@import "../../../../assets/scss/variables.scss";
+@import '../../../../assets/scss/variables.scss';
 
 .app-container {
   padding: 0.25rem;
@@ -6,7 +6,7 @@
 
 .app-navbar {
   position: fixed;
-  background-color: $mat-primary;
+  background-color: $site-primary;
   color: $site-white;
   height: 55px;
   padding-left: 0;
@@ -20,7 +20,12 @@
       padding-left: 9px;
       width: 100%;
       background-color: $site-white;
-      clip-path: polygon(0 0, 100% 0%, calc(100% - 32px) 100%, 0% 100%) !important;
+      clip-path: polygon(
+        0 0,
+        100% 0%,
+        calc(100% - 32px) 100%,
+        0% 100%
+      ) !important;
       @include breakpoint(mobileonly) {
         clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%) !important;
       }
@@ -105,12 +110,6 @@
   }
   span {
     font-weight: bold;
-  }
-  small {
-    color: $site-grey;
-    display: block;
-    font-style: italic;
-    margin-bottom: 0.25rem;
   }
 }
 .settings {
@@ -212,6 +211,6 @@
 
 @media only screen and (min-width: 1020px) and (max-width: 1410px) {
   .app-brand {
-      width: 383px !important;
-    }
+    width: 383px !important;
+  }
 }

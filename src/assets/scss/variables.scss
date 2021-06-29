@@ -1,49 +1,53 @@
 /*VARIABLES*/
 
-$mat-primary: #014789;
-$mat-accent: #be235f;
-$mat-warn: #f44336;
-
 $logo-red: #bd1f65;
 $logo-blue: #449ad1;
 $logo-green: #5b863b;
 $logo-gray: #e6e6e6;
 $logo-black: #231f20;
 
+$site-primary: #014789;
+$site-accent: #be235f;
+$site-warn: #f44336;
 $site-black: rgba(0, 0, 0, 0.87);
-$site-grey: rgb(216, 216, 216);
+$site-gray: rgb(216, 216, 216);
 $site-white: #fff;
 $site-bg-white: #fafafa;
+$site-light-gray: #e0e0e0;
 
-$scanned-bg: #ebf5eb;
-$pale-border: #e0e0e0;
+$scanned-input-bg: #ebf5eb;
 
 /*BREAKPOINTS*/
 
- @mixin breakpoint($point) {
-   @if $point == desktop {
-     @media (min-width: 70em) { @content ; }
-  }
-   @else if $point == laptop {
-     @media (min-width: 64em) { @content ; }
-  }
-    @else if $point == tablet {
-     @media (min-width: 700px) and (max-width: 1024px) { @content ; }
-  }
-   @else if $point == phablet {
-     @media (min-width: 37.5em)  { @content ; }
-  }
-  @else if $point == mobileonly {
-     @media (max-width: 37.5em)  { @content ; }
-
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media (min-width: 70em) {
+      @content;
+    }
+  } @else if $point == laptop {
+    @media (min-width: 64em) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (min-width: 700px) and (max-width: 1024px) {
+      @content;
+    }
+  } @else if $point == phablet {
+    @media (min-width: 37.5em) {
+      @content;
+    }
+  } @else if $point == mobileonly {
+    @media (max-width: 37.5em) {
+      @content;
+    }
   }
 }
 
 /*Z-INDEX*/
 $zindex: (
-  modal     : 9000,
-  overlay   : 8000,
-  dropdown  : 7000,
-  header    : 6000,
-  footer    : 5000
+  modal: 9000,
+  overlay: 8000,
+  dropdown: 7000,
+  header: 6000,
+  footer: 5000
 );

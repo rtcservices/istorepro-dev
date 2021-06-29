@@ -1,4 +1,4 @@
-@import "../../../../assets/scss/variables.scss";
+@import '../../../../assets/scss/variables.scss';
 
 .login-container {
   display: flex;
@@ -8,7 +8,7 @@
     flex: 1;
   }
   .login-banner {
-    background-image: url("../../../../assets/images/main-image.jpg");
+    background-image: url('../../../../assets/images/main-image.jpg');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -49,7 +49,7 @@
         button {
           padding-left: 1rem;
           padding-right: 1rem;
-          background-color: $mat-primary;
+          background-color: $site-primary;
           color: $site-white;
           @include breakpoint(tablet) {
             width: 50% !important;
@@ -71,7 +71,7 @@
     display: block !important;
   }
   .forgot-password {
-    color: $mat-primary !important;
+    color: $site-primary !important;
     font-size: 15px;
     @include breakpoint(mobileonly) {
       float: right;

@@ -15,13 +15,13 @@
     "available": "Available",
     "used": "Used",
     "email": "E-mail",
-    "license":"License",
+    "license": "License",
     "security": "Security"
   },
   "error": {
     "form": "Form has invalid entries",
     "field": "Invalid entry",
-    "filter": "Enter atleast one filter"
+    "filter": "Please enter filters"
   },
   "login": {
     "title": "Sign In",
@@ -86,9 +86,6 @@
     "company": {
       "companyCode": "Company Code",
       "companyName": "Company Name",
-      "invalidCompanyCode": "Invalid Company Code",
-      "invalidCompanyName": "Invalid Company Name",
-      "codeOrNameError": "Select either Company Code or Company Name",
       "address1": "Address 1",
       "address2": "Address 2",
       "address3": "Address 3",

@@ -1,5 +1,11 @@
 @import '../../../../assets/scss/buttons.scss';
 @import '../../../../assets/scss/variables.scss';
+.filter-container {
+  padding-bottom: 0px;
+}
+.search-container {
+  padding-top: 0px;
+}
 .search-table {
   width: 100%;
 }
@@ -15,7 +21,7 @@
 .company-logo {
   img {
     cursor: pointer;
-    border: 1px solid $pale-border;
+    border: 1px solid $site-light-gray;
     padding: 0.25rem;
     &:hover {
       border-color: $site-black;
@@ -24,7 +30,7 @@
 }
 .license,
 .license-subscription {
-  border: 1px solid $pale-border;
+  border: 1px solid $site-light-gray;
   margin-top: 0.25rem;
   padding: 0.25rem;
 }
