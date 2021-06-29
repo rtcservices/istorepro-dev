@@ -26,7 +26,6 @@
       }
     }
   }
-
   .login-card {
     max-width: 550px;
     width: 80%;
@@ -71,7 +70,7 @@
   @include breakpoint(mobileonly) {
     display: block !important;
   }
-  a {
+  .forgot-password {
     color: $mat-primary !important;
     font-size: 15px;
     @include breakpoint(mobileonly) {
