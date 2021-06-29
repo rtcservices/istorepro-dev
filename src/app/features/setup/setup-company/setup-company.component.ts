@@ -151,6 +151,6 @@ export class SetupCompanyComponent implements OnInit {
 
   }
   clearCompanyData(){
-
+    this.dataCompanyForm.reset();
   }
 }
