@@ -79,8 +79,8 @@
   <button mat-icon-button
     [matTooltip]="userAccountTranslated"
     [matMenuTriggerFor]="userAccountMenu">
-    <!-- <mat-icon>account_circle</mat-icon> -->
-    <img src="../../../../assets/avatars/person.png" class="user-avatar" alt="user-logo" height="30">
+    <mat-icon>account_circle</mat-icon>
+    <!-- <img src="../../../../assets/avatars/person.png" class="user-avatar" alt="user-logo" height="30"> -->
   </button>
   <mat-menu #userAccountMenu="matMenu" backdropClass="top-menu">
     <a mat-menu-item routerLinkActive="active-link" [routerLink]="['/account/profile']">{{'menu.userAccountProfile' | translate}}</a>
