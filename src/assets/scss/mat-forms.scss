@@ -31,7 +31,11 @@
 .slim-form .row {
   height: 55px;
 }
-
+.error-right-form {
+  mat-error {
+    float: right;
+  }
+}
 .form-button-container {
   text-align: right;
   button {
@@ -47,7 +51,7 @@
   button {
     margin-left: 0.5rem;
     @include breakpoint(mobileonly) {
-      width: 33%;
+      width: 25%;
     }
   }
 }
@@ -57,7 +61,7 @@
   button {
     margin-left: 0.5rem;
     @include breakpoint(mobileonly) {
-      width: 25%;
+      width: 20%;
     }
   }
 }

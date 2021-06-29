@@ -12,11 +12,14 @@
 .mat-column-action {
   width: 50px;
 }
-.company-data {
+.company-data-form {
   padding-bottom: 2px;
   padding-top: 5px;
   margin-left: 5px;
   margin-right: 5px;
+  input:not(.normal) {
+    text-transform: uppercase;
+  }
 }
 .company-logo {
   img {
@@ -28,9 +31,11 @@
     }
   }
 }
-.license,
-.license-subscription {
+.license {
   border: 1px solid $site-light-gray;
   margin-top: 0.25rem;
   padding: 0.25rem;
+  .license-subscription-alert {
+    margin: 0.25rem 0;
+  }
 }

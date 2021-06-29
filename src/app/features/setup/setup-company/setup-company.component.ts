@@ -47,6 +47,7 @@ export class SetupCompanyComponent implements OnInit {
 
   formErrorTranslated = '';
   filterErrorTranslated = '';
+
   constructor(
     private fb: FormBuilder,
     private loader: LoaderService,
@@ -68,37 +69,80 @@ export class SetupCompanyComponent implements OnInit {
     });
     this.companyDataModel = this.dummyDataModel;
   }
+
   createDataCompanyForm() {
     this.dataCompanyForm = this.fb.group({
-      companyCode: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      companyCode: '',
       companyName: [
         '',
-        [Validators.required, Validators.pattern(patternsHelper.alphanumeric)]
+        [Validators.required, Validators.pattern(patternsHelper.name)]
       ],
       address1: [
         '',
-        [Validators.required, Validators.pattern(patternsHelper.alphanumeric)]
+        [
+          Validators.required,
+          Validators.maxLength(100),
+          Validators.pattern(patternsHelper.address)
+        ]
       ],
-      address2: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
-      address3: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
-      address4: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
-      telephone: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
-      fax: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
-      sector: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      address2: [
+        '',
+        [Validators.maxLength(100), Validators.pattern(patternsHelper.address)]
+      ],
+      address3: [
+        '',
+        [Validators.maxLength(100), Validators.pattern(patternsHelper.address)]
+      ],
+      address4: [
+        '',
+        [Validators.maxLength(100), Validators.pattern(patternsHelper.address)]
+      ],
+      telephone: [
+        '',
+        [
+          Validators.maxLength(30),
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
+      ],
+      fax: [
+        '',
+        [
+          Validators.maxLength(30),
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
+      ],
+      sector: '',
       email: [
         '',
-        [Validators.required, Validators.pattern(patternsHelper.alphanumeric)]
+        [
+          Validators.required,
+          Validators.maxLength(500),
+          Validators.pattern(patternsHelper.emails)
+        ]
       ],
-      contactPerson: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
-      website: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      contactPerson: [
+        '',
+        [
+          Validators.maxLength(50),
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
+      ],
+      website: [
+        '',
+        [Validators.maxLength(50), Validators.pattern(patternsHelper.website)]
+      ],
       suspendOperation: false,
       companyLogo: '',
       licenseSubscriptionAlert: false,
       licenseAlertLimit: '',
       licenseAlertLimitType: 'days',
-      licenseEmail: ''
+      licenseEmail: [
+        '',
+        [Validators.required, Validators.email, Validators.maxLength(100)]
+      ]
     });
   }
+
   get dataCompanyFormControls() {
     return this.dataCompanyForm.controls;
   }
@@ -114,12 +158,8 @@ export class SetupCompanyComponent implements OnInit {
     return this.searchCompanyForm.controls;
   }
 
-  searchItemClick() {
-    const tabGroup = this.setupCompanyTab;
-    if (!tabGroup || !(tabGroup instanceof MatTabGroup)) return;
-    tabGroup.selectedIndex = 0;
-  }
   onDataCompanySubmit() {}
+
   onSearchCompanySubmit() {
     if (!this.searchCompanyForm.valid) {
       this.notification.error(this.formErrorTranslated);
@@ -140,18 +180,22 @@ export class SetupCompanyComponent implements OnInit {
       }, 500);
     }
   }
-  clearSearch() {
-    this.createSearchCompanyForm();
+
+  resetCompanySearchForm() {
+    this.searchCompanyForm.reset();
     this.searchDataSource = [];
   }
 
-  onViewCompany(event: any, item: SetupCompanyModel, idx: number) {
-    console.log(item);
+  searchItemClick(event: any, item: SetupCompanyModel, idx: number) {
+    const tabGroup = this.setupCompanyTab;
+    if (!tabGroup || !(tabGroup instanceof MatTabGroup)) return;
+    tabGroup.selectedIndex = 0;
   }
 
   saveCompanyData() {}
   deleteCompanyData() {}
-  clearCompanyData() {
+
+  resetCompanyDataForm() {
     this.dataCompanyForm.reset();
   }
 }

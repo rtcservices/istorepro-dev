@@ -38,3 +38,16 @@ small {
   box-shadow: 0 11px 15px -7px rgb(0 0 0 / 20%),
     0 24px 38px 3px rgb(0 0 0 / 14%), 0 9px 46px 8px rgb(0 0 0 / 12%) !important;
 }
+.page-title {
+  right: 0;
+  margin-right: 10px;
+  margin-top: 30px;
+  position: absolute;
+  top: 0;
+  h2 {
+    color: $site-primary;
+    @include breakpoint(mobileonly) {
+      font-size: 0.9rem;
+    }
+  }
+}

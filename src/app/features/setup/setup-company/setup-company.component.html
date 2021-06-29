@@ -1,8 +1,12 @@
+<div class="page-title">
+  <h2>{{'menu.setupCompany' | translate}}</h2>
+</div>
 <mat-tab-group #setupCompanyTab>
   <mat-tab label="Data">
-    <form fxLayout="column" [formGroup]="dataCompanyForm" (ngSubmit)="onDataCompanySubmit()" class="slim-form">
+    <form fxLayout="column" [formGroup]="dataCompanyForm" (ngSubmit)="onDataCompanySubmit()"
+      class="slim-form error-right-form">
       <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="stretch" fxLayoutGap="5px" fxLayoutAlign=" stretch"
-        class="company-data">
+        class="company-data-form">
         <div fxFlex="70%">
           <mat-card class="h-100">
             <mat-card-content>
@@ -15,7 +19,7 @@
                   <mat-error *ngIf="dataCompanyFormControls.companyCode.invalid">{{ 'error.field' | translate }}
                   </mat-error>
                 </mat-form-field>
-                <mat-form-field appearance="outline" fxFlex="67">
+                <mat-form-field appearance="outline" fxFlex>
                   <mat-label>{{
                     'setup.company.companyName' | translate
                   }}</mat-label>
@@ -34,7 +38,7 @@
                     'error.field' | translate
                   }}</mat-error>
                 </mat-form-field>
-                <mat-form-field appearance="outline" fxFlex="50">
+                <mat-form-field appearance="outline" fxFlex>
                   <mat-label>{{
                     'setup.company.address2' | translate
                   }}</mat-label>
@@ -54,7 +58,7 @@
                     'error.field' | translate
                   }}</mat-error>
                 </mat-form-field>
-                <mat-form-field appearance="outline" fxFlex="50">
+                <mat-form-field appearance="outline" fxFlex>
                   <mat-label>{{
                     'setup.company.address4' | translate
                   }}</mat-label>
@@ -80,7 +84,7 @@
                     'error.field' | translate
                   }}</mat-error>
                 </mat-form-field>
-                <mat-form-field appearance="outline" fxFlex.gt-sm="34" fxFlex.lt-md="33">
+                <mat-form-field appearance="outline" fxFlex fxFlex.lt-md="34">
                   <mat-label>{{
                     'setup.company.sector' | translate
                   }}</mat-label>
@@ -93,16 +97,37 @@
                 </mat-form-field>
               </div>
               <div fxLayout="row" class="row" fxLayoutGap="10px">
-                <mat-form-field appearance="outline" fxFlex="99">
+                <mat-form-field appearance="outline" fxFlex>
                   <mat-label>{{ 'setup.company.email' | translate }}</mat-label>
-                  <input matInput type="text" required formControlName="email" />
+                  <input matInput type="text" required formControlName="email" class="normal" />
                   <mat-error *ngIf="dataCompanyFormControls.email.invalid">{{
                     'error.field' | translate
                   }}</mat-error>
                 </mat-form-field>
               </div>
+              <div fxLayout="row" class="row" fxLayoutGap="5px">
+                <mat-form-field appearance="outline" fxFlex="49">
+                  <mat-label>{{
+                    'setup.company.contactPerson' | translate
+                  }}</mat-label>
+                  <input matInput type="text" formControlName="contactPerson" />
+                  <mat-error *ngIf="dataCompanyFormControls.contactPerson.invalid">{{
+                    'error.field' | translate
+                  }}</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex>
+                  <mat-label>{{
+                    'setup.company.website' | translate
+                  }}</mat-label>
+                  <input matInput type="text" formControlName="website" />
+                  <mat-error *ngIf="dataCompanyFormControls.website.invalid">{{
+                    'error.field' | translate
+                  }}</mat-error>
+                </mat-form-field>
+              </div>
               <div class="row">
-                <mat-checkbox formControlName="suspendOperation">{{ 'setup.company.suspendOperation' | translate }}
+                <mat-checkbox formControlName="suspendOperation" color="primary">
+                  {{ 'setup.company.suspendOperation' | translate }}
                 </mat-checkbox>
               </div>
             </mat-card-content>
@@ -116,53 +141,56 @@
               <input type="file" style="display: none" #file />
             </div>
             <div class="license">
-              <p>{{ 'general.license' | translate }}</p>
-              <table class="site-table w-100">
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th>{{ 'general.available' | translate }}</th>
-                    <th>{{ 'general.used' | translate }}</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>{{ 'general.user' | translate }}</td>
-                    <td>100</td>
-                    <td>47</td>
-                  </tr>
-                  <tr>
-                    <td>{{ 'general.warehouse' | translate }}</td>
-                    <td>100</td>
-                    <td>47</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="license-subscription">
-              <div fxLayout="column" [formGroup]="dataCompanyForm">
-                <mat-checkbox formControlName="licenseSubscriptionAlert">{{
-                'setup.company.licenseSubscriptionAlert' | translate
-              }}</mat-checkbox>
-                <div fxLayout="row" fxLayoutGap="2px" class="row">
-                  <mat-form-field appearance="outline" fxFlex="70">
-                    <mat-label>{{
-                    'setup.company.licenseAlertLimit' | translate
-                  }}</mat-label>
-                    <input matInput type="text" formControlName="licenseAlertLimit" />
-                  </mat-form-field>
-                  <mat-form-field appearance="outline" fxFlex="29">
-                    <mat-select type="text" formControlName="licenseAlertLimitType">
-                      <mat-option value=""></mat-option>
-                      <mat-option value="days">DAYS</mat-option>
-                    </mat-select>
-                  </mat-form-field>
-                </div>
-                <div fxLayout="row" fxLayoutGap="2px" class="row">
-                  <mat-form-field appearance="outline" fxFlex="100">
-                    <mat-label>{{ 'general.email' | translate }}</mat-label>
-                    <input matInput type="text" formControlName="licenseEmail" />
-                  </mat-form-field>
+              <div>
+                <p>{{ 'general.license' | translate }}</p>
+                <table class="site-table w-100">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>{{ 'general.available' | translate }}</th>
+                      <th>{{ 'general.used' | translate }}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>{{ 'general.user' | translate }}</td>
+                      <td>100</td>
+                      <td>47</td>
+                    </tr>
+                    <tr>
+                      <td>{{ 'general.warehouse' | translate }}</td>
+                      <td>100</td>
+                      <td>47</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div>
+                <div fxLayout="column" [formGroup]="dataCompanyForm">
+                  <mat-checkbox color="primary" class="license-subscription-alert"
+                    formControlName="licenseSubscriptionAlert">{{
+                  'setup.company.licenseSubscriptionAlert' | translate
+                }}</mat-checkbox>
+                  <div fxLayout="row" fxLayoutGap="2px" class="row">
+                    <mat-form-field appearance="outline" fxFlex="70">
+                      <mat-label>{{
+                      'setup.company.licenseAlertLimit' | translate
+                    }}</mat-label>
+                      <input matInput type="text" formControlName="licenseAlertLimit" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" fxFlex="29">
+                      <mat-select type="text" formControlName="licenseAlertLimitType">
+                        <mat-option value=""></mat-option>
+                        <mat-option value="days">DAYS</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                  <div fxLayout="row" fxLayoutGap="2px" class="row">
+                    <mat-form-field appearance="outline" fxFlex="100">
+                      <mat-label>{{ 'general.email' | translate }}</mat-label>
+                      <input matInput type="text" formControlName="licenseEmail" />
+                    </mat-form-field>
+                  </div>
                 </div>
               </div>
             </div>
@@ -178,7 +206,7 @@
             <button mat-raised-button class="red-raised-button" type="button" (click)="deleteCompanyData()">
               <mat-icon>remove_circle_outline</mat-icon>
             </button>
-            <button mat-raised-button class="green-raised-button" type="reset" (click)="clearCompanyData()">
+            <button mat-raised-button class="green-raised-button" type="reset" (click)="resetCompanyDataForm()">
               <mat-icon>loop</mat-icon>
             </button>
           </div>
@@ -216,7 +244,7 @@
             <button mat-raised-button class="primary-raised-button" type="submit">
               <mat-icon>search</mat-icon>
             </button>
-            <button mat-raised-button class="green-raised-button" type="reset" (click)="clearSearch()">
+            <button mat-raised-button class="green-raised-button" type="reset" (click)="resetCompanySearchForm()">
               <mat-icon>restart_alt</mat-icon>
             </button>
           </div>
@@ -230,7 +258,7 @@
             <th mat-header-cell *matHeaderCellDef>Company Code</th>
             <td mat-cell *matCellDef="let element; let idx=index">
               <button mat-button disableRipple class="primary-button link-button"
-                (click)="onViewCompany($event, element, idx)">{{ element.companyCode }}</button>
+                (click)="searchItemClick($event, element, idx)">{{ element.companyCode }}</button>
             </td>
           </ng-container>
           <ng-container matColumnDef="companyName">
