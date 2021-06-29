@@ -187,7 +187,7 @@
     </form>
   </mat-tab>
   <mat-tab label="Search">
-    <form fxLayout="column" [formGroup]="searchCompanyForm" (ngSubmit)="onSearchCompanySubmit()">
+    <form fxLayout="column" [formGroup]="searchCompanyForm" (ngSubmit)="onSearchCompanySubmit()" class="slim-form">
       <mat-card>
         <mat-card-content>
           <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
@@ -209,8 +209,10 @@
             </mat-form-field>
           </div>
         </mat-card-content>
-        <mat-card-actions>
-          <div fxLayoutAlign="end center" class="form-four-button-container">
+      </mat-card>
+      <mat-card>
+        <mat-card-content>
+          <div class="form-four-button-container">
             <button mat-raised-button class="primary-button" type="submit">
               <mat-icon>search</mat-icon>
             </button>
@@ -218,13 +220,12 @@
               <mat-icon>restart_alt</mat-icon>
             </button>
           </div>
-        </mat-card-actions>
+        </mat-card-content>
       </mat-card>
     </form>
     <mat-card class="mat-elevation-z10">
       <mat-card-content>
         <table mat-table [dataSource]="searchDataSource" class="mat-elevation-z8 search-table">
-          <!-- Code Column -->
           <ng-container matColumnDef="companyCode">
             <th mat-header-cell *matHeaderCellDef>Company Code</th>
             <td mat-cell *matCellDef="let element">
@@ -233,8 +234,6 @@
               </a>
             </td>
           </ng-container>
-
-          <!-- Name Column -->
           <ng-container matColumnDef="companyName">
             <th mat-header-cell *matHeaderCellDef>Company Name</th>
             <td mat-cell *matCellDef="let element">
