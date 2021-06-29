@@ -37,6 +37,7 @@
     }
   }
   .menu-bar {
+    margin-left: 20px;
     @include breakpoint(tablet) {
       width: 50% !important;
     }
