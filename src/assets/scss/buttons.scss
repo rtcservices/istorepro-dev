@@ -1,10 +1,13 @@
 @import './variables.scss';
 .primary-button {
   background-color: $mat-primary;
+  color: $site-white;
 }
 .red-button {
   background-color: $mat-warn;
+  color: $site-white;
 }
 .green-button {
   background-color: $logo-green;
+  color: $site-white;
 }
