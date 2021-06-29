@@ -9,7 +9,12 @@
     "save": "Save",
     "search": "Search",
     "update": "Update",
-    "copyright": "All rights reserved"
+    "copyright": "All rights reserved",
+    "user": "User",
+    "warehouse": "Warehouse",
+    "available": "Available",
+    "used": "Used",
+    "email": "E-mail"
   },
   "error": {
     "form": "Form has invalid entries",
@@ -94,9 +99,9 @@
       "website" : "Website",
       "suspendOperation" : "Suspend Operation",
       "companyLogo" : "Company Logo",
-      "whAvailableUsed" : "WH  Available/Used",
-      "userAvailableUsed" : "User Available/Used",
-      "licenseAlertEmail" : "License Alert Email"
+      "license" : "License",
+      "licenseSubscriptionAlert" : "License/Subscription Alert ?",
+      "licenseAlertLimit" : "Alert Limit"
     }
   }
 }
