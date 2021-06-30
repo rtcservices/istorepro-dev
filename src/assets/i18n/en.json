@@ -101,7 +101,7 @@
       "licenseSubscriptionAlert": "License/Subscription Alert ?",
       "licenseAlertLimit": "Alert Limit"
     },
-    "warehouse" :{
+    "warehouse": {
       "companyCode": "Company Code",
       "companyName": "Company Name",
       "code": "Code",
@@ -117,8 +117,28 @@
       "id": "ID",
       "blockAlertDays": "Block Alert Days",
       "receiptDeliveryAlertDays": "Receipt/Delivery Alert Days",
-      "receiptBackDateLimit" : "Receipt Back Date Limit",
-      "deliveryBackDateLimit" : "Delivery Back Date Limit"
+      "receiptBackDateLimit": "Receipt Back Date Limit",
+      "deliveryBackDateLimit": "Delivery Back Date Limit",
+      "document": {
+        "type": "Type",
+        "prefix": "Prefix",
+        "currentNo": "Current No",
+        "autoEmail": "Auto Email"
+      },
+      "ruleBox": {
+        "rule": "Rule",
+        "value": "Value"
+      },
+      "contact": {
+        "name": "name",
+        "email": "Email"
+      },
+      "operator": {
+        "code": "Code",
+        "name": "Name",
+        "loginName" : "Login Name",
+        "inactive" : "Inactive"
+      }
     }
   }
 }
