@@ -1,1 +1,51 @@
-<p>setup-warehouse works!</p>
+<div class="page-title">
+    <h2>{{'menu.setupWarehouse' | translate}}</h2>
+</div>
+<mat-tab-group #setupWarehouseTab>
+    <!-- Data -->
+    <mat-tab label="Data">
+        <form fxLayout="column" [formGroup]="dataWarehouseForm" class="slim-form error-right-form">
+            <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="stretch" fxLayoutGap="5px"
+                fxLayoutAlign=" stretch" class="warehouse-data-form">
+                <div fxFlex="100%">
+                    <mat-card class="h-100">
+                        <mat-card-content>
+                            <div fxLayout="row" class="row" fxLayoutGap="5px">
+                                <mat-form-field appearance="outline" fxFlex="40">
+                                    <mat-label>{{
+                                        'setup.warehouse.companyCode' | translate
+                                        }}</mat-label>
+                                    <input matInput type="text" readonly formControlName="companyCode" />
+                                </mat-form-field>
+                                <mat-form-field appearance="outline" fxFlex>
+                                    <mat-label>{{
+                                        'setup.warehouse.companyName' | translate
+                                        }}</mat-label>
+                                    <input matInput type="text" readonly formControlName="companyName" />
+                                </mat-form-field>
+                            </div>
+                            <div fxLayout="row" class="row" fxLayoutGap="5px">
+                                <mat-form-field appearance="outline" fxFlex="40">
+                                    <mat-label>{{
+                                        'setup.warehouse.companyCode' | translate
+                                        }}</mat-label>
+                                    <input matInput type="text" formControlName="companyCode" />
+                                </mat-form-field>
+                                <mat-form-field appearance="outline" fxFlex>
+                                    <mat-label>{{
+                                        'setup.warehouse.companyName' | translate
+                                        }}</mat-label>
+                                    <input matInput type="text" readonly formControlName="companyName" />
+                                </mat-form-field>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+        </form>
+    </mat-tab>
+
+    <!-- Search -->
+    <mat-tab label="Search">
+    </mat-tab>
+</mat-tab-group>

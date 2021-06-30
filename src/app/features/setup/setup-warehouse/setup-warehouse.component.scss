@@ -1,0 +1,24 @@
+@import '../../../../assets/scss/buttons.scss';
+@import '../../../../assets/scss/variables.scss';
+
+.filter-container {
+    padding-bottom: 0px;
+  }
+  .search-container {
+    padding-top: 0px;
+  }
+  .search-table {
+    width: 100%;
+  }
+  .mat-column-action {
+    width: 50px;
+  }
+  .warehouse-data-form {
+    padding-bottom: 2px;
+    padding-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    input:not(.normal) {
+      text-transform: uppercase;
+    }
+  }
