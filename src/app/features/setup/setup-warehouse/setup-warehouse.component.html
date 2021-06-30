@@ -32,13 +32,13 @@
                                                 <mat-label>{{
                                                     'setup.warehouse.code' | translate
                                                     }}</mat-label>
-                                                <input matInput type="text" formControlName="code" />
+                                                <input matInput required type="text" formControlName="code" />
                                             </mat-form-field>
                                             <mat-form-field appearance="outline" fxFlex>
                                                 <mat-label>{{
                                                     'setup.warehouse.description' | translate
                                                     }}</mat-label>
-                                                <input matInput type="text" formControlName="description" />
+                                                <input matInput required type="text" formControlName="description" />
                                             </mat-form-field>
                                         </div>
                                         <div fxLayout="row" class="row" fxLayoutGap="5px">
@@ -46,7 +46,9 @@
                                                 <mat-label>{{
                                                     'setup.warehouse.address1' | translate
                                                     }}</mat-label>
-                                                <input matInput type="text" formControlName="address1" />
+                                                <input matInput required type="text" formControlName="address1" />
+                                                <mat-error *ngIf="dataWarehouseControls.address1.invalid">
+                                                    {{'error.field' | translate }}</mat-error>
                                             </mat-form-field>
                                             <mat-form-field appearance="outline" fxFlex>
                                                 <mat-label>{{
@@ -102,7 +104,7 @@
                                                 <mat-label>{{
                                                     'setup.warehouse.id' | translate
                                                     }}</mat-label>
-                                                <input matInput type="text" formControlName="id" />
+                                                <input matInput required type="text" formControlName="id" />
                                             </mat-form-field>
                                         </div>
                                     </mat-card-content>
@@ -112,7 +114,40 @@
                     </form>
                 </mat-tab>
                 <mat-tab label="Document">
-
+                    <mat-card class="mat-elevation-z10">
+                        <mat-card-content>
+                          <table mat-table  class="mat-elevation-z8 documents-table">
+                            <ng-container matColumnDef="type"> 
+                              <th mat-header-cell *matHeaderCellDef>Type</th>
+                              <td mat-cell *matCellDef="let element; let idx=index">
+                                <button mat-button disableRipple class="primary-button link-button"
+                                  >{{ element.companyCode }}</button>
+                              </td>
+                            </ng-container>
+                            <ng-container matColumnDef="prefix">
+                              <th mat-header-cell *matHeaderCellDef>Prefix</th>
+                              <td mat-cell *matCellDef="let element">
+                                {{ element.companyName }}
+                              </td>
+                            </ng-container>
+                            <ng-container matColumnDef="currentNo">
+                                <th mat-header-cell *matHeaderCellDef>Current No</th>
+                                <td mat-cell *matCellDef="let element">
+                                  {{ element.companyName }}
+                                </td>
+                              </ng-container>
+                              <ng-container matColumnDef="autoEmail">
+                                <th mat-header-cell *matHeaderCellDef>Auto Email</th>
+                                <td mat-cell *matCellDef="let element">
+                                  {{ element.companyName }}
+                                </td>
+                              </ng-container>
+                  
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+                          </table>
+                        </mat-card-content>
+                      </mat-card>
                 </mat-tab>
                 <mat-tab label="Rule Box">
 

@@ -26,6 +26,8 @@ export class SetupWarehouseComponent implements OnInit {
   formErrorTranslated = '';
   filterErrorTranslated = '';
 
+  displayedColumns = ['type', 'prefix', 'currentNo', 'autoEmail'];
+
   constructor(
     private fb: FormBuilder,
     private loader: LoaderService,
@@ -34,7 +36,7 @@ export class SetupWarehouseComponent implements OnInit {
     private siteTranslateService: SiteTranslateService,
   ) {
     this.CreateDataWarehouseForm();
-   }
+  }
 
   ngOnInit(): void {
     this.titleService.changeTitleTranslated('menu.setupWarehouse');
@@ -45,26 +47,85 @@ export class SetupWarehouseComponent implements OnInit {
     });
   }
 
-  CreateDataWarehouseForm()
-  {
+  CreateDataWarehouseForm() {
     this.dataWarehouseForm = this.fb.group({
       companyCode: '',
       companyName: '',
-      code: '',
-      description: '',
-      address1: '',
-      address2: '',
-      address3: '',
-      address4: '',
-      zip: '',
-      telephone: '',
-      fax: '',
-      email: '',
-      id: '',
+      code: [
+        '',
+        [
+          Validators.maxLength(10),
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
+      ],
+      description: [
+        '',
+        [
+          Validators.maxLength(50),
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
+      ],
+      address1: [
+        '',
+        [
+          Validators.required,
+          Validators.maxLength(100),
+          Validators.pattern(patternsHelper.address)
+        ]
+      ],
+      address2: [
+        '',
+        [Validators.maxLength(100), Validators.pattern(patternsHelper.address)]
+      ],
+      address3: [
+        '',
+        [Validators.maxLength(100), Validators.pattern(patternsHelper.address)]
+      ],
+      address4: [
+        '',
+        [Validators.maxLength(100), Validators.pattern(patternsHelper.address)]
+      ],
+      zip: [
+        '',
+        [
+          Validators.maxLength(50),
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
+      ],
+      telephone: [
+        '',
+        [
+          Validators.maxLength(30),
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
+      ],
+      fax: [
+        '',
+        [
+          Validators.maxLength(30),
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
+      ],
+      email: [
+        '',
+        [
+          Validators.required,
+          Validators.maxLength(500),
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
+      ],
+      id:  [
+        '',
+        [
+          Validators.required,
+          Validators.maxLength(2),
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
+      ],
       blockAlertDays: '',
       receiptDeliveryAlertDays: '',
-      receiptBackDateLimit : '',
-      deliveryBackDateLimit : '',
+      receiptBackDateLimit: '',
+      deliveryBackDateLimit: '',
     });
   }
 
