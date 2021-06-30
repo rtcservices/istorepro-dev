@@ -103,7 +103,22 @@
     },
     "warehouse" :{
       "companyCode": "Company Code",
-      "companyName": "Company Name"
+      "companyName": "Company Name",
+      "code": "Code",
+      "description": "Description",
+      "address1": "Address 1",
+      "address2": "Address 2",
+      "address3": "Address 3",
+      "address4": "Address 4",
+      "zip": "Zip",
+      "telephone": "Telephone",
+      "fax": "Fax",
+      "email": "Email",
+      "id": "ID",
+      "blockAlertDays": "Block Alert Days",
+      "receiptDeliveryAlertDays": "Receipt/Delivery Alert Days",
+      "receiptBackDateLimit" : "Receipt Back Date Limit",
+      "deliveryBackDateLimit" : "Delivery Back Date Limit"
     }
   }
 }
