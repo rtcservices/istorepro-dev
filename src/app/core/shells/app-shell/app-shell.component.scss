@@ -15,7 +15,7 @@
   .app-brand {
     display: flex;
     height: 50px;
-    width: 345px;
+    width: 280px;
     .app-logo {
       padding-left: 9px;
       width: 100%;
@@ -35,8 +35,8 @@
       img {
         height: 50px;
         @include breakpoint(mobileonly) {
-          height: 26px !important;
-          margin-top: 13px !important;
+          height: 33px !important;
+          margin-top: 8px;
         }
       }
     }
@@ -211,8 +211,8 @@
 }
 
 @media only screen and (min-width: 1020px) and (max-width: 1410px) {
-  .app-brand {
-    width: 383px !important;
+  .app-logo {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%) !important;
   }
   .menu-bar  > button[mat-button] {
     margin: 0 !important;
