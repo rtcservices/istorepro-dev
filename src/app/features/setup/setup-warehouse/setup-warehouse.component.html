@@ -25,10 +25,14 @@
                       <mat-form-field appearance="outline" fxFlex="14" fxFlex.lt-sm="25">
                         <mat-label>{{'setup.warehouse.code' | translate }}</mat-label>
                         <input matInput required type="text" formControlName="code" />
+                        <mat-error *ngIf="dataWarehouseControls.code.invalid">{{ 'error.field' | translate }}
+                        </mat-error>
                       </mat-form-field>
                       <mat-form-field appearance="outline" fxFlex>
                         <mat-label>{{'setup.warehouse.description' | translate}}</mat-label>
                         <input matInput required type="text" formControlName="description" />
+                        <mat-error *ngIf="dataWarehouseControls.description.invalid">{{ 'error.field' | translate }}
+                        </mat-error>
                       </mat-form-field>
                     </div>
                     <div fxLayout="row" class="row" fxLayoutGap="5px">
@@ -75,6 +79,7 @@
                       <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="18">
                         <mat-label>{{'setup.warehouse.id' | translate}}</mat-label>
                         <input matInput required type="text" formControlName="id" />
+                        <mat-error *ngIf="dataWarehouseControls.id.invalid">{{ 'error.field' | translate }}</mat-error>
                       </mat-form-field>
                     </div>
                     <div class="pale-border-box">
@@ -82,12 +87,19 @@
                       <div fxFex fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
                         <div class="input-group" fxFlex.lt-sm="50">
                           <div class="input-group-title">{{'setup.warehouse.receipt' | translate}}</div>
-                          <div class="input-group-area"><input type="text" value="0"></div>
+                          <div class="input-group-area">
+                            <input type="text" value="0">
+                            <!-- <mat-error *ngIf="dataWarehouseControls.receipt.invalid">{{ 'error.field' | translate }} -->
+                            <!-- </mat-error> -->
+                          </div>
                           <div class="input-group-icon">{{'general.days' | translate}}</div>
                         </div>
                         <div class="input-group" fxFlex.lt-sm="50">
                           <div class="input-group-title">{{'setup.warehouse.delivery' | translate}}</div>
-                          <div class="input-group-area"><input type="text" value="0"></div>
+                          <div class="input-group-area"><input type="text" value="0">
+                            <!-- <mat-error *ngIf="dataWarehouseControls.delivery.invalid">{{ 'error.field' | translate }} -->
+                            <!-- </mat-error> -->
+                          </div>
                           <div class="input-group-icon">{{'general.days' | translate}}</div>
                         </div>
                       </div>
@@ -265,7 +277,7 @@
             <mat-form-field appearance="outline" fxFlex>
               <mat-label>{{
                 'setup.warehouse.warehouseCode' | translate
-              }}</mat-label>
+                }}</mat-label>
               <input matInput type="text" formControlName="warehouseCode" />
               <mat-error *ngIf="searchWarehouseFormControls.warehouseCode.invalid">
                 {{ 'error.field' | translate }}</mat-error>
@@ -273,7 +285,7 @@
             <mat-form-field appearance="outline" fxFlex>
               <mat-label>{{
                 'setup.warehouse.description' | translate
-              }}</mat-label>
+                }}</mat-label>
               <input matInput type="text" formControlName="description" />
               <mat-error *ngIf="searchWarehouseFormControls.description.invalid">
                 {{ 'error.field' | translate }}</mat-error>
@@ -281,7 +293,7 @@
             <mat-form-field appearance="outline" fxFlex>
               <mat-label>{{
                 'setup.warehouse.id' | translate
-              }}</mat-label>
+                }}</mat-label>
               <input matInput type="text" formControlName="id" />
               <mat-error *ngIf="searchWarehouseFormControls.id.invalid">
                 {{ 'error.field' | translate }}</mat-error>

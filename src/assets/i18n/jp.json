@@ -145,5 +145,24 @@
         "inactive": "非活性"
       }
     }
+  }, 
+  "base" :{
+    "itemType":{
+      "code" : "コード",
+      "description" :"説明",
+      "storageType" : "ストレージタイプ",
+      "alertDays" : "アラート日",
+      "mandatory" : "必須",
+      "expiryalertDays" : "有効期限アラート日",
+      "manufacturingDate" : "製造日付",
+      "batchNo":"バッチ番号",
+      "consolidateOn" : "統合",
+      "defaultPick" : "デフォルトのピック",
+      "WHControl" :{
+        "whControl" : "WH。コントロール",
+        "code" : "コード",
+        "name" : "名前"
+      }
+    }
   }
 }
