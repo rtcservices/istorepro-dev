@@ -16,6 +16,9 @@
   input:not(.normal) {
     text-transform: uppercase;
   }
+  .row{
+    font-size: 15px;
+  }
 }
 
 .form-12px {
@@ -48,6 +51,7 @@
   .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
     transform: translateY(-1.1em) scale(0.75);
     width: 133.33333%;
+    padding-bottom: 2px;
   }
   .row {
     height: 55px;
