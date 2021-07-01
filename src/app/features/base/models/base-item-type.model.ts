@@ -10,6 +10,7 @@ export interface BaseItemTypeModel {
 }
 
 export interface BaseItemTypeCodeModel {
+  checked: boolean;
   code: string;
   name: string;
 }

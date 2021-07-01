@@ -11,6 +11,7 @@ import { SiteTranslateService } from '../../../services/site-translate.service';
 
 import { patternsHelper } from '../../../helpers/patterns.helper';
 import { NotificationService } from 'src/app/services/notification.service';
+import { BaseItemTypeCodeModel } from '../models/base-item-type.model';
 
 @Component({
   selector: 'ibe-base-item-type',
@@ -21,7 +22,18 @@ export class BaseItemTypeComponent implements OnInit {
   @ViewChild('baseItemTypeTab', { static: false })
   setupCompanyTab!: MatTabGroup;
 
-  dataItemTypeForm!: FormGroup
+  dataItemTypeForm!: FormGroup;
+
+  whModel: BaseItemTypeCodeModel[] = [
+    { code: '', name: '', checked: false },
+    { code: '', name: '', checked: false },
+    { code: '', name: '', checked: false },
+    { code: '', name: '', checked: false },
+    { code: '', name: '', checked: false },
+    { code: '', name: '', checked: false },
+    { code: '', name: '', checked: false },
+    { code: '', name: '', checked: false }
+  ];
 
   formErrorTranslated = '';
   filterErrorTranslated = '';
@@ -35,7 +47,7 @@ export class BaseItemTypeComponent implements OnInit {
     private notification: NotificationService
   ) {
     this.createDataWarehouseForm();
-   }
+  }
 
   ngOnInit(): void {
     this.titleService.changeTitleTranslated('menu.setupCompany');
@@ -64,37 +76,12 @@ export class BaseItemTypeComponent implements OnInit {
           Validators.pattern(patternsHelper.alphanumeric)
         ]
       ],
-      storageType: [
-        '',
-        [
-          Validators.required,
-        ]
-      ],
-      expiryAlertDays: [
-        '',
-        [
-          Validators.required,
-        ]
-      ],
-      manufacturingDate: [
-        '',
-        [
-          Validators.required,
-        ]
-      ],
-      batchNo: [
-        '',
-        [
-          Validators.required,
-        ]
-      ],
+      storageType: ['', [Validators.required]],
+      expiryAlertDays: ['', [Validators.required]],
+      manufacturingDate: ['', [Validators.required]],
+      batchNo: ['', [Validators.required]],
       consolidateOn: '',
-      defaultPick: [
-        '',
-        [
-          Validators.required,
-        ]
-      ],
+      defaultPick: ['', [Validators.required]]
     });
   }
 
