@@ -5,7 +5,7 @@ import { MatTabGroup } from '@angular/material/tabs';
 
 import { TranslateService } from '@ngx-translate/core';
 import { LoaderService } from '../../../services/loader.service';
-import { BaseItemTypeCodeModel } from '../models/base-item-type.model';
+import { BaseItemTypeCodeModel, BaseItemTypeModel } from '../models/base-item-type.model';
 
 import { TitleService } from '../../../services/title.service';
 import { SiteTranslateService } from '../../../services/site-translate.service';
@@ -34,6 +34,14 @@ export class BaseItemTypeComponent implements OnInit {
     { code: '9073', name: 'BRIGHTSTAR KHALAPUR' },
     { code: '1583', name: 'HAVELLS INDIA LIMITED (FLYJAC WH)' },
   ];
+
+  searchItemTypeForm!: FormGroup;
+  searchItemTypeDataSource: BaseItemTypeModel[] = [];
+  // dummyItemTypeSearchModel: BaseItemTypeModel[] = [
+  //   { code: 'GEM1234', description: 'Gemini Software',  }
+  // ];
+
+  displayedwhControlColumns = ['code', 'name'];
 
   dataItemTypeForm!: FormGroup
 
