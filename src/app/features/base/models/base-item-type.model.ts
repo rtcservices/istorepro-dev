@@ -18,4 +18,5 @@ export interface BaseItemTypeCodeModel {
 export interface BaseItemTypeSearchModel {
   code: string;
   description: string;
+  storageType: string;
 }

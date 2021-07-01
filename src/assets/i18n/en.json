@@ -143,23 +143,24 @@
         "inactive": "Inactive"
       }
     }
-  },
-  "base": {
-    "itemType": {
-      "code": "code",
-      "description": "Description",
-      "storageType": "Storage Type",
-      "alertDays": "Alert Days",
-      "mandatory": "Mandatory",
-      "expiryalertDays": "Expiry Alert Days",
-      "manufacturingDate": "Manufacturing Date",
-      "batchNo": "Batch No",
-      "consolidateOn": "Consolidate On",
-      "defaultPick": "Default Pick",
-      "WHControl": {
-        "whControl": "WH. Control",
-        "code": "Code",
-        "name": "Name"
+  }, 
+  "base" :{
+    "itemType":{
+      "code" : "code",
+      "description" :"Description",
+      "storageType" : "Storage Type",
+      "alertDays" : "Alert Days",
+      "mandatory" : "Mandatory",
+      "expiry" : "Expiry",
+      "manufacturingDate" : "Manufacturing Date",
+      "batchNo":"Batch No",
+      "consolidateOn" : "Consolidate On",
+      "defaultPick" : "Default Pick",
+      "warehouse": "Warehouse",
+      "WHControl" :{
+        "whControl" : "WH. Control",
+        "code" : "Code",
+        "name" : "Name"
       }
     },
     "item": {
