@@ -5,7 +5,7 @@ import { MatTabGroup } from '@angular/material/tabs';
 
 import { TranslateService } from '@ngx-translate/core';
 import { LoaderService } from '../../../services/loader.service';
-import { BaseItemTypeCodeModel } from '../models/base-item-type.model';
+import { BaseItemTypeCodeModel, BaseItemTypeModel } from '../models/base-item-type.model';
 
 import { TitleService } from '../../../services/title.service';
 import { SiteTranslateService } from '../../../services/site-translate.service';
@@ -39,7 +39,15 @@ export class BaseItemTypeComponent implements OnInit {
     { checked: false, code: '1583', name: 'HAVELLS INDIA LIMITED (FLYJAC WH)' }
   ];
 
-  dataItemTypeForm!: FormGroup;
+  searchItemTypeForm!: FormGroup;
+  searchItemTypeDataSource: BaseItemTypeModel[] = [];
+  // dummyItemTypeSearchModel: BaseItemTypeModel[] = [
+  //   { code: 'GEM1234', description: 'Gemini Software',  }
+  // ];
+
+  displayedwhControlColumns = ['code', 'name'];
+
+  dataItemTypeForm!: FormGroup
 
   formErrorTranslated = '';
   filterErrorTranslated = '';
@@ -62,6 +70,7 @@ export class BaseItemTypeComponent implements OnInit {
       this.formErrorTranslated = this.translate.instant('error.form');
       this.filterErrorTranslated = this.translate.instant('error.filter');
     });
+    this.whControlDataSource = this.dummyWHControlModel;
   }
 
   createDataWarehouseForm() {
