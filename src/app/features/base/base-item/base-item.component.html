@@ -1,1 +1,182 @@
-<p>base-item works!</p>
+<div class="page-title">
+  <h2>{{'base.item.item' | translate}}</h2>
+</div>
+<mat-tab-group #baseItemTab>
+  <mat-tab label="Data">
+    <form fxLayout="column" [formGroup]="dataItemForm" (ngSubmit)="onDataItemSubmit()" class="slim-form">
+      <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="stretch" fxLayoutGap="5px" class="data-form">
+        <div fxFlex="100%">
+          <mat-card class="h-100">
+            <mat-card-content>
+              <div fxLayout="row" class="row" fxLayoutGap="5px">
+                <mat-form-field appearance="outline" fxFlex="32">
+                  <mat-label>{{
+                      'base.item.item' | translate
+                    }}</mat-label>
+                  <input matInput readonly formControlName="item" />
+                  <mat-error *ngIf="dataItemFormControls.item.invalid">{{ 'error.field' | translate }}
+                  </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex>
+                  <mat-label>{{
+                      'base.item.description' | translate
+                    }}</mat-label>
+                  <input matInput required formControlName="description" />
+                  <mat-error *ngIf="dataItemFormControls.description.invalid">{{ 'error.field' | translate }}
+                  </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex="20">
+                  <mat-label>{{
+                      'base.item.hscode' | translate
+                    }}</mat-label>
+                  <input matInput formControlName="hscode" />
+                  <mat-error *ngIf="dataItemFormControls.hscode.invalid">{{
+                      'error.field' | translate
+                    }}</mat-error>
+                </mat-form-field>
+              </div>
+              <div fxLayout="row" class="row" fxLayoutGap="5px">
+                <div fxFlex="70%" fxLayoutGap="5px">
+                  <mat-form-field appearance="outline" fxFlex="20" fxFlex.lt-md="34" fxFlex fxFlex.lt-sm="33">
+                    <mat-label>{{
+                            'base.item.itemType' | translate
+                            }}</mat-label>
+                    <mat-select formControlName="itemType">
+                    </mat-select>
+                    <mat-error *ngIf="dataItemFormControls.itemType.invalid">{{
+                            'error.field' | translate
+                            }}</mat-error>
+                  </mat-form-field>
+                  <mat-form-field appearance="outline" fxFlex="20" fxFlex.lt-md="34" fxFlex fxFlex.lt-sm="33">
+                    <mat-label>{{
+                            'base.item.scanType' | translate
+                            }}</mat-label>
+                    <mat-select formControlName="scanType">
+                      <mat-option>{{
+                                    'base.item.barCode' | translate
+                                }}</mat-option>
+                      <mat-option>{{
+                                    'base.item.qrCode' | translate
+                                }}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="dataItemFormControls.scanType.invalid">{{
+                            'error.field' | translate
+                            }}</mat-error>
+                  </mat-form-field>
+                  <mat-form-field appearance="outline" fxFlex="20">
+                    <mat-label>{{
+                            'base.item.scanCode' | translate
+                        }}</mat-label>
+                    <input matInput formControlName="scanCode" />
+                    <mat-error *ngIf="dataItemFormControls.scanCode.invalid">{{
+                            'error.field' | translate
+                        }}</mat-error>
+                  </mat-form-field>
+
+                </div>
+                <div fxFlex="10%" fxLayoutGap="5px">
+
+
+                </div>
+                <div fxFlex="20%" fxLayoutGap="5px">
+
+                  <h4>{{
+                                'base.item.controls' | translate
+                              }}</h4>
+                  <p>
+                    <mat-checkbox formControlName="validateStorageType">{{
+                                'base.item.validateStorageType' | translate
+                              }}</mat-checkbox>
+                  </p>
+                  <p>
+                    <mat-checkbox formControlName="inventoryAlert">{{
+                                'base.item.inventoryAlert' | translate
+                              }}</mat-checkbox>
+                  </p>
+                  <p>
+                    <mat-checkbox formControlName="inactive">{{
+                                'base.item.inactive' | translate
+                              }}</mat-checkbox>
+                  </p>
+
+                </div>
+
+              </div>
+
+
+
+     
+
+
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+
+    </form>
+  </mat-tab>
+  <mat-tab label="Search">
+    <!--     <form fxLayout="column" [formGroup]="searchCompanyForm" (ngSubmit)="onSearchCompanySubmit()" class="slim-form">
+        <mat-card class="filter-container">
+          <mat-card-content>
+            <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px"
+              class="row">
+              <mat-form-field appearance="outline" fxFlex>
+                <mat-label>{{
+                  'base.item.companyCode' | translate
+                }}</mat-label>
+                <input matInput type="text" formControlName="companyCode" />
+                <mat-error *ngIf="searchCompanyFormControls.companyCode.invalid">
+                  {{ 'error.field' | translate }}</mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline" fxFlex>
+                <mat-label>{{
+                  'base.item.companyName' | translate
+                }}</mat-label>
+                <input matInput type="text" formControlName="companyName" />
+                <mat-error *ngIf="searchCompanyFormControls.companyName.invalid">
+                  {{ 'error.field' | translate }}</mat-error>
+              </mat-form-field>
+            </div>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="search-container">
+          <mat-card-content>
+            <div class="form-button-container">
+              <button mat-raised-button class="primary-raised-button" type="submit">
+                <mat-icon>search</mat-icon>
+              </button>
+              <button mat-raised-button class="green-raised-button" type="reset" (click)="resetCompanySearchForm()">
+                <mat-icon>restart_alt</mat-icon>
+              </button>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </form>
+      <mat-card class="mat-elevation-z10">
+        <mat-card-content>
+          <table mat-table [dataSource]="searchDataSource" class="mat-elevation-z8 search-table">
+            <ng-container matColumnDef="companyCode">
+              <th mat-header-cell *matHeaderCellDef>Company Code</th>
+              <td mat-cell *matCellDef="let element; let idx=index">
+                <button mat-button disableRipple class="primary-button link-button"
+                  (click)="searchItemClick($event, element, idx)">{{ element.companyCode }}</button>
+              </td>
+            </ng-container>
+            <ng-container matColumnDef="companyName">
+              <th mat-header-cell *matHeaderCellDef>Company Name</th>
+              <td mat-cell *matCellDef="let element">
+                {{ element.companyName }}
+              </td>
+            </ng-container>
+  
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+          </table>
+          <small *ngIf="searchDataSource.length === 0" class="empty-table">
+            No records found
+          </small>
+        </mat-card-content>
+      </mat-card> -->
+  </mat-tab>
+</mat-tab-group>

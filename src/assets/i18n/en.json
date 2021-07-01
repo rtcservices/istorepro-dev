@@ -143,24 +143,50 @@
         "inactive": "Inactive"
       }
     }
-  }, 
-  "base" :{
-    "itemType":{
-      "code" : "code",
-      "description" :"Description",
-      "storageType" : "Storage Type",
-      "alertDays" : "Alert Days",
-      "mandatory" : "Mandatory",
-      "expiryalertDays" : "Expiry Alert Days",
-      "manufacturingDate" : "Manufacturing Date",
-      "batchNo":"Batch No",
-      "consolidateOn" : "Consolidate On",
-      "defaultPick" : "Default Pick",
-      "WHControl" :{
-        "whControl" : "WH. Control",
-        "code" : "Code",
-        "name" : "Name"
+  },
+  "base": {
+    "itemType": {
+      "code": "code",
+      "description": "Description",
+      "storageType": "Storage Type",
+      "alertDays": "Alert Days",
+      "mandatory": "Mandatory",
+      "expiryalertDays": "Expiry Alert Days",
+      "manufacturingDate": "Manufacturing Date",
+      "batchNo": "Batch No",
+      "consolidateOn": "Consolidate On",
+      "defaultPick": "Default Pick",
+      "WHControl": {
+        "whControl": "WH. Control",
+        "code": "Code",
+        "name": "Name"
       }
-    }
+    },
+    "item": {
+      "item": "Item",
+      "description": "Description",
+      "hscode": "H.S Code",
+      "itemType": "Item type",
+      "scanType": "Scan Type",
+      "barCode": "BAR CODE",
+      "qrCode": "QR CODE",
+      "scanCode": "Scan Code",
+      "controls": "Controls",
+      "validateStorageType": "Validate Storage Type",
+      "inventoryAlert" : "Inventory Alert ",
+      "inactive": "Inactive",
+      "sku": "SKU",
+      "unit": "UNIT",
+      "unitWeight" : "Unit Wt",
+      "shelfLife": "Shelf Life",
+      "pickOption": "Pick Option",
+      "dimension": "Dimensions",
+      "length" : "Length",
+      "breadth": "Breadth",
+      "height" : "Height",
+      "inventoryAudit": "Inventory Audit",
+      "lastAudit" : "Last Audit Completed",
+      "currentAudit": "Current Audit Started"
   }
+}
 }

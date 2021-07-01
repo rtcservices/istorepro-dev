@@ -1,0 +1,18 @@
+@import '../../../../assets/scss/variables.scss';
+
+.mat-column-action {
+  width: 50px;
+}
+.company-logo {
+  img {
+    cursor: pointer;
+    border: 1px solid $site-light-gray;
+    padding: 0.25rem;
+    &:hover {
+      border-color: $site-black;
+    }
+  }
+}
+.license-subscription-alert {
+  margin: 0.25rem 0;
+}
