@@ -5,7 +5,10 @@ import { MatTabGroup } from '@angular/material/tabs';
 
 import { TranslateService } from '@ngx-translate/core';
 import { LoaderService } from '../../../services/loader.service';
-import { BaseItemTypeCodeModel, BaseItemTypeModel } from '../models/base-item-type.model';
+import {
+  BaseItemTypeCodeModel,
+  BaseItemTypeModel
+} from '../models/base-item-type.model';
 
 import { TitleService } from '../../../services/title.service';
 import { SiteTranslateService } from '../../../services/site-translate.service';
@@ -22,8 +25,8 @@ export class BaseItemTypeComponent implements OnInit {
   @ViewChild('baseItemTypeTab', { static: false })
   setupCompanyTab!: MatTabGroup;
 
-  whControlDataSource: BaseItemTypeCodeModel[] = [];
-  dummyWHControlModel: BaseItemTypeCodeModel[] = [
+  // whControlDataSource: BaseItemTypeCodeModel[] = [];
+  whControlDataSource: BaseItemTypeCodeModel[] = [
     { checked: false, code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD' },
     { checked: false, code: '3254', name: 'NIPPON PAINT (INDIA) PRIVATE LTD' },
     {
@@ -47,7 +50,7 @@ export class BaseItemTypeComponent implements OnInit {
 
   displayedwhControlColumns = ['code', 'name'];
 
-  dataItemTypeForm!: FormGroup
+  dataItemTypeForm!: FormGroup;
 
   formErrorTranslated = '';
   filterErrorTranslated = '';
@@ -70,7 +73,6 @@ export class BaseItemTypeComponent implements OnInit {
       this.formErrorTranslated = this.translate.instant('error.form');
       this.filterErrorTranslated = this.translate.instant('error.filter');
     });
-    this.whControlDataSource = this.dummyWHControlModel;
   }
 
   createDataWarehouseForm() {
