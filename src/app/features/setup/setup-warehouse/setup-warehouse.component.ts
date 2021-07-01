@@ -48,31 +48,46 @@ export class SetupWarehouseComponent implements OnInit {
 
   documentDataSource: SetupWarehouseDocumentModel[] = [];
   dummyDocumentModel: SetupWarehouseDocumentModel[] = [
-    { type: 'Type 1', prefix: 'pr1', currentNo: 1001 },
-    { type: 'Type 2', prefix: 'pr2', currentNo: 1002 },
-    { type: 'Type 3', prefix: 'pr3', currentNo: 1003 },
-    { type: 'Type 4', prefix: 'pr4', currentNo: 1004 },
-    { type: 'Type 5', prefix: 'pr5', currentNo: 1005 },
-    { type: 'Type 6', prefix: 'pr6', currentNo: 1006 },
-    { type: 'Type 7', prefix: 'pr7', currentNo: 1007 },
-    { type: 'Type 8', prefix: 'pr8', currentNo: 1008 },
-    { type: 'Type 9', prefix: 'pr9', currentNo: 1009 },
-    { type: 'Type 10', prefix: 'pr10', currentNo: 1010 }
+    {
+      autoEmail: false,
+      type: 'TEMPORARY RECEIPT NOTICE',
+      prefix: 'TR',
+      currentNo: 19235
+    },
+    {
+      autoEmail: true,
+      type: 'GOODS RECEIPT NOTICE',
+      prefix: 'GR',
+      currentNo: 19219
+    },
+    {
+      autoEmail: false,
+      type: 'RECEIPT IMPORT QUEUE',
+      prefix: 'RQ',
+      currentNo: 11816
+    },
+    {
+      autoEmail: false,
+      type: 'ADVANCED SHIPPING NOTE',
+      prefix: 'AS',
+      currentNo: 0
+    }
   ];
 
   ruleBoxDataSource: SetupWarehouseRuleBoxModel[] = [];
-  dummyRuleBoxModel: SetupWarehouseRuleBoxModel[] = [
-    { serialNo: 1, rule: 'Rule 1', value: 'Value 1' },
-    { serialNo: 2, rule: 'Rule 2', value: 'Value 2' },
-    { serialNo: 3, rule: 'Rule 3', value: 'Value 3' },
-    { serialNo: 4, rule: 'Rule 4', value: 'Value 4' },
-    { serialNo: 5, rule: 'Rule 5', value: 'Value 5' },
-    { serialNo: 6, rule: 'Rule 6', value: 'Value 6' },
-    { serialNo: 7, rule: 'Rule 7', value: 'Value 7' },
-    { serialNo: 8, rule: 'Rule 8', value: 'Value 8' },
-    { serialNo: 9, rule: 'Rule 9', value: 'Value 9' },
-    { serialNo: 10, rule: 'Rule 10', value: 'Value 10' }
-  ];
+  dummyRuleBoxModel: SetupWarehouseRuleBoxModel[] = [];
+  // dummyRuleBoxModel: SetupWarehouseRuleBoxModel[] = [
+  //   { serialNo: 1, rule: 'Rule 1', value: 'Value 1' },
+  //   { serialNo: 2, rule: 'Rule 2', value: 'Value 2' },
+  //   { serialNo: 3, rule: 'Rule 3', value: 'Value 3' },
+  //   { serialNo: 4, rule: 'Rule 4', value: 'Value 4' },
+  //   { serialNo: 5, rule: 'Rule 5', value: 'Value 5' },
+  //   { serialNo: 6, rule: 'Rule 6', value: 'Value 6' },
+  //   { serialNo: 7, rule: 'Rule 7', value: 'Value 7' },
+  //   { serialNo: 8, rule: 'Rule 8', value: 'Value 8' },
+  //   { serialNo: 9, rule: 'Rule 9', value: 'Value 9' },
+  //   { serialNo: 10, rule: 'Rule 10', value: 'Value 10' }
+  // ];
 
   contactDataSource: SetupWarehouseContactModel[] = [];
   dummyContactModel: SetupWarehouseContactModel[] = [

@@ -2,3 +2,14 @@
 .mat-column-action {
   width: 50px;
 }
+.document-table {
+  height: auto;
+  padding-top: 10px;
+  min-height: 144px;
+}
+.rulebox-table {
+  table {
+    margin-bottom: 10px;
+    padding-top: 10px;
+  }
+}

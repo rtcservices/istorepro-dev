@@ -7,6 +7,7 @@ export interface SetupWarehouseDocumentModel {
   type: string;
   prefix: string;
   currentNo: number;
+  autoEmail: boolean;
 }
 
 export interface SetupWarehouseRuleBoxModel {
