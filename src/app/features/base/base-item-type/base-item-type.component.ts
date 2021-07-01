@@ -113,7 +113,9 @@ export class BaseItemTypeComponent implements OnInit {
   createSearchItemTypeForm() {
     this.searchItemTypeForm = this.fb.group({
       code: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
-      descrition: ['', [Validators.pattern(patternsHelper.alphanumeric)]]
+      descrition: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      storageType: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      wearehouse: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
     });
   }
 
@@ -121,10 +123,36 @@ export class BaseItemTypeComponent implements OnInit {
     return this.searchItemTypeForm.controls;
   }
 
+  onSearchCompanySubmit() {
+    if (!this.searchItemTypeForm.valid) {
+      this.notification.error(this.formErrorTranslated);
+      return;
+    }
+    const code: string =
+      this.searchItemTypeForm.get('code')?.value || '';
+    const description: string =
+      this.searchItemTypeForm.get('description')?.value || '';
+    if (code.trim() === '' && description.trim() === '') {
+      this.notification.error(this.filterErrorTranslated);
+      return;
+    } else {
+      this.loader.show();
+      setTimeout(() => {
+        this.searchItemTypeDataSource = [...this.dummyItemTypeSearchModel];
+        this.loader.hide();
+      }, 500);
+    }
+  }
+
   saveCompanyData() {}
   deleteCompanyData() {}
 
   resetCompanyDataForm() {
     this.dataItemTypeForm.reset();
+  }
+
+  resetItemTypeSearchForm() {
+    this.searchItemTypeForm.reset();
+    this.searchItemTypeDataSource = [];
   }
 }

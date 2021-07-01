@@ -12,16 +12,6 @@
                 <mat-card>
                   <mat-card-content>
                     <div fxLayout="row" class="row" fxLayoutGap="5px">
-                      <mat-form-field appearance="outline" fxFlex="30" fxFlex.lt-sm="40">
-                        <mat-label>{{'setup.warehouse.companyCode' | translate}}</mat-label>
-                        <input matInput type="text" readonly formControlName="companyCode" />
-                      </mat-form-field>
-                      <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="58">
-                        <mat-label>{{'setup.warehouse.companyName' | translate }}</mat-label>
-                        <input matInput type="text" readonly formControlName="companyName" />
-                      </mat-form-field>
-                    </div>
-                    <div fxLayout="row" class="row" fxLayoutGap="5px">
                       <mat-form-field appearance="outline" fxFlex="14" fxFlex.lt-sm="25">
                         <mat-label>{{'setup.warehouse.code' | translate }}</mat-label>
                         <input matInput required type="text" formControlName="code" />
@@ -122,12 +112,12 @@
                       <tbody>
                         <ng-template let-document ngFor [ngForOf]="documentDataSource">
                           <tr>
-                            <td style="width: 40%;">{{document.type}}</td>
-                            <td style="text-align: center; width: 80px;">
-                              <input type="text" [value]="document.prefix">
+                            <td >{{document.type}}</td>
+                            <td style="text-align: center; width: 200px;">
+                              <input type="text" style="width: auto;" [value]="document.prefix">
                             </td>
-                            <td>{{document.currentNo}}</td>
-                            <td style="text-align: center; width: 80px;">
+                            <td style="width: 200px;">{{document.currentNo}}</td>
+                            <td style="text-align: center; width: 100px;">
                               <mat-checkbox color="primary" [checked]="document.autoEmail" disabled></mat-checkbox>
                             </td>
                           </tr>
@@ -161,10 +151,10 @@
                             <td>
                               <input type="text" style="width: 100%;" [value]="rule.rule">
                             </td>
-                            <td>
+                            <td style="width: 200px;">
                               <input type="text" style="width: 100%;" [value]="rule.value">
                             </td>
-                            <td style="text-align: center;width: 50px;">
+                            <td style="text-align: center;width: 70px;">
                               <mat-icon style="color: #f44336;">remove_circle</mat-icon>
                             </td>
                           </tr>
@@ -182,7 +172,9 @@
                         <tr>
                           <th>{{ 'setup.warehouse.contact.name' | translate}}</th>
                           <th>{{ 'setup.warehouse.contact.email' | translate}}</th>
-                          <th></th>
+                          <th>
+                            <mat-icon style="padding-top: 3px;">add_circle_outline</mat-icon>
+                          </th>
                         </tr>
                       </thead>
                       <tbody>
@@ -214,7 +206,7 @@
                           <th>{{ 'setup.warehouse.operator.name' | translate}}</th>
                           <th>{{ 'setup.warehouse.operator.loginName' | translate}}</th>
                           <th>{{ 'setup.warehouse.operator.inactive' | translate}}</th>
-                          <th></th>
+                          <th style="text-align: center;"><mat-icon style="padding-top: 3px;">add_circle_outline</mat-icon></th>
                         </tr>
                       </thead>
                       <tbody>
