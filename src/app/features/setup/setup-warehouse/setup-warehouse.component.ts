@@ -190,26 +190,22 @@ export class SetupWarehouseComponent implements OnInit, AfterViewInit {
     this.contactDataSource = [...this.dummyContactModel];
     this.operatorDataSource = [...this.dummyoperatorModel];
   }
+
   ngAfterViewInit() {
     this.setTabHeights();
   }
+
   setTabHeights() {
-    const intervalId = setInterval(() => {
-      const tabCardBody = document.querySelectorAll(
-        'mat-tab-group#setupWarehouseDataTab mat-tab-body mat-card'
-      );
-      if (tabCardBody) {
-        console.log({ tabCardBody });
-        const maxHeight = Math.max(
-          ...Array.from(tabCardBody).map((elm: any) => elm.clientHeight)
-        );
-        tabCardBody.forEach((itm) => {
-          console.log({ itm });
-          itm.setAttribute('style', `height:${maxHeight}px;`);
-        });
-        clearInterval(intervalId);
-      }
-    }, 1000);
+    const tabCardBody = document.querySelectorAll(
+      'mat-tab-group#setupWarehouseDataTab mat-tab-body'
+    );
+    if (!tabCardBody) return;
+    const maxHeight = Math.max(
+      ...Array.from(tabCardBody).map((elm: any) => elm.clientHeight)
+    );
+    tabCardBody.forEach((itm) => {
+      itm.setAttribute('style', `height:${maxHeight}px;`);
+    });
   }
 
   createDataWarehouseForm() {
