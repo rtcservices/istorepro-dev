@@ -1,4 +1,4 @@
-@import './variables.scss';
+@import "./variables.scss";
 .filter-container {
   padding-bottom: 0.5rem;
 }
@@ -16,10 +16,18 @@
   input:not(.normal) {
     text-transform: uppercase;
   }
+  .row{
+    font-size: 15px;
+  }
 }
 
 .form-12px {
   font-size: 12px;
+}
+.slim-form {
+  input:not(.normal) {
+    text-transform: uppercase;
+  }
 }
 
 .slim-form
@@ -40,13 +48,14 @@
 }
 
 .slim-form {
-  .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
-    .mat-form-field-label {
+  .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
     transform: translateY(-1.1em) scale(0.75);
     width: 133.33333%;
+    padding-bottom: 2px;
   }
   .row {
     height: 55px;
+    font-size: 15px;
   }
   mat-error {
     float: right;

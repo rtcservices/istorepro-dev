@@ -99,7 +99,7 @@
       "website": "ウェブサイト",
       "suspendOperation": "操作を一時停止します",
       "companyLogo": "会社のロゴ",
-      "licenseSubscriptionAlert": "ライセンス/サブスクリプションアラート？",
+      "licenseSubscriptionAlert": "警告？",
       "licenseAlertLimit": "アラート制限"
     },
     "warehouse": {
@@ -126,7 +126,7 @@
       "document": {
         "type": "タイプ",
         "prefix": "プレフィックス",
-        "currentNo": "現在のいいえ",
+        "currentNo": "電流 ＃",
         "autoEmail": "自動メール"
       },
       "ruleBox": {

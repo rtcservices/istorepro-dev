@@ -87,7 +87,9 @@
                     'setup.company.sector' | translate
                   }}</mat-label>
                   <mat-select formControlName="sector">
-                    <option value=""></option>
+                    <mat-option>LOGISTICS</mat-option>
+                    <mat-option>FORWARDING</mat-option>
+                    <mat-option>OTHER</mat-option>
                   </mat-select>
                   <mat-error *ngIf="dataCompanyFormControls.sector.invalid">{{
                     'error.field' | translate
@@ -170,18 +172,13 @@
                   'setup.company.licenseSubscriptionAlert' | translate
                 }}</mat-checkbox>
                   <div fxLayout="row" fxLayoutGap="2px" class="row">
-                    <mat-form-field appearance="outline" fxFlex="70">
-                      <mat-label>{{
-                      'setup.company.licenseAlertLimit' | translate
-                    }}</mat-label>
-                      <input matInput type="text" formControlName="licenseAlertLimit" />
-                    </mat-form-field>
-                    <mat-form-field appearance="outline" fxFlex="29">
-                      <mat-select type="text" formControlName="licenseAlertLimitType">
-                        <mat-option value=""></mat-option>
-                        <mat-option value="days">DAYS</mat-option>
-                      </mat-select>
-                    </mat-form-field>
+                    <div class="input-group" fxFlex.lt-sm="50">
+                      <div class="input-group-title">{{'setup.company.licenseAlertLimit' | translate}}</div>
+                      <div class="input-group-area">
+                        <input type="text" value="0">
+                      </div>
+                      <div class="input-group-icon">{{'general.days' | translate}}</div>
+                    </div>
                   </div>
                   <div fxLayout="row" fxLayoutGap="2px" class="row">
                     <mat-form-field appearance="outline" fxFlex="100">

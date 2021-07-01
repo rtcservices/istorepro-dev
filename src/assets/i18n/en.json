@@ -3,7 +3,7 @@
     "add": "Add",
     "cancel": "Cancel",
     "clear": "Clear",
-    "days": "DAYS",
+    "days": "Days",
     "delete": "Delete",
     "description": "Description",
     "edit": "Edit",
@@ -99,12 +99,10 @@
       "website": "Website",
       "suspendOperation": "Suspend Operation",
       "companyLogo": "Company Logo",
-      "licenseSubscriptionAlert": "License/Subscription Alert ?",
+      "licenseSubscriptionAlert": "Alert ?",
       "licenseAlertLimit": "Alert Limit"
     },
     "warehouse": {
-      "warehouseCode": "Warehouse Code",
-      "companyName": "Company Name",
       "code": "Code",
       "description": "Description",
       "address1": "Address 1",
@@ -126,7 +124,7 @@
       "document": {
         "type": "Type",
         "prefix": "Prefix",
-        "currentNo": "Current No",
+        "currentNo": "Current #",
         "autoEmail": "Auto Email"
       },
       "ruleBox": {
@@ -135,7 +133,7 @@
         "value": "Value"
       },
       "contact": {
-        "name": "name",
+        "name": "Name",
         "email": "Email"
       },
       "operator": {

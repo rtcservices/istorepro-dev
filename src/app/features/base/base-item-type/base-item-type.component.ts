@@ -5,10 +5,7 @@ import { MatTabGroup } from '@angular/material/tabs';
 
 import { TranslateService } from '@ngx-translate/core';
 import { LoaderService } from '../../../services/loader.service';
-import {
-  BaseItemTypeCodeModel,
-  BaseItemTypeModel
-} from '../models/base-item-type.model';
+import { BaseItemTypeCodeModel, BaseItemTypeModel, BaseItemTypeSearchModel } from '../models/base-item-type.model';
 
 import { TitleService } from '../../../services/title.service';
 import { SiteTranslateService } from '../../../services/site-translate.service';
@@ -25,8 +22,8 @@ export class BaseItemTypeComponent implements OnInit {
   @ViewChild('baseItemTypeTab', { static: false })
   setupCompanyTab!: MatTabGroup;
 
-  // whControlDataSource: BaseItemTypeCodeModel[] = [];
-  whControlDataSource: BaseItemTypeCodeModel[] = [
+  whControlDataSource: BaseItemTypeCodeModel[] = [];
+  dummyWHControlModel: BaseItemTypeCodeModel[] = [
     { checked: false, code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD' },
     { checked: false, code: '3254', name: 'NIPPON PAINT (INDIA) PRIVATE LTD' },
     {
@@ -43,14 +40,19 @@ export class BaseItemTypeComponent implements OnInit {
   ];
 
   searchItemTypeForm!: FormGroup;
-  searchItemTypeDataSource: BaseItemTypeModel[] = [];
-  // dummyItemTypeSearchModel: BaseItemTypeModel[] = [
-  //   { code: 'GEM1234', description: 'Gemini Software',  }
-  // ];
-
+  searchItemTypeDataSource: BaseItemTypeSearchModel[] = [];
+  dummyItemTypeSearchModel: BaseItemTypeSearchModel[] = [
+    { code: 'GEM1234', description: 'Gemini Software' },
+    { code: 'GEM1234', description: 'Gemini Software' },
+    { code: 'GEM1234', description: 'Gemini Software' },
+    { code: 'GEM1234', description: 'Gemini Software' },
+    { code: 'GEM1234', description: 'Gemini Software' },
+    { code: 'GEM1234', description: 'Gemini Software' },
+    { code: 'GEM1234', description: 'Gemini Software' },
+  ];
   displayedwhControlColumns = ['code', 'name'];
 
-  dataItemTypeForm!: FormGroup;
+  dataItemTypeForm!: FormGroup
 
   formErrorTranslated = '';
   filterErrorTranslated = '';
@@ -73,6 +75,7 @@ export class BaseItemTypeComponent implements OnInit {
       this.formErrorTranslated = this.translate.instant('error.form');
       this.filterErrorTranslated = this.translate.instant('error.filter');
     });
+    this.whControlDataSource = this.dummyWHControlModel;
   }
 
   createDataWarehouseForm() {
@@ -107,10 +110,49 @@ export class BaseItemTypeComponent implements OnInit {
     return this.dataItemTypeForm.controls;
   }
 
+  createSearchItemTypeForm() {
+    this.searchItemTypeForm = this.fb.group({
+      code: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      descrition: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      storageType: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      wearehouse: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+    });
+  }
+
+  get searchItemTypeFormControls() {
+    return this.searchItemTypeForm.controls;
+  }
+
+  onSearchCompanySubmit() {
+    if (!this.searchItemTypeForm.valid) {
+      this.notification.error(this.formErrorTranslated);
+      return;
+    }
+    const code: string =
+      this.searchItemTypeForm.get('code')?.value || '';
+    const description: string =
+      this.searchItemTypeForm.get('description')?.value || '';
+    if (code.trim() === '' && description.trim() === '') {
+      this.notification.error(this.filterErrorTranslated);
+      return;
+    } else {
+      this.loader.show();
+      setTimeout(() => {
+        this.searchItemTypeDataSource = [...this.dummyItemTypeSearchModel];
+        this.loader.hide();
+      }, 500);
+    }
+  }
+
   saveCompanyData() {}
   deleteCompanyData() {}
 
   resetCompanyDataForm() {
     this.dataItemTypeForm.reset();
+  }
+
+  resetItemTypeSearchForm() {
+    this.searchItemTypeForm.reset();
+    this.searchItemTypeDataSource = [];
   }
 }

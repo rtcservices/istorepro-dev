@@ -14,3 +14,8 @@ export interface BaseItemTypeCodeModel {
   code: string;
   name: string;
 }
+
+export interface BaseItemTypeSearchModel {
+  code: string;
+  description: string;
+}

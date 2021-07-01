@@ -42,7 +42,7 @@ export class SetupCompanyComponent implements OnInit {
 
   displayedColumns = ['companyCode', 'companyName'];
 
-  sectors = ['Sector 1', 'Sector 2', 'Sector 3', 'Sector 4', 'Sector 5'];
+  sectors = ['LOGISTICS', 'FORWARDING', 'OTHER'];
   companyLogo = '../../../../assets/images/company-logo-236x81.jpg';
 
   formErrorTranslated = '';
