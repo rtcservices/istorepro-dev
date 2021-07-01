@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   submitted = false;
   loginInvalid = false;
-  homeUrl = '/setup';
+  homeUrl = '/home';
   forgotPasswordUrl = '/auth/forgot-password';
   constructor(
     private fb: FormBuilder,
@@ -28,20 +28,17 @@ export class LoginComponent implements OnInit {
     private siteTranslateService: SiteTranslateService,
     private titleService: TitleService,
     private loader: LoaderService
-  ) {
-  }
+  ) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       const language =
-        params.get('lang')!
-        || localStorage.getItem('site-lang')
-        || this.siteTranslateService.defaultLanguage;
-        localStorage.setItem('site-lang', language)
+        params.get('lang')! ||
+        localStorage.getItem('site-lang') ||
+        this.siteTranslateService.defaultLanguage;
+      localStorage.setItem('site-lang', language);
       this.translate.use(language).subscribe((res) => {
-        const pageTitle = this.translate.instant(
-          'login.title'
-        );
+        const pageTitle = this.translate.instant('login.title');
         this.titleService.changeTitle(pageTitle);
       });
     });
@@ -68,13 +65,12 @@ export class LoginComponent implements OnInit {
         if (authenticated) {
           const language = username === 'japan' ? 'jp' : 'en';
           this.translate.use(language);
-          localStorage.setItem('site-lang', language)
+          localStorage.setItem('site-lang', language);
           this.loader.show();
           this.router.navigate([this.homeUrl]);
           setTimeout(() => {
             this.loader.hide();
           }, 1500);
-
         } else {
           this.loginInvalid = true;
         }

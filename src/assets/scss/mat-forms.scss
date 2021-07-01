@@ -1,4 +1,22 @@
 @import './variables.scss';
+.filter-container {
+  padding-bottom: 0.5rem;
+}
+.search-container {
+  padding-top: 0px;
+}
+.search-table {
+  width: 100%;
+}
+.data-form {
+  padding-bottom: 2px;
+  padding-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  input:not(.normal) {
+    text-transform: uppercase;
+  }
+}
 
 .form-12px {
   font-size: 12px;
@@ -21,19 +39,26 @@
   top: -1.5em;
 }
 
-.slim-form
+.slim-form {
   .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
-  .mat-form-field-label {
-  transform: translateY(-1.1em) scale(0.75);
-  width: 133.33333%;
-}
-
-.slim-form .row {
-  height: 55px;
-}
-.error-right-form {
+    .mat-form-field-label {
+    transform: translateY(-1.1em) scale(0.75);
+    width: 133.33333%;
+  }
+  .row {
+    height: 55px;
+  }
   mat-error {
     float: right;
+  }
+}
+.slim-form mat-card mat-tab-group mat-card {
+  padding: 5px 0;
+  @include breakpoint(phablet) {
+    padding: 5px;
+  }
+  @include breakpoint(mobileonly) {
+    padding: 5px;
   }
 }
 .form-button-container {

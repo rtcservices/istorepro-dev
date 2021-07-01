@@ -12,6 +12,13 @@ const routes: Routes = [
     component: AuthShellComponent
   },
   {
+    path: 'home',
+    loadChildren: () =>
+      import('./features/home/home.module').then((m) => m.HomeModule),
+    component: AppShellComponent,
+    canActivateChild: [AuthGuard]
+  },
+  {
     path: 'setup',
     loadChildren: () =>
       import('./features/setup/setup.module').then((m) => m.SetupModule),
@@ -89,8 +96,8 @@ const routes: Routes = [
       import('./features/user-account/user-account.module').then(
         (m) => m.UserAccountModule
       ),
-      component: AppShellComponent,
-      canActivateChild: [AuthGuard]
+    component: AppShellComponent,
+    canActivateChild: [AuthGuard]
   },
   { path: '**', redirectTo: 'auth/login' }
 ];

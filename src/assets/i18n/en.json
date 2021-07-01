@@ -3,6 +3,7 @@
     "add": "Add",
     "cancel": "Cancel",
     "clear": "Clear",
+    "days": "DAYS",
     "delete": "Delete",
     "description": "Description",
     "edit": "Edit",
@@ -102,7 +103,7 @@
       "licenseAlertLimit": "Alert Limit"
     },
     "warehouse": {
-      "companyCode": "Company Code",
+      "warehouseCode": "Warehouse Code",
       "companyName": "Company Name",
       "code": "Code",
       "description": "Description",
@@ -119,6 +120,9 @@
       "receiptDeliveryAlertDays": "Receipt/Delivery Alert Days",
       "receiptBackDateLimit": "Receipt Back Date Limit",
       "deliveryBackDateLimit": "Delivery Back Date Limit",
+      "backDateLimit": "Back Date Limit",
+      "receipt": "Receipt",
+      "delivery": "Delivery",
       "document": {
         "type": "Type",
         "prefix": "Prefix",
@@ -136,8 +140,8 @@
       "operator": {
         "code": "Code",
         "name": "Name",
-        "loginName" : "Login Name",
-        "inactive" : "Inactive"
+        "loginName": "Login Name",
+        "inactive": "Inactive"
       }
     }
   }

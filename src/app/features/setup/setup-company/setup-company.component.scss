@@ -1,25 +1,7 @@
-@import '../../../../assets/scss/buttons.scss';
 @import '../../../../assets/scss/variables.scss';
-.filter-container {
-  padding-bottom: 0px;
-}
-.search-container {
-  padding-top: 0px;
-}
-.search-table {
-  width: 100%;
-}
+
 .mat-column-action {
   width: 50px;
-}
-.company-data-form {
-  padding-bottom: 2px;
-  padding-top: 5px;
-  margin-left: 5px;
-  margin-right: 5px;
-  input:not(.normal) {
-    text-transform: uppercase;
-  }
 }
 .company-logo {
   img {
@@ -31,11 +13,6 @@
     }
   }
 }
-.license {
-  border: 1px solid $site-light-gray;
-  margin-top: 0.25rem;
-  padding: 0.25rem;
-  .license-subscription-alert {
-    margin: 0.25rem 0;
-  }
+.license-subscription-alert {
+  margin: 0.25rem 0;
 }

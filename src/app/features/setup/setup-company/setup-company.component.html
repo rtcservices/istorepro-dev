@@ -3,10 +3,8 @@
 </div>
 <mat-tab-group #setupCompanyTab>
   <mat-tab label="Data">
-    <form fxLayout="column" [formGroup]="dataCompanyForm" (ngSubmit)="onDataCompanySubmit()"
-      class="slim-form error-right-form">
-      <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="stretch" fxLayoutGap="5px" fxLayoutAlign=" stretch"
-        class="company-data-form">
+    <form fxLayout="column" [formGroup]="dataCompanyForm" (ngSubmit)="onDataCompanySubmit()" class="slim-form">
+      <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="stretch" fxLayoutGap="5px" class="data-form">
         <div fxFlex="70%">
           <mat-card class="h-100">
             <mat-card-content>
@@ -119,7 +117,7 @@
                   <mat-label>{{
                     'setup.company.website' | translate
                   }}</mat-label>
-                  <input matInput type="text" formControlName="website" />
+                  <input matInput type="text" formControlName="website" class="normal" />
                   <mat-error *ngIf="dataCompanyFormControls.website.invalid">{{
                     'error.field' | translate
                   }}</mat-error>
@@ -140,7 +138,7 @@
               <img [src]="companyLogo" (click)="file.click()" />
               <input type="file" style="display: none" #file />
             </div>
-            <div class="license">
+            <div class="pale-border-box">
               <div>
                 <p>{{ 'general.license' | translate }}</p>
                 <table class="site-table w-100">
@@ -188,7 +186,7 @@
                   <div fxLayout="row" fxLayoutGap="2px" class="row">
                     <mat-form-field appearance="outline" fxFlex="100">
                       <mat-label>{{ 'general.email' | translate }}</mat-label>
-                      <input matInput type="text" formControlName="licenseEmail" />
+                      <input matInput type="text" class="normal" formControlName="licenseEmail" />
                     </mat-form-field>
                   </div>
                 </div>
@@ -218,14 +216,15 @@
     <form fxLayout="column" [formGroup]="searchCompanyForm" (ngSubmit)="onSearchCompanySubmit()" class="slim-form">
       <mat-card class="filter-container">
         <mat-card-content>
-          <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+          <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px"
+            class="row">
             <mat-form-field appearance="outline" fxFlex>
               <mat-label>{{
                 'setup.company.companyCode' | translate
               }}</mat-label>
               <input matInput type="text" formControlName="companyCode" />
               <mat-error *ngIf="searchCompanyFormControls.companyCode.invalid">
-                {{ 'setup.company.invalidCompanyCode' | translate }}</mat-error>
+                {{ 'error.field' | translate }}</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline" fxFlex>
               <mat-label>{{
@@ -233,7 +232,7 @@
               }}</mat-label>
               <input matInput type="text" formControlName="companyName" />
               <mat-error *ngIf="searchCompanyFormControls.companyName.invalid">
-                {{ 'setup.company.invalidCompanyName' | translate }}</mat-error>
+                {{ 'error.field' | translate }}</mat-error>
             </mat-form-field>
           </div>
         </mat-card-content>

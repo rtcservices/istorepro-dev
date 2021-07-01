@@ -1,8 +1,10 @@
 @import './assets/scss/variables.scss';
+@import './assets/scss/buttons.scss';
 @import './assets/scss/mat-forms.scss';
+@import './assets/scss/mat-nav.scss';
 @import './assets/scss/mat-table.scss';
 @import './assets/scss/utilities.scss';
-@import './assets/scss/mat-header-nav.scss';
+
 * {
   box-sizing: border-box;
 }
@@ -24,8 +26,38 @@ small {
   font-size: 0.8rem;
   margin-bottom: 0.25rem;
 }
+.input-group {
+  border-collapse: collapse;
+}
+.input-group > div {
+  display: table-cell;
+  border: 1px solid #ddd;
+  vertical-align: middle; /* needed for Safari */
+}
+.input-group-icon {
+  background: #eee;
+  color: #777;
+  padding: 0 12px;
+}
+.input-group-title {
+  padding: 0 12px;
+}
+.input-group-area {
+  width: 100%;
+}
+.input-group input {
+  border: 0;
+  display: block;
+  width: 100%;
+  padding: 8px;
+}
 .primary-border {
   border: 1px solid $site-primary;
+}
+.pale-border-box {
+  border: 1px solid $site-light-gray;
+  margin-top: 0.25rem;
+  padding: 0.25rem;
 }
 .spacer {
   flex: 1 1 auto;

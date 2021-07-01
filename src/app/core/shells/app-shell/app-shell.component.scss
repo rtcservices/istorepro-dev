@@ -1,5 +1,4 @@
 @import '../../../../assets/scss/variables.scss';
-
 .app-container {
   padding: 0.25rem;
 }
@@ -214,7 +213,7 @@
   .app-logo {
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%) !important;
   }
-  .menu-bar  > button[mat-button] {
+  .menu-bar > button[mat-button] {
     margin: 0 !important;
     padding: 5px !important;
     margin-left: 7px !important;
