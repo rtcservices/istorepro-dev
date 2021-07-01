@@ -12,48 +12,64 @@
                 <mat-card>
                   <mat-card-content>
                     <div fxLayout="row" class="row" fxLayoutGap="5px">
-                      <mat-form-field appearance="outline" fxFlex="30" fxFlex.lt-sm="40">
+                      <mat-form-field appearance="outline" fxFlex="10" fxFlex.lt-sm="15">
                         <mat-label>{{'base.itemType.code' | translate}}</mat-label>
                         <input matInput type="text" readonly formControlName="code" />
+                        <mat-error *ngIf="dataItemTypeControls.code.invalid">{{ 'error.field' | translate }}
+                        </mat-error>
                       </mat-form-field>
-                      <mat-form-field appearance="outline" fxFlex="40" fxFlex.lt-sm="50">
+                      <mat-form-field appearance="outline" fxFlex="60" fxFlex.lt-sm="50">
                         <mat-label>{{'base.itemType.description' | translate }}</mat-label>
                         <input matInput type="text" readonly formControlName="description" />
+                        <mat-error *ngIf="dataItemTypeControls.description.invalid">{{ 'error.field' | translate }}
+                        </mat-error>
                       </mat-form-field>
-                      <div class="input-group"  fxFlex>
-                        <div class="input-group-title">{{'base.itemType.storageType' | translate}}</div>
-                        <div class="input-group-area"><input type="text" value="0"></div>
-                        <div class="input-group-icon"></div>
+                      <mat-form-field appearance="outline" fxFlex="30" fxFlex.lt-sm="35">
+                        <mat-label>{{'base.itemType.storageType' | translate }}</mat-label>
+                        <input matInput type="text" readonly formControlName="storageType" />
+                        <mat-error *ngIf="dataItemTypeControls.storageType.invalid">{{ 'error.field' | translate }}
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
+                    <div fxLayout="row" fxLayout.lt-md="column" class="row" fxLayoutGap="5px">
+                      <div class="pale-border-box" fxFlex>
+                        <div>
+                          <p>{{ 'general.license' | translate }}</p>
+
+                        </div>
+                      </div>
+                      <div class="pale-border-box" fxFlex>
+                        <div>
+                          <p>{{ 'general.license' | translate }}</p>
+
+                        </div>
                       </div>
                     </div>
                   </mat-card-content>
                 </mat-card>
               </mat-tab>
               <mat-tab label="WH Control Grid">
-                <mat-card class="mat-elevation-z10">
+                <mat-card class="wh-control-table">
                   <mat-card-content>
-                    <!-- <table class="site-table w-100">
+                    <table class="site-table w-100 mat-elevation-z8">
                       <thead>
                         <tr>
-                          <th>{{ 'setup.warehouse.document.type' | translate}}</th>
-                          <th>{{ 'setup.warehouse.document.prefix' | translate}}</th>
-                          <th>{{ 'setup.warehouse.document.currentNo' | translate}}</th>
                           <th></th>
+                          <th>{{ 'base.itemType.WHControl.code' | translate}}</th>
+                          <th>{{ 'base.itemType.WHControl.name' | translate}}</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <ng-template let-document ngFor [ngForOf]="documentDataSource">
+                        <ng-template let-control ngFor [ngForOf]="whControlDataSource">
                           <tr>
-                            <td style="width: 40%;">{{document.type}}</td>
-                            <td>{{document.prefix}}</td>
-                            <td>{{document.currentNo}}</td>
                             <td style="text-align: center;">
                               <mat-checkbox></mat-checkbox>
-                            </td>
+                            <td>{{control.code}}</td>
+                            <td>{{control.name}}</td>
                           </tr>
                         </ng-template>
                       </tbody>
-                    </table> -->
+                    </table>
                   </mat-card-content>
                 </mat-card>
               </mat-tab>

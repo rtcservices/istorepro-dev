@@ -24,15 +24,19 @@ export class BaseItemTypeComponent implements OnInit {
 
   whControlDataSource: BaseItemTypeCodeModel[] = [];
   dummyWHControlModel: BaseItemTypeCodeModel[] = [
-    { code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD' },
-    { code: '3254', name: 'NIPPON PAINT (INDIA) PRIVATE LTD' },
-    { code: '2353', name: 'HAVELLS INDIA LIMITED - SBD (FLYJAC WH)' },
-    { code: '1368', name: 'BAJAJ ELECTRICALS LIMITED' },
-    { code: '8132', name: 'HAVELLS INDIA LIMITED (FLYJAC WH)' },
-    { code: '1378', name: 'HAVELLS INDIA LIMITED (INDORE)' },
-    { code: '3451', name: 'BAJAJ ELECTRICALS LIMITED' },
-    { code: '9073', name: 'BRIGHTSTAR KHALAPUR' },
-    { code: '1583', name: 'HAVELLS INDIA LIMITED (FLYJAC WH)' },
+    { checked: false, code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD' },
+    { checked: false, code: '3254', name: 'NIPPON PAINT (INDIA) PRIVATE LTD' },
+    {
+      checked: false,
+      code: '2353',
+      name: 'HAVELLS INDIA LIMITED - SBD (FLYJAC WH)'
+    },
+    { checked: false, code: '1368', name: 'BAJAJ ELECTRICALS LIMITED' },
+    { checked: false, code: '8132', name: 'HAVELLS INDIA LIMITED (FLYJAC WH)' },
+    { checked: false, code: '1378', name: 'HAVELLS INDIA LIMITED (INDORE)' },
+    { checked: false, code: '3451', name: 'BAJAJ ELECTRICALS LIMITED' },
+    { checked: false, code: '9073', name: 'BRIGHTSTAR KHALAPUR' },
+    { checked: false, code: '1583', name: 'HAVELLS INDIA LIMITED (FLYJAC WH)' }
   ];
 
   searchItemTypeForm!: FormGroup;
@@ -57,7 +61,7 @@ export class BaseItemTypeComponent implements OnInit {
     private notification: NotificationService
   ) {
     this.createDataWarehouseForm();
-   }
+  }
 
   ngOnInit(): void {
     this.titleService.changeTitleTranslated('menu.setupCompany');
@@ -66,6 +70,7 @@ export class BaseItemTypeComponent implements OnInit {
       this.formErrorTranslated = this.translate.instant('error.form');
       this.filterErrorTranslated = this.translate.instant('error.filter');
     });
+    this.whControlDataSource = this.dummyWHControlModel;
   }
 
   createDataWarehouseForm() {
@@ -86,37 +91,12 @@ export class BaseItemTypeComponent implements OnInit {
           Validators.pattern(patternsHelper.alphanumeric)
         ]
       ],
-      storageType: [
-        '',
-        [
-          Validators.required,
-        ]
-      ],
-      expiryAlertDays: [
-        '',
-        [
-          Validators.required,
-        ]
-      ],
-      manufacturingDate: [
-        '',
-        [
-          Validators.required,
-        ]
-      ],
-      batchNo: [
-        '',
-        [
-          Validators.required,
-        ]
-      ],
+      storageType: ['', [Validators.required]],
+      expiryAlertDays: ['', [Validators.required]],
+      manufacturingDate: ['', [Validators.required]],
+      batchNo: ['', [Validators.required]],
       consolidateOn: '',
-      defaultPick: [
-        '',
-        [
-          Validators.required,
-        ]
-      ],
+      defaultPick: ['', [Validators.required]]
     });
   }
 
