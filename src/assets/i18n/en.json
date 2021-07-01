@@ -151,11 +151,12 @@
       "storageType" : "Storage Type",
       "alertDays" : "Alert Days",
       "mandatory" : "Mandatory",
-      "expiry" : "Expiry Alert Days",
+      "expiry" : "Expiry",
       "manufacturingDate" : "Manufacturing Date",
       "batchNo":"Batch No",
       "consolidateOn" : "Consolidate On",
       "defaultPick" : "Default Pick",
+      "warehouse": "Warehouse",
       "WHControl" :{
         "whControl" : "WH. Control",
         "code" : "Code",

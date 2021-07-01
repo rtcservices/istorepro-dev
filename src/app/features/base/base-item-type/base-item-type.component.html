@@ -109,27 +109,70 @@
   </mat-tab>
   <!-- Search -->
   <mat-tab label="Search">
-    <form fxLayout="column" [formGroup]="searchItemTypeForm" (ngSubmit)="onSearchCompanySubmit()" class="slim-form">
+    <form fxLayout="column" [formGroup]="searchItemTypeForm" (ngSubmit)="onSearchItemTypeSubmit()" class="slim-form">
       <mat-card class="filter-container">
         <mat-card-content>
           <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px"
             class="row">
-            <!-- <mat-form-field appearance="outline" fxFlex>
+            <mat-form-field appearance="outline" fxFlex>
               <mat-label>{{
-                'setup.company.companyCode' | translate
-              }}</mat-label>
-              <input matInput type="text" formControlName="companyCode" />
-              <mat-error *ngIf="searchItemTypeForm.code.invalid">
+                'base.itemType.code' | translate
+                }}</mat-label>
+              <input matInput type="text" formControlName="code" />
+              <mat-error *ngIf="searchItemTypeFormControls.code.invalid">
                 {{ 'error.field' | translate }}</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline" fxFlex>
               <mat-label>{{
-                'setup.company.companyName' | translate
-              }}</mat-label>
-              <input matInput type="text" formControlName="companyName" />
-              <mat-error *ngIf="searchItemTypeForm.description.invalid">
+                'base.itemType.description' | translate
+                }}</mat-label>
+              <input matInput type="text" formControlName="description" />
+              <mat-error *ngIf="searchItemTypeFormControls.description.invalid">
                 {{ 'error.field' | translate }}</mat-error>
-            </mat-form-field> -->
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex>
+              <mat-label>{{
+                'base.itemType.storageType' | translate
+                }}</mat-label>
+              <input matInput type="text" formControlName="storageType" />
+              <mat-error *ngIf="searchItemTypeFormControls.storageType.invalid">
+                {{ 'error.field' | translate }}</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px"
+            class="row">
+            <mat-form-field appearance="outline" fxFlex>
+              <mat-label>{{
+                'base.itemType.warehouse' | translate
+                }}</mat-label>
+              <input matInput type="text" formControlName="warehouse" />
+              <mat-error *ngIf="searchItemTypeFormControls.warehouse.invalid">
+                {{ 'error.field' | translate }}</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex="20">
+              <mat-label>Expiry</mat-label>
+              <mat-select type="text" formControlName="expiry">
+                <mat-option value="yes">Yes</mat-option>
+                <mat-option value="no">No</mat-option>
+              </mat-select>
+              <mat-error *ngIf="searchItemTypeFormControls.expiry.invalid">{{ 'error.field' | translate }}</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex="20">
+              <mat-label>Mfg Date ?.</mat-label>
+              <mat-select type="text" formControlName="MfgDate">
+                <mat-option value="yes">Yes</mat-option>
+                <mat-option value="no">No</mat-option>
+              </mat-select>
+              <mat-error *ngIf="searchItemTypeFormControls.MfgDate.invalid">{{ 'error.field' | translate }}</mat-error>
+              </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex="20">
+              <mat-label>Batch No ?</mat-label>
+              <mat-select type="text" formControlName="batchNo">
+                <mat-option value="yes">Yes</mat-option>
+                <mat-option value="no">No</mat-option>
+              </mat-select>
+              <mat-error *ngIf="searchItemTypeFormControls.batchNo.invalid">{{ 'error.field' | translate }}</mat-error>
+              </mat-form-field>
           </div>
         </mat-card-content>
       </mat-card>
@@ -146,6 +189,36 @@
         </mat-card-content>
       </mat-card>
     </form>
-  </mat-tab>
+    <mat-card class="mat-elevation-z10">
+      <mat-card-content>
+        <table mat-table [dataSource]="searchItemTypeDataSource" class="mat-elevation-z8 search-table">
+          <ng-container matColumnDef="code">
+            <th mat-header-cell *matHeaderCellDef>Code</th>
+            <td mat-cell *matCellDef="let element; let idx=index">
+              <button mat-button disableRipple class="primary-button link-button"
+                (click)="searchItemClick($event, element, idx)">{{ element.code }}</button>
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef>Description</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.description }}
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="storageType">
+            <th mat-header-cell *matHeaderCellDef>Storage Type</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.storageType }}
+            </td>
+          </ng-container>
 
+          <tr mat-header-row *matHeaderRowDef="displayedSearchItemTypeColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedSearchItemTypeColumns"></tr>
+        </table>
+        <small *ngIf="searchItemTypeDataSource.length === 0" class="empty-table">
+          No records found
+        </small>
+      </mat-card-content>
+    </mat-card>
+  </mat-tab>
 </mat-tab-group>

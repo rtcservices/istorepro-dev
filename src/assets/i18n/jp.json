@@ -158,6 +158,7 @@
       "batchNo":"バッチ番号",
       "consolidateOn" : "統合",
       "defaultPick" : "デフォルトのピック",
+      "warehouse": "Warehouse",
       "WHControl" :{
         "whControl" : "WH。コントロール",
         "code" : "コード",
