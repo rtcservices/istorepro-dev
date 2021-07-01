@@ -5,7 +5,7 @@ import { MatTabGroup } from '@angular/material/tabs';
 
 import { TranslateService } from '@ngx-translate/core';
 import { LoaderService } from '../../../services/loader.service';
-import { BaseItemTypeCodeModel, BaseItemTypeModel } from '../models/base-item-type.model';
+import { BaseItemTypeCodeModel, BaseItemTypeModel, BaseItemTypeSearchModel } from '../models/base-item-type.model';
 
 import { TitleService } from '../../../services/title.service';
 import { SiteTranslateService } from '../../../services/site-translate.service';
@@ -40,11 +40,16 @@ export class BaseItemTypeComponent implements OnInit {
   ];
 
   searchItemTypeForm!: FormGroup;
-  searchItemTypeDataSource: BaseItemTypeModel[] = [];
-  // dummyItemTypeSearchModel: BaseItemTypeModel[] = [
-  //   { code: 'GEM1234', description: 'Gemini Software',  }
-  // ];
-
+  searchItemTypeDataSource: BaseItemTypeSearchModel[] = [];
+  dummyItemTypeSearchModel: BaseItemTypeSearchModel[] = [
+    { code: 'GEM1234', description: 'Gemini Software' },
+    { code: 'GEM1234', description: 'Gemini Software' },
+    { code: 'GEM1234', description: 'Gemini Software' },
+    { code: 'GEM1234', description: 'Gemini Software' },
+    { code: 'GEM1234', description: 'Gemini Software' },
+    { code: 'GEM1234', description: 'Gemini Software' },
+    { code: 'GEM1234', description: 'Gemini Software' },
+  ];
   displayedwhControlColumns = ['code', 'name'];
 
   dataItemTypeForm!: FormGroup
@@ -103,6 +108,17 @@ export class BaseItemTypeComponent implements OnInit {
 
   get dataItemTypeControls() {
     return this.dataItemTypeForm.controls;
+  }
+
+  createSearchItemTypeForm() {
+    this.searchItemTypeForm = this.fb.group({
+      code: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      descrition: ['', [Validators.pattern(patternsHelper.alphanumeric)]]
+    });
+  }
+
+  get searchItemTypeFormControls() {
+    return this.searchItemTypeForm.controls;
   }
 
   saveCompanyData() {}
