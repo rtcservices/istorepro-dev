@@ -250,7 +250,6 @@ export class SetupWarehouseComponent implements OnInit {
       email: [
         '',
         [
-          Validators.required,
           Validators.maxLength(500),
           Validators.pattern(patternsHelper.alphanumeric)
         ]

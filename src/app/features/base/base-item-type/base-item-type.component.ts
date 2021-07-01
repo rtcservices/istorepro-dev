@@ -5,7 +5,7 @@ import { MatTabGroup } from '@angular/material/tabs';
 
 import { TranslateService } from '@ngx-translate/core';
 import { LoaderService } from '../../../services/loader.service';
-import { BaseWHControlModel } from '../models/base-item-type.model';
+import { BaseItemTypeCodeModel } from '../models/base-item-type.model';
 
 import { TitleService } from '../../../services/title.service';
 import { SiteTranslateService } from '../../../services/site-translate.service';
@@ -22,9 +22,9 @@ export class BaseItemTypeComponent implements OnInit {
   @ViewChild('baseItemTypeTab', { static: false })
   setupCompanyTab!: MatTabGroup;
 
-  whControlDataSource: BaseWHControlModel[] = [];
-  dummyWHControlModel: BaseWHControlModel[] = [
-    { code: 1008, Name: 'Gemini Software' }
+  whControlDataSource: BaseItemTypeCodeModel[] = [];
+  dummyWHControlModel: BaseItemTypeCodeModel[] = [
+    { code: '1008', name: 'Gemini Software' }
   ];
 
   dataItemTypeForm!: FormGroup
