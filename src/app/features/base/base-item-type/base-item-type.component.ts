@@ -24,7 +24,15 @@ export class BaseItemTypeComponent implements OnInit {
 
   whControlDataSource: BaseItemTypeCodeModel[] = [];
   dummyWHControlModel: BaseItemTypeCodeModel[] = [
-    { code: '1008', name: 'Gemini Software' }
+    { code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD' },
+    { code: '3254', name: 'NIPPON PAINT (INDIA) PRIVATE LTD' },
+    { code: '2353', name: 'HAVELLS INDIA LIMITED - SBD (FLYJAC WH)' },
+    { code: '1368', name: 'BAJAJ ELECTRICALS LIMITED' },
+    { code: '8132', name: 'HAVELLS INDIA LIMITED (FLYJAC WH)' },
+    { code: '1378', name: 'HAVELLS INDIA LIMITED (INDORE)' },
+    { code: '3451', name: 'BAJAJ ELECTRICALS LIMITED' },
+    { code: '9073', name: 'BRIGHTSTAR KHALAPUR' },
+    { code: '1583', name: 'HAVELLS INDIA LIMITED (FLYJAC WH)' },
   ];
 
   dataItemTypeForm!: FormGroup
