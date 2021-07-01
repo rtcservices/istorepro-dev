@@ -1,13 +1,13 @@
 <div class="page-title">
   <h2>{{'menu.setupWarehouse' | translate}}</h2>
 </div>
-<mat-tab-group #setupWarehouseTab>
+<mat-tab-group #setupWarehouseTab dynamicHeight>
   <mat-tab label="Data">
     <form [formGroup]="dataWarehouseForm" class="slim-form">
       <div fxLayout="row" class="data-form">
         <mat-card class="w-100">
           <mat-card-content>
-            <mat-tab-group #setupWarehouseDataTab>
+            <mat-tab-group #setupWarehouseDataTab id="setupWarehouseDataTab">
               <mat-tab label="Warehouse">
                 <mat-card>
                   <mat-card-content>
