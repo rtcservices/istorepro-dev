@@ -7,95 +7,86 @@
       <div fxLayout="row" class="data-form">
         <mat-card class="w-100">
           <mat-card-content>
-            <mat-tab-group #baseItemTypeDataTab>
-              <mat-tab label="ItemType">
-                <mat-card>
-                  <mat-card-content>
-                    <div fxLayout="row" class="row" fxLayoutGap="5px">
-                      <mat-form-field appearance="outline" fxFlex="10" fxFlex.lt-sm="15">
-                        <mat-label>{{'base.itemType.code' | translate}}</mat-label>
-                        <input matInput type="text" readonly formControlName="code" />
-                        <mat-error *ngIf="dataItemTypeControls.code.invalid">{{ 'error.field' | translate }}
-                        </mat-error>
-                      </mat-form-field>
-                      <mat-form-field appearance="outline" fxFlex="60" fxFlex.lt-sm="50">
-                        <mat-label>{{'base.itemType.description' | translate }}</mat-label>
-                        <input matInput type="text" readonly formControlName="description" />
-                        <mat-error *ngIf="dataItemTypeControls.description.invalid">{{ 'error.field' | translate }}
-                        </mat-error>
-                      </mat-form-field>
-                      <mat-form-field appearance="outline" fxFlex="30" fxFlex.lt-sm="35">
-                        <mat-label>{{'base.itemType.storageType' | translate }}</mat-label>
-                        <input matInput type="text" readonly formControlName="storageType" />
-                        <mat-error *ngIf="dataItemTypeControls.storageType.invalid">{{ 'error.field' | translate }}
-                        </mat-error>
-                      </mat-form-field>
-                    </div>
-                    <div fxLayout="row" fxLayout.lt-md="column" class="row w-100" fxLayoutGap="5px">
-                      <div class="pale-border-box">
-                        <p>{{ 'base.itemType.alertDays' | translate }}</p>
-                        <mat-form-field appearance="outline" fxFlex>
-                          <mat-label>{{'base.itemType.expiry' | translate}}</mat-label>
-                          <input matInput type="text" readonly formControlName="expiry" />
-                          <mat-error *ngIf="dataItemTypeControls.expiry.invalid">{{ 'error.field' | translate }}
-                          </mat-error>
-                        </mat-form-field>
-                      </div>
-                      <div class="pale-border-box" fxFlex>
-                        <div>
-                          <p>{{ 'base.itemType.mandatory' | translate }}</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div fxLayout="row" class="row" fxLayoutGap="5px">
-                      <mat-form-field appearance="outline" fxFlex="67" fxFlex.lt-sm="67">
-                        <mat-label>{{'base.itemType.consolidateOn' | translate}}</mat-label>
-                        <mat-select type="text" readonly formControlName="consolidateOn">
-                          <mat-option>Pick 1</mat-option>
-                          <mat-option>Pick 2</mat-option>
-                        </mat-select>
-                        <mat-error *ngIf="dataItemTypeControls.consolidateOn.invalid">{{ 'error.field' | translate }}
-                        </mat-error>
-                      </mat-form-field>
-                      <mat-form-field appearance="outline" fxFlex="33" fxFlex.lt-sm="33">
-                        <mat-label>{{'base.itemType.defaultPick' | translate }}</mat-label>
-                        <mat-select type="text" readonly formControlName="defaultPick">
-                          <mat-option>Pick 1</mat-option>
-                          <mat-option>Pick 2</mat-option>
-                        </mat-select>
-                        <mat-error *ngIf="dataItemTypeControls.defaultPick.invalid">{{ 'error.field' | translate }}
-                        </mat-error>
-                      </mat-form-field>
-                    </div>
-                  </mat-card-content>
-                </mat-card>
-              </mat-tab>
-              <mat-tab label="WH Control Grid">
-                <mat-card class="wh-control-table">
-                  <mat-card-content>
-                    <table class="site-table w-100 mat-elevation-z8">
-                      <thead>
-                        <tr>
-                          <th></th>
-                          <th>{{ 'base.itemType.WHControl.code' | translate}}</th>
-                          <th>{{ 'base.itemType.WHControl.name' | translate}}</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <ng-template let-control ngFor [ngForOf]="whControlDataSource">
-                          <tr>
-                            <td style="text-align: center;">
-                              <mat-checkbox></mat-checkbox>
-                            <td>{{control.code}}</td>
-                            <td>{{control.name}}</td>
-                          </tr>
-                        </ng-template>
-                      </tbody>
-                    </table>
-                  </mat-card-content>
-                </mat-card>
-              </mat-tab>
-            </mat-tab-group>
+            <div fxLayout="row" class="row" fxLayoutGap="5px">
+              <mat-form-field appearance="outline" fxFlex="10" fxFlex.lt-sm="15">
+                <mat-label>{{'base.itemType.code' | translate}}</mat-label>
+                <input matInput type="text" readonly formControlName="code" />
+                <mat-error *ngIf="dataItemTypeControls.code.invalid">{{ 'error.field' | translate }}
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline" fxFlex="60" fxFlex.lt-sm="50">
+                <mat-label>{{'base.itemType.description' | translate }}</mat-label>
+                <input matInput type="text" readonly formControlName="description" />
+                <mat-error *ngIf="dataItemTypeControls.description.invalid">{{ 'error.field' | translate }}
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline" fxFlex="30" fxFlex.lt-sm="35">
+                <mat-label>{{'base.itemType.storageType' | translate }}</mat-label>
+                <input matInput type="text" readonly formControlName="storageType" />
+                <mat-error *ngIf="dataItemTypeControls.storageType.invalid">{{ 'error.field' | translate }}
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="form-field-box" fxLayout="row" fxLayoutGap="5px">
+              <div class="pale-border-box" fxFlex="30">
+                <p>{{ 'base.itemType.alertDays' | translate }}</p>
+                <mat-form-field appearance="outline" fxFlex>
+                  <mat-label>{{'base.itemType.expiry' | translate}}</mat-label>
+                  <input matInput type="text" readonly formControlName="expiry" />
+                  <mat-error *ngIf="dataItemTypeControls.expiry.invalid">{{ 'error.field' | translate }}
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div class="pale-border-box" fxFlex>
+                <div>
+                  <p>{{ 'base.itemType.mandatory' | translate }}</p>
+                </div>
+              </div>
+            </div>
+            <div fxLayout="row" class="row" fxLayoutGap="5px">
+              <mat-form-field appearance="outline" fxFlex="67" fxFlex.lt-sm="67">
+                <mat-label>{{'base.itemType.consolidateOn' | translate}}</mat-label>
+                <mat-select type="text" readonly formControlName="consolidateOn">
+                  <mat-option>Pick 1</mat-option>
+                  <mat-option>Pick 2</mat-option>
+                </mat-select>
+                <mat-error *ngIf="dataItemTypeControls.consolidateOn.invalid">{{ 'error.field' | translate }}
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline" fxFlex="33" fxFlex.lt-sm="33">
+                <mat-label>{{'base.itemType.defaultPick' | translate }}</mat-label>
+                <mat-select type="text" readonly formControlName="defaultPick">
+                  <mat-option>Pick 1</mat-option>
+                  <mat-option>Pick 2</mat-option>
+                </mat-select>
+                <mat-error *ngIf="dataItemTypeControls.defaultPick.invalid">{{ 'error.field' | translate }}
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <mat-card>
+              <mat-card-content>
+                <mat-label>{{'base.itemType.WHControl.whControl' | translate}}</mat-label>
+                <table class="site-table w-100">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>{{ 'base.itemType.WHControl.code' | translate}}</th>
+                      <th>{{ 'base.itemType.WHControl.name' | translate}}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <ng-template let-control ngFor [ngForOf]="whControlDataSource">
+                      <tr>
+                        <td style="text-align: center;">
+                          <mat-checkbox></mat-checkbox>
+                        <td>{{control.code}}</td>
+                        <td>{{control.name}}</td>
+                      </tr>
+                    </ng-template>
+                  </tbody>
+                </table>
+              </mat-card-content>
+            </mat-card>
           </mat-card-content>
         </mat-card>
       </div>

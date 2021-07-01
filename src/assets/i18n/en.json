@@ -151,7 +151,7 @@
       "storageType" : "Storage Type",
       "alertDays" : "Alert Days",
       "mandatory" : "Mandatory",
-      "expiryalertDays" : "Expiry Alert Days",
+      "expiry" : "Expiry Alert Days",
       "manufacturingDate" : "Manufacturing Date",
       "batchNo":"Batch No",
       "consolidateOn" : "Consolidate On",
