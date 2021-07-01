@@ -75,46 +75,45 @@ export class SetupWarehouseComponent implements OnInit {
   ];
 
   ruleBoxDataSource: SetupWarehouseRuleBoxModel[] = [];
-  dummyRuleBoxModel: SetupWarehouseRuleBoxModel[] = [];
-  // dummyRuleBoxModel: SetupWarehouseRuleBoxModel[] = [
-  //   { serialNo: 1, rule: 'Rule 1', value: 'Value 1' },
-  //   { serialNo: 2, rule: 'Rule 2', value: 'Value 2' },
-  //   { serialNo: 3, rule: 'Rule 3', value: 'Value 3' },
-  //   { serialNo: 4, rule: 'Rule 4', value: 'Value 4' },
-  //   { serialNo: 5, rule: 'Rule 5', value: 'Value 5' },
-  //   { serialNo: 6, rule: 'Rule 6', value: 'Value 6' },
-  //   { serialNo: 7, rule: 'Rule 7', value: 'Value 7' },
-  //   { serialNo: 8, rule: 'Rule 8', value: 'Value 8' },
-  //   { serialNo: 9, rule: 'Rule 9', value: 'Value 9' },
-  //   { serialNo: 10, rule: 'Rule 10', value: 'Value 10' }
-  // ];
+  dummyRuleBoxModel: SetupWarehouseRuleBoxModel[] = [
+    { serialNo: 1, rule: 'Rule 1', value: 'Value 1' }
+    //   { serialNo: 2, rule: 'Rule 2', value: 'Value 2' },
+    //   { serialNo: 3, rule: 'Rule 3', value: 'Value 3' },
+    //   { serialNo: 4, rule: 'Rule 4', value: 'Value 4' },
+    //   { serialNo: 5, rule: 'Rule 5', value: 'Value 5' },
+    //   { serialNo: 6, rule: 'Rule 6', value: 'Value 6' },
+    //   { serialNo: 7, rule: 'Rule 7', value: 'Value 7' },
+    //   { serialNo: 8, rule: 'Rule 8', value: 'Value 8' },
+    //   { serialNo: 9, rule: 'Rule 9', value: 'Value 9' },
+    //   { serialNo: 10, rule: 'Rule 10', value: 'Value 10' }
+  ];
 
   contactDataSource: SetupWarehouseContactModel[] = [];
   dummyContactModel: SetupWarehouseContactModel[] = [
-    { name: 'Contact 1', email: 'contact1@hmail.com' },
-    { name: 'Contact 2', email: 'contact2@hmail.com' },
-    { name: 'Contact 3', email: 'contact3@hmail.com' },
-    { name: 'Contact 4', email: 'contact4@hmail.com' },
-    { name: 'Contact 5', email: 'contact5@hmail.com' },
-    { name: 'Contact 6', email: 'contact6@hmail.com' },
-    { name: 'Contact 7', email: 'contact7@hmail.com' },
-    { name: 'Contact 8', email: 'contact8@hmail.com' },
-    { name: 'Contact 9', email: 'contact9@hmail.com' },
-    { name: 'Contact 10', email: 'contact10@hmail.com' }
+    { name: 'Contact 1', email: 'contact1@hmail.com' }
+    // { name: 'Contact 2', email: 'contact2@hmail.com' },
+    // { name: 'Contact 3', email: 'contact3@hmail.com' },
+    // { name: 'Contact 4', email: 'contact4@hmail.com' },
+    // { name: 'Contact 5', email: 'contact5@hmail.com' },
+    // { name: 'Contact 6', email: 'contact6@hmail.com' },
+    // { name: 'Contact 7', email: 'contact7@hmail.com' },
+    // { name: 'Contact 8', email: 'contact8@hmail.com' },
+    // { name: 'Contact 9', email: 'contact9@hmail.com' },
+    // { name: 'Contact 10', email: 'contact10@hmail.com' }
   ];
 
   operatorDataSource: SetupWarehouseOperatorModel[] = [];
   dummyoperatorModel: SetupWarehouseOperatorModel[] = [
-    { code: 'Code 1', name: 'Operator 1', loginName: 'login 1' },
-    { code: 'Code 2', name: 'Operator 2', loginName: 'login 2' },
-    { code: 'Code 3', name: 'Operator 3', loginName: 'login 3' },
-    { code: 'Code 4', name: 'Operator 4', loginName: 'login 4' },
-    { code: 'Code 5', name: 'Operator 5', loginName: 'login 5' },
-    { code: 'Code 6', name: 'Operator 6', loginName: 'login 6' },
-    { code: 'Code 7', name: 'Operator 7', loginName: 'login 7' },
-    { code: 'Code 8', name: 'Operator 8', loginName: 'login 8' },
-    { code: 'Code 9', name: 'Operator 9', loginName: 'login 9' },
-    { code: 'Code 10', name: 'Operator 10', loginName: 'login 10' }
+    { code: 'Code 1', name: 'Operator 1', loginName: 'login 1' }
+    // { code: 'Code 2', name: 'Operator 2', loginName: 'login 2' },
+    // { code: 'Code 3', name: 'Operator 3', loginName: 'login 3' },
+    // { code: 'Code 4', name: 'Operator 4', loginName: 'login 4' },
+    // { code: 'Code 5', name: 'Operator 5', loginName: 'login 5' },
+    // { code: 'Code 6', name: 'Operator 6', loginName: 'login 6' },
+    // { code: 'Code 7', name: 'Operator 7', loginName: 'login 7' },
+    // { code: 'Code 8', name: 'Operator 8', loginName: 'login 8' },
+    // { code: 'Code 9', name: 'Operator 9', loginName: 'login 9' },
+    // { code: 'Code 10', name: 'Operator 10', loginName: 'login 10' }
   ];
 
   searchDataSource: SetupWarehouseSearchModel[] = [];
