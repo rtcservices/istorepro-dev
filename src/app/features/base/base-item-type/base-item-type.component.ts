@@ -48,16 +48,53 @@ export class BaseItemTypeComponent implements OnInit {
 
   createDataWarehouseForm() {
     this.dataItemTypeForm = this.fb.group({
-      code: '',
-      description: '',
-      storageType: '',
-      alertDays: '',
-      mandatory: '',
-      expiry: '',
-      manufacturingDate: '',
-      batchNo: '',
+      code: [
+        '',
+        [
+          Validators.required,
+          Validators.maxLength(30),
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
+      ],
+      description: [
+        '',
+        [
+          Validators.required,
+          Validators.maxLength(50),
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
+      ],
+      storageType: [
+        '',
+        [
+          Validators.required,
+        ]
+      ],
+      expiryAlertDays: [
+        '',
+        [
+          Validators.required,
+        ]
+      ],
+      manufacturingDate: [
+        '',
+        [
+          Validators.required,
+        ]
+      ],
+      batchNo: [
+        '',
+        [
+          Validators.required,
+        ]
+      ],
       consolidateOn: '',
-      defaultPick: '',
+      defaultPick: [
+        '',
+        [
+          Validators.required,
+        ]
+      ],
     });
   }
 
