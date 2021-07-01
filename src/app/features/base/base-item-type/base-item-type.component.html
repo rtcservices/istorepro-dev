@@ -31,19 +31,41 @@
                         </mat-error>
                       </mat-form-field>
                     </div>
-                    <div fxLayout="row" fxLayout.lt-md="column" class="row" fxLayoutGap="5px">
-                      <div class="pale-border-box" fxFlex>
-                        <div>
-                          <p>{{ 'general.license' | translate }}</p>
-
-                        </div>
+                    <!-- <div fxLayout="row" fxLayout.lt-md="column" class="row w-100" fxLayoutGap="5px">
+                      <div class="pale-border-box">
+                        <p>{{ 'base.itemType.alertDays' | translate }}</p>
+                        <mat-form-field appearance="outline" fxFlex>
+                          <mat-label>{{'base.itemType.expiry' | translate}}</mat-label>
+                          <input matInput type="text" readonly formControlName="expiry" />
+                          <mat-error *ngIf="dataItemTypeControls.expiry.invalid">{{ 'error.field' | translate }}
+                          </mat-error>
+                        </mat-form-field>
                       </div>
                       <div class="pale-border-box" fxFlex>
                         <div>
-                          <p>{{ 'general.license' | translate }}</p>
-
+                          <p>{{ 'base.itemType.mandatory' | translate }}</p>
                         </div>
                       </div>
+                    </div> -->
+                    <div fxLayout="row" class="row" fxLayoutGap="5px">
+                      <mat-form-field appearance="outline" fxFlex="67" fxFlex.lt-sm="67">
+                        <mat-label>{{'base.itemType.consolidateOn' | translate}}</mat-label>
+                        <mat-select type="text" readonly formControlName="consolidateOn">
+                          <mat-option>Pick 1</mat-option>
+                          <mat-option>Pick 2</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="dataItemTypeControls.consolidateOn.invalid">{{ 'error.field' | translate }}
+                        </mat-error>
+                      </mat-form-field>
+                      <mat-form-field appearance="outline" fxFlex="33" fxFlex.lt-sm="33">
+                        <mat-label>{{'base.itemType.defaultPick' | translate }}</mat-label>
+                        <mat-select type="text" readonly formControlName="defaultPick">
+                          <mat-option>Pick 1</mat-option>
+                          <mat-option>Pick 2</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="dataItemTypeControls.defaultPick.invalid">{{ 'error.field' | translate }}
+                        </mat-error>
+                      </mat-form-field>
                     </div>
                   </mat-card-content>
                 </mat-card>
