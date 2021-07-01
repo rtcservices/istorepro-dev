@@ -1,0 +1,84 @@
+<div class="page-title">
+  <h2>{{'menu.baseItemType' | translate}}</h2>
+</div>
+<mat-tab-group #baseItemTypeTab>
+  <mat-tab label="Data">
+    <form [formGroup]="dataItemTypeForm" class="slim-form">
+      <div fxLayout="row" class="data-form">
+        <mat-card class="w-100">
+          <mat-card-content>
+            <mat-tab-group #baseItemTypeDataTab>
+              <mat-tab label="ItemType">
+                <mat-card>
+                  <mat-card-content>
+                    <div fxLayout="row" class="row" fxLayoutGap="5px">
+                      <mat-form-field appearance="outline" fxFlex="30" fxFlex.lt-sm="40">
+                        <mat-label>{{'base.itemType.code' | translate}}</mat-label>
+                        <input matInput type="text" readonly formControlName="code" />
+                      </mat-form-field>
+                      <mat-form-field appearance="outline" fxFlex="40" fxFlex.lt-sm="50">
+                        <mat-label>{{'base.itemType.description' | translate }}</mat-label>
+                        <input matInput type="text" readonly formControlName="description" />
+                      </mat-form-field>
+                      <div class="input-group"  fxFlex>
+                        <div class="input-group-title">{{'base.itemType.storageType' | translate}}</div>
+                        <div class="input-group-area"><input type="text" value="0"></div>
+                        <div class="input-group-icon"></div>
+                      </div>
+                    </div>
+                  </mat-card-content>
+                </mat-card>
+              </mat-tab>
+              <mat-tab label="WH Control Grid">
+                <mat-card class="mat-elevation-z10">
+                  <mat-card-content>
+                    <!-- <table class="site-table w-100">
+                      <thead>
+                        <tr>
+                          <th>{{ 'setup.warehouse.document.type' | translate}}</th>
+                          <th>{{ 'setup.warehouse.document.prefix' | translate}}</th>
+                          <th>{{ 'setup.warehouse.document.currentNo' | translate}}</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <ng-template let-document ngFor [ngForOf]="documentDataSource">
+                          <tr>
+                            <td style="width: 40%;">{{document.type}}</td>
+                            <td>{{document.prefix}}</td>
+                            <td>{{document.currentNo}}</td>
+                            <td style="text-align: center;">
+                              <mat-checkbox></mat-checkbox>
+                            </td>
+                          </tr>
+                        </ng-template>
+                      </tbody>
+                    </table> -->
+                  </mat-card-content>
+                </mat-card>
+              </mat-tab>
+            </mat-tab-group>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <mat-card>
+        <mat-card-content>
+          <div class="form-three-button-container" style="margin-top: 5px;">
+            <button mat-raised-button class="primary-raised-button" type="submit" (click)="saveCompanyData()">
+              <mat-icon>task_alt</mat-icon>
+            </button>
+            <button mat-raised-button class="red-raised-button" type="button" (click)="deleteCompanyData()">
+              <mat-icon>remove_circle_outline</mat-icon>
+            </button>
+            <button mat-raised-button class="green-raised-button" type="reset" (click)="resetCompanyDataForm()">
+              <mat-icon>loop</mat-icon>
+            </button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </form>
+  </mat-tab>
+  <!-- Search -->
+  <mat-tab label="Search"></mat-tab>
+
+</mat-tab-group>
