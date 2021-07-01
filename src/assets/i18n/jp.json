@@ -103,46 +103,46 @@
       "licenseAlertLimit": "アラート制限"
     },
     "warehouse": {
-      "warehouseCode": "Warehouse Code",
-      "companyName": "Company Name",
-      "code": "Code",
-      "description": "Description",
-      "address1": "Address 1",
-      "address2": "Address 2",
-      "address3": "Address 3",
-      "address4": "Address 4",
-      "zip": "Zip",
-      "telephone": "Telephone",
-      "fax": "Fax",
-      "email": "Email",
+      "warehouseCode": "倉庫コード",
+      "companyName": "会社名",
+      "code": "コード",
+      "description": "説明",
+      "address1": "住所（1",
+      "address2": "住所（2",
+      "address3": "住所（3",
+      "address4": "住所（4",
+      "zip": "ジップ",
+      "telephone": "電話",
+      "fax": "ファックス",
+      "email": "Eメール",
       "id": "ID",
-      "blockAlertDays": "Block Alert Days",
-      "receiptDeliveryAlertDays": "Receipt/Delivery Alert Days",
-      "receiptBackDateLimit": "Receipt Back Date Limit",
-      "deliveryBackDateLimit": "Delivery Back Date Limit",
-      "backDateLimit": "Back Date Limit",
-      "receipt": "Receipt",
-      "delivery": "Delivery",
+      "blockAlertDays": "アラート日をブロックする",
+      "receiptDeliveryAlertDays": "受領/配達アラート日",
+      "receiptBackDateLimit": "受領バック日付制限",
+      "deliveryBackDateLimit": "納期制限",
+      "backDateLimit": "過去の日付制限",
+      "receipt": "領収書",
+      "delivery": "配達",
       "document": {
-        "type": "Type",
-        "prefix": "Prefix",
-        "currentNo": "Current No",
-        "autoEmail": "Auto Email"
+        "type": "タイプ",
+        "prefix": "プレフィックス",
+        "currentNo": "現在のいいえ",
+        "autoEmail": "自動メール"
       },
       "ruleBox": {
-        "essential": "Essential",
-        "rule": "Rule",
-        "value": "Value"
+        "essential": "エッセンシャル",
+        "rule": "ルール",
+        "value": "値"
       },
       "contact": {
-        "name": "name",
-        "email": "Email"
+        "name": "名前",
+        "email": "Eメール"
       },
       "operator": {
-        "code": "Code",
-        "name": "Name",
-        "loginName": "Login Name",
-        "inactive": "Inactive"
+        "code": "コード",
+        "name": "名前",
+        "loginName": "ログイン名",
+        "inactive": "非活性"
       }
     }
   }

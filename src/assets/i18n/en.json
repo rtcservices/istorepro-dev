@@ -145,5 +145,19 @@
         "inactive": "Inactive"
       }
     }
+  }, 
+  "base" :{
+    "itemType":{
+      "code" : "code",
+      "description" :"Description",
+      "storageType" : "Storage Type",
+      "alertDays" : "Alert Days",
+      "mandatory" : "Mandatory",
+      "expiry" : "Expiry",
+      "manufacturingDate" : "Manufacturing Date",
+      "batchNo":"Batch No",
+      "consolidateOn" : "Consolidate On",
+      "defaultPick" : "Default Pick"
+    }
   }
 }
