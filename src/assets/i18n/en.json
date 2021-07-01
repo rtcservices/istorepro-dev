@@ -130,6 +130,7 @@
         "autoEmail": "Auto Email"
       },
       "ruleBox": {
+        "essential": "Essential",
         "rule": "Rule",
         "value": "Value"
       },
