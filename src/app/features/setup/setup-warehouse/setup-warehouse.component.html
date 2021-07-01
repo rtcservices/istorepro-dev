@@ -116,7 +116,7 @@
                             </td>
                             <td>{{document.currentNo}}</td>
                             <td style="text-align: center; width: 80px;">
-                              <mat-checkbox color="primary" [checked]="document.autoEmail"></mat-checkbox>
+                              <mat-checkbox color="primary" [checked]="document.autoEmail" disabled></mat-checkbox>
                             </td>
                           </tr>
                         </ng-template>
@@ -143,9 +143,15 @@
                       <tbody>
                         <ng-template let-rule ngFor [ngForOf]="ruleBoxDataSource">
                           <tr>
-                            <td style="width: 5%;">{{rule.serialNo}}</td>
-                            <td style="width: 60%;">{{rule.rule}}</td>
-                            <td>{{rule.value}}</td>
+                            <td style="width: 50px;">
+                              <input type="text" style="width: 100%;" [value]="rule.serialNo">
+                            </td>
+                            <td>
+                              <input type="text" style="width: 100%;" [value]="rule.rule">
+                            </td>
+                            <td>
+                              <input type="text" style="width: 100%;" [value]="rule.value">
+                            </td>
                             <td style="text-align: center;width: 50px;">
                               <mat-icon style="color: #f44336;">remove_circle</mat-icon>
                             </td>
