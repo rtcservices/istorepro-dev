@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatTabGroup } from '@angular/material/tabs';
+import { MatTabGroup, _MatTabGroupBase } from '@angular/material/tabs';
 
 import { TranslateService } from '@ngx-translate/core';
 import { LoaderService } from '../../../services/loader.service';
@@ -18,15 +18,18 @@ import { SiteTranslateService } from '../../../services/site-translate.service';
 
 import { patternsHelper } from '../../../helpers/patterns.helper';
 import { NotificationService } from 'src/app/services/notification.service';
+import { elementAt } from 'rxjs/operators';
 
 @Component({
   selector: 'ibe-setup-warehouse',
   templateUrl: './setup-warehouse.component.html',
   styleUrls: ['./setup-warehouse.component.scss']
 })
-export class SetupWarehouseComponent implements OnInit {
+export class SetupWarehouseComponent implements OnInit, AfterViewInit {
   @ViewChild('setupWarehouseTab', { static: false })
   setupWarehouseTab!: MatTabGroup;
+  @ViewChild('setupWarehouseDataTab', { static: false })
+  setupWarehouseDataTab!: MatTabGroup;
 
   dataWarehouseForm!: FormGroup;
   searchWarehouseForm!: FormGroup;
@@ -186,6 +189,23 @@ export class SetupWarehouseComponent implements OnInit {
     this.ruleBoxDataSource = [...this.dummyRuleBoxModel];
     this.contactDataSource = [...this.dummyContactModel];
     this.operatorDataSource = [...this.dummyoperatorModel];
+  }
+
+  ngAfterViewInit() {
+    this.setTabHeights();
+  }
+
+  setTabHeights() {
+    const tabCardBody = document.querySelectorAll(
+      'mat-tab-group#setupWarehouseDataTab mat-tab-body'
+    );
+    if (!tabCardBody) return;
+    const maxHeight = Math.max(
+      ...Array.from(tabCardBody).map((elm: any) => elm.clientHeight)
+    );
+    tabCardBody.forEach((itm) => {
+      itm.setAttribute('style', `height:${maxHeight}px;`);
+    });
   }
 
   createDataWarehouseForm() {

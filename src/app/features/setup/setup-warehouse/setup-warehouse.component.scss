@@ -1,4 +1,4 @@
-@import "../../../../assets/scss/variables.scss";
+@import '../../../../assets/scss/variables.scss';
 .mat-column-action {
   width: 50px;
 }
@@ -17,10 +17,4 @@
       border: 1px solid $site-gray;
     }
   }
-}
-
-.form-action-section {
-  bottom: 0;
-  position: fixed;
-  width: 100%;
 }
