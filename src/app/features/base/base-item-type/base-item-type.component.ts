@@ -67,7 +67,7 @@ export class BaseItemTypeComponent implements OnInit {
     private titleService: TitleService,
     private notification: NotificationService
   ) {
-    this.createDataWarehouseForm();
+    this.createDataItemTypeForm();
     this.createSearchItemTypeForm();
   }
 
@@ -81,7 +81,7 @@ export class BaseItemTypeComponent implements OnInit {
     this.whControlDataSource = this.dummyWHControlModel;
   }
 
-  createDataWarehouseForm() {
+  createDataItemTypeForm() {
     this.dataItemTypeForm = this.fb.group({
       code: [
         '',
@@ -100,10 +100,9 @@ export class BaseItemTypeComponent implements OnInit {
         ]
       ],
       storageType: ['', [Validators.required]],
-      expiryAlertDays: ['', [Validators.required]],
       consolidateOn: '',
       defaultPick: ['', [Validators.required]],
-      expiry: ['', [Validators.required]],
+      expiry: ['', [Validators.required], Validators.pattern(patternsHelper.numeric)],
       manufacturingDate: ['', [Validators.required]],
       batchNo: ['', [Validators.required]]
     });
