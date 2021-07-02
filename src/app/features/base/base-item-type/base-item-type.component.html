@@ -27,30 +27,31 @@
                 </mat-error>
               </mat-form-field>
             </div>
-            <div class="form-field-box" fxLayoutGap="5px">
-              <div class="pale-border-box" fxFlex="50">
-                <p>{{ 'base.itemType.alertDays' | translate }}</p>
-                <div fxLayout="row">
-                  <mat-form-field fxLayout="column" appearance="outline" fxFlex="60">
-                    <mat-label>{{'base.itemType.expiry' | translate}}</mat-label>
-                    <input matInput type="text" formControlName="expiry" />
-                    <mat-error *ngIf="dataItemTypeControls.expiry.invalid">{{ 'error.field' | translate }}
-                    </mat-error>
-                  </mat-form-field>
+            <div class="pale-border-box" >
+              <b>{{ 'base.itemType.mandatory' | translate }}</b>
+              <div fxFex fxLayout="row" fxLayout.lt-sm="row" fxLayoutGap="10px">
+                <div>
+                  <mat-checkbox color="primary" formControlName="manufacturingDate">{{
+                    'base.itemType.manufacturingDate' | translate
+                    }}</mat-checkbox>
                 </div>
-              </div>
-              <div class="pale-border-box" fxFlex>
-                <p>{{ 'base.itemType.mandatory' | translate }}</p>
-                <div fxLayout="row" class="checbox-section">
-                  <div fxLayout="row" class="checbox-section-item">
-                    <mat-checkbox color="primary"></mat-checkbox>
-                    <mat-label>{{'base.itemType.manufacturingDate' | translate}}</mat-label>
-                  </div>
-                  <div fxLayout="row" class="checbox-section-item">
-                    <mat-checkbox color="primary"></mat-checkbox>
-                    <mat-label>{{'base.itemType.batchNo' | translate}}</mat-label>
-                  </div>
+                <div>
+                  <mat-checkbox color="primary" formControlName="batchNo">{{
+                    'base.itemType.batchNo' | translate
+                    }}</mat-checkbox>
                 </div>
+                <div>
+                  <mat-checkbox color="primary" formControlName="expiry">{{
+                    'base.itemType.expiry' | translate
+                    }}</mat-checkbox>
+                      <mat-form-field fxLayout="column" appearance="outline" fxFlex="60">
+                        <mat-label>{{'base.itemType.alertDays' | translate}}</mat-label>
+                        <input matInput type="text" formControlName="expiryAlertDays" />
+                        <mat-error *ngIf="dataItemTypeControls.expiryAlertDays.invalid">{{ 'error.field' | translate }}
+                        </mat-error>
+                      </mat-form-field>
+                </div>
+                
               </div>
             </div>
             <div fxLayout="row" class="row" fxLayoutGap="5px">

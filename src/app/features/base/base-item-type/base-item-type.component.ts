@@ -102,7 +102,8 @@ export class BaseItemTypeComponent implements OnInit {
       storageType: ['', [Validators.required]],
       consolidateOn: '',
       defaultPick: ['', [Validators.required]],
-      expiry: ['', [Validators.required], Validators.pattern(patternsHelper.numeric)],
+      expiry: ['', [Validators.required]],
+      expiryAlertDays: ['', [Validators.required], Validators.pattern(patternsHelper.numeric)],
       manufacturingDate: ['', [Validators.required]],
       batchNo: ['', [Validators.required]]
     });
