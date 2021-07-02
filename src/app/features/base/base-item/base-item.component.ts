@@ -5,6 +5,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { LoaderService } from '../../../services/loader.service';
 import { patternsHelper } from '../../../helpers/patterns.helper';
 import { SiteTranslateService } from 'src/app/services/site-translate.service';
+import { BaseItemInventoryAlertModel, BaseItemMatrixModel, BaseItemWhControlModel } from '../models/base-item.model';
+import {MatDialog} from '@angular/material/dialog';
 
 
 @Component({
@@ -18,16 +20,56 @@ export class BaseItemComponent implements OnInit {
   @ViewChild('baseItemDataTab', { static: false })
   baseItemDataTab!: MatTabGroup;
   dataItemForm!: FormGroup;
-
   formErrorTranslated = '';
   filterErrorTranslated = '';
 
+  whControlDataSource: BaseItemWhControlModel[] = [];
+  dummyWHControlModel: BaseItemWhControlModel[] = [
+    { checked: false, code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD', customers: false, vendors: false, sku: "" },
+    { checked: false, code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD', customers: false, vendors: false, sku: "" },
+    { checked: false, code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD', customers: false, vendors: false, sku: "" },
+    { checked: false, code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD', customers: false, vendors: false, sku: "" },
+    { checked: false, code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD', customers: false, vendors: false, sku: "" },
+    { checked: false, code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD', customers: false, vendors: false, sku: "" },
+    { checked: false, code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD', customers: false, vendors: false, sku: "" },
+    { checked: false, code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD', customers: false, vendors: false, sku: "" },
+    { checked: false, code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD', customers: false, vendors: false, sku: "" },
+    { checked: false, code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD', customers: false, vendors: false, sku: "" },
+    { checked: false, code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD', customers: false, vendors: false, sku: "" },
+    { checked: false, code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD', customers: false, vendors: false, sku: "" },
+    { checked: false, code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD', customers: false, vendors: false, sku: "" },
+
+  ];
+
+  InventoryAlertDataSource: BaseItemInventoryAlertModel[] = [];
+  dummyInventoryAlertModel: BaseItemInventoryAlertModel[] = [
+    {
+      warehouse: '',
+      description: '',
+      min: '',
+      reorder: '',
+      max: '',
+      lastalert: ''
+    },
+  ];
+
+  MatrixDataSource: BaseItemMatrixModel[] = [];
+  dummyMatrixModel: BaseItemMatrixModel[] = [
+    {
+      from: { value: "", unit: "" },
+      to: { unit: "" ,weight: "", length: "", breadth: "", height: "", volume: "", value:"" },
+     
+    },
+    
+
+  ];
 
   constructor(private fb: FormBuilder,
     private loader: LoaderService,
     private siteTranslateService: SiteTranslateService,
     private translate: TranslateService,
-  ) {   this.createDataItemForm(); }
+    public dialog: MatDialog    
+  ) { this.createDataItemForm(); }
 
   ngOnInit(): void {
     const language = this.siteTranslateService.defaultLanguage;
@@ -35,7 +77,9 @@ export class BaseItemComponent implements OnInit {
       this.formErrorTranslated = this.translate.instant('error.form');
       this.filterErrorTranslated = this.translate.instant('error.filter');
     });
-
+    this.whControlDataSource = this.dummyWHControlModel;
+    this.InventoryAlertDataSource = this.dummyInventoryAlertModel;
+    this.MatrixDataSource = this.dummyMatrixModel;
   }
 
 
@@ -56,44 +100,44 @@ export class BaseItemComponent implements OnInit {
     });
   }
 
-  
+
   createDataItemForm() {
     this.dataItemForm = this.fb.group({
       item: [
         '',
-        [Validators.maxLength(50),Validators.required, Validators.pattern(patternsHelper.name)]
+        [Validators.maxLength(50), Validators.required, Validators.pattern(patternsHelper.name)]
       ],
       description: [
         '',
         [Validators.maxLength(100),
-          Validators.required,
-          Validators.pattern(patternsHelper.alphanumeric)
+        Validators.required,
+        Validators.pattern(patternsHelper.alphanumeric)
         ]
       ],
       hscode: [
         '',
-        [Validators.maxLength(10),Validators.required,Validators.pattern(patternsHelper.alphanumeric)]
+        [Validators.maxLength(10), Validators.required, Validators.pattern(patternsHelper.alphanumeric)]
       ],
       itemType: [
         '',
-        [Validators.maxLength(50),  Validators.required ]
+        [Validators.maxLength(50), Validators.required]
       ],
       scanType: [
         '',
-        [Validators.maxLength(10) ]
+        [Validators.maxLength(10)]
       ],
       scanCode: [
         '',
-        [Validators.maxLength(50),Validators.pattern(patternsHelper.alphanumeric)]
+        [Validators.maxLength(50), Validators.pattern(patternsHelper.alphanumeric)]
       ],
-      validateStorageType: [ ''],
+      validateStorageType: [''],
       inventoryAlert: [''],
-      inactive: [''],   
+      inactive: [''],
       unit: [
         '',
         [
           Validators.required,
-          Validators.maxLength(10)      
+          Validators.maxLength(10)
         ]
       ],
       unitWeight: [
@@ -105,34 +149,34 @@ export class BaseItemComponent implements OnInit {
       ],
       dimensions: [''],
       length: ['',
-      [
-        Validators.maxLength(5),
-        Validators.pattern(patternsHelper.telephone)
-      ]],
+        [
+          Validators.maxLength(5),
+          Validators.pattern(patternsHelper.telephone)
+        ]],
       breadth: ['',
-      [
-        Validators.maxLength(5),
-        Validators.pattern(patternsHelper.telephone)
-      ]],
+        [
+          Validators.maxLength(5),
+          Validators.pattern(patternsHelper.telephone)
+        ]],
       height: ['',
-      [
-        Validators.maxLength(5),
-        Validators.pattern(patternsHelper.telephone)
-      ]],
+        [
+          Validators.maxLength(5),
+          Validators.pattern(patternsHelper.telephone)
+        ]],
       volume: ['',
-      [
-        Validators.maxLength(6),
-        Validators.pattern(patternsHelper.telephone)
-      ]],
+        [
+          Validators.maxLength(6),
+          Validators.pattern(patternsHelper.telephone)
+        ]],
       shelfLife: ['',
-      [
-        Validators.maxLength(5),
-        Validators.pattern(patternsHelper.telephone)
-      ]],
-      pickOption:['',
-      [
-        Validators.maxLength(10)     
-      ]],    
+        [
+          Validators.maxLength(5),
+          Validators.pattern(patternsHelper.telephone)
+        ]],
+      pickOption: ['',
+        [
+          Validators.maxLength(10)
+        ]],
     });
   }
 
@@ -144,5 +188,11 @@ export class BaseItemComponent implements OnInit {
 
   onDataItemSubmit() { }
 
+
+  openDialog(stpref:any) {
+    this.dialog.open(stpref, {
+      width: '600px'
+    });
+  }
 
 }
