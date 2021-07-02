@@ -11,7 +11,7 @@
               <div fxLayout="row" class="row" fxLayoutGap="5px">
                 <mat-form-field appearance="outline" fxFlex="32">
                   <mat-label>{{
-                      'base.item.item' | translate
+                    'base.item.item' | translate
                     }}</mat-label>
                   <input matInput readonly formControlName="item" />
                   <mat-error *ngIf="dataItemFormControls.item.invalid">{{ 'error.field' | translate }}
@@ -19,7 +19,7 @@
                 </mat-form-field>
                 <mat-form-field appearance="outline" fxFlex>
                   <mat-label>{{
-                      'base.item.description' | translate
+                    'base.item.description' | translate
                     }}</mat-label>
                   <input matInput required formControlName="description" />
                   <mat-error *ngIf="dataItemFormControls.description.invalid">{{ 'error.field' | translate }}
@@ -27,11 +27,11 @@
                 </mat-form-field>
                 <mat-form-field appearance="outline" fxFlex="20">
                   <mat-label>{{
-                      'base.item.hscode' | translate
+                    'base.item.hscode' | translate
                     }}</mat-label>
                   <input matInput formControlName="hscode" />
                   <mat-error *ngIf="dataItemFormControls.hscode.invalid">{{
-                      'error.field' | translate
+                    'error.field' | translate
                     }}</mat-error>
                 </mat-form-field>
               </div>
@@ -39,38 +39,38 @@
                 <div fxFlex="70%" fxLayoutGap="5px">
                   <mat-form-field appearance="outline" fxFlex="20" fxFlex.lt-md="34" fxFlex fxFlex.lt-sm="33">
                     <mat-label>{{
-                            'base.item.itemType' | translate
-                            }}</mat-label>
+                      'base.item.itemType' | translate
+                      }}</mat-label>
                     <mat-select formControlName="itemType">
                     </mat-select>
                     <mat-error *ngIf="dataItemFormControls.itemType.invalid">{{
-                            'error.field' | translate
-                            }}</mat-error>
+                      'error.field' | translate
+                      }}</mat-error>
                   </mat-form-field>
                   <mat-form-field appearance="outline" fxFlex="20" fxFlex.lt-md="34" fxFlex fxFlex.lt-sm="33">
                     <mat-label>{{
-                            'base.item.scanType' | translate
-                            }}</mat-label>
+                      'base.item.scanType' | translate
+                      }}</mat-label>
                     <mat-select formControlName="scanType">
                       <mat-option>{{
-                                    'base.item.barCode' | translate
-                                }}</mat-option>
+                        'base.item.barCode' | translate
+                        }}</mat-option>
                       <mat-option>{{
-                                    'base.item.qrCode' | translate
-                                }}</mat-option>
+                        'base.item.qrCode' | translate
+                        }}</mat-option>
                     </mat-select>
                     <mat-error *ngIf="dataItemFormControls.scanType.invalid">{{
-                            'error.field' | translate
-                            }}</mat-error>
+                      'error.field' | translate
+                      }}</mat-error>
                   </mat-form-field>
                   <mat-form-field appearance="outline" fxFlex="20">
                     <mat-label>{{
-                            'base.item.scanCode' | translate
-                        }}</mat-label>
+                      'base.item.scanCode' | translate
+                      }}</mat-label>
                     <input matInput formControlName="scanCode" />
                     <mat-error *ngIf="dataItemFormControls.scanCode.invalid">{{
-                            'error.field' | translate
-                        }}</mat-error>
+                      'error.field' | translate
+                      }}</mat-error>
                   </mat-form-field>
 
                 </div>
@@ -81,22 +81,22 @@
                 <div fxFlex="20%" fxLayoutGap="5px">
 
                   <h4>{{
-                                'base.item.controls' | translate
-                              }}</h4>
+                    'base.item.controls' | translate
+                    }}</h4>
                   <p>
-                    <mat-checkbox formControlName="validateStorageType">{{
-                                'base.item.validateStorageType' | translate
-                              }}</mat-checkbox>
+                    <mat-checkbox color="primary" formControlName="validateStorageType">{{
+                      'base.item.validateStorageType' | translate
+                      }}</mat-checkbox>
                   </p>
                   <p>
-                    <mat-checkbox formControlName="inventoryAlert">{{
-                                'base.item.inventoryAlert' | translate
-                              }}</mat-checkbox>
+                    <mat-checkbox color="primary" formControlName="inventoryAlert">{{
+                      'base.item.inventoryAlert' | translate
+                      }}</mat-checkbox>
                   </p>
                   <p>
-                    <mat-checkbox formControlName="inactive">{{
-                                'base.item.inactive' | translate
-                              }}</mat-checkbox>
+                    <mat-checkbox color="primary" formControlName="inactive">{{
+                      'base.item.inactive' | translate
+                      }}</mat-checkbox>
                   </p>
 
                 </div>
@@ -105,7 +105,7 @@
 
 
 
-     
+
 
 
             </mat-card-content>
