@@ -27,19 +27,29 @@
                 </mat-error>
               </mat-form-field>
             </div>
-            <div class="form-field-box" fxLayout="row" fxLayoutGap="5px">
-              <div class="pale-border-box" fxFlex="30">
+            <div class="form-field-box" fxLayoutGap="5px">
+              <div class="pale-border-box" fxFlex="50">
                 <p>{{ 'base.itemType.alertDays' | translate }}</p>
-                <mat-form-field appearance="outline" fxFlex>
-                  <mat-label>{{'base.itemType.expiry' | translate}}</mat-label>
-                  <input matInput type="text" readonly formControlName="expiry" />
-                  <mat-error *ngIf="dataItemTypeControls.expiry.invalid">{{ 'error.field' | translate }}
-                  </mat-error>
-                </mat-form-field>
+                <div fxLayout="row">
+                  <mat-form-field fxLayout="column" appearance="outline" fxFlex="60">
+                    <mat-label>{{'base.itemType.expiry' | translate}}</mat-label>
+                    <input matInput type="text" formControlName="expiry" />
+                    <mat-error *ngIf="dataItemTypeControls.expiry.invalid">{{ 'error.field' | translate }}
+                    </mat-error>
+                  </mat-form-field>
+                </div>
               </div>
               <div class="pale-border-box" fxFlex>
-                <div>
-                  <p>{{ 'base.itemType.mandatory' | translate }}</p>
+                <p>{{ 'base.itemType.mandatory' | translate }}</p>
+                <div fxLayout="row" class="checbox-section">
+                  <div fxLayout="row" class="checbox-section-item">
+                    <mat-checkbox color="primary"></mat-checkbox>
+                    <mat-label>{{'base.itemType.manufacturingDate' | translate}}</mat-label>
+                  </div>
+                  <div fxLayout="row" class="checbox-section-item">
+                    <mat-checkbox color="primary"></mat-checkbox>
+                    <mat-label>{{'base.itemType.batchNo' | translate}}</mat-label>
+                  </div>
                 </div>
               </div>
             </div>
@@ -63,9 +73,9 @@
                 </mat-error>
               </mat-form-field>
             </div>
-            <mat-card>
+            <mat-card class="w-100">
               <mat-card-content>
-                <mat-label>{{'base.itemType.WHControl.whControl' | translate}}</mat-label>
+                <h3>{{'base.itemType.WHControl.whControl' | translate}}</h3>
                 <table class="site-table w-100">
                   <thead>
                     <tr>
@@ -164,7 +174,7 @@
                 <mat-option value="no">No</mat-option>
               </mat-select>
               <mat-error *ngIf="searchItemTypeFormControls.MfgDate.invalid">{{ 'error.field' | translate }}</mat-error>
-              </mat-form-field>
+            </mat-form-field>
             <mat-form-field appearance="outline" fxFlex="20">
               <mat-label>Batch No ?</mat-label>
               <mat-select type="text" formControlName="batchNo">
@@ -172,7 +182,7 @@
                 <mat-option value="no">No</mat-option>
               </mat-select>
               <mat-error *ngIf="searchItemTypeFormControls.batchNo.invalid">{{ 'error.field' | translate }}</mat-error>
-              </mat-form-field>
+            </mat-form-field>
           </div>
         </mat-card-content>
       </mat-card>

@@ -4,6 +4,19 @@
   margin-bottom: 10px;
 }
 
-.form-field-box{
+.form-field-box {
   height: 95px !important;
+  margin-bottom: 10px;
+  mat-form-field {
+    margin-left: 74px;
+  }
+  .checbox-section {
+    margin-left: 68px;
+    .checbox-section-item {
+      margin: 0 20px;
+      .mat-checkbox {
+        margin: 0 15px;
+      }
+    }
+  }
 }
