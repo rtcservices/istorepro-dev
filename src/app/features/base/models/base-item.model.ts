@@ -1,4 +1,19 @@
 
+export interface BaseItemModel {
+   item:string;
+   description:string;
+   itemType:string;
+   scanCode:string;
+   ownerCode:string;
+   sku:string;
+   validateStorageType:boolean;
+   inventoryAlert:boolean;
+   inactive:boolean;
+   parent:boolean;
+   warehouse:boolean;
+   instock:boolean;
+}
+
 export interface BaseItemWhControlModel {
     checked: boolean;
     code: string;

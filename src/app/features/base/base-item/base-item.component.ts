@@ -5,9 +5,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { LoaderService } from '../../../services/loader.service';
 import { patternsHelper } from '../../../helpers/patterns.helper';
 import { SiteTranslateService } from 'src/app/services/site-translate.service';
-import { BaseItemInventoryAlertModel, BaseItemMatrixModel, BaseItemWhControlModel } from '../models/base-item.model';
-import {MatDialog} from '@angular/material/dialog';
-
+import { BaseItemInventoryAlertModel, BaseItemMatrixModel, BaseItemModel, BaseItemWhControlModel } from '../models/base-item.model';
+import { MatDialog } from '@angular/material/dialog';
+import { NotificationService } from '../../../services/notification.service';
 
 @Component({
   selector: 'ibe-base-item',
@@ -20,8 +20,32 @@ export class BaseItemComponent implements OnInit {
   @ViewChild('baseItemDataTab', { static: false })
   baseItemDataTab!: MatTabGroup;
   dataItemForm!: FormGroup;
+  searchItemForm!: FormGroup;
   formErrorTranslated = '';
   filterErrorTranslated = '';
+
+  searchDataSource: BaseItemModel[] = [];
+  dummySearchModel: BaseItemModel[] = [
+    {
+      item: "dummyc",
+      description: "this is dummy decription",
+      itemType: "normal",
+      scanCode: "123123123",
+      ownerCode: "121212",
+      sku: "asd123",
+      validateStorageType: true,
+      inventoryAlert: true,
+      inactive: true,
+      parent: true,
+      warehouse: true,
+      instock: true
+    }
+  ];
+
+
+  displayedColumns = ['item', 'description','itemType','unitPrice',
+  'sku', 'inactive','instock'];
+
 
   whControlDataSource: BaseItemWhControlModel[] = [];
   dummyWHControlModel: BaseItemWhControlModel[] = [
@@ -29,15 +53,7 @@ export class BaseItemComponent implements OnInit {
     { checked: false, code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD', customers: false, vendors: false, sku: "" },
     { checked: false, code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD', customers: false, vendors: false, sku: "" },
     { checked: false, code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD', customers: false, vendors: false, sku: "" },
-    { checked: false, code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD', customers: false, vendors: false, sku: "" },
-    { checked: false, code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD', customers: false, vendors: false, sku: "" },
-    { checked: false, code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD', customers: false, vendors: false, sku: "" },
-    { checked: false, code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD', customers: false, vendors: false, sku: "" },
-    { checked: false, code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD', customers: false, vendors: false, sku: "" },
-    { checked: false, code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD', customers: false, vendors: false, sku: "" },
-    { checked: false, code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD', customers: false, vendors: false, sku: "" },
-    { checked: false, code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD', customers: false, vendors: false, sku: "" },
-    { checked: false, code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD', customers: false, vendors: false, sku: "" },
+    { checked: false, code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD', customers: false, vendors: false, sku: "" }
 
   ];
 
@@ -53,14 +69,16 @@ export class BaseItemComponent implements OnInit {
     },
   ];
 
+
+
   MatrixDataSource: BaseItemMatrixModel[] = [];
   dummyMatrixModel: BaseItemMatrixModel[] = [
     {
       from: { value: "", unit: "" },
-      to: { unit: "" ,weight: "", length: "", breadth: "", height: "", volume: "", value:"" },
-     
+      to: { unit: "", weight: "", length: "", breadth: "", height: "", volume: "", value: "" },
+
     },
-    
+
 
   ];
 
@@ -68,8 +86,12 @@ export class BaseItemComponent implements OnInit {
     private loader: LoaderService,
     private siteTranslateService: SiteTranslateService,
     private translate: TranslateService,
-    public dialog: MatDialog    
-  ) { this.createDataItemForm(); }
+    public dialog: MatDialog,
+    private notification: NotificationService
+  ) {
+    this.createDataItemForm();
+    this.createSearchItemForm();
+  }
 
   ngOnInit(): void {
     const language = this.siteTranslateService.defaultLanguage;
@@ -186,13 +208,117 @@ export class BaseItemComponent implements OnInit {
 
 
 
+  saveItemData() { }
+
+
+  deleteItemData() { }
+
   onDataItemSubmit() { }
 
 
-  openDialog(stpref:any) {
+  resetItemDataForm() {
+    this.dataItemForm.reset()
+
+  }
+
+  openDialog(stpref: any) {
     this.dialog.open(stpref, {
       width: '600px'
     });
   }
+
+
+  
+  openstoreDialog(owner: any) {
+    this.dialog.open(owner, {
+      width: '600px'
+    });
+  }
+
+
+
+  createSearchItemForm() {
+    this.searchItemForm = this.fb.group({
+      item: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      description: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      itemType: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      scanCode: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      ownerCode: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      sku: [''],
+      validateStorageType: [''],
+      inventoryAlert: [''],
+      inactive: [''],
+      parent: [''],
+      warehouse: [''],
+      instock: ['']
+    });
+  }
+
+  get searchItemFormControls() {
+    return this.searchItemForm.controls;
+  }
+
+
+  onSearchItemSubmit() {
+    if (!this.searchItemForm.valid) {
+      this.notification.error(this.formErrorTranslated);
+      return;
+    }
+    const item: string =
+      this.searchItemForm.get('item')?.value || '';
+    const description: string =
+      this.searchItemForm.get('description')?.value || '';
+    const itemType: string =
+      this.searchItemForm.get('itemType')?.value || '';
+    const scanCode: string =
+      this.searchItemForm.get('scanCode')?.value || '';
+    const ownerCode: string =
+      this.searchItemForm.get('ownerCode')?.value || '';
+    const sku: string =
+      this.searchItemForm.get('sku')?.value || '';
+    const validateStorageType: string =
+      this.searchItemForm.get('validateStorageType')?.value || '';
+    const inventoryAlert: string =
+      this.searchItemForm.get('inventoryAlert')?.value || '';
+    const inactive: string =
+      this.searchItemForm.get('inactive')?.value || '';
+    const parent: string =
+      this.searchItemForm.get('parent')?.value || '';
+    const warehouse: string =
+      this.searchItemForm.get('warehouse')?.value || '';
+    const instock: string =
+      this.searchItemForm.get('instock')?.value || '';
+    if (item.trim() === '' && description.trim() === '' && 
+    itemType.trim() === '' && scanCode.trim() === '' &&
+     ownerCode.trim() === '' && sku.trim() === '' && 
+     validateStorageType.trim() === '' && inventoryAlert.trim() === '' && 
+     inactive.trim() === '' && parent.trim() === '' && 
+     warehouse.trim() === '' && instock.trim() === '' ) {
+      this.notification.error(this.filterErrorTranslated);
+      return;
+    } else {
+      this.loader.show();
+      setTimeout(() => {
+        this.searchDataSource = [...this.dummySearchModel];
+        this.loader.hide();
+      }, 500);
+    }
+  }
+
+
+
+  
+  searchItemClick(event: any, item: BaseItemModel, idx: number) {
+    const tabGroup = this.baseItemTab;
+    if (!tabGroup || !(tabGroup instanceof MatTabGroup)) return;
+    tabGroup.selectedIndex = 0;
+  }
+
+  resetItemSearchForm() {
+    this.searchItemForm.reset();
+    this.searchDataSource = [];
+  }
+
+
 
 }
