@@ -146,7 +146,7 @@
   }, 
   "base" :{
     "itemType":{
-      "code" : "code",
+      "code" : "Code",
       "description" :"Description",
       "storageType" : "Storage Type",
       "alertDays" : "Alert Days",
