@@ -25,4 +25,30 @@
 
   th,td {
     text-align: center !important;
+    height: 2px;
   }
+
+
+  .site-table td {
+   padding:0 !important;
+}
+
+.input-ic-padding {
+  padding-left: 25px;
+}
+
+
+
+.input-ic-padding-b {
+  padding-left: 17px;
+}
+
+select {
+  height: 22px;
+}
+
+.store-dialog-search {
+  margin: 10px;
+    height: 36px;
+    padding: 0px !important;
+}
