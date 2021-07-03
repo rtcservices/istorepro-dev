@@ -237,6 +237,10 @@
     "storageType":{
       "code" : "Code",
       "description" :"Description"
+    },
+    "zone":{
+      "code" : "Code",
+      "description" :"Description"
     }
   }
 }

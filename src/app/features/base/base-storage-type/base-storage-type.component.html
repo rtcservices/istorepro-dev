@@ -1,28 +1,44 @@
-<mat-card class="storage-table">
-    <mat-card-content>
-      <table class="site-table w-100 mat-elevation-z8">
-        <thead>
+<div class="page-title">
+  <h2>{{'menu.baseStorageType' | translate}}</h2>
+</div>
+<mat-card class="storage-type-table">
+  <mat-card-content>
+    <table class="site-table w-100 mat-elevation-z8">
+      <thead>
+        <tr>
+          <th>{{ 'base.storageType.code' | translate}}</th>
+          <th>{{ 'base.storageType.description' | translate}}</th>
+          <th style="text-align: center;">
+            <mat-icon style="padding-top: 3px;">add_circle_outline</mat-icon>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-template let-storageType ngFor [ngForOf]="storageTypeDataSource">
           <tr>
-            <th>{{ 'base.storageType.code' | translate}}</th>
-            <th>{{ 'base.storageType.description'  | translate}}</th>
-            <th style="text-align: center;"><mat-icon style="padding-top: 3px;">add_circle_outline</mat-icon></th>
+            <td style="width: 30%;">
+              {{storageType.code}}
+            </td>
+            <td style="width: 60%;">
+              {{storageType.description}}
+            </td>
+            <td style="text-align: center;">
+              <mat-icon color="primary">edit</mat-icon>
+              <mat-icon style="color: #f44336;">remove_circle</mat-icon>
+            </td>
           </tr>
-        </thead>
-        <tbody>
-          <!-- <ng-template let-rule ngFor [ngForOf]="ruleBoxDataSource">
-            <tr>
-              <td style="width: 50px;">
-                <input type="text" style="width: 100%;" [value]="rule.serialNo">
-              </td>
-              <td>
-                <input type="text" style="width: 100%;" [value]="rule.rule">
-              </td>
-              <td style="width: 200px;">
-                <input type="text" style="width: 100%;" [value]="rule.value">
-              </td>
-            </tr>
-          </ng-template> -->
-        </tbody>
-      </table>
-    </mat-card-content>
-  </mat-card>
+        </ng-template>
+        <tr>
+          <td style="width: 30%;">
+            <input type="text" style="width: 100%;">
+          </td>
+          <td style="width: 60%;">
+            <input type="text">
+          </td>
+          <td style="text-align: center;">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-card-content>
+</mat-card>
