@@ -146,24 +146,24 @@
         "inactive": "Inactive"
       }
     }
-  }, 
-  "base" :{
-    "itemType":{
-      "code" : "Code",
-      "description" :"Description",
-      "storageType" : "Storage Type",
-      "alertDays" : "Alert Days",
-      "mandatory" : "Mandatory",
-      "expiry" : "Expiry",
-      "manufacturingDate" : "Manufacturing Date",
-      "batchNo":"Batch No",
-      "consolidateOn" : "Consolidate On",
-      "defaultPick" : "Default Pick",
+  },
+  "base": {
+    "itemType": {
+      "code": "Code",
+      "description": "Description",
+      "storageType": "Storage Type",
+      "alertDays": "Alert Days",
+      "mandatory": "Mandatory",
+      "expiry": "Expiry",
+      "manufacturingDate": "Manufacturing Date",
+      "batchNo": "Batch No",
+      "consolidateOn": "Consolidate On",
+      "defaultPick": "Default Pick",
       "warehouse": "Warehouse",
-      "WHControl" :{
-        "whControl" : "WH. Control",
-        "code" : "Code",
-        "name" : "Name"
+      "WHControl": {
+        "whControl": "WH. Control",
+        "code": "Code",
+        "name": "Name"
       }
     },
     "item": {
@@ -178,53 +178,57 @@
       "qrCode": "QR CODE",
       "scanCode": "Scan Code",
       "controls": "Controls",
-      "storageType" : "Storage Type",
-      "primary" : "Primary",
+      "storageType": "Storage Type",
+      "primary": "Primary",
       "validateStorageType": "Validate Storage Type",
-      "inventoryAlert" : "Inventory Alert ",
+      "inventoryAlert": "Inventory Alert ",
       "inactive": "Inactive",
       "sku": "SKU",
       "unit": "Unit",
-      "unitWeight" : "Unit Wt",
+      "unitWeight": "Unit Wt",
       "shelfLife": "Shelf Life",
       "pickOption": "Pick Option",
       "dimension": "Dimensions",
-      "length" : "Length",
+      "length": "Length",
       "breadth": "Breadth",
-      "height" : "Height",
-      "volume" : "Volume",
+      "height": "Height",
+      "volume": "Volume",
       "inventoryAudit": "Inventory Audit",
-      "lastAudit" : "Last Audit Completed",
+      "lastAudit": "Last Audit Completed",
       "currentAudit": "Current Audit Started",
-      "WHControl" :{
-        "whControl" : "WH. Control",
-        "code" : "Code",
-        "name" : "Name",
-        "customers" : "Customers",
-        "vendors" : "Vendors",
-        "stpref" : "St. Pref",
-        "sku" : "SKU/Location"
+      "WHControl": {
+        "whControl": "WH. Control",
+        "code": "Code",
+        "name": "Name",
+        "customers": "Customers",
+        "vendors": "Vendors",
+        "stpref": "St. Pref",
+        "sku": "SKU/Location"
       },
-      "InventoryAlert" :{
-        "warehouse" : "Warehouse",
-        "description" : "Description",
-        "level" : "Level",
-        "min" : "Min",
-        "reorder" : "Reorder",
-        "max" : "Max",
-        "lastalert" : "Last Alert Date & Time"
+      "InventoryAlert": {
+        "warehouse": "Warehouse",
+        "description": "Description",
+        "level": "Level",
+        "min": "Min",
+        "reorder": "Reorder",
+        "max": "Max",
+        "lastalert": "Last Alert Date & Time"
       },
-      "matrix" :{
-        "from" : "From",
-        "to" : "To",
-        "value" : "Value",
-        "unit" : "Unit",
-        "weight" : "weight",
-        "length" : "length",
-        "breadth" : "breadth",
-        "height" : "height",
-        "volume" : "Volume"      
+      "matrix": {
+        "from": "From",
+        "to": "To",
+        "value": "Value",
+        "unit": "Unit",
+        "weight": "weight",
+        "length": "length",
+        "breadth": "breadth",
+        "height": "height",
+        "volume": "Volume"
       }
+    },
+    "storageType":{
+      "code" : "Code",
+      "description" :"Description"
+    }
   }
-}
 }
