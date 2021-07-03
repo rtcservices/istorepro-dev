@@ -1,17 +1,30 @@
+@import "../../../../assets/scss/variables.scss";
 .wh-control-table {
   height: auto;
   padding-top: 10px;
   margin-bottom: 10px;
 }
 
-.pale-border-box{
+.pale-border-box {
   margin-bottom: 10px;
-  div{
+  div.row {
     margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 30px !important;
-    padding-right: 30px !important;
-    mat-form-field{
+    & > div {
+      margin-left: 10px;
+      margin-right: 30px !important;
+      padding-right: 30px !important;
+      @include breakpoint(mobileonly) {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 0% !important;
+      }
+      mat-checkbox {
+        @include breakpoint(mobileonly) {
+          display: block !important;
+        }
+      }
+    }
+    mat-form-field {
       margin-left: 15px;
       margin-top: -7px;
     }
