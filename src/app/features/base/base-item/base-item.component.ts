@@ -110,7 +110,7 @@ export class BaseItemComponent implements OnInit {
 
   setTabHeights() {
     const tabCardBody = document.querySelectorAll(
-      'mat-tab-group#setupWarehouseDataTab mat-tab-body'
+      'mat-tab-group#baseItemdataTab mat-tab-body'
     );
     if (!tabCardBody) return;
     const maxHeight = Math.max(
