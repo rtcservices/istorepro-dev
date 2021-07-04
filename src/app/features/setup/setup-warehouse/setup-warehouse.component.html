@@ -112,7 +112,7 @@
                       <tbody>
                         <ng-template let-document ngFor [ngForOf]="documentDataSource">
                           <tr>
-                            <td >{{document.type}}</td>
+                            <td>{{document.type}}</td>
                             <td style="text-align: center; width: 200px;">
                               <input type="text" style="width: auto;" [value]="document.prefix">
                             </td>
@@ -202,7 +202,9 @@
                           <th>{{ 'setup.warehouse.operator.name' | translate}}</th>
                           <th>{{ 'setup.warehouse.operator.loginName' | translate}}</th>
                           <th>{{ 'setup.warehouse.operator.inactive' | translate}}</th>
-                          <th style="text-align: center;"><mat-icon style="padding-top: 3px;">add_circle_outline</mat-icon></th>
+                          <th style="text-align: center;">
+                            <mat-icon style="padding-top: 3px;">add_circle_outline</mat-icon>
+                          </th>
                         </tr>
                       </thead>
                       <tbody>
@@ -238,16 +240,16 @@
           </mat-card-content>
         </mat-card>
       </div>
-      <mat-card class="form-action-section"> 
+      <mat-card class="form-action-section">
         <mat-card-content>
           <div class="form-three-button-container" style="margin-top: 5px;">
-            <button mat-raised-button class="primary-raised-button" type="submit" (click)="saveCompanyData()">
+            <button mat-raised-button color="primary" type="submit" (click)="saveCompanyData()">
               <mat-icon>task_alt</mat-icon>
             </button>
-            <button mat-raised-button class="red-raised-button" type="button" (click)="deleteCompanyData()">
+            <button mat-raised-button color="warn" type="button" (click)="deleteCompanyData()">
               <mat-icon>remove_circle_outline</mat-icon>
             </button>
-            <button mat-raised-button class="green-raised-button" type="reset" (click)="resetCompanyDataForm()">
+            <button mat-raised-button color="accent" type="reset" (click)="resetCompanyDataForm()">
               <mat-icon>loop</mat-icon>
             </button>
           </div>
@@ -292,10 +294,10 @@
       <mat-card class="search-container">
         <mat-card-content>
           <div class="form-button-container">
-            <button mat-raised-button class="primary-raised-button" type="submit">
+            <button mat-raised-button color="primary" type="submit">
               <mat-icon>search</mat-icon>
             </button>
-            <button mat-raised-button class="green-raised-button" type="reset" (click)="resetWarehouseSearchForm()">
+            <button mat-raised-button color="accent" type="reset" (click)="resetWarehouseSearchForm()">
               <mat-icon>restart_alt</mat-icon>
             </button>
           </div>

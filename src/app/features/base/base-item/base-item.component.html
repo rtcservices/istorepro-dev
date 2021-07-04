@@ -38,7 +38,7 @@
                   <mat-label>{{
                       'base.item.itemType' | translate
                       }}</mat-label>
-                  <mat-select formControlName="itemType">
+                  <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="itemType">
                   </mat-select>
                   <mat-error *ngIf="dataItemFormControls.itemType.invalid">{{
                       'error.field' | translate
@@ -48,7 +48,7 @@
                   <mat-label>{{
                       'base.item.scanType' | translate
                       }}</mat-label>
-                  <mat-select formControlName="scanType">
+                  <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="scanType">
                     <mat-option>{{
                         'base.item.barCode' | translate
                         }}</mat-option>
@@ -107,7 +107,7 @@
                       <mat-label>{{
                                 'base.item.pickOption' | translate
                                 }}</mat-label>
-                      <mat-select formControlName="pickOption">
+                      <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="pickOption">
 
                       </mat-select>
                       <mat-error *ngIf="dataItemFormControls.pickOption.invalid">{{
@@ -254,7 +254,8 @@
                     <td style="text-align: center;">
                       <mat-checkbox color="primary"></mat-checkbox>
                     </td>
-                    <td> <button (click)="openstoreDialog(owner)" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+                    <td> <button (click)="openstoreDialog(owner)" mat-icon-button
+                        aria-label="Example icon button with a vertical three dot icon">
                         <mat-icon>more_horiz</mat-icon>
                       </button></td>
                     <td> <button (click)="openDialog(stpref)" mat-icon-button
@@ -367,13 +368,13 @@
     <mat-card>
       <mat-card-content>
         <div class="form-three-button-container">
-          <button mat-raised-button class="primary-raised-button" type="submit" (click)="saveItemData()">
+          <button mat-raised-button color="primary" type="submit" (click)="saveItemData()">
             <mat-icon>task_alt</mat-icon>
           </button>
-          <button mat-raised-button class="red-raised-button" type="button" (click)="deleteItemData()">
+          <button mat-raised-button color="warn" type="button" (click)="deleteItemData()">
             <mat-icon>remove_circle_outline</mat-icon>
           </button>
-          <button mat-raised-button class="green-raised-button" type="reset" (click)=" resetItemDataForm()">
+          <button mat-raised-button color="accent" type="reset" (click)=" resetItemDataForm()">
             <mat-icon>loop</mat-icon>
           </button>
         </div>
@@ -437,7 +438,7 @@
               <mat-label>{{
                     'base.item.sku' | translate
                     }}</mat-label>
-              <mat-select formControlName="sku">
+              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="sku">
               </mat-select>
               <mat-error *ngIf="searchItemFormControls.sku.invalid">{{
                     'error.field' | translate
@@ -448,7 +449,7 @@
               <mat-label>{{
                     'base.item.validateStorageType' | translate
                     }}</mat-label>
-              <mat-select formControlName="validateStorageType">
+              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="validateStorageType">
                 <mat-option value="true">{{
                       'general.yes' | translate
                       }}</mat-option>
@@ -466,7 +467,7 @@
               <mat-label>{{
                     'base.item.inventoryAlert' | translate
                     }}</mat-label>
-              <mat-select formControlName="inventoryAlert">
+              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="inventoryAlert">
                 <mat-option value="true">{{
                       'general.yes' | translate
                       }}</mat-option>
@@ -484,7 +485,7 @@
               <mat-label>{{
                     'base.item.inactive' | translate
                     }}</mat-label>
-              <mat-select formControlName="inactive">
+              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="inactive">
                 <mat-option value="true">{{
                       'general.yes' | translate
                       }}</mat-option>
@@ -502,7 +503,7 @@
               <mat-label>{{
                     'base.item.parent' | translate
                     }}</mat-label>
-              <mat-select formControlName="parent">
+              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="parent">
                 <mat-option value="true">{{
                       'general.yes' | translate
                       }}</mat-option>
@@ -520,7 +521,7 @@
               <mat-label>{{
                     'base.item.warehouse' | translate
                     }}</mat-label>
-              <mat-select formControlName="warehouse">
+              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="warehouse">
               </mat-select>
               <mat-error *ngIf="searchItemFormControls.warehouse.invalid">{{
                     'error.field' | translate
@@ -532,7 +533,7 @@
               <mat-label>{{
                     'base.item.instock' | translate
                     }}</mat-label>
-              <mat-select formControlName="instock">
+              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="instock">
                 <mat-option value="true">{{
                       'general.yes' | translate
                       }}</mat-option>
@@ -554,10 +555,10 @@
       <mat-card class="search-container">
         <mat-card-content>
           <div class="form-button-container">
-            <button mat-raised-button class="primary-raised-button" type="submit">
+            <button mat-raised-button color="primary" type="submit">
               <mat-icon>search</mat-icon>
             </button>
-            <button mat-raised-button class="green-raised-button" type="reset" (click)="resetItemSearchForm()">
+            <button mat-raised-button color="accent" type="reset" (click)="resetItemSearchForm()">
               <mat-icon>restart_alt</mat-icon>
             </button>
           </div>
@@ -656,9 +657,11 @@
                 <ng-template>
                   <td></td>
                   <td></td>
-                  <td> <select style="width: 100%;">
+                  <td>
+                    <select style="width: 100%;">
                       <option value=""></option>
-                    </select></td>
+                    </select>
+                  </td>
                   <td>
                     <mat-checkbox color="primary"></mat-checkbox>
                   </td>
@@ -689,7 +692,7 @@
       <p fxFlex>{{'base.item.item' | translate}} : <input style="width: 100%;" disabled type="text"></p>
     </div>
     <div fxLayout.gt-sm="row" fxLayout.lt-sm="row" fxLayoutGap="10px">
-      
+
       <p fxFlex> <label for="type">{{'base.item.type' | translate}} :</label>
         <select style="width: 100%;" id="type">
           <option value=""></option>
@@ -700,7 +703,7 @@
 
       <p fxFlex>{{'base.item.ownerName' | translate}} : <input style="width: 100%;" type="text"></p>
 
-      <button class="store-dialog-search"  mat-raised-button class="primary-raised-button" type="submit">
+      <button class="store-dialog-search" mat-raised-button color="primary" type="submit">
         <mat-icon>search</mat-icon>
       </button>
 
@@ -713,19 +716,23 @@
           <table class="site-table text-center w-100">
             <thead>
               <tr>
-                <th><mat-checkbox style="background-color: white; padding: 0 !important;" color="primary"></mat-checkbox></th>
+                <th>
+                  <mat-checkbox style="background-color: white; padding: 0 !important;" color="primary"></mat-checkbox>
+                </th>
                 <th>{{ 'base.item.type' | translate}}</th>
                 <th>{{ 'base.item.owner' | translate}}</th>
-                <th>{{ 'base.item.ownerName' | translate}}  </th>
+                <th>{{ 'base.item.ownerName' | translate}} </th>
               </tr>
             </thead>
             <tbody>
               <ng-template>
                 <td></td>
                 <td></td>
-                <td> <select style="width: 100%;">
+                <td>
+                  <select style="width: 100%;">
                     <option value=""></option>
-                  </select></td>
+                  </select>
+                </td>
                 <td>
                   <mat-checkbox color="primary"></mat-checkbox>
                 </td>

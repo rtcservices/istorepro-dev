@@ -1,0 +1,133 @@
+// http://mcg.mbitson.com/
+@import './variables';
+$ibe-blue-palette: (
+  // $site-primary
+  50: #e1e9f1,
+  100: #b3c8dc,
+  200: #80a3c4,
+  300: #4d7eac,
+  400: #27639b,
+  500: #014789,
+  600: #014081,
+  700: #013776,
+  800: #012f6c,
+  900: #002059,
+  A100: #8ba9ff,
+  A200: #5883ff,
+  A400: #255dff,
+  A700: #0b4bff,
+  contrast: (
+    50: $site-black,
+    100: $site-black,
+    200: $site-black,
+    300: $site-white,
+    400: $site-white,
+    500: $site-white,
+    600: $site-white,
+    700: $site-white,
+    800: $site-white,
+    900: $site-white,
+    A100: $site-black,
+    A200: $site-black,
+    A400: $site-white,
+    A700: $site-white
+  )
+);
+$ibe-green-palette: (
+  // $site-accent
+  50: #ebf0e7,
+  100: #cedbc4,
+  200: #adc39d,
+  300: #8caa76,
+  400: #749858,
+  500: #5b863b,
+  600: #537e35,
+  700: #49732d,
+  800: #406926,
+  900: #2f5619,
+  A100: #b7ff93,
+  A200: #95ff60,
+  A400: #73ff2d,
+  A700: #62ff14,
+  contrast: (
+    50: $site-black,
+    100: $site-black,
+    200: $site-black,
+    300: $site-black,
+    400: $site-black,
+    500: $site-white,
+    600: $site-white,
+    700: $site-white,
+    800: $site-white,
+    900: $site-white,
+    A100: $site-black,
+    A200: $site-black,
+    A400: $site-black,
+    A700: $site-black
+  )
+);
+$ibe-pink-palette: (
+  // $site-warn
+  50: #f7e4ed,
+  100: #ebbcd1,
+  200: #de8fb2,
+  300: #d16293,
+  400: #c7417c,
+  500: #bd1f65,
+  600: #b71b5d,
+  700: #ae1753,
+  800: #a61249,
+  900: #980a37,
+  A100: #ffc6d5,
+  A200: #ff93b0,
+  A400: #ff608b,
+  A700: #ff4778,
+  contrast: (
+    50: $site-black,
+    100: $site-black,
+    200: $site-black,
+    300: $site-black,
+    400: $site-white,
+    500: $site-white,
+    600: $site-white,
+    700: $site-white,
+    800: $site-white,
+    900: $site-white,
+    A100: $site-black,
+    A200: $site-black,
+    A400: $site-black,
+    A700: $site-black
+  )
+);
+$ibe-red-palette: (
+  50: #fee8e7,
+  100: #fcc7c3,
+  200: #faa19b,
+  300: #f77b72,
+  400: #f65f54,
+  500: #f44336,
+  600: #f33d30,
+  700: #f13429,
+  800: #ef2c22,
+  900: #ec1e16,
+  A100: $site-white,
+  A200: #ffe9e9,
+  A400: #ffb8b6,
+  A700: #ff9f9c,
+  contrast: (
+    50: $site-black,
+    100: $site-black,
+    200: $site-black,
+    300: $site-black,
+    400: $site-black,
+    500: $site-white,
+    600: $site-white,
+    700: $site-white,
+    800: $site-white,
+    900: $site-white,
+    A100: $site-black,
+    A200: $site-black,
+    A400: $site-black,
+    A700: $site-black
+  )
+);

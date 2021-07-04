@@ -111,7 +111,7 @@ export class SetupCompanyComponent implements OnInit {
           Validators.pattern(patternsHelper.alphanumeric)
         ]
       ],
-      sector: '',
+      sector: 'logistics',
       email: [
         '',
         [
