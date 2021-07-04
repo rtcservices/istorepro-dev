@@ -49,11 +49,10 @@ export class BaseItemComponent implements OnInit {
 
   whControlDataSource: BaseItemWhControlModel[] = [];
   dummyWHControlModel: BaseItemWhControlModel[] = [
-    { checked: false, code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD', customers: false, vendors: false, sku: "" },
-    { checked: false, code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD', customers: false, vendors: false, sku: "" },
-    { checked: false, code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD', customers: false, vendors: false, sku: "" },
-    { checked: false, code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD', customers: false, vendors: false, sku: "" },
-    { checked: false, code: '1008', name: 'NIPPON PAINT (INDIA) PRIVATE LTD', customers: false, vendors: false, sku: "" }
+    { checked: false, code: 'GEN', name: 'GENERAL WAREHOUSE', customers: false, vendors: false, sku: "" },
+    { checked: false, code: 'LIQ', name: 'SPIRIT WAREHOUSE', customers: false, vendors: false, sku: "" },
+    { checked: false, code: 'M01', name: 'MOTHER WAREHOUSE', customers: false, vendors: false, sku: "" },
+    { checked: false, code: 'EQU', name: 'EQUIPMENT BASED WAREHOUSE', customers: false, vendors: false, sku: "" }
 
   ];
 

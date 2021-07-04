@@ -125,7 +125,7 @@
         <mat-card-content>
           <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px"
             class="row">
-            <mat-form-field appearance="outline" fxFlex>
+            <mat-form-field appearance="outline" fxFlex="30">
               <mat-label>{{
                 'base.itemType.code' | translate
                 }}</mat-label>
@@ -152,7 +152,7 @@
           </div>
           <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px"
             class="row">
-            <mat-form-field appearance="outline" fxFlex>
+            <mat-form-field appearance="outline" fxFlex="30">
               <mat-label>{{
                 'base.itemType.warehouse' | translate
                 }}</mat-label>
@@ -160,7 +160,7 @@
               <mat-error *ngIf="searchItemTypeFormControls.warehouse.invalid">
                 {{ 'error.field' | translate }}</mat-error>
             </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex="20">
+            <mat-form-field appearance="outline" fxFlex>
               <mat-label>Expiry</mat-label>
               <mat-select type="text" formControlName="expiry">
                 <mat-option value="yes">Yes</mat-option>
@@ -168,7 +168,7 @@
               </mat-select>
               <mat-error *ngIf="searchItemTypeFormControls.expiry.invalid">{{ 'error.field' | translate }}</mat-error>
             </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex="20">
+            <mat-form-field appearance="outline" fxFlex>
               <mat-label>Mfg Date ?.</mat-label>
               <mat-select type="text" formControlName="MfgDate">
                 <mat-option value="yes">Yes</mat-option>
@@ -176,7 +176,7 @@
               </mat-select>
               <mat-error *ngIf="searchItemTypeFormControls.MfgDate.invalid">{{ 'error.field' | translate }}</mat-error>
             </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex="20">
+            <mat-form-field appearance="outline" fxFlex>
               <mat-label>Batch No ?</mat-label>
               <mat-select type="text" formControlName="batchNo">
                 <mat-option value="yes">Yes</mat-option>
