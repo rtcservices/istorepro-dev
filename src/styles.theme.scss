@@ -1,0 +1,19 @@
+@use '~@angular/material' as mat;
+@import './assets/scss/custom-palettes';
+
+@include mat.core();
+
+$ibe-primary: mat.define-palette($ibe-blue-palette);
+$ibe-accent: mat.define-palette($ibe-green-palette);
+$ibe-warn: mat.define-palette($ibe-red-palette);
+
+$ibe-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $ibe-primary,
+      accent: $ibe-accent,
+      warn: $ibe-warn
+    )
+  )
+);
+@include mat.all-component-themes($ibe-theme);
