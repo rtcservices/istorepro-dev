@@ -4,11 +4,12 @@
 <mat-tab-group #baseItemTab>
   <mat-tab label="Data">
     <form [formGroup]="dataItemForm" (ngSubmit)="onDataItemSubmit()" class="slim-form">
-      <mat-card class="h-100">
+      <div fxLayout="row" class="data-form">
+      <mat-card class="w-100">
         <mat-card-content>
           <mat-tab-group #baseItemdataTab id="baseItemdataTab">
             <mat-tab label="Item">
-              <mat-card class="w-100">
+              <mat-card>
                 <mat-card-content>
                   <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutAlign="stretch" fxLayoutGap="10px"
                     class="data-form">
@@ -211,11 +212,10 @@
                 </mat-card-content>
               </mat-card>
             </mat-tab>
-
             <mat-tab label="WH. Control">
-              <mat-card class="w-100">
+              <mat-card  class="wh-control-table">
                 <mat-card-content>
-                  <table class="site-table w-100">
+                  <table class="site-table w-100 mat-elevation-z8">
                     <thead>
                       <tr>
                         <th></th>
@@ -259,9 +259,9 @@
               </mat-card>
             </mat-tab>
             <mat-tab label="Inventory Alert">
-              <mat-card class="w-100">
+              <mat-card class="inventory-alert-table">
                 <mat-card-content>
-                  <table class="site-table text-center w-100">
+                  <table class="site-table text-center w-100 mat-elevation-z8">
                     <thead>
                       <tr>
                         <th></th>
@@ -296,9 +296,9 @@
               </mat-card>
             </mat-tab>
             <mat-tab label="Matrix">
-              <mat-card class="w-100">
+              <mat-card class="matrix-table">
                 <mat-card-content>
-                  <table class="site-table text-center w-100">
+                  <table class="site-table text-center w-100 mat-elevation-z8">
                     <thead>
                       <tr>
                         <th></th>
@@ -345,7 +345,7 @@
           </mat-tab-group>
         </mat-card-content>
       </mat-card>
-    </form>
+    </div>
     <mat-card>
       <mat-card-content>
         <div class="form-four-button-container">
@@ -364,8 +364,8 @@
         </div>
       </mat-card-content>
     </mat-card>
+   </form>
   </mat-tab>
-
   <mat-tab label="Search">
     <form fxLayout="column" [formGroup]="searchItemForm" (ngSubmit)="onSearchItemSubmit()" class="slim-form">
       <mat-card class="filter-container">
