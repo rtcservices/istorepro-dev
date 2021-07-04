@@ -23,8 +23,6 @@ export interface BaseItemWhControlModel {
     sku: string;
 }
 
-
-
 export interface BaseItemInventoryAlertModel {
     warehouse: string;
     description: string;
@@ -34,10 +32,7 @@ export interface BaseItemInventoryAlertModel {
     lastalert: string;
 }
 
-
-
 export interface BaseItemMatrixModel {
-   
     from: {
         value: string;
         unit: string;
