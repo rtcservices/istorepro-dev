@@ -241,6 +241,11 @@
     "zone":{
       "code" : "Code",
       "description" :"Description"
+    },
+    "reason":{
+      "code" : "Code",
+      "description" :"Description",
+      "type":"Type"
     }
   }
 }

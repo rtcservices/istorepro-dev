@@ -1,1 +1,48 @@
-<p>base-reason works!</p>
+<div class="page-title">
+    <h2>{{'menu.baseReason' | translate}}</h2>
+  </div>
+  <mat-card class="reason-table">
+    <mat-card-content>
+      <table class="site-table w-100 mat-elevation-z8">
+        <thead>
+          <tr>
+            <th>{{ 'base.reason.code' | translate}}</th>
+            <th>{{ 'base.reason.description' | translate}}</th>
+            <th>{{ 'base.reason.type' | translate}}</th>
+            <th style="text-align: center;">
+              <mat-icon style="padding-top: 3px;">add_circle_outline</mat-icon>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-template let-reason ngFor [ngForOf]="reasonDataSource">
+            <tr>
+              <td style="width: 20% !important;">
+                {{reason.code}}
+              </td>
+              <td >
+                {{reason.description}}
+              </td>
+              <td>
+                {{reason.type}}
+              </td>
+              <td style="text-align: center;">
+                <mat-icon color="primary">edit</mat-icon>
+                <mat-icon style="color: #f44336;">remove_circle</mat-icon>
+              </td>
+            </tr>
+          </ng-template>
+          <tr>
+            <td style="width: 30%;">
+              <input type="text" style="width: 100%;">
+            </td>
+            <td style="width: 60%;">
+              <input type="text">
+            </td>
+            <td style="text-align: center;">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </mat-card-content>
+  </mat-card>

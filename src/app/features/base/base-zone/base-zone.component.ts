@@ -39,7 +39,7 @@ export class BaseZoneComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.titleService.changeTitleTranslated('menu.setupWarehouse');
+    this.titleService.changeTitleTranslated('menu.baseZone');
     const language = this.siteTranslateService.defaultLanguage;
     this.translate.use(language).subscribe((res) => {
       this.formErrorTranslated = this.translate.instant('error.form');
