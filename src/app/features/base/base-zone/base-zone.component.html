@@ -16,20 +16,24 @@
       <tbody>
         <ng-template let-zone ngFor [ngForOf]="zoneDataSource">
           <tr>
-            <td style="width: 30%;">
+            <td>
               {{zone.code}}
             </td>
-            <td style="width: 60%;">
+            <td>
               {{zone.description}}
             </td>
-            <td style="text-align: center;">
-              <mat-icon color="primary">edit</mat-icon>
-              <mat-icon color="warn">delete</mat-icon>
+            <td class="two-button-column">
+              <button mat-mini-fab color="primary">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-mini-fab color="warn">
+                <mat-icon>remove</mat-icon>
+              </button>
             </td>
           </tr>
         </ng-template>
         <tr>
-          <td style="width: 30%;">
+          <td>
             <input type="text" style="width: 100%;">
           </td>
           <td style="width: 60%;">
