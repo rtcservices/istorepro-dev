@@ -12,6 +12,10 @@ import { MatTabGroup } from '@angular/material/tabs';
 
 import { patternsHelper } from '../../../helpers/patterns.helper';
 import { SelectItemModel } from '../../../models/select-item.model';
+import {
+  PrevilegeNode,
+  FlattenedPrevilegeNode
+} from '../models/setup-security.model';
 @Component({
   selector: 'ibe-setup-security',
   templateUrl: './setup-security.component.html',
@@ -47,7 +51,8 @@ export class SetupSecurityComponent implements OnInit, AfterViewInit {
   //#endregion
 
   //#region "Previleges Tab Variables"
-
+  availablePrevileges: PrevilegeNode[] = [];
+  allocatedPrevileges: PrevilegeNode[] = [];
   //#endregion
 
   //#region "Search Tab Variables"
@@ -180,7 +185,134 @@ export class SetupSecurityComponent implements OnInit, AfterViewInit {
   //#endregion
 
   //#region "Previleges Tab"
+  createAvailablePrevilegeTree() {
+    const saveText = 'Save';
+    const deleteText = 'Delete';
+    const viewText = 'View';
 
+    const setupPrevileges: PrevilegeNode = {
+      id: 11,
+      name: 'Setup',
+      parentId: 1,
+      children: [
+        {
+          id: 111,
+          name: 'Company',
+          parentId: 11,
+          children: [
+            { id: 1111, parentId: 111, name: saveText },
+            { id: 1112, parentId: 111, name: deleteText },
+            { id: 1113, parentId: 111, name: viewText }
+          ]
+        },
+        {
+          id: 112,
+          name: 'Warehouse',
+          parentId: 11,
+          children: [
+            { id: 1121, parentId: 112, name: saveText },
+            { id: 1122, parentId: 112, name: deleteText },
+            { id: 1123, parentId: 112, name: viewText }
+          ]
+        },
+        {
+          id: 113,
+          name: 'Owner',
+          parentId: 11,
+          children: [
+            { id: 1131, parentId: 113, name: saveText },
+            { id: 1132, parentId: 113, name: deleteText },
+            { id: 1133, parentId: 113, name: viewText }
+          ]
+        },
+        {
+          id: 114,
+          name: 'Security',
+          parentId: 11,
+          children: [
+            { id: 1141, parentId: 114, name: saveText },
+            { id: 1142, parentId: 114, name: deleteText },
+            { id: 1143, parentId: 114, name: viewText }
+          ]
+        }
+      ]
+    };
+    const basePrevileges: PrevilegeNode = {
+      id: 12,
+      name: 'Base',
+      parentId: 1,
+      children: [
+        {
+          id: 121,
+          name: 'Item Type',
+          parentId: 12,
+          children: [
+            { id: 1211, parentId: 121, name: saveText },
+            { id: 1212, parentId: 121, name: deleteText },
+            { id: 1213, parentId: 121, name: viewText }
+          ]
+        },
+        {
+          id: 122,
+          name: 'Item',
+          parentId: 12,
+          children: [
+            { id: 1221, parentId: 122, name: saveText },
+            { id: 1222, parentId: 122, name: deleteText },
+            { id: 1223, parentId: 122, name: viewText }
+          ]
+        },
+        {
+          id: 123,
+          name: 'Storage Type',
+          parentId: 12,
+          children: [
+            { id: 1231, parentId: 123, name: saveText },
+            { id: 1232, parentId: 123, name: deleteText },
+            { id: 1233, parentId: 123, name: viewText }
+          ]
+        },
+        {
+          id: 124,
+          name: 'Zone',
+          parentId: 12,
+          children: [
+            { id: 1241, parentId: 124, name: saveText },
+            { id: 1242, parentId: 124, name: deleteText },
+            { id: 1243, parentId: 124, name: viewText }
+          ]
+        },
+        {
+          id: 125,
+          name: 'Storage Type',
+          parentId: 12,
+          children: [
+            { id: 1251, parentId: 125, name: saveText },
+            { id: 1252, parentId: 125, name: deleteText },
+            { id: 1253, parentId: 125, name: viewText }
+          ]
+        },
+        {
+          id: 126,
+          name: 'Reason',
+          parentId: 12,
+          children: [
+            { id: 1261, parentId: 126, name: saveText },
+            { id: 1262, parentId: 126, name: deleteText },
+            { id: 1263, parentId: 126, name: viewText }
+          ]
+        }
+      ]
+    };
+
+    this.availablePrevileges = [
+      {
+        id: 1,
+        name: 'Functions',
+        children: [setupPrevileges, basePrevileges]
+      }
+    ];
+  }
   //#endregion
 
   //#region "Search Tab"
