@@ -9,14 +9,11 @@
           <mat-card class="h-100">
             <mat-card-content>
               <div fxLayout="row" class="row" fxLayoutGap="5px">
-                <mat-form-field appearance="outline" fxFlex="32">
-                  <mat-label>{{
-                    'setup.company.companyCode' | translate
-                    }}</mat-label>
-                  <input matInput type="text" readonly formControlName="companyCode" />
-                  <mat-error *ngIf="dataCompanyFormControls.companyCode.invalid">{{ 'error.field' | translate }}
-                  </mat-error>
-                </mat-form-field>
+                <p class="read-only-input" fxFlex="32">
+                  <label>
+                    {{ 'setup.company.companyCode' | translate }}: {{ dataCompanyFormControls.companyCode.value }}
+                  </label>
+                </p>
                 <mat-form-field appearance="outline" fxFlex>
                   <mat-label>{{
                     'setup.company.companyName' | translate

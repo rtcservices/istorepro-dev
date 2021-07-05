@@ -72,7 +72,7 @@ export class SetupCompanyComponent implements OnInit {
 
   createDataCompanyForm() {
     this.dataCompanyForm = this.fb.group({
-      companyCode: '',
+      companyCode: 'CODE 2',
       companyName: [
         '',
         [Validators.required, Validators.pattern(patternsHelper.name)]

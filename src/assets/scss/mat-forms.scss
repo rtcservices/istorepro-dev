@@ -1,4 +1,4 @@
-@import "./variables.scss";
+@import './variables.scss';
 .filter-container {
   padding-bottom: 0.5rem;
 }
@@ -31,6 +31,17 @@
   input:not(.normal) {
     text-transform: uppercase;
   }
+  .read-only-input {
+    align-items: center;
+    background-color: $site-lighter-gray;
+    border: 1px solid $site-light-gray;
+    border-radius: 5px;
+    color: $site-gray;
+    display: flex;
+    height: 35px;
+    margin-top: 5px;
+    padding-left: 5px;
+  }
 }
 
 .slim-form
@@ -51,7 +62,8 @@
 }
 
 .slim-form {
-  .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+  .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
+    .mat-form-field-label {
     transform: translateY(-1.1em) scale(0.75);
     width: 133.33333%;
     padding-bottom: 2px;
@@ -96,7 +108,7 @@
     @include breakpoint(mobileonly) {
       width: 25%;
     }
-  }  
+  }
 }
 
 .form-import-button {
