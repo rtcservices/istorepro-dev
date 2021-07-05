@@ -24,7 +24,9 @@
               {{reason.description}}
             </td>
             <td>
-              {{reason.type}}
+              <select type="text" style="width: 100%;" [value]="reason.type">
+                <option value="COMMON">COMMON</option>
+              </select>
             </td>
             <td style="text-align: center;">
               <mat-icon color="primary">edit</mat-icon>

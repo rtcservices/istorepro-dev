@@ -22,10 +22,7 @@
     "used": "Used",
     "email": "Email",
     "license": "License",
-    "security": "Security",
-    "inventoryAudit": "Inventory Audit",
-    "lastAuditCompleted": "Last Audit Completed",
-    "currentAuditStarted": "Current Audit Started"
+    "security": "Security"
   },
   "error": {
     "form": "Form has invalid entries",
@@ -249,10 +246,10 @@
         "to": "To",
         "value": "Value",
         "unit": "Unit",
-        "weight": "weight",
-        "length": "length",
-        "breadth": "breadth",
-        "height": "height",
+        "weight": "Weight",
+        "length": "Length",
+        "breadth": "Breadth",
+        "height": "Height",
         "volume": "Volume"
       }
     },
