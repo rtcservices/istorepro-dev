@@ -8,6 +8,26 @@ div.form-checkbox-input {
     }
 }
 
+div.form-capacity-checkbox-input {
+    margin: 17px 100px;
+    mat-checkbox {
+        margin-left: 10px;
+        margin-right: 30px;
+    }
+}
+
+.input-validate-group {
+    .input-group {
+        display: table-cell;
+        padding-top: 8px;
+    }
+    .validate-checkbox {
+        display: table-cell;
+        padding-right: 40px;
+        padding-left: 8px;
+    }
+}
+
 .pale-border-box {
     div.row {
         padding-top: 14px;
@@ -16,5 +36,15 @@ div.form-checkbox-input {
             margin-right: 30px !important;
             padding-right: 30px !important;
         }
+    }
+}
+
+.input-group {
+    margin-top: 10px;
+    .input-group-title {
+        padding: 0px 30px !important;
+    }
+    .input-group-icon {
+        padding: 0 20px;
     }
 }

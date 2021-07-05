@@ -18,9 +18,7 @@ export interface BaseLocationModel {
     lpnLocation: number;
     planning: boolean;
     autoAllocation: boolean;
-}
 
-export interface BaseLocationCapacityModel {
     length: number;
     breadth: number;
     height: number;

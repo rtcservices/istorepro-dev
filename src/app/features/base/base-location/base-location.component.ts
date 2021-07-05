@@ -4,7 +4,7 @@ import { MatTabGroup } from '@angular/material/tabs';
 
 import { TranslateService } from '@ngx-translate/core';
 import { LoaderService } from '../../../services/loader.service';
-import { BaseLocationCapacityModel, BaseLocationModel, BaseLocationSearchModel } from '../models/base-location.model';
+import { BaseLocationModel, BaseLocationSearchModel } from '../models/base-location.model';
 
 import { TitleService } from '../../../services/title.service';
 import { SiteTranslateService } from '../../../services/site-translate.service';
@@ -34,7 +34,7 @@ export class BaseLocationComponent implements OnInit {
     private translate: TranslateService,
     private titleService: TitleService,
     private notification: NotificationService
-  ) { 
+  ) {
     this.createDataLocationForm();
   }
 
@@ -139,7 +139,56 @@ export class BaseLocationComponent implements OnInit {
         ]
       ],
       planning: '',
-      autoAllocation: ''
+      autoAllocation: '',
+
+      length: [
+        '', [
+          Validators.pattern(patternsHelper.numeric)
+        ]
+      ],
+      breadth: [
+        '', [
+          Validators.pattern(patternsHelper.numeric)
+        ]
+      ],
+      height: [
+        '', [
+          Validators.pattern(patternsHelper.numeric)
+        ]
+      ],
+      volume: [
+        '', [
+          Validators.pattern(patternsHelper.numeric)
+        ]
+      ],
+      volumeValidate: '',
+      volumeSafePercentage: [
+        '', [
+          Validators.pattern(patternsHelper.numeric)
+        ]
+      ],
+      volumeFillPercentage: [
+        '', [
+          Validators.pattern(patternsHelper.numeric)
+        ]
+      ],
+      weight: [
+        '', [
+          Validators.pattern(patternsHelper.numeric)
+        ]
+      ],
+      weightValidate: '',
+      weightSafePercentage: [
+        '', [
+          Validators.pattern(patternsHelper.numeric)
+        ]
+      ],
+      weightFillPercentage: [
+        '', [
+          Validators.pattern(patternsHelper.numeric)
+        ]
+      ],
+      autoFill: ''
     });
   }
 
@@ -147,8 +196,8 @@ export class BaseLocationComponent implements OnInit {
     return this.dataLocationForm.controls;
   }
 
-  saveCompanyData() {}
-  deleteCompanyData() {}
+  saveCompanyData() { }
+  deleteCompanyData() { }
 
   resetCompanyDataForm() {
     this.dataLocationForm.reset();
