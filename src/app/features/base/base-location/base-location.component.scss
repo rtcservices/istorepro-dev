@@ -8,20 +8,15 @@ div.form-checkbox-input {
     }
 }
 
-.validate-checkbox, .autoFill-checkbox{
+.validate-checkbox,
+.autoFill-checkbox {
     margin-left: 30px;
-    padding-top: 12px 
+    padding-top: 12px;
 }
 
-.pale-border-box {
-    div.row {
-        // padding-top: 14px;
-        & > div {
-            margin-left: 10px;
-            margin-right: 30px !important;
-            padding-right: 30px !important;
-        }
-    }
+.checkbox-set * {
+    margin-left: 35px;
+    padding-top: 6px;
 }
 
 .input-group {
