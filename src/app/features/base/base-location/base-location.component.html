@@ -21,8 +21,7 @@
                           <mat-option>Warehouse 1</mat-option>
                           <mat-option>Warehouse 2</mat-option>
                         </mat-select>
-                        <mat-error *ngIf="dataLocationControls.warehouse.invalid">{{
-                                                    'error.field' | translate }}
+                        <mat-error *ngIf="dataLocationControls.warehouse.invalid">{{ 'error.field' | translate }}
                         </mat-error>
                       </mat-form-field>
                       <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="25">
@@ -38,8 +37,7 @@
                           <mat-option>Row 1</mat-option>
                           <mat-option>Row 2</mat-option>
                         </mat-select>
-                        <mat-error *ngIf="dataLocationControls.row.invalid">{{
-                                                    'error.field' | translate }}
+                        <mat-error *ngIf="dataLocationControls.row.invalid">{{ 'error.field' | translate }}
                         </mat-error>
                       </mat-form-field>
                       <mat-form-field appearance="outline" fxFlex="30" fxFlex.lt-sm="25">
@@ -52,8 +50,7 @@
                           <mat-option>Unit 1</mat-option>
                           <mat-option>Unit 2</mat-option>
                         </mat-select>
-                        <mat-error *ngIf="dataLocationControls.unit.invalid">{{
-                                                    'error.field' | translate }}
+                        <mat-error *ngIf="dataLocationControls.unit.invalid">{{ 'error.field' | translate }}
                         </mat-error>
                       </mat-form-field>
                       <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="25">
@@ -65,8 +62,7 @@
                       <mat-form-field appearance="outline" fxFlex="20" fxFlex.lt-sm="25">
                         <mat-label>{{'base.location.level' | translate}}</mat-label>
                         <input matInput type="text" formControlName="level" />
-                        <mat-error *ngIf="dataLocationControls.level.invalid">{{ 'error.field' |
-                                                    translate }}
+                        <mat-error *ngIf="dataLocationControls.level.invalid">{{ 'error.field' | translate }}
                         </mat-error>
                       </mat-form-field>
                       <mat-form-field appearance="outline" fxFlex="20" fxFlex.lt-sm="25">
@@ -80,8 +76,7 @@
                           <mat-option>Nature 1</mat-option>
                           <mat-option>Nature 2</mat-option>
                         </mat-select>
-                        <mat-error *ngIf="dataLocationControls.nature.invalid">{{
-                                                    'error.field' | translate }}
+                        <mat-error *ngIf="dataLocationControls.nature.invalid">{{'error.field' | translate }}
                         </mat-error>
                       </mat-form-field>
                     </div>
@@ -94,8 +89,8 @@
                           <mat-option>Zone 1</mat-option>
                           <mat-option>Zone 2</mat-option>
                         </mat-select>
-                        <mat-error *ngIf="dataLocationControls.zone.invalid">{{
-                                                    'error.field' | translate }}
+                        <mat-error *ngIf="dataLocationControls.zone.invalid">
+                          {{ 'error.field' | translate }}
                         </mat-error>
                       </mat-form-field>
                       <mat-form-field appearance="outline" fxFlex>
@@ -112,8 +107,8 @@
                           <mat-option>Storage Type 1</mat-option>
                           <mat-option>Storage Type 2</mat-option>
                         </mat-select>
-                        <mat-error *ngIf="dataLocationControls.storageType.invalid">{{
-                                                    'error.field' | translate }}
+                        <mat-error *ngIf="dataLocationControls.storageType.invalid">
+                          {{'error.field' | translate }}
                         </mat-error>
                       </mat-form-field>
                       <mat-form-field appearance="outline" fxFlex="20" fxFlex.lt-sm="25">
@@ -123,8 +118,8 @@
                           <mat-option>Scan Type 1</mat-option>
                           <mat-option>Scan Type 2</mat-option>
                         </mat-select>
-                        <mat-error *ngIf="dataLocationControls.scanType.invalid">{{
-                                                    'error.field' | translate }}
+                        <mat-error *ngIf="dataLocationControls.scanType.invalid">
+                          {{ 'error.field' | translate }}
                         </mat-error>
                       </mat-form-field>
                       <mat-form-field appearance="outline" fxFlex>
@@ -141,35 +136,23 @@
                           <mat-option>Storage Status 1</mat-option>
                           <mat-option>Storage Status 2</mat-option>
                         </mat-select>
-                        <mat-error *ngIf="dataLocationControls.storageStatus.invalid">{{
-                                                    'error.field' | translate }}
+                        <mat-error *ngIf="dataLocationControls.storageStatus.invalid">{{ 'error.field' | translate }}
                         </mat-error>
                       </mat-form-field>
                       <div class="form-checkbox-input" fxFlex="15">
-                        <mat-checkbox color="primary" formControlName="freeze">{{
-                                                    'base.location.freeze' | translate
-                                                    }}</mat-checkbox>
+                        <mat-checkbox color="primary" formControlName="freeze">{{ 'base.location.freeze' | translate }}
+                        </mat-checkbox>
                       </div>
                       <div class="form-checkbox-input" fxFlex="20">
-                        <mat-checkbox color="primary" formControlName="reworkArea">{{
-                                                    'base.location.reworkArea' | translate
-                                                    }}</mat-checkbox>
+                        <mat-checkbox color="primary" formControlName="reworkArea">
+                          {{ 'base.location.reworkArea' | translate }}</mat-checkbox>
                       </div>
-                      <div class="pale-border-box" fxFlex>
+                      <div class="pale-border-box checkbox-set" fxLayout="row" fxFlex>
                         <b>{{ 'base.location.excludeFrom' | translate }}</b>
-                        <div class="row" fxFex fxLayout="row" fxLayout.lt-sm="row" fxLayoutGap="10px">
-                          <div>
-                            <mat-checkbox color="primary" formControlName="planning">{{
-                                                            'base.location.planning' | translate
-                                                            }}</mat-checkbox>
-                          </div>
-                          <div>
-                            <mat-checkbox color="primary" formControlName="autoAllocation">
-                              {{
-                                                            'base.location.autoAllocation' | translate
-                                                            }}</mat-checkbox>
-                          </div>
-                        </div>
+                        <mat-checkbox color="primary" formControlName="planning">
+                          {{  'base.location.planning' | translate }}</mat-checkbox>
+                        <mat-checkbox color="primary" formControlName="autoAllocation">
+                          {{'base.location.autoAllocation' | translate}}</mat-checkbox>
                       </div>
                     </div>
 
