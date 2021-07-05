@@ -1,107 +1,107 @@
 <div class="page-title">
-    <h2>{{'menu.setupOwner' | translate}}</h2>
+  <h2>{{'menu.setupOwner' | translate}}</h2>
 </div>
 
 <mat-tab-group #setupOwnerTab dynamicHeight>
-    <mat-tab label="Data">
-        <form [formGroup]="dataOwnerForm" class="slim-form">
-            <div fxLayout="row" class="data-form">
-                <mat-card class="w-100">
-                    <mat-card-content>
-                        <mat-tab-group #setupOwnerDataTab id="setupOwnerDataTab">
-                            <mat-tab label="Owner">
-                                <mat-card>
-                                    <mat-card-content>
-                                        <div fxLayout="row" class="row" fxLayoutGap="5px">
-                                            <mat-form-field appearance="outline" fxFlex="30" fxFlex.lt-sm="25">
-                                                <mat-label>{{'setup.owner.code' | translate }}</mat-label>
-                                                <input matInput required type="text" formControlName="code" />
-                                                <mat-error *ngIf="dataOwnerControls.code.invalid">{{ 'error.field' |
-                                                    translate }}
-                                                </mat-error>
-                                            </mat-form-field>
-                                            <mat-form-field appearance="outline" fxFlex="40">
-                                                <mat-label>{{'setup.owner.name' | translate}}</mat-label>
-                                                <input matInput required type="text" formControlName="name" />
-                                                <mat-error *ngIf="dataOwnerControls.name.invalid">{{ 'error.field' |
-                                                    translate }}
-                                                </mat-error>
-                                            </mat-form-field>
-                                        </div>
+  <mat-tab label="Data">
+    <form [formGroup]="dataOwnerForm" class="slim-form">
+      <div fxLayout="row" class="data-form">
+        <mat-card class="w-100">
+          <mat-card-content>
+            <mat-tab-group #setupOwnerDataTab id="setupOwnerDataTab">
+              <mat-tab label="Owner">
+                <mat-card>
+                  <mat-card-content>
+                    <div fxLayout="row" class="row" fxLayoutGap="5px">
+                      <mat-form-field appearance="outline" fxFlex="30" fxFlex.lt-sm="25">
+                        <mat-label>{{'setup.owner.code' | translate }}</mat-label>
+                        <input matInput required type="text" formControlName="code" />
+                        <mat-error *ngIf="dataOwnerControls.code.invalid">{{ 'error.field' |
+                          translate }}
+                        </mat-error>
+                      </mat-form-field>
+                      <mat-form-field appearance="outline" fxFlex="40">
+                        <mat-label>{{'setup.owner.name' | translate}}</mat-label>
+                        <input matInput required type="text" formControlName="name" />
+                        <mat-error *ngIf="dataOwnerControls.name.invalid">{{ 'error.field' |
+                          translate }}
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
 
-                                        <div fxLayout="row" class="row" fxLayoutGap="5px">
-                                            <mat-form-field appearance="outline" fxFlex="30">
-                                                <mat-label>{{'setup.owner.shortName' | translate}}</mat-label>
-                                                <input matInput required type="text" formControlName="shortName" />
-                                                <mat-error *ngIf="dataOwnerControls.shortName.invalid">{{ 'error.field'
-                                                    | translate }}
-                                                </mat-error>
-                                            </mat-form-field>
-                                            <mat-form-field appearance="outline" fxFlex="40">
-                                                <mat-label>{{
-                                                    'setup.owner.type' | translate
-                                                    }}</mat-label>
-                                                  <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="type">
-                                                    <mat-option value="local">Local</mat-option>
-                                                    <mat-option value="overseas">Overseas</mat-option>
-                                                  </mat-select>
-                                                  <mat-error *ngIf="dataOwnerControls.type.invalid">{{
-                                                    'error.field' | translate
-                                                    }}</mat-error>
-                                            </mat-form-field>
-                                        </div>
+                    <div fxLayout="row" class="row" fxLayoutGap="5px">
+                      <mat-form-field appearance="outline" fxFlex="30">
+                        <mat-label>{{'setup.owner.shortName' | translate}}</mat-label>
+                        <input matInput required type="text" formControlName="shortName" />
+                        <mat-error *ngIf="dataOwnerControls.shortName.invalid">{{ 'error.field'
+                          | translate }}
+                        </mat-error>
+                      </mat-form-field>
+                      <mat-form-field appearance="outline" fxFlex="40">
+                        <mat-label>{{
+                          'setup.owner.type' | translate
+                          }}</mat-label>
+                        <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="type">
+                          <mat-option value="local">Local</mat-option>
+                          <mat-option value="overseas">Overseas</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="dataOwnerControls.type.invalid">{{
+                          'error.field' | translate
+                          }}</mat-error>
+                      </mat-form-field>
+                    </div>
 
-                                        <div fxLayout="row" class="row" fxLayoutGap="5px">
-                                            <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="25">
-                                                <mat-label>{{'setup.owner.address1' | translate }}</mat-label>
-                                                <input matInput required type="text" formControlName="address1" />
-                                                <mat-error *ngIf="dataOwnerControls.address1.invalid">{{ 'error.field' |
-                                                    translate }}
-                                                </mat-error>
-                                            </mat-form-field>
-                                            <mat-form-field appearance="outline" fxFlex>
-                                                <mat-label>{{'setup.owner.address2' | translate}}</mat-label>
-                                                <input matInput required type="text" formControlName="address2" />
-                                                <mat-error *ngIf="dataOwnerControls.address2.invalid">{{ 'error.field' |
-                                                    translate }}
-                                                </mat-error>
-                                            </mat-form-field>
-                                        </div>
+                    <div fxLayout="row" class="row" fxLayoutGap="5px">
+                      <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="25">
+                        <mat-label>{{'setup.owner.address1' | translate }}</mat-label>
+                        <input matInput required type="text" formControlName="address1" />
+                        <mat-error *ngIf="dataOwnerControls.address1.invalid">{{ 'error.field' |
+                          translate }}
+                        </mat-error>
+                      </mat-form-field>
+                      <mat-form-field appearance="outline" fxFlex>
+                        <mat-label>{{'setup.owner.address2' | translate}}</mat-label>
+                        <input matInput required type="text" formControlName="address2" />
+                        <mat-error *ngIf="dataOwnerControls.address2.invalid">{{ 'error.field' |
+                          translate }}
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
 
-                                        <div fxLayout="row" class="row" fxLayoutGap="5px">
-                                            <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="25">
-                                                <mat-label>{{'setup.owner.address3' | translate }}</mat-label>
-                                                <input matInput required type="text" formControlName="address3" />
-                                                <mat-error *ngIf="dataOwnerControls.address3.invalid">{{ 'error.field' |
-                                                    translate }}
-                                                </mat-error>
-                                            </mat-form-field>
-                                            <mat-form-field appearance="outline" fxFlex>
-                                                <mat-label>{{'setup.owner.address4' | translate}}</mat-label>
-                                                <input matInput required type="text" formControlName="address4" />
-                                                <mat-error *ngIf="dataOwnerControls.address4.invalid">{{ 'error.field' |
-                                                    translate }}
-                                                </mat-error>
-                                            </mat-form-field>
-                                        </div>
-                                    </mat-card-content>
-                                </mat-card>
-                            </mat-tab>
+                    <div fxLayout="row" class="row" fxLayoutGap="5px">
+                      <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="25">
+                        <mat-label>{{'setup.owner.address3' | translate }}</mat-label>
+                        <input matInput required type="text" formControlName="address3" />
+                        <mat-error *ngIf="dataOwnerControls.address3.invalid">{{ 'error.field' |
+                          translate }}
+                        </mat-error>
+                      </mat-form-field>
+                      <mat-form-field appearance="outline" fxFlex>
+                        <mat-label>{{'setup.owner.address4' | translate}}</mat-label>
+                        <input matInput required type="text" formControlName="address4" />
+                        <mat-error *ngIf="dataOwnerControls.address4.invalid">{{ 'error.field' |
+                          translate }}
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
+                  </mat-card-content>
+                </mat-card>
+              </mat-tab>
 
-                            <mat-tab label="Document Email Settings">
-                                <mat-card class="document-table">
-                                    <mat-card-content>
-                                        <table class="site-table w-100 mat-elevation-z8">
-                                            <thead>
-                                                <tr>
-                                                    <th>{{ 'setup.warehouse.document.type' | translate}}</th>
-                                                    <th>{{ 'setup.warehouse.document.prefix' | translate}}</th>
-                                                    <th>{{ 'setup.warehouse.document.currentNo' | translate}}</th>
-                                                    <th>{{ 'setup.warehouse.document.autoEmail' | translate}}</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <!-- <ng-template let-document ngFor [ngForOf]="documentDataSource">
+              <mat-tab label="Document Email Settings">
+                <mat-card class="document-table">
+                  <mat-card-content>
+                    <table class="site-table w-100 mat-elevation-z8">
+                      <thead>
+                        <tr>
+                          <th>{{ 'setup.warehouse.document.type' | translate}}</th>
+                          <th>{{ 'setup.warehouse.document.prefix' | translate}}</th>
+                          <th>{{ 'setup.warehouse.document.currentNo' | translate}}</th>
+                          <th>{{ 'setup.warehouse.document.autoEmail' | translate}}</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <!-- <ng-template let-document ngFor [ngForOf]="documentDataSource">
                             <tr>
                               <td>{{document.type}}</td>
                               <td style="text-align: center; width: 200px;">
@@ -113,36 +113,41 @@
                               </td>
                             </tr>
                           </ng-template> -->
-                                            </tbody>
-                                        </table>
-                                    </mat-card-content>
-                                </mat-card>
-                            </mat-tab>
-
-                        </mat-tab-group>
-                    </mat-card-content>
+                      </tbody>
+                    </table>
+                  </mat-card-content>
                 </mat-card>
+              </mat-tab>
+
+            </mat-tab-group>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <mat-card class="form-action-section">
+        <mat-card-content>
+          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="30px" fxLayoutAlign="space-between center">
+            <div fxFlexOrder.lt-md="2">
+              <ibe-data-audit insertedBy=""></ibe-data-audit>
             </div>
-            <mat-card class="form-action-section">
-                <mat-card-content>
-                    <div class="form-three-button-container" style="margin-top: 5px;">
-                        <button mat-raised-button color="primary" type="submit" (click)="saveOwnerData()">
-                            <mat-icon>task_alt</mat-icon>
-                        </button>
-                        <button mat-raised-button color="warn" type="button" (click)="deleteOwnerData()">
-                            <mat-icon>remove_circle_outline</mat-icon>
-                        </button>
-                        <button mat-raised-button color="accent" type="reset" (click)="resetOwnerDataForm()">
-                            <mat-icon>loop</mat-icon>
-                        </button>
-                    </div>
-                </mat-card-content>
-            </mat-card>
-        </form>
-    </mat-tab>
-    <!-- Search -->
-    <mat-tab label="Search">
-        <!-- <form fxLayout="column" [formGroup]="searchWarehouseForm" (ngSubmit)="onSearchWarehouseSubmit()" class="slim-form">
+            <div class="form-three-button-container" style="margin-top: 5px;">
+              <button mat-raised-button color="primary" type="submit" (click)="saveOwnerData()">
+                <mat-icon>task_alt</mat-icon>
+              </button>
+              <button mat-raised-button color="warn" type="button" (click)="deleteOwnerData()">
+                <mat-icon>remove_circle_outline</mat-icon>
+              </button>
+              <button mat-raised-button color="accent" type="reset" (click)="resetOwnerDataForm()">
+                <mat-icon>loop</mat-icon>
+              </button>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </form>
+  </mat-tab>
+  <!-- Search -->
+  <mat-tab label="Search">
+    <!-- <form fxLayout="column" [formGroup]="searchWarehouseForm" (ngSubmit)="onSearchWarehouseSubmit()" class="slim-form">
         <mat-card class="filter-container">
           <mat-card-content>
             <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px"
@@ -224,5 +229,5 @@
           </small>
         </mat-card-content>
       </mat-card> -->
-    </mat-tab>
+  </mat-tab>
 </mat-tab-group>
