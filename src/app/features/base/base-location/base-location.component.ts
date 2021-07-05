@@ -27,6 +27,17 @@ export class BaseLocationComponent implements OnInit {
 
   dataLocationForm!: FormGroup
 
+  searchLocationForm!: FormGroup;
+  searchLocationDataSource: BaseLocationSearchModel[] = [];
+  dummyLocationSearchModel: BaseLocationSearchModel[] = [
+    { warehouse: 'Warehosue 1', row: 'Row 1', unit: 'Unit 1', location : 'Location 1', description: 'Gemini Software', status : "Status 1", nature : "Nature 1" },
+    { warehouse: 'Warehosue 2', row: 'Row 2', unit: 'Unit 2', location : 'Location 2', description: 'Gemini Software', status : "Status 2", nature : "Nature 2" },
+    { warehouse: 'Warehosue 3', row: 'Row 3', unit: 'Unit 3', location : 'Location 3', description: 'Gemini Software', status : "Status 3", nature : "Nature 3" },
+    { warehouse: 'Warehosue 4', row: 'Row 4', unit: 'Unit 4', location : 'Location 4', description: 'Gemini Software', status : "Status 4", nature : "Nature 4" },
+    { warehouse: 'Warehosue 5', row: 'Row 5', unit: 'Unit 5', location : 'Location 5', description: 'Gemini Software', status : "Status 5", nature : "Nature 5" }
+  ];
+  displayedLocationColumns = ['warehouse', 'row', 'unit', 'location', 'description', 'status', 'nature'];
+
   constructor(
     private fb: FormBuilder,
     private loader: LoaderService,
@@ -201,5 +212,28 @@ export class BaseLocationComponent implements OnInit {
 
   resetCompanyDataForm() {
     this.dataLocationForm.reset();
+  }
+
+  createSearchLocationForm() {
+    this.searchLocationForm = this.fb.group({
+      warehouse: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      row: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      unit: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      level: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      location: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      description: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      scancode: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      storageType: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      walkSequence: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      floorkSequence: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      nature: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      storageStatus: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      zone: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      freeze: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      reworkArea: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      audit: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      excludeFromPlanning: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      excludeFromAutoAllocation: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+    });
   }
 }

@@ -37,19 +37,8 @@ export interface BaseLocationSearchModel {
     warehouse: string;
     row: string;
     unit: string;
-    level: string;
     location: string;
     description: string;
-    scanCode: string;
-    storageType: string;
-    walkSequence: number;
-    floorSequence: number;
-    locationNature: string;
-    storageStatus: string;
-    zone: string;
-    freeze: boolean;
-    reworkArea: boolean;
-    audit: boolean;
-    excludeFromPlanning: boolean,
-    excludeFromAutoAllocation: boolean;
+    status: string;
+    nature: string;
 }
