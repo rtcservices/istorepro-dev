@@ -7,8 +7,8 @@
     "kg": "KG",
     "mm": "MM",
     "cbm": "CBM",
-    "yes":"Yes",
-    "no":"No",
+    "yes": "Yes",
+    "no": "No",
     "delete": "Delete",
     "description": "Description",
     "edit": "Edit",
@@ -179,9 +179,9 @@
       "barCode": "BAR CODE",
       "qrCode": "QR CODE",
       "scanCode": "Scan Code",
-      "ownerCode":"Owner Code",
-      "owner":"Owner",
-      "ownerName":"Owner Name",
+      "ownerCode": "Owner Code",
+      "owner": "Owner",
+      "ownerName": "Owner Name",
       "type": "Type",
       "controls": "Controls",
       "storageType": "Storage Type",
@@ -203,15 +203,15 @@
       "inventoryAudit": "Inventory Audit",
       "lastAudit": "Last Audit Completed",
       "currentAudit": "Current Audit Started",
-      "parent":"Parent",
-      "WHControl" :{
-        "whControl" : "WH. Control",
-        "code" : "Code",
-        "name" : "Name",
-        "customers" : "Customers",
-        "vendors" : "Vendors",
-        "stpref" : "St. Pref",
-        "sku" : "SKU/Location"
+      "parent": "Parent",
+      "WHControl": {
+        "whControl": "WH. Control",
+        "code": "Code",
+        "name": "Name",
+        "customers": "Customers",
+        "vendors": "Vendors",
+        "stpref": "St. Pref",
+        "sku": "SKU/Location"
       },
       "InventoryAlert": {
         "warehouse": "Warehouse",
@@ -234,18 +234,57 @@
         "volume": "Volume"
       }
     },
-    "storageType":{
-      "code" : "Code",
-      "description" :"Description"
+    "storageType": {
+      "code": "Code",
+      "description": "Description"
     },
-    "zone":{
-      "code" : "Code",
-      "description" :"Description"
+    "zone": {
+      "code": "Code",
+      "description": "Description"
     },
-    "reason":{
-      "code" : "Code",
-      "description" :"Description",
-      "type":"Type"
+    "reason": {
+      "code": "Code",
+      "description": "Description",
+      "type": "Type"
+    },
+    "location": {
+      "warehouse": "Warehouse",
+      "row": "Row",
+      "unit": "Unit",
+      "level": "Level",
+      "location": "Location",
+      "nature": "Nature",
+      "zone": "Zone",
+      "description": "Description",
+      "storageType": "Storage Type",
+      "scanType": "Scan Type",
+      "scanCode": "Scan Code",
+      "storageStatus": "Storage Status",
+      "freeze": "Freeze",
+      "reworkArea": "Rework Area",
+      "walkSequence": "Walk Sequence",
+      "floorSequence": "Floor Sequence",
+      "lpnLocation": "LPN / Location",
+      "excludeFrom": "Exclude From",
+      "planning": "Planning",
+      "autoAllocation": "Auto Allocation",
+      "inventoryAudit" : "Inventory Audit",
+      "lastAuditCompleted" : "Last Audit Completed",
+      "currentAuditStarted" : "Current Audit Started",
+      "capacity": {
+        "length": "Length",
+        "breadth": "Breadth",
+        "height": "Height",
+        "volume": "Volume",
+        "volumeValidate": "Volume Validate",
+        "volumeSafePercentage": "Volume Safe %",
+        "volumeFillPercentage": "Volume Fill %",
+        "weight": "Weight",
+        "weightValidate": "Weight Validate",
+        "weightSafePercentage": "Weight Safe %",
+        "weightFillPercentage": "Weight Fill %",
+        "autoFill": "Auto Fill"
+      }
     }
   }
 }

@@ -4,6 +4,7 @@ export interface BaseLocationModel {
     unit: string;
     level: string;
     location: string;
+    nature: string;
     zone: string;
     description: string;
     storageType: string;
@@ -15,7 +16,7 @@ export interface BaseLocationModel {
     walkSequence: number;
     floorSequence: number;
     lpnLocation: number;
-    planning: boolean,
+    planning: boolean;
     autoAllocation: boolean;
 }
 

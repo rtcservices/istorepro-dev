@@ -12,12 +12,12 @@ import { SiteTranslateService } from '../../../services/site-translate.service';
 import { patternsHelper } from '../../../helpers/patterns.helper';
 import { NotificationService } from 'src/app/services/notification.service';
 
-
 @Component({
   selector: 'ibe-base-location',
   templateUrl: './base-location.component.html',
   styleUrls: ['./base-location.component.scss']
 })
+
 export class BaseLocationComponent implements OnInit {
   @ViewChild('baseLocationTab', { static: false })
   baseLocationTab!: MatTabGroup;
@@ -34,7 +34,9 @@ export class BaseLocationComponent implements OnInit {
     private translate: TranslateService,
     private titleService: TitleService,
     private notification: NotificationService
-  ) { }
+  ) { 
+    this.createDataLocationForm();
+  }
 
   ngOnInit(): void {
     this.titleService.changeTitleTranslated('menu.baseLocation');
@@ -45,30 +47,110 @@ export class BaseLocationComponent implements OnInit {
     });
   }
 
+  ngAfterViewInit() {
+    this.setTabHeights();
+  }
+
+  setTabHeights() {
+    const tabCardBody = document.querySelectorAll(
+      'mat-tab-group#baseLocationDataTab mat-tab-body'
+    );
+    if (!tabCardBody) return;
+    const maxHeight = Math.max(
+      ...Array.from(tabCardBody).map((elm: any) => elm.clientHeight)
+    );
+    tabCardBody.forEach((itm) => {
+      itm.setAttribute('style', `height:${maxHeight}px;`);
+    });
+  }
+
   createDataLocationForm() {
     this.dataLocationForm = this.fb.group({
       warehouse: ['',
         [
           Validators.required,
-          Validators.pattern(patternsHelper.alphanumeric)
         ]
       ],
       row: [
         '', [
           Validators.required,
-          Validators.pattern(patternsHelper.alphanumeric)
         ]
       ],
       unit: [
         '', [
           Validators.required,
+        ]
+      ],
+      level: [
+        '', [
+          Validators.required,
           Validators.pattern(patternsHelper.alphanumeric)
         ]
-      ]
+      ],
+      nature: [
+        '', [
+          Validators.required,
+        ]
+      ],
+      zone: [
+        '', [
+          Validators.required,
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
+      ],
+      description: [
+        '', [
+          Validators.required,
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
+      ],
+      storageType: [
+        '', [
+          Validators.required,
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
+      ],
+      scanType: '',
+      scanCode: '',
+      storageStatus: [
+        '', [
+          Validators.required,
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
+      ],
+      freeze: '',
+      reworkArea: '',
+      walkSequence: [
+        '', [
+          Validators.required,
+          Validators.pattern(patternsHelper.numeric)
+        ]
+      ],
+      floorSequence: [
+        '', [
+          Validators.required,
+          Validators.pattern(patternsHelper.numeric)
+        ]
+      ],
+      lpnLocation: [
+        '', [
+          Validators.required,
+          Validators.pattern(patternsHelper.numeric)
+        ]
+      ],
+      planning: '',
+      autoAllocation: ''
     });
   }
 
   get dataLocationControls() {
     return this.dataLocationForm.controls;
+  }
+
+  saveCompanyData() {}
+  deleteCompanyData() {}
+
+  resetCompanyDataForm() {
+    this.dataLocationForm.reset();
   }
 }

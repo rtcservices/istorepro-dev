@@ -1,3 +1,340 @@
 <div class="page-title">
     <h2>{{'menu.baseLocation' | translate}}</h2>
 </div>
+
+<mat-tab-group #baseLocationTab dynamicHeight>
+    <mat-tab label="Data">
+        <form [formGroup]="dataLocationForm" class="slim-form">
+            <div fxLayout="row" class="data-form">
+                <mat-card class="w-100">
+                    <mat-card-content>
+                        <mat-tab-group #baseLocationDataTab id="baseLocationDataTab">
+                            <mat-tab label="Location">
+                                <mat-card>
+                                    <mat-card-content>
+
+                                        <div fxLayout="row" class="row" fxLayoutGap="5px">
+                                            <mat-form-field appearance="outline" fxFlex="33" fxFlex.lt-sm="25">
+                                                <mat-label>{{'base.location.warehouse' | translate }}</mat-label>
+                                                <mat-select disableOptionCentering panelClass="slim-select-field"
+                                                    type="text" readonly formControlName="warehouse">
+                                                    <mat-option>Warehouse 1</mat-option>
+                                                    <mat-option>Warehouse 2</mat-option>
+                                                </mat-select>
+                                                <mat-error *ngIf="dataLocationControls.warehouse.invalid">{{
+                                                    'error.field' | translate }}
+                                                </mat-error>
+                                            </mat-form-field>
+                                            <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="25">
+                                                <input matInput readonly type="text" />
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div fxLayout="row" class="row" fxLayoutGap="5px">
+                                            <mat-form-field appearance="outline" fxFlex="33" fxFlex.lt-sm="25">
+                                                <mat-label>{{'base.location.row' | translate }}</mat-label>
+                                                <mat-select disableOptionCentering panelClass="slim-select-field"
+                                                    type="text" readonly formControlName="row">
+                                                    <mat-option>Row 1</mat-option>
+                                                    <mat-option>Row 2</mat-option>
+                                                </mat-select>
+                                                <mat-error *ngIf="dataLocationControls.row.invalid">{{
+                                                    'error.field' | translate }}
+                                                </mat-error>
+                                            </mat-form-field>
+                                            <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="25">
+                                                <input matInput readonly type="text" />
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div fxLayout="row" class="row" fxLayoutGap="5px">
+                                            <mat-form-field appearance="outline" fxFlex="33" fxFlex.lt-sm="25">
+                                                <mat-label>{{'base.location.unit' | translate }}</mat-label>
+                                                <mat-select disableOptionCentering panelClass="slim-select-field"
+                                                    type="text" readonly formControlName="unit">
+                                                    <mat-option>Unit 1</mat-option>
+                                                    <mat-option>Unit 2</mat-option>
+                                                </mat-select>
+                                                <mat-error *ngIf="dataLocationControls.unit.invalid">{{
+                                                    'error.field' | translate }}
+                                                </mat-error>
+                                            </mat-form-field>
+                                            <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="25">
+                                                <input matInput readonly type="text" />
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div fxLayout="row" class="row" fxLayoutGap="5px">
+                                            <mat-form-field appearance="outline" fxFlex="33" fxFlex.lt-sm="25">
+                                                <mat-label>{{'base.location.level' | translate}}</mat-label>
+                                                <input matInput type="text" formControlName="level" />
+                                                <mat-error *ngIf="dataLocationControls.level.invalid">{{ 'error.field' |
+                                                    translate }}
+                                                </mat-error>
+                                            </mat-form-field>
+                                            <mat-form-field appearance="outline" fxFlex="33" fxFlex.lt-sm="25">
+                                                <mat-label>{{'base.location.location' | translate}}</mat-label>
+                                                <input matInput readonly type="text" formControlName="location" />
+                                            </mat-form-field>
+                                            <mat-form-field appearance="outline" fxFlex>
+                                                <mat-label>{{'base.location.nature' | translate }}</mat-label>
+                                                <mat-select disableOptionCentering panelClass="slim-select-field"
+                                                    type="text" readonly formControlName="nature">
+                                                    <mat-option>Nature 1</mat-option>
+                                                    <mat-option>Nature 2</mat-option>
+                                                </mat-select>
+                                                <mat-error *ngIf="dataLocationControls.nature.invalid">{{
+                                                    'error.field' | translate }}
+                                                </mat-error>
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div fxLayout="row" class="row" fxLayoutGap="5px">
+                                            <mat-form-field appearance="outline" fxFlex="33">
+                                                <mat-label>{{'base.location.zone' | translate }}</mat-label>
+                                                <mat-select disableOptionCentering panelClass="slim-select-field"
+                                                    type="text" readonly formControlName="zone">
+                                                    <mat-option>Zone 1</mat-option>
+                                                    <mat-option>Zone 2</mat-option>
+                                                </mat-select>
+                                                <mat-error *ngIf="dataLocationControls.zone.invalid">{{
+                                                    'error.field' | translate }}
+                                                </mat-error>
+                                            </mat-form-field>
+                                            <mat-form-field appearance="outline" fxFlex>
+                                                <mat-label>{{'base.location.description' | translate}}</mat-label>
+                                                <input matInput readonly type="text" formControlName="description" />
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div fxLayout="row" class="row" fxLayoutGap="5px">
+                                            <mat-form-field appearance="outline" fxFlex="33" fxFlex.lt-sm="25">
+                                                <mat-label>{{'base.location.storageType' | translate }}</mat-label>
+                                                <mat-select disableOptionCentering panelClass="slim-select-field"
+                                                    type="text" readonly formControlName="storageType">
+                                                    <mat-option>Storage Type 1</mat-option>
+                                                    <mat-option>Storage Type 2</mat-option>
+                                                </mat-select>
+                                                <mat-error *ngIf="dataLocationControls.storageType.invalid">{{
+                                                    'error.field' | translate }}
+                                                </mat-error>
+                                            </mat-form-field>
+                                            <mat-form-field appearance="outline" fxFlex="33" fxFlex.lt-sm="25">
+                                                <mat-label>{{'base.location.scanType' | translate }}</mat-label>
+                                                <mat-select disableOptionCentering panelClass="slim-select-field"
+                                                    type="text" readonly formControlName="scanType">
+                                                    <mat-option>Scan Type 1</mat-option>
+                                                    <mat-option>Scan Type 2</mat-option>
+                                                </mat-select>
+                                                <mat-error *ngIf="dataLocationControls.scanType.invalid">{{
+                                                    'error.field' | translate }}
+                                                </mat-error>
+                                            </mat-form-field>
+                                            <mat-form-field appearance="outline" fxFlex>
+                                                <mat-label>{{'base.location.scanCode' | translate}}</mat-label>
+                                                <input matInput type="text" formControlName="scanCode" />
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div fxLayout="row" class="row" fxLayoutGap="5px">
+                                            <mat-form-field appearance="outline" fxFlex="33" fxFlex.lt-sm="25">
+                                                <mat-label>{{'base.location.storageStatus' | translate }}</mat-label>
+                                                <mat-select disableOptionCentering panelClass="slim-select-field"
+                                                    type="text" readonly formControlName="storageStatus">
+                                                    <mat-option>Storage Status 1</mat-option>
+                                                    <mat-option>Storage Status 2</mat-option>
+                                                </mat-select>
+                                                <mat-error *ngIf="dataLocationControls.storageStatus.invalid">{{
+                                                    'error.field' | translate }}
+                                                </mat-error>
+                                            </mat-form-field>
+                                            <div class="form-checkbox-input">
+                                                <mat-checkbox color="primary" formControlName="freeze">{{
+                                                    'base.location.freeze' | translate
+                                                    }}</mat-checkbox>
+                                            </div>
+                                            <div class="form-checkbox-input">
+                                                <mat-checkbox color="primary" formControlName="reworkArea">{{
+                                                    'base.location.reworkArea' | translate
+                                                    }}</mat-checkbox>
+                                            </div>
+                                        </div>
+
+                                        <div fxLayout="row" class="row" fxLayoutGap="5px">
+                                            <mat-form-field appearance="outline" fxFlex="33" fxFlex.lt-sm="25">
+                                                <mat-label>{{'base.location.walkSequence' | translate}}</mat-label>
+                                                <input matInput type="text" formControlName="walkSequence" />
+                                                <mat-error *ngIf="dataLocationControls.walkSequence.invalid">{{
+                                                    'error.field' |
+                                                    translate }}
+                                                </mat-error>
+                                            </mat-form-field>
+                                            <mat-form-field appearance="outline" fxFlex="33" fxFlex.lt-sm="25">
+                                                <mat-label>{{'base.location.floorSequence' | translate}}</mat-label>
+                                                <input matInput type="text" formControlName="floorSequence" />
+                                                <mat-error *ngIf="dataLocationControls.floorSequence.invalid">{{
+                                                    'error.field' |
+                                                    translate }}
+                                                </mat-error>
+                                            </mat-form-field>
+                                            <mat-form-field appearance="outline" fxFlex>
+                                                <mat-label>{{'base.location.lpnLocation' | translate}}</mat-label>
+                                                <input matInput type="text" formControlName="lpnLocation" />
+                                                <mat-error *ngIf="dataLocationControls.lpnLocation.invalid">{{
+                                                    'error.field' |
+                                                    translate }}
+                                                </mat-error>
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="pale-border-box">
+                                            <b>{{ 'base.location.excludeFrom' | translate }}</b>
+                                            <div class="row" fxFex fxLayout="row" fxLayout.lt-sm="row"
+                                                fxLayoutGap="10px">
+                                                <div>
+                                                    <mat-checkbox color="primary" formControlName="planning">{{
+                                                        'base.location.planning' | translate
+                                                        }}</mat-checkbox>
+                                                </div>
+                                                <div>
+                                                    <mat-checkbox color="primary" formControlName="autoAllocation">{{
+                                                        'base.location.autoAllocation' | translate
+                                                        }}</mat-checkbox>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div fxLayout="row" fxLayoutAlign="stretch" fxLayoutGap="10px">
+                                            <div fxFlex class="pale-border-box">
+                                              <b>{{'base.location.inventoryAudit' | translate}}</b>
+                                              <div fxLayout.gt-sm="row" fxLayout.lt-sm="column">
+                                                <div fxFlex.gt-sm="50%" fxFlex>
+                                                  <p>{{'base.location.lastAuditCompleted' | translate}} : </p>
+                                                </div>
+                                                <div fxFlex.gt-sm="50%" fxFlex>
+                                                  <p>{{'base.location.currentAuditStarted' | translate}} : </p>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+
+                                    </mat-card-content>
+                                </mat-card>
+                            </mat-tab>
+                            <mat-tab label="Capacity">
+                                <mat-card>
+                                    <mat-card-content>
+
+                                    </mat-card-content>
+                                </mat-card>
+                            </mat-tab>
+                        </mat-tab-group>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <mat-card class="form-action-section">
+                <mat-card-content>
+                    <div class="form-three-button-container" style="margin-top: 5px;">
+                        <div class="form-import-button">
+                            <mat-icon color="primary">error_outline</mat-icon>
+                        </div>
+                        <button mat-raised-button color="primary" type="submit" (click)="saveCompanyData()">
+                            <mat-icon>task_alt</mat-icon>
+                        </button>
+                        <button mat-raised-button color="warn" type="button" (click)="deleteCompanyData()">
+                            <mat-icon>remove_circle_outline</mat-icon>
+                        </button>
+                        <button mat-raised-button color="accent" type="reset" (click)="resetCompanyDataForm()">
+                            <mat-icon>loop</mat-icon>
+                        </button>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </form>
+    </mat-tab>
+    <!-- Search -->
+    <mat-tab label="Search">
+        <!-- <form fxLayout="column" [formGroup]="searchWarehouseForm" (ngSubmit)="onSearchWarehouseSubmit()" class="slim-form">
+        <mat-card class="filter-container">
+          <mat-card-content>
+            <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px"
+              class="row">
+              <mat-form-field appearance="outline" fxFlex>
+                <mat-label>{{
+                  'setup.warehouse.code' | translate
+                  }}</mat-label>
+                <input matInput type="text" formControlName="warehouseCode" />
+                <mat-error *ngIf="searchWarehouseFormControls.warehouseCode.invalid">
+                  {{ 'error.field' | translate }}</mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline" fxFlex>
+                <mat-label>{{
+                  'setup.warehouse.description' | translate
+                  }}</mat-label>
+                <input matInput type="text" formControlName="description" />
+                <mat-error *ngIf="searchWarehouseFormControls.description.invalid">
+                  {{ 'error.field' | translate }}</mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline" fxFlex>
+                <mat-label>{{
+                  'setup.warehouse.id' | translate
+                  }}</mat-label>
+                <input matInput type="text" formControlName="id" />
+                <mat-error *ngIf="searchWarehouseFormControls.id.invalid">
+                  {{ 'error.field' | translate }}</mat-error>
+              </mat-form-field>
+            </div>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="search-container">
+          <mat-card-content>
+            <div class="form-button-container">
+              <button mat-raised-button color="primary" type="submit">
+                <mat-icon>search</mat-icon>
+              </button>
+              <button mat-raised-button color="accent" type="reset" (click)="resetWarehouseSearchForm()">
+                <mat-icon>restart_alt</mat-icon>
+              </button>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </form>
+      <mat-card class="mat-elevation-z10">
+        <mat-card-content>
+          <table mat-table [dataSource]="searchDataSource" class="mat-elevation-z8 search-table">
+            <ng-container matColumnDef="warehouseCode">
+              <th mat-header-cell *matHeaderCellDef>Warehouse Code</th>
+              <td mat-cell *matCellDef="let element; let idx=index">
+                <button mat-button disableRipple class="primary-button link-button"
+                  (click)="searchItemClick($event, element, idx)">{{ element.warehouseCode }}</button>
+              </td>
+            </ng-container>
+            <ng-container matColumnDef="description">
+              <th mat-header-cell *matHeaderCellDef>Description</th>
+              <td mat-cell *matCellDef="let element">
+                {{ element.description }}
+              </td>
+            </ng-container>
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef>ID</th>
+              <td mat-cell *matCellDef="let element">
+                {{ element.id }}
+              </td>
+            </ng-container>
+            <ng-container matColumnDef="email">
+              <th mat-header-cell *matHeaderCellDef>Email</th>
+              <td mat-cell *matCellDef="let element">
+                {{ element.email }}
+              </td>
+            </ng-container>
+  
+            <tr mat-header-row *matHeaderRowDef="displayedSearchColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedSearchColumns"></tr>
+          </table>
+          <small *ngIf="searchDataSource.length === 0" class="empty-table">
+            No records found
+          </small>
+        </mat-card-content>
+      </mat-card> -->
+    </mat-tab>
+</mat-tab-group>
