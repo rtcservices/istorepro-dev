@@ -30,13 +30,13 @@ export class BaseLocationComponent implements OnInit {
   searchLocationForm!: FormGroup;
   searchLocationDataSource: BaseLocationSearchModel[] = [];
   dummyLocationSearchModel: BaseLocationSearchModel[] = [
-    { warehouse: 'Warehosue 1', row: 'Row 1', unit: 'Unit 1', location : 'Location 1', description: 'Gemini Software', status : "Status 1", nature : "Nature 1" },
-    { warehouse: 'Warehosue 2', row: 'Row 2', unit: 'Unit 2', location : 'Location 2', description: 'Gemini Software', status : "Status 2", nature : "Nature 2" },
-    { warehouse: 'Warehosue 3', row: 'Row 3', unit: 'Unit 3', location : 'Location 3', description: 'Gemini Software', status : "Status 3", nature : "Nature 3" },
-    { warehouse: 'Warehosue 4', row: 'Row 4', unit: 'Unit 4', location : 'Location 4', description: 'Gemini Software', status : "Status 4", nature : "Nature 4" },
-    { warehouse: 'Warehosue 5', row: 'Row 5', unit: 'Unit 5', location : 'Location 5', description: 'Gemini Software', status : "Status 5", nature : "Nature 5" }
+    { warehouseCode: 'Warehosue 1', row: 'Row 1', unit: 'Unit 1', location : 'Location 1', description: 'Gemini Software', status : "Status 1", nature : "Nature 1" },
+    { warehouseCode: 'Warehosue 2', row: 'Row 2', unit: 'Unit 2', location : 'Location 2', description: 'Gemini Software', status : "Status 2", nature : "Nature 2" },
+    { warehouseCode: 'Warehosue 3', row: 'Row 3', unit: 'Unit 3', location : 'Location 3', description: 'Gemini Software', status : "Status 3", nature : "Nature 3" },
+    { warehouseCode: 'Warehosue 4', row: 'Row 4', unit: 'Unit 4', location : 'Location 4', description: 'Gemini Software', status : "Status 4", nature : "Nature 4" },
+    { warehouseCode: 'Warehosue 5', row: 'Row 5', unit: 'Unit 5', location : 'Location 5', description: 'Gemini Software', status : "Status 5", nature : "Nature 5" }
   ];
-  displayedLocationColumns = ['warehouse', 'row', 'unit', 'location', 'description', 'status', 'nature'];
+  displayedLocationColumns = ['warehouseCode', 'row', 'unit', 'location', 'description', 'status', 'nature'];
 
   constructor(
     private fb: FormBuilder,
@@ -47,6 +47,7 @@ export class BaseLocationComponent implements OnInit {
     private notification: NotificationService
   ) {
     this.createDataLocationForm();
+    this.createSearchLocationForm();
   }
 
   ngOnInit(): void {
@@ -103,6 +104,7 @@ export class BaseLocationComponent implements OnInit {
           Validators.required,
         ]
       ],
+      location: '',
       zone: [
         '', [
           Validators.required,
@@ -216,16 +218,16 @@ export class BaseLocationComponent implements OnInit {
 
   createSearchLocationForm() {
     this.searchLocationForm = this.fb.group({
-      warehouse: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      warehouseCode: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       row: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       unit: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       level: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       location: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       description: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
-      scancode: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      scanCode: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       storageType: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       walkSequence: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
-      floorkSequence: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      floorSequence: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       nature: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       storageStatus: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       zone: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
@@ -235,5 +237,41 @@ export class BaseLocationComponent implements OnInit {
       excludeFromPlanning: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       excludeFromAutoAllocation: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
     });
+  }
+
+  onSearchLocationSubmit() {
+    if (!this.searchLocationForm.valid) {
+      this.notification.error(this.formErrorTranslated);
+      return;
+    }
+    const code: string =
+      this.searchLocationForm.get('warehouseCode')?.value || '';
+    const description: string =
+      this.searchLocationForm.get('description')?.value || '';
+    if (code.trim() === '' && description.trim() === '') {
+      this.notification.error(this.filterErrorTranslated);
+      return;
+    } else {
+      this.loader.show();
+      setTimeout(() => {
+        this.searchLocationDataSource = [...this.dummyLocationSearchModel];
+        this.loader.hide();
+      }, 500);
+    }
+  }
+
+  get searchLocationFormControls() {
+    return this.searchLocationForm.controls;
+  }
+
+  resetLocationSearchForm() {
+    this.searchLocationForm.reset();
+    this.searchLocationDataSource = [];
+  }
+
+  searchItemClick(event: any, item: BaseLocationSearchModel, idx: number) {
+    const tabGroup = this.baseLocationTab;
+    if (!tabGroup || !(tabGroup instanceof MatTabGroup)) return;
+    tabGroup.selectedIndex = 0;
   }
 }

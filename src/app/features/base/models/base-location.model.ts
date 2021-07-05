@@ -34,7 +34,7 @@ export interface BaseLocationModel {
 }
 
 export interface BaseLocationSearchModel {
-    warehouse: string;
+    warehouseCode: string;
     row: string;
     unit: string;
     location: string;
