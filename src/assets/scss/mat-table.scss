@@ -53,21 +53,14 @@ tr.mat-row {
   .two-button-column {
     text-align: center;
     width: 80px;
+    button {
+      transform: scale(0.75);
+      &:hover {
+        transform: scale(0.85);
+      }
+    }
   }
-  button[mat-mini-fab] {
-    margin-right: 2px;
-    width: 1.8rem !important;
-    height: 1.8rem !important;
-    line-height: 80% !important;
-
-    .mat-button-wrapper {
-      padding-top: 0.4rem !important;
-      line-height: 80% !important;
-    }
-    .mat-icon {
-      width: 80%;
-      height: 80%;
-      font-size: 80%;
-    }
+  .mat-mini-fab.mdb-30 {
+    @include change-mini-fab-button-size(30px, 15px);
   }
 }

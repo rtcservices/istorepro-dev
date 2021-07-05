@@ -53,3 +53,15 @@ $zindex: (
   header: 6000,
   footer: 5000
 );
+@mixin change-mini-fab-button-size($btnsize, $fontsize) {
+  height: $btnsize;
+  width: $btnsize;
+  line-height: $btnsize;
+  span {
+    height: $btnsize;
+    padding: 0px !important;
+    i {
+      font-size: $fontsize;
+    }
+  }
+}
