@@ -30,9 +30,10 @@
                   <mat-option>Pick 2</mat-option>
                 </mat-select>
               </mat-form-field>
-              <mat-form-field appearance="outline" fxFlex>
-                <input matInput readonly type="text" />
-              </mat-form-field>
+              <fieldset class="read-only-input" fxFlex>
+                <legend>{{ 'base.itemType.storageType' | translate }}</legend>
+                <label>{{ dataItemTypeControls.storageType.value }}</label>
+              </fieldset>
             </div>
             <div class="pale-border-box">
               <b>{{ 'base.itemType.mandatory' | translate }}</b>
@@ -99,6 +100,7 @@
                       <tr>
                         <td style="text-align: center;">
                           <mat-checkbox color="primary"></mat-checkbox>
+                        </td>
                         <td>{{control.code}}</td>
                         <td>{{control.name}}</td>
                       </tr>

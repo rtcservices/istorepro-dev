@@ -32,6 +32,37 @@ export class SetupOwnerComponent implements OnInit, AfterViewInit {
 
   dataOwnerForm!: FormGroup;
 
+  displayedDocumentColumns = ['type', 'autoEmail'];
+  documentDataSource: SetupOwnerEmailModel[] = [];
+  dummyDocumentModel: SetupOwnerEmailModel[] = [
+    {
+      autoEmail: false,
+      type: 'TEMPORARY RECEIPT NOTICE',
+    },
+    {
+      autoEmail: true,
+      type: 'GOODS RECEIPT NOTICE',
+    },
+    {
+      autoEmail: false,
+      type: 'RECEIPT IMPORT QUEUE',
+    },
+    {
+      autoEmail: false,
+      type: 'ADVANCED SHIPPING NOTE',
+    }
+  ];
+
+  displayedwhControlColumns = ['code', 'name'];
+  whControlDataSource: SetupOwnerWHControlModel[] = [];
+  dummyWHControlModel: SetupOwnerWHControlModel[] = [
+    { checked: false, code: 'GEN', name: 'GENERAL WAREHOUSE' },
+    { checked: false, code: 'LIQ', name: 'SPIRIT WAREHOUSE' },
+    { checked: false, code: 'M01', name: 'MOTHER WAREHOUSE' },
+    { checked: false, code: 'EQU', name: 'EQUIPMENT BASED WAREHOUSE' }
+  ];
+
+
   constructor(
     private fb: FormBuilder,
     private loader: LoaderService,
@@ -50,6 +81,9 @@ export class SetupOwnerComponent implements OnInit, AfterViewInit {
       this.formErrorTranslated = this.translate.instant('error.form');
       this.filterErrorTranslated = this.translate.instant('error.filter');
     });
+
+    this.documentDataSource = this.dummyDocumentModel;
+    this.whControlDataSource = this.dummyWHControlModel;
   }
 
   ngAfterViewInit() {
@@ -117,11 +151,12 @@ export class SetupOwnerComponent implements OnInit, AfterViewInit {
         ]
       ],
       address4: ['', [Validators.maxLength(100), Validators.pattern(patternsHelper.alphanumeric)]],
+      place: ['', [Validators.maxLength(100), Validators.pattern(patternsHelper.alphanumeric)]],
       zip: ['', [Validators.maxLength(50), Validators.pattern(patternsHelper.alphanumeric)]],
       telephone: ['', [Validators.maxLength(30), Validators.pattern(patternsHelper.alphanumeric)]],
       fax: ['', [Validators.maxLength(30), Validators.pattern(patternsHelper.alphanumeric)]],
       email: ['', [Validators.maxLength(500), Validators.pattern(patternsHelper.emails)]],
-      vlockCustomer : '',
+      blockCustomer : '',
       actAsCustomer : ''
     });
   }

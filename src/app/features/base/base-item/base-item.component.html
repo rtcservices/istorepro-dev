@@ -159,8 +159,6 @@
                               </div>
                             </div>
                           </div>
-
-
                         </div>
                       </div>
                       <div fxFlex.gt-sm="30%">
@@ -176,9 +174,9 @@
                           </mat-form-field>
 
                           <div class="pale-border-box" fxFlex>
-                            <h4>{{
+                            <h4><b>{{
                             'base.item.controls' | translate
-                            }}</h4>
+                            }}</b></h4>
                             <p>
                               <mat-checkbox color="primary" formControlName="validateStorageType">{{
                               'base.item.validateStorageType' | translate
@@ -190,7 +188,7 @@
                               }}</mat-checkbox>
                             </p>
                             <p>
-                              <mat-checkbox color="primary" formControlName="inactive">{{
+                              <mat-checkbox color="warn" formControlName="inactive">{{
                               'base.item.inactive' | translate
                               }}</mat-checkbox>
                             </p>
@@ -355,9 +353,6 @@
               <ibe-data-audit insertedBy=""></ibe-data-audit>
             </div>
             <div class="form-four-button-container" fxFlexOrder.lt-md="1">
-              <div class="form-import-button">
-                <mat-icon color="primary">file_upload</mat-icon>
-              </div>
               <button mat-raised-button color="primary" type="submit" (click)="saveItemData()">
                 <mat-icon>task_alt</mat-icon>
               </button>

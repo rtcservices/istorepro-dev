@@ -116,8 +116,8 @@
                             <td style="text-align: center; width: 200px;">
                               <input type="text" style="width: auto;" [value]="document.prefix">
                             </td>
-                            <td style="width: 200px;">{{document.currentNo}}</td>
-                            <td style="text-align: center; width: 100px;">
+                            <td style="width: 70px;">{{document.currentNo}}</td>
+                            <td style="text-align: center; width: 80px;">
                               <mat-checkbox color="primary" [checked]="document.autoEmail" disabled></mat-checkbox>
                             </td>
                           </tr>
@@ -168,7 +168,7 @@
                         <tr>
                           <th>{{ 'setup.warehouse.contact.name' | translate}}</th>
                           <th>{{ 'setup.warehouse.contact.email' | translate}}</th>
-                          <th>
+                          <th style="text-align: center;">
                             <mat-icon style="padding-top: 3px;">add_circle_outline</mat-icon>
                           </th>
                         </tr>
@@ -179,11 +179,11 @@
                             <td style="width: 50%;">
                               <input type="text" style="width: 100%;" [value]="contact.name">
                             </td>
-                            <td style="width: 50%;">
+                            <td style="width: 45%;">
                               <input type="text" style="width: 100%;" [value]="contact.email">
                             </td>
-                            <td style="text-align: center;; width: 50px">
-                              <mat-icon style="color: #f44336;">remove_circle</mat-icon>
+                            <td style="text-align: center; width: 70px">
+                              <mat-icon color="warn">delete</mat-icon>
                             </td>
                           </tr>
                         </ng-template>
@@ -223,11 +223,11 @@
                                 <option value="l1">Login 3</option>
                               </select>
                             </td>
-                            <td style="text-align: center; width: 80px">
+                            <td style="text-align: center; width: 60px">
                               <mat-checkbox color="primary"></mat-checkbox>
                             </td>
-                            <td style="text-align: center; width: 50px">
-                              <mat-icon style="color: #f44336;">remove_circle</mat-icon>
+                            <td style="text-align: center; width: 70px">
+                              <mat-icon color="warn">delete</mat-icon>
                             </td>
                           </tr>
                         </ng-template>
@@ -242,16 +242,21 @@
       </div>
       <mat-card class="form-action-section">
         <mat-card-content>
-          <div class="form-three-button-container" style="margin-top: 5px;">
-            <button mat-raised-button color="primary" type="submit" (click)="saveWarehouseData()">
-              <mat-icon>task_alt</mat-icon>
-            </button>
-            <button mat-raised-button color="warn" type="button" (click)="deleteWarehouseData()">
-              <mat-icon>remove_circle_outline</mat-icon>
-            </button>
-            <button mat-raised-button color="accent" type="reset" (click)="resetWarehouseDataForm()">
-              <mat-icon>loop</mat-icon>
-            </button>
+          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="30px" fxLayoutAlign="space-between center">
+            <div fxFlexOrder.lt-md="2">
+              <ibe-data-audit insertedBy=""></ibe-data-audit>
+            </div>
+            <div class="form-three-button-container" style="margin-top: 5px;">
+              <button mat-raised-button color="primary" type="submit" (click)="saveWarehouseData()">
+                <mat-icon>task_alt</mat-icon>
+              </button>
+              <button mat-raised-button color="warn" type="button" (click)="deleteWarehouseData()">
+                <mat-icon>remove_circle_outline</mat-icon>
+              </button>
+              <button mat-raised-button color="accent" type="reset" (click)="resetWarehouseDataForm()">
+                <mat-icon>loop</mat-icon>
+              </button>
+            </div>
           </div>
         </mat-card-content>
       </mat-card>

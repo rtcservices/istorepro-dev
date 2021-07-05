@@ -47,7 +47,29 @@ tr.mat-row {
     border: 1px solid $site-light-gray;
     padding-left: 0.25rem;
   }
+  .column-100 {
+    width: 100px;
+  }
+  .column-150 {
+    width: 150px;
+  }
+  .column-200 {
+    width: 200px;
+  }
   .checkbox-column {
     width: 40px;
+  }
+  .two-button-column {
+    text-align: center;
+    width: 80px;
+    button {
+      transform: scale(0.75);
+      &:hover {
+        transform: scale(0.85);
+      }
+    }
+  }
+  .mat-mini-fab.mdb-30 {
+    @include change-mini-fab-button-size(30px, 15px);
   }
 }
