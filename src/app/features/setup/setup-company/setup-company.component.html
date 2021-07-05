@@ -87,7 +87,6 @@
                     'setup.company.sector' | translate
                     }}</mat-label>
                   <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="sector">
-                    <mat-option value="">Select</mat-option>
                     <mat-option value="logistics">LOGISTICS</mat-option>
                     <mat-option value="forwarding">FORWARDING</mat-option>
                     <mat-option value="other">OTHER</mat-option>
@@ -130,19 +129,6 @@
                 <mat-checkbox formControlName="suspendOperation" color="primary">
                   {{ 'setup.company.suspendOperation' | translate }}
                 </mat-checkbox>
-              </div>
-              <div fxLayout="row" fxLayoutAlign="stretch" fxLayoutGap="10px">
-                <div fxFlex class="pale-border-box">
-                  <b>{{'general.inventoryAudit' | translate}}</b>
-                  <div fxLayout.gt-sm="row" fxLayout.lt-sm="column">
-                    <div fxFlex.gt-sm="50%" fxFlex>
-                      <p>{{'general.lastAuditCompleted' | translate}} : </p>
-                    </div>
-                    <div fxFlex.gt-sm="50%" fxFlex>
-                      <p>{{'general.currentAuditStarted' | translate}} : </p>
-                    </div>
-                  </div>
-                </div>
               </div>
             </mat-card-content>
           </mat-card>
