@@ -50,4 +50,12 @@ tr.mat-row {
   .checkbox-column {
     width: 40px;
   }
+  mat-icon.edit-icon {
+    background-color: $site-primary;
+    border-radius: 50%;
+    color: $site-white;
+    cursor: pointer;
+    height: 24px;
+    margin-right: 2px;
+  }
 }
