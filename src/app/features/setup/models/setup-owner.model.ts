@@ -5,9 +5,9 @@ export interface SetupOwnerShipToModel {
 }
 
 export interface SetupOwnerWHControlModel {
-    shipToCode: string;
-    shipToName: string;
-    address: string;
+    code: string;
+    name: string;
+    checked: boolean;
 }
 
 export interface SetupOwnerEmailModel {
