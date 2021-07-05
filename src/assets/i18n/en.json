@@ -108,6 +108,8 @@
       "licenseAlertLimit": "Alert Limit"
     },
     "warehouse": {
+      "warehouseCode": "Warehouse Code",
+      "companyName": "Company Code",
       "code": "Code",
       "description": "Description",
       "address1": "Address 1",
@@ -150,9 +152,11 @@
     },
     "security": {
       "loginName": "Login Name",
+      "license": "License",
       "expiryOn": "Expiry On",
       "fullName": "Full Name",
       "password": "Password",
+      "confirmPassword": "Confirm Password",
       "confirm": "Confirm Password",
       "designation": "Designation",
       "department": "Department",
