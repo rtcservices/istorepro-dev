@@ -170,6 +170,47 @@
       "warehouses": "Warehouses",
       "availablePrevileges": "available Previleges",
       "allocatedPrevileges": "allocated Previleges"
+    },
+    "owner": {
+      "customer": "Customer",
+      "vendor": "Vendor",
+      "code": "Code",
+      "name": "Name",
+      "shortName": "Short Name",
+      "type": "Type",
+      "address1": "Address 1",
+      "address2": "Address 2",
+      "address3": "Address 3",
+      "address4": "Address 4",
+      "place": "Place",
+      "zip": "Zip",
+      "telephone": "Telephone",
+      "fax": "Fax",
+      "email": "Email",
+      "blockCustomer": "Block Customer",
+      "actAsCustomer": "Act as Customer",
+      "import": "Import",
+      "documents": {
+        "type": "Type",
+        "autoEmail": "Auto Email"
+      },
+      "shipTo": {
+        "shipToCode": "Ship To Code",
+        "shipToName": "Ship To Name",
+        "address1": "Address 1",
+        "address2": "Address 2",
+        "address3": "Address 3",
+        "address4": "Address 4",
+        "zip": "Zip",
+        "telephone": "Telephone",
+        "fax": "Fax",
+        "email": "Email",
+        "address": "Address"
+      },
+      "whControl" :{
+        "code":"Code",
+        "name":"Name"
+      }
     }
   },
   "base": {
@@ -309,9 +350,9 @@
         "autoFill": "Auto Fill"
       },
       "warehouseCode": "Warehouse Code",
-      "audit" : "Audit",
-      "excludeFromPlanning" : "Exclude From Planning",
-      "excludeFromAutoAllocation" : "Exclude From Auto Allocation"
+      "audit": "Audit",
+      "excludeFromPlanning": "Exclude From Planning",
+      "excludeFromAutoAllocation": "Exclude From Auto Allocation"
     }
   }
 }

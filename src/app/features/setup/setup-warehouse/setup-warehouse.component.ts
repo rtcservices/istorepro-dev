@@ -293,10 +293,10 @@ export class SetupWarehouseComponent implements OnInit, AfterViewInit {
     return this.dataWarehouseForm.controls;
   }
 
-  saveCompanyData() {}
-  deleteCompanyData() {}
+  saveWarehouseData() {}
+  deleteWarehouseData() {}
 
-  resetCompanyDataForm() {
+  resetWarehouseDataForm() {
     this.dataWarehouseForm.reset();
   }
   createSearchWarehouseForm() {
