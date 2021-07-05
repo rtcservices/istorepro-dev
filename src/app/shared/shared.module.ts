@@ -34,6 +34,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { PasswordStrengthComponent } from './password-strength/password-strength.component';
+import { DataAuditComponent } from './data-audit/data-audit.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -68,7 +69,7 @@ import { PasswordStrengthComponent } from './password-strength/password-strength
     MatSortModule,
     MatSidenavModule
   ],
-  declarations: [PasswordStrengthComponent],
+  declarations: [PasswordStrengthComponent, DataAuditComponent],
   exports: [
     CommonModule,
     FormsModule,
@@ -103,7 +104,8 @@ import { PasswordStrengthComponent } from './password-strength/password-strength
     MatSidenavModule,
     MatTableModule,
 
-    PasswordStrengthComponent
+    PasswordStrengthComponent,
+    DataAuditComponent
   ]
 })
 export class SharedModule {}

@@ -74,7 +74,7 @@ export class SetupCompanyComponent implements OnInit {
     this.dataCompanyForm = this.fb.group({
       companyCode: 'CODE 2',
       companyName: [
-        '',
+        'KONAMI',
         [Validators.required, Validators.pattern(patternsHelper.name)]
       ],
       address1: [

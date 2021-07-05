@@ -1,0 +1,15 @@
+@import '../../../assets/scss/variables';
+.audit-box {
+  align-items: center;
+  color: $site-primary;
+  display: flex;
+  font-size: 0.9rem;
+  min-width: 300px;
+  text-align: left;
+  label {
+    margin-left: 5px;
+    &.green {
+      color: $site-accent;
+    }
+  }
+}

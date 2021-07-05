@@ -9,17 +9,17 @@
           <mat-card class="h-100">
             <mat-card-content>
               <div fxLayout="row" class="row" fxLayoutGap="5px">
-                <p class="read-only-input" fxFlex="32">
-                  <label>
-                    {{ 'setup.company.companyCode' | translate }}: {{ dataCompanyFormControls.companyCode.value }}
-                  </label>
-                </p>
+                <div fxFlex="32">
+                  <fieldset class="read-only-input">
+                    <legend>{{ 'setup.company.companyCode' | translate }}</legend>
+                    <label>{{ dataCompanyFormControls.companyCode.value }}</label>
+                  </fieldset>
+                </div>
                 <mat-form-field appearance="outline" fxFlex>
-                  <mat-label>{{
-      'setup.company.companyName' | translate
-      }}</mat-label>
+                  <mat-label>{{'setup.company.companyName' | translate}}</mat-label>
                   <input matInput type="text" required formControlName="companyName" />
-                  <mat-error *ngIf="dataCompanyFormControls.companyName.invalid">{{ 'error.field' | translate }}
+                  <mat-error *ngIf="dataCompanyFormControls.companyName.invalid">
+                    {{ 'error.field' | translate }}
                   </mat-error>
                 </mat-form-field>
               </div>
@@ -191,16 +191,21 @@
       </div>
       <mat-card>
         <mat-card-content>
-          <div class="form-three-button-container">
-            <button mat-raised-button color="primary" type="submit" (click)="saveCompanyData()">
-              <mat-icon>task_alt</mat-icon>
-            </button>
-            <button mat-raised-button color="warn" type="button" (click)="deleteCompanyData()">
-              <mat-icon>remove_circle_outline</mat-icon>
-            </button>
-            <button mat-raised-button color="accent" type="reset" (click)="resetCompanyDataForm()">
-              <mat-icon>loop</mat-icon>
-            </button>
+          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="30px" fxLayoutAlign="space-between center">
+            <div fxFlexOrder.lt-md="2">
+              <ibe-data-audit insertedBy=""></ibe-data-audit>
+            </div>
+            <div class="form-three-button-container" fxFlexOrder.lt-md="1">
+              <button mat-raised-button color="primary" type="submit" (click)="saveCompanyData()">
+                <mat-icon>task_alt</mat-icon>
+              </button>
+              <button mat-raised-button color="warn" type="button" (click)="deleteCompanyData()">
+                <mat-icon>remove_circle_outline</mat-icon>
+              </button>
+              <button mat-raised-button color="accent" type="reset" (click)="resetCompanyDataForm()">
+                <mat-icon>loop</mat-icon>
+              </button>
+            </div>
           </div>
         </mat-card-content>
       </mat-card>

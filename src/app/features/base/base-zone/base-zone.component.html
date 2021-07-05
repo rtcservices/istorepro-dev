@@ -1,44 +1,45 @@
 <div class="page-title">
-    <h2>{{'menu.baseZone' | translate}}</h2>
-  </div>
-  <mat-card class="zone-table">
-    <mat-card-content>
-      <table class="site-table w-100 mat-elevation-z8">
-        <thead>
-          <tr>
-            <th>{{ 'base.zone.code' | translate}}</th>
-            <th>{{ 'base.zone.description' | translate}}</th>
-            <th style="text-align: center;">
-              <mat-icon style="padding-top: 3px;">add_circle_outline</mat-icon>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <ng-template let-zone ngFor [ngForOf]="zoneDataSource">
-            <tr>
-              <td style="width: 30%;">
-                {{zone.code}}
-              </td>
-              <td style="width: 60%;">
-                {{zone.description}}
-              </td>
-              <td style="text-align: center;">
-                <mat-icon color="primary">edit</mat-icon>
-                <mat-icon style="color: #f44336;">remove_circle</mat-icon>
-              </td>
-            </tr>
-          </ng-template>
+  <h2>{{'menu.baseZone' | translate}}</h2>
+</div>
+<mat-card class="zone-table">
+  <mat-card-content>
+    <table class="site-table w-100 mat-elevation-z8">
+      <thead>
+        <tr>
+          <th>{{ 'base.zone.code' | translate}}</th>
+          <th>{{ 'base.zone.description' | translate}}</th>
+          <th style="text-align: center;">
+            <mat-icon style="padding-top: 3px;">add_circle_outline</mat-icon>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-template let-zone ngFor [ngForOf]="zoneDataSource">
           <tr>
             <td style="width: 30%;">
-              <input type="text" style="width: 100%;">
+              {{zone.code}}
             </td>
             <td style="width: 60%;">
-              <input type="text">
+              {{zone.description}}
             </td>
             <td style="text-align: center;">
+              <mat-icon color="primary">edit</mat-icon>
+              <mat-icon style="color: #f44336;">remove_circle</mat-icon>
             </td>
           </tr>
-        </tbody>
-      </table>
-    </mat-card-content>
-  </mat-card>
+        </ng-template>
+        <tr>
+          <td style="width: 30%;">
+            <input type="text" style="width: 100%;">
+          </td>
+          <td style="width: 60%;">
+            <input type="text">
+          </td>
+          <td style="text-align: center;">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-card-content>
+</mat-card>
+<ibe-data-audit insertedBy=""></ibe-data-audit>
