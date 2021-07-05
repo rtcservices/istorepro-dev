@@ -12,7 +12,7 @@
                 <mat-form-field appearance="outline" fxFlex="32">
                   <mat-label>{{
                     'setup.company.companyCode' | translate
-                  }}</mat-label>
+                    }}</mat-label>
                   <input matInput type="text" readonly formControlName="companyCode" />
                   <mat-error *ngIf="dataCompanyFormControls.companyCode.invalid">{{ 'error.field' | translate }}
                   </mat-error>
@@ -20,7 +20,7 @@
                 <mat-form-field appearance="outline" fxFlex>
                   <mat-label>{{
                     'setup.company.companyName' | translate
-                  }}</mat-label>
+                    }}</mat-label>
                   <input matInput type="text" required formControlName="companyName" />
                   <mat-error *ngIf="dataCompanyFormControls.companyName.invalid">{{ 'error.field' | translate }}
                   </mat-error>
@@ -30,47 +30,47 @@
                 <mat-form-field appearance="outline" fxFlex="49">
                   <mat-label>{{
                     'setup.company.address1' | translate
-                  }}</mat-label>
+                    }}</mat-label>
                   <input matInput type="text" required formControlName="address1" />
                   <mat-error *ngIf="dataCompanyFormControls.address1.invalid">{{
                     'error.field' | translate
-                  }}</mat-error>
+                    }}</mat-error>
                 </mat-form-field>
                 <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="49">
                   <mat-label>{{
                     'setup.company.address2' | translate
-                  }}</mat-label>
+                    }}</mat-label>
                   <input matInput type="text" formControlName="address2" />
                   <mat-error *ngIf="dataCompanyFormControls.address2.invalid">{{
                     'error.field' | translate
-                  }}</mat-error>
+                    }}</mat-error>
                 </mat-form-field>
               </div>
               <div fxLayout="row" class="row" fxLayoutGap="5px">
                 <mat-form-field appearance="outline" fxFlex="49">
                   <mat-label>{{
                     'setup.company.address3' | translate
-                  }}</mat-label>
+                    }}</mat-label>
                   <input matInput type="text" formControlName="address3" />
                   <mat-error *ngIf="dataCompanyFormControls.address3.invalid">{{
                     'error.field' | translate
-                  }}</mat-error>
+                    }}</mat-error>
                 </mat-form-field>
                 <mat-form-field appearance="outline" fxFlex fxFlex fxFlex.lt-sm="49">
                   <mat-label>{{
                     'setup.company.address4' | translate
-                  }}</mat-label>
+                    }}</mat-label>
                   <input matInput type="text" formControlName="address4" />
                   <mat-error *ngIf="dataCompanyFormControls.address4.invalid">{{
                     'error.field' | translate
-                  }}</mat-error>
+                    }}</mat-error>
                 </mat-form-field>
               </div>
               <div fxLayout="row" class="row" fxLayoutGap="5px">
                 <mat-form-field appearance="outline" fxFlex="32">
                   <mat-label>{{
                     'setup.company.telephone' | translate
-                  }}</mat-label>
+                    }}</mat-label>
                   <input matInput type="text" formControlName="telephone" />
                   <mat-error *ngIf="dataCompanyFormControls.telephone.invalid">{{ 'error.field' | translate }}
                   </mat-error>
@@ -80,12 +80,12 @@
                   <input matInput type="text" formControlName="fax" />
                   <mat-error *ngIf="dataCompanyFormControls.fax.invalid">{{
                     'error.field' | translate
-                  }}</mat-error>
+                    }}</mat-error>
                 </mat-form-field>
                 <mat-form-field appearance="outline" fxFlex fxFlex.lt-md="34" fxFlex fxFlex.lt-sm="33">
                   <mat-label>{{
                     'setup.company.sector' | translate
-                  }}</mat-label>
+                    }}</mat-label>
                   <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="sector">
                     <mat-option value="">Select</mat-option>
                     <mat-option value="logistics">LOGISTICS</mat-option>
@@ -94,7 +94,7 @@
                   </mat-select>
                   <mat-error *ngIf="dataCompanyFormControls.sector.invalid">{{
                     'error.field' | translate
-                  }}</mat-error>
+                    }}</mat-error>
                 </mat-form-field>
               </div>
               <div fxLayout="row" class="row" fxLayoutGap="10px">
@@ -103,27 +103,27 @@
                   <input matInput type="text" required formControlName="email" class="normal" />
                   <mat-error *ngIf="dataCompanyFormControls.email.invalid">{{
                     'error.field' | translate
-                  }}</mat-error>
+                    }}</mat-error>
                 </mat-form-field>
               </div>
               <div fxLayout="row" class="row" fxLayoutGap="5px">
                 <mat-form-field appearance="outline" fxFlex="49">
                   <mat-label>{{
                     'setup.company.contactPerson' | translate
-                  }}</mat-label>
+                    }}</mat-label>
                   <input matInput type="text" formControlName="contactPerson" />
                   <mat-error *ngIf="dataCompanyFormControls.contactPerson.invalid">{{
                     'error.field' | translate
-                  }}</mat-error>
+                    }}</mat-error>
                 </mat-form-field>
                 <mat-form-field appearance="outline" fxFlex fxFlex.lt-md="49">
                   <mat-label>{{
                     'setup.company.website' | translate
-                  }}</mat-label>
+                    }}</mat-label>
                   <input matInput type="text" formControlName="website" class="normal" />
                   <mat-error *ngIf="dataCompanyFormControls.website.invalid">{{
                     'error.field' | translate
-                  }}</mat-error>
+                    }}</mat-error>
                 </mat-form-field>
               </div>
               <div class="row">
@@ -131,11 +131,24 @@
                   {{ 'setup.company.suspendOperation' | translate }}
                 </mat-checkbox>
               </div>
+              <div fxLayout="row" fxLayoutAlign="stretch" fxLayoutGap="10px">
+                <div fxFlex class="pale-border-box">
+                  <b>{{'general.inventoryAudit' | translate}}</b>
+                  <div fxLayout.gt-sm="row" fxLayout.lt-sm="column">
+                    <div fxFlex.gt-sm="50%" fxFlex>
+                      <p>{{'general.lastAuditCompleted' | translate}} : </p>
+                    </div>
+                    <div fxFlex.gt-sm="50%" fxFlex>
+                      <p>{{'general.currentAuditStarted' | translate}} : </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </mat-card-content>
           </mat-card>
         </div>
         <div fxFlex="30%">
-          <mat-card fxLayout="column">
+          <mat-card fxLayout="column" class="company-card">
             <div class="company-logo">
               <p>{{ 'setup.company.companyLogo' | translate }}</p>
               <img [src]="companyLogo" (click)="file.click()" />
@@ -170,8 +183,8 @@
                 <div fxLayout="column" [formGroup]="dataCompanyForm">
                   <mat-checkbox color="primary" class="license-subscription-alert"
                     formControlName="licenseSubscriptionAlert">{{
-                  'setup.company.licenseSubscriptionAlert' | translate
-                }}</mat-checkbox>
+                    'setup.company.licenseSubscriptionAlert' | translate
+                    }}</mat-checkbox>
                   <div fxLayout="row" fxLayoutGap="2px" class="row">
                     <div class="input-group" fxFlex.lt-sm="50">
                       <div class="input-group-title">{{'setup.company.licenseAlertLimit' | translate}}</div>
@@ -219,7 +232,7 @@
             <mat-form-field appearance="outline" fxFlex>
               <mat-label>{{
                 'setup.company.companyCode' | translate
-              }}</mat-label>
+                }}</mat-label>
               <input matInput type="text" formControlName="companyCode" />
               <mat-error *ngIf="searchCompanyFormControls.companyCode.invalid">
                 {{ 'error.field' | translate }}</mat-error>
@@ -227,7 +240,7 @@
             <mat-form-field appearance="outline" fxFlex>
               <mat-label>{{
                 'setup.company.companyName' | translate
-              }}</mat-label>
+                }}</mat-label>
               <input matInput type="text" formControlName="companyName" />
               <mat-error *ngIf="searchCompanyFormControls.companyName.invalid">
                 {{ 'error.field' | translate }}</mat-error>

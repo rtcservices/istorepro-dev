@@ -22,7 +22,10 @@
     "used": "Used",
     "email": "Email",
     "license": "License",
-    "security": "Security"
+    "security": "Security",
+    "inventoryAudit" : "Inventory Audit",
+    "lastAuditCompleted" : "Last Audit Completed",
+    "currentAuditStarted" : "Current Audit Started"
   },
   "error": {
     "form": "Form has invalid entries",
