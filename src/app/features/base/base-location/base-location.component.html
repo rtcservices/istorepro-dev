@@ -14,7 +14,7 @@
                                     <mat-card-content>
 
                                         <div fxLayout="row" class="row" fxLayoutGap="5px">
-                                            <mat-form-field appearance="outline" fxFlex="33" fxFlex.lt-sm="25">
+                                            <mat-form-field appearance="outline" fxFlex="20" fxFlex.lt-sm="25">
                                                 <mat-label>{{'base.location.warehouse' | translate }}</mat-label>
                                                 <mat-select disableOptionCentering panelClass="slim-select-field"
                                                     type="text" readonly formControlName="warehouse">
@@ -31,7 +31,7 @@
                                         </div>
 
                                         <div fxLayout="row" class="row" fxLayoutGap="5px">
-                                            <mat-form-field appearance="outline" fxFlex="33" fxFlex.lt-sm="25">
+                                            <mat-form-field appearance="outline" fxFlex="20" fxFlex.lt-sm="25">
                                                 <mat-label>{{'base.location.row' | translate }}</mat-label>
                                                 <mat-select disableOptionCentering panelClass="slim-select-field"
                                                     type="text" readonly formControlName="row">
@@ -42,13 +42,10 @@
                                                     'error.field' | translate }}
                                                 </mat-error>
                                             </mat-form-field>
-                                            <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="25">
+                                            <mat-form-field appearance="outline" fxFlex="30" fxFlex.lt-sm="25">
                                                 <input matInput readonly type="text" />
                                             </mat-form-field>
-                                        </div>
-
-                                        <div fxLayout="row" class="row" fxLayoutGap="5px">
-                                            <mat-form-field appearance="outline" fxFlex="33" fxFlex.lt-sm="25">
+                                            <mat-form-field appearance="outline" fxFlex="20" fxFlex.lt-sm="25">
                                                 <mat-label>{{'base.location.unit' | translate }}</mat-label>
                                                 <mat-select disableOptionCentering panelClass="slim-select-field"
                                                     type="text" readonly formControlName="unit">
@@ -65,14 +62,14 @@
                                         </div>
 
                                         <div fxLayout="row" class="row" fxLayoutGap="5px">
-                                            <mat-form-field appearance="outline" fxFlex="33" fxFlex.lt-sm="25">
+                                            <mat-form-field appearance="outline" fxFlex="20" fxFlex.lt-sm="25">
                                                 <mat-label>{{'base.location.level' | translate}}</mat-label>
                                                 <input matInput type="text" formControlName="level" />
                                                 <mat-error *ngIf="dataLocationControls.level.invalid">{{ 'error.field' |
                                                     translate }}
                                                 </mat-error>
                                             </mat-form-field>
-                                            <mat-form-field appearance="outline" fxFlex="33" fxFlex.lt-sm="25">
+                                            <mat-form-field appearance="outline" fxFlex="20" fxFlex.lt-sm="25">
                                                 <mat-label>{{'base.location.location' | translate}}</mat-label>
                                                 <input matInput readonly type="text" formControlName="location" />
                                             </mat-form-field>
@@ -90,7 +87,7 @@
                                         </div>
 
                                         <div fxLayout="row" class="row" fxLayoutGap="5px">
-                                            <mat-form-field appearance="outline" fxFlex="33">
+                                            <mat-form-field appearance="outline" fxFlex="20">
                                                 <mat-label>{{'base.location.zone' | translate }}</mat-label>
                                                 <mat-select disableOptionCentering panelClass="slim-select-field"
                                                     type="text" readonly formControlName="zone">
@@ -108,7 +105,7 @@
                                         </div>
 
                                         <div fxLayout="row" class="row" fxLayoutGap="5px">
-                                            <mat-form-field appearance="outline" fxFlex="33" fxFlex.lt-sm="25">
+                                            <mat-form-field appearance="outline" fxFlex="20" fxFlex.lt-sm="25">
                                                 <mat-label>{{'base.location.storageType' | translate }}</mat-label>
                                                 <mat-select disableOptionCentering panelClass="slim-select-field"
                                                     type="text" readonly formControlName="storageType">
@@ -119,7 +116,7 @@
                                                     'error.field' | translate }}
                                                 </mat-error>
                                             </mat-form-field>
-                                            <mat-form-field appearance="outline" fxFlex="33" fxFlex.lt-sm="25">
+                                            <mat-form-field appearance="outline" fxFlex="20" fxFlex.lt-sm="25">
                                                 <mat-label>{{'base.location.scanType' | translate }}</mat-label>
                                                 <mat-select disableOptionCentering panelClass="slim-select-field"
                                                     type="text" readonly formControlName="scanType">
@@ -137,7 +134,7 @@
                                         </div>
 
                                         <div fxLayout="row" class="row" fxLayoutGap="5px">
-                                            <mat-form-field appearance="outline" fxFlex="33" fxFlex.lt-sm="25">
+                                            <mat-form-field appearance="outline" fxFlex="20" fxFlex.lt-sm="25">
                                                 <mat-label>{{'base.location.storageStatus' | translate }}</mat-label>
                                                 <mat-select disableOptionCentering panelClass="slim-select-field"
                                                     type="text" readonly formControlName="storageStatus">
@@ -148,20 +145,36 @@
                                                     'error.field' | translate }}
                                                 </mat-error>
                                             </mat-form-field>
-                                            <div class="form-checkbox-input">
+                                            <div class="form-checkbox-input" fxFlex="15">
                                                 <mat-checkbox color="primary" formControlName="freeze">{{
                                                     'base.location.freeze' | translate
                                                     }}</mat-checkbox>
                                             </div>
-                                            <div class="form-checkbox-input">
+                                            <div class="form-checkbox-input" fxFlex="20">
                                                 <mat-checkbox color="primary" formControlName="reworkArea">{{
                                                     'base.location.reworkArea' | translate
                                                     }}</mat-checkbox>
                                             </div>
+                                            <div class="pale-border-box" fxFlex>
+                                                <b>{{ 'base.location.excludeFrom' | translate }}</b>
+                                                <div class="row" fxFex fxLayout="row" fxLayout.lt-sm="row"
+                                                    fxLayoutGap="10px">
+                                                    <div>
+                                                        <mat-checkbox color="primary" formControlName="planning">{{
+                                                            'base.location.planning' | translate
+                                                            }}</mat-checkbox>
+                                                    </div>
+                                                    <div>
+                                                        <mat-checkbox color="primary" formControlName="autoAllocation">{{
+                                                            'base.location.autoAllocation' | translate
+                                                            }}</mat-checkbox>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
 
                                         <div fxLayout="row" class="row" fxLayoutGap="5px">
-                                            <mat-form-field appearance="outline" fxFlex="33" fxFlex.lt-sm="25">
+                                            <mat-form-field appearance="outline" fxFlex="20" fxFlex.lt-sm="25">
                                                 <mat-label>{{'base.location.walkSequence' | translate}}</mat-label>
                                                 <input matInput type="text" formControlName="walkSequence" />
                                                 <mat-error *ngIf="dataLocationControls.walkSequence.invalid">{{
@@ -169,7 +182,7 @@
                                                     translate }}
                                                 </mat-error>
                                             </mat-form-field>
-                                            <mat-form-field appearance="outline" fxFlex="33" fxFlex.lt-sm="25">
+                                            <mat-form-field appearance="outline" fxFlex="20" fxFlex.lt-sm="25">
                                                 <mat-label>{{'base.location.floorSequence' | translate}}</mat-label>
                                                 <input matInput type="text" formControlName="floorSequence" />
                                                 <mat-error *ngIf="dataLocationControls.floorSequence.invalid">{{
@@ -185,23 +198,6 @@
                                                     translate }}
                                                 </mat-error>
                                             </mat-form-field>
-                                        </div>
-
-                                        <div class="pale-border-box">
-                                            <b>{{ 'base.location.excludeFrom' | translate }}</b>
-                                            <div class="row" fxFex fxLayout="row" fxLayout.lt-sm="row"
-                                                fxLayoutGap="10px">
-                                                <div>
-                                                    <mat-checkbox color="primary" formControlName="planning">{{
-                                                        'base.location.planning' | translate
-                                                        }}</mat-checkbox>
-                                                </div>
-                                                <div>
-                                                    <mat-checkbox color="primary" formControlName="autoAllocation">{{
-                                                        'base.location.autoAllocation' | translate
-                                                        }}</mat-checkbox>
-                                                </div>
-                                            </div>
                                         </div>
 
                                         <div fxLayout="row" fxLayoutAlign="stretch" fxLayoutGap="10px">
@@ -282,7 +278,7 @@
                                                         }}</mat-checkbox>
                                                 </div>
                                             </div>
-                                            <mat-form-field appearance="outline" fxFlex="33">
+                                            <mat-form-field appearance="outline" fxFlex="20">
                                                 <mat-label>{{'base.location.capacity.volumeSafePercentage' | translate}}</mat-label>
                                                 <input matInput  type="text" formControlName="volumeSafePercentage" />
                                             </mat-form-field>
@@ -309,7 +305,7 @@
                                                         }}</mat-checkbox>
                                                 </div>
                                             </div>
-                                            <mat-form-field appearance="outline" fxFlex="33">
+                                            <mat-form-field appearance="outline" fxFlex="20">
                                                 <mat-label>{{'base.location.capacity.weightSafePercentage' | translate}}</mat-label>
                                                 <input matInput  type="text" formControlName="weightSafePercentage" />
                                             </mat-form-field>
@@ -328,9 +324,6 @@
             <mat-card class="form-action-section">
                 <mat-card-content>
                     <div class="form-three-button-container" style="margin-top: 5px;">
-                        <div class="form-import-button">
-                            <mat-icon color="primary">error_outline</mat-icon>
-                        </div>
                         <button mat-raised-button color="primary" type="submit" (click)="saveCompanyData()">
                             <mat-icon>task_alt</mat-icon>
                         </button>
