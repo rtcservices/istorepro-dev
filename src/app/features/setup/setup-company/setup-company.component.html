@@ -133,13 +133,13 @@
         <div fxFlex="30%">
           <mat-card fxLayout="column" class="company-card">
             <div class="company-logo">
-              <b>{{ 'setup.company.companyLogo' | translate }}</b>
+              <p><b>{{ 'setup.company.companyLogo' | translate }}</b></p>
               <img [src]="companyLogo" (click)="file.click()" />
               <input type="file" style="display: none" #file />
             </div>
             <div class="pale-border-box">
               <div>
-                <b>{{ 'general.license' | translate }}</b>
+                <p><b>{{ 'general.license' | translate }}</b></p>
                 <table class="site-table w-100">
                   <thead>
                     <tr>
