@@ -123,7 +123,7 @@
                 </mat-form-field>
               </div>
               <div class="row">
-                <mat-checkbox formControlName="suspendOperation" color="primary">
+                <mat-checkbox formControlName="suspendOperation" color="warn">
                   {{ 'setup.company.suspendOperation' | translate }}
                 </mat-checkbox>
               </div>
@@ -133,13 +133,13 @@
         <div fxFlex="30%">
           <mat-card fxLayout="column" class="company-card">
             <div class="company-logo">
-              <p>{{ 'setup.company.companyLogo' | translate }}</p>
+              <b>{{ 'setup.company.companyLogo' | translate }}</b>
               <img [src]="companyLogo" (click)="file.click()" />
               <input type="file" style="display: none" #file />
             </div>
             <div class="pale-border-box">
               <div>
-                <p>{{ 'general.license' | translate }}</p>
+                <b>{{ 'general.license' | translate }}</b>
                 <table class="site-table w-100">
                   <thead>
                     <tr>

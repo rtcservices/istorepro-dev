@@ -117,11 +117,12 @@ export class SetupOwnerComponent implements OnInit, AfterViewInit {
         ]
       ],
       address4: ['', [Validators.maxLength(100), Validators.pattern(patternsHelper.alphanumeric)]],
+      place: ['', [Validators.maxLength(100), Validators.pattern(patternsHelper.alphanumeric)]],
       zip: ['', [Validators.maxLength(50), Validators.pattern(patternsHelper.alphanumeric)]],
       telephone: ['', [Validators.maxLength(30), Validators.pattern(patternsHelper.alphanumeric)]],
       fax: ['', [Validators.maxLength(30), Validators.pattern(patternsHelper.alphanumeric)]],
       email: ['', [Validators.maxLength(500), Validators.pattern(patternsHelper.emails)]],
-      vlockCustomer : '',
+      blockCustomer : '',
       actAsCustomer : ''
     });
   }

@@ -84,6 +84,52 @@
                         </mat-error>
                       </mat-form-field>
                     </div>
+
+                    <div fxLayout="row" class="row" fxLayoutGap="5px">
+                      <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="25">
+                        <mat-label>{{'setup.owner.place' | translate }}</mat-label>
+                        <input matInput required type="text" formControlName="place" />
+                        <mat-error *ngIf="dataOwnerControls.place.invalid">{{ 'error.field' |
+                          translate }}
+                        </mat-error>
+                      </mat-form-field>
+                      <mat-form-field appearance="outline" fxFlex="20">
+                        <mat-label>{{'setup.owner.zip' | translate}}</mat-label>
+                        <input matInput required type="text" formControlName="zip" />
+                        <mat-error *ngIf="dataOwnerControls.zip.invalid">{{ 'error.field' |
+                          translate }}
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
+
+                    <div fxLayout="row" class="row" fxLayoutGap="5px">
+                      <mat-form-field appearance="outline" fxFlex="30" fxFlex.lt-sm="25">
+                        <mat-label>{{'setup.owner.fax' | translate }}</mat-label>
+                        <input matInput required type="text" formControlName="fax" />
+                        <mat-error *ngIf="dataOwnerControls.fax.invalid">{{ 'error.field' |
+                          translate }}
+                        </mat-error>
+                      </mat-form-field>
+                      <mat-form-field appearance="outline" fxFlex>
+                        <mat-label>{{'setup.owner.email' | translate}}</mat-label>
+                        <input matInput required type="text" formControlName="email" />
+                        <mat-error *ngIf="dataOwnerControls.email.invalid">{{ 'error.field' |
+                          translate }}
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
+                    <div fxLayout="row" class="row" fxLayoutGap="5px">
+                      <div class="form-checkbox-input" fxFlex="15">
+                        <!-- <mat-checkbox color="primary" formControlName="blockCustomer">{{ 'setup.owner.blockCustomer' |
+                          translate
+                          }}
+                        </mat-checkbox> -->
+                      </div>
+                      <div class="form-checkbox-input" fxFlex="20">
+                        <!-- <mat-checkbox color="primary" formControlName="actAsCustomer">
+                          {{ 'setup.owner.actAsCustomer' | translate }}</mat-checkbox> -->
+                      </div>
+                    </div>
                   </mat-card-content>
                 </mat-card>
               </mat-tab>
