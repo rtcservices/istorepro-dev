@@ -47,6 +47,7 @@ export class BaseLocationComponent implements OnInit {
     private notification: NotificationService
   ) {
     this.createDataLocationForm();
+    this.createSearchLocationForm();
   }
 
   ngOnInit(): void {
@@ -103,6 +104,7 @@ export class BaseLocationComponent implements OnInit {
           Validators.required,
         ]
       ],
+      location: '',
       zone: [
         '', [
           Validators.required,
@@ -222,10 +224,10 @@ export class BaseLocationComponent implements OnInit {
       level: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       location: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       description: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
-      scancode: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      scanCode: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       storageType: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       walkSequence: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
-      floorkSequence: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      floorSequence: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       nature: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       storageStatus: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       zone: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
@@ -235,5 +237,35 @@ export class BaseLocationComponent implements OnInit {
       excludeFromPlanning: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       excludeFromAutoAllocation: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
     });
+  }
+
+  onSearchLocationSubmit() {
+    if (!this.searchLocationForm.valid) {
+      this.notification.error(this.formErrorTranslated);
+      return;
+    }
+    const code: string =
+      this.searchLocationForm.get('code')?.value || '';
+    const description: string =
+      this.searchLocationForm.get('description')?.value || '';
+    if (code.trim() === '' && description.trim() === '') {
+      this.notification.error(this.filterErrorTranslated);
+      return;
+    } else {
+      this.loader.show();
+      setTimeout(() => {
+        this.searchLocationDataSource = [...this.dummyLocationSearchModel];
+        this.loader.hide();
+      }, 500);
+    }
+  }
+
+  get searchLocationFormControls() {
+    return this.searchLocationForm.controls;
+  }
+
+  resetLocationSearchForm() {
+    this.searchLocationForm.reset();
+    this.searchLocationDataSource = [];
   }
 }
