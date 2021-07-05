@@ -8,22 +8,9 @@ div.form-checkbox-input {
     }
 }
 
-div.form-capacity-checkbox-input {
-    mat-checkbox {
-        float: left !important;
-    }
-}
-
-.input-validate-group {
-    .input-group {
-        display: table-cell;
-        padding-top: 8px;
-    }
-    .validate-checkbox {
-        display: table-cell;
-        padding-right: 40px;
-        padding-left: 8px;
-    }
+.validate-checkbox, .autoFill-checkbox{
+    margin-left: 30px;
+    padding-top: 12px 
 }
 
 .pale-border-box {
