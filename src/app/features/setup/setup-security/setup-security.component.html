@@ -1,1 +1,237 @@
-<p>setup-security works!</p>
+<div class="page-title">
+  <h2>{{'menu.setupSecurity' | translate}}</h2>
+</div>
+<mat-tab-group #setupSecurityTab dynamicHeight>
+  <mat-tab label="Data">
+    <form [formGroup]="dataSetupSecurityForm" (ngSubmit)="onDataSetupSecuritySubmit()" class="slim-form">
+      <div fxLayout="row" class="data-form">
+        <mat-card class="w-100">
+          <mat-card-content>
+            <mat-tab-group #setupSecurityDataTab id="setupSecurityDataTab">
+              <mat-tab label="User">
+                <mat-card>
+                  <mat-card-content>
+                    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="stretch" fxLayoutGap="5px"
+                      class="data-form">
+                      <div fxFlex="80%">
+                        <div fxLayout="row" class="row" fxLayoutGap="5px">
+                          <mat-form-field appearance="outline" fxFlex="49">
+                            <mat-label>{{'setup.security.loginName' | translate }}</mat-label>
+                            <input matInput required type="text" formControlName="loginName" />
+                          </mat-form-field>
+                          <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="49">
+                            <mat-label>{{'setup.security.license' | translate}}</mat-label>
+                            <input matInput required type="text" formControlName="license" />
+                            <mat-error *ngIf="dataSetupSecurityFormControls.license.invalid">
+                              {{ 'error.field' | translate }}
+                            </mat-error>
+                          </mat-form-field>
+                        </div>
+                        <div fxLayout="row" class="row" fxLayoutGap="5px">
+                          <mat-form-field appearance="outline" fxFlex>
+                            <mat-label>{{'setup.security.fullName' | translate}}</mat-label>
+                            <input matInput type="text" formControlName="fullName" />
+                            <mat-error *ngIf="dataSetupSecurityFormControls.fullName.invalid">
+                              {{ 'error.field' | translate }}
+                            </mat-error>
+                          </mat-form-field>
+                        </div>
+                        <div fxLayout="row" class="row" fxLayoutGap="5px">
+                          <mat-form-field appearance="outline" fxFlex="49">
+                            <mat-label>{{'setup.security.password' | translate}}</mat-label>
+                            <input matInput type="password" #securityPassword formControlName="password" />
+                            <ibe-password-strength *ngIf="securityPassword.value" [password]="securityPassword.value"
+                              (onStrengthChanged)="onStrengthChanged($event)">
+                            </ibe-password-strength>
+                            <mat-error *ngIf="dataSetupSecurityFormControls.password.invalid">
+                              {{ 'error.field' | translate }}
+                            </mat-error>
+                          </mat-form-field>
+                          <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="49">
+                            <mat-label>{{'setup.security.confirmPassword' | translate}}</mat-label>
+                            <input matInput type="password" #securityConfirmPassword
+                              formControlName="confirmPassword" />
+                            <ibe-password-strength *ngIf="securityConfirmPassword.value"
+                              [password]="securityConfirmPassword.value"
+                              (onStrengthChanged)="onStrengthChanged($event)">
+                            </ibe-password-strength>
+                            <mat-error *ngIf="dataSetupSecurityFormControls.confirmPassword.invalid">
+                              {{ 'error.field' | translate }}
+                            </mat-error>
+                          </mat-form-field>
+                        </div>
+                        <div fxLayout="row" fxLayoutGap="5px">
+                          <div fxFlex="49">
+                          </div>
+                          <div fxFlex fxFlex.lt-sm="49">
+                          </div>
+                        </div>
+                        <div fxLayout="row" class="row" fxLayoutGap="5px">
+                          <mat-form-field appearance="outline" fxFlex="49">
+                            <mat-label>{{'setup.security.designation' | translate}}</mat-label>
+                            <input matInput type="text" formControlName="designation" />
+                          </mat-form-field>
+                          <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="49">
+                            <mat-label>{{'setup.security.department' | translate}}</mat-label>
+                            <input matInput type="text" formControlName="department" />
+                          </mat-form-field>
+                        </div>
+                        <div fxLayout="row" class="row" fxLayoutGap="5px">
+                          <mat-form-field appearance="outline" fxFlex>
+                            <mat-label>{{'setup.security.email' | translate}}</mat-label>
+                            <input matInput type="text" formControlName="email" />
+                          </mat-form-field>
+                        </div>
+                        <div fxLayout="row" class="row" fxLayoutGap="5px">
+                          <mat-form-field appearance="outline" fxFlex="49">
+                            <mat-label>{{'setup.security.telephone' | translate}}</mat-label>
+                            <input matInput type="text" formControlName="telephone" />
+                          </mat-form-field>
+                        </div>
+                      </div>
+                      <div fxFlex="20%">
+
+                      </div>
+                    </div>
+                  </mat-card-content>
+                </mat-card>
+              </mat-tab>
+              <mat-tab label="Access">
+                <mat-card class="acess-table">
+                  <mat-card-content class="mat-elevation-z8">
+                    <table mat-table [dataSource]="warehousesDataSource" class="w-100 site-table">
+                      <!-- Checkbox Column -->
+                      <ng-container matColumnDef="select">
+                        <th mat-header-cell *matHeaderCellDef class="checkbox-column">
+                          <mat-checkbox (change)="$event ? warehouseMasterToggle() : null"
+                            [checked]="warehouseSelection.hasValue() && isAllWarehouseSelected()"
+                            [indeterminate]="warehouseSelection.hasValue() && !isAllWarehouseSelected()"
+                            [aria-label]="warehouseCheckboxLabel()">
+                          </mat-checkbox>
+                        </th>
+                        <td mat-cell *matCellDef="let row">
+                          <mat-checkbox (click)="$event.stopPropagation()"
+                            (change)="$event ? warehouseSelection.toggle(row) : null"
+                            [checked]="warehouseSelection.isSelected(row)" [aria-label]="warehouseCheckboxLabel(row)">
+                          </mat-checkbox>
+                        </td>
+                      </ng-container>
+
+                      <!-- Position Column -->
+                      <ng-container matColumnDef="text">
+                        <th mat-header-cell *matHeaderCellDef> Warehouses </th>
+                        <td mat-cell *matCellDef="let element"> {{element.value}} </td>
+                      </ng-container>
+
+                      <tr mat-header-row *matHeaderRowDef="displayedWarehouseColumns"></tr>
+                      <tr mat-row *matRowDef="let row; columns: displayedWarehouseColumns;"
+                        (click)="warehouseSelection.toggle(row)">
+                      </tr>
+                    </table>
+                  </mat-card-content>
+                </mat-card>
+              </mat-tab>
+              <mat-tab label="Previleges">
+
+              </mat-tab>
+            </mat-tab-group>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <mat-card class="form-action-section">
+        <mat-card-content>
+          <div class="form-three-button-container" style="margin-top: 5px;">
+            <button mat-raised-button color="primary" type="submit" (click)="saveSecurityUserData()">
+              <mat-icon>task_alt</mat-icon>
+            </button>
+            <button mat-raised-button color="warn" type="button" (click)="deleteSecurityUserData()">
+              <mat-icon>remove_circle_outline</mat-icon>
+            </button>
+            <button mat-raised-button color="accent" type="reset" (click)="resetSecurityUserDataForm()">
+              <mat-icon>loop</mat-icon>
+            </button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </form>
+  </mat-tab>
+  <!-- Search -->
+  <mat-tab label="Search">
+    <form fxLayout="column" [formGroup]="searchSetupSecurityForm" (ngSubmit)="onSearchSetupSecuritySubmit()"
+      class="slim-form">
+      <mat-card class="filter-container">
+        <mat-card-content>
+          <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px"
+            class="row">
+            <mat-form-field appearance="outline" fxFlex>
+              <mat-label>{{
+                'setup.security.loginName' | translate
+                }}</mat-label>
+              <input matInput type="text" formControlName="loginName" />
+              <mat-error *ngIf="searchSetupSecurityFormControls.loginName.invalid">
+                {{ 'error.field' | translate }}</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex>
+              <mat-label>{{
+                'setup.security.fullName' | translate
+                }}</mat-label>
+              <input matInput type="text" formControlName="fullName" />
+              <mat-error *ngIf="searchSetupSecurityFormControls.fullName.invalid">
+                {{ 'error.field' | translate }}</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex>
+              <mat-label>{{
+                'setup.security.suspended' | translate
+                }}</mat-label>
+              <input matInput type="text" formControlName="suspended" />
+              <mat-error *ngIf="searchSetupSecurityFormControls.suspended.invalid">
+                {{ 'error.field' | translate }}</mat-error>
+            </mat-form-field>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="search-container">
+        <mat-card-content>
+          <div class="form-button-container">
+            <button mat-raised-button color="primary" type="submit">
+              <mat-icon>search</mat-icon>
+            </button>
+            <button mat-raised-button color="accent" type="reset" (click)="resetSetupSecuritySearchForm()">
+              <mat-icon>restart_alt</mat-icon>
+            </button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </form>
+    <mat-card class="mat-elevation-z10">
+      <mat-card-content>
+        <!-- <table mat-table [dataSource]="searchDataSource" class="mat-elevation-z8 search-table">
+          <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef>Description</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.description }}
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>ID</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.id }}
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef>Email</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.email }}
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedSearchColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedSearchColumns"></tr>
+        </table> -->
+        <small *ngIf="searchDataSource.length === 0" class="empty-table">
+          No records found
+        </small>
+      </mat-card-content>
+    </mat-card>
+  </mat-tab>
+</mat-tab-group>

@@ -5,7 +5,7 @@ import { MatTabGroup } from '@angular/material/tabs';
 import { TranslateService } from '@ngx-translate/core';
 
 import { patternsHelper } from '../../../helpers/patterns.helper';
-import { SetupCompanyModel } from '../models/setup-company.model';
+import { SetupCompanySearchModel } from '../models/setup-company.model';
 
 import { LoaderService } from '../../../services/loader.service';
 import { NotificationService } from '../../../services/notification.service';
@@ -22,8 +22,8 @@ export class SetupCompanyComponent implements OnInit {
   setupCompanyTab!: MatTabGroup;
 
   searchCompanyForm!: FormGroup;
-  searchDataSource: SetupCompanyModel[] = [];
-  dummySearchModel: SetupCompanyModel[] = [
+  searchDataSource: SetupCompanySearchModel[] = [];
+  dummySearchModel: SetupCompanySearchModel[] = [
     { companyCode: 'GEM1234', companyName: 'Gemini Software' },
     { companyCode: 'INFY1234', companyName: 'Infosys' },
     { companyCode: 'CAP1234', companyName: 'Cap Gemini' },
@@ -34,8 +34,8 @@ export class SetupCompanyComponent implements OnInit {
   ];
 
   dataCompanyForm!: FormGroup;
-  companyDataModel!: SetupCompanyModel;
-  dummyDataModel: SetupCompanyModel = {
+  companyDataModel!: SetupCompanySearchModel;
+  dummyDataModel: SetupCompanySearchModel = {
     companyCode: 'GEM1234',
     companyName: 'Gemini Software'
   };
@@ -186,7 +186,7 @@ export class SetupCompanyComponent implements OnInit {
     this.searchDataSource = [];
   }
 
-  searchItemClick(event: any, item: SetupCompanyModel, idx: number) {
+  searchItemClick(event: any, item: SetupCompanySearchModel, idx: number) {
     const tabGroup = this.setupCompanyTab;
     if (!tabGroup || !(tabGroup instanceof MatTabGroup)) return;
     tabGroup.selectedIndex = 0;

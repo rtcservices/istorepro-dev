@@ -7,13 +7,14 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatInputModule } from '@angular/material/input';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -32,7 +33,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatSidenavModule } from '@angular/material/sidenav';
 
-import { DataTableComponent } from '../core/components/data-table/data-table.component';
+import { PasswordStrengthComponent } from './password-strength/password-strength.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -50,6 +51,7 @@ import { DataTableComponent } from '../core/components/data-table/data-table.com
     MatSelectModule,
     MatTabsModule,
     MatInputModule,
+    MatProgressBarModule,
     MatProgressSpinnerModule,
     MatChipsModule,
     MatCardModule,
@@ -66,9 +68,7 @@ import { DataTableComponent } from '../core/components/data-table/data-table.com
     MatSortModule,
     MatSidenavModule
   ],
-  declarations: [
-    DataTableComponent
-  ],
+  declarations: [PasswordStrengthComponent],
   exports: [
     CommonModule,
     FormsModule,
@@ -86,6 +86,7 @@ import { DataTableComponent } from '../core/components/data-table/data-table.com
     MatTabsModule,
     MatChipsModule,
     MatInputModule,
+    MatProgressBarModule,
     MatProgressSpinnerModule,
     MatCheckboxModule,
     MatCardModule,
@@ -101,7 +102,8 @@ import { DataTableComponent } from '../core/components/data-table/data-table.com
     MatNativeDateModule,
     MatSidenavModule,
     MatTableModule,
-    DataTableComponent
+
+    PasswordStrengthComponent
   ]
 })
-export class SharedModule { }
+export class SharedModule {}

@@ -34,18 +34,20 @@ tr.mat-row {
 }
 .site-table {
   border-collapse: collapse;
-}
-.site-table th,
-.site-table td {
-  padding-left: 0.25rem;
-}
-.site-table th {
-  color: $site-white;
-  background-color: $site-primary;
-  border: 1px solid $site-white;
-  font-weight: normal;
-  text-align: left;
-}
-.site-table td {
-  border: 1px solid $site-light-gray;
+  margin-bottom: 5px;
+  th {
+    color: $site-white;
+    background-color: $site-primary;
+    border: 1px solid $site-white;
+    font-weight: normal;
+    padding-left: 0.25rem;
+    text-align: left;
+  }
+  td {
+    border: 1px solid $site-light-gray;
+    padding-left: 0.25rem;
+  }
+  .checkbox-column {
+    width: 40px;
+  }
 }

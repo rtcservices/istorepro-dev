@@ -23,9 +23,9 @@
     "email": "Email",
     "license": "License",
     "security": "Security",
-    "inventoryAudit" : "Inventory Audit",
-    "lastAuditCompleted" : "Last Audit Completed",
-    "currentAuditStarted" : "Current Audit Started"
+    "inventoryAudit": "Inventory Audit",
+    "lastAuditCompleted": "Last Audit Completed",
+    "currentAuditStarted": "Current Audit Started"
   },
   "error": {
     "form": "Form has invalid entries",
@@ -150,6 +150,25 @@
         "loginName": "Login Name",
         "inactive": "Inactive"
       }
+    },
+    "security": {
+      "loginName": "Login Name",
+      "expiryOn": "Expiry On",
+      "fullName": "Full Name",
+      "password": "Password",
+      "confirm": "Confirm Password",
+      "designation": "Designation",
+      "department": "Department",
+      "email": "Email",
+      "telephone": "Telephone",
+      "suspended": "Suspended",
+      "suspendFrom": "Suspend From",
+      "suspendTo": "Suspend To",
+      "lastSuspended": "Last Suspended",
+      "lastRevoked": "Last Revoked",
+      "warehouses": "Warehouses",
+      "availablePrevileges": "available Previleges",
+      "allocatedPrevileges": "allocated Previleges"
     }
   },
   "base": {
@@ -271,9 +290,9 @@
       "excludeFrom": "Exclude From",
       "planning": "Planning",
       "autoAllocation": "Auto Allocation",
-      "inventoryAudit" : "Inventory Audit",
-      "lastAuditCompleted" : "Last Audit Completed",
-      "currentAuditStarted" : "Current Audit Started",
+      "inventoryAudit": "Inventory Audit",
+      "lastAuditCompleted": "Last Audit Completed",
+      "currentAuditStarted": "Current Audit Started",
       "capacity": {
         "length": "Length",
         "breadth": "Breadth",
