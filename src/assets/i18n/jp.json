@@ -307,7 +307,10 @@
         "weightSafePercentage": "重量安全％",
         "weightFillPercentage": "重量充填％",
         "autoFill": "オートフィル"
-      }
+      },
+      "audit" : "監査",
+      "excludeFromPlanning" : "計画から除外する",
+      "excludeFromAutoAllocation" : "自動割り当てから除外する"
     }
   }
 }
