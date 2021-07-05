@@ -3,13 +3,16 @@
 </div>
 
 <mat-tab-group #setupOwnerTab dynamicHeight>
+
   <mat-tab label="Data">
+
     <form [formGroup]="dataOwnerForm" class="slim-form">
       <div fxLayout="row" class="data-form">
         <mat-card class="w-100">
           <mat-card-content>
             <mat-tab-group #setupOwnerDataTab id="setupOwnerDataTab">
               <mat-tab label="Owner">
+
                 <mat-card>
                   <mat-card-content>
                     <div fxLayout="row" class="row" fxLayoutGap="5px">
@@ -133,10 +136,12 @@
                           translate }}
                         </mat-error>
                       </mat-form-field>
-                    </div>
+                    </div>                
 
                   </mat-card-content>
+
                 </mat-card>
+
               </mat-tab>
 
               <mat-tab label="Document Email Settings">
@@ -164,6 +169,121 @@
                     </table>
                   </mat-card-content>
                 </mat-card>
+              </mat-tab>
+
+              <mat-tab label="Ship To">
+                  <mat-card>
+                    <mat-card-content>
+
+                      <div fxLayout="row" class="row" fxLayoutGap="5px">
+                        <mat-form-field appearance="outline" fxFlex="15" fxFlex.lt-sm="45">
+                          <mat-label>{{'setup.owner.shipTo.shipToCode' | translate }}</mat-label>
+                          <input matInput required type="text" formControlName="shipToCode" />
+                          <mat-error *ngIf="dataOwnerControls.shipToCode.invalid">{{ 'error.field' |
+                          translate }}
+                          </mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" fxFlex="40">
+                          <mat-label>{{'setup.owner.shipTo.shipToName' | translate}}</mat-label>
+                          <input matInput required type="text" formControlName="shipToName" />
+                          <mat-error *ngIf="dataOwnerControls.shipToName.invalid">{{ 'error.field' |
+                          translate }}
+                          </mat-error>
+                        </mat-form-field>
+                      </div>
+
+
+                      <div fxLayout="row" class="row" fxLayoutGap="5px">
+                        <mat-form-field appearance="outline" fxFlex="40" fxFlex.lt-sm="45">
+                          <mat-label>{{'setup.owner.shipTo.address1' | translate }}</mat-label>
+                          <input matInput required type="text" formControlName="shipToaddress1" />
+                          <mat-error *ngIf="dataOwnerControls.shipToaddress1.invalid">{{ 'error.field' |
+                          translate }}
+                          </mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" fxFlex="40">
+                          <mat-label>{{'setup.owner.shipTo.address2' | translate}}</mat-label>
+                          <input matInput type="text" formControlName="shipToaddress2" />
+                          <mat-error *ngIf="dataOwnerControls.shipToaddress2.invalid">{{ 'error.field' |
+                          translate }}
+                          </mat-error>
+                        </mat-form-field>
+                      </div>
+
+                      <div fxLayout="row" class="row" fxLayoutGap="5px">
+                        <mat-form-field appearance="outline" fxFlex="40" fxFlex.lt-sm="45">
+                          <mat-label>{{'setup.owner.shipTo.address3' | translate }}</mat-label>
+                          <input matInput type="text" formControlName="shipToaddress3" />
+                          <mat-error *ngIf="dataOwnerControls.shipToaddress3.invalid">{{ 'error.field' |
+                          translate }}
+                          </mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" fxFlex="40">
+                          <mat-label>{{'setup.owner.shipTo.address4' | translate}}</mat-label>
+                          <input matInput type="text" formControlName="shipToaddress4" />
+                          <mat-error *ngIf="dataOwnerControls.shipToaddress4.invalid">{{ 'error.field' |
+                          translate }}
+                          </mat-error>
+                        </mat-form-field>
+                      </div>
+
+                      <div fxLayout="row" class="row" fxLayoutGap="5px">
+                        <mat-form-field appearance="outline" fxFlex="20">
+                          <mat-label>{{'setup.owner.shipTo.zip' | translate}}</mat-label>
+                          <input matInput type="text" formControlName="shipTozip" />
+                          <mat-error *ngIf="dataOwnerControls.shipTozip.invalid">{{ 'error.field' |
+                          translate }}
+                          </mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" fxFlex="30">
+                          <mat-label>{{'setup.owner.shipTo.telephone' | translate }}</mat-label>
+                          <input matInput type="text" formControlName="shipTotelephone" />
+                          <mat-error *ngIf="dataOwnerControls.shipTotelephone.invalid">{{ 'error.field' |
+                          translate }}
+                          </mat-error>
+                        </mat-form-field>
+                      </div>
+
+                      <div fxLayout="row" class="row" fxLayoutGap="5px">
+
+                        <mat-form-field appearance="outline" fxFlex="55.5">
+                          <mat-label>{{'setup.owner.shipTo.email' | translate }}</mat-label>
+                          <input matInput type="text" formControlName="shipToemail" />
+                          <mat-error *ngIf="dataOwnerControls.shipToemail.invalid">{{ 'error.field' |
+                          translate }}
+                          </mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" fxFlex="25">
+                          <mat-label>{{'setup.owner.shipTo.fax' | translate}}</mat-label>
+                          <input matInput type="text" formControlName="shipTofax" />
+                          <mat-error *ngIf="dataOwnerControls.shipTofax.invalid">{{ 'error.field' |
+                          translate }}
+                          </mat-error>
+                        </mat-form-field>
+                      </div>
+
+                      <table class="site-table w-100 mat-elevation-z8">
+                        <thead>
+                          <tr>
+                            <th>{{ 'setup.owner.shipTo.shipToCode' | translate}}</th>
+                            <th colspan="3">{{ 'setup.owner.shipTo.shipToName' | translate}}</th>
+                            <th>{{ 'setup.owner.shipTo.address' | translate}}</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <ng-template let-control ngFor [ngForOf]="shipToDataSource">
+                            <tr>
+                              <td>{{control.shipToCode}}</td>
+                              <td colspan="3">{{control.shipToName}}</td>
+                              <td>{{control.address}}</td>
+                            </tr>
+                          </ng-template>
+                        </tbody>
+                      </table>
+
+
+                    </mat-card-content>
+                  </mat-card>            
               </mat-tab>
 
               <mat-tab label="WH Control">
@@ -195,113 +315,145 @@
 
             </mat-tab-group>
           </mat-card-content>
+          <mat-card class="form-action-section">
+            <mat-card-content>
+              <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="30px"
+                fxLayoutAlign="space-between center">
+                <div fxFlexOrder.lt-md="2">
+                  <ibe-data-audit insertedBy=""></ibe-data-audit>
+                </div>
+                <div class="form-three-button-container" style="margin-top: 5px;">
+                  <button mat-raised-button color="primary" type="submit" (click)="saveOwnerData()">
+                    <mat-icon>task_alt</mat-icon>
+                  </button>
+                  <button mat-raised-button color="warn" type="button" (click)="deleteOwnerData()">
+                    <mat-icon>remove_circle_outline</mat-icon>
+                  </button>
+                  <button mat-raised-button color="accent" type="reset" (click)="resetOwnerDataForm()">
+                    <mat-icon>loop</mat-icon>
+                  </button>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+
         </mat-card>
+
       </div>
-      <mat-card class="form-action-section">
+    </form>
+  </mat-tab>
+
+  <!-- Search -->
+  <mat-tab label="Search">
+
+    <form fxLayout="column" [formGroup]="searchItemForm" (ngSubmit)="onSearchItemSubmit()" class="slim-form">
+      <mat-card class="filter-container">
         <mat-card-content>
-          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="30px" fxLayoutAlign="space-between center">
-            <div fxFlexOrder.lt-md="2">
-              <ibe-data-audit insertedBy=""></ibe-data-audit>
-            </div>
-            <div class="form-three-button-container" style="margin-top: 5px;">
-              <button mat-raised-button color="primary" type="submit" (click)="saveOwnerData()">
-                <mat-icon>task_alt</mat-icon>
-              </button>
-              <button mat-raised-button color="warn" type="button" (click)="deleteOwnerData()">
-                <mat-icon>remove_circle_outline</mat-icon>
-              </button>
-              <button mat-raised-button color="accent" type="reset" (click)="resetOwnerDataForm()">
-                <mat-icon>loop</mat-icon>
-              </button>
-            </div>
+          <div class="input-row" fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+            <mat-form-field appearance="outline" fxFlex>
+              <mat-label>{{ 'setup.owner.code' | translate }} </mat-label>
+              <input matInput type="text" formControlName="code" />
+              <mat-error *ngIf="searchItemFormControls.code.invalid">
+                {{ 'error.field' | translate }}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" fxFlex>
+              <mat-label>{{ 'setup.owner.description' | translate }} </mat-label>
+              <input matInput type="text" formControlName="description" />
+              <mat-error *ngIf="searchItemFormControls.description.invalid">
+                {{ 'error.field' | translate }}</mat-error>
+            </mat-form-field>
+
+
+            <mat-form-field appearance="outline" fxFlex>
+              <mat-label>{{ 'setup.owner.shortName' | translate }} </mat-label>
+              <input matInput type="text" formControlName="shortName" />
+              <mat-error *ngIf="searchItemFormControls.shortName.invalid">
+                {{ 'error.field' | translate }}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" fxFlex>
+              <mat-label>{{ 'setup.owner.place' | translate }} </mat-label>
+              <input matInput type="text" formControlName="place" />
+              <mat-error *ngIf="searchItemFormControls.place.invalid">
+                {{ 'error.field' | translate }}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" fxFlex>
+              <mat-label>{{ 'setup.owner.telephone' | translate }} </mat-label>
+              <input matInput type="text" formControlName="telephone" />
+              <mat-error *ngIf="searchItemFormControls.telephone.invalid">
+                {{ 'error.field' | translate }}</mat-error>
+            </mat-form-field>
+
+
+
+            <mat-form-field appearance="outline" fxFlex>
+              <mat-label>{{
+                'setup.owner.blocked' | translate
+                }}</mat-label>
+              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="blocked">
+                <mat-option value="true">{{
+                  'general.yes' | translate
+                  }}</mat-option>
+                <mat-option value="false">{{
+                  'general.no' | translate
+                  }}</mat-option>
+              </mat-select>
+              <mat-error *ngIf="searchItemFormControls.blocked.invalid">{{
+                'error.field' | translate
+                }}</mat-error>
+            </mat-form-field>
+
+          </div>
+
+
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="search-container">
+        <mat-card-content>
+          <div class="form-button-container">
+            <button mat-raised-button color="primary" type="submit">
+              <mat-icon>search</mat-icon>
+            </button>
+            <button mat-raised-button color="accent" type="reset" (click)="resetItemSearchForm()">
+              <mat-icon>restart_alt</mat-icon>
+            </button>
           </div>
         </mat-card-content>
       </mat-card>
     </form>
-  </mat-tab>
-  <!-- Search -->
-  <mat-tab label="Search">
-    <!-- <form fxLayout="column" [formGroup]="searchWarehouseForm" (ngSubmit)="onSearchWarehouseSubmit()" class="slim-form">
-        <mat-card class="filter-container">
-          <mat-card-content>
-            <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px"
-              class="row">
-              <mat-form-field appearance="outline" fxFlex>
-                <mat-label>{{
-                  'setup.warehouse.code' | translate
-                  }}</mat-label>
-                <input matInput type="text" formControlName="warehouseCode" />
-                <mat-error *ngIf="searchWarehouseFormControls.warehouseCode.invalid">
-                  {{ 'error.field' | translate }}</mat-error>
-              </mat-form-field>
-              <mat-form-field appearance="outline" fxFlex>
-                <mat-label>{{
-                  'setup.warehouse.description' | translate
-                  }}</mat-label>
-                <input matInput type="text" formControlName="description" />
-                <mat-error *ngIf="searchWarehouseFormControls.description.invalid">
-                  {{ 'error.field' | translate }}</mat-error>
-              </mat-form-field>
-              <mat-form-field appearance="outline" fxFlex>
-                <mat-label>{{
-                  'setup.warehouse.id' | translate
-                  }}</mat-label>
-                <input matInput type="text" formControlName="id" />
-                <mat-error *ngIf="searchWarehouseFormControls.id.invalid">
-                  {{ 'error.field' | translate }}</mat-error>
-              </mat-form-field>
-            </div>
-          </mat-card-content>
-        </mat-card>
-        <mat-card class="search-container">
-          <mat-card-content>
-            <div class="form-button-container">
-              <button mat-raised-button color="primary" type="submit">
-                <mat-icon>search</mat-icon>
-              </button>
-              <button mat-raised-button color="accent" type="reset" (click)="resetWarehouseSearchForm()">
-                <mat-icon>restart_alt</mat-icon>
-              </button>
-            </div>
-          </mat-card-content>
-        </mat-card>
-      </form>
-      <mat-card class="mat-elevation-z10">
-        <mat-card-content>
-          <table mat-table [dataSource]="searchDataSource" class="mat-elevation-z8 search-table">
-            <ng-container matColumnDef="warehouseCode">
-              <th mat-header-cell *matHeaderCellDef>Warehouse Code</th>
-              <td mat-cell *matCellDef="let element; let idx=index">
-                <button mat-button disableRipple class="primary-button link-button"
-                  (click)="searchItemClick($event, element, idx)">{{ element.warehouseCode }}</button>
-              </td>
-            </ng-container>
-            <ng-container matColumnDef="description">
-              <th mat-header-cell *matHeaderCellDef>Description</th>
-              <td mat-cell *matCellDef="let element">
-                {{ element.description }}
-              </td>
-            </ng-container>
-            <ng-container matColumnDef="id">
-              <th mat-header-cell *matHeaderCellDef>ID</th>
-              <td mat-cell *matCellDef="let element">
-                {{ element.id }}
-              </td>
-            </ng-container>
-            <ng-container matColumnDef="email">
-              <th mat-header-cell *matHeaderCellDef>Email</th>
-              <td mat-cell *matCellDef="let element">
-                {{ element.email }}
-              </td>
-            </ng-container>
+    <mat-card class="mat-elevation-z10">
+      <mat-card-content>
+        <table mat-table [dataSource]="searchDataSource" class="mat-elevation-z8 search-table">
+          <ng-container matColumnDef="code">
+            <th mat-header-cell *matHeaderCellDef>Code</th>
+            <td mat-cell *matCellDef="let element; let idx=index">
+              <button mat-button disableRipple class="primary-button link-button"
+                (click)="searchItemClick($event, element, idx)">{{ element.code }}</button>
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef>Description</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.description }}
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="shortName">
+            <th mat-header-cell *matHeaderCellDef> Short Name </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.shortName }}
+            </td>
+          </ng-container>       
 
-            <tr mat-header-row *matHeaderRowDef="displayedSearchColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedSearchColumns"></tr>
-          </table>
-          <small *ngIf="searchDataSource.length === 0" class="empty-table">
-            No records found
-          </small>
-        </mat-card-content>
-      </mat-card> -->
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+        <small *ngIf="searchDataSource.length === 0" class="empty-table">
+          No records found
+        </small>
+      </mat-card-content>
+    </mat-card>
   </mat-tab>
+
 </mat-tab-group>

@@ -14,3 +14,14 @@ export interface SetupOwnerEmailModel {
     type: string;
     autoEmail: boolean;
 }
+
+
+export interface SetupOwnerModel {
+    code: string;
+    description: string;
+    shortName: string;
+    place: string;
+    telephone: string;
+    blocked: boolean;
+
+}

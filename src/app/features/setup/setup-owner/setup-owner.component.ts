@@ -13,7 +13,7 @@ import { patternsHelper } from '../../../helpers/patterns.helper';
 import { NotificationService } from 'src/app/services/notification.service';
 import { elementAt } from 'rxjs/operators';
 
-import { SetupOwnerEmailModel, SetupOwnerShipToModel, SetupOwnerWHControlModel } from '../models/setup-owner.model';
+import { SetupOwnerEmailModel, SetupOwnerModel, SetupOwnerShipToModel, SetupOwnerWHControlModel } from '../models/setup-owner.model';
 
 @Component({
   selector: 'ibe-setup-owner',
@@ -31,7 +31,7 @@ export class SetupOwnerComponent implements OnInit, AfterViewInit {
   filterErrorTranslated = '';
 
   dataOwnerForm!: FormGroup;
-
+  searchItemForm!: FormGroup;
   displayedDocumentColumns = ['type', 'autoEmail'];
   documentDataSource: SetupOwnerEmailModel[] = [];
   dummyDocumentModel: SetupOwnerEmailModel[] = [
@@ -62,6 +62,38 @@ export class SetupOwnerComponent implements OnInit, AfterViewInit {
     { checked: false, code: 'EQU', name: 'EQUIPMENT BASED WAREHOUSE' }
   ];
 
+  displayedColumns = ['code', 'description','shortName'];
+
+
+  displayedshipToColumns = ['code', 'name'];
+  shipToDataSource: SetupOwnerShipToModel[] = [];
+  dummyshipToModel: SetupOwnerShipToModel[] = [
+    { address: 'GEN', shipToCode: 'GEN', shipToName: 'GENERAL WAREHOUSE' },
+    { address: 'GEN', shipToCode: 'LIQ', shipToName: 'SPIRIT WAREHOUSE' },
+    { address: 'GEN', shipToCode: 'M01', shipToName: 'MOTHER WAREHOUSE' },
+    { address: 'GEN', shipToCode: 'EQU', shipToName: 'EQUIPMENT BASED WAREHOUSE' }
+  ];
+
+  searchDataSource: SetupOwnerModel[] = [];
+  dummySearchModel: SetupOwnerModel[] = [
+    {
+      code: "example1",
+      description: "this is dummy decription",
+      shortName: "normal",
+      place: "normalnormalnormal",
+      telephone: "121212",      
+      blocked: true
+    },
+    {
+      code: "example2",
+      description: "this is dummy decription",
+      shortName: "normal",
+      place: "normalnormalnormal",
+      telephone: "121212",      
+      blocked: false
+    }
+  ];
+
 
   constructor(
     private fb: FormBuilder,
@@ -72,6 +104,7 @@ export class SetupOwnerComponent implements OnInit, AfterViewInit {
     private notification: NotificationService
   ) {
     this.createDataOwnerForm();
+    this.createSearchItemForm();
   }
 
   ngOnInit(): void {
@@ -84,6 +117,8 @@ export class SetupOwnerComponent implements OnInit, AfterViewInit {
 
     this.documentDataSource = this.dummyDocumentModel;
     this.whControlDataSource = this.dummyWHControlModel;
+    this.shipToDataSource = this.dummyshipToModel;
+    this.searchDataSource = this.dummySearchModel;
   }
 
   ngAfterViewInit() {
@@ -148,7 +183,7 @@ export class SetupOwnerComponent implements OnInit, AfterViewInit {
         [
           Validators.maxLength(100),
           Validators.pattern(patternsHelper.alphanumeric)
-        ]
+        ],
       ],
       address4: ['', [Validators.maxLength(100), Validators.pattern(patternsHelper.alphanumeric)]],
       place: ['', [Validators.maxLength(100), Validators.pattern(patternsHelper.alphanumeric)]],
@@ -157,7 +192,49 @@ export class SetupOwnerComponent implements OnInit, AfterViewInit {
       fax: ['', [Validators.maxLength(30), Validators.pattern(patternsHelper.alphanumeric)]],
       email: ['', [Validators.maxLength(500), Validators.pattern(patternsHelper.emails)]],
       blockCustomer : '',
-      actAsCustomer : ''
+      actAsCustomer : '',
+      shipToCode: ['', [Validators.required, Validators.maxLength(10), Validators.pattern(patternsHelper.alphanumeric)]],
+      shipToName: [
+        '',
+        [
+          Validators.required,
+          Validators.maxLength(100),
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
+      ],
+      shipToaddress1: [
+        '',
+        [
+          Validators.required,
+          Validators.maxLength(100),
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
+      ],
+      shipToaddress2: [
+        '',
+        [
+          Validators.maxLength(100),
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
+      ],
+      shipToaddress3: [
+        '',
+        [
+          Validators.maxLength(100),
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
+      ],
+      shipToaddress4: [
+        '',
+        [
+          Validators.maxLength(100),
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
+      ], 
+      shipTozip: ['', [Validators.maxLength(50), Validators.pattern(patternsHelper.alphanumeric)]],
+      shipTotelephone: ['', [Validators.maxLength(30), Validators.pattern(patternsHelper.alphanumeric)]],
+      shipTofax: ['', [Validators.maxLength(30), Validators.pattern(patternsHelper.alphanumeric)]],
+      shipToemail: ['', [Validators.maxLength(500), Validators.pattern(patternsHelper.emails)]],
     });
   }
 
@@ -172,4 +249,71 @@ export class SetupOwnerComponent implements OnInit, AfterViewInit {
   resetOwnerDataForm() {
     this.dataOwnerForm.reset();
   }
+
+
+  // Serch related function
+
+  createSearchItemForm() {
+    this.searchItemForm = this.fb.group({
+      code: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      description: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      shortName: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      place: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      telephone: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      blocked: [''],    
+    });
+  }
+
+  get searchItemFormControls() {
+    return this.searchItemForm.controls;
+  }
+
+
+  onSearchItemSubmit() {
+    if (!this.searchItemForm.valid) {
+      this.notification.error(this.formErrorTranslated);
+      return;
+    }
+    const code: string =
+      this.searchItemForm.get('code')?.value || '';
+    const description: string =
+      this.searchItemForm.get('description')?.value || '';
+    const shortName: string =
+      this.searchItemForm.get('shortName')?.value || '';
+    const place: string =
+      this.searchItemForm.get('place')?.value || '';
+    const telephone: string =
+      this.searchItemForm.get('telephone')?.value || '';
+    const blocked: string =
+      this.searchItemForm.get('blocked')?.value || '';   
+    if (code.trim() === '' && description.trim() === '' && 
+    shortName.trim() === '' && place.trim() === '' &&
+     telephone.trim() === '' && blocked.trim() === '') {
+      this.notification.error(this.filterErrorTranslated);
+      return;
+    } else {
+      this.loader.show();
+      setTimeout(() => {
+        this.searchDataSource = [...this.dummySearchModel];
+        this.loader.hide();
+      }, 500);
+    }
+  }
+
+  
+  searchItemClick(event: any, item: SetupOwnerModel, idx: number) {
+    const tabGroup = this.setupOwnerTab;
+    if (!tabGroup || !(tabGroup instanceof MatTabGroup)) return;
+    tabGroup.selectedIndex = 0;
+  }
+
+  resetItemSearchForm() {
+    this.searchItemForm.reset();
+    this.searchDataSource = [];
+  }
+
+
+
+
+
 }
