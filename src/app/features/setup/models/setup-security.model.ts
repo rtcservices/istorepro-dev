@@ -15,7 +15,8 @@ export interface SetupSecurityModel {
   lastSuspended: string;
   lastRevoked: string;
   warehouse: string[];
-  availablePrevileges: string[];
+  availablePrevileges: PrevilegeNode[];
+  allocatedPrevileges: PrevilegeNode[];
 }
 export interface SetupSecuritySearchModel {
   loginName: string;
@@ -27,4 +28,18 @@ export interface SetupSecurityPrevilegesTreeModel {
   name: string;
   parentId: string;
   selected: boolean;
+}
+
+export interface PrevilegeNode {
+  id: number;
+  name: string;
+  parentId?: number;
+  children?: PrevilegeNode[];
+}
+export interface FlattenedPrevilegeNode {
+  id?: number;
+  name: string;
+  level: number;
+  expandable: boolean;
+  parentId?: number;
 }
