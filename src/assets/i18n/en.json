@@ -308,6 +308,7 @@
         "weightFillPercentage": "Weight Fill %",
         "autoFill": "Auto Fill"
       },
+      "warehouseCode": "Warehouse Code",
       "audit" : "Audit",
       "excludeFromPlanning" : "Exclude From Planning",
       "excludeFromAutoAllocation" : "Exclude From Auto Allocation"
