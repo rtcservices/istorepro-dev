@@ -26,7 +26,7 @@
                               {{ 'error.field' | translate }}
                             </mat-error>
                           </mat-form-field>
-                          
+
                         </div>
                         <div fxLayout="row" class="row" fxLayoutGap="5px">
                           <mat-form-field appearance="outline" fxFlex>
@@ -89,12 +89,40 @@
                             <input matInput type="text" formControlName="telephone" />
                           </mat-form-field>
                         </div>
+                        <div class="pale-border-box">
+                          <mat-checkbox color="primary" [checked]="suspendRevoke"
+                            (change)="toggleSuspendRevoke($event)">
+                            <b>{{'setup.security.suspendRevoke' | translate }}</b>
+                          </mat-checkbox>
+                          <div fxLayout="row" fxLayoutAlign.lt-md="column">
+                            <div fxFlex fxLayout="row" fxLayoutAlign.lt-md="column">
+                              <mat-form-field appearance="outline" class="first-column">
+                                <mat-label>{{'setup.security.suspendFrom' | translate }}</mat-label>
+                                <input matInput type="text" formControlName="suspendFrom" [readonly]="!suspendRevoke" />
+                              </mat-form-field>
+                              <mat-form-field appearance="outline">
+                                <mat-label>{{'setup.security.suspendTo' | translate}}</mat-label>
+                                <input matInput type="text" formControlName="suspendTo" [readonly]="!suspendRevoke" />
+                              </mat-form-field>
+                            </div>
+                            <div fxFlex fxLayout="row">
+                              <fieldset class="read-only-input first-column">
+                                <legend>{{ 'setup.security.lastSuspended' | translate }}</legend>
+                                <label>ADMINISTRATOR</label>
+                              </fieldset>
+                              <fieldset class="read-only-input">
+                                <legend>{{ 'setup.security.lastRevoked' | translate }}</legend>
+                                <label>ADMINISTRATOR</label>
+                              </fieldset>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                       <div fxFlex="20%">
-                          <fieldset class="read-only-input" fxLayout="row" fxFlex = "20"  fxLayoutGap="5px">
-                            <legend>{{ 'setup.security.expiryOn' | translate }}</legend>
-                            <label>{{ dataSetupSecurityFormControls.expiryOn.value }}</label>
-                          </fieldset>
+                        <fieldset class="read-only-input">
+                          <legend>{{ 'setup.security.expiryOn' | translate }}</legend>
+                          <label>14/06/2023</label>
+                        </fieldset>
                       </div>
                     </div>
                   </mat-card-content>
@@ -136,51 +164,33 @@
                 </mat-card>
               </mat-tab>
               <mat-tab label="Privileges">
-              
+
                 <div fxLayout="row">
-                <div fxFlex="40%" >
-                  <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
-                    <!-- This is the tree node template for leaf nodes -->
-                    <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
-                      <!-- use a disabled button to provide padding for tree leaf -->
-                      <button mat-icon-button disabled></button>
-                         <mat-checkbox [checked]="descendantsAllSelected(node)"
-                      [indeterminate]="descendantsPartiallySelected(node)"
-                      (change)="todoItemSelectionToggle(node)">  {{node.name}}</mat-checkbox>           
-                    </mat-tree-node>
-                    <!-- This is the tree node template for expandable nodes -->
-                    <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
-                      <button mat-icon-button matTreeNodeToggle
-                              [attr.aria-label]="'toggle ' + node.name">
-                        <mat-icon class="mat-icon-rtl-mirror">
-                          {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
-                        </mat-icon>
-                      </button>
-                      <mat-checkbox [checked]="descendantsAllSelected(node)"
-                      [indeterminate]="descendantsPartiallySelected(node)"
-                      (change)="todoItemSelectionToggle(node)">  {{node.name}}</mat-checkbox>
-                    
-                    </mat-tree-node>
-                  </mat-tree>
+                  <div fxFlex="40%">
+                    <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+                      <!-- This is the tree node template for leaf nodes -->
+                      <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+                        <!-- use a disabled button to provide padding for tree leaf -->
+                        <button mat-icon-button disabled></button>
+                        <mat-checkbox [checked]="descendantsAllSelected(node)"
+                          [indeterminate]="descendantsPartiallySelected(node)" (change)="todoItemSelectionToggle(node)">
+                          {{node.name}}</mat-checkbox>
+                      </mat-tree-node>
+                      <!-- This is the tree node template for expandable nodes -->
+                      <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
+                        <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'toggle ' + node.name">
+                          <mat-icon class="mat-icon-rtl-mirror">
+                            {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+                          </mat-icon>
+                        </button>
+                        <mat-checkbox [checked]="descendantsAllSelected(node)"
+                          [indeterminate]="descendantsPartiallySelected(node)" (change)="todoItemSelectionToggle(node)">
+                          {{node.name}}</mat-checkbox>
+
+                      </mat-tree-node>
+                    </mat-tree>
+                  </div>
                 </div>
-
-                <div fxFlex="20%">
-
-                </div>
-
-                <div fxFlex="40%">
-
-                </div>
-                
-
-                </div>
-
-
-
-
-
-
-
               </mat-tab>
             </mat-tab-group>
           </mat-card-content>

@@ -1,5 +1,11 @@
 import { SelectionModel } from '@angular/cdk/collections';
-import { AfterViewInit, Component, Injectable, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  Injectable,
+  OnInit,
+  ViewChild
+} from '@angular/core';
 import {
   AbstractControl,
   FormBuilder,
@@ -15,18 +21,18 @@ import {
   PrevilegeNode,
   FlattenedPrevilegeNode
 } from '../models/setup-security.model';
-import {FlatTreeControl} from '@angular/cdk/tree';
-import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
-
+import { FlatTreeControl } from '@angular/cdk/tree';
+import {
+  MatTreeFlatDataSource,
+  MatTreeFlattener
+} from '@angular/material/tree';
+import { MatCheckboxChange } from '@angular/material/checkbox';
 
 @Component({
   selector: 'ibe-setup-security',
   templateUrl: './setup-security.component.html',
   styleUrls: ['./setup-security.component.scss']
 })
-
-
-
 export class SetupSecurityComponent implements OnInit, AfterViewInit {
   //#region "Data Tab Variables"
   @ViewChild('setupSecurityDataTab', { static: false })
@@ -35,7 +41,7 @@ export class SetupSecurityComponent implements OnInit, AfterViewInit {
   //#endregion
 
   //#region "User Tab Variables"
-
+  suspendRevoke = false;
   //#endregion
 
   //#region "Access Tab Variables"
@@ -60,14 +66,11 @@ export class SetupSecurityComponent implements OnInit, AfterViewInit {
   availablePrevileges: PrevilegeNode[] = [];
   allocatedPrevileges: PrevilegeNode[] = [];
   //#endregion
-/**
- * Checklist database, it can build a tree structured Json object.
- * Each node in Json object represents a to-do item or a category.
- * If a node is a category, it has children items and new items can be added under the category.
- */
-
-
-
+  /**
+   * Checklist database, it can build a tree structured Json object.
+   * Each node in Json object represents a to-do item or a category.
+   * If a node is a category, it has children items and new items can be added under the category.
+   */
 
   //#region "Search Tab Variables"
   searchSetupSecurityForm!: FormGroup;
@@ -84,31 +87,37 @@ export class SetupSecurityComponent implements OnInit, AfterViewInit {
   displayedSearchColumns: string[] = ['text'];
   //#endregion
 
- 
   private _transformer = (node: PrevilegeNode, level: number) => {
     return {
       expandable: !!node.children && node.children.length > 0,
       name: node.name,
-      
-      level: level,
+
+      level: level
     };
-  }
+  };
 
   treeControl = new FlatTreeControl<FlattenedPrevilegeNode>(
-    node => node.level, node => node.expandable);
+    (node) => node.level,
+    (node) => node.expandable
+  );
 
   treeFlattener = new MatTreeFlattener(
-    this._transformer, node => node.level, node => node.expandable, node => node.children);
+    this._transformer,
+    (node) => node.level,
+    (node) => node.expandable,
+    (node) => node.children
+  );
 
   dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
- 
-   /** The selection for checklist */
-   checklistSelection = new SelectionModel<FlattenedPrevilegeNode>(true /* multiple */);
- 
+
+  /** The selection for checklist */
+  checklistSelection = new SelectionModel<FlattenedPrevilegeNode>(
+    true /* multiple */
+  );
+
   //#region "Constructor and Page Events"
   constructor(private fb: FormBuilder) {
-   this.createAvailablePrevilegeTree()
-
+    this.createAvailablePrevilegeTree();
   }
 
   ngOnInit(): void {
@@ -117,7 +126,7 @@ export class SetupSecurityComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-   /*  this.setTabHeights(); */
+    /*  this.setTabHeights(); */
   }
   //#endregion
 
@@ -132,9 +141,6 @@ export class SetupSecurityComponent implements OnInit, AfterViewInit {
     this.dataSetupSecurityForm.reset();
   }
   //#endregion
-
-
-  
 
   //#region "User Tab"
   createDataSetupSecurityForm() {
@@ -279,7 +285,6 @@ export class SetupSecurityComponent implements OnInit, AfterViewInit {
       ]
     };
 
-
     const basePrevileges: PrevilegeNode = {
       id: 12,
       name: 'Base',
@@ -352,12 +357,11 @@ export class SetupSecurityComponent implements OnInit, AfterViewInit {
       {
         id: 1,
         name: 'Functions',
-        children: [setupPrevileges,basePrevileges]
+        children: [setupPrevileges, basePrevileges]
       }
     ];
 
     this.dataSource.data = this.availablePrevileges;
-  
   }
   //#endregion
 
@@ -405,34 +409,36 @@ export class SetupSecurityComponent implements OnInit, AfterViewInit {
   }
   //#endregion
 
-
-
   getLevel = (node: FlattenedPrevilegeNode) => node.level;
 
   isExpandable = (node: FlattenedPrevilegeNode) => node.expandable;
-/* 
+  /*
   getChildren = (node: PrevilegeNode): PrevilegeNode[] => node.children;
  */
-  hasChild = (_: number, _nodeData: FlattenedPrevilegeNode) => _nodeData.expandable;
+  hasChild = (_: number, _nodeData: FlattenedPrevilegeNode) =>
+    _nodeData.expandable;
 
-  hasNoContent = (_: number, _nodeData: FlattenedPrevilegeNode) => _nodeData.name === '';
-
-
+  hasNoContent = (_: number, _nodeData: FlattenedPrevilegeNode) =>
+    _nodeData.name === '';
 
   /** Whether all the descendants of the node are selected. */
   descendantsAllSelected(node: FlattenedPrevilegeNode): boolean {
     const descendants = this.treeControl.getDescendants(node);
-    const descAllSelected = descendants.length > 0 && descendants.every(child => {
-      return this.checklistSelection.isSelected(child);
-    });
+    const descAllSelected =
+      descendants.length > 0 &&
+      descendants.every((child) => {
+        return this.checklistSelection.isSelected(child);
+      });
     return descAllSelected;
   }
 
   /** Whether part of the descendants are selected */
   descendantsPartiallySelected(node: FlattenedPrevilegeNode): boolean {
     const descendants = this.treeControl.getDescendants(node);
-    const result = descendants.some(child => this.checklistSelection.isSelected(child));  
-    console.log( node)
+    const result = descendants.some((child) =>
+      this.checklistSelection.isSelected(child)
+    );
+    // console.log(node);
     return result && !this.descendantsAllSelected(node);
   }
 
@@ -445,7 +451,7 @@ export class SetupSecurityComponent implements OnInit, AfterViewInit {
       : this.checklistSelection.deselect(...descendants);
 
     // Force update for the parent
-    descendants.forEach(child => this.checklistSelection.isSelected(child));
+    descendants.forEach((child) => this.checklistSelection.isSelected(child));
     this.checkAllParentsSelection(node);
   }
 
@@ -468,9 +474,11 @@ export class SetupSecurityComponent implements OnInit, AfterViewInit {
   checkRootNodeSelection(node: FlattenedPrevilegeNode): void {
     const nodeSelected = this.checklistSelection.isSelected(node);
     const descendants = this.treeControl.getDescendants(node);
-    const descAllSelected = descendants.length > 0 && descendants.every(child => {
-      return this.checklistSelection.isSelected(child);
-    });
+    const descAllSelected =
+      descendants.length > 0 &&
+      descendants.every((child) => {
+        return this.checklistSelection.isSelected(child);
+      });
     if (nodeSelected && !descAllSelected) {
       this.checklistSelection.deselect(node);
     } else if (!nodeSelected && descAllSelected) {
@@ -498,7 +506,7 @@ export class SetupSecurityComponent implements OnInit, AfterViewInit {
     return null;
   }
 
-
-
-  
+  toggleSuspendRevoke(evt: MatCheckboxChange) {
+    this.suspendRevoke = evt.checked;
+  }
 }
