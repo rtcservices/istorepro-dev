@@ -30,7 +30,8 @@ div.form-checkbox-input {
 .input-group {
   margin-top: 10px;
   .input-group-title {
-    padding: 0px 30px !important;
+    min-width: 83px !important;
+    padding: 0px 17px !important;
   }
   .input-group-icon {
     padding: 0 20px;

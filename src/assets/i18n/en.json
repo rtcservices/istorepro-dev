@@ -274,8 +274,8 @@
         "whControl": "WH. Control",
         "code": "Code",
         "name": "Name",
-        "customers": "Customers",
-        "vendors": "Vendors",
+        "customers": "Customer",
+        "vendors": "Vendor",
         "stpref": "St. Pref",
         "sku": "SKU/Location"
       },
@@ -351,8 +351,9 @@
         "weightFillPercentage": "Weight Fill %",
         "autoFill": "Auto Fill"
       },
-      "warehouseCode": "Warehouse Code",
+      "warehouseCode": "Code",
       "audit": "Audit",
+      "status": "Status",
       "excludeFromPlanning": "Exclude From Planning",
       "excludeFromAutoAllocation": "Exclude From Auto Allocation"
     }

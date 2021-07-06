@@ -172,44 +172,44 @@
       "allocatedPrevileges": "割り当てられた特権"
     },
     "owner": {
-      "customer": "Customer",
-      "vendor": "Vendor",
-      "code": "Code",
-      "name": "Name",
-      "shortName": "Short Name",
-      "type": "Type",
-      "address1": "Address 1",
-      "address2": "Address 2",
-      "address3": "Address 3",
-      "address4": "Address 4",
-      "place": "Place",
-      "zip": "Zip",
-      "telephone": "Telephone",
-      "fax": "Fax",
-      "email": "Email",
-      "blockCustomer": "Block Customer",
-      "actAsCustomer": "Act as Customer",
-      "import": "Import",
+      "customer": "お客様",
+      "vendor": "ベンダー",
+      "code": "コード",
+      "name": "名前",
+      "shortName": "ショートネーム",
+      "type": "タイプ",
+      "address1": "住所（1",
+      "address2": "住所（2",
+      "address3": "住所（3",
+      "address4": "住所（4",
+      "place": "場所",
+      "zip": "ジップ",
+      "telephone": "電話",
+      "fax": "ファックス",
+      "email": "Eメール",
+      "blockCustomer": "顧客をブロックする",
+      "actAsCustomer": "顧客として行動する",
+      "import": "インポート",
       "documents": {
-        "type": "Type",
-        "autoEmail": "Auto Email"
+        "type": "タイプ",
+        "autoEmail": "自動メール"
       },
       "shipTo": {
-        "shipToCode": "Ship To Code",
-        "shipToName": "Ship To Name",
-        "address1": "Address 1",
-        "address2": "Address 2",
-        "address3": "Address 3",
-        "address4": "Address 4",
-        "zip": "Zip",
-        "telephone": "Telephone",
-        "fax": "Fax",
-        "email": "Email",
-        "address": "Address"
+        "shipToCode": "コードに発送",
+        "shipToName": "名前に出荷",
+        "address1": "住所（1",
+        "address2": "住所（2",
+        "address3": "住所（3",
+        "address4": "住所（4",
+        "zip": "ジップ",
+        "telephone": "電話",
+        "fax": "ファックス",
+        "email": "Eメール",
+        "address": "住所"
       },
       "whControl" :{
-        "code":"Code",
-        "name":"Name"
+        "code":"コード",
+        "name":"名前"
       }
     }
   },
@@ -350,6 +350,7 @@
         "autoFill": "オートフィル"
       },
       "audit" : "監査",
+      "status": "状態",
       "excludeFromPlanning" : "計画から除外する",
       "excludeFromAutoAllocation" : "自動割り当てから除外する"
     }
