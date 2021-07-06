@@ -1,0 +1,54 @@
+
+th,
+td {
+  height: 2px;
+}
+
+.site-table td {
+  padding: 0 !important;
+}
+
+
+
+select {
+  height: 22px;
+}
+
+.store-dialog-search {
+  margin: 10px;
+  height: 36px;
+  padding: 0px !important;
+}
+
+// .wh-control-table {
+//   margin-top: 50px;
+// }
+
+
+
+.input-group {
+  padding-top: 6px;
+}
+
+.input-group-title {
+  min-width: 83px;
+}
+
+
+.modal-button {
+  margin-top: 0px;
+  text-align: right;
+  button {
+    transform: scale(0.7);
+  }
+}
+.modal-button-bottom {
+  margin-top: 10px;
+  text-align: right;
+  button {
+    transform: scale(0.7);
+  }
+}
+button[mat-dialog-close] {
+  transform: scale(0.7);
+}

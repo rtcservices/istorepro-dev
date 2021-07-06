@@ -9,6 +9,8 @@ import { BaseStorageTypeComponent } from './base-storage-type/base-storage-type.
 import { BaseZoneComponent } from './base-zone/base-zone.component';
 import { BaseLocationComponent } from './base-location/base-location.component';
 import { BaseReasonComponent } from './base-reason/base-reason.component';
+import { StprefDialogComponent } from './base-item/modals/stpref-dialog/stpref-dialog.component';
+import { OwnerDialogComponent } from './base-item/modals/owner-dialog/owner-dialog.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { BaseReasonComponent } from './base-reason/base-reason.component';
     BaseStorageTypeComponent,
     BaseZoneComponent,
     BaseLocationComponent,
-    BaseReasonComponent
+    BaseReasonComponent,
+    StprefDialogComponent,
+    OwnerDialogComponent
   ],
   imports: [CommonModule, SharedModule, BaseRoutingModule]
 })

@@ -17,6 +17,8 @@ import { LoaderService } from '../../../services/loader.service';
 import { SiteTranslateService } from 'src/app/services/site-translate.service';
 import { NotificationService } from '../../../services/notification.service';
 import { TitleService } from '../../../services/title.service';
+import { OwnerDialogComponent } from './modals/owner-dialog/owner-dialog.component';
+import { StprefDialogComponent } from './modals/stpref-dialog/stpref-dialog.component';
 
 @Component({
   selector: 'ibe-base-item',
@@ -24,13 +26,13 @@ import { TitleService } from '../../../services/title.service';
   styleUrls: ['./base-item.component.scss']
 })
 export class BaseItemComponent implements OnInit {
+
   @ViewChild('baseItemTab', { static: false })
   baseItemTab!: MatTabGroup;
   @ViewChild('baseItemDataTab', { static: false })
   baseItemDataTab!: MatTabGroup;
   dataItemForm!: FormGroup;
   searchItemForm!: FormGroup;
-  dataItemOwnerForm!: FormGroup;
   dataItemStForm!: FormGroup;
   formErrorTranslated = '';
   filterErrorTranslated = '';
@@ -138,7 +140,6 @@ export class BaseItemComponent implements OnInit {
   ) {
     this.createDataItemForm();
     this.createSearchItemForm();
-    this.createDataItemOwnerForm();
     this.createDataItemStForm();
   }
 
@@ -242,23 +243,6 @@ export class BaseItemComponent implements OnInit {
     return this.dataItemForm.controls;
   }
 
-  createDataItemOwnerForm() {
-    this.dataItemOwnerForm = this.fb.group({
-      warehouse: '',
-      item: '',
-      type: '',
-      owner: '',
-      ownerName: ''
-    });
-  }
-  onDataItemOwnerSubmit() {}
-
-  resetItemDataOwnerForm() {
-    this.dataItemOwnerForm.reset();
-  }
-  get dataItemFormOwnerControls() {
-    return this.dataItemOwnerForm.controls;
-  }
 
   createDataItemStForm() {
     this.dataItemStForm = this.fb.group({
@@ -286,18 +270,18 @@ export class BaseItemComponent implements OnInit {
     this.dataItemForm.reset();
   }
 
-  openDialog(stpref: any) {
-    this.dialog.open(stpref, {
-      width: '600px'
+  openownerDialog() {
+    this.dialog.open(OwnerDialogComponent, {
+      width: '800px'
     });
   }
 
-  openstoreDialog(owner: any) {
-    this.dialog.open(owner, {
-      width: '600px'
+  openstoreDialog() {
+    this.dialog.open(StprefDialogComponent, {
+      width: '800px'
     });
   }
-
+ 
   createSearchItemForm() {
     this.searchItemForm = this.fb.group({
       item: ['', [Validators.pattern(patternsHelper.alphanumeric)]],

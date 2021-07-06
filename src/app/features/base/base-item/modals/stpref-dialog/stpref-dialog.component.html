@@ -1,0 +1,67 @@
+
+    <h1 mat-dialog-title></h1>
+    <div mat-dialog-content>
+      <form [formGroup]="dataItemStForm" (ngSubmit)="onDataItemStSubmit()" class="slim-form">
+        <mat-card>
+          <mat-card-content>
+            <div class="input-row" fxLayout="column" fxLayoutGap="5px">
+              <fieldset class="read-only-input" fxFlex>
+                <legend>{{ 'base.item.warehouse' | translate }}</legend>
+                <label>Warehouse Name</label>
+              </fieldset>
+              <fieldset class="read-only-input" fxFlex>
+                <legend>{{ 'base.item.item' | translate }}</legend>
+                <label>Item Name</label>
+              </fieldset>
+              <mat-form-field appearance="outline" fxFlex>
+                <mat-label>{{
+                  'base.item.itemType' | translate
+                  }}</mat-label>
+                <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="itemType">
+                </mat-select>
+                <mat-error *ngIf="dataItemFormStControls.itemType.invalid">{{
+                  'error.field' | translate
+                  }}</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="text-right modal-button">
+              <button mat-raised-button color="primary" type="submit">
+                <mat-icon>search</mat-icon>
+              </button>
+              <button mat-raised-button color="accent" type="reset" (click)="resetItemDataStForm()">
+                <mat-icon>restart_alt</mat-icon>
+              </button>
+            </div>
+            <table class="site-table w-100">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>{{ 'base.item.storageType' | translate}}</th>
+                  <th>{{ 'base.item.primary' | translate}} ? </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="display: none;">
+                  <td></td>
+                  <td>
+                    <select class="column-200">
+                      <option value=""></option>
+                    </select>
+                  </td>
+                  <td class="checkbox-column">
+                    <mat-checkbox color="primary"></mat-checkbox>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="modal-button-bottom">
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </form>
+    </div>
+    <mat-dialog-actions>
+      <button mat-raised-button mat-dialog-close color="warn" type="submit">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-dialog-actions>
