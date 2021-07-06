@@ -223,7 +223,7 @@
       "alertDays": "Alert Days",
       "mandatory": "Mandatory",
       "expiry": "Expiry",
-      "manufacturingDate": "Manufacturing Date",
+      "manufacturingDate": "Mfg Date",
       "batchNo": "Batch No",
       "consolidateOn": "Consolidate On",
       "defaultPick": "Default Pick",

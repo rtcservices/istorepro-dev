@@ -6,23 +6,17 @@
 }
 
 .pale-border-box {
+  height: 70px;
   margin-bottom: 10px;
+  @include breakpoint(mobileonly) {
+    height: 135px;
+  }
   div.row {
     margin-top: 10px;
     & > div {
       margin-left: 10px;
-      margin-right: 30px !important;
-      padding-right: 30px !important;
-      @include breakpoint(mobileonly) {
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        padding: 0% !important;
-      }
-      mat-checkbox {
-        @include breakpoint(mobileonly) {
-          display: block !important;
-        }
-      }
+      margin-right: 20px !important;
+      padding-right: 20px !important;
     }
     mat-form-field {
       margin-left: 15px;
