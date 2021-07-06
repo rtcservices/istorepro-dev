@@ -235,6 +235,8 @@
                         <div class="input-group-icon input-ic-padding-b">{{'general.mm' |
                           translate}}</div>
                       </div>
+                      <div fxFlex></div>
+                      <div fxFlex></div>
                       <div class="autoFill-checkbox" fxFlex>
                         <mat-checkbox color="primary" formControlName="autoFill">{{
                           'base.location.capacity.autoFill' | translate
@@ -279,17 +281,17 @@
                         <div class="input-group-icon input-ic-padding-b">{{'general.kg' |
                           translate}}</div>
                       </div>
-                      <div class="validate-checkbox" fxFlex>
+                      <div class="validate-checkbox" fxFlex >
                         <mat-checkbox color="primary" formControlName="volumeValidate">{{
                           'base.location.capacity.weightValidate' | translate
                           }}</mat-checkbox>
                       </div>
-                      <mat-form-field appearance="outline" fxFlex="25">
+                      <mat-form-field appearance="outline" fxFlex="25" fxFlex.lt-sm="25">
                         <mat-label>{{'base.location.capacity.weightSafePercentage' | translate}}
                         </mat-label>
                         <input matInput type="text" formControlName="weightSafePercentage" />
                       </mat-form-field>
-                      <mat-form-field appearance="outline" fxFlex="25">
+                      <mat-form-field appearance="outline" fxFlex="25" fxFlex.lt-sm="25">
                         <mat-label>{{'base.location.capacity.weightFillPercentage' | translate}}
                         </mat-label>
                         <input matInput readonly type="text" formControlName="weightFillPercentage" />

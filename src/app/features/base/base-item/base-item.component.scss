@@ -1,4 +1,4 @@
-@import '../../../../assets/scss/variables.scss';
+@import "../../../../assets/scss/variables.scss";
 
 .mat-column-action {
   width: 50px;
@@ -17,27 +17,23 @@
   margin: 0.25rem 0;
 }
 
-
-
 .border-none {
   border: none !important;
 }
 
-  th,td {
-    text-align: center !important;
-    height: 2px;
-  }
+th,
+td {
+  text-align: center !important;
+  height: 2px;
+}
 
-
-  .site-table td {
-   padding:0 !important;
+.site-table td {
+  padding: 0 !important;
 }
 
 .input-ic-padding {
   padding-left: 25px;
 }
-
-
 
 .input-ic-padding-b {
   padding-left: 17px;
@@ -49,8 +45,8 @@ select {
 
 .store-dialog-search {
   margin: 10px;
-    height: 36px;
-    padding: 0px !important;
+  height: 36px;
+  padding: 0px !important;
 }
 
 .wh-control-table {
@@ -64,5 +60,15 @@ select {
   table {
     margin-bottom: 10px;
     padding-top: 10px;
+  }
+}
+
+.input-group-title {
+  min-width: 83px;
+}
+
+.pale-border-box {
+  ::ng-deep .mat-form-field-wrapper{
+    padding-bottom: 0em;
   }
 }

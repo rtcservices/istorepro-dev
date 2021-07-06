@@ -12,10 +12,19 @@ div.form-checkbox-input {
 .autoFill-checkbox {
   margin-left: 30px;
   padding-top: 12px;
+  @include breakpoint(mobileonly) {
+    display: block;
+  }
 }
 .pale-border-box {
+  // height: 37px;
   mat-checkbox {
     margin-left: 10px;
+  }
+  b{
+    @include breakpoint(mobileonly) {
+      display: block;
+    }
   }
 }
 .input-group {
@@ -25,5 +34,10 @@ div.form-checkbox-input {
   }
   .input-group-icon {
     padding: 0 20px;
+  }
+  input{
+    @include breakpoint(mobileonly) {
+      padding: 8px 40px;
+    }
   }
 }
