@@ -97,8 +97,7 @@
                                     }}
                                   </mat-error>
                                 </div>
-                                <div class="input-group-icon input-ic-padding "> <span
-                                    class="text-center ">{{'general.kg'
+                                <div class="input-group-icon input-ic-padding "> <span class="text-center ">{{'general.kg'
                                     |
                                     translate}} </span></div>
                               </div>
@@ -621,7 +620,7 @@
     <form [formGroup]="dataItemOwnerForm" (ngSubmit)="onDataItemOwnerSubmit()" class="slim-form">
       <mat-card>
         <mat-card-content>
-          <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="10px" fxLayoutGap.lt-md="0px">
+          <div class="input-row row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="10px" fxLayoutGap.lt-md="0px">
             <fieldset class="read-only-input" fxFlex="49">
               <legend>{{ 'base.item.warehouse' | translate }}</legend>
               <label>Warehouse Name</label>
@@ -631,12 +630,16 @@
               <label>Item Name</label>
             </fieldset>
           </div>
-          <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px" fxLayoutGap.lt-md="0px">
+          <div class="input-row row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px" fxLayoutGap.lt-md="0px">
             <mat-form-field appearance="outline" fxFlex="33">
               <mat-label>{{
                 'base.item.type' | translate
                 }}</mat-label>
-              <input matInput type="text" formControlName="type" />
+              <mat-select formControlName="type">
+                <option value=""></option>
+                <option value="Customer">Customer</option>
+                <option value="Vendor">Vendor</option>
+              </mat-select>
             </mat-form-field>
             <mat-form-field appearance="outline" fxFlex="33">
               <mat-label>{{
@@ -685,15 +688,15 @@
               </tr>
             </tbody>
           </table>
-          <div class="modal-button-bottom">
-            <button mat-raised-button mat-dialog-close color="warn" type="submit">
-              <mat-icon>close</mat-icon>
-            </button>
-          </div>
         </mat-card-content>
       </mat-card>
     </form>
   </div>
+  <mat-dialog-actions>
+    <button mat-raised-button mat-dialog-close color="warn" type="submit">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-dialog-actions>
 </ng-template>
 
 <ng-template #stpref>
@@ -753,12 +756,14 @@
             </tbody>
           </table>
           <div class="modal-button-bottom">
-            <button mat-raised-button mat-dialog-close color="warn" type="submit">
-              <mat-icon>close</mat-icon>
-            </button>
           </div>
         </mat-card-content>
       </mat-card>
     </form>
   </div>
+  <mat-dialog-actions>
+    <button mat-raised-button mat-dialog-close color="warn" type="submit">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-dialog-actions>
 </ng-template>

@@ -5,13 +5,17 @@ import { MatTabGroup } from '@angular/material/tabs';
 
 import { TranslateService } from '@ngx-translate/core';
 import { LoaderService } from '../../../services/loader.service';
-import { BaseItemTypeCodeModel, BaseItemTypeModel, BaseItemTypeSearchModel } from '../models/base-item-type.model';
+import {
+  BaseItemTypeCodeModel,
+  BaseItemTypeModel,
+  BaseItemTypeSearchModel
+} from '../models/base-item-type.model';
+
+import { patternsHelper } from '../../../helpers/patterns.helper';
 
 import { TitleService } from '../../../services/title.service';
 import { SiteTranslateService } from '../../../services/site-translate.service';
-
-import { patternsHelper } from '../../../helpers/patterns.helper';
-import { NotificationService } from 'src/app/services/notification.service';
+import { NotificationService } from '../../../services/notification.service';
 
 @Component({
   selector: 'ibe-base-item-type',
@@ -35,17 +39,45 @@ export class BaseItemTypeComponent implements OnInit {
   searchItemTypeForm!: FormGroup;
   searchItemTypeDataSource: BaseItemTypeSearchModel[] = [];
   dummyItemTypeSearchModel: BaseItemTypeSearchModel[] = [
-    { code: 'GEM1234', description: 'Gemini Software', storageType : "Storage 1" },
-    { code: 'GEM1234', description: 'Gemini Software', storageType : "Storage 2" },
-    { code: 'GEM1234', description: 'Gemini Software', storageType : "Storage 3" },
-    { code: 'GEM1234', description: 'Gemini Software', storageType : "Storage 4" },
-    { code: 'GEM1234', description: 'Gemini Software', storageType : "Storage 5" },
-    { code: 'GEM1234', description: 'Gemini Software', storageType : "Storage 6" },
-    { code: 'GEM1234', description: 'Gemini Software', storageType : "Storage 7" },
+    {
+      code: 'GEM1234',
+      description: 'Gemini Software',
+      storageType: 'Storage 1'
+    },
+    {
+      code: 'GEM1234',
+      description: 'Gemini Software',
+      storageType: 'Storage 2'
+    },
+    {
+      code: 'GEM1234',
+      description: 'Gemini Software',
+      storageType: 'Storage 3'
+    },
+    {
+      code: 'GEM1234',
+      description: 'Gemini Software',
+      storageType: 'Storage 4'
+    },
+    {
+      code: 'GEM1234',
+      description: 'Gemini Software',
+      storageType: 'Storage 5'
+    },
+    {
+      code: 'GEM1234',
+      description: 'Gemini Software',
+      storageType: 'Storage 6'
+    },
+    {
+      code: 'GEM1234',
+      description: 'Gemini Software',
+      storageType: 'Storage 7'
+    }
   ];
   displayedwhControlColumns = ['code', 'name'];
 
-  dataItemTypeForm!: FormGroup
+  dataItemTypeForm!: FormGroup;
 
   formErrorTranslated = '';
   filterErrorTranslated = '';
@@ -63,7 +95,7 @@ export class BaseItemTypeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.titleService.changeTitleTranslated('menu.setupCompany');
+    this.titleService.changeTitleTranslated('menu.baseItemType');
     const language = this.siteTranslateService.defaultLanguage;
     this.translate.use(language).subscribe((res) => {
       this.formErrorTranslated = this.translate.instant('error.form');
@@ -94,7 +126,11 @@ export class BaseItemTypeComponent implements OnInit {
       consolidateOn: '',
       defaultPick: ['', [Validators.required]],
       expiry: ['', [Validators.required]],
-      expiryAlertDays: ['', [Validators.required], Validators.pattern(patternsHelper.numeric)],
+      expiryAlertDays: [
+        '',
+        [Validators.required],
+        Validators.pattern(patternsHelper.numeric)
+      ],
       manufacturingDate: ['', [Validators.required]],
       batchNo: ['', [Validators.required]]
     });
@@ -112,7 +148,7 @@ export class BaseItemTypeComponent implements OnInit {
       warehouse: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       expiry: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       MfgDate: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
-      batchNo: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      batchNo: ['', [Validators.pattern(patternsHelper.alphanumeric)]]
     });
   }
 
@@ -125,8 +161,7 @@ export class BaseItemTypeComponent implements OnInit {
       this.notification.error(this.formErrorTranslated);
       return;
     }
-    const code: string =
-      this.searchItemTypeForm.get('code')?.value || '';
+    const code: string = this.searchItemTypeForm.get('code')?.value || '';
     const description: string =
       this.searchItemTypeForm.get('description')?.value || '';
     if (code.trim() === '' && description.trim() === '') {
