@@ -12,6 +12,12 @@ import {
   FormGroup,
   Validators
 } from '@angular/forms';
+import { FlatTreeControl } from '@angular/cdk/tree';
+import {
+  MatTreeFlatDataSource,
+  MatTreeFlattener
+} from '@angular/material/tree';
+import { MatCheckboxChange } from '@angular/material/checkbox';
 
 import { MatTableDataSource } from '@angular/material/table';
 import { MatTabGroup } from '@angular/material/tabs';
@@ -21,12 +27,7 @@ import {
   PrevilegeNode,
   FlattenedPrevilegeNode
 } from '../models/setup-security.model';
-import { FlatTreeControl } from '@angular/cdk/tree';
-import {
-  MatTreeFlatDataSource,
-  MatTreeFlattener
-} from '@angular/material/tree';
-import { MatCheckboxChange } from '@angular/material/checkbox';
+import { TitleService } from '../../../services/title.service';
 
 @Component({
   selector: 'ibe-setup-security',
@@ -116,18 +117,17 @@ export class SetupSecurityComponent implements OnInit, AfterViewInit {
   );
 
   //#region "Constructor and Page Events"
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private titleService: TitleService) {
     this.createAvailablePrevilegeTree();
   }
 
   ngOnInit(): void {
+    this.titleService.changeTitleTranslated('menu.setupSecurity');
     this.createDataSetupSecurityForm();
     this.createSearchSetupSecurityForm();
   }
 
-  ngAfterViewInit() {
-    /*  this.setTabHeights(); */
-  }
+  ngAfterViewInit() {}
   //#endregion
 
   //#region "Data Tab"

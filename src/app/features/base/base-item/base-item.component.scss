@@ -1,5 +1,17 @@
 @import '../../../../assets/scss/variables.scss';
-
+.form-import {
+  right: 0;
+  margin-right: 10px;
+  margin-top: 30px;
+  position: absolute;
+  top: 0;
+  button {
+    color: $site-primary;
+    @include breakpoint(mobileonly) {
+      font-size: 0.9rem;
+    }
+  }
+}
 .mat-column-action {
   width: 50px;
 }
@@ -75,7 +87,7 @@ select {
 }
 
 .modal-button {
-  margin-top: -20px;
+  margin-top: 0px;
   text-align: right;
   button {
     transform: scale(0.7);
@@ -87,4 +99,7 @@ select {
   button {
     transform: scale(0.7);
   }
+}
+button[mat-dialog-close] {
+  transform: scale(0.7);
 }

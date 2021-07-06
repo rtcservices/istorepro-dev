@@ -1,18 +1,22 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+import { MatDialog } from '@angular/material/dialog';
 import { MatTabGroup, _MatTabGroupBase } from '@angular/material/tabs';
 import { TranslateService } from '@ngx-translate/core';
-import { LoaderService } from '../../../services/loader.service';
-import { patternsHelper } from '../../../helpers/patterns.helper';
-import { SiteTranslateService } from 'src/app/services/site-translate.service';
+
 import {
   BaseItemInventoryAlertModel,
   BaseItemMatrixModel,
   BaseItemModel,
   BaseItemWhControlModel
 } from '../models/base-item.model';
-import { MatDialog } from '@angular/material/dialog';
+import { patternsHelper } from '../../../helpers/patterns.helper';
+
+import { LoaderService } from '../../../services/loader.service';
+import { SiteTranslateService } from 'src/app/services/site-translate.service';
 import { NotificationService } from '../../../services/notification.service';
+import { TitleService } from '../../../services/title.service';
 
 @Component({
   selector: 'ibe-base-item',
@@ -128,6 +132,7 @@ export class BaseItemComponent implements OnInit {
     private loader: LoaderService,
     private siteTranslateService: SiteTranslateService,
     private translate: TranslateService,
+    private titleService: TitleService,
     public dialog: MatDialog,
     private notification: NotificationService
   ) {
@@ -138,6 +143,7 @@ export class BaseItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.titleService.changeTitleTranslated('menu.baseItem');
     const language = this.siteTranslateService.defaultLanguage;
     this.translate.use(language).subscribe((res) => {
       this.formErrorTranslated = this.translate.instant('error.form');
