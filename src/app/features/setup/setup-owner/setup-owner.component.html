@@ -188,14 +188,14 @@
                   <mat-card-content>
 
                     <div fxLayout="row" class="row" fxLayoutGap="5px">
-                      <mat-form-field appearance="outline" fxFlex="15" fxFlex.lt-sm="45">
+                      <mat-form-field appearance="outline" fxFlex="24" fxFlex.lt-sm="45">
                         <mat-label>{{'setup.owner.shipTo.shipToCode' | translate }}</mat-label>
                         <input matInput required type="text" formControlName="shipToCode" />
                         <mat-error *ngIf="dataOwnerControls.shipToCode.invalid">{{ 'error.field' |
                           translate }}
                         </mat-error>
                       </mat-form-field>
-                      <mat-form-field appearance="outline" fxFlex="40">
+                      <mat-form-field appearance="outline" fxFlex="56">
                         <mat-label>{{'setup.owner.shipTo.shipToName' | translate}}</mat-label>
                         <input matInput required type="text" formControlName="shipToName" />
                         <mat-error *ngIf="dataOwnerControls.shipToName.invalid">{{ 'error.field' |
@@ -294,7 +294,7 @@
                       <thead>
                         <tr>
                           <th>{{ 'setup.owner.shipTo.shipToCode' | translate}}</th>
-                          <th colspan="3">{{ 'setup.owner.shipTo.shipToName' | translate}}</th>
+                          <th>{{ 'setup.owner.shipTo.shipToName' | translate}}</th>
                           <th>{{ 'setup.owner.shipTo.address' | translate}}</th>
                         </tr>
                       </thead>
@@ -302,8 +302,8 @@
                         <ng-template let-control ngFor [ngForOf]="shipToDataSource">
                           <tr>
                             <td>{{control.shipToCode}}</td>
-                            <td colspan="3">{{control.shipToName}}</td>
-                            <td>{{control.address}}</td>
+                            <td>{{control.shipToName}}</td>
+                            <td style="width: 40%;">{{control.address}}</td>
                           </tr>
                         </ng-template>
                       </tbody>
