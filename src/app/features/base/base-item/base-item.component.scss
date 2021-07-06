@@ -50,6 +50,10 @@ select {
 
 .wh-control-table {
   margin-top: 50px;
+  .mat-icon-button{
+    height: 0px !important;
+    min-height: 0px !important;
+  }
 }
 
 .inventory-alert-table,
