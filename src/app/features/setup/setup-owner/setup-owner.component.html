@@ -240,7 +240,7 @@
                     </div>
 
                     <div fxLayout="row" class="row" fxLayoutGap="5px">
-                      <mat-form-field appearance="outline" fxFlex="20">
+                      <mat-form-field appearance="outline" fxFlex="24">
                         <mat-label>{{'setup.owner.shipTo.zip' | translate}}</mat-label>
                         <input matInput type="text" formControlName="shipTozip" />
                         <mat-error *ngIf="dataOwnerControls.shipTozip.invalid">{{ 'error.field' |
@@ -254,24 +254,25 @@
                           translate }}
                         </mat-error>
                       </mat-form-field>
-                    </div>
-
-                    <div fxLayout="row" class="row" fxLayoutGap="5px">
-
-                      <mat-form-field appearance="outline" fxFlex="55.5">
-                        <mat-label>{{'setup.owner.shipTo.email' | translate }}</mat-label>
-                        <input matInput type="text" formControlName="shipToemail" />
-                        <mat-error *ngIf="dataOwnerControls.shipToemail.invalid">{{ 'error.field' |
-                          translate }}
-                        </mat-error>
-                      </mat-form-field>
-                      <mat-form-field appearance="outline" fxFlex="25">
+                      <mat-form-field appearance="outline" fxFlex="25.6">
                         <mat-label>{{'setup.owner.shipTo.fax' | translate}}</mat-label>
                         <input matInput type="text" formControlName="shipTofax" />
                         <mat-error *ngIf="dataOwnerControls.shipTofax.invalid">{{ 'error.field' |
                           translate }}
                         </mat-error>
                       </mat-form-field>
+                    </div>
+
+                    <div fxLayout="row" class="row" fxLayoutGap="5px">
+
+                      <mat-form-field appearance="outline" fxFlex="80.2">
+                        <mat-label>{{'setup.owner.shipTo.email' | translate }}</mat-label>
+                        <input matInput type="text" formControlName="shipToemail" />
+                        <mat-error *ngIf="dataOwnerControls.shipToemail.invalid">{{ 'error.field' |
+                          translate }}
+                        </mat-error>
+                      </mat-form-field>
+                      
                       <div class="form-three-button-container" fxFlex>
                         <button mat-raised-button color="primary" type="submit">
                           <mat-icon>add</mat-icon>
@@ -340,31 +341,29 @@
               </mat-tab>
 
             </mat-tab-group>
-          </mat-card-content>
-          <mat-card class="form-action-section">
-            <mat-card-content>
-              <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="30px" fxLayoutAlign="space-between center">
-                <div fxFlexOrder.lt-md="2">
-                  <ibe-data-audit insertedBy=""></ibe-data-audit>
-                </div>
-                <div class="form-three-button-container" style="margin-top: 5px;">
-                  <button mat-raised-button color="primary" type="submit" (click)="saveOwnerData()">
-                    <mat-icon>task_alt</mat-icon>
-                  </button>
-                  <button mat-raised-button color="warn" type="button" (click)="deleteOwnerData()">
-                    <mat-icon>remove_circle_outline</mat-icon>
-                  </button>
-                  <button mat-raised-button color="accent" type="reset" (click)="resetOwnerDataForm()">
-                    <mat-icon>loop</mat-icon>
-                  </button>
-                </div>
-              </div>
-            </mat-card-content>
-          </mat-card>
-
+          </mat-card-content>        
         </mat-card>
-
       </div>
+      <mat-card class="form-action-section">
+        <mat-card-content>
+          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="30px" fxLayoutAlign="space-between center">
+            <div fxFlexOrder.lt-md="2">
+              <ibe-data-audit insertedBy=""></ibe-data-audit>
+            </div>
+            <div class="form-three-button-container" style="margin-top: 5px;">
+              <button mat-raised-button color="primary" type="submit" (click)="saveOwnerData()">
+                <mat-icon>task_alt</mat-icon>
+              </button>
+              <button mat-raised-button color="warn" type="button" (click)="deleteOwnerData()">
+                <mat-icon>remove_circle_outline</mat-icon>
+              </button>
+              <button mat-raised-button color="accent" type="reset" (click)="resetOwnerDataForm()">
+                <mat-icon>loop</mat-icon>
+              </button>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
     </form>
   </mat-tab>
 
