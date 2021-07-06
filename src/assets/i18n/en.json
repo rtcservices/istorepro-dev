@@ -163,6 +163,7 @@
       "email": "Email",
       "telephone": "Telephone",
       "suspended": "Suspended",
+      "suspendRevoke": "Suspend/Revoke",
       "suspendFrom": "Suspend From",
       "suspendTo": "Suspend To",
       "lastSuspended": "Last Suspended",
@@ -209,9 +210,9 @@
         "email": "Email",
         "address": "Address"
       },
-      "whControl" :{
-        "code":"Code",
-        "name":"Name"
+      "whControl": {
+        "code": "Code",
+        "name": "Name"
       }
     }
   },

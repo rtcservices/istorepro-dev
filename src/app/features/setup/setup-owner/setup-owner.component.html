@@ -17,9 +17,13 @@
                   <mat-card-content>
 
                     <div fxLayout="row" class="row radio-button-row" fxLayoutGap="5px">
-                      <mat-radio-group class="form-radio-button">
-                        <mat-radio-button color="primary" value="1" fxFlex>{{'setup.owner.customer' | translate}}</mat-radio-button>
-                        <mat-radio-button color="primary" value="2" fxFlex>{{'setup.owner.vendor' | translate}}</mat-radio-button>
+                      <mat-radio-group class="form-radio-button" (change)="changeOwnerType($event)">
+                        <mat-radio-button color="primary" value="customer" fxFlex>
+                          {{'setup.owner.customer' | translate}}
+                        </mat-radio-button>
+                        <mat-radio-button color="primary" value="vendor" fxFlex>
+                          {{'setup.owner.vendor' | translate}}
+                        </mat-radio-button>
                       </mat-radio-group>
                     </div>
 
@@ -108,9 +112,8 @@
                         </mat-error>
                       </mat-form-field>
                       <div class="form-checkbox-input" fxFlex="15">
-                        <mat-checkbox color="warn" formControlName="blockCustomer">{{ 'setup.owner.blockCustomer' |
-                          translate
-                          }}
+                        <mat-checkbox color="warn" *ngIf="ownerType==='customer'" formControlName="blockCustomer">
+                          {{ 'setup.owner.blockCustomer' | translate }}
                         </mat-checkbox>
                       </div>
                     </div>
@@ -131,8 +134,9 @@
                         </mat-error>
                       </mat-form-field>
                       <div class="form-checkbox-input" fxFlex="20">
-                        <mat-checkbox color="primary" formControlName="actAsCustomer">
-                          {{ 'setup.owner.actAsCustomer' | translate }}</mat-checkbox>
+                        <mat-checkbox color="primary" *ngIf="ownerType==='vendor'" formControlName="actAsCustomer">
+                          {{ 'setup.owner.actAsCustomer' | translate }}
+                        </mat-checkbox>
                       </div>
                     </div>
 
@@ -273,7 +277,7 @@
                         <button mat-raised-button color="primary" type="submit">
                           <mat-icon>add</mat-icon>
                         </button>
-                        <button mat-raised-button color="warn" type="button" >
+                        <button mat-raised-button color="warn" type="button">
                           <mat-icon>remove</mat-icon>
                         </button>
                         <button mat-raised-button color="accent" type="reset">
@@ -283,7 +287,7 @@
                     </div>
 
                     <!-- <div fxLayout="row" fxLayoutGap="5px" style="float: right; margin-bottom: 4px;">
-                      
+
                     </div> -->
 
                     <table class="site-table w-100 mat-elevation-z8">

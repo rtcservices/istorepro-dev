@@ -13,7 +13,12 @@ import { patternsHelper } from '../../../helpers/patterns.helper';
 import { NotificationService } from 'src/app/services/notification.service';
 import { elementAt } from 'rxjs/operators';
 
-import { SetupOwnerEmailModel, SetupOwnerModel, SetupOwnerShipToModel, SetupOwnerWHControlModel } from '../models/setup-owner.model';
+import {
+  SetupOwnerEmailModel,
+  SetupOwnerModel,
+  SetupOwnerShipToModel,
+  SetupOwnerWHControlModel
+} from '../models/setup-owner.model';
 
 @Component({
   selector: 'ibe-setup-owner',
@@ -21,7 +26,6 @@ import { SetupOwnerEmailModel, SetupOwnerModel, SetupOwnerShipToModel, SetupOwne
   styleUrls: ['./setup-owner.component.scss']
 })
 export class SetupOwnerComponent implements OnInit, AfterViewInit {
-
   @ViewChild('setupOwnerTab', { static: false })
   setupOwnerTab!: MatTabGroup;
   @ViewChild('setupOwnerDataTab', { static: false })
@@ -30,6 +34,8 @@ export class SetupOwnerComponent implements OnInit, AfterViewInit {
   formErrorTranslated = '';
   filterErrorTranslated = '';
 
+  ownerType = '';
+
   dataOwnerForm!: FormGroup;
   searchItemForm!: FormGroup;
   displayedDocumentColumns = ['type', 'autoEmail'];
@@ -37,19 +43,19 @@ export class SetupOwnerComponent implements OnInit, AfterViewInit {
   dummyDocumentModel: SetupOwnerEmailModel[] = [
     {
       autoEmail: false,
-      type: 'TEMPORARY RECEIPT NOTICE',
+      type: 'TEMPORARY RECEIPT NOTICE'
     },
     {
       autoEmail: true,
-      type: 'GOODS RECEIPT NOTICE',
+      type: 'GOODS RECEIPT NOTICE'
     },
     {
       autoEmail: false,
-      type: 'RECEIPT IMPORT QUEUE',
+      type: 'RECEIPT IMPORT QUEUE'
     },
     {
       autoEmail: false,
-      type: 'ADVANCED SHIPPING NOTE',
+      type: 'ADVANCED SHIPPING NOTE'
     }
   ];
 
@@ -62,8 +68,7 @@ export class SetupOwnerComponent implements OnInit, AfterViewInit {
     { checked: false, code: 'EQU', name: 'EQUIPMENT BASED WAREHOUSE' }
   ];
 
-  displayedColumns = ['code', 'description','shortName'];
-
+  displayedColumns = ['code', 'description', 'shortName'];
 
   displayedshipToColumns = ['code', 'name'];
   shipToDataSource: SetupOwnerShipToModel[] = [];
@@ -71,29 +76,32 @@ export class SetupOwnerComponent implements OnInit, AfterViewInit {
     { address: 'GEN', shipToCode: 'GEN', shipToName: 'GENERAL WAREHOUSE' },
     { address: 'GEN', shipToCode: 'LIQ', shipToName: 'SPIRIT WAREHOUSE' },
     { address: 'GEN', shipToCode: 'M01', shipToName: 'MOTHER WAREHOUSE' },
-    { address: 'GEN', shipToCode: 'EQU', shipToName: 'EQUIPMENT BASED WAREHOUSE' }
+    {
+      address: 'GEN',
+      shipToCode: 'EQU',
+      shipToName: 'EQUIPMENT BASED WAREHOUSE'
+    }
   ];
 
   searchDataSource: SetupOwnerModel[] = [];
   dummySearchModel: SetupOwnerModel[] = [
     {
-      code: "example1",
-      description: "this is dummy decription",
-      shortName: "normal",
-      place: "normalnormalnormal",
-      telephone: "121212",      
+      code: 'example1',
+      description: 'this is dummy decription',
+      shortName: 'normal',
+      place: 'normalnormalnormal',
+      telephone: '121212',
       blocked: true
     },
     {
-      code: "example2",
-      description: "this is dummy decription",
-      shortName: "normal",
-      place: "normalnormalnormal",
-      telephone: "121212",      
+      code: 'example2',
+      description: 'this is dummy decription',
+      shortName: 'normal',
+      place: 'normalnormalnormal',
+      telephone: '121212',
       blocked: false
     }
   ];
-
 
   constructor(
     private fb: FormBuilder,
@@ -140,7 +148,14 @@ export class SetupOwnerComponent implements OnInit, AfterViewInit {
 
   createDataOwnerForm() {
     this.dataOwnerForm = this.fb.group({
-      code: ['', [Validators.required, Validators.maxLength(10), Validators.pattern(patternsHelper.alphanumeric)]],
+      code: [
+        '',
+        [
+          Validators.required,
+          Validators.maxLength(10),
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
+      ],
       name: [
         '',
         [
@@ -157,12 +172,7 @@ export class SetupOwnerComponent implements OnInit, AfterViewInit {
           Validators.pattern(patternsHelper.alphanumeric)
         ]
       ],
-      type: [
-        '',
-        [
-          Validators.required
-        ]
-      ],
+      type: ['', [Validators.required]],
       address1: [
         '',
         [
@@ -183,17 +193,57 @@ export class SetupOwnerComponent implements OnInit, AfterViewInit {
         [
           Validators.maxLength(100),
           Validators.pattern(patternsHelper.alphanumeric)
-        ],
+        ]
       ],
-      address4: ['', [Validators.maxLength(100), Validators.pattern(patternsHelper.alphanumeric)]],
-      place: ['', [Validators.maxLength(100), Validators.pattern(patternsHelper.alphanumeric)]],
-      zip: ['', [Validators.maxLength(50), Validators.pattern(patternsHelper.alphanumeric)]],
-      telephone: ['', [Validators.maxLength(30), Validators.pattern(patternsHelper.alphanumeric)]],
-      fax: ['', [Validators.maxLength(30), Validators.pattern(patternsHelper.alphanumeric)]],
-      email: ['', [Validators.maxLength(500), Validators.pattern(patternsHelper.emails)]],
-      blockCustomer : '',
-      actAsCustomer : '',
-      shipToCode: ['', [Validators.required, Validators.maxLength(10), Validators.pattern(patternsHelper.alphanumeric)]],
+      address4: [
+        '',
+        [
+          Validators.maxLength(100),
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
+      ],
+      place: [
+        '',
+        [
+          Validators.maxLength(100),
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
+      ],
+      zip: [
+        '',
+        [
+          Validators.maxLength(50),
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
+      ],
+      telephone: [
+        '',
+        [
+          Validators.maxLength(30),
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
+      ],
+      fax: [
+        '',
+        [
+          Validators.maxLength(30),
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
+      ],
+      email: [
+        '',
+        [Validators.maxLength(500), Validators.pattern(patternsHelper.emails)]
+      ],
+      blockCustomer: '',
+      actAsCustomer: '',
+      shipToCode: [
+        '',
+        [
+          Validators.required,
+          Validators.maxLength(10),
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
+      ],
       shipToName: [
         '',
         [
@@ -230,11 +280,32 @@ export class SetupOwnerComponent implements OnInit, AfterViewInit {
           Validators.maxLength(100),
           Validators.pattern(patternsHelper.alphanumeric)
         ]
-      ], 
-      shipTozip: ['', [Validators.maxLength(50), Validators.pattern(patternsHelper.alphanumeric)]],
-      shipTotelephone: ['', [Validators.maxLength(30), Validators.pattern(patternsHelper.alphanumeric)]],
-      shipTofax: ['', [Validators.maxLength(30), Validators.pattern(patternsHelper.alphanumeric)]],
-      shipToemail: ['', [Validators.maxLength(500), Validators.pattern(patternsHelper.emails)]],
+      ],
+      shipTozip: [
+        '',
+        [
+          Validators.maxLength(50),
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
+      ],
+      shipTotelephone: [
+        '',
+        [
+          Validators.maxLength(30),
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
+      ],
+      shipTofax: [
+        '',
+        [
+          Validators.maxLength(30),
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
+      ],
+      shipToemail: [
+        '',
+        [Validators.maxLength(500), Validators.pattern(patternsHelper.emails)]
+      ]
     });
   }
 
@@ -242,14 +313,12 @@ export class SetupOwnerComponent implements OnInit, AfterViewInit {
     return this.dataOwnerForm.controls;
   }
 
-
-  saveOwnerData() { }
-  deleteOwnerData() { }
+  saveOwnerData() {}
+  deleteOwnerData() {}
 
   resetOwnerDataForm() {
     this.dataOwnerForm.reset();
   }
-
 
   // Serch related function
 
@@ -260,7 +329,7 @@ export class SetupOwnerComponent implements OnInit, AfterViewInit {
       shortName: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       place: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       telephone: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
-      blocked: [''],    
+      blocked: ['']
     });
   }
 
@@ -268,27 +337,26 @@ export class SetupOwnerComponent implements OnInit, AfterViewInit {
     return this.searchItemForm.controls;
   }
 
-
   onSearchItemSubmit() {
     if (!this.searchItemForm.valid) {
       this.notification.error(this.formErrorTranslated);
       return;
     }
-    const code: string =
-      this.searchItemForm.get('code')?.value || '';
+    const code: string = this.searchItemForm.get('code')?.value || '';
     const description: string =
       this.searchItemForm.get('description')?.value || '';
-    const shortName: string =
-      this.searchItemForm.get('shortName')?.value || '';
-    const place: string =
-      this.searchItemForm.get('place')?.value || '';
-    const telephone: string =
-      this.searchItemForm.get('telephone')?.value || '';
-    const blocked: string =
-      this.searchItemForm.get('blocked')?.value || '';   
-    if (code.trim() === '' && description.trim() === '' && 
-    shortName.trim() === '' && place.trim() === '' &&
-     telephone.trim() === '' && blocked.trim() === '') {
+    const shortName: string = this.searchItemForm.get('shortName')?.value || '';
+    const place: string = this.searchItemForm.get('place')?.value || '';
+    const telephone: string = this.searchItemForm.get('telephone')?.value || '';
+    const blocked: string = this.searchItemForm.get('blocked')?.value || '';
+    if (
+      code.trim() === '' &&
+      description.trim() === '' &&
+      shortName.trim() === '' &&
+      place.trim() === '' &&
+      telephone.trim() === '' &&
+      blocked.trim() === ''
+    ) {
       this.notification.error(this.filterErrorTranslated);
       return;
     } else {
@@ -300,7 +368,6 @@ export class SetupOwnerComponent implements OnInit, AfterViewInit {
     }
   }
 
-  
   searchItemClick(event: any, item: SetupOwnerModel, idx: number) {
     const tabGroup = this.setupOwnerTab;
     if (!tabGroup || !(tabGroup instanceof MatTabGroup)) return;
@@ -311,9 +378,8 @@ export class SetupOwnerComponent implements OnInit, AfterViewInit {
     this.searchItemForm.reset();
     this.searchDataSource = [];
   }
-
-
-
-
-
+  changeOwnerType(evt: any) {
+    console.log(evt);
+    this.ownerType = evt.value;
+  }
 }

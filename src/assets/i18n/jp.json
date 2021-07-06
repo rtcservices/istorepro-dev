@@ -163,6 +163,7 @@
       "email": "Eメール",
       "telephone": "電話",
       "suspended": "一時停止",
+      "suspendRevoke": "一時停止/取り消し",
       "suspendFrom": "停止元",
       "suspendTo": "一時停止",
       "lastSuspended": "最後に中断された",
@@ -207,9 +208,9 @@
         "email": "Eメール",
         "address": "住所"
       },
-      "whControl" :{
-        "code":"コード",
-        "name":"名前"
+      "whControl": {
+        "code": "コード",
+        "name": "名前"
       }
     }
   },
@@ -349,10 +350,10 @@
         "weightFillPercentage": "重量充填％",
         "autoFill": "オートフィル"
       },
-      "audit" : "監査",
+      "audit": "監査",
       "status": "状態",
-      "excludeFromPlanning" : "計画から除外する",
-      "excludeFromAutoAllocation" : "自動割り当てから除外する"
+      "excludeFromPlanning": "計画から除外する",
+      "excludeFromAutoAllocation": "自動割り当てから除外する"
     }
   }
 }
