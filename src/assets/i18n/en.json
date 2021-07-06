@@ -273,7 +273,7 @@
       "WHControl": {
         "whControl": "WH. Control",
         "code": "Code",
-        "name": "Name",
+        "name": "Description",
         "customers": "Customer",
         "vendors": "Vendor",
         "stpref": "St. Pref",

@@ -232,15 +232,15 @@
                       <tbody>
                         <ng-template let-control ngFor [ngForOf]="whControlDataSource">
                           <tr>
-                            <td style="text-align: center;">
+                            <td class="checkbox-column">
                               <mat-checkbox color="primary"></mat-checkbox>
                             </td>
-                            <td>{{control.code}}</td>
-                            <td>{{control.name}}</td>
-                            <td style="text-align: center;width:100px">
+                            <td style="margin-left: 5px !important;">{{control.code}}</td>
+                            <td style="margin-left: 5px !important;">{{control.name}}</td>
+                            <td class="checkbox-column">
                               <mat-checkbox color="primary"></mat-checkbox>
                             </td>
-                            <td style="text-align: center;width:100px">
+                            <td class="checkbox-column">
                               <mat-checkbox color="primary"></mat-checkbox>
                             </td>
                             <td> <button (click)="openstoreDialog(owner)" mat-icon-button
