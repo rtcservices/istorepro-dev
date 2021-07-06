@@ -5,7 +5,12 @@ import { TranslateService } from '@ngx-translate/core';
 import { LoaderService } from '../../../services/loader.service';
 import { patternsHelper } from '../../../helpers/patterns.helper';
 import { SiteTranslateService } from 'src/app/services/site-translate.service';
-import { BaseItemInventoryAlertModel, BaseItemMatrixModel, BaseItemModel, BaseItemWhControlModel } from '../models/base-item.model';
+import {
+  BaseItemInventoryAlertModel,
+  BaseItemMatrixModel,
+  BaseItemModel,
+  BaseItemWhControlModel
+} from '../models/base-item.model';
 import { MatDialog } from '@angular/material/dialog';
 import { NotificationService } from '../../../services/notification.service';
 
@@ -21,18 +26,19 @@ export class BaseItemComponent implements OnInit {
   baseItemDataTab!: MatTabGroup;
   dataItemForm!: FormGroup;
   searchItemForm!: FormGroup;
+  dataItemStForm!: FormGroup;
   formErrorTranslated = '';
   filterErrorTranslated = '';
 
   searchDataSource: BaseItemModel[] = [];
   dummySearchModel: BaseItemModel[] = [
     {
-      item: "dummyc",
-      description: "this is dummy decription",
-      itemType: "normal",
-      scanCode: "123123123",
-      ownerCode: "121212",
-      sku: "asd123",
+      item: 'dummyc',
+      description: 'this is dummy decription',
+      itemType: 'normal',
+      scanCode: '123123123',
+      ownerCode: '121212',
+      sku: 'asd123',
       validateStorageType: true,
       inventoryAlert: true,
       inactive: true,
@@ -42,18 +48,50 @@ export class BaseItemComponent implements OnInit {
     }
   ];
 
-
-  displayedColumns = ['item', 'description','itemType','unitPrice',
-  'sku', 'inactive','instock'];
-
+  displayedColumns = [
+    'item',
+    'description',
+    'itemType',
+    'unitPrice',
+    'sku',
+    'inactive',
+    'instock'
+  ];
 
   whControlDataSource: BaseItemWhControlModel[] = [];
   dummyWHControlModel: BaseItemWhControlModel[] = [
-    { checked: false, code: 'GEN', name: 'GENERAL WAREHOUSE', customers: false, vendors: false, sku: "" },
-    { checked: false, code: 'LIQ', name: 'SPIRIT WAREHOUSE', customers: false, vendors: false, sku: "" },
-    { checked: false, code: 'M01', name: 'MOTHER WAREHOUSE', customers: false, vendors: false, sku: "" },
-    { checked: false, code: 'EQU', name: 'EQUIPMENT BASED WAREHOUSE', customers: false, vendors: false, sku: "" }
-
+    {
+      checked: false,
+      code: 'GEN',
+      name: 'GENERAL WAREHOUSE',
+      customers: false,
+      vendors: false,
+      sku: ''
+    },
+    {
+      checked: false,
+      code: 'LIQ',
+      name: 'SPIRIT WAREHOUSE',
+      customers: false,
+      vendors: false,
+      sku: ''
+    },
+    {
+      checked: false,
+      code: 'M01',
+      name: 'MOTHER WAREHOUSE',
+      customers: false,
+      vendors: false,
+      sku: ''
+    },
+    {
+      checked: false,
+      code: 'EQU',
+      name: 'EQUIPMENT BASED WAREHOUSE',
+      customers: false,
+      vendors: false,
+      sku: ''
+    }
   ];
 
   InventoryAlertDataSource: BaseItemInventoryAlertModel[] = [];
@@ -65,23 +103,27 @@ export class BaseItemComponent implements OnInit {
       reorder: '',
       max: '',
       lastalert: ''
-    },
+    }
   ];
-
-
 
   MatrixDataSource: BaseItemMatrixModel[] = [];
   dummyMatrixModel: BaseItemMatrixModel[] = [
     {
-      from: { value: "", unit: "" },
-      to: { unit: "", weight: "", length: "", breadth: "", height: "", volume: "", value: "" },
-
-    },
-
-
+      from: { value: '', unit: '' },
+      to: {
+        unit: '',
+        weight: '',
+        length: '',
+        breadth: '',
+        height: '',
+        volume: '',
+        value: ''
+      }
+    }
   ];
 
-  constructor(private fb: FormBuilder,
+  constructor(
+    private fb: FormBuilder,
     private loader: LoaderService,
     private siteTranslateService: SiteTranslateService,
     private translate: TranslateService,
@@ -90,6 +132,7 @@ export class BaseItemComponent implements OnInit {
   ) {
     this.createDataItemForm();
     this.createSearchItemForm();
+    this.createDataItemStForm();
   }
 
   ngOnInit(): void {
@@ -102,7 +145,6 @@ export class BaseItemComponent implements OnInit {
     this.InventoryAlertDataSource = this.dummyInventoryAlertModel;
     this.MatrixDataSource = this.dummyMatrixModel;
   }
-
 
   ngAfterViewInit() {
     this.setTabHeights();
@@ -121,103 +163,125 @@ export class BaseItemComponent implements OnInit {
     });
   }
 
-
   createDataItemForm() {
     this.dataItemForm = this.fb.group({
       item: [
         '',
-        [Validators.maxLength(50), Validators.required, Validators.pattern(patternsHelper.name)]
+        [
+          Validators.maxLength(50),
+          Validators.required,
+          Validators.pattern(patternsHelper.name)
+        ]
       ],
       description: [
         '',
-        [Validators.maxLength(100),
-        Validators.required,
-        Validators.pattern(patternsHelper.alphanumeric)
+        [
+          Validators.maxLength(100),
+          Validators.required,
+          Validators.pattern(patternsHelper.alphanumeric)
         ]
       ],
       hscode: [
         '',
-        [Validators.maxLength(10), Validators.required, Validators.pattern(patternsHelper.alphanumeric)]
+        [
+          Validators.maxLength(10),
+          Validators.required,
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
       ],
-      itemType: [
-        '',
-        [Validators.maxLength(50), Validators.required]
-      ],
-      scanType: [
-        '',
-        [Validators.maxLength(10)]
-      ],
+      itemType: ['', [Validators.maxLength(50), Validators.required]],
+      scanType: ['', [Validators.maxLength(10)]],
       scanCode: [
         '',
-        [Validators.maxLength(50), Validators.pattern(patternsHelper.alphanumeric)]
+        [
+          Validators.maxLength(50),
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
       ],
       validateStorageType: [''],
       inventoryAlert: [''],
       inactive: [''],
-      unit: [
-        '',
-        [
-          Validators.required,
-          Validators.maxLength(10)
-        ]
-      ],
+      unit: ['', [Validators.required, Validators.maxLength(10)]],
       unitWeight: [
         '',
-        [
-          Validators.maxLength(50),
-          Validators.pattern(patternsHelper.telephone)
-        ]
+        [Validators.maxLength(50), Validators.pattern(patternsHelper.telephone)]
       ],
       dimensions: [''],
-      length: ['',
-        [
-          Validators.maxLength(5),
-          Validators.pattern(patternsHelper.telephone)
-        ]],
-      breadth: ['',
-        [
-          Validators.maxLength(5),
-          Validators.pattern(patternsHelper.telephone)
-        ]],
-      height: ['',
-        [
-          Validators.maxLength(5),
-          Validators.pattern(patternsHelper.telephone)
-        ]],
-      volume: ['',
-        [
-          Validators.maxLength(6),
-          Validators.pattern(patternsHelper.telephone)
-        ]],
-      shelfLife: ['',
-        [
-          Validators.maxLength(5),
-          Validators.pattern(patternsHelper.telephone)
-        ]],
-      pickOption: ['',
-        [
-          Validators.maxLength(10)
-        ]],
+      length: [
+        '',
+        [Validators.maxLength(5), Validators.pattern(patternsHelper.telephone)]
+      ],
+      breadth: [
+        '',
+        [Validators.maxLength(5), Validators.pattern(patternsHelper.telephone)]
+      ],
+      height: [
+        '',
+        [Validators.maxLength(5), Validators.pattern(patternsHelper.telephone)]
+      ],
+      volume: [
+        '',
+        [Validators.maxLength(6), Validators.pattern(patternsHelper.telephone)]
+      ],
+      shelfLife: [
+        '',
+        [Validators.maxLength(5), Validators.pattern(patternsHelper.telephone)]
+      ],
+      pickOption: ['', [Validators.maxLength(10)]]
     });
   }
-
   get dataItemFormControls() {
     return this.dataItemForm.controls;
   }
 
+  createDataItemStForm() {
+    this.dataItemStForm = this.fb.group({
+      warehouse: [
+        '',
+        [
+          Validators.maxLength(50),
+          Validators.required,
+          Validators.pattern(patternsHelper.name)
+        ]
+      ],
+      item: [
+        '',
+        [
+          Validators.maxLength(100),
+          Validators.required,
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
+      ],
+      type: [
+        '',
+        [Validators.required, Validators.pattern(patternsHelper.alphanumeric)]
+      ],
+      owner: ['', [Validators.maxLength(50), Validators.required]],
+      ownerName: ['', [Validators.maxLength(50)]],
+      scanCode: [
+        '',
+        [
+          Validators.maxLength(10),
+          Validators.pattern(patternsHelper.alphanumeric)
+        ]
+      ]
+    });
+  }
 
+  get dataItemFormStControls() {
+    return this.dataItemStForm.controls;
+  }
 
-  saveItemData() { }
+  onDataItemStSubmit() {}
 
+  saveItemData() {}
 
-  deleteItemData() { }
+  deleteItemData() {}
 
-  onDataItemSubmit() { }
-
+  onDataItemSubmit() {}
 
   resetItemDataForm() {
-    this.dataItemForm.reset()
-
+    this.dataItemForm.reset();
   }
 
   openDialog(stpref: any) {
@@ -226,15 +290,11 @@ export class BaseItemComponent implements OnInit {
     });
   }
 
-
-  
   openstoreDialog(owner: any) {
     this.dialog.open(owner, {
       width: '600px'
     });
   }
-
-
 
   createSearchItemForm() {
     this.searchItemForm = this.fb.group({
@@ -257,42 +317,40 @@ export class BaseItemComponent implements OnInit {
     return this.searchItemForm.controls;
   }
 
-
   onSearchItemSubmit() {
     if (!this.searchItemForm.valid) {
       this.notification.error(this.formErrorTranslated);
       return;
     }
-    const item: string =
-      this.searchItemForm.get('item')?.value || '';
+    const item: string = this.searchItemForm.get('item')?.value || '';
     const description: string =
       this.searchItemForm.get('description')?.value || '';
-    const itemType: string =
-      this.searchItemForm.get('itemType')?.value || '';
-    const scanCode: string =
-      this.searchItemForm.get('scanCode')?.value || '';
-    const ownerCode: string =
-      this.searchItemForm.get('ownerCode')?.value || '';
-    const sku: string =
-      this.searchItemForm.get('sku')?.value || '';
+    const itemType: string = this.searchItemForm.get('itemType')?.value || '';
+    const scanCode: string = this.searchItemForm.get('scanCode')?.value || '';
+    const ownerCode: string = this.searchItemForm.get('ownerCode')?.value || '';
+    const sku: string = this.searchItemForm.get('sku')?.value || '';
     const validateStorageType: string =
       this.searchItemForm.get('validateStorageType')?.value || '';
     const inventoryAlert: string =
       this.searchItemForm.get('inventoryAlert')?.value || '';
-    const inactive: string =
-      this.searchItemForm.get('inactive')?.value || '';
-    const parent: string =
-      this.searchItemForm.get('parent')?.value || '';
-    const warehouse: string =
-      this.searchItemForm.get('warehouse')?.value || '';
-    const instock: string =
-      this.searchItemForm.get('instock')?.value || '';
-    if (item.trim() === '' && description.trim() === '' && 
-    itemType.trim() === '' && scanCode.trim() === '' &&
-     ownerCode.trim() === '' && sku.trim() === '' && 
-     validateStorageType.trim() === '' && inventoryAlert.trim() === '' && 
-     inactive.trim() === '' && parent.trim() === '' && 
-     warehouse.trim() === '' && instock.trim() === '' ) {
+    const inactive: string = this.searchItemForm.get('inactive')?.value || '';
+    const parent: string = this.searchItemForm.get('parent')?.value || '';
+    const warehouse: string = this.searchItemForm.get('warehouse')?.value || '';
+    const instock: string = this.searchItemForm.get('instock')?.value || '';
+    if (
+      item.trim() === '' &&
+      description.trim() === '' &&
+      itemType.trim() === '' &&
+      scanCode.trim() === '' &&
+      ownerCode.trim() === '' &&
+      sku.trim() === '' &&
+      validateStorageType.trim() === '' &&
+      inventoryAlert.trim() === '' &&
+      inactive.trim() === '' &&
+      parent.trim() === '' &&
+      warehouse.trim() === '' &&
+      instock.trim() === ''
+    ) {
       this.notification.error(this.filterErrorTranslated);
       return;
     } else {
@@ -304,9 +362,6 @@ export class BaseItemComponent implements OnInit {
     }
   }
 
-
-
-  
   searchItemClick(event: any, item: BaseItemModel, idx: number) {
     const tabGroup = this.baseItemTab;
     if (!tabGroup || !(tabGroup instanceof MatTabGroup)) return;
@@ -317,7 +372,4 @@ export class BaseItemComponent implements OnInit {
     this.searchItemForm.reset();
     this.searchDataSource = [];
   }
-
-
-
 }
