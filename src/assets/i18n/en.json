@@ -108,7 +108,7 @@
       "licenseAlertLimit": "Alert Limit"
     },
     "warehouse": {
-      "warehouseCode": "Warehouse Code",
+      "warehouseCode": "Code",
       "companyName": "Company Code",
       "code": "Code",
       "description": "Description",

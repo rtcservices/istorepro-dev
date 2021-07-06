@@ -16,12 +16,12 @@
                 <mat-card>
                   <mat-card-content>
 
-                    <!-- <div fxLayout="row" class="row" fxLayoutGap="5px">
-                      <mat-radio-group>
-                        <mat-radio-button value="1">{{'setup.owner.customer' | translate}}</mat-radio-button>
-                        <mat-radio-button value="2">{{'setup.owner.vendor' | translate}}</mat-radio-button>
+                    <div fxLayout="row" class="row" fxLayoutGap="5px">
+                      <mat-radio-group fxLayout="row">
+                        <mat-radio-button value="1" fxFlex>{{'setup.owner.customer' | translate}}</mat-radio-button>
+                        <mat-radio-button value="2" fxFlex>{{'setup.owner.vendor' | translate}}</mat-radio-button>
                       </mat-radio-group>
-                    </div> -->
+                    </div>
 
                     <div fxLayout="row" class="row" fxLayoutGap="5px">
                       <mat-form-field appearance="outline" fxFlex="20" fxFlex.lt-sm="30">
@@ -32,10 +32,6 @@
                         </mat-error>
                       </mat-form-field>
                       <mat-form-field appearance="outline" fxFlex="60">
-                        <mat-radio-group aria-label="Select an option" color="primary">
-                          <mat-radio-button value="1">Option 1</mat-radio-button>
-                          <mat-radio-button value="2">Option 2</mat-radio-button>
-                        </mat-radio-group>
                         <mat-label>{{'setup.owner.name' | translate}}</mat-label>
                         <input matInput required type="text" formControlName="name" />
                         <mat-error *ngIf="dataOwnerControls.name.invalid">{{ 'error.field' |
@@ -104,7 +100,7 @@
                           translate }}
                         </mat-error>
                       </mat-form-field>
-                      <mat-form-field appearance="outline" fxFlex="31.5" fxFlex.lt-sm="24">
+                      <mat-form-field appearance="outline" fxFlex="28" fxFlex.lt-sm="24">
                         <mat-label>{{'setup.owner.zip' | translate}}</mat-label>
                         <input matInput required type="text" formControlName="zip" />
                         <mat-error *ngIf="dataOwnerControls.zip.invalid">{{ 'error.field' |
