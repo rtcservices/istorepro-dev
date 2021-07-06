@@ -26,6 +26,7 @@ export class BaseItemComponent implements OnInit {
   baseItemDataTab!: MatTabGroup;
   dataItemForm!: FormGroup;
   searchItemForm!: FormGroup;
+  dataItemOwnerForm!: FormGroup;
   dataItemStForm!: FormGroup;
   formErrorTranslated = '';
   filterErrorTranslated = '';
@@ -132,6 +133,7 @@ export class BaseItemComponent implements OnInit {
   ) {
     this.createDataItemForm();
     this.createSearchItemForm();
+    this.createDataItemOwnerForm();
     this.createDataItemStForm();
   }
 
@@ -234,45 +236,39 @@ export class BaseItemComponent implements OnInit {
     return this.dataItemForm.controls;
   }
 
-  createDataItemStForm() {
-    this.dataItemStForm = this.fb.group({
-      warehouse: [
-        '',
-        [
-          Validators.maxLength(50),
-          Validators.required,
-          Validators.pattern(patternsHelper.name)
-        ]
-      ],
-      item: [
-        '',
-        [
-          Validators.maxLength(100),
-          Validators.required,
-          Validators.pattern(patternsHelper.alphanumeric)
-        ]
-      ],
-      type: [
-        '',
-        [Validators.required, Validators.pattern(patternsHelper.alphanumeric)]
-      ],
-      owner: ['', [Validators.maxLength(50), Validators.required]],
-      ownerName: ['', [Validators.maxLength(50)]],
-      scanCode: [
-        '',
-        [
-          Validators.maxLength(10),
-          Validators.pattern(patternsHelper.alphanumeric)
-        ]
-      ]
+  createDataItemOwnerForm() {
+    this.dataItemOwnerForm = this.fb.group({
+      warehouse: '',
+      item: '',
+      type: '',
+      owner: '',
+      ownerName: ''
     });
   }
+  onDataItemOwnerSubmit() {}
 
+  resetItemDataOwnerForm() {
+    this.dataItemOwnerForm.reset();
+  }
+  get dataItemFormOwnerControls() {
+    return this.dataItemOwnerForm.controls;
+  }
+
+  createDataItemStForm() {
+    this.dataItemStForm = this.fb.group({
+      warehouse: '',
+      item: '',
+      exclusiveLocationZone: ''
+    });
+  }
   get dataItemFormStControls() {
     return this.dataItemStForm.controls;
   }
-
   onDataItemStSubmit() {}
+
+  resetItemDataStForm() {
+    this.dataItemStForm.reset();
+  }
 
   saveItemData() {}
 

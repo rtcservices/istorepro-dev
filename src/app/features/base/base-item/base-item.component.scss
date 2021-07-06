@@ -1,4 +1,4 @@
-@import "../../../../assets/scss/variables.scss";
+@import '../../../../assets/scss/variables.scss';
 
 .mat-column-action {
   width: 50px;
@@ -68,7 +68,22 @@ select {
 }
 
 .pale-border-box {
-  ::ng-deep .mat-form-field-wrapper{
+  ::ng-deep .mat-form-field-wrapper {
     padding-bottom: 0em;
+  }
+}
+
+.modal-button {
+  margin-top: -20px;
+  text-align: right;
+  button {
+    transform: scale(0.7);
+  }
+}
+.modal-button-bottom {
+  margin-top: 10px;
+  text-align: right;
+  button {
+    transform: scale(0.7);
   }
 }
