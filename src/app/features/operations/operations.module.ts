@@ -6,6 +6,7 @@ import { OperationsReceiptComponent } from './operations-receipt/operations-rece
 import { OperationsLocationManagementComponent } from './operations-location-management/operations-location-management.component';
 import { OperationsHeatMapComponent } from './operations-heat-map/operations-heat-map.component';
 import { OperationsDeliveryComponent } from './operations-delivery/operations-delivery.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { OperationsDeliveryComponent } from './operations-delivery/operations-de
   ],
   imports: [
     CommonModule,
+    SharedModule,
     OperationsRoutingModule
   ]
 })

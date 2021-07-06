@@ -40,7 +40,8 @@ td {
 }
 
 .site-table td {
-  padding: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 .input-ic-padding {
@@ -103,4 +104,9 @@ select {
 }
 button[mat-dialog-close] {
   transform: scale(0.7);
+}
+
+
+.overflow-x {
+  overflow-x: auto !important;
 }

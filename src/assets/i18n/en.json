@@ -358,5 +358,31 @@
       "excludeFromPlanning": "Exclude From Planning",
       "excludeFromAutoAllocation": "Exclude From Auto Allocation"
     }
+  },
+  "operations": {
+    "receipt": {
+      "warehouse": "Warehouse",
+      "trn": "TRN",
+      "grn": "GRN",
+      "receiptDate": "Receipt Date",
+      "owner": "Owner",
+      "po": "PO/Ref No",
+      "remarks": "Remarks",
+      "item": "Item",
+      "status":"Status",
+      "description": "Description",
+      "ru": "RU",
+      "sku": "SKU",
+      "qtyexp": "Qty Exp",
+      "qtygood": "Qty Good",
+      "qtydmg": "Qty Dmg",
+      "netwt": "Net Wt",
+      "netvol": "Net Vol",
+      "mfgDate": "Mfg Date",
+      "expDate": "Exp Date",
+      "batchNo": "Batch No",
+      "storageLabel": "Storage Label"
+    }
   }
+  
 }
