@@ -138,14 +138,14 @@
                         <mat-error *ngIf="dataLocationControls.storageStatus.invalid">{{ 'error.field' | translate }}
                         </mat-error>
                       </mat-form-field>
-                      <div class="pale-border-box" fxFlex="40" fxFlex.lt-md="31">
+                      <div class="pale-border-box form-checkbox-input" fxFlex="40" fxFlex.lt-md="31">
                         <mat-checkbox color="primary" formControlName="freeze">
                           {{ 'base.location.freeze' | translate }}
                         </mat-checkbox>
                         <mat-checkbox color="primary" formControlName="reworkArea">
                           {{ 'base.location.reworkArea' | translate }}</mat-checkbox>
                       </div>
-                      <div class="pale-border-box" fxFlex="40" fxFlex.lt-md="47">
+                      <div class="pale-border-box form-checkbox-input"  fxFlex="40" fxFlex.lt-md="47">
                         <b>{{ 'base.location.excludeFrom' | translate }}</b>
                         <mat-checkbox color="primary" formControlName="planning">
                           {{ 'base.location.planning' | translate }}</mat-checkbox>
@@ -236,7 +236,6 @@
                           translate}}</div>
                       </div>
                       <div fxFlex></div>
-                      <div fxFlex></div>
                       <div class="autoFill-checkbox" fxFlex>
                         <mat-checkbox color="primary" formControlName="autoFill">{{
                           'base.location.capacity.autoFill' | translate
@@ -254,7 +253,7 @@
                         <div class="input-group-icon input-ic-padding-b">{{'general.cbm' |
                           translate}}</div>
                       </div>
-                      <div class="validate-checkbox" fxFlex>
+                      <div class="validate-checkbox" fxFlex="10">
                         <mat-checkbox color="primary" formControlName="volumeValidate">{{
                           'base.location.capacity.volumeValidate' | translate
                           }}</mat-checkbox>
@@ -281,7 +280,7 @@
                         <div class="input-group-icon input-ic-padding-b">{{'general.kg' |
                           translate}}</div>
                       </div>
-                      <div class="validate-checkbox" fxFlex >
+                      <div class="validate-checkbox" fxFlex="10" >
                         <mat-checkbox color="primary" formControlName="volumeValidate">{{
                           'base.location.capacity.weightValidate' | translate
                           }}</mat-checkbox>

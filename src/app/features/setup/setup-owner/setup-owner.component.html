@@ -16,10 +16,10 @@
                 <mat-card>
                   <mat-card-content>
 
-                    <div fxLayout="row" class="row" fxLayoutGap="5px">
-                      <mat-radio-group fxLayout="row">
-                        <mat-radio-button value="1" fxFlex>{{'setup.owner.customer' | translate}}</mat-radio-button>
-                        <mat-radio-button value="2" fxFlex>{{'setup.owner.vendor' | translate}}</mat-radio-button>
+                    <div fxLayout="row" class="row radio-button-row" fxLayoutGap="5px">
+                      <mat-radio-group class="form-radio-button">
+                        <mat-radio-button color="primary" value="1" fxFlex>{{'setup.owner.customer' | translate}}</mat-radio-button>
+                        <mat-radio-button color="primary" value="2" fxFlex>{{'setup.owner.vendor' | translate}}</mat-radio-button>
                       </mat-radio-group>
                     </div>
 
@@ -100,7 +100,7 @@
                           translate }}
                         </mat-error>
                       </mat-form-field>
-                      <mat-form-field appearance="outline" fxFlex="28" fxFlex.lt-sm="24">
+                      <mat-form-field appearance="outline" fxFlex="29" fxFlex.lt-sm="24">
                         <mat-label>{{'setup.owner.zip' | translate}}</mat-label>
                         <input matInput required type="text" formControlName="zip" />
                         <mat-error *ngIf="dataOwnerControls.zip.invalid">{{ 'error.field' |
@@ -123,7 +123,7 @@
                           translate }}
                         </mat-error>
                       </mat-form-field>
-                      <mat-form-field appearance="outline" fxFlex="31.5" fxFlex.lt-sm="24">
+                      <mat-form-field appearance="outline" fxFlex="29" fxFlex.lt-sm="24">
                         <mat-label>{{'setup.owner.fax' | translate}}</mat-label>
                         <input matInput required type="text" formControlName="fax" />
                         <mat-error *ngIf="dataOwnerControls.fax.invalid">{{ 'error.field' |
@@ -168,7 +168,7 @@
                             <td>
                               {{document.type}}
                             </td>
-                            <td style="text-align: center; width: 80px;">
+                            <td class="checkbox-column" style="text-align: center; width: 80px;">
                               <mat-checkbox color="primary" [checked]="document.autoEmail" disabled></mat-checkbox>
                             </td>
                           </tr>
@@ -268,7 +268,22 @@
                           translate }}
                         </mat-error>
                       </mat-form-field>
+                      <div class="form-three-button-container" fxFlex>
+                        <button mat-raised-button color="primary" type="submit">
+                          <mat-icon>add</mat-icon>
+                        </button>
+                        <button mat-raised-button color="warn" type="button" >
+                          <mat-icon>remove</mat-icon>
+                        </button>
+                        <button mat-raised-button color="accent" type="reset">
+                          <mat-icon>undo</mat-icon>
+                        </button>
+                      </div>
                     </div>
+
+                    <!-- <div fxLayout="row" fxLayoutGap="5px" style="float: right; margin-bottom: 4px;">
+                      
+                    </div> -->
 
                     <table class="site-table w-100 mat-elevation-z8">
                       <thead>
@@ -289,7 +304,6 @@
                       </tbody>
                     </table>
 
-
                   </mat-card-content>
                 </mat-card>
               </mat-tab>
@@ -308,7 +322,7 @@
                       <tbody>
                         <ng-template let-control ngFor [ngForOf]="whControlDataSource">
                           <tr>
-                            <td style="text-align: center; width: 30px;">
+                            <td class="checkbox-column" style="text-align: center; width: 30px;">
                               <mat-checkbox color="primary"></mat-checkbox>
                             </td>
                             <td>{{control.code}}</td>
