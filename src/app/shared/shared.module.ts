@@ -35,6 +35,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { PasswordStrengthComponent } from './password-strength/password-strength.component';
 import { DataAuditComponent } from './data-audit/data-audit.component';
+import { MatTree, MatTreeModule } from '@angular/material/tree';
 @NgModule({
   imports: [
     CommonModule,
@@ -67,7 +68,8 @@ import { DataAuditComponent } from './data-audit/data-audit.component';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatTreeModule
   ],
   declarations: [PasswordStrengthComponent, DataAuditComponent],
   exports: [
@@ -103,7 +105,7 @@ import { DataAuditComponent } from './data-audit/data-audit.component';
     MatNativeDateModule,
     MatSidenavModule,
     MatTableModule,
-
+    MatTreeModule,
     PasswordStrengthComponent,
     DataAuditComponent
   ]

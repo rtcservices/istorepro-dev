@@ -46,6 +46,20 @@
       padding: 0 5px;
     }
   }
+  .read-only-description {
+    align-items: center;
+    background-color: $site-lighter-gray;
+    border: 1px solid $site-light-gray;
+    border-radius: 5px;
+    color: $site-gray;
+    display: flex;
+    height: 38px;
+    padding-left: 5px 0 0 5px;
+    margin: 4px 0;
+    label {
+      margin-left: 10px;
+    }
+  }
 }
 
 .slim-form
@@ -78,6 +92,9 @@
   }
   mat-error {
     float: right;
+    @include breakpoint(mobileonly) {
+      font-size: 10px;
+    }
   }
 }
 .cdk-overlay-container .cdk-overlay-pane {

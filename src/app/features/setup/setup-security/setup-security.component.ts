@@ -1,5 +1,5 @@
 import { SelectionModel } from '@angular/cdk/collections';
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, Injectable, OnInit, ViewChild } from '@angular/core';
 import {
   AbstractControl,
   FormBuilder,
@@ -9,18 +9,24 @@ import {
 
 import { MatTableDataSource } from '@angular/material/table';
 import { MatTabGroup } from '@angular/material/tabs';
-
 import { patternsHelper } from '../../../helpers/patterns.helper';
 import { SelectItemModel } from '../../../models/select-item.model';
 import {
   PrevilegeNode,
   FlattenedPrevilegeNode
 } from '../models/setup-security.model';
+import {FlatTreeControl} from '@angular/cdk/tree';
+import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
+
+
 @Component({
   selector: 'ibe-setup-security',
   templateUrl: './setup-security.component.html',
   styleUrls: ['./setup-security.component.scss']
 })
+
+
+
 export class SetupSecurityComponent implements OnInit, AfterViewInit {
   //#region "Data Tab Variables"
   @ViewChild('setupSecurityDataTab', { static: false })
@@ -54,6 +60,14 @@ export class SetupSecurityComponent implements OnInit, AfterViewInit {
   availablePrevileges: PrevilegeNode[] = [];
   allocatedPrevileges: PrevilegeNode[] = [];
   //#endregion
+/**
+ * Checklist database, it can build a tree structured Json object.
+ * Each node in Json object represents a to-do item or a category.
+ * If a node is a category, it has children items and new items can be added under the category.
+ */
+
+
+
 
   //#region "Search Tab Variables"
   searchSetupSecurityForm!: FormGroup;
@@ -70,8 +84,32 @@ export class SetupSecurityComponent implements OnInit, AfterViewInit {
   displayedSearchColumns: string[] = ['text'];
   //#endregion
 
+ 
+  private _transformer = (node: PrevilegeNode, level: number) => {
+    return {
+      expandable: !!node.children && node.children.length > 0,
+      name: node.name,
+      
+      level: level,
+    };
+  }
+
+  treeControl = new FlatTreeControl<FlattenedPrevilegeNode>(
+    node => node.level, node => node.expandable);
+
+  treeFlattener = new MatTreeFlattener(
+    this._transformer, node => node.level, node => node.expandable, node => node.children);
+
+  dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
+ 
+   /** The selection for checklist */
+   checklistSelection = new SelectionModel<FlattenedPrevilegeNode>(true /* multiple */);
+ 
   //#region "Constructor and Page Events"
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder) {
+   this.createAvailablePrevilegeTree()
+
+  }
 
   ngOnInit(): void {
     this.createDataSetupSecurityForm();
@@ -79,7 +117,7 @@ export class SetupSecurityComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.setTabHeights();
+   /*  this.setTabHeights(); */
   }
   //#endregion
 
@@ -94,6 +132,9 @@ export class SetupSecurityComponent implements OnInit, AfterViewInit {
     this.dataSetupSecurityForm.reset();
   }
   //#endregion
+
+
+  
 
   //#region "User Tab"
   createDataSetupSecurityForm() {
@@ -237,6 +278,8 @@ export class SetupSecurityComponent implements OnInit, AfterViewInit {
         }
       ]
     };
+
+
     const basePrevileges: PrevilegeNode = {
       id: 12,
       name: 'Base',
@@ -309,9 +352,12 @@ export class SetupSecurityComponent implements OnInit, AfterViewInit {
       {
         id: 1,
         name: 'Functions',
-        children: [setupPrevileges, basePrevileges]
+        children: [setupPrevileges,basePrevileges]
       }
     ];
+
+    this.dataSource.data = this.availablePrevileges;
+  
   }
   //#endregion
 
@@ -358,4 +404,101 @@ export class SetupSecurityComponent implements OnInit, AfterViewInit {
     return null;
   }
   //#endregion
+
+
+
+  getLevel = (node: FlattenedPrevilegeNode) => node.level;
+
+  isExpandable = (node: FlattenedPrevilegeNode) => node.expandable;
+/* 
+  getChildren = (node: PrevilegeNode): PrevilegeNode[] => node.children;
+ */
+  hasChild = (_: number, _nodeData: FlattenedPrevilegeNode) => _nodeData.expandable;
+
+  hasNoContent = (_: number, _nodeData: FlattenedPrevilegeNode) => _nodeData.name === '';
+
+
+
+  /** Whether all the descendants of the node are selected. */
+  descendantsAllSelected(node: FlattenedPrevilegeNode): boolean {
+    const descendants = this.treeControl.getDescendants(node);
+    const descAllSelected = descendants.length > 0 && descendants.every(child => {
+      return this.checklistSelection.isSelected(child);
+    });
+    return descAllSelected;
+  }
+
+  /** Whether part of the descendants are selected */
+  descendantsPartiallySelected(node: FlattenedPrevilegeNode): boolean {
+    const descendants = this.treeControl.getDescendants(node);
+    const result = descendants.some(child => this.checklistSelection.isSelected(child));  
+    console.log( node)
+    return result && !this.descendantsAllSelected(node);
+  }
+
+  /** Toggle the to-do item selection. Select/deselect all the descendants node */
+  todoItemSelectionToggle(node: FlattenedPrevilegeNode): void {
+    this.checklistSelection.toggle(node);
+    const descendants = this.treeControl.getDescendants(node);
+    this.checklistSelection.isSelected(node)
+      ? this.checklistSelection.select(...descendants)
+      : this.checklistSelection.deselect(...descendants);
+
+    // Force update for the parent
+    descendants.forEach(child => this.checklistSelection.isSelected(child));
+    this.checkAllParentsSelection(node);
+  }
+
+  /** Toggle a leaf to-do item selection. Check all the parents to see if they changed */
+  todoLeafItemSelectionToggle(node: FlattenedPrevilegeNode): void {
+    this.checklistSelection.toggle(node);
+    this.checkAllParentsSelection(node);
+  }
+
+  /* Checks all the parents when a leaf node is selected/unselected */
+  checkAllParentsSelection(node: FlattenedPrevilegeNode): void {
+    let parent: FlattenedPrevilegeNode | null = this.getParentNode(node);
+    while (parent) {
+      this.checkRootNodeSelection(parent);
+      parent = this.getParentNode(parent);
+    }
+  }
+
+  /** Check root node checked state and change it accordingly */
+  checkRootNodeSelection(node: FlattenedPrevilegeNode): void {
+    const nodeSelected = this.checklistSelection.isSelected(node);
+    const descendants = this.treeControl.getDescendants(node);
+    const descAllSelected = descendants.length > 0 && descendants.every(child => {
+      return this.checklistSelection.isSelected(child);
+    });
+    if (nodeSelected && !descAllSelected) {
+      this.checklistSelection.deselect(node);
+    } else if (!nodeSelected && descAllSelected) {
+      this.checklistSelection.select(node);
+    }
+  }
+
+  /* Get the parent node of a node */
+  getParentNode(node: FlattenedPrevilegeNode): FlattenedPrevilegeNode | null {
+    const currentLevel = this.getLevel(node);
+
+    if (currentLevel < 1) {
+      return null;
+    }
+
+    const startIndex = this.treeControl.dataNodes.indexOf(node) - 1;
+
+    for (let i = startIndex; i >= 0; i--) {
+      const currentNode = this.treeControl.dataNodes[i];
+
+      if (this.getLevel(currentNode) < currentLevel) {
+        return currentNode;
+      }
+    }
+    return null;
+  }
+
+
+
+  
 }

@@ -24,10 +24,9 @@
                         <mat-error *ngIf="dataLocationControls.warehouse.invalid">{{ 'error.field' | translate }}
                         </mat-error>
                       </mat-form-field>
-                      <fieldset class="read-only-input" fxFlex>
-                        <legend>{{ 'base.location.warehouse' | translate }}</legend>
-                        <label>{{ dataLocationControls.warehouse.value }}</label>
-                      </fieldset>
+                      <div class="read-only-description" fxFlex>
+                        <label>{{ 'base.location.warehouse' | translate }}</label>
+                      </div>
                     </div>
 
                     <div fxLayout="row" class="row" fxLayoutGap="5px">
@@ -41,10 +40,9 @@
                         <mat-error *ngIf="dataLocationControls.row.invalid">{{ 'error.field' | translate }}
                         </mat-error>
                       </mat-form-field>
-                      <fieldset class="read-only-input" fxFlex="30">
-                        <legend>{{ 'base.location.row' | translate }}</legend>
-                        <label>{{ dataLocationControls.row.value }}</label>
-                      </fieldset>
+                      <div class="read-only-description" fxFlex="30">
+                        <label>{{ 'base.location.row' | translate }}</label>
+                      </div>
                       <mat-form-field appearance="outline" fxFlex="20" fxFlex.lt-sm="25">
                         <mat-label>{{'base.location.unit' | translate }}</mat-label>
                         <mat-select disableOptionCentering panelClass="slim-select-field" type="text" readonly
@@ -55,10 +53,9 @@
                         <mat-error *ngIf="dataLocationControls.unit.invalid">{{ 'error.field' | translate }}
                         </mat-error>
                       </mat-form-field>
-                      <fieldset class="read-only-input" fxFlex>
-                        <legend>{{ 'base.location.unit' | translate }}</legend>
-                        <label>{{ dataLocationControls.unit.value }}</label>
-                      </fieldset>
+                      <div class="read-only-description" fxFlex>
+                        <label>{{ 'base.location.unit' | translate }}</label>
+                      </div>
                     </div>
 
                     <div fxLayout="row" class="row" fxLayoutGap="5px">
@@ -68,11 +65,10 @@
                         <mat-error *ngIf="dataLocationControls.level.invalid">{{ 'error.field' | translate }}
                         </mat-error>
                       </mat-form-field>
-                      <fieldset class="read-only-input" fxFlex="20">
-                        <legend>{{ 'base.location.location' | translate }}</legend>
-                        <label>{{ dataLocationControls.location.value }}</label>
-                      </fieldset>
-                      <mat-form-field appearance="outline" fxFlex>
+                      <div class="read-only-description" fxFlex="20" fxFlex.lt-sm="30">
+                        <label>{{ 'base.location.location' | translate }}</label>
+                      </div>
+                      <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="45">
                         <mat-label>{{'base.location.nature' | translate }}</mat-label>
                         <mat-select disableOptionCentering panelClass="slim-select-field" type="text" readonly
                           formControlName="nature">
@@ -85,7 +81,7 @@
                     </div>
 
                     <div fxLayout="row" class="row" fxLayoutGap="5px">
-                      <mat-form-field appearance="outline" fxFlex="20">
+                      <mat-form-field appearance="outline" fxFlex="25">
                         <mat-label>{{'base.location.zone' | translate }}</mat-label>
                         <mat-select disableOptionCentering panelClass="slim-select-field" type="text" readonly
                           formControlName="zone">
@@ -125,13 +121,13 @@
                           {{ 'error.field' | translate }}
                         </mat-error>
                       </mat-form-field>
-                      <mat-form-field appearance="outline" fxFlex>
+                      <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="47">
                         <mat-label>{{'base.location.scanCode' | translate}}</mat-label>
                         <input matInput type="text" formControlName="scanCode" />
                       </mat-form-field>
                     </div>
 
-                    <div fxLayout="row" class="row" fxLayoutGap="5px">
+                    <div fxLayout="row" fxLayout.lt-sm="column" class="row" fxLayoutGap="5px" fxFlexFill>
                       <mat-form-field appearance="outline" fxFlex="20" fxFlex.lt-sm="25">
                         <mat-label>{{'base.location.storageStatus' | translate }}</mat-label>
                         <mat-select disableOptionCentering panelClass="slim-select-field" type="text" readonly
@@ -142,15 +138,14 @@
                         <mat-error *ngIf="dataLocationControls.storageStatus.invalid">{{ 'error.field' | translate }}
                         </mat-error>
                       </mat-form-field>
-                      <div class="form-checkbox-input" fxFlex="15">
-                        <mat-checkbox color="primary" formControlName="freeze">{{ 'base.location.freeze' | translate }}
+                      <div class="pale-border-box" fxFlex="40" fxFlex.lt-md="31">
+                        <mat-checkbox color="primary" formControlName="freeze">
+                          {{ 'base.location.freeze' | translate }}
                         </mat-checkbox>
-                      </div>
-                      <div class="form-checkbox-input" fxFlex="20">
                         <mat-checkbox color="primary" formControlName="reworkArea">
                           {{ 'base.location.reworkArea' | translate }}</mat-checkbox>
                       </div>
-                      <div class="pale-border-box checkbox-set" fxLayout="row" fxFlex>
+                      <div class="pale-border-box" fxFlex="40" fxFlex.lt-md="47">
                         <b>{{ 'base.location.excludeFrom' | translate }}</b>
                         <mat-checkbox color="primary" formControlName="planning">
                           {{ 'base.location.planning' | translate }}</mat-checkbox>
