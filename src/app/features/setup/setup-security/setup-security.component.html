@@ -94,27 +94,24 @@
                             (change)="toggleSuspendRevoke($event)">
                             <b>{{'setup.security.suspendRevoke' | translate }}</b>
                           </mat-checkbox>
-                          <div fxLayout="row" fxLayoutAlign.lt-md="column">
-                            <div fxFlex fxLayout="row" fxLayoutAlign.lt-md="column">
-                              <mat-form-field appearance="outline" class="first-column">
-                                <mat-label>{{'setup.security.suspendFrom' | translate }}</mat-label>
-                                <input matInput type="text" formControlName="suspendFrom" [readonly]="!suspendRevoke" />
-                              </mat-form-field>
-                              <mat-form-field appearance="outline">
-                                <mat-label>{{'setup.security.suspendTo' | translate}}</mat-label>
-                                <input matInput type="text" formControlName="suspendTo" [readonly]="!suspendRevoke" />
-                              </mat-form-field>
-                            </div>
-                            <div fxFlex fxLayout="row">
-                              <fieldset class="read-only-input first-column">
-                                <legend>{{ 'setup.security.lastSuspended' | translate }}</legend>
-                                <label>ADMINISTRATOR</label>
-                              </fieldset>
-                              <fieldset class="read-only-input">
-                                <legend>{{ 'setup.security.lastRevoked' | translate }}</legend>
-                                <label>ADMINISTRATOR</label>
-                              </fieldset>
-                            </div>
+                          <div fxLayout="row" fxLayout.lt-sm="column" class="row" fxLayoutGap="5px"
+                            fxLayoutGap.lt-sm="10px" fxFlexFill>
+                            <mat-form-field appearance="outline">
+                              <mat-label>{{'setup.security.suspendFrom' | translate }}</mat-label>
+                              <input matInput type="text" formControlName="suspendFrom" [readonly]="!suspendRevoke" />
+                            </mat-form-field>
+                            <mat-form-field appearance="outline">
+                              <mat-label>{{'setup.security.suspendTo' | translate}}</mat-label>
+                              <input matInput type="text" formControlName="suspendTo" [readonly]="!suspendRevoke" />
+                            </mat-form-field>
+                            <fieldset class="read-only-input">
+                              <legend>{{ 'setup.security.lastSuspended' | translate }}</legend>
+                              <label>ADMINISTRATOR</label>
+                            </fieldset>
+                            <fieldset class="read-only-input">
+                              <legend>{{ 'setup.security.lastRevoked' | translate }}</legend>
+                              <label>ADMINISTRATOR</label>
+                            </fieldset>
                           </div>
                         </div>
                       </div>
