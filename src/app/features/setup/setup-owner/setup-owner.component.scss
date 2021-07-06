@@ -1,16 +1,18 @@
 .form-checkbox-input {
-    mat-checkbox {
-        margin-top: 10px;
-        margin-left: 20px;
-    }
+  mat-checkbox {
+    margin-top: 10px;
+    margin-left: 20px;
+  }
 }
-
+.owner-type {
+  margin-left: 5px;
+}
 .radio-button-row {
-    height: 35px;
-    .form-radio-button {
-        mat-radio-button {
-            padding-right: 50px;
-            margin-top: 5px;
-        }
+  height: 35px;
+  .form-radio-button {
+    mat-radio-button {
+      padding-right: 50px;
+      margin-top: 5px;
     }
+  }
 }

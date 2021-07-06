@@ -34,7 +34,7 @@ export class SetupOwnerComponent implements OnInit, AfterViewInit {
   formErrorTranslated = '';
   filterErrorTranslated = '';
 
-  ownerType = '';
+  ownerType = 'customer';
 
   dataOwnerForm!: FormGroup;
   searchItemForm!: FormGroup;

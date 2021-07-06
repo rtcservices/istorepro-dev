@@ -17,8 +17,8 @@
                   <mat-card-content>
 
                     <div fxLayout="row" class="row radio-button-row" fxLayoutGap="5px">
-                      <mat-radio-group class="form-radio-button" (change)="changeOwnerType($event)">
-                        <mat-radio-button color="primary" value="customer" fxFlex>
+                      <mat-radio-group class="form-radio-button owner-type" (change)="changeOwnerType($event)">
+                        <mat-radio-button color="primary" value="customer" checked fxFlex>
                           {{'setup.owner.customer' | translate}}
                         </mat-radio-button>
                         <mat-radio-button color="primary" value="vendor" fxFlex>
@@ -272,7 +272,7 @@
                           translate }}
                         </mat-error>
                       </mat-form-field>
-                      
+
                       <div class="form-three-button-container" fxFlex>
                         <button mat-raised-button color="primary" type="submit">
                           <mat-icon>add</mat-icon>
@@ -341,7 +341,7 @@
               </mat-tab>
 
             </mat-tab-group>
-          </mat-card-content>        
+          </mat-card-content>
         </mat-card>
       </div>
       <mat-card class="form-action-section">
