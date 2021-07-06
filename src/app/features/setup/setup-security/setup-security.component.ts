@@ -142,7 +142,7 @@ export class SetupSecurityComponent implements OnInit, AfterViewInit {
       {
         loginName: '',
         license: ['', [Validators.required]],
-        expiryOn: '',
+        expiryOn: '14/06/2023',
         fullName: [
           '',
           [

@@ -97,7 +97,8 @@
                                     }}
                                   </mat-error>
                                 </div>
-                                <div class="input-group-icon input-ic-padding "> <span class="text-center ">{{'general.kg'
+                                <div class="input-group-icon input-ic-padding "> <span
+                                    class="text-center ">{{'general.kg'
                                     |
                                     translate}} </span></div>
                               </div>
@@ -243,14 +244,18 @@
                             <td class="checkbox-column">
                               <mat-checkbox color="primary"></mat-checkbox>
                             </td>
-                            <td> <button (click)="openstoreDialog(owner)" mat-icon-button
+                            <td style="width: 70px; text-align: center;">
+                              <button (click)="openstoreDialog(owner)" mat-icon-button
                                 aria-label="Example icon button with a vertical three dot icon">
                                 <mat-icon>more_horiz</mat-icon>
-                              </button></td>
-                            <td> <button (click)="openDialog(stpref)" mat-icon-button
+                              </button>
+                            </td>
+                            <td style="width: 70px; text-align: center;"> 
+                              <button (click)="openDialog(stpref)" mat-icon-button
                                 aria-label="Example icon button with a vertical three dot icon">
                                 <mat-icon>more_horiz</mat-icon>
-                              </button></td>
+                              </button>
+                            </td>
                             <td style="width:100px">{{control.sku}}</td>
                           </tr>
                         </ng-template>
@@ -628,20 +633,20 @@
           <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px" fxLayoutGap.lt-md="0px">
             <mat-form-field appearance="outline" fxFlex="33">
               <mat-label>{{
-              'base.item.type' | translate
-              }}</mat-label>
+                'base.item.type' | translate
+                }}</mat-label>
               <input matInput type="text" formControlName="type" />
             </mat-form-field>
             <mat-form-field appearance="outline" fxFlex="33">
               <mat-label>{{
-              'base.item.owner' | translate
-              }}</mat-label>
+                'base.item.owner' | translate
+                }}</mat-label>
               <input matInput type="text" formControlName="owner" />
             </mat-form-field>
             <mat-form-field appearance="outline" fxFlex="30.5">
               <mat-label>{{
-              'base.item.ownerName' | translate
-              }}</mat-label>
+                'base.item.ownerName' | translate
+                }}</mat-label>
               <input matInput type="text" formControlName="ownerName" />
             </mat-form-field>
           </div>
@@ -707,13 +712,13 @@
             </fieldset>
             <mat-form-field appearance="outline" fxFlex>
               <mat-label>{{
-              'base.item.itemType' | translate
-              }}</mat-label>
+                'base.item.itemType' | translate
+                }}</mat-label>
               <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="itemType">
               </mat-select>
               <mat-error *ngIf="dataItemFormControls.itemType.invalid">{{
-              'error.field' | translate
-              }}</mat-error>
+                'error.field' | translate
+                }}</mat-error>
             </mat-form-field>
           </div>
           <div class="text-right modal-button">

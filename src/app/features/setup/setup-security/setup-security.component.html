@@ -26,6 +26,7 @@
                               {{ 'error.field' | translate }}
                             </mat-error>
                           </mat-form-field>
+                          
                         </div>
                         <div fxLayout="row" class="row" fxLayoutGap="5px">
                           <mat-form-field appearance="outline" fxFlex>
@@ -90,7 +91,10 @@
                         </div>
                       </div>
                       <div fxFlex="20%">
-
+                          <fieldset class="read-only-input" fxLayout="row" fxFlex = "20"  fxLayoutGap="5px">
+                            <legend>{{ 'setup.security.expiryOn' | translate }}</legend>
+                            <label>{{ dataSetupSecurityFormControls.expiryOn.value }}</label>
+                          </fieldset>
                       </div>
                     </div>
                   </mat-card-content>
@@ -162,11 +166,9 @@
 
                 <div fxFlex="20%">
 
-
                 </div>
 
                 <div fxFlex="40%">
-
 
                 </div>
                 
