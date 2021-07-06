@@ -65,7 +65,7 @@ select {
 }
 
 .input-group {
-  padding-top: 6px;
+  padding-top: 3px;
 }
 
 .input-group-title {
@@ -73,6 +73,9 @@ select {
 }
 
 .pale-border-box {
+  mat-form-field{
+    margin-bottom: 4px !important;
+  }
   ::ng-deep .mat-form-field-wrapper {
     padding-bottom: 0em;
   }

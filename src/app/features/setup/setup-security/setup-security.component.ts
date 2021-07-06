@@ -19,7 +19,8 @@ import { patternsHelper } from '../../../helpers/patterns.helper';
 import { SelectItemModel } from '../../../models/select-item.model';
 import {
   PrevilegeNode,
-  FlattenedPrevilegeNode
+  FlattenedPrevilegeNode,
+  SetupSecuritySearchModel
 } from '../models/setup-security.model';
 import { FlatTreeControl } from '@angular/cdk/tree';
 import {
