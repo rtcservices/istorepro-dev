@@ -7,6 +7,16 @@
       <div fxLayout="row" class="data-form">
         <mat-card class="w-100">
           <mat-card-content>
+
+            <div class="page-main-button">
+              <button mat-raised-button color="primary" type="submit">
+                <mat-icon>cloud_upload</mat-icon>
+              </button>
+              <button mat-raised-button color="primary" type="submit">
+                <mat-icon>cloud_download</mat-icon>
+              </button>
+            </div>
+
             <mat-tab-group #baseItemdataTab id="baseItemdataTab">
               <mat-tab label="Item">
                 <mat-card>
@@ -284,13 +294,11 @@
                       <thead>
                         <tr>
                           <th></th>
-                          <th></th>
                           <th colspan="3">{{ 'base.item.InventoryAlert.level' | translate}}</th>
                           <th></th>
                         </tr>
                         <tr>
                           <th>{{ 'base.item.InventoryAlert.warehouse' | translate}}</th>
-                          <th>{{ 'base.item.InventoryAlert.description' | translate}}</th>
                           <th>{{ 'base.item.InventoryAlert.min' | translate}}</th>
                           <th>{{ 'base.item.InventoryAlert.reorder' | translate}}</th>
                           <th>{{ 'base.item.InventoryAlert.max' | translate}}</th>
