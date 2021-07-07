@@ -108,23 +108,20 @@
                                     <mat-label>{{
                                       'base.item.unit' | translate
                                       }}</mat-label>
-                                    <input matInput readonly formControlName="unit" />
-                                    <mat-error *ngIf="dataItemFormControls.item.invalid">{{ 'error.field' | translate }}
-                                    </mat-error>
+                                      <mat-select disableOptionCentering panelClass="slim-select-field"formControlName="unit">
+                                      </mat-select>
                                   </mat-form-field>
                                   <div class="input-group" fxFlex>
                                     <div class="input-group-title">{{'base.item.unitWeight' | translate}}</div>
                                     <div class="input-group-area">
                                       <input formControlName="unitWeight">
-                                      <mat-error *ngIf="dataItemFormControls.unitWeight.invalid">{{ 'error.field' |
-                                        translate
-                                        }}
+                                      <mat-error *ngIf="dataItemFormControls.unitWeight.invalid">
+                                        {{ 'error.field' | translate }}
                                       </mat-error>
                                     </div>
-                                    <div class="input-group-icon input-ic-padding "> <span
-                                        class="text-center ">{{'general.kg'
-                                        |
-                                        translate}} </span></div>
+                                    <div class="input-group-icon input-ic-padding ">
+                                      <span class="text-center ">{{'general.kg' | translate}} </span>
+                                    </div>
                                   </div>
                                   <div class="input-group" fxFlex>
                                     <div class="input-group-title">{{'base.item.shelfLife' | translate}}</div>
@@ -311,7 +308,7 @@
                       <tbody>
                         <ng-template let-control ngFor [ngForOf]=" InventoryAlertDataSource">
                           <tr>
-                            <td>
+                            <td class="lookup-column"> 
                               <!-- <input type="text" style="width: 100%;" [value]="control.warehouse"> -->
                               <mat-form-field appearance="outline">
                                 <mat-label>{{ 'base.item.warehouse' | translate }}</mat-label>
@@ -551,7 +548,7 @@
               {{ element.sku }}
             </td>
           </ng-container>
-          
+
           <ng-container matColumnDef="inactive">
             <th style="width: 75px" mat-header-cell *matHeaderCellDef>Inactive</th>
             <td style="width: 75px" mat-cell *matCellDef="let element">
