@@ -395,6 +395,26 @@
       "height":"Height",
       "storageLabel": "Storage Label"
     }
+  },
+  "routines": {
+    "inventory": {
+      "warehouse": "Warehouse",
+      "ian": "IAN" ,
+      "qtygood": "Qty Good",
+      "qtydmg": "Qty Dmg",
+      "location":"Location",
+      "locationzone":"Location Zone",
+      "itemcode":"Item Code",
+      "row":"Row",
+      "unit":"Unit",  
+      "sku":"SKU",
+      "description":"Description",   
+      "status":"Status", 
+      "auditstatus":"Audit Status", 
+      "iandate":"IAN Date", 
+      "lastaudit":"Last audit Completed",    
+      "currentaudit":"Current Audit Completed"     
+    }
   }
   
 }
