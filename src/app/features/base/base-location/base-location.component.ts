@@ -30,13 +30,13 @@ export class BaseLocationComponent implements OnInit {
   searchLocationForm!: FormGroup;
   searchLocationDataSource: BaseLocationSearchModel[] = [];
   dummyLocationSearchModel: BaseLocationSearchModel[] = [
-    { warehouseCode: 'Warehosue 1', row: 'Row 1', unit: 'Unit 1', location : 'Location 1', description: 'Gemini Software', status : "Status 1", nature : "Nature 1" },
-    { warehouseCode: 'Warehosue 2', row: 'Row 2', unit: 'Unit 2', location : 'Location 2', description: 'Gemini Software', status : "Status 2", nature : "Nature 2" },
-    { warehouseCode: 'Warehosue 3', row: 'Row 3', unit: 'Unit 3', location : 'Location 3', description: 'Gemini Software', status : "Status 3", nature : "Nature 3" },
-    { warehouseCode: 'Warehosue 4', row: 'Row 4', unit: 'Unit 4', location : 'Location 4', description: 'Gemini Software', status : "Status 4", nature : "Nature 4" },
-    { warehouseCode: 'Warehosue 5', row: 'Row 5', unit: 'Unit 5', location : 'Location 5', description: 'Gemini Software', status : "Status 5", nature : "Nature 5" }
+    { warehouse: 'Warehosue 1', row: 'Row 1', unit: 'Unit 1', location : 'Location 1', description: 'Gemini Software', status : "Status 1", nature : "Nature 1" },
+    { warehouse: 'Warehosue 2', row: 'Row 2', unit: 'Unit 2', location : 'Location 2', description: 'Gemini Software', status : "Status 2", nature : "Nature 2" },
+    { warehouse: 'Warehosue 3', row: 'Row 3', unit: 'Unit 3', location : 'Location 3', description: 'Gemini Software', status : "Status 3", nature : "Nature 3" },
+    { warehouse: 'Warehosue 4', row: 'Row 4', unit: 'Unit 4', location : 'Location 4', description: 'Gemini Software', status : "Status 4", nature : "Nature 4" },
+    { warehouse: 'Warehosue 5', row: 'Row 5', unit: 'Unit 5', location : 'Location 5', description: 'Gemini Software', status : "Status 5", nature : "Nature 5" }
   ];
-  displayedLocationColumns = ['warehouseCode', 'row', 'unit', 'location', 'description', 'status', 'nature'];
+  displayedLocationColumns = ['warehouse', 'location', 'description', 'status', 'nature'];
 
   constructor(
     private fb: FormBuilder,

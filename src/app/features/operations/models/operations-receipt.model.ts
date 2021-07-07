@@ -14,7 +14,6 @@ export interface OperationReceiptModel {
     remarks: string;
   }
 
-
   export interface OperationReceiptSearchModel {
     warehouse: string;
     owner: string;

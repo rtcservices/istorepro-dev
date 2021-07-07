@@ -334,7 +334,7 @@
           <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
             <mat-form-field appearance="outline" fxFlex>
               <mat-label>{{
-                'base.location.warehouseCode' | translate
+                'base.location.warehouse' | translate
                 }}</mat-label>
               <mat-select disableOptionCentering panelClass="slim-select-field" type="text" readonly
                 formControlName="warehouseCode">
@@ -554,29 +554,13 @@
     <mat-card class="mat-elevation-z10">
       <mat-card-content>
         <table mat-table [dataSource]="searchLocationDataSource" class="mat-elevation-z8 search-table">
-          <ng-container matColumnDef="warehouseCode">
+          <ng-container matColumnDef="warehouse">
             <th mat-header-cell *matHeaderCellDef>{{
-              'base.location.warehouseCode' | translate
+              'base.location.warehouse' | translate
               }}</th>
             <td mat-cell *matCellDef="let element; let idx=index">
               <button mat-button disableRipple class="primary-button link-button"
-                (click)="searchItemClick($event, element, idx)">{{ element.warehouseCode }}</button>
-            </td>
-          </ng-container>
-          <ng-container matColumnDef="row">
-            <th mat-header-cell *matHeaderCellDef>{{
-              'base.location.row' | translate
-              }}</th>
-            <td mat-cell *matCellDef="let element">
-              {{ element.row }}
-            </td>
-          </ng-container>
-          <ng-container matColumnDef="unit">
-            <th mat-header-cell *matHeaderCellDef>{{
-              'base.location.unit' | translate
-              }}</th>
-            <td mat-cell *matCellDef="let element">
-              {{ element.unit }}
+                (click)="searchItemClick($event, element, idx)">{{ element.warehouse }}</button>
             </td>
           </ng-container>
           <ng-container matColumnDef="location">
