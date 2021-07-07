@@ -237,6 +237,7 @@
       "item": "項目",
       "warehouse": "倉庫",
       "exclusiveloc": "専用ロケーションゾーン",
+      "exclusiveZone": "排他的経済水域」",
       "description": "説明",
       "hscode": "H.Sコード",
       "itemType": "アイテムタイプ",

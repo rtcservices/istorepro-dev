@@ -59,7 +59,6 @@ export class BaseItemComponent implements OnInit {
     'item',
     'description',
     'itemType',
-    'unitPrice',
     'sku',
     'inactive',
     'instock'

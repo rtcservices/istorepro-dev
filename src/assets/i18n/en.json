@@ -239,6 +239,7 @@
       "item": "Item",
       "warehouse": "Warehouse",
       "exclusiveloc": "Exclusive Location Zone",
+      "exclusiveZone": "Exclusive Zone",
       "description": "Description",
       "hscode": "H.S Code",
       "itemType": "Item type",

@@ -29,7 +29,7 @@ export class StprefDialogComponent implements OnInit {
     this.dataItemStForm = this.fb.group({
       warehouse: '',
       item: '',
-      itemType:'',
+      exclusiveZone:'',
       exclusiveLocationZone: ''
     });
   }
