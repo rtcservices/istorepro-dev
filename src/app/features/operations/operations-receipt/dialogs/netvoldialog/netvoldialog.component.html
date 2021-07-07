@@ -1,0 +1,68 @@
+<mat-dialog-actions align="end">
+    <button (click)="onCancel()" mat-raised-button mat-dialog-close color="warn" type="submit">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-dialog-actions>
+  
+  <h1 mat-dialog-title></h1>
+  <div mat-dialog-content>
+    <form [formGroup]="netvolForm" (ngSubmit)="onnetvolFormSubmit()" class="slim-form">
+      <mat-card>
+        <mat-card-content>
+          <div fxLayout="column" fxLayoutGap="5px">
+            <fieldset class="read-only-input" fxFlex>
+              <legend>{{ 'operations.receipt.item' | translate }}</legend>
+              <label>{{ 'operations.receipt.item' | translate }}</label>
+            </fieldset>
+            <fieldset class="read-only-input" fxFlex>
+                <legend>{{ 'operations.receipt.quantity' | translate }}</legend>
+                <label>{{ 'operations.receipt.quantity' | translate }}</label>
+              </fieldset>  
+            <mat-form-field appearance="outline" fxFlex>
+              <mat-label>{{
+                    'operations.receipt.dimensions' | translate
+                    }}</mat-label>
+              <input matInput type="text" formControlName="dimensions" />
+            </mat-form-field>         
+            <mat-form-field appearance="outline" fxFlex>
+              <mat-label>{{
+                    'operations.receipt.length' | translate
+                    }}</mat-label>
+              <input matInput type="text" formControlName="length" />
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex>
+                <mat-label>{{
+                      'operations.receipt.breadth' | translate
+                      }}</mat-label>
+                <input matInput type="text" formControlName="breadth" />
+              </mat-form-field>         
+              <mat-form-field appearance="outline" fxFlex>
+                <mat-label>{{
+                      'operations.receipt.height' | translate
+                      }}</mat-label>
+                <input matInput type="text" formControlName="height" />
+              </mat-form-field>
+              <mat-form-field appearance="outline" fxFlex>
+                <mat-label>{{
+                      'operations.receipt.unitVolume' | translate
+                      }}</mat-label>
+                <input matInput type="text" formControlName="unitvol" />
+              </mat-form-field>
+              <mat-form-field appearance="outline" fxFlex>
+                <mat-label>{{
+                      'operations.receipt.netvol' | translate
+                      }}</mat-label>
+                <input matInput type="text" formControlName="netvol" />
+              </mat-form-field>
+          </div>
+  
+        </mat-card-content>
+      </mat-card>
+      <div class="modal-button-bottom">
+        <button mat-raised-button color="primary" type="submit">
+          <mat-icon>task_alt</mat-icon>
+        </button>
+      </div>
+    </form>
+  </div>
+  

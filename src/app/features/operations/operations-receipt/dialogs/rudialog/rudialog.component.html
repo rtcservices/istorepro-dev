@@ -1,0 +1,95 @@
+<mat-dialog-actions align="end">
+  <button (click)="onCancel()" mat-raised-button mat-dialog-close color="warn" type="submit">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-dialog-actions>
+
+<h1 mat-dialog-title></h1>
+<div mat-dialog-content>
+  <form [formGroup]="ruForm" (ngSubmit)="onruFormSubmit()" class="slim-form">
+    <mat-card>
+      <mat-card-content>
+        <div fxLayout.gt-sm="row"  fxLayout.lt-sm="column">
+          <div fxFlex="40">
+            <div fxLayout="column">
+              <div fxFlex>
+                <div fxLayout="row" fxLayoutGap="5px">
+                  <mat-form-field appearance="outline" fxFlex="30">
+                    <mat-label>{{
+                                        'operations.receipt.length' | translate
+                                        }}</mat-label>
+                    <input matInput type="text" formControlName="rulength" />
+                  </mat-form-field>
+                  <mat-form-field appearance="outline" fxFlex="30">
+                    <mat-label>{{'operations.receipt.breadth' | translate }}</mat-label>
+                    <input matInput type="text" formControlName="rubreadth" />
+                  </mat-form-field>
+                  <mat-form-field appearance="outline" fxFlex="30">
+                    <mat-label>{{'operations.receipt.height' | translate }}</mat-label>
+                    <input matInput type="text" formControlName="ruheight" />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div fxFlex>
+                <div fxLayout="row" fxLayoutGap="5px">
+                    <mat-form-field appearance="outline" fxFlex>
+                        <mat-label>{{
+                          'operations.receipt.unit' | translate
+                          }}</mat-label>
+                        <mat-select formControlName="ruunit">
+                          <option value=""></option>
+                          <option value="Customer">Customer</option>
+                          <option value="Vendor">Vendor</option>
+                        </mat-select>
+                      </mat-form-field>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="pad-top" fxFlex="30">
+            <mat-icon fxHide.lt-sm>arrow_forward</mat-icon>
+            <mat-icon fxHide.gt-sm>arrow_downward</mat-icon>
+          </div>
+          <div fxFlex="40">
+            <div fxLayout="column">
+              <div fxFlex>
+                <div fxLayout="row" fxLayoutGap="5px">
+                  <mat-form-field appearance="outline" fxFlex="30">
+                    <mat-label>{{'operations.receipt.length' | translate }}</mat-label>
+                    <input matInput type="text" formControlName="skulength" />
+                  </mat-form-field>
+                  <mat-form-field appearance="outline" fxFlex="30">
+                    <mat-label>{{'operations.receipt.breadth' | translate }}</mat-label>
+                    <input matInput type="text" formControlName="skubreadth" />
+                  </mat-form-field>
+                  <mat-form-field appearance="outline" fxFlex="30">
+                    <mat-label>{{'operations.receipt.height' | translate }}</mat-label>
+                    <input matInput type="text" formControlName="skuheight" />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div fxFlex>
+                <div fxLayout="row" fxLayoutGap="5px">
+                    <fieldset class="read-only-input" fxFlex>
+                        <legend>{{ 'operations.receipt.unit' | translate }}</legend>
+                        <label>{{ 'operations.receipt.unit' | translate }}</label>
+                      </fieldset>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </mat-card-content>
+    </mat-card>
+    <div class="modal-button-bottom">
+      <button mat-raised-button color="primary" type="submit">
+        <mat-icon>task_alt</mat-icon>
+      </button>
+    </div>
+  </form>
+</div>

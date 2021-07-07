@@ -24,3 +24,17 @@ export interface OperationReceiptModel {
     remarks: string;
   }
   
+  export interface OperationReceiptOwnerDialog {
+   type:string;
+   code:string;
+   name:string;
+  }
+
+  export interface OperationReceiptItemDialog {
+    type:string;
+    description:string;
+    item:string;
+    sku:string;
+   }
+   
+  
