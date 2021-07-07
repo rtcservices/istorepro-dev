@@ -285,12 +285,10 @@
                         <tr>
                           <th></th>
                           <th></th>
-                          <th></th>
                           <th colspan="3">{{ 'base.item.InventoryAlert.level' | translate}}</th>
                           <th></th>
                         </tr>
                         <tr>
-                          <th></th>
                           <th>{{ 'base.item.InventoryAlert.warehouse' | translate}}</th>
                           <th>{{ 'base.item.InventoryAlert.description' | translate}}</th>
                           <th>{{ 'base.item.InventoryAlert.min' | translate}}</th>
@@ -301,7 +299,6 @@
                       </thead>
                       <tbody>
                         <ng-template let-control ngFor [ngForOf]=" InventoryAlertDataSource">
-                          <td></td>
                           <td> <input type="text" style="width: 100%;" [value]="control.warehouse"></td>
                           <td>{{control.description}}</td>
                           <td> <input type="number" style="width: 100%;" [value]="control.min"></td>
@@ -321,13 +318,11 @@
                       <thead>
                         <tr>
                           <th></th>
-                          <th></th>
                           <th colspan="2">{{ 'base.item.matrix.from' | translate}}</th>
                           <th></th>
                           <th colspan="7">{{ 'base.item.matrix.to' | translate}}</th>
                         </tr>
                         <tr>
-                          <th></th>
                           <th>#</th>
                           <th>{{ 'base.item.matrix.value' | translate}}</th>
                           <th>{{ 'base.item.matrix.unit' | translate}}</th>
@@ -343,7 +338,6 @@
                       </thead>
                       <tbody>
                         <ng-template let-control ngFor [ngForOf]="MatrixDataSource">
-                          <td></td>
                           <td></td>
                           <td><input type="number" style="width: 100%;" [value]="control.from.value"></td>
                           <td><input type="text" style="width: 100%;" [value]="control.from.unit"></td>

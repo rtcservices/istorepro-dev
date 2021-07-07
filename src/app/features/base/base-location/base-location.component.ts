@@ -219,9 +219,6 @@ export class BaseLocationComponent implements OnInit {
   createSearchLocationForm() {
     this.searchLocationForm = this.fb.group({
       warehouseCode: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
-      row: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
-      unit: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
-      level: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       location: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       description: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       scanCode: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
