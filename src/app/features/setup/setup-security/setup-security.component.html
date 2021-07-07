@@ -21,12 +21,11 @@
                           </mat-form-field>
                           <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="49">
                             <mat-label>{{'setup.security.license' | translate}}</mat-label>
-                            <input matInput required type="text" formControlName="license" />
-                            <mat-error *ngIf="dataSetupSecurityFormControls.license.invalid">
-                              {{ 'error.field' | translate }}
-                            </mat-error>
+                            <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="license">
+                              <mat-option value="license1">License 1</mat-option>
+                              <mat-option value="license2">License 2</mat-option>
+                            </mat-select>
                           </mat-form-field>
-
                         </div>
                         <div fxLayout="row" class="row" fxLayoutGap="5px">
                           <mat-form-field appearance="outline" fxFlex>
@@ -96,19 +95,19 @@
                           </mat-checkbox>
                           <div fxLayout="row" fxLayout.lt-sm="column" class="row" fxLayoutGap="5px"
                             fxLayoutGap.lt-sm="10px" fxFlexFill>
-                            <mat-form-field appearance="outline">
+                            <mat-form-field appearance="outline" fxFlex>
                               <mat-label>{{'setup.security.suspendFrom' | translate }}</mat-label>
                               <input matInput type="text" formControlName="suspendFrom" [readonly]="!suspendRevoke" />
                             </mat-form-field>
-                            <mat-form-field appearance="outline">
+                            <mat-form-field appearance="outline" fxFlex>
                               <mat-label>{{'setup.security.suspendTo' | translate}}</mat-label>
                               <input matInput type="text" formControlName="suspendTo" [readonly]="!suspendRevoke" />
                             </mat-form-field>
-                            <fieldset class="read-only-input">
+                            <fieldset class="read-only-input" fxFlex>
                               <legend>{{ 'setup.security.lastSuspended' | translate }}</legend>
                               <label>ADMINISTRATOR</label>
                             </fieldset>
-                            <fieldset class="read-only-input">
+                            <fieldset class="read-only-input" fxFlex>
                               <legend>{{ 'setup.security.lastRevoked' | translate }}</legend>
                               <label>ADMINISTRATOR</label>
                             </fieldset>
@@ -138,7 +137,7 @@
                             [aria-label]="warehouseCheckboxLabel()">
                           </mat-checkbox>
                         </th>
-                        <td mat-cell *matCellDef="let row">
+                        <td mat-cell *matCellDef="let row" class="checkbox-column">
                           <mat-checkbox (click)="$event.stopPropagation()"
                             (change)="$event ? warehouseSelection.toggle(row) : null"
                             [checked]="warehouseSelection.isSelected(row)" [aria-label]="warehouseCheckboxLabel(row)">
@@ -148,7 +147,7 @@
 
                       <!-- Position Column -->
                       <ng-container matColumnDef="text">
-                        <th mat-header-cell *matHeaderCellDef> Warehouses </th>
+                        <th mat-header-cell *matHeaderCellDef>Warehouse</th>
                         <td mat-cell *matCellDef="let element"> {{element.value}} </td>
                       </ng-container>
 

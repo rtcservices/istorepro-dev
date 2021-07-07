@@ -151,3 +151,19 @@
   position: fixed;
   width: 100%;
 }
+
+.grid-three-button-container {
+  text-align: right;
+  .mat-raised-button{
+    padding: 0 10px !important;
+    min-width: 50px !important;
+  }
+  button {
+    background-color: $logo-blue;
+    color: $site-white;
+    margin-left: 0.5rem;
+    @include breakpoint(mobileonly) {
+      width: 25%;
+    }
+  }
+}

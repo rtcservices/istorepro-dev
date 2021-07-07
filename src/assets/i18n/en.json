@@ -198,8 +198,8 @@
         "autoEmail": "Auto Email"
       },
       "shipTo": {
-        "shipToCode": "Ship To Code",
-        "shipToName": "Ship To Name",
+        "shipToCode": "Code",
+        "shipToName": "Name",
         "address1": "Address 1",
         "address2": "Address 2",
         "address3": "Address 3",
@@ -232,7 +232,7 @@
       "WHControl": {
         "whControl": "WH. Control",
         "code": "Code",
-        "name": "Name"
+        "description": "Description"
       }
     },
     "item": {

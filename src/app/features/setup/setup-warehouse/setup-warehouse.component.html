@@ -24,6 +24,11 @@
                         <mat-error *ngIf="dataWarehouseControls.description.invalid">{{ 'error.field' | translate }}
                         </mat-error>
                       </mat-form-field>
+                      <mat-form-field appearance="outline" fxFlex="20" fxFlex.lt-sm="25">
+                        <mat-label>{{'setup.warehouse.id' | translate}}</mat-label>
+                        <input matInput required type="text" formControlName="id" />
+                        <mat-error *ngIf="dataWarehouseControls.id.invalid">{{ 'error.field' | translate }}</mat-error>
+                      </mat-form-field>
                     </div>
                     <div fxLayout="row" class="row" fxLayoutGap="5px">
                       <mat-form-field appearance="outline" fxFlex="49">
@@ -62,15 +67,10 @@
                       </mat-form-field>
                     </div>
                     <div fxLayout="row" class="row" fxLayoutGap="5px">
-                      <mat-form-field appearance="outline" fxFlex="80">
+                      <mat-form-field appearance="outline" fxFlex>
                         <mat-label>{{'setup.warehouse.email' | translate}}</mat-label>
                         <input matInput type="text" formControlName="email" />
-                      </mat-form-field>
-                      <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="30">
-                        <mat-label>{{'setup.warehouse.id' | translate}}</mat-label>
-                        <input matInput required type="text" formControlName="id" />
-                        <mat-error *ngIf="dataWarehouseControls.id.invalid">{{ 'error.field' | translate }}</mat-error>
-                      </mat-form-field>
+                      </mat-form-field>                      
                     </div>
                     <div class="pale-border-box">
                       <b>{{'setup.warehouse.backDateLimit' | translate}}</b>

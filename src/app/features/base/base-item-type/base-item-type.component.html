@@ -62,7 +62,7 @@
               </div>
             </div>
             <div fxLayout="row" class="row" fxLayoutGap="5px">
-              <mat-form-field appearance="outline" fxFlex="67" fxFlex.lt-sm="67">
+              <mat-form-field appearance="outline" fxFlex >
                 <mat-label>{{'base.itemType.consolidateOn' | translate}}</mat-label>
                 <mat-select disableOptionCentering panelClass="slim-select-field" type="text" readonly
                   formControlName="consolidateOn">
@@ -72,7 +72,7 @@
                 <mat-error *ngIf="dataItemTypeControls.consolidateOn.invalid">{{ 'error.field' | translate }}
                 </mat-error>
               </mat-form-field>
-              <mat-form-field appearance="outline" fxFlex="33" fxFlex.lt-sm="33">
+              <mat-form-field appearance="outline" fxFlex >
                 <mat-label>{{'base.itemType.defaultPick' | translate }}</mat-label>
                 <mat-select disableOptionCentering panelClass="slim-select-field" type="text" readonly
                   formControlName="defaultPick">
@@ -91,7 +91,7 @@
                     <tr>
                       <th></th>
                       <th>{{ 'base.itemType.WHControl.code' | translate}}</th>
-                      <th>{{ 'base.itemType.WHControl.name' | translate}}</th>
+                      <th>{{ 'base.itemType.WHControl.description' | translate}}</th>
                     </tr>
                   </thead>
                   <tbody>
