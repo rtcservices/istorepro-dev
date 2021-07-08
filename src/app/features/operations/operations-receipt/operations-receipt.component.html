@@ -16,6 +16,19 @@
                     {{ 'error.field' | translate }}
                   </mat-error>
                 </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                  <mat-label>{{ 'operations.receipt.receiptDate' | translate }}</mat-label>
+                  <input formControlName="receiptDate" matInput [matDatepicker]="picker">
+                  <mat-datepicker-toggle matSuffix [for]="picker">
+                    <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+                  </mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                  <mat-error *ngIf="dataReceiptFormControls.receiptDate.invalid">
+                    {{ 'error.field' | translate }}
+                  </mat-error>
+                </mat-form-field>
+
                 <div fxFlex>
                   <fieldset class="read-only-input">
                     <legend>{{ 'operations.receipt.trn' | translate }}</legend>
@@ -28,19 +41,7 @@
                     <legend>{{ 'operations.receipt.grn' | translate }}</legend>
                     <label>{{ dataReceiptFormControls.grn.value }}</label>
                   </fieldset>
-                </div>
-
-                <mat-form-field appearance="outline">
-                  <mat-label>{{ 'operations.receipt.receiptDate' | translate }}</mat-label>
-                  <input formControlName="receiptDate" matInput [matDatepicker]="picker">
-                  <mat-datepicker-toggle matSuffix [for]="picker">
-                    <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
-                  </mat-datepicker-toggle>
-                  <mat-datepicker #picker></mat-datepicker>
-                  <mat-error *ngIf="dataReceiptFormControls.receiptDate.invalid">
-                    {{ 'error.field' | translate }}
-                  </mat-error>
-                </mat-form-field>
+                </div>                
 
               </div>
               <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
@@ -79,16 +80,13 @@
             </mat-card-content>
             <div class="form-three-button-container" fxFlexOrder.lt-md="1">
               <button mat-raised-button color="primary">
-                <mat-icon>task_alt</mat-icon>
-                <span>Put away</span>
+                <mat-icon>add_shopping_cart</mat-icon>
               </button>
               <button mat-raised-button color="primary">
-                <mat-icon>task_alt</mat-icon>
-                <span>Label</span>
+                <mat-icon>new_label</mat-icon>
               </button>
               <button mat-raised-button color="primary">
-                <mat-icon>task_alt</mat-icon>
-                <span>GRN/R</span>
+                <mat-icon>print</mat-icon>
               </button>
             </div>
           </mat-card>

@@ -1,3 +1,4 @@
+@import '../../../../../../assets/scss/variables.scss';
 
 th,
 td {
@@ -46,6 +47,8 @@ select {
   margin-top: 10px;
   text-align: right;
   button {
+    background-color: $logo-blue;
+    color: $site-white;
     transform: scale(0.7);
   }
 }

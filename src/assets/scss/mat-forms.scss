@@ -161,7 +161,7 @@
   button {
     background-color: $logo-blue;
     color: $site-white;
-    margin-left: 0.5rem;
+    transform: scale(0.7);
     @include breakpoint(mobileonly) {
       width: 25%;
     }
