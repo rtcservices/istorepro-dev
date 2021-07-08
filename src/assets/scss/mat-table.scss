@@ -47,6 +47,9 @@ tr.mat-row {
     border: 1px solid $site-light-gray;
     padding-left: 0.25rem;
   }
+  .column-60 {
+    width: 60px;
+  }
   .column-100 {
     width: 100px;
   }
@@ -73,8 +76,18 @@ tr.mat-row {
   .text-button {
     background-color: $site-light-gray;
     border: 1px solid $site-light-gray;
+    border-radius: 2px;
     font-size: 0.6rem;
     height: 20px;
+    text-align: center;
+    &:hover {
+      cursor: pointer;
+    }
+    span {
+      font-size: 12px;
+      padding: 5px;
+      text-transform: uppercase;
+    }
   }
   .two-button-column {
     text-align: center;
