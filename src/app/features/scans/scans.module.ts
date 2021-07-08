@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SharedModule } from '../../shared/shared.module';
 
 import { ScansRoutingModule } from './scans-routing.module';
 import { ScansDoubleScanComponent } from './scans-double-scan/scans-double-scan.component';
@@ -12,7 +13,8 @@ import { ScansDoubleScanComponent } from './scans-double-scan/scans-double-scan.
   ],
   imports: [
     CommonModule,
-    ScansRoutingModule
+    ScansRoutingModule,
+    SharedModule
   ]
 })
 export class ScansModule { }

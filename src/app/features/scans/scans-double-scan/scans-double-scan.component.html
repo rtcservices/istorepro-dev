@@ -1,1 +1,53 @@
-<p>scans-double-scan works!</p>
+<div class="page-title">
+    <h2>{{'menu.scansDoubleScan' | translate}}</h2>
+</div>
+
+<form fxLayout="column" class="slim-form">
+    <div fxLayout="row" fxLayoutAlign="center center" class="data-form">
+        <div fxFlex="40%">
+            <mat-card class="h-100">
+                <mat-card-content>
+                    <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                        <mat-form-field appearance="outline" fxFlex>
+                            <mat-label>{{'scans.doubleScan.warehouse' | translate}}</mat-label>
+                            <input matInput type="text" required />
+                            <mat-icon matSuffix type="button">search</mat-icon>
+                        </mat-form-field>
+                    </div>
+
+                    <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                        <div class="image-box" fxFlex>
+                            <div class="content image-container">
+                                <mat-icon>checklist</mat-icon>
+                            </div>
+                        </div>
+                        <div class="image-box" fxFlex>
+                            <div class="content image-container">
+                                <mat-icon>qr_code_scanner</mat-icon>
+                            </div>
+                        </div>
+                        <div class="image-box" fxFlex>
+                            <div class="content image-container">
+                                <mat-icon>double_arrow</mat-icon>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div fxLayout.gt-sm="row" fxLayoutAlign="center center" fxLayout.lt-sm="column" f fxLayoutGap="5px">
+                        <div class="image-box" fxFlex = "30">
+                            <div class="content image-container">
+                                <mat-icon>checklist</mat-icon>
+                            </div>
+                        </div>
+                        <div class="image-box" fxFlex = "30">
+                            <div class="content image-container">
+                                <mat-icon>transfer_within_a_station</mat-icon>
+                            </div>
+                        </div>
+                    </div>
+
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</form>
