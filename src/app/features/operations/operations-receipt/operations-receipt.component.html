@@ -41,14 +41,14 @@
                     <legend>{{ 'operations.receipt.grn' | translate }}</legend>
                     <label>{{ dataReceiptFormControls.grn.value }}</label>
                   </fieldset>
-                </div>                
+                </div>
 
               </div>
               <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
                 <mat-form-field appearance="outline" fxFlex.gt-sm="30">
                   <mat-label>{{'operations.receipt.owner' | translate}}</mat-label>
                   <input matInput type="text" required formControlName="owner" />
-                  <mat-icon matSuffix  type="button" (click)="openownerdialog()">search</mat-icon> 
+                  <mat-icon matSuffix type="button" (click)="openownerdialog()">search</mat-icon>
                   <mat-error *ngIf="dataReceiptFormControls.owner.invalid">
                     {{ 'error.field' | translate }}
                   </mat-error>
@@ -97,7 +97,7 @@
         <div fxFlex>
           <mat-card class="h-100 data-table overflow-x">
             <mat-card-content>
-              
+
               <div class="form-three-button-container">
                 <button mat-raised-button color="primary">
                   <mat-icon>cloud_upload</mat-icon>
@@ -133,17 +133,16 @@
                   <ng-template let-operator ngFor [ngForOf]="receiptDataSource">
                     <tr>
                       <td>
-                        <div class="input-container">                         
+                        <div class="input-container">
                           <input type="text" class="w-100">
                           <mat-icon type="button" (click)="openitemdialog()">search</mat-icon>
-                        </div>   
-                        
+                        </div>
                       </td>
                       <td fxHide fxShow.gt-sm>
                         <input disabled type="text" class="w-100">
                       </td>
                       <td fxHide fxShow.gt-sm>
-                        <button  type="button" class="grid-item-button" (click)="openrudialog()"  mat-raised-button color="primary">
+                        <button type="button" class="text-button" (click)="openrudialog()" matRipple>
                           <span>RU</span>
                         </button>
                       </td>
@@ -160,12 +159,14 @@
                         <input type="number" class="w-100">
                       </td>
                       <td fxHide fxShow.gt-sm>
-                        <button type="button" class="grid-item-button" (click)="openntwtdialog()" mat-raised-button color="primary">
+                        <button type="button" class="text-button" (click)="openntwtdialog()" mat-raised-button
+                          color="primary">
                           <span>w</span>
                         </button>
                       </td>
                       <td fxHide fxShow.gt-sm>
-                        <button type="button" class="grid-item-button" (click)="opennetvoldialog()" mat-raised-button color="primary">
+                        <button type="button" class="text-button" (click)="opennetvoldialog()" mat-raised-button
+                          color="primary">
                           <span>v</span>
                         </button>
                       </td>
@@ -193,12 +194,9 @@
                   </ng-template>
                 </tbody>
               </table>
-
             </mat-card-content>
-
           </mat-card>
         </div>
-
       </div>
       <mat-card>
         <mat-card-content>
@@ -259,10 +257,13 @@
                 }}</mat-label>
               <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="dateoperator">
                 <mat-option>></mat-option>
-                <mat-option><</mat-option>
-                <mat-option>>=</mat-option>
-                <mat-option><=</mat-option>
-                <mat-option><></mat-option>
+                <mat-option>
+                  <</mat-option> <mat-option>>=
+                </mat-option>
+                <mat-option>
+                  <=</mat-option> <mat-option>
+                    <>
+                </mat-option>
                 <mat-option>=</mat-option>
               </mat-select>
               <mat-error *ngIf="searchReceiptFormControls.dateoperator.invalid">{{

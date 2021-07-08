@@ -70,6 +70,12 @@ tr.mat-row {
       }
     }
   }
+  .text-button {
+    background-color: $site-light-gray;
+    border: 1px solid $site-light-gray;
+    font-size: 0.6rem;
+    height: 20px;
+  }
   .two-button-column {
     text-align: center;
     width: 90px;
