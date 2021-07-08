@@ -20,7 +20,17 @@
     cursor: pointer;
   }
 }
-
+.second-column-readonly {
+  @include breakpoint(mobileonly) {
+    margin-bottom: 15px;
+    margin-top: -5px;
+  }
+}
+.second-column {
+  @include breakpoint(mobileonly) {
+    margin-top: -5px;
+  }
+}
 // .text-button {
 //   transform: scale(0.7);
 // }

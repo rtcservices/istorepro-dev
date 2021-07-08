@@ -167,6 +167,15 @@
   }
 }
 
+.smaller-button-container-40 {
+  button {
+    @include smaller-button(40px, 32px);
+  }
+}
+.smaller-button-40 {
+  @include smaller-button(40px, 32px);
+}
+
 .filter-container {
   .input-row {
     mat-form-field {

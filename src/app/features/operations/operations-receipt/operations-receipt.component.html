@@ -7,65 +7,72 @@
       <div>
         <mat-card>
           <mat-card-content>
-            <div fxLayout.gt-sm="row" fxLayoutGap="5px">
-              <mat-form-field appearance="outline" fxFlex="35%">
-                <mat-label>{{'operations.receipt.warehouse' | translate}}</mat-label>
-                <input matInput type="text" required formControlName="warehouse" />
-                <mat-error *ngIf="dataReceiptFormControls.warehouse.invalid">
-                  {{ 'error.field' | translate }}
-                </mat-error>
-              </mat-form-field>
-              <mat-form-field appearance="outline" fxFlex="15%">
-                <mat-label>{{ 'operations.receipt.receiptDate' | translate }}</mat-label>
-                <input formControlName="receiptDate" matInput [matDatepicker]="picker">
-                <mat-datepicker-toggle matSuffix [for]="picker">
-                  <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
-                </mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
-                <mat-error *ngIf="dataReceiptFormControls.receiptDate.invalid">
-                  {{ 'error.field' | translate }}
-                </mat-error>
-              </mat-form-field>
-              <br>
-              <fieldset class="read-only-input" fxFlex="25">
-                <legend>{{ 'operations.receipt.trn' | translate }}</legend>
-                <label>{{ dataReceiptFormControls.trn.value }}</label>
-              </fieldset>
-              <fieldset class="read-only-input" fxFlex="25">
-                <legend>{{ 'operations.receipt.grn' | translate }}</legend>
-                <label>{{ dataReceiptFormControls.grn.value }}</label>
-              </fieldset>
+            <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+              <div fxLayout="row" fxLayoutGap="5px" fxFlex>
+                <mat-form-field appearance="outline" fxFlex="70" fxFlex.lt-sm="60" fxFlex.lt-sm="50">
+                  <mat-label>{{'operations.receipt.warehouse' | translate}}</mat-label>
+                  <input matInput type="text" required formControlName="warehouse" />
+                  <mat-error *ngIf="dataReceiptFormControls.warehouse.invalid">
+                    {{ 'error.field' | translate }}
+                  </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex="30" fxFlex.lt-sm="40" fxFlex.lt-sm="48.5">
+                  <mat-label>{{ 'operations.receipt.receiptDate' | translate }}</mat-label>
+                  <input formControlName="receiptDate" matInput [matDatepicker]="picker">
+                  <mat-datepicker-toggle matSuffix [for]="picker">
+                    <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+                  </mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                  <mat-error *ngIf="dataReceiptFormControls.receiptDate.invalid">
+                    {{ 'error.field' | translate }}
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div class="second-column-readonly" fxLayout="row" fxLayoutGap="5px" fxFlex>
+                <fieldset class="read-only-input" fxFlex="50">
+                  <legend>{{ 'operations.receipt.trn' | translate }}</legend>
+                  <label>{{ dataReceiptFormControls.trn.value }}</label>
+                </fieldset>
+                <fieldset class="read-only-input" fxFlex="50">
+                  <legend>{{ 'operations.receipt.grn' | translate }}</legend>
+                  <label>{{ dataReceiptFormControls.grn.value }}</label>
+                </fieldset>
+              </div>
             </div>
-            <div fxLayout.gt-sm="row" fxLayoutGap="5px">
-              <mat-form-field appearance="outline" fxFlex="35">
-                <mat-label>{{'operations.receipt.owner' | translate}}</mat-label>
-                <input matInput type="text" required formControlName="owner" />
-                <mat-icon matSuffix type="button" (click)="openownerdialog()">search</mat-icon>
-                <mat-error *ngIf="dataReceiptFormControls.owner.invalid">
-                  {{ 'error.field' | translate }}
-                </mat-error>
-              </mat-form-field>
-              <mat-form-field appearance="outline" fxFlex="15">
-                <mat-label>{{'operations.receipt.po' | translate}}</mat-label>
-                <input matInput type="text" required formControlName="po" />
-                <mat-icon matSuffix>search</mat-icon>
-                <mat-error *ngIf="dataReceiptFormControls.po.invalid">
-                  {{ 'error.field' | translate }}
-                </mat-error>
-              </mat-form-field>
-              <mat-form-field appearance="outline" fxFlex="25">
-                <mat-label>{{'operations.receipt.remarks' | translate}}</mat-label>
-                <input matInput type="text" required formControlName="remarks" />
-                <mat-error *ngIf="dataReceiptFormControls.remarks.invalid">
-                  {{ 'error.field' | translate }}
-                </mat-error>
-              </mat-form-field>
-              <fieldset class="read-only-input" fxFlex="25">
-                <legend>{{ 'operations.receipt.storageLabel' | translate }}</legend>
-                <label>{{ dataReceiptFormControls.storageLabel.value }}</label>
-              </fieldset>
+            <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+              <div fxLayout="row" fxLayoutGap="5px" fxFlex>
+                <mat-form-field appearance="outline" fxFlex="70" fxFlex.lt-sm="50">
+                  <mat-label>{{'operations.receipt.owner' | translate}}</mat-label>
+                  <input matInput type="text" required formControlName="owner" />
+                  <mat-icon matSuffix type="button" (click)="openOwnerDialog()">search</mat-icon>
+                  <mat-error *ngIf="dataReceiptFormControls.owner.invalid">
+                    {{ 'error.field' | translate }}
+                  </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex="30" fxFlex.lt-sm="48.5">
+                  <mat-label>{{'operations.receipt.po' | translate}}</mat-label>
+                  <input matInput type="text" required formControlName="po" />
+                  <mat-icon matSuffix>search</mat-icon>
+                  <mat-error *ngIf="dataReceiptFormControls.po.invalid">
+                    {{ 'error.field' | translate }}
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div class="second-column" fxLayout="row" fxLayoutGap="5px" fxFlex>
+                <mat-form-field appearance="outline" fxFlex="50">
+                  <mat-label>{{'operations.receipt.remarks' | translate}}</mat-label>
+                  <input matInput type="text" required formControlName="remarks" />
+                  <mat-error *ngIf="dataReceiptFormControls.remarks.invalid">
+                    {{ 'error.field' | translate }}
+                  </mat-error>
+                </mat-form-field>
+                <fieldset class="read-only-input" fxFlex="50">
+                  <legend>{{ 'operations.receipt.storageLabel' | translate }}</legend>
+                  <label>{{ dataReceiptFormControls.storageLabel.value }}</label>
+                </fieldset>
+              </div>
             </div>
-            <div class="form-three-button-container">
+            <div class="form-three-button-container smaller-button-container-40">
               <button mat-raised-button color="primary">
                 <mat-icon>add_shopping_cart</mat-icon>
               </button>
@@ -79,9 +86,10 @@
           </mat-card-content>
         </mat-card>
       </div>
+      <hr>
       <mat-card>
         <mat-card-content>
-          <div class="form-three-button-container">
+          <div class="form-three-button-container smaller-button-container-40 mb-1">
             <button mat-raised-button color="primary">
               <mat-icon>cloud_upload</mat-icon>
             </button>
@@ -118,14 +126,14 @@
                   <td>
                     <div class="input-container">
                       <input type="text" class="w-100">
-                      <mat-icon type="button" (click)="openitemdialog()">search</mat-icon>
+                      <mat-icon type="button" (click)="openItemDialog()">search</mat-icon>
                     </div>
                   </td>
                   <td fxHide fxShow.gt-sm>
                     <input disabled type="text" class="w-100">
                   </td>
                   <td fxHide fxShow.gt-sm class="text-center">
-                    <button type="button" class="text-button" (click)="openrudialog()" matRipple>
+                    <button type="button" class="text-button hover-underline-bottom" (click)="openRuDialog()" matRipple>
                       <span>RU</span>
                     </button>
                   </td>
@@ -142,12 +150,12 @@
                     <input type="number" class="w-100">
                   </td>
                   <td fxHide fxShow.gt-sm class="text-center">
-                    <button type="button" class="text-button" (click)="openntwtdialog()">
+                    <button type="button" class="text-button" (click)="openNetWtDialog()">
                       <span>w</span>
                     </button>
                   </td>
                   <td fxHide fxShow.gt-sm class="text-center">
-                    <button type="button" class="text-button" (click)="opennetvoldialog()">
+                    <button type="button" class="text-button" (click)="openNetVolDialog()">
                       <span>v</span>
                     </button>
                   </td>

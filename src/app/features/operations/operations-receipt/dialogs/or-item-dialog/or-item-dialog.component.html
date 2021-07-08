@@ -1,8 +1,6 @@
-<mat-dialog-actions align="end">
-  <button (click)="onCancel()" mat-raised-button mat-dialog-close color="warn" type="submit">
-    <mat-icon>close</mat-icon>
-  </button>
-</mat-dialog-actions>
+<button mat-raised-button class="dialog-close" [mat-dialog-close]="true" color="warn">
+  <mat-icon class="close-icon">close</mat-icon>
+</button>
 
 <h1 mat-dialog-title></h1>
 <div mat-dialog-content>
@@ -58,7 +56,7 @@
         </div>
         <table class="site-table text-center w-100">
           <thead>
-            <tr >
+            <tr>
               <th class="checkbox-column">
                 <mat-checkbox color="primary"></mat-checkbox>
               </th>
@@ -69,8 +67,8 @@
             </tr>
           </thead>
           <ng-template let-control ngFor [ngForOf]="searchDataSource">
-            <tr >
-              <td class="checkbox-column" >
+            <tr>
+              <td class="checkbox-column">
                 <mat-checkbox color="primary"></mat-checkbox>
               </td>
               <td>

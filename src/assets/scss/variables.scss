@@ -65,3 +65,8 @@ $zindex: (
     }
   }
 }
+@mixin smaller-button($minWidth, $lineHeight) {
+  padding: 0 !important;
+  min-width: $minWidth !important;
+  line-height: $lineHeight !important;
+}

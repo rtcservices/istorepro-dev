@@ -130,3 +130,10 @@ small {
     border-radius: 0 !important;
   }
 }
+
+.dialog-close {
+  float: right;
+  top: -24px;
+  right: -24px;
+  @include smaller-button(30px, 24px);
+}

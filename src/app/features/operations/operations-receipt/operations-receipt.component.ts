@@ -164,6 +164,7 @@ export class OperationsReceiptComponent implements OnInit {
 
   ngOnInit(): void {
     this.receiptDataSource = [...this.dummyreceiptModel];
+    this.openOwnerDialog();
   }
 
   createDataReceiptForm() {
@@ -260,31 +261,31 @@ export class OperationsReceiptComponent implements OnInit {
     this.dataReceiptForm.reset();
   }
 
-  openownerdialog() {
+  openOwnerDialog() {
     this.dialog.open(OrOwnerDialogComponent, {
       width: '800px'
     });
   }
 
-  openitemdialog() {
+  openItemDialog() {
     this.dialog.open(OrItemDialogComponent, {
       width: '800px'
     });
   }
 
-  openntwtdialog() {
+  openNetWtDialog() {
     this.dialog.open(OrNetwtDialogComponent, {
       width: '800px'
     });
   }
 
-  opennetvoldialog() {
+  openNetVolDialog() {
     this.dialog.open(OrNetvolDialogComponent, {
       width: '800px'
     });
   }
 
-  openrudialog() {
+  openRuDialog() {
     this.dialog.open(OrRuDialogComponent, {
       width: '800px'
     });
