@@ -7,13 +7,13 @@ import { SiteTranslateService } from 'src/app/services/site-translate.service';
 
 @Component({
   selector: 'ibe-rudialog',
-  templateUrl: './rudialog.component.html',
-  styleUrls: ['./rudialog.component.scss']
+  templateUrl: './or-ru-dialog.component.html',
+  styleUrls: ['./or-ru-dialog.component.scss']
 })
-export class RudialogComponent implements OnInit {
+export class OrRudialogComponent implements OnInit {
   ruForm!: FormGroup;
   skuForm!: FormGroup;
-  constructor(private fb: FormBuilder, private dialogRef: MatDialogRef<RudialogComponent>,
+  constructor(private fb: FormBuilder, private dialogRef: MatDialogRef<OrRudialogComponent>,
     private siteTranslateService: SiteTranslateService,
     private translate: TranslateService) {
     this.createruForm()

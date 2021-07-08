@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OwnerdialogComponent } from './ownerdialog.component';
+import { BiStprefDialogComponent } from './stpref-dialog.component';
 
-describe('OwnerdialogComponent', () => {
-  let component: OwnerdialogComponent;
-  let fixture: ComponentFixture<OwnerdialogComponent>;
+describe('BiStprefDialogComponent', () => {
+  let component: BiStprefDialogComponent;
+  let fixture: ComponentFixture<BiStprefDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OwnerdialogComponent ]
+      declarations: [ BiStprefDialogComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OwnerdialogComponent);
+    fixture = TestBed.createComponent(BiStprefDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

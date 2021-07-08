@@ -7,11 +7,11 @@ import { OperationReceiptOwnerDialog } from '../../../models/operations-receipt.
 
 @Component({
   selector: 'ibe-ownerdialog',
-  templateUrl: './ownerdialog.component.html',
-  styleUrls: ['./ownerdialog.component.scss']
+  templateUrl: './or-owner-dialog.component.html',
+  styleUrls: ['./or-owner-dialog.component.scss']
 })
 
-export class OwnerdialogComponent implements OnInit {
+export class OrOwnerdialogComponent implements OnInit {
   dataOwnerForm!: FormGroup;
   searchDataSource: OperationReceiptOwnerDialog[] = [];
   dummySearchModel: OperationReceiptOwnerDialog[] = [
@@ -29,7 +29,7 @@ export class OwnerdialogComponent implements OnInit {
     }
 
   ];
-  constructor(private fb: FormBuilder, private dialogRef: MatDialogRef<OwnerdialogComponent>,
+  constructor(private fb: FormBuilder, private dialogRef: MatDialogRef<OrOwnerdialogComponent>,
     private siteTranslateService: SiteTranslateService,
     private translate: TranslateService) {
     this.createDataOwnerForm();

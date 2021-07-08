@@ -12,11 +12,11 @@ import { NotificationService } from '../../../services/notification.service';
 import { SiteTranslateService } from '../../../services/site-translate.service';
 import { TitleService } from '../../../services/title.service';
 import { MatDialog } from '@angular/material/dialog';
-import { OwnerdialogComponent } from './dialogs/ownerdialog/ownerdialog.component';
-import { ItemdialogComponent } from './dialogs/itemdialog/itemdialog.component';
-import { NetwtdialogComponent } from './dialogs/netwtdialog/netwtdialog.component';
-import { NetvoldialogComponent } from './dialogs/netvoldialog/netvoldialog.component';
-import { RudialogComponent } from './dialogs/rudialog/rudialog.component';
+import { OrOwnerdialogComponent } from './dialogs/or-owner-dialog/or-owner-dialog.component';
+import { OrItemdialogComponent } from './dialogs/or-item-dialog/or-item-dialog.component';
+import { OrNetwtdialogComponent } from './dialogs/or-net-wt-dialog/or-net-wt-dialog.component';
+import { OrNetvoldialogComponent } from './dialogs/or-net-vol-dialog/or-net-vol-dialog.component';
+import { OrRudialogComponent } from './dialogs/or-ru-dialog/or-ru-dialog.component';
 
 
 @Component({
@@ -268,33 +268,33 @@ export class OperationsReceiptComponent implements OnInit {
 
 
   openownerdialog() {
-    this.dialog.open(OwnerdialogComponent, {
+    this.dialog.open(OrOwnerdialogComponent, {
       width: '800px'
     });
   }
 
   openitemdialog() {
-    this.dialog.open(ItemdialogComponent, {
+    this.dialog.open(OrItemdialogComponent, {
       width: '800px'
     });
   }
 
 
   openntwtdialog() {
-    this.dialog.open(NetwtdialogComponent, {
+    this.dialog.open(OrNetwtdialogComponent, {
       width: '800px'
     });
   }
 
 
   opennetvoldialog() {
-    this.dialog.open(NetvoldialogComponent, {
+    this.dialog.open(OrNetvoldialogComponent, {
       width: '800px'
     });
   }
 
   openrudialog() {
-    this.dialog.open(RudialogComponent, {
+    this.dialog.open(OrRudialogComponent, {
       width: '800px'
     });
   }

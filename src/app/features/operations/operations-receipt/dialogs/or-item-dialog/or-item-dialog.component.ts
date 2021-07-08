@@ -7,10 +7,10 @@ import { OperationReceiptItemDialog, OperationReceiptOwnerDialog } from '../../.
 
 @Component({
   selector: 'ibe-itemdialog',
-  templateUrl: './itemdialog.component.html',
-  styleUrls: ['./itemdialog.component.scss']
+  templateUrl: './or-item-dialog.component.html',
+  styleUrls: ['./or-item-dialog.component.scss']
 })
-export class ItemdialogComponent implements OnInit {
+export class OrItemdialogComponent implements OnInit {
   dataItemForm!: FormGroup;
   searchDataSource: OperationReceiptItemDialog[] = [];
   dummySearchModel: OperationReceiptItemDialog[] = [
@@ -28,7 +28,7 @@ export class ItemdialogComponent implements OnInit {
     }
 
   ];
-  constructor(private fb: FormBuilder, private dialogRef: MatDialogRef<ItemdialogComponent>,
+  constructor(private fb: FormBuilder, private dialogRef: MatDialogRef<OrItemdialogComponent>,
     private siteTranslateService: SiteTranslateService,
     private translate: TranslateService) {
     this.createDataItemForm();

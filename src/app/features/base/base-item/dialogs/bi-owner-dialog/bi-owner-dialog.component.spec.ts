@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NetwtdialogComponent } from './netwtdialog.component';
+import { BiOwnerDialogComponent } from './bi-owner-dialog.component';
 
-describe('NetwtdialogComponent', () => {
-  let component: NetwtdialogComponent;
-  let fixture: ComponentFixture<NetwtdialogComponent>;
+describe('BiOwnerDialogComponent', () => {
+  let component: BiOwnerDialogComponent;
+  let fixture: ComponentFixture<BiOwnerDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NetwtdialogComponent ]
+      declarations: [ BiOwnerDialogComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NetwtdialogComponent);
+    fixture = TestBed.createComponent(BiOwnerDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

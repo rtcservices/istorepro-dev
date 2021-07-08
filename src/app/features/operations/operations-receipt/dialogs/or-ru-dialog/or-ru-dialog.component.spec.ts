@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RudialogComponent } from './rudialog.component';
+import { OrRudialogComponent } from './or-ru-dialog.component';
 
-describe('RudialogComponent', () => {
-  let component: RudialogComponent;
-  let fixture: ComponentFixture<RudialogComponent>;
+describe('OrRudialogComponent', () => {
+  let component: OrRudialogComponent;
+  let fixture: ComponentFixture<OrRudialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RudialogComponent ]
+      declarations: [ OrRudialogComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RudialogComponent);
+    fixture = TestBed.createComponent(OrRudialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -6,13 +6,13 @@ import { SiteTranslateService } from 'src/app/services/site-translate.service';
 
 @Component({
   selector: 'ibe-owner-dialog',
-  templateUrl: './owner-dialog.component.html',
-  styleUrls: ['./owner-dialog.component.scss']
+  templateUrl: './bi-owner-dialog.component.html',
+  styleUrls: ['./bi-owner-dialog.component.scss']
 })
-export class OwnerDialogComponent implements OnInit {
+export class BiOwnerDialogComponent implements OnInit {
   dataItemOwnerForm!: FormGroup;
 
-  constructor( private fb: FormBuilder,  private dialogRef: MatDialogRef<OwnerDialogComponent>,
+  constructor( private fb: FormBuilder,  private dialogRef: MatDialogRef<BiOwnerDialogComponent>,
     private siteTranslateService: SiteTranslateService,
     private translate: TranslateService,) {
     this.createDataItemOwnerForm();

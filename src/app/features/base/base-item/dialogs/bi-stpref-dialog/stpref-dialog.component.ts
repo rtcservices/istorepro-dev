@@ -9,9 +9,9 @@ import { SiteTranslateService } from 'src/app/services/site-translate.service';
   templateUrl: './stpref-dialog.component.html',
   styleUrls: ['./stpref-dialog.component.scss']
 })
-export class StprefDialogComponent implements OnInit {
+export class BiStprefDialogComponent implements OnInit {
   dataItemStForm!: FormGroup;
-  constructor( private fb: FormBuilder,  private dialogRef: MatDialogRef<StprefDialogComponent>,
+  constructor( private fb: FormBuilder,  private dialogRef: MatDialogRef<BiStprefDialogComponent>,
     private siteTranslateService: SiteTranslateService,
     private translate: TranslateService,) {
       this.createDataItemStForm();

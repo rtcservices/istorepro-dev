@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NetvoldialogComponent } from './netvoldialog.component';
+import { OrNetwtdialogComponent } from './or-net-wt-dialog.component';
 
-describe('NetvoldialogComponent', () => {
-  let component: NetvoldialogComponent;
-  let fixture: ComponentFixture<NetvoldialogComponent>;
+describe('OrNetwtdialogComponent', () => {
+  let component: OrNetwtdialogComponent;
+  let fixture: ComponentFixture<OrNetwtdialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NetvoldialogComponent ]
+      declarations: [ OrNetwtdialogComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NetvoldialogComponent);
+    fixture = TestBed.createComponent(OrNetwtdialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

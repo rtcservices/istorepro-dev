@@ -7,11 +7,11 @@ import { OperationsLocationManagementComponent } from './operations-location-man
 import { OperationsHeatMapComponent } from './operations-heat-map/operations-heat-map.component';
 import { OperationsDeliveryComponent } from './operations-delivery/operations-delivery.component';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { OwnerdialogComponent } from './operations-receipt/dialogs/ownerdialog/ownerdialog.component';
-import { ItemdialogComponent } from './operations-receipt/dialogs/itemdialog/itemdialog.component';
-import { RudialogComponent } from './operations-receipt/dialogs/rudialog/rudialog.component';
-import { NetwtdialogComponent } from './operations-receipt/dialogs/netwtdialog/netwtdialog.component';
-import { NetvoldialogComponent } from './operations-receipt/dialogs/netvoldialog/netvoldialog.component';
+import { OrOwnerdialogComponent } from './operations-receipt/dialogs/or-owner-dialog/or-owner-dialog.component';
+import { OrItemdialogComponent } from './operations-receipt/dialogs/or-item-dialog/or-item-dialog.component';
+import { OrRudialogComponent } from './operations-receipt/dialogs/or-ru-dialog/or-ru-dialog.component';
+import { OrNetwtdialogComponent } from './operations-receipt/dialogs/or-net-wt-dialog/or-net-wt-dialog.component';
+import { OrNetvoldialogComponent } from './operations-receipt/dialogs/or-net-vol-dialog/or-net-vol-dialog.component';
 
 
 @NgModule({
@@ -20,11 +20,11 @@ import { NetvoldialogComponent } from './operations-receipt/dialogs/netvoldialog
        OperationsLocationManagementComponent,
        OperationsHeatMapComponent,
        OperationsDeliveryComponent,
-       OwnerdialogComponent,
-       ItemdialogComponent,
-       RudialogComponent,
-       NetwtdialogComponent,
-       NetvoldialogComponent
+       OrOwnerdialogComponent,
+       OrItemdialogComponent,
+       OrRudialogComponent,
+       OrNetwtdialogComponent,
+       OrNetvoldialogComponent
   ],
   imports: [
     CommonModule,

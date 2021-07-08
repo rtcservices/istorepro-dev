@@ -7,12 +7,12 @@ import { SiteTranslateService } from 'src/app/services/site-translate.service';
 
 @Component({
   selector: 'ibe-netvoldialog',
-  templateUrl: './netvoldialog.component.html',
-  styleUrls: ['./netvoldialog.component.scss']
+  templateUrl: './or-net-vol-dialog.component.html',
+  styleUrls: ['./or-net-vol-dialog.component.scss']
 })
-export class NetvoldialogComponent implements OnInit {
+export class OrNetvoldialogComponent implements OnInit {
   netvolForm!: FormGroup;
-  constructor(private fb: FormBuilder, private dialogRef: MatDialogRef<NetvoldialogComponent>,
+  constructor(private fb: FormBuilder, private dialogRef: MatDialogRef<OrNetvoldialogComponent>,
     private siteTranslateService: SiteTranslateService,
     private translate: TranslateService) {
     this.createnetvolForm()

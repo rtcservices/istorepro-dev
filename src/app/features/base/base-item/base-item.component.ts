@@ -17,8 +17,8 @@ import { LoaderService } from '../../../services/loader.service';
 import { SiteTranslateService } from 'src/app/services/site-translate.service';
 import { NotificationService } from '../../../services/notification.service';
 import { TitleService } from '../../../services/title.service';
-import { OwnerDialogComponent } from './modals/owner-dialog/owner-dialog.component';
-import { StprefDialogComponent } from './modals/stpref-dialog/stpref-dialog.component';
+import { BiOwnerDialogComponent } from './dialogs/bi-owner-dialog/bi-owner-dialog.component';
+import { BiStprefDialogComponent } from './dialogs/bi-stpref-dialog/stpref-dialog.component';
 
 @Component({
   selector: 'ibe-base-item',
@@ -270,13 +270,13 @@ export class BaseItemComponent implements OnInit {
   }
 
   openownerDialog() {
-    this.dialog.open(OwnerDialogComponent, {
+    this.dialog.open(BiOwnerDialogComponent, {
       width: '800px'
     });
   }
 
   openstoreDialog() {
-    this.dialog.open(StprefDialogComponent, {
+    this.dialog.open(BiStprefDialogComponent, {
       width: '800px'
     });
   }

@@ -7,12 +7,12 @@ import { SiteTranslateService } from 'src/app/services/site-translate.service';
 
 @Component({
   selector: 'ibe-netwtdialog',
-  templateUrl: './netwtdialog.component.html',
-  styleUrls: ['./netwtdialog.component.scss']
+  templateUrl: './or-net-wt-dialog.component.html',
+  styleUrls: ['./or-net-wt-dialog.component.scss']
 })
-export class NetwtdialogComponent implements OnInit {
+export class OrNetwtdialogComponent implements OnInit {
   netwtForm!: FormGroup;
-  constructor(private fb: FormBuilder, private dialogRef: MatDialogRef<NetwtdialogComponent>,
+  constructor(private fb: FormBuilder, private dialogRef: MatDialogRef<OrNetwtdialogComponent>,
     private siteTranslateService: SiteTranslateService,
     private translate: TranslateService) {
     this.createnetwtForm()
