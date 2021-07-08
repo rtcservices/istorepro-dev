@@ -112,18 +112,18 @@
                 <thead>
                   <tr>
                     <th>{{ 'operations.receipt.item' | translate}}</th>
-                    <th>{{ 'operations.receipt.description' | translate}}</th>
-                    <th>{{ 'operations.receipt.ru' | translate}}</th>
-                    <th>{{ 'operations.receipt.sku' | translate}}</th>
+                    <th fxHide fxShow.gt-sm>{{ 'operations.receipt.description' | translate}}</th>
+                    <th fxHide fxShow.gt-sm>{{ 'operations.receipt.ru' | translate}}</th>
+                    <th fxHide fxShow.gt-sm>{{ 'operations.receipt.sku' | translate}}</th>
                     <th>{{ 'operations.receipt.qtyexp' | translate}}</th>
                     <th>{{ 'operations.receipt.qtygood' | translate}}</th>
                     <th>{{ 'operations.receipt.qtydmg' | translate}}</th>
-                    <th>{{ 'operations.receipt.netwt' | translate}}</th>
-                    <th>{{ 'operations.receipt.netvol' | translate}}</th>
-                    <th>{{ 'operations.receipt.mfgDate' | translate}}</th>
-                    <th>{{ 'operations.receipt.expDate' | translate}}</th>
+                    <th fxHide fxShow.gt-sm>{{ 'operations.receipt.netwt' | translate}}</th>
+                    <th fxHide fxShow.gt-sm>{{ 'operations.receipt.netvol' | translate}}</th>
+                    <th fxHide fxShow.gt-sm>{{ 'operations.receipt.mfgDate' | translate}}</th>
+                    <th fxHide fxShow.gt-sm>{{ 'operations.receipt.expDate' | translate}}</th>
                     <th>{{ 'operations.receipt.batchNo' | translate}}</th>
-                    <th>{{ 'operations.receipt.remarks' | translate}}</th>
+                    <th fxHide fxShow.gt-sm>{{ 'operations.receipt.remarks' | translate}}</th>
                     <th style="text-align: center;">
                       <mat-icon style="padding-top: 3px;">add_circle_outline</mat-icon>
                     </th>
@@ -139,15 +139,15 @@
                         </div>   
                         
                       </td>
-                      <td>
+                      <td fxHide fxShow.gt-sm>
                         <input disabled type="text" class="w-100">
                       </td>
-                      <td>
+                      <td fxHide fxShow.gt-sm>
                         <button  type="button" class="grid-item-button" (click)="openrudialog()"  mat-raised-button color="primary">
                           <span>RU</span>
                         </button>
                       </td>
-                      <td>
+                      <td fxHide fxShow.gt-sm>
                         <input disabled type="text" class="w-100">
                       </td>
                       <td>
@@ -159,26 +159,26 @@
                       <td>
                         <input type="number" class="w-100">
                       </td>
-                      <td>
+                      <td fxHide fxShow.gt-sm>
                         <button type="button" class="grid-item-button" (click)="openntwtdialog()" mat-raised-button color="primary">
                           <span>w</span>
                         </button>
                       </td>
-                      <td>
+                      <td fxHide fxShow.gt-sm>
                         <button type="button" class="grid-item-button" (click)="opennetvoldialog()" mat-raised-button color="primary">
                           <span>v</span>
                         </button>
                       </td>
-                      <td >
+                      <td fxHide fxShow.gt-sm>
                         <input type="date" class="w-100">
                       </td>
-                      <td >
+                      <td fxHide fxShow.gt-sm>
                         <input type="date" class="w-100">
                       </td>
                       <td>
                         <input type="number" class="w-100">
                       </td>
-                      <td>
+                      <td fxHide fxShow.gt-sm>
                         <input type="number" class="w-100">
                       </td>
                       <td class="two-button-column" style="width: 90px;">

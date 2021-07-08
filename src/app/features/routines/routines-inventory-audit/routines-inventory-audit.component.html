@@ -4,7 +4,6 @@
 <mat-tab-group #routinesInventoryTab>
   <mat-tab label="Data">
 
-
     <form fxLayout="column" [formGroup]="routinesInventoryForm" (ngSubmit)="onroutinesInventorySubmit()"
       class="slim-form">
       <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="stretch" fxLayoutGap="5px" class="data-form">
@@ -32,7 +31,7 @@
                 <div class="form-three-button-container">
                   <ng-container *ngIf="mode">
                     <button (click)="mode=!mode" mat-raised-button color="primary">
-                      <mat-icon>preview</mat-icon>
+                      <mat-icon>visibility</mat-icon>
                     </button>
                   </ng-container>
 
@@ -65,23 +64,19 @@
                   <h3 fxFlex="90%"> Drag a colum header here to group by that column</h3>
 
                   <div fxFlex="10%" class="form-three-button-container">
-                    <button mat-raised-button color="primary">
+                    <button mat-raised-button color="warn">
                       <mat-icon>loop</mat-icon>
                     </button>
                   </div>
-
 
                 </div>
               </mat-card-content>
             </mat-card>
           </div>
-
         </div>
 
         <mat-card>
-
           <mat-card-content>
-
             <table class="site-table w-100 mat-elevation-z8">
               <thead>
                 <tr>
@@ -103,20 +98,12 @@
                   <th>{{ 'routines.inventory.qtydmg' | translate}}</th>
                 </tr>
               </thead>
-
-
             </table>
           </mat-card-content>
-
         </mat-card>
-
-
-
-
       </ng-container>
 
       <ng-container *ngIf="!mode">
-
         <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="stretch" fxLayoutGap="5px" class="data-form">
           <div fxFlex>
             <mat-card class="h-100">
@@ -150,21 +137,20 @@
                   <mat-icon matSuffix>search</mat-icon>
                 </mat-form-field>
 
-
                 <mat-form-field appearance="outline" fxFlex>
                   <mat-label>{{
                                 'routines.inventory.status' | translate
                                 }}</mat-label>
                   <mat-select formControlName="status">
-                    <option value=""></option>
-                    <option value="Customer">Customer</option>
-                    <option value="Vendor">Vendor</option>
+                    <mat-option value="Customer">Free</mat-option>
+                    <mat-option value="Vendor">Partial</mat-option>
+                    <mat-option value="Vendor">Full </mat-option>
                   </mat-select>
                 </mat-form-field>
 
                 <div class="form-three-button-container" fxFlex>
-                  <button type="button" (click)="mode=!mode" mat-raised-button color="primary">
-                    <mat-icon>preview</mat-icon>
+                  <button type="button" mat-raised-button color="primary">
+                    <mat-icon>visibility</mat-icon>
                   </button>
                 </div>
               </div>
@@ -196,26 +182,40 @@
 
       </ng-container>
 
-      <mat-card>
+      <mat-card *ngIf="mode">
         <mat-card-content>
           <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="30px" fxLayoutAlign="space-between center">
             <div fxFlexOrder.lt-md="2">
-              <ibe-data-audit insertedBy=""></ibe-data-audit>
             </div>
-            <div class="form-three-button-container" fxFlexOrder.lt-md="1">
+            <div class="form-three-button-container" fxFlexOrder.lt-md="1" >
               <button mat-raised-button color="primary" type="submit" (click)="saveInventoryForm()">
                 <mat-icon>task_alt</mat-icon>
               </button>
-              <button mat-raised-button color="warn" type="button" (click)="deleteInventoryForm()">
-                <mat-icon>remove_circle_outline</mat-icon>
-              </button>
               <button mat-raised-button color="accent" type="reset" (click)="resetroutinesInventoryForm()">
-                <mat-icon>loop</mat-icon>
+                <mat-icon>fast_forward</mat-icon>
               </button>
             </div>
           </div>
         </mat-card-content>
       </mat-card>
+
+      <mat-card *ngIf="!mode">
+        <mat-card-content>
+          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="30px" fxLayoutAlign="space-between center">
+            <div fxFlexOrder.lt-md="2">
+              <button mat-raised-button color="accent" (click)="mode=!mode">
+                <mat-icon>arrow_back</mat-icon>
+              </button>
+            </div>
+            <div class="form-three-button-container" fxFlexOrder.lt-md="1" >
+              <button mat-raised-button color="primary" type="submit" >
+                <mat-icon>save</mat-icon>
+              </button>              
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
     </form>
 
 
