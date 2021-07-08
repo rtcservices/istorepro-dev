@@ -1,24 +1,45 @@
+@import "../../../../assets/scss/variables.scss";
 .overflow-x {
-    overflow-x: auto !important;
-  }
+  overflow-x: auto !important;
+}
 
-  .data-table {
-    table {
-      margin-bottom: 10px;
-      padding-top: 10px;
+.data-table {
+  table {
+    margin-bottom: 10px;
+    padding-top: 10px;
+  }
+}
+
+.text-right {
+  text-align: right;
+}
+
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+}
+
+.grid-item-button {
+  transform: scale(0.7);
+}
+
+.data-form {
+  mat-card {
+    mat-card-content {
+      margin-bottom: 0px !important;
     }
   }
-  
-
-  .text-right {
-    text-align: right;
+  mat-form-field {
+    ::ng-deep .mat-form-field-wrapper {
+      @include breakpoint(mobileonly) {
+        padding-bottom: 0em !important;
+      }
+    }
   }
+}
 
-  .input-container {
-    display: -ms-flexbox; /* IE10 */
-  display: flex;
+.read-only-input {
+  @include breakpoint(mobileonly) {
+    margin-bottom: 10px !important;
   }
-
-  .grid-item-button{
-    transform: scale(0.7);
-  }
+}

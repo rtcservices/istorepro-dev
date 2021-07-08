@@ -50,26 +50,86 @@ export class OperationsReceiptComponent implements OnInit {
 
   receiptDataSource: OperationReceiptModel[] = [];
   dummyreceiptModel: OperationReceiptModel[] = [
-   {
-    item: 'dummy data ',
-    description: 'dummy data ',
-    ru: 'dummy data ',
-    sku: 'dummy data ',
-    qtyexp: 12,
-    qtygood: 51,
-    qtydmg: 13,
-    netwt: 100,
-    netvol: 500,
-    mfgdate: '21/01/2021',
-    expdate: '21/01/2021',
-    batchno: '123123',
-    remarks: 'dummy data'
-   }
+    {
+      item: 'dummy data ',
+      description: 'dummy data ',
+      ru: 'dummy data ',
+      sku: 'dummy data ',
+      qtyexp: 12,
+      qtygood: 51,
+      qtydmg: 13,
+      netwt: 100,
+      netvol: 500,
+      mfgdate: '21/01/2021',
+      expdate: '21/01/2021',
+      batchno: '123123',
+      remarks: 'dummy data'
+    },
+    {
+      item: 'dummy data ',
+      description: 'dummy data ',
+      ru: 'dummy data ',
+      sku: 'dummy data ',
+      qtyexp: 12,
+      qtygood: 51,
+      qtydmg: 13,
+      netwt: 100,
+      netvol: 500,
+      mfgdate: '21/01/2021',
+      expdate: '21/01/2021',
+      batchno: '123123',
+      remarks: 'dummy data'
+    },
+    {
+      item: 'dummy data ',
+      description: 'dummy data ',
+      ru: 'dummy data ',
+      sku: 'dummy data ',
+      qtyexp: 12,
+      qtygood: 51,
+      qtydmg: 13,
+      netwt: 100,
+      netvol: 500,
+      mfgdate: '21/01/2021',
+      expdate: '21/01/2021',
+      batchno: '123123',
+      remarks: 'dummy data'
+    },
+    {
+      item: 'dummy data ',
+      description: 'dummy data ',
+      ru: 'dummy data ',
+      sku: 'dummy data ',
+      qtyexp: 12,
+      qtygood: 51,
+      qtydmg: 13,
+      netwt: 100,
+      netvol: 500,
+      mfgdate: '21/01/2021',
+      expdate: '21/01/2021',
+      batchno: '123123',
+      remarks: 'dummy data'
+    },
+    {
+      item: 'dummy data ',
+      description: 'dummy data ',
+      ru: 'dummy data ',
+      sku: 'dummy data ',
+      qtyexp: 12,
+      qtygood: 51,
+      qtydmg: 13,
+      netwt: 100,
+      netvol: 500,
+      mfgdate: '21/01/2021',
+      expdate: '21/01/2021',
+      batchno: '123123',
+      remarks: 'dummy data'
+    }
   ];
 
   dataReceiptForm!: FormGroup;
 
-  displayedColumns = ['warehouse', 'owner','grn','receiptDate','po','remarks','status'];
+  displayedColumns = ['warehouse', 'owner', 'grn', 'receiptDate', 'po', 'remarks', 'status'];
 
   sectors = ['LOGISTICS', 'FORWARDING', 'OTHER'];
   companyLogo = '../../../../assets/images/company-logo-236x81.jpg';
@@ -83,9 +143,9 @@ export class OperationsReceiptComponent implements OnInit {
     private titleService: TitleService,
     private notification: NotificationService,
     public dialog: MatDialog) {
-      this.createDataReceiptForm()
-      this.createSearchReceiptForm()
-     }
+    this.createDataReceiptForm()
+    this.createSearchReceiptForm()
+  }
 
   ngOnInit(): void {
     this.receiptDataSource = [...this.dummyreceiptModel];
@@ -97,7 +157,7 @@ export class OperationsReceiptComponent implements OnInit {
     this.dataReceiptForm = this.fb.group({
       warehouse: [
         '',
-        [Validators.required,Validators.pattern(patternsHelper.alphanumeric)]
+        [Validators.required, Validators.pattern(patternsHelper.alphanumeric)]
       ],
       trn: [
         '',
@@ -162,21 +222,21 @@ export class OperationsReceiptComponent implements OnInit {
       this.searchReceiptForm.get('warehouse')?.value || '';
     const owner: string =
       this.searchReceiptForm.get('owner')?.value || '';
-      const grn: string =
+    const grn: string =
       this.searchReceiptForm.get('grn')?.value || '';
     const dateoperator: string =
       this.searchReceiptForm.get('dateoperator')?.value || '';
-      const receiptDate: string =
+    const receiptDate: string =
       this.searchReceiptForm.get('receiptDate')?.value || '';
     const po: string =
       this.searchReceiptForm.get('po')?.value || '';
-      const status: string =
+    const status: string =
       this.searchReceiptForm.get('status')?.value || '';
     const item: string =
       this.searchReceiptForm.get('item')?.value || '';
     if (warehouse.trim() === '' && owner.trim() === '' &&
-    grn.trim() === '' && dateoperator.trim() === '' &&
-    po.trim() === '' && receiptDate.trim() === '' && item.trim() === '' && status.trim() === '') {
+      grn.trim() === '' && dateoperator.trim() === '' &&
+      po.trim() === '' && receiptDate.trim() === '' && item.trim() === '' && status.trim() === '') {
       this.notification.error(this.filterErrorTranslated);
       return;
     } else {
