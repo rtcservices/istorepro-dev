@@ -135,11 +135,6 @@
   }
 }
 
-.form-import-button {
-  text-align: left !important;
-  position: absolute;
-}
-
 .form-four-button-container {
   text-align: right;
   button {
@@ -149,6 +144,7 @@
     }
   }
 }
+
 .form-button-container-fixed-bottom {
   bottom: 0;
   position: fixed;
@@ -157,7 +153,7 @@
 
 .grid-three-button-container {
   text-align: right;
-  .mat-raised-button{
+  .mat-raised-button {
     padding: 0 10px !important;
     min-width: 50px !important;
   }
@@ -171,9 +167,9 @@
   }
 }
 
-.filter-container{
-  .input-row{
-    mat-form-field{
+.filter-container {
+  .input-row {
+    mat-form-field {
       @include breakpoint(mobileonly) {
         margin-bottom: 0px !important;
       }

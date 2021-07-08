@@ -10,28 +10,37 @@ import { OperationReceiptOwnerDialog } from '../../../models/operations-receipt.
   templateUrl: './or-owner-dialog.component.html',
   styleUrls: ['./or-owner-dialog.component.scss']
 })
-
-export class OrOwnerdialogComponent implements OnInit {
+export class OrOwnerDialogComponent implements OnInit {
   dataOwnerForm!: FormGroup;
   searchDataSource: OperationReceiptOwnerDialog[] = [];
   dummySearchModel: OperationReceiptOwnerDialog[] = [
     {
-      type: 'Vendor', code: '23123', name: 'Havells india'
+      type: 'Vendor',
+      code: '23123',
+      name: 'Havells india'
     },
     {
-      type: 'Vendor', code: '23123', name: 'Havells india'
+      type: 'Vendor',
+      code: '23123',
+      name: 'Havells india'
     },
     {
-      type: 'Vendor', code: '23123', name: 'Havells india'
+      type: 'Vendor',
+      code: '23123',
+      name: 'Havells india'
     },
     {
-      type: 'Vendor', code: '23123', name: 'Havells india'
+      type: 'Vendor',
+      code: '23123',
+      name: 'Havells india'
     }
-
   ];
-  constructor(private fb: FormBuilder, private dialogRef: MatDialogRef<OrOwnerdialogComponent>,
+  constructor(
+    private fb: FormBuilder,
+    private dialogRef: MatDialogRef<OrOwnerDialogComponent>,
     private siteTranslateService: SiteTranslateService,
-    private translate: TranslateService) {
+    private translate: TranslateService
+  ) {
     this.createDataOwnerForm();
   }
   ngOnInit(): void {
@@ -48,7 +57,7 @@ export class OrOwnerdialogComponent implements OnInit {
       name: ''
     });
   }
-  onDataOwnerSubmit() { }
+  onDataOwnerSubmit() {}
 
   resetDataOwnerForm() {
     this.dataOwnerForm.reset();
@@ -56,5 +65,4 @@ export class OrOwnerdialogComponent implements OnInit {
   get dataFormOwnerControls() {
     return this.dataOwnerForm.controls;
   }
-
 }

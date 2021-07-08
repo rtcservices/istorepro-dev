@@ -1,20 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OrRudialogComponent } from './or-ru-dialog.component';
+import { OrRuDialogComponent } from './or-ru-dialog.component';
 
-describe('OrRudialogComponent', () => {
-  let component: OrRudialogComponent;
-  let fixture: ComponentFixture<OrRudialogComponent>;
+describe('OrRuDialogComponent', () => {
+  let component: OrRuDialogComponent;
+  let fixture: ComponentFixture<OrRuDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OrRudialogComponent ]
-    })
-    .compileComponents();
+      declarations: [OrRuDialogComponent]
+    }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OrRudialogComponent);
+    fixture = TestBed.createComponent(OrRuDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

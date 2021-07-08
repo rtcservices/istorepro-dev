@@ -1,20 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OrOwnerdialogComponent } from './or-owner-dialog.component';
+import { OrOwnerDialogComponent } from './or-owner-dialog.component';
 
-describe('OrOwnerdialogComponent', () => {
-  let component: OrOwnerdialogComponent;
-  let fixture: ComponentFixture<OrOwnerdialogComponent>;
+describe('OrOwnerDialogComponent', () => {
+  let component: OrOwnerDialogComponent;
+  let fixture: ComponentFixture<OrOwnerDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OrOwnerdialogComponent ]
-    })
-    .compileComponents();
+      declarations: [OrOwnerDialogComponent]
+    }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OrOwnerdialogComponent);
+    fixture = TestBed.createComponent(OrOwnerDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -10,25 +10,26 @@ import { SiteTranslateService } from 'src/app/services/site-translate.service';
   templateUrl: './or-ru-dialog.component.html',
   styleUrls: ['./or-ru-dialog.component.scss']
 })
-export class OrRudialogComponent implements OnInit {
+export class OrRuDialogComponent implements OnInit {
   ruForm!: FormGroup;
   skuForm!: FormGroup;
-  constructor(private fb: FormBuilder, private dialogRef: MatDialogRef<OrRudialogComponent>,
+  constructor(
+    private fb: FormBuilder,
+    private dialogRef: MatDialogRef<OrRuDialogComponent>,
     private siteTranslateService: SiteTranslateService,
-    private translate: TranslateService) {
-    this.createruForm()
+    private translate: TranslateService
+  ) {
+    this.createruForm();
   }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 
   onCancel(): void {
     this.dialogRef.close();
   }
 
   createruForm() {
-    this.ruForm = this.fb.group({    
+    this.ruForm = this.fb.group({
       rulength: '',
       rubreadth: '',
       ruheight: '',
@@ -40,7 +41,7 @@ export class OrRudialogComponent implements OnInit {
     });
   }
 
-  onruFormSubmit() { }
+  onruFormSubmit() {}
 
   resetruForm() {
     this.ruForm.reset();
@@ -49,5 +50,4 @@ export class OrRudialogComponent implements OnInit {
   get ruFormControls() {
     return this.ruForm.controls;
   }
-
 }

@@ -10,17 +10,18 @@ import { SiteTranslateService } from 'src/app/services/site-translate.service';
   templateUrl: './or-net-wt-dialog.component.html',
   styleUrls: ['./or-net-wt-dialog.component.scss']
 })
-export class OrNetwtdialogComponent implements OnInit {
+export class OrNetwtDialogComponent implements OnInit {
   netwtForm!: FormGroup;
-  constructor(private fb: FormBuilder, private dialogRef: MatDialogRef<OrNetwtdialogComponent>,
+  constructor(
+    private fb: FormBuilder,
+    private dialogRef: MatDialogRef<OrNetwtDialogComponent>,
     private siteTranslateService: SiteTranslateService,
-    private translate: TranslateService) {
-    this.createnetwtForm()
+    private translate: TranslateService
+  ) {
+    this.createnetwtForm();
   }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 
   onCancel(): void {
     this.dialogRef.close();
@@ -29,20 +30,12 @@ export class OrNetwtdialogComponent implements OnInit {
   createnetwtForm() {
     this.netwtForm = this.fb.group({
       item: '',
-      unitweight: [
-        '', [
-          Validators.pattern(patternsHelper.numeric)
-        ]
-      ],
+      unitweight: ['', [Validators.pattern(patternsHelper.numeric)]],
       quantity: '',
-      netwt: [
-        '', [
-          Validators.pattern(patternsHelper.numeric)
-        ]
-      ]
+      netwt: ['', [Validators.pattern(patternsHelper.numeric)]]
     });
   }
-  onnetwtFormSubmit() { }
+  onnetwtFormSubmit() {}
 
   resetnetwtForm() {
     this.netwtForm.reset();
@@ -50,5 +43,4 @@ export class OrNetwtdialogComponent implements OnInit {
   get netwtFormControls() {
     return this.netwtForm.controls;
   }
-
 }

@@ -5,19 +5,21 @@ import { MatTabGroup } from '@angular/material/tabs';
 import { TranslateService } from '@ngx-translate/core';
 
 import { patternsHelper } from '../../../helpers/patterns.helper';
-import { OperationReceiptModel, OperationReceiptSearchModel } from '../models/operations-receipt.model';
+import {
+  OperationReceiptModel,
+  OperationReceiptSearchModel
+} from '../models/operations-receipt.model';
 
 import { LoaderService } from '../../../services/loader.service';
 import { NotificationService } from '../../../services/notification.service';
 import { SiteTranslateService } from '../../../services/site-translate.service';
 import { TitleService } from '../../../services/title.service';
 import { MatDialog } from '@angular/material/dialog';
-import { OrOwnerdialogComponent } from './dialogs/or-owner-dialog/or-owner-dialog.component';
-import { OrItemdialogComponent } from './dialogs/or-item-dialog/or-item-dialog.component';
-import { OrNetwtdialogComponent } from './dialogs/or-net-wt-dialog/or-net-wt-dialog.component';
-import { OrNetvoldialogComponent } from './dialogs/or-net-vol-dialog/or-net-vol-dialog.component';
-import { OrRudialogComponent } from './dialogs/or-ru-dialog/or-ru-dialog.component';
-
+import { OrOwnerDialogComponent } from './dialogs/or-owner-dialog/or-owner-dialog.component';
+import { OrItemDialogComponent } from './dialogs/or-item-dialog/or-item-dialog.component';
+import { OrNetwtDialogComponent } from './dialogs/or-net-wt-dialog/or-net-wt-dialog.component';
+import { OrNetvolDialogComponent } from './dialogs/or-net-vol-dialog/or-net-vol-dialog.component';
+import { OrRuDialogComponent } from './dialogs/or-ru-dialog/or-ru-dialog.component';
 
 @Component({
   selector: 'ibe-operations-receipt',
@@ -32,20 +34,23 @@ export class OperationsReceiptComponent implements OnInit {
   searchDataSource: OperationReceiptSearchModel[] = [];
   dummySearchModel: OperationReceiptSearchModel[] = [
     {
-      warehouse: 'GEM1234', owner: 'Gemini Software', grn: '1213a1a',
+      warehouse: 'GEM1234',
+      owner: 'Gemini Software',
+      grn: '1213a1a',
       receiptDate: '1213a1a',
       po: '1213a1a',
       status: 'active',
       remarks: '1213a1a1213a1a1213a1a'
     },
     {
-      warehouse: 'GEM1234', owner: 'Gemini Software', grn: '1213a1a',
+      warehouse: 'GEM1234',
+      owner: 'Gemini Software',
+      grn: '1213a1a',
       receiptDate: '1213a1a',
       po: '1213a1a',
       status: 'active',
       remarks: '1213a1a1213a1a1213a1a'
     }
-
   ];
 
   receiptDataSource: OperationReceiptModel[] = [];
@@ -129,29 +134,37 @@ export class OperationsReceiptComponent implements OnInit {
 
   dataReceiptForm!: FormGroup;
 
-  displayedColumns = ['warehouse', 'owner', 'grn', 'receiptDate', 'po', 'remarks', 'status'];
+  displayedColumns = [
+    'warehouse',
+    'owner',
+    'grn',
+    'receiptDate',
+    'po',
+    'remarks',
+    'status'
+  ];
 
   sectors = ['LOGISTICS', 'FORWARDING', 'OTHER'];
   companyLogo = '../../../../assets/images/company-logo-236x81.jpg';
 
   formErrorTranslated = '';
   filterErrorTranslated = '';
-  constructor(private fb: FormBuilder,
+  constructor(
+    private fb: FormBuilder,
     private loader: LoaderService,
     private siteTranslateService: SiteTranslateService,
     private translate: TranslateService,
     private titleService: TitleService,
     private notification: NotificationService,
-    public dialog: MatDialog) {
-    this.createDataReceiptForm()
-    this.createSearchReceiptForm()
+    public dialog: MatDialog
+  ) {
+    this.createDataReceiptForm();
+    this.createSearchReceiptForm();
   }
 
   ngOnInit(): void {
     this.receiptDataSource = [...this.dummyreceiptModel];
   }
-
-
 
   createDataReceiptForm() {
     this.dataReceiptForm = this.fb.group({
@@ -159,34 +172,13 @@ export class OperationsReceiptComponent implements OnInit {
         '',
         [Validators.required, Validators.pattern(patternsHelper.alphanumeric)]
       ],
-      trn: [
-        '',
-        [Validators.required]
-      ],
-      grn: [
-        '',
-        []
-      ],
-      receiptDate: [
-        '',
-        [Validators.required]
-      ],
-      owner: [
-        '',
-        [Validators.required]
-      ],
-      po: [
-        '',
-        [Validators.pattern(patternsHelper.alphanumeric)]
-      ],
-      remarks: [
-        '',
-        [Validators.pattern(patternsHelper.alphanumeric)]
-      ],
-      storageLabel: [
-        '',
-        [Validators.pattern(patternsHelper.alphanumeric)]
-      ],
+      trn: ['', [Validators.required]],
+      grn: ['', []],
+      receiptDate: ['', [Validators.required]],
+      owner: ['', [Validators.required]],
+      po: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      remarks: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      storageLabel: ['', [Validators.pattern(patternsHelper.alphanumeric)]]
     });
   }
 
@@ -211,7 +203,7 @@ export class OperationsReceiptComponent implements OnInit {
     return this.searchReceiptForm.controls;
   }
 
-  onDataReceiptSubmit() { }
+  onDataReceiptSubmit() {}
 
   onSearchReceiptSubmit() {
     if (!this.searchReceiptForm.valid) {
@@ -220,23 +212,25 @@ export class OperationsReceiptComponent implements OnInit {
     }
     const warehouse: string =
       this.searchReceiptForm.get('warehouse')?.value || '';
-    const owner: string =
-      this.searchReceiptForm.get('owner')?.value || '';
-    const grn: string =
-      this.searchReceiptForm.get('grn')?.value || '';
+    const owner: string = this.searchReceiptForm.get('owner')?.value || '';
+    const grn: string = this.searchReceiptForm.get('grn')?.value || '';
     const dateoperator: string =
       this.searchReceiptForm.get('dateoperator')?.value || '';
     const receiptDate: string =
       this.searchReceiptForm.get('receiptDate')?.value || '';
-    const po: string =
-      this.searchReceiptForm.get('po')?.value || '';
-    const status: string =
-      this.searchReceiptForm.get('status')?.value || '';
-    const item: string =
-      this.searchReceiptForm.get('item')?.value || '';
-    if (warehouse.trim() === '' && owner.trim() === '' &&
-      grn.trim() === '' && dateoperator.trim() === '' &&
-      po.trim() === '' && receiptDate.trim() === '' && item.trim() === '' && status.trim() === '') {
+    const po: string = this.searchReceiptForm.get('po')?.value || '';
+    const status: string = this.searchReceiptForm.get('status')?.value || '';
+    const item: string = this.searchReceiptForm.get('item')?.value || '';
+    if (
+      warehouse.trim() === '' &&
+      owner.trim() === '' &&
+      grn.trim() === '' &&
+      dateoperator.trim() === '' &&
+      po.trim() === '' &&
+      receiptDate.trim() === '' &&
+      item.trim() === '' &&
+      status.trim() === ''
+    ) {
       this.notification.error(this.filterErrorTranslated);
       return;
     } else {
@@ -259,46 +253,40 @@ export class OperationsReceiptComponent implements OnInit {
     tabGroup.selectedIndex = 0;
   }
 
-  saveReceiptData() { }
-  deleteReceiptData() { }
+  saveReceiptData() {}
+  deleteReceiptData() {}
 
   resetReceiptDataForm() {
     this.dataReceiptForm.reset();
   }
 
-
   openownerdialog() {
-    this.dialog.open(OrOwnerdialogComponent, {
+    this.dialog.open(OrOwnerDialogComponent, {
       width: '800px'
     });
   }
 
   openitemdialog() {
-    this.dialog.open(OrItemdialogComponent, {
+    this.dialog.open(OrItemDialogComponent, {
       width: '800px'
     });
   }
-
 
   openntwtdialog() {
-    this.dialog.open(OrNetwtdialogComponent, {
+    this.dialog.open(OrNetwtDialogComponent, {
       width: '800px'
     });
   }
 
-
   opennetvoldialog() {
-    this.dialog.open(OrNetvoldialogComponent, {
+    this.dialog.open(OrNetvolDialogComponent, {
       width: '800px'
     });
   }
 
   openrudialog() {
-    this.dialog.open(OrRudialogComponent, {
+    this.dialog.open(OrRuDialogComponent, {
       width: '800px'
     });
   }
-
-
-
 }

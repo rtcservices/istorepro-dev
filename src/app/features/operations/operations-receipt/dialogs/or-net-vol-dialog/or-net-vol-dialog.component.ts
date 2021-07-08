@@ -10,17 +10,18 @@ import { SiteTranslateService } from 'src/app/services/site-translate.service';
   templateUrl: './or-net-vol-dialog.component.html',
   styleUrls: ['./or-net-vol-dialog.component.scss']
 })
-export class OrNetvoldialogComponent implements OnInit {
+export class OrNetvolDialogComponent implements OnInit {
   netvolForm!: FormGroup;
-  constructor(private fb: FormBuilder, private dialogRef: MatDialogRef<OrNetvoldialogComponent>,
+  constructor(
+    private fb: FormBuilder,
+    private dialogRef: MatDialogRef<OrNetvolDialogComponent>,
     private siteTranslateService: SiteTranslateService,
-    private translate: TranslateService) {
-    this.createnetvolForm()
+    private translate: TranslateService
+  ) {
+    this.createnetvolForm();
   }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 
   onCancel(): void {
     this.dialogRef.close();
@@ -29,41 +30,20 @@ export class OrNetvoldialogComponent implements OnInit {
   createnetvolForm() {
     this.netvolForm = this.fb.group({
       item: '',
-      quantity: [
-        '', [
-          Validators.pattern(patternsHelper.numeric)
-        ]
-      ],
-      length: [
-        '', [
-          Validators.pattern(patternsHelper.numeric)
-        ]
-      ],
-      breadth: [
-        '', [
-          Validators.pattern(patternsHelper.numeric)
-        ]
-      ],
-      height: [
-        '', [
-          Validators.pattern(patternsHelper.numeric)
-        ]
-      ],
-      unitvol: [
-        '', [
-          Validators.pattern(patternsHelper.numeric)
-        ]
-      ],
+      quantity: ['', [Validators.pattern(patternsHelper.numeric)]],
+      length: ['', [Validators.pattern(patternsHelper.numeric)]],
+      breadth: ['', [Validators.pattern(patternsHelper.numeric)]],
+      height: ['', [Validators.pattern(patternsHelper.numeric)]],
+      unitvol: ['', [Validators.pattern(patternsHelper.numeric)]],
 
       dimensions: '',
       netvol: [
-        '', [
-          Validators.pattern(patternsHelper.numeric), Validators.required
-        ]
+        '',
+        [Validators.pattern(patternsHelper.numeric), Validators.required]
       ]
     });
   }
-  onnetvolFormSubmit() { }
+  onnetvolFormSubmit() {}
 
   resetnetvolForm() {
     this.netvolForm.reset();
@@ -71,5 +51,4 @@ export class OrNetvoldialogComponent implements OnInit {
   get netvolFormControls() {
     return this.netvolForm.controls;
   }
-
 }

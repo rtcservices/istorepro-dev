@@ -1,20 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OrItemdialogComponent } from './or-item-dialog.component';
+import { OrItemDialogComponent } from './or-item-dialog.component';
 
-describe('OrItemdialogComponent', () => {
-  let component: OrItemdialogComponent;
-  let fixture: ComponentFixture<OrItemdialogComponent>;
+describe('OrItemDialogComponent', () => {
+  let component: OrItemDialogComponent;
+  let fixture: ComponentFixture<OrItemDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OrItemdialogComponent ]
-    })
-    .compileComponents();
+      declarations: [OrItemDialogComponent]
+    }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OrItemdialogComponent);
+    fixture = TestBed.createComponent(OrItemDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

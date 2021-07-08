@@ -1,20 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OrNetvoldialogComponent } from './or-net-vol-dialog.component';
+import { OrNetvolDialogComponent } from './or-net-vol-dialog.component';
 
-describe('OrNetvoldialogComponent', () => {
-  let component: OrNetvoldialogComponent;
-  let fixture: ComponentFixture<OrNetvoldialogComponent>;
+describe('OrNetvolDialogComponent', () => {
+  let component: OrNetvolDialogComponent;
+  let fixture: ComponentFixture<OrNetvolDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OrNetvoldialogComponent ]
-    })
-    .compileComponents();
+      declarations: [OrNetvolDialogComponent]
+    }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OrNetvoldialogComponent);
+    fixture = TestBed.createComponent(OrNetvolDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

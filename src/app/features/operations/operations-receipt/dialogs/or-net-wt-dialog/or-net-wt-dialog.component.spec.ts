@@ -1,20 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OrNetwtdialogComponent } from './or-net-wt-dialog.component';
+import { OrNetwtDialogComponent } from './or-net-wt-dialog.component';
 
-describe('OrNetwtdialogComponent', () => {
-  let component: OrNetwtdialogComponent;
-  let fixture: ComponentFixture<OrNetwtdialogComponent>;
+describe('OrNetwtDialogComponent', () => {
+  let component: OrNetwtDialogComponent;
+  let fixture: ComponentFixture<OrNetwtDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OrNetwtdialogComponent ]
-    })
-    .compileComponents();
+      declarations: [OrNetwtDialogComponent]
+    }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OrNetwtdialogComponent);
+    fixture = TestBed.createComponent(OrNetwtDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
