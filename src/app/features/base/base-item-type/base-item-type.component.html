@@ -51,7 +51,7 @@
                   <mat-checkbox color="primary" formControlName="expiry">{{
                     'base.itemType.expiry' | translate
                     }}</mat-checkbox>
-                  <mat-form-field fxLayout="column" appearance="outline" fxFlex="60">
+                  <mat-form-field fxLayout="column" appearance="outline" fxFlex="60" fxFlex.lt-sm="35">
                     <mat-label>{{'base.itemType.alertDays' | translate}}</mat-label>
                     <input matInput type="text" formControlName="expiryAlertDays" />
                     <mat-error *ngIf="dataItemTypeControls.expiryAlertDays.invalid">{{ 'error.field' | translate }}

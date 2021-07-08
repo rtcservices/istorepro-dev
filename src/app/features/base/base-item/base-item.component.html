@@ -414,7 +414,7 @@
         <mat-card-content>
 
           <div class="input-row" fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
-            <mat-form-field appearance="outline" fxFlex="33">
+            <mat-form-field appearance="outline" fxFlex="33" fxLayout.lt-sm="50">
               <mat-label>{{ 'base.item.item' | translate }} </mat-label>
               <input matInput type="text" formControlName="item" />
               <mat-error *ngIf="searchItemFormControls.item.invalid">
