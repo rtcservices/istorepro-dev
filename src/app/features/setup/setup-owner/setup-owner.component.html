@@ -35,7 +35,7 @@
                           translate }}
                         </mat-error>
                       </mat-form-field>
-                      <mat-form-field appearance="outline" fxFlex="60">
+                      <mat-form-field appearance="outline" fxFlex="60" fxFlex.lt-sm="75">
                         <mat-label>{{'setup.owner.name' | translate}}</mat-label>
                         <input matInput required type="text" formControlName="name" />
                         <mat-error *ngIf="dataOwnerControls.name.invalid">{{ 'error.field' |
@@ -43,15 +43,16 @@
                         </mat-error>
                       </mat-form-field>
                     </div>
+
                     <div fxLayout="row" class="row" fxLayoutGap="5px">
-                      <mat-form-field appearance="outline" fxFlex="20" fxFlex.lt-sm="30">
+                      <mat-form-field appearance="outline" fxFlex="20" fxFlex.lt-sm="40">
                         <mat-label>{{'setup.owner.shortName' | translate}}</mat-label>
                         <input matInput required type="text" formControlName="shortName" />
                         <mat-error *ngIf="dataOwnerControls.shortName.invalid">{{ 'error.field'
                           | translate }}
                         </mat-error>
                       </mat-form-field>
-                      <mat-form-field appearance="outline" fxFlex="19.70" fxFlex.lt-sm="60">
+                      <mat-form-field appearance="outline" fxFlex="19.70" fxFlex.lt-sm="58.5">
                         <mat-label>{{
                           'setup.owner.type' | translate
                           }}</mat-label>
@@ -64,15 +65,16 @@
                           }}</mat-error>
                       </mat-form-field>
                     </div>
+
                     <div fxLayout="row" class="row" fxLayoutGap="5px">
-                      <mat-form-field appearance="outline" fxFlex="40" fxFlex.lt-sm="40">
+                      <mat-form-field appearance="outline" fxFlex="40" fxFlex.lt-sm="49">
                         <mat-label>{{'setup.owner.address1' | translate }}</mat-label>
                         <input matInput required type="text" formControlName="address1" />
                         <mat-error *ngIf="dataOwnerControls.address1.invalid">{{ 'error.field' |
                           translate }}
                         </mat-error>
                       </mat-form-field>
-                      <mat-form-field appearance="outline" fxFlex="40" fxFlex.lt-sm="50">
+                      <mat-form-field appearance="outline" fxFlex="40" fxFlex.lt-sm="49">
                         <mat-label>{{'setup.owner.address2' | translate}}</mat-label>
                         <input matInput required type="text" formControlName="address2" />
                         <mat-error *ngIf="dataOwnerControls.address2.invalid">{{ 'error.field' |
@@ -80,15 +82,16 @@
                         </mat-error>
                       </mat-form-field>
                     </div>
+
                     <div fxLayout="row" class="row" fxLayoutGap="5px">
-                      <mat-form-field appearance="outline" fxFlex="40" fxFlex.lt-sm="40">
+                      <mat-form-field appearance="outline" fxFlex="40" fxFlex.lt-sm="49">
                         <mat-label>{{'setup.owner.address3' | translate }}</mat-label>
                         <input matInput required type="text" formControlName="address3" />
                         <mat-error *ngIf="dataOwnerControls.address3.invalid">{{ 'error.field' |
                           translate }}
                         </mat-error>
                       </mat-form-field>
-                      <mat-form-field appearance="outline" fxFlex="40" fxFlex.lt-sm="50">
+                      <mat-form-field appearance="outline" fxFlex="40" fxFlex.lt-sm="49">
                         <mat-label>{{'setup.owner.address4' | translate}}</mat-label>
                         <input matInput required type="text" formControlName="address4" />
                         <mat-error *ngIf="dataOwnerControls.address4.invalid">{{ 'error.field' |
@@ -96,6 +99,7 @@
                         </mat-error>
                       </mat-form-field>
                     </div>
+                    
                     <div fxLayout="row" class="row" fxLayoutGap="5px">
                       <mat-form-field appearance="outline" fxFlex="40" fxFlex.lt-sm="24">
                         <mat-label>{{'setup.owner.place' | translate }}</mat-label>
@@ -111,7 +115,7 @@
                           translate }}
                         </mat-error>
                       </mat-form-field>
-                      <div class="form-checkbox-input" fxFlex="15">
+                      <div class="form-checkbox-input" fxFlex="15" fxFlex.lt-sm="10">
                         <mat-checkbox color="warn" *ngIf="ownerType==='customer'" formControlName="blockCustomer">
                           {{ 'setup.owner.blockCustomer' | translate }}
                         </mat-checkbox>
@@ -133,7 +137,7 @@
                           translate }}
                         </mat-error>
                       </mat-form-field>
-                      <div class="form-checkbox-input" fxFlex="20">
+                      <div class="form-checkbox-input" fxFlex="20" fxFlex.lt-sm="10">
                         <mat-checkbox color="primary" *ngIf="ownerType==='vendor'" formControlName="actAsCustomer">
                           {{ 'setup.owner.actAsCustomer' | translate }}
                         </mat-checkbox>
@@ -188,14 +192,14 @@
                   <mat-card-content>
 
                     <div fxLayout="row" class="row" fxLayoutGap="5px">
-                      <mat-form-field appearance="outline" fxFlex="24" fxFlex.lt-sm="45">
+                      <mat-form-field appearance="outline" fxFlex="24" fxFlex.lt-sm="35">
                         <mat-label>{{'setup.owner.shipTo.shipToCode' | translate }}</mat-label>
                         <input matInput required type="text" formControlName="shipToCode" />
                         <mat-error *ngIf="dataOwnerControls.shipToCode.invalid">{{ 'error.field' |
                           translate }}
                         </mat-error>
                       </mat-form-field>
-                      <mat-form-field appearance="outline" fxFlex="56">
+                      <mat-form-field appearance="outline" fxFlex="56" fxFlex.lt-sm="65">
                         <mat-label>{{'setup.owner.shipTo.shipToName' | translate}}</mat-label>
                         <input matInput required type="text" formControlName="shipToName" />
                         <mat-error *ngIf="dataOwnerControls.shipToName.invalid">{{ 'error.field' |
@@ -206,14 +210,14 @@
 
 
                     <div fxLayout="row" class="row" fxLayoutGap="5px">
-                      <mat-form-field appearance="outline" fxFlex="40" fxFlex.lt-sm="45">
+                      <mat-form-field appearance="outline" fxFlex="40" fxFlex.lt-sm="50">
                         <mat-label>{{'setup.owner.shipTo.address1' | translate }}</mat-label>
                         <input matInput required type="text" formControlName="shipToaddress1" />
                         <mat-error *ngIf="dataOwnerControls.shipToaddress1.invalid">{{ 'error.field' |
                           translate }}
                         </mat-error>
                       </mat-form-field>
-                      <mat-form-field appearance="outline" fxFlex="40">
+                      <mat-form-field appearance="outline" fxFlex="40" fxFlex.lt-sm="50">
                         <mat-label>{{'setup.owner.shipTo.address2' | translate}}</mat-label>
                         <input matInput type="text" formControlName="shipToaddress2" />
                         <mat-error *ngIf="dataOwnerControls.shipToaddress2.invalid">{{ 'error.field' |
@@ -223,14 +227,14 @@
                     </div>
 
                     <div fxLayout="row" class="row" fxLayoutGap="5px">
-                      <mat-form-field appearance="outline" fxFlex="40" fxFlex.lt-sm="45">
+                      <mat-form-field appearance="outline" fxFlex="40" fxFlex.lt-sm="50">
                         <mat-label>{{'setup.owner.shipTo.address3' | translate }}</mat-label>
                         <input matInput type="text" formControlName="shipToaddress3" />
                         <mat-error *ngIf="dataOwnerControls.shipToaddress3.invalid">{{ 'error.field' |
                           translate }}
                         </mat-error>
                       </mat-form-field>
-                      <mat-form-field appearance="outline" fxFlex="40">
+                      <mat-form-field appearance="outline" fxFlex="40" fxFlex.lt-sm="50">
                         <mat-label>{{'setup.owner.shipTo.address4' | translate}}</mat-label>
                         <input matInput type="text" formControlName="shipToaddress4" />
                         <mat-error *ngIf="dataOwnerControls.shipToaddress4.invalid">{{ 'error.field' |
@@ -240,21 +244,21 @@
                     </div>
 
                     <div fxLayout="row" class="row" fxLayoutGap="5px">
-                      <mat-form-field appearance="outline" fxFlex="24">
+                      <mat-form-field appearance="outline" fxFlex="24" fxFlex.lt-sm="30">
                         <mat-label>{{'setup.owner.shipTo.zip' | translate}}</mat-label>
                         <input matInput type="text" formControlName="shipTozip" />
                         <mat-error *ngIf="dataOwnerControls.shipTozip.invalid">{{ 'error.field' |
                           translate }}
                         </mat-error>
                       </mat-form-field>
-                      <mat-form-field appearance="outline" fxFlex="30">
+                      <mat-form-field appearance="outline" fxFlex="30" fxFlex.lt-sm="38.5">
                         <mat-label>{{'setup.owner.shipTo.telephone' | translate }}</mat-label>
                         <input matInput type="text" formControlName="shipTotelephone" />
                         <mat-error *ngIf="dataOwnerControls.shipTotelephone.invalid">{{ 'error.field' |
                           translate }}
                         </mat-error>
                       </mat-form-field>
-                      <mat-form-field appearance="outline" fxFlex="25.6">
+                      <mat-form-field appearance="outline" fxFlex="25.6" fxFlex.lt-sm="30">
                         <mat-label>{{'setup.owner.shipTo.fax' | translate}}</mat-label>
                         <input matInput type="text" formControlName="shipTofax" />
                         <mat-error *ngIf="dataOwnerControls.shipTofax.invalid">{{ 'error.field' |
@@ -263,7 +267,7 @@
                       </mat-form-field>
                     </div>
 
-                    <div fxLayout="row" class="row" fxLayoutGap="5px">
+                    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px">
 
                       <mat-form-field appearance="outline" fxFlex="80.2">
                         <mat-label>{{'setup.owner.shipTo.email' | translate }}</mat-label>
@@ -290,7 +294,7 @@
 
                     </div> -->
 
-                    <table class="site-table w-100 mat-elevation-z8">
+                    <table class="site-table w-100 mat-elevation-z8" >
                       <thead>
                         <tr>
                           <th>{{ 'setup.owner.shipTo.shipToCode' | translate}}</th>

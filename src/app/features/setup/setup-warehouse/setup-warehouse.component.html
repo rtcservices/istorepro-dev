@@ -18,7 +18,7 @@
                         <mat-error *ngIf="dataWarehouseControls.code.invalid">{{ 'error.field' | translate }}
                         </mat-error>
                       </mat-form-field>
-                      <mat-form-field appearance="outline" fxFlex>
+                      <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="45">
                         <mat-label>{{'setup.warehouse.description' | translate}}</mat-label>
                         <input matInput required type="text" formControlName="description" />
                         <mat-error *ngIf="dataWarehouseControls.description.invalid">{{ 'error.field' | translate }}

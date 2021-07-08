@@ -216,12 +216,10 @@
   </mat-tab>
   <!-- Search -->
   <mat-tab label="Search">
-    <form fxLayout="column" [formGroup]="searchSetupSecurityForm" (ngSubmit)="onSearchSetupSecuritySubmit()"
-      class="slim-form">
+    <form fxLayout="column" [formGroup]="searchSetupSecurityForm" (ngSubmit)="onSearchSetupSecuritySubmit()" class="slim-form">
       <mat-card class="filter-container">
         <mat-card-content>
-          <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px"
-            class="row">
+          <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px" >
             <mat-form-field appearance="outline" fxFlex>
               <mat-label>{{
                 'setup.security.loginName' | translate
@@ -239,7 +237,9 @@
                 {{ 'error.field' | translate }}</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline" fxFlex>
-              <mat-label>loginName</mat-label>
+              <mat-label>{{
+                'setup.security.loginName' | translate
+                }}</mat-label>
               <input matInput type="text" formControlName="suspended" />
               <mat-error *ngIf="searchSetupSecurityFormControls.suspended.invalid">
                 {{ 'error.field' | translate }}</mat-error>

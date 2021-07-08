@@ -44,6 +44,9 @@
       font-size: 10.5px;
       margin: 0;
       padding: 0 5px;
+      @include breakpoint(mobileonly) {
+        font-size: 9.5px;
+      }
     }
   }
   .read-only-description {
@@ -164,6 +167,16 @@
     transform: scale(0.7);
     @include breakpoint(mobileonly) {
       width: 25%;
+    }
+  }
+}
+
+.filter-container{
+  .input-row{
+    mat-form-field{
+      @include breakpoint(mobileonly) {
+        margin-bottom: 0px !important;
+      }
     }
   }
 }
