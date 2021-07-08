@@ -11,6 +11,12 @@ import { LoaderService } from '../../../services/loader.service';
 import { NotificationService } from '../../../services/notification.service';
 import { SiteTranslateService } from '../../../services/site-translate.service';
 import { TitleService } from '../../../services/title.service';
+import { MatDialog } from '@angular/material/dialog';
+import { OwnerdialogComponent } from './dialogs/ownerdialog/ownerdialog.component';
+import { ItemdialogComponent } from './dialogs/itemdialog/itemdialog.component';
+import { NetwtdialogComponent } from './dialogs/netwtdialog/netwtdialog.component';
+import { NetvoldialogComponent } from './dialogs/netvoldialog/netvoldialog.component';
+import { RudialogComponent } from './dialogs/rudialog/rudialog.component';
 
 
 @Component({
@@ -75,7 +81,8 @@ export class OperationsReceiptComponent implements OnInit {
     private siteTranslateService: SiteTranslateService,
     private translate: TranslateService,
     private titleService: TitleService,
-    private notification: NotificationService) {
+    private notification: NotificationService,
+    public dialog: MatDialog) {
       this.createDataReceiptForm()
       this.createSearchReceiptForm()
      }
@@ -198,5 +205,40 @@ export class OperationsReceiptComponent implements OnInit {
   resetReceiptDataForm() {
     this.dataReceiptForm.reset();
   }
+
+
+  openownerdialog() {
+    this.dialog.open(OwnerdialogComponent, {
+      width: '800px'
+    });
+  }
+
+  openitemdialog() {
+    this.dialog.open(ItemdialogComponent, {
+      width: '800px'
+    });
+  }
+
+
+  openntwtdialog() {
+    this.dialog.open(NetwtdialogComponent, {
+      width: '800px'
+    });
+  }
+
+
+  opennetvoldialog() {
+    this.dialog.open(NetvoldialogComponent, {
+      width: '800px'
+    });
+  }
+
+  openrudialog() {
+    this.dialog.open(RudialogComponent, {
+      width: '800px'
+    });
+  }
+
+
 
 }

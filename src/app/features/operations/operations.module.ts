@@ -7,15 +7,24 @@ import { OperationsLocationManagementComponent } from './operations-location-man
 import { OperationsHeatMapComponent } from './operations-heat-map/operations-heat-map.component';
 import { OperationsDeliveryComponent } from './operations-delivery/operations-delivery.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { OwnerdialogComponent } from './operations-receipt/dialogs/ownerdialog/ownerdialog.component';
+import { ItemdialogComponent } from './operations-receipt/dialogs/itemdialog/itemdialog.component';
+import { RudialogComponent } from './operations-receipt/dialogs/rudialog/rudialog.component';
+import { NetwtdialogComponent } from './operations-receipt/dialogs/netwtdialog/netwtdialog.component';
+import { NetvoldialogComponent } from './operations-receipt/dialogs/netvoldialog/netvoldialog.component';
 
 
 @NgModule({
-  declarations: [
-  
-    OperationsReceiptComponent,
+  declarations: [  
+       OperationsReceiptComponent,
        OperationsLocationManagementComponent,
        OperationsHeatMapComponent,
-       OperationsDeliveryComponent
+       OperationsDeliveryComponent,
+       OwnerdialogComponent,
+       ItemdialogComponent,
+       RudialogComponent,
+       NetwtdialogComponent,
+       NetvoldialogComponent
   ],
   imports: [
     CommonModule,

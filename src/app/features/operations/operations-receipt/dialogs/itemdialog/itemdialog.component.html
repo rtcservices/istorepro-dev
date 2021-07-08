@@ -1,0 +1,99 @@
+<mat-dialog-actions align="end">
+  <button (click)="onCancel()" mat-raised-button mat-dialog-close color="warn" type="submit">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-dialog-actions>
+
+<h1 mat-dialog-title></h1>
+<div mat-dialog-content>
+  <form [formGroup]="dataItemForm" (ngSubmit)="onDataItemSubmit()" class="slim-form">
+    <mat-card>
+      <mat-card-content>
+
+        <div class="input-row row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px" fxLayoutGap.lt-md="0px">
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>{{
+                'operations.receipt.item' | translate
+                }}</mat-label>
+            <input matInput type="text" formControlName="item" />
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>{{
+                'operations.receipt.description' | translate
+                }}</mat-label>
+            <input matInput type="text" formControlName="description" />
+          </mat-form-field>
+        </div>
+        <div class="input-row row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px" fxLayoutGap.lt-md="0px">
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>{{
+              'operations.receipt.type' | translate
+              }}</mat-label>
+            <mat-select formControlName="type">
+              <option value=""></option>
+              <option value="Customer">Customer</option>
+              <option value="Vendor">Vendor</option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>{{
+              'operations.receipt.sku' | translate
+              }}</mat-label>
+            <mat-select formControlName="sku">
+              <option value=""></option>
+              <option value="Customer">Customer</option>
+              <option value="Vendor">Vendor</option>
+            </mat-select>
+          </mat-form-field>
+
+        </div>
+        <div class="modal-button">
+          <button mat-raised-button color="primary" type="submit">
+            <mat-icon>search</mat-icon>
+          </button>
+          <button mat-raised-button color="accent" type="reset" (click)="resetDataItemForm()">
+            <mat-icon>restart_alt</mat-icon>
+          </button>
+        </div>
+        <table class="site-table text-center w-100">
+          <thead>
+            <tr >
+              <th class="checkbox-column">
+                <mat-checkbox color="primary"></mat-checkbox>
+              </th>
+              <th>{{ 'operations.receipt.item' | translate}}</th>
+              <th>{{ 'operations.receipt.description' | translate}}</th>
+              <th>{{ 'operations.receipt.type' | translate}} </th>
+              <th>{{ 'operations.receipt.sku' | translate}} </th>
+            </tr>
+          </thead>
+          <ng-template let-control ngFor [ngForOf]="searchDataSource">
+            <tr >
+              <td class="checkbox-column" >
+                <mat-checkbox color="primary"></mat-checkbox>
+              </td>
+              <td>
+                {{control.item}}
+              </td>
+              <td>
+                {{control.description}}
+              </td>
+              <td>
+                {{control.type}}
+              </td>
+              <td>
+                {{control.sku}}
+              </td>
+            </tr>
+          </ng-template>
+        </table>
+      </mat-card-content>
+    </mat-card>
+    <div class="modal-button-bottom">
+      <button mat-raised-button color="primary" type="submit">
+        <mat-icon>task_alt</mat-icon>
+      </button>
+    </div>
+  </form>
+</div>
