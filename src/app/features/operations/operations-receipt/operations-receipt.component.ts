@@ -164,7 +164,6 @@ export class OperationsReceiptComponent implements OnInit {
 
   ngOnInit(): void {
     this.receiptDataSource = [...this.dummyreceiptModel];
-    this.openOwnerDialog();
   }
 
   createDataReceiptForm() {

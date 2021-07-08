@@ -111,12 +111,12 @@
                 </th>
                 <th fxHide fxShow.gt-sm class="column-60">{{ 'operations.receipt.netvol' | translate}}
                 </th>
-                <th fxHide fxShow.gt-sm>{{ 'operations.receipt.mfgDate' | translate}}</th>
-                <th fxHide fxShow.gt-sm>{{ 'operations.receipt.expDate' | translate}}</th>
+                <th fxHide fxShow.gt-sm class="column-100">{{ 'operations.receipt.mfgDate' | translate}}</th>
+                <th fxHide fxShow.gt-sm class="column-100">{{ 'operations.receipt.expDate' | translate}}</th>
                 <th>{{ 'operations.receipt.batchNo' | translate}}</th>
                 <th fxHide fxShow.gt-sm>{{ 'operations.receipt.remarks' | translate}}</th>
-                <th style="text-align: center;">
-                  <mat-icon style="padding-top: 3px;">add_circle_outline</mat-icon>
+                <th class="header-add-icon">
+                  <mat-icon>add</mat-icon>
                 </th>
               </tr>
             </thead>
@@ -159,10 +159,10 @@
                       <span>v</span>
                     </button>
                   </td>
-                  <td fxHide fxShow.gt-sm>
+                  <td fxHide fxShow.gt-sm class="column-100">
                     <input type="date" class="w-100">
                   </td>
-                  <td fxHide fxShow.gt-sm>
+                  <td fxHide fxShow.gt-sm class="column-100">
                     <input type="date" class="w-100">
                   </td>
                   <td>
