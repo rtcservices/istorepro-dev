@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {Router, RouterOutlet} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
 import { slideInAnimation } from '../../../animations/animations';
@@ -13,11 +13,8 @@ import { HeaderNavService } from '../../../services/header-nav.service';
   selector: 'ibe-app-shell',
   templateUrl: './app-shell.component.html',
   styleUrls: ['./app-shell.component.scss'],
-  animations: [
-    slideInAnimation
-  ]
+  animations: [slideInAnimation]
 })
-
 export class AppShellComponent implements OnInit {
   headerNavItems!: HeaderNavItem[];
   menu: any;
@@ -33,8 +30,8 @@ export class AppShellComponent implements OnInit {
     public router: Router,
     public translate: TranslateService,
     public headerNavService: HeaderNavService,
-    public authService: AuthService) {
-  }
+    public authService: AuthService
+  ) {}
 
   async ngOnInit() {
     this.getNotifications();
@@ -127,17 +124,16 @@ export class AppShellComponent implements OnInit {
     ];
   }
 
-  setTranslations(){
+  setTranslations() {
     const language = this.translate.currentLang;
     this.translate.use(language).subscribe((res) => {
-
       this.userAccountTranslated = this.translate.instant('menu.userAccount');
-      this.notificationsTranslated = this.translate.instant('menu.notifications');
+      this.notificationsTranslated =
+        this.translate.instant('menu.notifications');
       this.settingsTranslated = this.translate.instant('menu.settings');
       this.logoutTranslated = this.translate.instant('menu.logout');
 
       this.setHeaderNavItems();
-
     });
   }
 
@@ -148,19 +144,19 @@ export class AppShellComponent implements OnInit {
         children: [
           {
             displayName: this.translate.instant('menu.setupCompany'),
-            route: 'setup/company',
+            route: 'setup/company'
           },
           {
             displayName: this.translate.instant('menu.setupWarehouse'),
-            route: 'setup/warehouse',
+            route: 'setup/warehouse'
           },
           {
             displayName: this.translate.instant('menu.setupOwner'),
-            route: 'setup/owner',
+            route: 'setup/owner'
           },
           {
             displayName: this.translate.instant('menu.setupSecurity'),
-            route: 'setup/security',
+            route: 'setup/security'
           }
         ]
       },
@@ -191,7 +187,7 @@ export class AppShellComponent implements OnInit {
           {
             displayName: this.translate.instant('menu.baseReason'),
             route: 'base/reason'
-          },
+          }
         ]
       },
       {
@@ -203,7 +199,9 @@ export class AppShellComponent implements OnInit {
             route: 'operations/receipt'
           },
           {
-            displayName: this.translate.instant('menu.operationsLocationManagement'),
+            displayName: this.translate.instant(
+              'menu.operationsLocationManagement'
+            ),
             route: 'operations/location-management'
           },
           {
@@ -267,42 +265,44 @@ export class AppShellComponent implements OnInit {
             route: 'dashboards/mis'
           }
         ]
-      },
-      {
-        displayName: this.translate.instant('menu.admin'),
-        route: '',
-        children: [
-          {
-            displayName: this.translate.instant('menu.adminSystemControl'),
-            route: 'admin/system-control'
-          },
-          {
-            displayName: this.translate.instant('menu.adminConsistency'),
-            route: 'admin/consistency'
-          },
-          {
-            displayName: this.translate.instant('menu.adminLoginAudit'),
-            route: 'admin/login-audit'
-          },
-          {
-            displayName: this.translate.instant('menu.adminAuditTrail'),
-            route: 'admin/audit-trail'
-          }
-        ]
       }
+      // {
+      //   displayName: this.translate.instant('menu.admin'),
+      //   route: '',
+      //   children: [
+      //     {
+      //       displayName: this.translate.instant('menu.adminSystemControl'),
+      //       route: 'admin/system-control'
+      //     },
+      //     {
+      //       displayName: this.translate.instant('menu.adminConsistency'),
+      //       route: 'admin/consistency'
+      //     },
+      //     {
+      //       displayName: this.translate.instant('menu.adminLoginAudit'),
+      //       route: 'admin/login-audit'
+      //     },
+      //     {
+      //       displayName: this.translate.instant('menu.adminAuditTrail'),
+      //       route: 'admin/audit-trail'
+      //     }
+      //   ]
+      // }
     ];
   }
 
   async prepareRoute(outlet: RouterOutlet) {
-    return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
+    return (
+      outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation
+    );
   }
 
   async logout() {
     this.authService.logout();
-    this.router.navigateByUrl('["/auth/login"]')
+    this.router.navigateByUrl('["/auth/login"]');
   }
 
   async goToSettings() {
-    this.router.navigateByUrl('["/settings/profile"]')
+    this.router.navigateByUrl('["/settings/profile"]');
   }
 }

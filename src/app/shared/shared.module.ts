@@ -33,10 +33,11 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatTreeModule } from '@angular/material/tree';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 import { PasswordStrengthComponent } from './password-strength/password-strength.component';
 import { DataAuditComponent } from './data-audit/data-audit.component';
-import { MatTree, MatTreeModule } from '@angular/material/tree';
 @NgModule({
   imports: [
     CommonModule,
@@ -71,7 +72,8 @@ import { MatTree, MatTreeModule } from '@angular/material/tree';
     MatSortModule,
     MatSidenavModule,
     MatTreeModule,
-    MatRadioModule
+    MatRadioModule,
+    MatExpansionModule
   ],
   declarations: [PasswordStrengthComponent, DataAuditComponent],
   exports: [
@@ -109,6 +111,8 @@ import { MatTree, MatTreeModule } from '@angular/material/tree';
     MatTableModule,
     MatTreeModule,
     MatRadioModule,
+    MatExpansionModule,
+
     PasswordStrengthComponent,
     DataAuditComponent
   ]

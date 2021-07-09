@@ -5,8 +5,6 @@
     </button>
     <a [routerLink]="['/home']" class="app-logo">
       <img src="../../../../assets/images/full-logo.png" alt="logo">
-      <!-- <img src="../../../../assets/images/istorepro-logo.jpg">
-      <img src="../../../../assets/images/be-logo.png"> -->
     </a>
   </div>
   <div fxHide fxShow.gt-md class="menu-bar">
@@ -85,19 +83,9 @@
       <a mat-menu-item routerLinkActive="active-link"
         [routerLink]="['/dashboards/mis']">{{'menu.dashboardsMIS' | translate}}</a>
     </mat-menu>
-    <button mat-button [matMenuTriggerFor]="adminMenu">
+    <!-- <button mat-button [matMenuTriggerFor]="adminMenu">
       {{'menu.admin' | translate}} <mat-icon>expand_more</mat-icon>
-    </button>
-    <mat-menu #adminMenu="matMenu" backdropClass="top-menu">
-      <a mat-menu-item routerLinkActive="active-link"
-        [routerLink]="['/admin/system-control']">{{'menu.adminSystemControl' | translate}}</a>
-      <a mat-menu-item routerLinkActive="active-link"
-        [routerLink]="['/admin/consistency']">{{'menu.adminConsistency' | translate}}</a>
-      <a mat-menu-item routerLinkActive="active-link"
-        [routerLink]="['/admin/login-audit']">{{'menu.adminLoginAudit' | translate}}</a>
-      <a mat-menu-item routerLinkActive="active-link"
-        [routerLink]="['/admin/audit-trail']">{{'menu.adminAuditTrail' | translate}}</a>
-    </mat-menu>
+    </button> -->
   </div>
   <span class="spacer"></span>
   <button mat-icon-button [matTooltip]="userAccountTranslated" [matMenuTriggerFor]="userAccountMenu">
@@ -119,9 +107,19 @@
       <small>{{n.subTitle}}</small>
     </div>
   </mat-menu>
-  <button mat-icon-button [matTooltip]="settingsTranslated">
+  <button mat-icon-button [matTooltip]="settingsTranslated" [matMenuTriggerFor]="settingsMenu">
     <mat-icon class="settings">settings</mat-icon>
   </button>
+  <mat-menu #settingsMenu="matMenu" backdropClass="top-menu">
+    <a mat-menu-item routerLinkActive="active-link"
+      [routerLink]="['/admin/system-control']">{{'menu.adminSystemControl' | translate}}</a>
+    <a mat-menu-item routerLinkActive="active-link"
+      [routerLink]="['/admin/consistency']">{{'menu.adminConsistency' | translate}}</a>
+    <a mat-menu-item routerLinkActive="active-link"
+      [routerLink]="['/admin/login-audit']">{{'menu.adminLoginAudit' | translate}}</a>
+    <a mat-menu-item routerLinkActive="active-link"
+      [routerLink]="['/admin/audit-trail']">{{'menu.adminAuditTrail' | translate}}</a>
+  </mat-menu>
 
   <button mat-icon-button class="logout-button" [matTooltip]="logoutTranslated" (click)="logout()">
     <mat-icon>logout</mat-icon>
