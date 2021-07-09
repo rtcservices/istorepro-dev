@@ -28,6 +28,7 @@ import { NavListItemComponent } from './core/components/nav-list-item/nav-list-i
 import { AuthShellComponent } from './core/shells/auth-shell/auth-shell.component';
 import { AppShellComponent } from './core/shells/app-shell/app-shell.component';
 import { LoadingComponent } from './core/components/loading/loading.component';
+import { SharedModule } from './shared/shared.module';
 
 export function httpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(
@@ -49,9 +50,8 @@ export function httpLoaderFactory(http: HttpClient) {
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-
+    SharedModule,
     FlexLayoutModule,
-
     MatBadgeModule,
     MatButtonModule,
     MatCardModule,
@@ -61,6 +61,7 @@ export function httpLoaderFactory(http: HttpClient) {
     MatSidenavModule,
     MatToolbarModule,
     MatTooltipModule,
+
 
     TranslateModule.forRoot({
       loader: {

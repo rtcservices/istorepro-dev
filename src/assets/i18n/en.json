@@ -22,7 +22,13 @@
     "used": "Used",
     "email": "Email",
     "license": "License",
-    "security": "Security"
+    "security": "Security",
+    "fullName":"Full Name",
+    "loginName":"Login Name",
+    "newPassword":"New Password",
+    "oldPassword":"Old Password",
+    "confirmPassword":"Confirm Password"
+
   },
   "error": {
     "form": "Form has invalid entries",

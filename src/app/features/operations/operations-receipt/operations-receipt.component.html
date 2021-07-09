@@ -59,17 +59,17 @@
                 </mat-form-field>
               </div>
               <div class="second-column" fxLayout="row" fxLayoutGap="5px" fxFlex>
-                <mat-form-field appearance="outline" fxFlex="50">
+                <mat-form-field appearance="outline" fxFlex>
                   <mat-label>{{'operations.receipt.remarks' | translate}}</mat-label>
                   <input matInput type="text" required formControlName="remarks" />
                   <mat-error *ngIf="dataReceiptFormControls.remarks.invalid">
                     {{ 'error.field' | translate }}
                   </mat-error>
                 </mat-form-field>
-                <fieldset class="read-only-input" fxFlex="50">
+                <!-- <fieldset class="read-only-input" fxFlex="50">
                   <legend>{{ 'operations.receipt.storageLabel' | translate }}</legend>
                   <label>{{ dataReceiptFormControls.storageLabel.value }}</label>
-                </fieldset>
+                </fieldset> -->
               </div>
             </div>
             <div class="form-three-button-container smaller-button-container-40">

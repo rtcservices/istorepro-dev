@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, RouterOutlet } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { patternsHelper } from 'src/app/helpers/patterns.helper';
 
 import { slideInAnimation } from '../../../animations/animations';
 
@@ -18,7 +20,7 @@ import { HeaderNavService } from '../../../services/header-nav.service';
 export class AppShellComponent implements OnInit {
   headerNavItems!: HeaderNavItem[];
   menu: any;
-
+  profileUpdateForm!: FormGroup;
   userAccountTranslated = '';
   notificationsTranslated = '';
   settingsTranslated = '';
@@ -27,11 +29,14 @@ export class AppShellComponent implements OnInit {
   notifications: NotificationModel[] = [];
 
   constructor(
+    private fb: FormBuilder,
     public router: Router,
     public translate: TranslateService,
     public headerNavService: HeaderNavService,
     public authService: AuthService
-  ) {}
+  ) {
+    this.createProfileUpdateForm();
+  }
 
   async ngOnInit() {
     this.getNotifications();
@@ -305,4 +310,37 @@ export class AppShellComponent implements OnInit {
   async goToSettings() {
     this.router.navigateByUrl('["/settings/profile"]');
   }
+
+  createProfileUpdateForm() {
+    this.profileUpdateForm = this.fb.group(
+      {
+        fullName: [''],
+        loginName: [''],
+        oldPassword: [''],
+        newPassword: [''],
+        confirmPassword: ['']
+      },
+      this.passwordsMatchValidator
+    );
+  }
+
+  get profileUpdateFormControls() {
+    return this.profileUpdateForm.controls;
+  }
+
+  onProfileUpdateSubmit() {}
+
+  resetProfileUpdateForm() {
+    this.profileUpdateForm.reset();
+  }
+  private passwordsMatchValidator(form: FormGroup) {
+    if (form.get('password') && form.get('confirmPassword')) {
+      return form.get('password')?.value === form.get('confirmPassword')?.value
+        ? null
+        : { mismatch: true };
+    }
+    return null;
+  }
+
+  onStrengthChanged(event: any) {}
 }

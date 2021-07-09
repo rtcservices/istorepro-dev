@@ -92,9 +92,86 @@
     <mat-icon>account_circle</mat-icon>
     <!-- <img src="../../../../assets/avatars/person.png" class="user-avatar" alt="user-logo" height="30"> -->
   </button>
-  <mat-menu #userAccountMenu="matMenu" backdropClass="top-menu">
-    <a mat-menu-item routerLinkActive="active-link"
-      [routerLink]="['/account/profile']">{{'menu.userAccountProfile' | translate}}</a>
+  <mat-menu class="profile" #userAccountMenu="matMenu" backdropClass="top-menu">
+    <div class="padding">
+
+      <div (click)="$event.stopPropagation();" fxLayout="row">
+        <div fxFlex="33%">
+
+        </div>
+        <div fxFlex="33%">
+          <img fxFlex class="text-center img-round" src="../../../../assets/avatars/person.png" width="50" height="60"
+            alt="">
+        </div>
+        <div fxFlex="33%">
+
+        </div>
+
+      </div>
+      <br>
+      <div (click)="$event.stopPropagation();" fxLayout="column">
+        <form fxLayout="column" [formGroup]="profileUpdateForm" (ngSubmit)="onProfileUpdateSubmit()" class="slim-form">
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>{{
+            'general.fullName' | translate
+            }}</mat-label>
+            <input matInput type="text" formControlName="fullName" />
+            <mat-error *ngIf="profileUpdateFormControls.fullName.invalid">
+              {{ 'error.field' | translate }}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>{{
+            'general.loginName' | translate
+            }}</mat-label>
+            <input matInput type="text" formControlName="loginName" />
+            <mat-error *ngIf="profileUpdateFormControls.loginName.invalid">
+              {{ 'error.field' | translate }}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>{{
+            'general.oldPassword' | translate
+            }}</mat-label>
+            <input matInput type="password" formControlName="oldPassword" />
+            <mat-error *ngIf="profileUpdateFormControls.oldPassword.invalid">
+              {{ 'error.field' | translate }}</mat-error>
+            <mat-icon matSuffix>vpn_key</mat-icon>
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>{{
+            'general.newPassword' | translate
+            }}</mat-label>
+            <input matInput type="password" #securityPassword formControlName="newPassword" />
+            <ibe-password-strength *ngIf="securityPassword.value" [password]="securityPassword.value"
+              (onStrengthChanged)="onStrengthChanged($event)">
+            </ibe-password-strength>
+            <mat-icon matSuffix>lock_open</mat-icon>
+            <mat-error *ngIf="profileUpdateFormControls.newPassword.invalid">
+              {{ 'error.field' | translate }}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>{{
+            'general.confirmPassword' | translate
+            }}</mat-label>
+            <input matInput type="password" #securityConfirmPassword formControlName="confirmPassword" />
+            <ibe-password-strength *ngIf="securityConfirmPassword.value" [password]="securityConfirmPassword.value"
+              (onStrengthChanged)="onStrengthChanged($event)">
+            </ibe-password-strength>
+            <mat-icon matSuffix>lock_open</mat-icon>
+            <mat-error *ngIf="profileUpdateFormControls.confirmPassword.invalid">
+              {{ 'error.field' | translate }}</mat-error>
+          </mat-form-field>
+        </form>
+        <div class="form-three-button-container" fxFlexOrder.lt-md="1">
+          <button mat-raised-button color="primary" type="submit" (click)="onProfileUpdateSubmit()">
+            <mat-icon>task_alt</mat-icon>
+          </button>
+          <button mat-raised-button color="accent" type="reset" (click)="resetProfileUpdateForm()">
+            <mat-icon>loop</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+
   </mat-menu>
   <button mat-icon-button [matTooltip]="notificationsTranslated" [matMenuTriggerFor]="notificationMenu">
     <mat-icon class="bell">notifications</mat-icon>
