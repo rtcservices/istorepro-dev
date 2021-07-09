@@ -1,0 +1,88 @@
+<div class="mt-sm">
+  <form [formGroup]="inventoryAuditForm" fxLayout="column" class="slim-form">
+    <div fxLayout="row" fxLayoutGap="5px">
+      <mat-form-field appearance="outline" fxFlex="50">
+        <mat-label>{{'scans.doubleScan.warehouse' | translate }}</mat-label>
+        <input matInput type="text" formControlName="warehouse" />
+        <mat-error *ngIf="inventoryAuditFormControls.warehouse.invalid">
+          {{ 'error.field' | translate }}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" fxFlex="50">
+        <mat-label>{{ 'scans.doubleScan.ian' | translate}}</mat-label>
+        <input matInput type="text" formControlName="ianscan" />
+        <mat-icon type="button" (click)="openIanDialog()" matSuffix>search</mat-icon>
+        <mat-error *ngIf="inventoryAuditFormControls.ianscan.invalid">
+          {{ 'error.field' | translate }}</mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" fxLayoutGap="5px">
+      <mat-form-field appearance="outline" fxFlex>
+        <mat-label>{{   'scans.doubleScan.location' | translate      }}</mat-label>
+        <input matInput type="text" formControlName="location" />
+        <mat-icon (click)="openLocationDialog()" type="button" matSuffix>search</mat-icon>
+        <mat-error *ngIf="inventoryAuditFormControls.location.invalid">
+          {{ 'error.field' | translate }}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" fxFlex>
+        <mat-label>{{ 'scans.doubleScan.item' | translate  }}</mat-label>
+        <input matInput type="text" formControlName="item" />
+        <mat-icon (click)=" openItemAssistanceDialog()" type="button" matSuffix>search</mat-icon>
+        <mat-error *ngIf="inventoryAuditFormControls.item.invalid">
+          {{ 'error.field' | translate }}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" fxFlex>
+        <mat-label>{{  'scans.doubleScan.inventorynature' | translate }}</mat-label>
+        <input matInput type="text" formControlName="inventorynature" />
+        <mat-error *ngIf="inventoryAuditFormControls.inventorynature.invalid">
+          {{ 'error.field' | translate }}</mat-error>
+      </mat-form-field>
+
+    </div>
+    <div fxLayout="row" fxLayoutGap="5px">
+      <mat-form-field appearance="outline" fxFlex="35">
+        <mat-label>{{'scans.doubleScan.good' | translate}}</mat-label>
+        <input matInput type="text" formControlName="good" />
+        <mat-error *ngIf="inventoryAuditFormControls.good.invalid">
+          {{ 'error.field' | translate }}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" fxFlex="35">
+        <mat-label>{{   'scans.doubleScan.dmg' | translate }}</mat-label>
+        <input matInput type="text" formControlName="dmg" />
+        <mat-error *ngIf="inventoryAuditFormControls.dmg.invalid">
+          {{ 'error.field' | translate }}</mat-error>
+      </mat-form-field>
+      <div fxFlex="30">
+        <div class="form-three-button-container smaller-button-container-40" fxLayout="row">
+          <button type="button" mat-raised-button color="primary" fxflex>
+            <mat-icon>add</mat-icon>
+          </button>
+          <button fxflex type="button" (click)="resetinventoryAuditForm()" mat-raised-button color="accent">
+            <mat-icon>restart_alt</mat-icon>
+          </button>
+
+        </div>
+      </div>
+    </div>
+
+    <div fxLayout="row">
+
+      <button type="button" fxFlex mat-raised-button color="primary">
+        {{'scans.doubleScan.confirm' | translate   }}
+      </button>
+    </div>
+
+  </form>
+  <br>
+  <table class="site-table w-100">
+    <thead>
+      <tr>
+          <th>#</th>
+        <th>{{ 'scans.doubleScan.item' | translate}}</th>
+        <th>{{ 'scans.doubleScan.sku' | translate}}</th>
+        <th>{{ 'scans.doubleScan.good' | translate}}</th>
+        <th>{{ 'scans.doubleScan.dmg' | translate}}</th>
+      </tr>
+    </thead>
+
+  </table>
+</div>

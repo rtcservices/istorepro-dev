@@ -1,0 +1,105 @@
+<div class="mt-sm">
+    <form [formGroup]="pickForm" fxLayout="column" class="slim-form">
+      <div fxLayout="column" fxLayoutGap="5px">
+          <mat-form-field appearance="outline" fxFlex="10" fxFlex.lt-md="34" fxFlex fxFlex.lt-sm="33">
+            <mat-select  [(ngModel)]="type" placeholder="Type" disableOptionCentering panelClass="slim-select-field" formControlName="type">
+              <mat-option value="item">{{
+                        'scans.doubleScan.item' | translate
+                        }}</mat-option>
+              <mat-option value="grn">{{
+                        'scans.doubleScan.grn' | translate
+                        }}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="pickFormControls.type.invalid">{{
+                      'error.field' | translate
+                      }}</mat-error>
+          </mat-form-field>
+          <mat-form-field  appearance="outline" fxFlex>
+            <mat-label>{{
+                'scans.doubleScan.scan' | translate
+                }}</mat-label>
+            <input matInput type="text" formControlName="scan" />
+             <mat-icon matSuffix type="button">search</mat-icon>
+            <mat-error *ngIf="pickFormControls.scan.invalid">
+              {{ 'error.field' | translate }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>{{
+                'scans.doubleScan.location' | translate
+                }}</mat-label>
+            <input matInput type="text" formControlName="location" />
+            <mat-error *ngIf="pickFormControls.location.invalid">
+              {{ 'error.field' | translate }}</mat-error>
+          </mat-form-field>
+          <mat-form-field  [ngClass]="{'hide': type!='grn'}" appearance="outline" fxFlex>
+            <mat-label>{{
+                'scans.doubleScan.grnsl' | translate
+                }}</mat-label>
+            <input matInput type="text" formControlName="grnsl" />
+            <mat-error *ngIf="pickFormControls.grnsl.invalid">
+              {{ 'error.field' | translate }}</mat-error>
+          </mat-form-field>
+          <mat-form-field  [ngClass]="{'hide': type!='item'}" appearance="outline" fxFlex>
+              <mat-label>{{
+                  'scans.doubleScan.item' | translate
+                  }}</mat-label>
+              <input matInput type="text" formControlName="item" />
+              <mat-icon (click)="openItemAssistanceDialog()" type="button"matSuffix>search</mat-icon>
+              <mat-error *ngIf="pickFormControls.item.invalid">
+                {{ 'error.field' | translate }}</mat-error>
+            </mat-form-field>
+        </div>
+        <div  fxLayout="row" fxLayoutGap="5px">
+            <mat-form-field appearance="outline" fxFlex="35">
+              <mat-label>{{
+                  'scans.doubleScan.good' | translate
+                  }}</mat-label>
+                <input matInput type="text" formControlName="good" />
+                <mat-error *ngIf="pickFormControls.good.invalid">
+                  {{ 'error.field' | translate }}</mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline" fxFlex="35">
+                  <mat-label>{{
+                      'scans.doubleScan.dmg' | translate
+                      }}</mat-label>
+                <input matInput type="text" formControlName="dmg" />
+                <mat-error *ngIf="pickFormControls.dmg.invalid">
+                  {{ 'error.field' | translate }}</mat-error>
+              </mat-form-field>
+              <div fxFlex="30" >
+                  <div class="form-three-button-container smaller-button-container-40" fxLayout="row" >
+                      <button  type="button" mat-raised-button color="primary" fxflex>
+                          <mat-icon>add</mat-icon>
+                        </button>
+                        <button fxflex  type="button" (click)="resetPickForm()"  mat-raised-button color="accent">
+                          <mat-icon>restart_alt</mat-icon>
+                        </button>
+                  </div>
+              </div>
+        </div>
+        <div fxLayout="row">
+            <button type="button" (click)="openPickDialog()"  fxFlex mat-raised-button color="primary">
+              {{
+                'scans.doubleScan.pick' | translate
+                }}
+              </button>
+        </div>
+
+    </form>
+    <br>
+    <table class="site-table w-100">
+      <thead>
+        <tr>
+            <th>#</th>
+          <th>{{ 'scans.doubleScan.location' | translate}}</th>
+          <th *ngIf="type=='grn'">{{ 'scans.doubleScan.grn' | translate}}</th>
+          <th *ngIf="type=='item'">{{ 'scans.doubleScan.item' | translate}}</th>
+          <th>{{ 'scans.doubleScan.batch' | translate}}</th>
+          <th>{{ 'scans.doubleScan.plan' | translate}}</th>
+          <th>{{ 'scans.doubleScan.scan' | translate}}</th>
+        </tr>
+      </thead>
+
+    </table>
+  </div>

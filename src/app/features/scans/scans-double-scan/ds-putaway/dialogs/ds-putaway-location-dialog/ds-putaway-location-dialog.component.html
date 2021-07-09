@@ -1,0 +1,25 @@
+<button mat-raised-button class="dialog-close" [mat-dialog-close]="true" color="warn">
+    <mat-icon class="close-icon">close</mat-icon>
+  </button>
+
+  <h1 mat-dialog-title></h1>
+  <div mat-dialog-content>
+      <mat-card>
+        <mat-card-content>
+          <table class="site-table w-100">
+            <thead>
+              <tr>
+                <th>{{ 'scans.doubleScan.location' | translate}}</th>
+              </tr>
+            </thead>
+
+          </table>
+        </mat-card-content>
+      </mat-card>
+      <div class="modal-button-bottom">
+        <button mat-raised-button color="primary" type="submit">
+          <mat-icon>task_alt</mat-icon>
+        </button>
+      </div>
+
+  </div>

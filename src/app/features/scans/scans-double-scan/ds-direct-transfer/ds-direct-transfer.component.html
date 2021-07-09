@@ -1,0 +1,131 @@
+<div class="mt-sm">
+  <form [formGroup]="DirectTransferForm" fxLayout="column" class="slim-form">
+    <div fxLayout="row" fxLayoutGap="5px">
+      <mat-form-field appearance="outline" fxFlex="10" fxFlex.lt-md="34" fxFlex fxFlex.lt-sm="33">
+        <mat-label>{{ 'scans.doubleScan.mode' | translate }}</mat-label>
+        <mat-select [(ngModel)]="mode" placeholder="Mode" disableOptionCentering panelClass="slim-select-field"
+          formControlName="mode">
+          <mat-option value="putaway">{{
+            'scans.doubleScan.putaway' | translate
+          }}</mat-option>
+          <mat-option value="pick">{{
+            'scans.doubleScan.pick' | translate
+          }}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="DirectTransferFormControls.mode.invalid">{{
+          'error.field' | translate
+        }}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" fxFlex="10" fxFlex.lt-md="34" fxFlex fxFlex.lt-sm="33">
+        <mat-label>{{ 'scans.doubleScan.type' | translate }}</mat-label>
+        <mat-select [(ngModel)]="type" disableOptionCentering panelClass="slim-select-field" formControlName="type">
+          <mat-option value="item">{{
+            'scans.doubleScan.item' | translate
+          }}</mat-option>
+          <mat-option value="grn">{{
+            'scans.doubleScan.grn' | translate
+          }}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="DirectTransferFormControls.type.invalid">{{
+          'error.field' | translate
+        }}</mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayout="column" fxLayoutGap="5px">
+      <mat-form-field appearance="outline" fxFlex>
+        <mat-label>{{ 'scans.doubleScan.location' | translate }}</mat-label>
+        <input matInput type="text" formControlName="location" />
+        <mat-icon type="button" (click)="openLocationDialog()" matSuffix>search</mat-icon>
+        <mat-error *ngIf="DirectTransferFormControls.location.invalid">
+          {{ 'error.field' | translate }}</mat-error>
+      </mat-form-field>
+      <mat-form-field [ngClass]="{'hide': type!='grn'}" appearance="outline" fxFlex>
+        <mat-label>{{ 'scans.doubleScan.grnsl' | translate }}</mat-label>
+        <input matInput type="text" formControlName="grnsl" />
+        <mat-error *ngIf="DirectTransferFormControls.grnsl.invalid">
+          {{ 'error.field' | translate }}</mat-error>
+      </mat-form-field>
+      <mat-form-field [ngClass]="{'hide': type!='item'}" appearance="outline" fxFlex>
+        <mat-label>{{ 'scans.doubleScan.item' | translate }}</mat-label>
+        <input matInput type="text" formControlName="item" />
+        <mat-icon type="button" (click)="openItemAssistanceDialog()" matSuffix>search</mat-icon>
+        <mat-error *ngIf="DirectTransferFormControls.item.invalid">
+          {{ 'error.field' | translate }}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" fxFlex>
+        <mat-label>{{ 'scans.doubleScan.ruselect' | translate }}</mat-label>
+        <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="ruselect">
+          <mat-option value="item">
+          </mat-option>
+
+        </mat-select>
+        <mat-error *ngIf="DirectTransferFormControls.ruselect.invalid">{{
+          'error.field' | translate
+        }}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" fxFlex>
+        <mat-label>{{
+          'scans.doubleScan.rugood' | translate
+        }}</mat-label>
+        <input matInput type="text" formControlName="rugood" />
+        <mat-error *ngIf="DirectTransferFormControls.rugood.invalid">
+          {{ 'error.field' | translate }}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" fxFlex>
+        <mat-label>{{
+          'scans.doubleScan.rudmg' | translate
+        }}</mat-label>
+        <input matInput type="text" formControlName="rudmg" />
+        <mat-error *ngIf="DirectTransferFormControls.rudmg.invalid">
+          {{ 'error.field' | translate }}</mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayoutGap="5px">
+      <mat-form-field appearance="outline" fxFlex="35">
+        <mat-label>{{ 'scans.doubleScan.good' | translate }}</mat-label>
+        <input matInput type="text" formControlName="good" />
+        <mat-error *ngIf="DirectTransferFormControls.good.invalid">
+          {{ 'error.field' | translate }}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" fxFlex="35">
+        <mat-label>{{ 'scans.doubleScan.dmg' | translate }}</mat-label>
+        <input matInput type="text" formControlName="dmg" />
+        <mat-error *ngIf="DirectTransferFormControls.dmg.invalid">
+          {{ 'error.field' | translate }}</mat-error>
+      </mat-form-field>
+      <div fxFlex="30">
+        <div class="form-three-button-container smaller-button-container-40" fxLayout="row">
+          <button type="button" mat-raised-button color="primary" fxflex>
+            <mat-icon>add</mat-icon>
+          </button>
+          <button fxflex type="button" (click)="resetDirectTransferForm()" mat-raised-button color="accent">
+            <mat-icon>restart_alt</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div fxLayout="row">
+      <button *ngIf="mode=='putaway'" (click)="openPutawayDialog()" type="button" fxFlex mat-raised-button
+        color="primary">
+        {{ 'scans.doubleScan.putaway' | translate }}
+      </button>
+      <button *ngIf="mode=='pick'" type="button" fxFlex mat-raised-button color="primary">
+        {{ 'scans.doubleScan.pick' | translate }}
+      </button>
+    </div>
+  </form>
+  <br />
+  <table class="site-table w-100">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>{{ 'scans.doubleScan.location' | translate }}</th>
+        <th *ngIf="type=='grn'">{{ 'scans.doubleScan.grn' | translate }}</th>
+        <th *ngIf="type=='item'">{{ 'scans.doubleScan.item' | translate }}</th>
+        <th>{{ 'scans.doubleScan.plan' | translate }}</th>
+        <th>{{ 'scans.doubleScan.scan' | translate }}</th>
+      </tr>
+    </thead>
+  </table>
+</div>

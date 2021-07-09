@@ -424,7 +424,32 @@
   },
   "scans": {
     "doubleScan": {
-      "warehouse": "Warehouse"
+      "warehouse": "Warehouse",
+      "putaway": "Putaway",
+      "item":"Item",
+      "grn":"GRN",
+      "scan":"Scan",
+      "location":"Location",
+      "good":"Good",
+      "dmg":"Dmg",
+      "grnsl":"GRN/SL",
+      "plan":"Plan",
+      "documentId":"Document ID",
+      "type":"Type",
+      "operator":"Operator",
+      "pick":"Pick",
+      "batch":"Batch",
+      "direct":"Direct Putaway",
+      "ruselect":"RU Select",
+      "rugood":"RU Good",
+      "rudmg":"RU Dmg",
+      "sku":"SKU",
+      "ian":"IAN",
+      "mode":"Mode",
+      "confirm":"Confirm",
+      "transfer":"Direct Transfer",
+      "inventory":"Inventory Audit",
+      "inventorynature":"Inventory Nature"
     }
   }
 }

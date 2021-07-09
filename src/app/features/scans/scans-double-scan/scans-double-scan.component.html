@@ -1,53 +1,205 @@
 <div class="page-title">
-    <h2>{{'menu.scansDoubleScan' | translate}}</h2>
+  <h2>{{ 'menu.scansDoubleScan' | translate }}</h2>
 </div>
 
-<form fxLayout="column" class="slim-form">
-    <div fxLayout="row" fxLayoutAlign="center center" class="data-form">
-        <div fxFlex="40%">
-            <mat-card class="h-100">
-                <mat-card-content>
-                    <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
-                        <mat-form-field appearance="outline" fxFlex>
-                            <mat-label>{{'scans.doubleScan.warehouse' | translate}}</mat-label>
-                            <input matInput type="text" required />
-                            <mat-icon matSuffix type="button">search</mat-icon>
-                        </mat-form-field>
-                    </div>
+<div class="mt-sm" [ngSwitch]="clickType">
+  <ng-container *ngSwitchDefault>
+    <form fxLayout="column" class="slim-form">
+      <div fxLayout="row" fxLayoutAlign="center center" class="data-form">
+        <div fxFlex.gt-sm="40%" fxFlex.lt-sm="100%">
+          <mat-card class="h-100">
+            <div fxLayout="row">
+              <div fxFlex fxLayoutAlign="left"></div>
+              <div fxFlex fxLayoutAlign="center">
+                <h4>Double Scan</h4>
+              </div>
+              <div fxFlex fxLayoutAlign="end"></div>
+            </div>
+            <mat-card-content>
+              <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                <mat-form-field appearance="outline" fxFlex>
+                  <mat-label>{{
+                    'scans.doubleScan.warehouse' | translate
+                  }}</mat-label>
+                  <input matInput type="text" required />
+                  <mat-icon matSuffix type="button">search</mat-icon>
+                </mat-form-field>
+              </div>
 
-                    <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
-                        <div class="image-box" fxFlex>
-                            <div class="content image-container" style="background-color: #f1a555;">
-                                <mat-icon>checklist</mat-icon>
-                            </div>
-                        </div>
-                        <div class="image-box" fxFlex>
-                            <div class="content image-container" style="background-color: #35e286;">
-                                <mat-icon>qr_code_scanner</mat-icon>
-                            </div>
-                        </div>
-                        <div class="image-box" fxFlex>
-                            <div class="content image-container" style="background-color: #d287db;">
-                                <mat-icon>double_arrow</mat-icon>
-                            </div>
-                        </div>
-                    </div>
+              <div fxLayout.gt-sm="row" fxLayoutGap="5px">
+                <div (click)="clickType = 'putAway'" class="image-box" fxFlex fxLayoutAlign="center">
+                  <div class="content image-container" style="background-color: #f1a555">
+                    <mat-icon>checklist</mat-icon>
+                  </div>
+                  <button matBadge class="badge" color="warning" mat-mini-fab>
+                    10
+                  </button>
+                </div>
+                <div (click)="clickType = 'pick'" class="image-box" fxFlex fxLayoutAlign="center">
+                  <div class="content image-container" style="background-color: #35e286">
+                    <mat-icon>qr_code_scanner</mat-icon>
+                  </div>
+                  <button matBadge class="badge" color="warning" mat-mini-fab>
+                    10
+                  </button>
+                </div>
+                <div (click)="clickType = 'direct'" class="image-box" fxFlex fxLayoutAlign="center">
+                  <div class="content image-container" style="background-color: #d287db">
+                    <mat-icon>double_arrow</mat-icon>
+                  </div>
+                </div>
+              </div>
 
-                    <div fxLayout.gt-sm="row" fxLayoutAlign="center center" fxLayout.lt-sm="column" f fxLayoutGap="5px">
-                        <div class="image-box" fxFlex = "30">
-                            <div class="content image-container" style="background-color: #fde568" >
-                                <mat-icon>checklist</mat-icon>
-                            </div>
-                        </div>
-                        <div class="image-box" fxFlex = "30">
-                            <div class="content image-container" style="background-color: #e4f2ec;">
-                                <mat-icon>transfer_within_a_station</mat-icon>
-                            </div>
-                        </div>
-                    </div>
+              <div  fxLayout.gt-sm="row" fxLayoutGap="5px">
+                <div  (click)="clickType = 'inventory'" class="image-box" fxFlex="33.33" fxLayoutAlign="center">
+                  <div class="content image-container" style="background-color: #fde568">
+                    <mat-icon>checklist</mat-icon>
+                  </div>
+                  <button matBadge class="badge" color="warning" mat-mini-fab>
+                    10
+                  </button>
+                </div>
+                <div (click)="clickType = 'transfer'"  class="image-box" fxFlex="33.33" fxLayoutAlign="center">
+                  <div class="content image-container" style="background-color: #e4f2ec">
+                    <mat-icon>transfer_within_a_station</mat-icon>
+                  </div>
 
-                </mat-card-content>
-            </mat-card>
+                  <button matBadge class="badge hide" color="warning" mat-mini-fab>
+                    10
+                  </button>
+                </div>
+                <div class="image-box" fxFlex="33.33" fxLayoutAlign="center"></div>
+              </div>
+            </mat-card-content>
+          </mat-card>
         </div>
+      </div>
+    </form>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="'putAway'">
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div fxFlex.gt-sm="40%" fxFlex.lt-sm="100%">
+        <mat-card>
+          <mat-card-content>
+            <div fxLayout="row">
+              <div fxFlex fxLayoutAlign="left">
+                <div class="form-three-button-container smaller-button-container-40">
+                  <button type="button" (click)="clickType = ''" mat-raised-button color="primary">
+                    <mat-icon>arrow_back</mat-icon>
+                  </button>
+                </div>
+              </div>
+              <div fxFlex fxLayoutAlign="center">
+                <h4>{{ 'scans.doubleScan.putaway' | translate }}</h4>
+              </div>
+              <div fxFlex fxLayoutAlign="end"></div>
+            </div>
+            <ibe-ds-putaway></ibe-ds-putaway>
+          </mat-card-content>
+        </mat-card>
+      </div>
     </div>
-</form>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="'pick'">
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div fxFlex.gt-sm="40%" fxFlex.lt-sm="100%">
+        <mat-card>
+          <mat-card-content>
+            <div fxLayout="row">
+              <div fxFlex fxLayoutAlign="left">
+                <div class="form-three-button-container smaller-button-container-40">
+                  <button type="button" (click)="clickType = ''" mat-raised-button color="primary">
+                    <mat-icon>arrow_back</mat-icon>
+                  </button>
+                </div>
+              </div>
+              <div fxFlex fxLayoutAlign="center">
+                <h4>{{ 'scans.doubleScan.pick' | translate }}</h4>
+              </div>
+              <div fxFlex fxLayoutAlign="end"></div>
+            </div>
+            <ibe-ds-pick></ibe-ds-pick>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="'direct'">
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div fxFlex.gt-sm="40%" fxFlex.lt-sm="100%">
+        <mat-card>
+          <mat-card-content>
+            <div fxLayout="row">
+              <div fxFlex fxLayoutAlign="left">
+                <div class="form-three-button-container smaller-button-container-40">
+                  <button type="button" (click)="clickType = ''" mat-raised-button color="primary">
+                    <mat-icon>arrow_back</mat-icon>
+                  </button>
+                </div>
+              </div>
+              <div fxFlex fxLayoutAlign="center">
+                <h4>{{ 'scans.doubleScan.direct' | translate }}</h4>
+              </div>
+              <div fxFlex fxLayoutAlign="end"></div>
+            </div>
+            <ibe-ds-direct-putaway></ibe-ds-direct-putaway>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="'inventory'">
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div fxFlex.gt-sm="40%" fxFlex.lt-sm="100%">
+        <mat-card>
+          <mat-card-content>
+            <div fxLayout="row">
+              <div fxFlex fxLayoutAlign="left">
+                <div class="form-three-button-container smaller-button-container-40">
+                  <button type="button" (click)="clickType = ''" mat-raised-button color="primary">
+                    <mat-icon>arrow_back</mat-icon>
+                  </button>
+                </div>
+              </div>
+              <div fxFlex fxLayoutAlign="center">
+                <h4>{{ 'scans.doubleScan.inventory' | translate }}</h4>
+              </div>
+              <div fxFlex fxLayoutAlign="end"></div>
+            </div>
+            <ibe-ds-inventory-audit></ibe-ds-inventory-audit>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="'transfer'">
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div fxFlex.gt-sm="40%" fxFlex.lt-sm="100%">
+        <mat-card>
+          <mat-card-content>
+            <div fxLayout="row">
+              <div fxFlex fxLayoutAlign="left">
+                <div class="form-three-button-container smaller-button-container-40">
+                  <button type="button" (click)="clickType = ''" mat-raised-button color="primary">
+                    <mat-icon>arrow_back</mat-icon>
+                  </button>
+                </div>
+              </div>
+              <div fxFlex fxLayoutAlign="center">
+                <h4>{{ 'scans.doubleScan.transfer' | translate }}</h4>
+              </div>
+              <div fxFlex fxLayoutAlign="end"></div>
+            </div>
+            <ibe-ds-direct-transfer></ibe-ds-direct-transfer>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </ng-container>
+
+</div>
