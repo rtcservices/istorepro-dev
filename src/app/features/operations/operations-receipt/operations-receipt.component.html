@@ -59,27 +59,27 @@
                 </mat-form-field>
               </div>
               <div class="second-column" fxLayout="row" fxLayoutGap="5px" fxFlex>
-                <mat-form-field appearance="outline" fxFlex="50">
+                <mat-form-field appearance="outline" fxFlex>
                   <mat-label>{{'operations.receipt.remarks' | translate}}</mat-label>
                   <input matInput type="text" required formControlName="remarks" />
                   <mat-error *ngIf="dataReceiptFormControls.remarks.invalid">
                     {{ 'error.field' | translate }}
                   </mat-error>
                 </mat-form-field>
-                <fieldset class="read-only-input" fxFlex="50">
+                <!-- <fieldset class="read-only-input" fxFlex="50">
                   <legend>{{ 'operations.receipt.storageLabel' | translate }}</legend>
                   <label>{{ dataReceiptFormControls.storageLabel.value }}</label>
-                </fieldset>
+                </fieldset> -->
               </div>
             </div>
             <div class="form-three-button-container smaller-button-container-40">
-              <button mat-raised-button color="primary">
+              <button id="receiptPutaway" mat-raised-button color="primary">
                 <mat-icon>add_shopping_cart</mat-icon>
               </button>
-              <button mat-raised-button color="primary">
+              <button id="receiptLabel" mat-raised-button color="primary">
                 <mat-icon>new_label</mat-icon>
               </button>
-              <button mat-raised-button color="primary">
+              <button id="receiptGrn" mat-raised-button color="primary">
                 <mat-icon>print</mat-icon>
               </button>
             </div>
@@ -115,8 +115,8 @@
                 <th fxHide fxShow.gt-sm class="column-100">{{ 'operations.receipt.expDate' | translate}}</th>
                 <th>{{ 'operations.receipt.batchNo' | translate}}</th>
                 <th fxHide fxShow.gt-sm>{{ 'operations.receipt.remarks' | translate}}</th>
-                <th class="header-add-icon">
-                  <mat-icon>add</mat-icon>
+                <th class="text-center">
+                  <mat-icon class="header-add-icon">add_circle_outline</mat-icon>
                 </th>
               </tr>
             </thead>
