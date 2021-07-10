@@ -20,6 +20,8 @@ import { OrItemDialogComponent } from './dialogs/or-item-dialog/or-item-dialog.c
 import { OrNetwtDialogComponent } from './dialogs/or-net-wt-dialog/or-net-wt-dialog.component';
 import { OrNetvolDialogComponent } from './dialogs/or-net-vol-dialog/or-net-vol-dialog.component';
 import { OrRuDialogComponent } from './dialogs/or-ru-dialog/or-ru-dialog.component';
+import { OrPutawayDialogComponent } from './dialogs/or-putaway-dialog/or-putaway-dialog.component';
+import { OrLabelDialogComponent } from './dialogs/or-label-dialog/or-label-dialog.component';
 
 @Component({
   selector: 'ibe-operations-receipt',
@@ -289,4 +291,17 @@ export class OperationsReceiptComponent implements OnInit {
       width: '800px'
     });
   }
+
+  openPutawayDialog() {
+    this.dialog.open(OrPutawayDialogComponent, {
+      width: '800px'
+    });
+  }
+
+  openLabelDialog() {
+    this.dialog.open(OrLabelDialogComponent, {
+      width: '800px'
+    });
+  }
+
 }
