@@ -111,6 +111,10 @@ export class QueryTransactionsComponent implements OnInit {
         '',
         [Validators.maxLength(10),Validators.pattern(patternsHelper.alphanumeric)]
       ],
+      poRefNo: [
+        '',
+        [Validators.maxLength(18), Validators.pattern(patternsHelper.alphanumeric)]
+      ],
       item: [
         '',
         [Validators.maxLength(50), Validators.pattern(patternsHelper.alphanumeric)]
@@ -119,19 +123,25 @@ export class QueryTransactionsComponent implements OnInit {
         '',
         [Validators.maxLength(35), Validators.pattern(patternsHelper.alphanumeric)]
       ],
-      poRefNo: [
+      drn: [
         '',
         [Validators.maxLength(18), Validators.pattern(patternsHelper.alphanumeric)]
       ],
-      origin: '', 
+      so: [
+        '',
+        [Validators.maxLength(35), Validators.pattern(patternsHelper.alphanumeric)]
+      ],
+      do: [
+        '',
+        [Validators.maxLength(35), Validators.pattern(patternsHelper.alphanumeric)]
+      ],
       status: '',
-      grn: [
+      deliveryFrom: '', 
+      deliveryTo: '', 
+      dt: [
         '',
-        [Validators.maxLength(18), Validators.pattern(patternsHelper.alphanumeric)]
-      ],
-      receiptFrom: '', 
-      receiptTo: '', 
-      stock: ''
+        [Validators.maxLength(35), Validators.pattern(patternsHelper.alphanumeric)]
+      ]
     });
   }
 

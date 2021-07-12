@@ -487,13 +487,30 @@
         "poRefNo": "PO/Ref No",
         "origin": "Origin",
         "status": "Status",
-        "GRN" : "GRN",
         "receiptFrom" : "Receipt From",
         "receiptTo" : "Receipt To",
         "stock" : "Stock",
         "WH" : "WH",
         "grn" : "GRN",
         "date" : "Date",
+        "print" : "Print"
+      },
+      "delivery" : {
+        "warehouse": "Warehouse",
+        "owner": "Owner",
+        "poRefNo": "PO/Ref No",
+        "item": "Item",
+        "batchNo": "Batch No",
+        "drn": "DRN",
+        "so": "SO",
+        "do" : "DO",
+        "status" : "Status",
+        "deliveryFrom" : "Delivery From",
+        "deliveryTo" : "Delivery To",
+        "dt" : "DT",
+        "WH" : "WH",
+        "date" : "Date",
+        "shipTo" : "Ship To",
         "print" : "Print"
       }
     }
