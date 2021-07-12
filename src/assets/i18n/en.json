@@ -477,6 +477,25 @@
       "allocated" : "Allocated",
       "balGood" : "Bal Good",
       "balDmgExp" : "Bal Dmg/Exp"
+    },
+    "transaction":{
+      "receipt" : {
+        "warehouse": "Warehouse",
+        "owner": "Owner",
+        "item": "Item",
+        "batchNo": "Batch No",
+        "poRefNo": "PO/Ref No",
+        "origin": "Origin",
+        "status": "Status",
+        "GRN" : "GRN",
+        "receiptFrom" : "Receipt From",
+        "receiptTo" : "Receipt To",
+        "stock" : "Stock",
+        "WH" : "WH",
+        "grn" : "GRN",
+        "date" : "Date",
+        "print" : "Print"
+      }
     }
   }
 }
