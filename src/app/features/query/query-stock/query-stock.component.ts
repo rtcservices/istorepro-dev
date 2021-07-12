@@ -20,6 +20,12 @@ export class QueryStockComponent implements OnInit {
 
   stockForm!: FormGroup;
 
+  stockDataSource: QueryStockModel[] = [];
+  dummyStockModel: QueryStockModel[] = [
+    { wh : "Warehouse" , owner : "Owner", item : "Item", description : "Description", type : "Type", sku : "SKU", stock: 10, allocated : 10, balGood : 5, balDmgOrExp : 5},
+    { wh : "Warehouse" , owner : "Owner", item : "Item", description : "Description", type : "Type", sku : "SKU", stock: 10, allocated : 10, balGood : 5, balDmgOrExp : 5}
+  ];
+
   constructor(
     private fb: FormBuilder,
     private loader: LoaderService,
@@ -38,6 +44,8 @@ export class QueryStockComponent implements OnInit {
       this.formErrorTranslated = this.translate.instant('error.form');
       this.filterErrorTranslated = this.translate.instant('error.filter');
     });
+
+    this.stockDataSource = this.dummyStockModel;
   }
 
   createStockForm() {

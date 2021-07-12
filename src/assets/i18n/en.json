@@ -468,7 +468,15 @@
       "batchNo": "Batch No",
       "poRefNo": "PO/Ref No",
       "expiryFrom": "Expiry From",
-      "expiryTo": "Expiry To"
+      "expiryTo": "Expiry To",
+      "WH" : "WH",
+      "description" : "Description",
+      "type" : "Type",
+      "sku" : "SKU",
+      "stock" : "Stock",
+      "allocated" : "Allocated",
+      "balGood" : "Bal Good",
+      "balDmgExp" : "Bal Dmg/Exp"
     }
   }
 }

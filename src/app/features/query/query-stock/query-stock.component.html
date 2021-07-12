@@ -8,7 +8,7 @@
             <mat-card-content>
                 <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
                     <div fxLayout="row" fxLayoutGap="5px" fxFlex>
-                        <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm="60" fxFlex.lt-sm="50">
+                        <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm="50">
                             <mat-label>{{'query.stock.warehouse' | translate}}</mat-label>
                             <input matInput type="text" required formControlName="warehouse" />
                             <mat-error *ngIf="dataStockFormControls.warehouse.invalid">
@@ -27,7 +27,7 @@
                 </div>
                 <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
                     <div fxLayout="row" fxLayoutGap="5px" fxFlex>
-                        <mat-form-field appearance="outline" fxFlex="66.1" fxFlex.lt-sm="50">
+                        <mat-form-field appearance="outline" fxFlex="60" fxFlex.lt-sm="50">
                             <mat-label>{{'query.stock.item' | translate}}</mat-label>
                             <input matInput type="text" required formControlName="item" />
                             <mat-error *ngIf="dataStockFormControls.item.invalid">
@@ -42,8 +42,8 @@
                             </mat-error>
                         </mat-form-field>
                     </div>
-                    <div class="second-column" fxLayout="row" fxLayoutGap="5px" fxFlex>
-                        <mat-form-field appearance="outline" fxFlex=20>
+                    <div class="second-column" fxLayout="row" fxLayoutGap="5px" fxFlex="33">
+                        <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="50">
                             <mat-label>{{'query.stock.poRefNo' | translate}}</mat-label>
                             <input matInput type="text" required formControlName="poRefNo" />
                             <mat-error *ngIf="dataStockFormControls.poRefNo.invalid">
@@ -83,93 +83,39 @@
     </div>
     <hr>
     <mat-card>
-        <!-- <mat-card-content>
+        <mat-card-content>
             <table class="site-table w-100">
                 <thead>
                     <tr>
-                        <th>{{ 'operations.receipt.item' | translate}}</th>
+                        <th>{{ 'query.stock.WH' | translate}}</th>
+                        <th>{{ 'query.stock.owner' | translate}}</th>
+                        <th>{{ 'query.stock.item' | translate}}</th>
+                        <th>{{ 'query.stock.description' | translate}}</th>
+                        <th>{{ 'query.stock.type' | translate}}</th>
+                        <th>{{ 'query.stock.sku' | translate}}</th>
+                        <th>{{ 'query.stock.stock' | translate}}</th>
+                        <th>{{ 'query.stock.allocated' | translate}}</th>
+                        <th>{{ 'query.stock.balGood' | translate}}</th>
+                        <th>{{ 'query.stock.balDmgExp' | translate}}</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <ng-template let-operator ngFor [ngForOf]="receiptDataSource">
+                    <ng-template let-stock ngFor [ngForOf]="stockDataSource">
                         <tr>
-                            <td>
-                                <div class="input-container">
-                                    <input type="text" class="w-100">
-                                    <mat-icon type="button" (click)="openItemDialog()">search</mat-icon>
-                                </div>
-                            </td>
-                            <td fxHide fxShow.gt-sm>
-                                <input disabled type="text" class="w-100">
-                            </td>
-                            <td fxHide fxShow.gt-sm class="text-center">
-                                <button type="button" class="text-button hover-underline-bottom"
-                                    (click)="openRuDialog()" matRipple>
-                                    <span>RU</span>
-                                </button>
-                            </td>
-                            <td fxHide fxShow.gt-sm>
-                                <input disabled type="text" class="w-100">
-                            </td>
-                            <td>
-                                <input type="number" size="50" class="w-100">
-                            </td>
-                            <td>
-                                <input type="number" class="w-100">
-                            </td>
-                            <td>
-                                <input type="number" class="w-100">
-                            </td>
-                            <td fxHide fxShow.gt-sm class="text-center">
-                                <button type="button" class="text-button" (click)="openNetWtDialog()">
-                                    <span>w</span>
-                                </button>
-                            </td>
-                            <td fxHide fxShow.gt-sm class="text-center">
-                                <button type="button" class="text-button" (click)="openNetVolDialog()">
-                                    <span>v</span>
-                                </button>
-                            </td>
-                            <td fxHide fxShow.gt-sm class="column-100">
-                                <input type="date" class="w-100">
-                            </td>
-                            <td fxHide fxShow.gt-sm class="column-100">
-                                <input type="date" class="w-100">
-                            </td>
-                            <td>
-                                <input type="number" class="w-100">
-                            </td>
-                            <td fxHide fxShow.gt-sm>
-                                <input type="number" class="w-100">
-                            </td>
-                            <td class="two-button-column" style="width: 90px;">
-                                <button mat-mini-fab color="primary" class="mdb-30">
-                                    <mat-icon>edit</mat-icon>
-                                </button>
-                                <button mat-mini-fab color="warn" class="mdb-30">
-                                    <mat-icon>remove</mat-icon>
-                                </button>
-                            </td>
+                            <td class="column-150">{{stock.wh}}</td>
+                            <td>{{stock.owner}}</td>
+                            <td>{{stock.item}}</td>
+                            <td >{{stock.description}}</td>
+                            <td>{{stock.type}}</td>
+                            <td>{{stock.sku}}</td>
+                            <td class="column-60">{{stock.stock}}</td>
+                            <td class="column-100">{{stock.allocated}}</td>
+                            <td class="column-100">{{stock.balGood}}</td>
+                            <td class="column-100">{{stock.balDmgOrExp}}</td>
                         </tr>
                     </ng-template>
                 </tbody>
             </table>
-            <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="30px" fxLayoutAlign="space-between center">
-                <div fxFlexOrder.lt-md="2">
-                    <ibe-data-audit insertedBy=""></ibe-data-audit>
-                </div>
-                <div class="form-three-button-container" fxFlexOrder.lt-md="1">
-                    <button mat-raised-button color="primary" type="submit" (click)="saveReceiptData()">
-                        <mat-icon>task_alt</mat-icon>
-                    </button>
-                    <button mat-raised-button color="warn" type="button" (click)="deleteReceiptData()">
-                        <mat-icon>remove_circle_outline</mat-icon>
-                    </button>
-                    <button mat-raised-button color="accent" type="reset" (click)="resetReceiptDataForm()">
-                        <mat-icon>loop</mat-icon>
-                    </button>
-                </div>
-            </div>
-        </mat-card-content> -->
+        </mat-card-content>
     </mat-card>
 </form>
