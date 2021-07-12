@@ -14,6 +14,8 @@ import { OrNetwtDialogComponent } from './operations-receipt/dialogs/or-net-wt-d
 import { OrNetvolDialogComponent } from './operations-receipt/dialogs/or-net-vol-dialog/or-net-vol-dialog.component';
 import { OrPutawayDialogComponent } from './operations-receipt/dialogs/or-putaway-dialog/or-putaway-dialog.component';
 import { OrLabelDialogComponent } from './operations-receipt/dialogs/or-label-dialog/or-label-dialog.component';
+import { OlmGrnDialogComponent } from './operations-location-management/dialogs/olm-grn-dialog/olm-grn-dialog.component';
+import { OlmLocationDialogComponent } from './operations-location-management/dialogs/olm-location-dialog/olm-location-dialog.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { OrLabelDialogComponent } from './operations-receipt/dialogs/or-label-di
     OrNetwtDialogComponent,
     OrNetvolDialogComponent,
     OrPutawayDialogComponent,
-    OrLabelDialogComponent
+    OrLabelDialogComponent,
+    OlmGrnDialogComponent,
+    OlmLocationDialogComponent
   ],
   imports: [CommonModule, SharedModule, OperationsRoutingModule]
 })

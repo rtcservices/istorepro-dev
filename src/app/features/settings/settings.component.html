@@ -1,1 +1,17 @@
-<p>settings works!</p>
+<div class="page-title">
+    <h2>{{'menu.settings' | translate}}</h2>
+  </div>
+  <mat-tab-group #SettingsTab>
+    <mat-tab label="System Control">
+        <ibe-settings-system-control></ibe-settings-system-control>
+    </mat-tab>
+    <mat-tab label="Consistency Checker">
+        <ibe-settings-consistency-checker></ibe-settings-consistency-checker>
+    </mat-tab>
+    <mat-tab label="Login Audit ">
+        <ibe-settings-login-audit></ibe-settings-login-audit>
+    </mat-tab>
+    <mat-tab label="Audit Trail">
+        <ibe-settings-audit-trail></ibe-settings-audit-trail>
+    </mat-tab>
+  </mat-tab-group>

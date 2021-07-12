@@ -1,0 +1,36 @@
+<form [formGroup]="ConsistencyForm" class="slim-form">
+  <div fxLayout="row" class="data-form">
+    <mat-card class="w-100">
+      <mat-card-content>
+        <h3>{{'settings.consistencycheck.options' | translate}}</h3>
+        <section class="pale-border-box">
+          <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="10px" fxFlex="60">
+            <mat-checkbox formControlName="stock" fxFlex class="example-margin">{{'settings.consistencycheck.stock' | translate}}</mat-checkbox>
+            <mat-checkbox formControlName="item" fxFlex class="example-margin">{{'settings.consistencycheck.item' | translate}}</mat-checkbox>
+            <mat-checkbox formControlName="deliverycancel" fxFlex class="example-margin">{{'settings.consistencycheck.deliverycancel' | translate}}</mat-checkbox>
+            <mat-checkbox formControlName="delivery" fxFlex class="example-margin">{{'settings.consistencycheck.delivery' | translate}}</mat-checkbox>
+            <mat-checkbox formControlName="zerosubzero" fxFlex class="example-margin">{{'settings.consistencycheck.zerosubzero' | translate}}</mat-checkbox>
+          </div>
+        </section>
+
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <mat-card>
+    <mat-card-content>
+      <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="30px" fxLayoutAlign="space-between center">
+        <div fxFlexOrder.lt-md="2">
+          <ibe-data-audit insertedBy=""></ibe-data-audit>
+        </div>
+        <div class="form-three-button-container" fxFlexOrder.lt-md="1">
+          <button mat-raised-button color="primary" type="submit" (click)="saveConsistencyFormData()">
+            <mat-icon>task_alt</mat-icon>
+          </button>
+          <button mat-raised-button color="accent" type="reset" (click)="resetConsistencyForm()">
+            <mat-icon>loop</mat-icon>
+          </button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</form>

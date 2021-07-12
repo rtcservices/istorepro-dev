@@ -406,6 +406,27 @@
       "breadth": "Breadth",
       "height": "Height",
       "storageLabel": "Storage Label"
+    },
+    "LocationManagement": {
+      "warehouse": "Warehouse",
+      "grn": "GRN",
+      "item": "Item",
+      "sku":"SKU",
+      "totalqty":"Total Qty",
+      "untrackedqty":"Untracked Qty",
+      "wh": "WH",
+      "date": "Date",
+      "po":"PO/Ref No.",
+      "type":"Type",
+      "code":"Code",
+      "description":"Description",
+      "location":"Location",
+      "status":"Status",
+      "qtygood":"Qty Good",
+      "qtydmg":"Qty Dmg",
+      "full":"Full",
+      "owner":"Owner"
+
     }
   },
   "routines": {
@@ -513,6 +534,75 @@
         "shipTo" : "Ship To",
         "print" : "Print"
       }
+    },
+    "Document" : {
+      "warehouse": "Warehouse",
+      "documenttype": "Document Type",
+      "documentno": "Document No",
+      "datefrom": "Date from",
+      "dateto": "Date To",
+      "owner": "Owner",
+      "operator":"Operator",
+      "type": "Type",
+      "number": "Number",
+      "date": "Date",
+      "code": "Code",
+      "name": "name",
+      "document":"Document"
+    }
+  },
+  "settings": {
+    "systemcontrol": {
+      "companyCode": "Company Code",
+      "companyDescription": "Company Description",
+      "options": "Options",
+      "block": "Block",
+      "normal": "Normal",
+      "maintenance": "Maintenance"
+    },
+    "consistencycheck":{
+      "options": "Options",
+      "stock": "Stock",
+      "item": "Item",
+      "deliverycancel": "Delivery Cancel",
+      "delivery": "Delivery",
+      "zerosubzero": "Zero/Sub Zero Quantity"
+    },
+    "loginaudit":{
+      "options": "Options",
+      "loginname": "Login Name",
+      "ip": "IP/Node",
+      "datefrom": "Date From",
+      "dateto": "Date to",
+      "success": "Success",
+      "failure": "Failure",
+      "logindate": "Login Date",
+      "logintime": "Login Time",
+      "logoutdate": "Logout Date",
+      "logouttime": "Logout Date",
+      "duration": "Duration",
+      "status": "Status",
+      "reason": "Reason",
+      "source": "Source"
+    },
+    "AuditTrail":{
+      "actions": "Actions",
+      "loginname": "Login Name",
+      "ip": "IP/Node",
+      "datefrom": "Date From",
+      "dateto": "Date to",
+      "update": "Update",
+      "delete": "Delete",
+      "field": "Field Modified",
+      "oldvalue": "Old Value",
+      "newvalue": "New Value",
+      "actiondate": "Action Date",
+      "actiontime": "Action Time",
+      "actionedby":"Actioned By",
+      "status": "Actioned by",
+      "keyvalue": "Key value",
+      "context":"Context",
+      "customer":"Customer"
     }
   }
 }
