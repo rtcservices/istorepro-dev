@@ -184,7 +184,11 @@
       <small>{{n.subTitle}}</small>
     </div>
   </mat-menu>
-  <button mat-icon-button [matTooltip]="settingsTranslated" [matMenuTriggerFor]="settingsMenu">
+
+  <button mat-icon-button>
+    <mat-icon class="settings">settings</mat-icon>
+  </button>
+  <!-- <button mat-icon-button [matTooltip]="settingsTranslated" [matMenuTriggerFor]="settingsMenu">
     <mat-icon class="settings">settings</mat-icon>
   </button>
   <mat-menu #settingsMenu="matMenu" backdropClass="top-menu">
@@ -196,7 +200,7 @@
       [routerLink]="['/admin/login-audit']">{{'menu.adminLoginAudit' | translate}}</a>
     <a mat-menu-item routerLinkActive="active-link"
       [routerLink]="['/admin/audit-trail']">{{'menu.adminAuditTrail' | translate}}</a>
-  </mat-menu>
+  </mat-menu> -->
 
   <button mat-icon-button class="logout-button" [matTooltip]="logoutTranslated" (click)="logout()">
     <mat-icon>logout</mat-icon>
