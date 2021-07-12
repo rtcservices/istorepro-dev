@@ -5,6 +5,7 @@ import { QueryRoutingModule } from './query-routing.module';
 import { QueryStockComponent } from './query-stock/query-stock.component';
 import { QueryTransactionsComponent } from './query-transactions/query-transactions.component';
 import { QueryDocumentsComponent } from './query-documents/query-documents.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { QueryDocumentsComponent } from './query-documents/query-documents.compo
   ],
   imports: [
     CommonModule,
-    QueryRoutingModule
+    QueryRoutingModule,
+    SharedModule
   ]
 })
 export class QueryModule { }

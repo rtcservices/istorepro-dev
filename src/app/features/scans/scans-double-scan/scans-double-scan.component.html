@@ -51,7 +51,7 @@
               </div>
 
               <div  fxLayout.gt-sm="row" fxLayoutGap="5px">
-                <div  (click)="clickType = 'inventory'" class="image-box" fxFlex="33.33" fxLayoutAlign="center">
+                <div  (click)="clickType = 'inventory'" class="image-box" fxFlex fxLayoutAlign="center">
                   <div class="content image-container" style="background-color: #fde568">
                     <mat-icon>checklist</mat-icon>
                   </div>
@@ -59,7 +59,7 @@
                     10
                   </button>
                 </div>
-                <div (click)="clickType = 'transfer'"  class="image-box" fxFlex="33.33" fxLayoutAlign="center">
+                <div (click)="clickType = 'transfer'"  class="image-box" fxFlex fxLayoutAlign="center">
                   <div class="content image-container" style="background-color: #e4f2ec">
                     <mat-icon>transfer_within_a_station</mat-icon>
                   </div>
@@ -68,7 +68,7 @@
                     10
                   </button>
                 </div>
-                <div class="image-box" fxFlex="33.33" fxLayoutAlign="center"></div>
+                <div class="image-box" fxFlex fxLayoutAlign="center"></div>
               </div>
             </mat-card-content>
           </mat-card>
