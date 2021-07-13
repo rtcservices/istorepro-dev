@@ -500,7 +500,7 @@
             <th mat-header-cell *matHeaderCellDef style="width: 150px;">{{
             <td mat-cell *matCellDef="let element">
               {{ element.location }}
-            </td>
+              </td>
           </ng-container>
           <ng-container matColumnDef="description">
             <th mat-header-cell *matHeaderCellDef>{{
@@ -535,5 +535,137 @@
         </small>
       </mat-card-content>
     </mat-card>
+  </mat-tab>
+
+  <mat-tab label="Freeze">
+    <form fxLayout="column" [formGroup]="freezeLocationForm" (ngSubmit)="onFreezeLocationSubmit()" class="slim-form">
+      <mat-card class="filter-container">
+        <mat-card-content>
+
+          <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+            <mat-form-field appearance="outline" fxFlex>
+              <mat-label>{{
+                'base.location.warehouse' | translate
+                }}</mat-label>
+              <mat-select disableOptionCentering panelClass="slim-select-field" type="text" readonly
+                formControlName="warehouse">
+                <mat-option>Warehouse 1</mat-option>
+                <mat-option>Warehouse 2</mat-option>
+              </mat-select>
+              <mat-error *ngIf="FreezeLocationFormControls.warehouse.invalid">{{
+                'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex>
+              <mat-label>{{
+                'base.location.row' | translate
+                }}</mat-label>
+              <mat-select disableOptionCentering panelClass="slim-select-field" type="text" readonly
+                formControlName="row">
+              </mat-select>
+              <mat-error *ngIf="FreezeLocationFormControls.row.invalid">{{
+                'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" fxFlex>
+              <mat-label>{{
+                'base.location.unit' | translate
+                }}</mat-label>
+              <mat-select disableOptionCentering panelClass="slim-select-field" type="text" readonly
+                formControlName="unit">
+              </mat-select>
+              <mat-error *ngIf="FreezeLocationFormControls.unit.invalid">{{
+                'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+
+          </div>
+          <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+            <mat-form-field appearance="outline" fxFlex>
+              <mat-label>{{'base.location.location' | translate}}</mat-label>
+              <input matInput type="text" formControlName="location" />
+              <mat-error *ngIf="FreezeLocationFormControls.location.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex>
+              <mat-label>{{
+                'base.location.nature' | translate
+                }}</mat-label>
+              <mat-select disableOptionCentering panelClass="slim-select-field" type="text" formControlName="nature">
+              </mat-select>
+              <mat-error *ngIf="FreezeLocationFormControls.nature.invalid">{{
+                'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" fxFlex>
+              <mat-label>{{
+                'base.location.storageType' | translate
+                }}</mat-label>
+              <mat-select disableOptionCentering panelClass="slim-select-field" type="text" readonly
+                formControlName="storageType">
+              </mat-select>
+              <mat-error *ngIf="FreezeLocationFormControls.storageType.invalid">{{
+                'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+
+          </div>
+          <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+            <mat-form-field appearance="outline" fxFlex>
+              <mat-label>{{'base.location.description' | translate}}</mat-label>
+              <input matInput type="text" formControlName="description" />
+              <mat-error *ngIf="FreezeLocationFormControls.description.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+
+          </div>
+          <div class="form-button-container">
+            <button mat-raised-button color="primary" type="submit">
+              <mat-icon>search</mat-icon>
+            </button>
+            <button mat-raised-button color="accent" type="reset" (click)="resetLocationSearchForm()">
+              <mat-icon>restart_alt</mat-icon>
+            </button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <mat-card>
+        <mat-card-content>
+          <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+            <div class="pale-border-box" fxFlex>
+              <p> <b>{{'base.location.actions' | translate }}</b> </p>
+              <mat-radio-group fxLayout="row" class="form-radio-button" fxLayoutGap="10px">
+                <mat-radio-button color="primary" value="freeze" checked>
+                  {{'base.location.freeze' | translate}}
+                </mat-radio-button>
+                <mat-radio-button color="primary" value="unfreeze">
+                  {{'base.location.unfreeze' | translate}}
+                </mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+          <br>
+          <table class="site-table w-100 mat-elevation-z8">
+            <thead>
+              <tr>
+                <th class="checkbox-column">
+                  <mat-checkbox color="primary"></mat-checkbox>
+                </th>
+                <th>{{ 'base.location.warehouse' | translate}}</th>
+                <th>{{ 'base.location.location' | translate}}</th>
+                <th>{{ 'base.location.description' | translate}} </th>
+                <th>{{ 'base.location.storageType' | translate}}</th>
+              </tr>
+            </thead>
+          </table>
+        </mat-card-content>
+      </mat-card>
+
+
+    </form>
   </mat-tab>
 </mat-tab-group>

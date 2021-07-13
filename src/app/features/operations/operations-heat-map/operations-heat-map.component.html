@@ -1,1 +1,82 @@
-<p>operations-heat-map works!</p>
+<div class="page-title">
+  <h2>{{'menu.operationsHeatMap' | translate}}</h2>
+</div>
+<br> <br> <br>
+<form fxLayout="column" [formGroup]="HeatMapForm" (ngSubmit)="onHeatMapFormSubmit()" class="slim-form">
+  <mat-card class="filter-container">
+    <mat-card-content>
+      <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+        <mat-form-field appearance="outline" fxFlex.gt-sm="30">
+          <mat-label>{{
+                        'operations.HeatMap.warehouse' | translate
+                        }}</mat-label>
+          <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="warehouse">
+          </mat-select>
+          <mat-error *ngIf="HeatMapFormControls.warehouse.invalid">{{
+                        'error.field' | translate
+                        }}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" fxFlex.gt-sm="30">
+          <mat-label>{{'operations.HeatMap.po' | translate}}</mat-label>
+          <input matInput type="text" formControlName="po" />
+          <mat-error *ngIf="HeatMapFormControls.po.invalid">
+            {{ 'error.field' | translate }}
+          </mat-error>
+        </mat-form-field>
+        <mat-checkbox color="primary" formControlName="rowsplit" fxFlex.gt-sm="20">
+          {{'operations.HeatMap.rowsplit' | translate}}
+        </mat-checkbox>
+
+      </div>
+      <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+        <mat-form-field appearance="outline" fxFlex.gt-sm="30">
+          <mat-label>{{'operations.HeatMap.item' | translate}}</mat-label>
+          <input matInput type="text" formControlName="item" />
+          <mat-error *ngIf="HeatMapFormControls.item.invalid">
+            {{ 'error.field' | translate }}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" fxFlex.gt-sm="30">
+          <mat-label>{{'operations.HeatMap.batchnumber' | translate}}</mat-label>
+          <input matInput type="text" formControlName="batchnumber" />
+          <mat-error *ngIf="HeatMapFormControls.batchnumber.invalid">
+            {{ 'error.field' | translate }}
+          </mat-error>
+        </mat-form-field>
+        <div class="form-button-container" fxFlex.gt-sm="40">
+          <button mat-raised-button color="primary" type="submit">
+            <mat-icon>search</mat-icon>
+          </button>
+          <button type="button" (click)="resetHeatMapForm()" mat-raised-button color="accent">
+            <mat-icon>restart_alt</mat-icon>
+          </button>
+        </div>
+
+      </div>
+      <br>
+    </mat-card-content>
+  </mat-card>
+  <mat-card>
+    <mat-card-content>
+      <div fxLayout="row" class="pale-border-box">
+        <h3 class="red" fxFlex>{{ 'operations.HeatMap.full' | translate  }} (12)</h3>
+        <h3 class="green" fxFlex>{{ 'operations.HeatMap.free' | translate  }} (15)</h3>
+        <h3 class="blue" fxFlex>{{ 'operations.HeatMap.partial' | translate  }} (18)</h3>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <mat-card>
+    <mat-card-content>
+      <table class="site-table w-100 mat-elevation-z8">
+        <thead>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of dummydata">
+            <td [ngClass]="{'full': item.status=='full','partial':item.status=='partial','free':item.status=='free'}" *ngFor="let item of row" (click)="openCellDialog()"> {{item.value}}</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </mat-card-content>
+  </mat-card>
+</form>

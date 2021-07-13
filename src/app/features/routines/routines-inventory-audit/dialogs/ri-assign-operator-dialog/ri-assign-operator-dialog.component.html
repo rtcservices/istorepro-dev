@@ -1,0 +1,71 @@
+<button mat-raised-button class="dialog-close" [mat-dialog-close]="true" color="warn">
+  <mat-icon class="close-icon">close</mat-icon>
+</button>
+
+<h1 mat-dialog-title> {{ 'routines.inventory.assignoperator' | translate}} </h1>
+<div mat-dialog-content>
+  <mat-card class="overflow-x">
+    <mat-card-content>
+      <form [formGroup]="assignOperatorForm" class="slim-form">
+        <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>{{
+                                  'routines.inventory.storageType' | translate
+                                  }}</mat-label>
+            <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="storageType">
+            </mat-select>
+            <mat-error *ngIf="assignOperatorFormControls.storageType.invalid">{{
+                                  'error.field' | translate
+                                  }}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>{{
+                              'routines.inventory.operator' | translate
+                              }}</mat-label>
+            <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="operator">
+            </mat-select>
+            <mat-error *ngIf="assignOperatorFormControls.operator.invalid">{{
+                              'error.field' | translate
+                              }}</mat-error>
+          </mat-form-field>
+          <div class="form-three-button-container" fxFlex>
+            <button mat-raised-button color="accent" (click)="resetAssignOperatorForm()">
+              <mat-icon>loop</mat-icon>
+            </button>
+          </div>
+
+        </div>
+
+      </form>
+
+      <table class="site-table text-center w-100 mt">
+        <thead>
+          <tr>
+            <th></th>
+            <th>{{ 'routines.inventory.location' | translate}}</th>
+            <th>{{ 'routines.inventory.operator' | translate}}</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <td></td>
+          <td>A02012</td>
+          <td class="lookup-column">
+            <!-- <input type="text" style="width: 100%;" [value]="control.warehouse"> -->
+            <mat-form-field appearance="outline">
+              <mat-select disableOptionCentering panelClass="slim-select-field">
+              </mat-select>
+            </mat-form-field>
+          </td>
+          <td></td>
+        </tbody>
+      </table>
+
+    </mat-card-content>
+  </mat-card>
+  <div class="modal-button-bottom">
+    <button mat-raised-button color="primary" type="submit">
+      <mat-icon>task_alt</mat-icon>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+.free {
+  background-color: green;
+  color: white;
+}
+
+.full {
+  background-color: red;
+  color: white;
+}
+
+.partial {
+  background-color: blue;
+  color: white;
+}
+
+.blue {
+  color: blue !important;
+}
+
+.red {
+  color: red !important;
+}
+
+.green {
+  color: green !important;
+}
+
+
+td {
+  cursor: pointer;
+}

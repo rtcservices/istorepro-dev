@@ -16,6 +16,7 @@ import { OrPutawayDialogComponent } from './operations-receipt/dialogs/or-putawa
 import { OrLabelDialogComponent } from './operations-receipt/dialogs/or-label-dialog/or-label-dialog.component';
 import { OlmGrnDialogComponent } from './operations-location-management/dialogs/olm-grn-dialog/olm-grn-dialog.component';
 import { OlmLocationDialogComponent } from './operations-location-management/dialogs/olm-location-dialog/olm-location-dialog.component';
+import { OhmCellDialogComponent } from './operations-heat-map/dialogs/ohm-cell-dialog/ohm-cell-dialog.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { OlmLocationDialogComponent } from './operations-location-management/dia
     OrPutawayDialogComponent,
     OrLabelDialogComponent,
     OlmGrnDialogComponent,
-    OlmLocationDialogComponent
+    OlmLocationDialogComponent,
+    OhmCellDialogComponent
   ],
   imports: [CommonModule, SharedModule, OperationsRoutingModule]
 })

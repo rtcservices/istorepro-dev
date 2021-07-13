@@ -1,1 +1,144 @@
-<p>dashboards-mis works!</p>
+<div class="page-title">
+  <h2>{{'menu.dashboardsMIS' | translate}}</h2>
+</div>
+<br> <br> <br>
+<form fxLayout="column" [formGroup]="MisForm" (ngSubmit)="onMisFormSubmit()" class="slim-form">
+  <mat-card class="filter-container">
+    <mat-card-content>
+      <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+        <mat-form-field appearance="outline" fxFlex>
+          <mat-label>{{
+                      'dashboard.mis.type' | translate
+                      }}</mat-label>
+          <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="type">
+          </mat-select>
+          <mat-error *ngIf="MisFormControls.type.invalid">{{
+                      'error.field' | translate
+                      }}</mat-error>
+        </mat-form-field>
+        <div class="form-button-container">
+          <button mat-raised-button color="primary" type="submit">
+            <mat-icon>search</mat-icon>
+          </button>
+          <button mat-raised-button color="accent">
+            <mat-icon>cloud_download</mat-icon>
+          </button>
+        </div>
+
+      </div>
+
+      <br>
+
+      <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="20px">
+
+        <mat-card fxFlex>
+
+
+          <mat-card-content>
+            <div fxLayout="row">
+              <h3 fxFlex="80" fxLayoutGap="10px">
+                {{ 'dashboard.mis.locationutilization' | translate }}
+              </h3>
+              <div fxFlex="20" fxLayoutAlign="end" fxLayoutGap="10px">
+                <mat-icon>remove</mat-icon>
+                <mat-icon>open_in_full</mat-icon>
+              </div>
+            </div>
+            <div fxLayout="row">
+              <h3 fxFlex="80" fxLayoutGap="10px">
+              </h3>
+              <div fxFlex="20" fxLayoutAlign="end" fxLayoutGap="10px">
+                <div class="form-three-button-container" fxFlex>
+                  <button mat-raised-button color="primary" fxFlex>
+                    <mat-icon>ios_share</mat-icon>
+                  </button>
+                  <button mat-raised-button color="primary" fxFlex>
+                    <mat-icon>picture_as_pdf</mat-icon>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div fxLayout="row">
+              <img width="100%" height="100%" src="../../../../assets/images/piechartdemo.png" alt="">
+            </div>
+
+          </mat-card-content>
+
+        </mat-card>
+
+        <mat-card fxFlex>
+
+
+          <mat-card-content>
+            <div fxLayout="row">
+              <h3 fxFlex="80" fxLayoutGap="10px">
+                {{ 'dashboard.mis.capacity' | translate }}
+              </h3>
+              <div fxFlex="20" fxLayoutAlign="end" fxLayoutGap="10px">
+                <mat-icon>remove</mat-icon>
+                <mat-icon>open_in_full</mat-icon>
+              </div>
+            </div>
+            <div fxLayout="row">
+              <h3 fxFlex="80" fxLayoutGap="10px">
+              </h3>
+              <div fxFlex="20" fxLayoutAlign="end" fxLayoutGap="10px">
+                <div class="form-three-button-container" fxFlex>
+                  <button mat-raised-button color="primary" fxFlex>
+                    <mat-icon>ios_share</mat-icon>
+                  </button>
+                  <button mat-raised-button color="primary" fxFlex>
+                    <mat-icon>picture_as_pdf</mat-icon>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div fxLayout="row">
+              <img width="100%" height="100%" src="../../../../assets/images/piechartdemo.png" alt="">
+            </div>
+
+          </mat-card-content>
+
+        </mat-card>
+
+        <mat-card fxFlex>
+
+
+          <mat-card-content>
+            <div fxLayout="row">
+              <h3 fxFlex="80" fxLayoutGap="10px">
+                {{ 'dashboard.mis.ageing' | translate }}
+              </h3>
+              <div fxFlex="20" fxLayoutAlign="end" fxLayoutGap="10px">
+                <mat-icon>remove</mat-icon>
+                <mat-icon>open_in_full</mat-icon>
+              </div>
+            </div>
+            <div fxLayout="row">
+              <h3 fxFlex="80" fxLayoutGap="10px">
+              </h3>
+              <div fxFlex="20" fxLayoutAlign="end" fxLayoutGap="10px">
+                <div class="form-three-button-container" fxFlex>
+                  <button mat-raised-button color="primary" fxFlex>
+                    <mat-icon>ios_share</mat-icon>
+                  </button>
+                  <button mat-raised-button color="primary" fxFlex>
+                    <mat-icon>picture_as_pdf</mat-icon>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div fxLayout="row">
+              <img width="100%" height="100%" src="../../../../assets/images/piechartdemo.png" alt="">
+            </div>
+
+          </mat-card-content>
+
+        </mat-card>
+
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+
+</form>
