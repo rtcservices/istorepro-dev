@@ -5,7 +5,7 @@
   <mat-tab label="Data">
     <form fxLayout="column" [formGroup]="dataReceiptForm" (ngSubmit)="onDataReceiptSubmit()" class="slim-form">
       <div>
-        <mat-card>
+        <mat-card class="filter-content">
           <mat-card-content>
             <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
               <div fxLayout="row" fxLayoutGap="5px" fxFlex>
@@ -87,7 +87,7 @@
         </mat-card>
       </div>
       <hr>
-      <mat-card>
+      <mat-card class="grid-content">
         <mat-card-content>
           <div class="form-three-button-container smaller-button-container-40 mb-1">
             <button mat-raised-button color="primary">
