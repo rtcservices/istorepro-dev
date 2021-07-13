@@ -20,7 +20,7 @@ div.form-checkbox-input {
     padding-top: 0px;
   }
 }
-.autoFill-checkbox{
+.autoFill-checkbox {
   padding-top: 12px;
 }
 .pale-border-box {
@@ -50,14 +50,14 @@ div.form-checkbox-input {
   }
 }
 
-.spacer{
+.spacer {
   padding: 18px 0px;
   @include breakpoint(mobileonly) {
     padding: 0px 0px;
   }
 }
 
-.capacity-form{
+.capacity-form {
   mat-form-field {
     ::ng-deep .mat-form-field-wrapper {
       @include breakpoint(mobileonly) {

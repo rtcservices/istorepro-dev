@@ -55,11 +55,12 @@
                         </div>
                       </div>
 
-                      <div fxFlex >
+                      <div fxFlex>
                         <div fxLayout.gt-sm="row" fxLayoutGap="10px" fxLayout.lt-sm="column">
 
                           <div fxFlex.gt-sm="70%">
-                            <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" class="second-row-section" fxLayoutGap="5px">
+                            <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" class="second-row-section"
+                              fxLayoutGap="5px">
                               <mat-form-field appearance="outline" fxFlex>
                                 <mat-label>{{
                                   'base.item.itemType' | translate
@@ -312,7 +313,7 @@
                       <tbody>
                         <ng-template let-control ngFor [ngForOf]=" InventoryAlertDataSource">
                           <tr>
-                            <td class="lookup-column"> 
+                            <td class="lookup-column">
                               <!-- <input type="text" style="width: 100%;" [value]="control.warehouse"> -->
                               <mat-form-field appearance="outline">
                                 <mat-label>{{ 'base.item.warehouse' | translate }}</mat-label>
@@ -384,11 +385,24 @@
       </div>
       <mat-card>
         <mat-card-content>
+
+          <!-- <div fxLayout.gt-sm="row" fxLayoutAlign="space-between center">
+            <div fxShow fxHide.gt-sm fxLayout.gt-sm="row" class="page-import-export-button smaller-button-container-40">
+              <button mat-raised-button color="primary" type="submit">
+                <mat-icon>cloud_upload</mat-icon>
+              </button>
+              <button mat-raised-button color="primary" type="submit">
+                <mat-icon>cloud_download</mat-icon>
+              </button>
+            </div>
+          </div> -->
+
           <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap.lt-md="30px"
             fxLayoutAlign="space-between center">
             <div fxFlexOrder.lt-md="2">
               <ibe-data-audit insertedBy=""></ibe-data-audit>
             </div>
+
             <div class="form-four-button-container" fxFlexOrder.lt-md="1">
               <div fxLayout.gt-sm="row">
                 <button fxFlex mat-raised-button color="primary" type="submit" (click)="saveItemData()">
@@ -401,9 +415,9 @@
                   <mat-icon>loop</mat-icon>
                 </button>
               </div>
-
             </div>
           </div>
+
         </mat-card-content>
       </mat-card>
     </form>
