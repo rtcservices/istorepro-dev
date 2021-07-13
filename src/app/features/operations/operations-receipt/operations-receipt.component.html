@@ -5,7 +5,7 @@
   <mat-tab label="Data">
     <form fxLayout="column" [formGroup]="dataReceiptForm" (ngSubmit)="onDataReceiptSubmit()" class="slim-form">
       <div>
-        <mat-card>
+        <mat-card class="filter-content">
           <mat-card-content>
             <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
               <div fxLayout="row" fxLayoutGap="5px" fxFlex>
@@ -87,7 +87,7 @@
         </mat-card>
       </div>
       <hr>
-      <mat-card>
+      <mat-card class="grid-content">
         <mat-card-content>
           <div class="form-three-button-container smaller-button-container-40 mb-1">
             <button mat-raised-button color="primary">
@@ -101,15 +101,15 @@
             <thead>
               <tr>
                 <th>{{ 'operations.receipt.item' | translate}}</th>
-                <th fxHide fxShow.gt-sm>{{ 'operations.receipt.description' | translate}}</th>
-                <th fxHide fxShow.gt-sm class="column-60">{{ 'operations.receipt.ru' | translate}}</th>
-                <th fxHide fxShow.gt-sm>{{ 'operations.receipt.sku' | translate}}</th>
-                <th>{{ 'operations.receipt.qtyexp' | translate}}</th>
+                <th fxHide fxShow.gt-md>{{ 'operations.receipt.description' | translate}}</th>
+                <th fxHide fxShow.gt-md class="column-60">{{ 'operations.receipt.ru' | translate}}</th>
+                <th fxHide fxShow.gt-md>{{ 'operations.receipt.sku' | translate}}</th>
+                <th fxHide fxShow.gt-md>{{ 'operations.receipt.qtyexp' | translate}}</th>
                 <th>{{ 'operations.receipt.qtygood' | translate}}</th>
                 <th>{{ 'operations.receipt.qtydmg' | translate}}</th>
-                <th fxHide fxShow.gt-sm class="column-60">{{ 'operations.receipt.netwt' | translate}}
+                <th fxHide fxShow.gt-md class="column-60">{{ 'operations.receipt.netwt' | translate}}
                 </th>
-                <th fxHide fxShow.gt-sm class="column-60">{{ 'operations.receipt.netvol' | translate}}
+                <th fxHide fxShow.gt-md class="column-60">{{ 'operations.receipt.netvol' | translate}}
                 </th>
                 <th fxHide fxShow.gt-sm class="column-100">{{ 'operations.receipt.mfgDate' | translate}}</th>
                 <th fxHide fxShow.gt-sm class="column-100">{{ 'operations.receipt.expDate' | translate}}</th>
@@ -124,23 +124,23 @@
               <ng-template let-operator ngFor [ngForOf]="receiptDataSource">
                 <tr>
                   <td>
-                    <div class="input-container">
+                    <div class="input-container" style="width: 150px;">
                       <input type="text" class="w-100">
                       <mat-icon type="button" (click)="openItemDialog()">search</mat-icon>
                     </div>
                   </td>
-                  <td fxHide fxShow.gt-sm>
+                  <td fxHide fxShow.gt-md style="width: 200px;">
                     <input disabled type="text" class="w-100">
                   </td>
-                  <td fxHide fxShow.gt-sm class="text-center">
+                  <td fxHide fxShow.gt-md class="text-center">
                     <button type="button" class="text-button hover-underline-bottom" (click)="openRuDialog()" matRipple>
                       <span>RU</span>
                     </button>
                   </td>
-                  <td fxHide fxShow.gt-sm>
+                  <td fxHide fxShow.gt-md>
                     <input disabled type="text" class="w-100">
                   </td>
-                  <td>
+                  <td fxHide fxShow.gt-md>
                     <input type="number" size="50" class="w-100">
                   </td>
                   <td>
@@ -149,12 +149,12 @@
                   <td>
                     <input type="number" class="w-100">
                   </td>
-                  <td fxHide fxShow.gt-sm class="text-center">
+                  <td fxHide fxShow.gt-md class="text-center">
                     <button type="button" class="text-button" (click)="openNetWtDialog()">
                       <span>w</span>
                     </button>
                   </td>
-                  <td fxHide fxShow.gt-sm class="text-center">
+                  <td fxHide fxShow.gt-md class="text-center">
                     <button type="button" class="text-button" (click)="openNetVolDialog()">
                       <span>v</span>
                     </button>
@@ -168,7 +168,7 @@
                   <td>
                     <input type="number" class="w-100">
                   </td>
-                  <td fxHide fxShow.gt-sm>
+                  <td fxHide fxShow.gt-sm style="width: 200px;">
                     <input type="number" class="w-100">
                   </td>
                   <td class="two-button-column" style="width: 90px;">

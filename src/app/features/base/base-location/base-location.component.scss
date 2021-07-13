@@ -12,13 +12,16 @@ div.form-checkbox-input {
   }
 }
 
-.validate-checkbox,
-.autoFill-checkbox {
+.validate-checkbox {
   margin-left: 30px;
   padding-top: 12px;
   @include breakpoint(mobileonly) {
-    display: block;
+    margin-left: 0px;
+    padding-top: 0px;
   }
+}
+.autoFill-checkbox {
+  padding-top: 12px;
 }
 .pale-border-box {
   mat-checkbox {
@@ -43,6 +46,23 @@ div.form-checkbox-input {
   input {
     @include breakpoint(mobileonly) {
       padding: 8px 40px;
+    }
+  }
+}
+
+.spacer {
+  padding: 18px 0px;
+  @include breakpoint(mobileonly) {
+    padding: 0px 0px;
+  }
+}
+
+.capacity-form {
+  mat-form-field {
+    ::ng-deep .mat-form-field-wrapper {
+      @include breakpoint(mobileonly) {
+        padding-bottom: 0em !important;
+      }
     }
   }
 }

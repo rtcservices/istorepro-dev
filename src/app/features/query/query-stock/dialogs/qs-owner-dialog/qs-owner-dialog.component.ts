@@ -2,18 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'ibe-qd-owner-dialog',
-  templateUrl: './qd-owner-dialog.component.html',
-  styleUrls: ['./qd-owner-dialog.component.scss']
+  selector: 'ibe-qs-owner-dialog',
+  templateUrl: './qs-owner-dialog.component.html',
+  styleUrls: ['./qs-owner-dialog.component.scss']
 })
-export class QdOwnerDialogComponent implements OnInit {
+export class QsOwnerDialogComponent implements OnInit {
+
   dataOwnerForm!: FormGroup;
   constructor(private fb: FormBuilder) {
     this.createDataOwnerForm();
   }
+
   ngOnInit(): void {
   }
-
+  
   createDataOwnerForm() {
     this.dataOwnerForm = this.fb.group({
       code: '',

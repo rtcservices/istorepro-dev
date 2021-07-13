@@ -7,6 +7,8 @@ import { NotificationService } from '../../../services/notification.service';
 import { SiteTranslateService } from '../../../services/site-translate.service';
 import { TitleService } from '../../../services/title.service';
 import { QueryTransactionDeliveryModel, QueryTransactionReceiptModel } from '../models/query-transaction.model';
+import { QtOwnerDialogComponent } from './dialogs/qt-owner-dialog/qt-owner-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'ibe-query-transactions',
@@ -39,7 +41,7 @@ export class QueryTransactionsComponent implements OnInit {
     private siteTranslateService: SiteTranslateService,
     private translate: TranslateService,
     private titleService: TitleService,
-    private notification: NotificationService
+    private notification: NotificationService, public dialog: MatDialog
   ) { 
     this.createDeliveryForm();
     this.createReceiptForm();
@@ -99,6 +101,9 @@ export class QueryTransactionsComponent implements OnInit {
   onReceiptSubmit() {}
 
   openOwnerDialog() {
+    this.dialog.open(QtOwnerDialogComponent, {
+      width: '800px'
+    });
   }
 
   createDeliveryForm() {
