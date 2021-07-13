@@ -137,21 +137,17 @@ export class OperationsReceiptComponent implements OnInit {
   dataReceiptForm!: FormGroup;
 
   displayedColumns = [
+    'warehouse',
+    'owner',
     'grn',
-    'item',
-    'grn',
-    'description',
+    'receiptDate',
     'po',
-    'sku',
-    'batch no.',
-    'Mgf',
-    'Expiry',
-    'Location',
-    'Stock',
-    'Alloc',
-    'Pkd'
+    'remarks',
+    'status'
   ];
 
+  sectors = ['LOGISTICS', 'FORWARDING', 'OTHER'];
+  companyLogo = '../../../../assets/images/company-logo-236x81.jpg';
 
   formErrorTranslated = '';
   filterErrorTranslated = '';
