@@ -1,0 +1,81 @@
+<button mat-raised-button class="dialog-close" [mat-dialog-close]="true" color="warn">
+  <mat-icon class="close-icon">close</mat-icon>
+</button>
+
+<h1 mat-dialog-title>{{ 'routines.stockadjust.item' | translate}}</h1>
+<div mat-dialog-content>
+  <mat-card class="overflow-x">
+    <mat-card-content>
+      <form [formGroup]="itemForm" (ngSubmit)="onItemFormSubmit()" class="slim-form">
+        <div fxLayout="column" fxLayout.lt-sm="column" fxLayoutGap="5px">
+          <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
+            <mat-form-field appearance="outline" fxFlex>
+              <mat-label>{{'routines.stockadjust.code' | translate}}</mat-label>
+              <input matInput type="text" formControlName="code" />
+              <mat-error *ngIf="itemFormControls.code.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex>
+              <mat-label>{{'routines.stockadjust.description' | translate}}</mat-label>
+              <input matInput type="text" formControlName="description" />
+              <mat-error *ngIf="itemFormControls.description.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px" fxFlex>
+            <mat-form-field appearance="outline" fxFlex.gt-sm="60">
+              <mat-label>{{
+                                          'routines.stockadjust.type' | translate
+                                          }}</mat-label>
+              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="type">
+              </mat-select>
+              <mat-error *ngIf="itemFormControls.type.invalid">{{
+                                          'error.field' | translate
+                                          }}</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex.gt-sm="23">
+              <mat-label>{{'routines.stockadjust.scancode' | translate}}</mat-label>
+              <input matInput type="text" formControlName="scancode" />
+              <mat-error *ngIf="itemFormControls.scancode.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+            <mat-checkbox fxLayoutAlign="start start" color="primary" formControlName="instock" fxFlex.gt-sm="25" >
+              {{'routines.stockadjust.instock' | translate}}</mat-checkbox>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="end" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
+            <div   class="form-three-button-container">
+                <button mat-raised-button color="primary" type="submit" (click)="onItemFormSubmit()">
+                  <mat-icon>search</mat-icon>
+                </button>
+                <button mat-raised-button color="accent" type="reset" (click)="resetItemForm()">
+                  <mat-icon>loop</mat-icon>
+                </button>
+              </div>
+          </div>
+        </div>
+
+      </form>
+
+      <table class="site-table text-center w-100 mt">
+        <thead>
+          <tr>
+            <th></th>
+            <th>{{ 'routines.stockadjust.item' | translate}}</th>
+            <th>{{ 'routines.stockadjust.description' | translate}}</th>
+            <th>{{ 'routines.stockadjust.type' | translate}}</th>
+            <th>{{ 'routines.stockadjust.sku' | translate}}</th>
+          </tr>
+        </thead>
+      </table>
+
+    </mat-card-content>
+  </mat-card>
+  <div class="modal-button-bottom">
+    <button mat-raised-button color="primary" type="submit">
+      <mat-icon>task_alt</mat-icon>
+    </button>
+  </div>
+</div>
