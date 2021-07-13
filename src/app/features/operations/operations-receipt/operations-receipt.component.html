@@ -124,12 +124,12 @@
               <ng-template let-operator ngFor [ngForOf]="receiptDataSource">
                 <tr>
                   <td>
-                    <div class="input-container">
+                    <div class="input-container" style="width: 150px;">
                       <input type="text" class="w-100">
                       <mat-icon type="button" (click)="openItemDialog()">search</mat-icon>
                     </div>
                   </td>
-                  <td fxHide fxShow.gt-sm>
+                  <td fxHide fxShow.gt-sm style="width: 200px;">
                     <input disabled type="text" class="w-100">
                   </td>
                   <td fxHide fxShow.gt-sm class="text-center">
@@ -168,7 +168,7 @@
                   <td>
                     <input type="number" class="w-100">
                   </td>
-                  <td fxHide fxShow.gt-sm>
+                  <td fxHide fxShow.gt-sm style="width: 200px;">
                     <input type="number" class="w-100">
                   </td>
                   <td class="two-button-column" style="width: 90px;">
