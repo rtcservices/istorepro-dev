@@ -7,6 +7,8 @@ import { NotificationService } from '../../../services/notification.service';
 import { SiteTranslateService } from '../../../services/site-translate.service';
 import { TitleService } from '../../../services/title.service';
 import { QueryStockModel } from '../models/query-stock.model';
+import { QsOwnerDialogComponent } from './dialogs/qs-owner-dialog/qs-owner-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'ibe-query-stock',
@@ -32,7 +34,7 @@ export class QueryStockComponent implements OnInit {
     private siteTranslateService: SiteTranslateService,
     private translate: TranslateService,
     private titleService: TitleService,
-    private notification: NotificationService
+    private notification: NotificationService, public dialog: MatDialog
   ) { 
     this.createStockForm();
   }
@@ -88,7 +90,9 @@ export class QueryStockComponent implements OnInit {
   onStockSubmit() {}
 
   openOwnerDialog() {
-    
+    this.dialog.open(QsOwnerDialogComponent, {
+      width: '800px'
+    });
   }
 
 }
