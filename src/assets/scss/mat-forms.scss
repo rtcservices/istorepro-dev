@@ -32,6 +32,13 @@
       color: rgba($site-gray, 0.7);
     }
   }
+
+  .mat-focused {
+    .mat-form-field-label,
+    .mat-form-field-outline-thick {
+      color: rgba($site-primary, 0.7);
+    }
+  }
   input:not(.normal) {
     text-transform: uppercase;
   }
