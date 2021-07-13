@@ -326,6 +326,7 @@
       "unit": "Unit",
       "level": "Level",
       "location": "Location",
+      "actions": "Actions",
       "nature": "Nature",
       "zone": "Zone",
       "description": "Description",
@@ -334,6 +335,7 @@
       "scanCode": "Scan Code",
       "storageStatus": "Storage Status",
       "freeze": "Freeze",
+      "unfreeze": "Unfreeze",
       "reworkArea": "Rework Area",
       "walkSequence": "Walk Sequence",
       "floorSequence": "Floor Sequence",
@@ -411,21 +413,78 @@
       "warehouse": "Warehouse",
       "grn": "GRN",
       "item": "Item",
-      "sku":"SKU",
-      "totalqty":"Total Qty",
-      "untrackedqty":"Untracked Qty",
+      "sku": "SKU",
+      "totalqty": "Total Qty",
+      "untrackedqty": "Untracked Qty",
       "wh": "WH",
       "date": "Date",
-      "po":"PO/Ref No.",
-      "type":"Type",
-      "code":"Code",
-      "description":"Description",
-      "location":"Location",
-      "status":"Status",
-      "qtygood":"Qty Good",
-      "qtydmg":"Qty Dmg",
+      "po": "PO/Ref No.",
+      "type": "Type",
+      "code": "Code",
+      "description": "Description",
+      "location": "Location",
+      "status": "Status",
+      "qtygood": "Qty Good",
+      "qtydmg": "Qty Dmg",
+      "full": "Full",
+      "owner": "Owner"
+
+    },
+    "HeatMap": {
+      "warehouse": "Warehouse",
+      "item": "Item",
+      "description": "Item",
+      "stkgood":"Stk Good",
+      "stkdmg":"Stk Dmg",
       "full":"Full",
-      "owner":"Owner"
+      "free":"Free",
+      "partial":"Partial",
+      "locgood":"Loc Good",
+      "netwt":"Net Wt",
+      "sku": "SKU",
+      "date": "Date",
+      "po": "PO/Ref No.",
+      "type": "Type",
+      "storagestatus": "Storage Status",
+      "storagetype": "Storage Type",
+      "abctag": "ABC Tag",
+      "zone": "Zone",
+      "weight": "Weight",
+      "volume": "Volume",
+      "net": "Net",
+      "balance": "Balance",
+      "percentage": "Percentage",
+      "lbh": "LBH",
+      "batchnumber":"Batch Number",
+      "rowsplit":"Row Split"
+
+    },
+    "delivery": {
+      "warehouse": "WH",
+      "owner": "Owner",
+      "date": "Date",
+      "drn":"DRN",
+      "do":"DO",
+      "dt":"DT",
+      "shipto":"Ship to",
+      "partial":"Partial",
+      "locgood":"Loc Good",
+      "netwt":"Net Wt",
+      "sku": "SKU",
+      "po": "PO/Ref No.",
+      "type": "Type",
+      "storagestatus": "Storage Status",
+      "storagetype": "Storage Type",
+      "abctag": "ABC Tag",
+      "zone": "Zone",
+      "weight": "Weight",
+      "volume": "Volume",
+      "net": "Net",
+      "balance": "Balance",
+      "percentage": "Percentage",
+      "lbh": "LBH",
+      "batchnumber":"Batch Number",
+      "rowsplit":"Row Split"
 
     }
   },
@@ -446,7 +505,10 @@
       "auditstatus": "Audit Status",
       "iandate": "IAN Date",
       "lastaudit": "Last audit Completed",
-      "currentaudit": "Current Audit Completed"
+      "currentaudit": "Current Audit Completed",
+      "operator": "Operator",
+      "storageType": " Storage Type",
+      "assignoperator": "Assign Operator"
     }
   },
   "scans": {
@@ -490,17 +552,17 @@
       "poRefNo": "PO/Ref No",
       "expiryFrom": "Expiry From",
       "expiryTo": "Expiry To",
-      "WH" : "WH",
-      "description" : "Description",
-      "type" : "Type",
-      "sku" : "SKU",
-      "stock" : "Stock",
-      "allocated" : "Allocated",
-      "balGood" : "Bal Good",
-      "balDmgExp" : "Bal Dmg/Exp"
+      "WH": "WH",
+      "description": "Description",
+      "type": "Type",
+      "sku": "SKU",
+      "stock": "Stock",
+      "allocated": "Allocated",
+      "balGood": "Bal Good",
+      "balDmgExp": "Bal Dmg/Exp"
     },
-    "transaction":{
-      "receipt" : {
+    "transaction": {
+      "receipt": {
         "warehouse": "Warehouse",
         "owner": "Owner",
         "item": "Item",
@@ -508,15 +570,15 @@
         "poRefNo": "PO/Ref No",
         "origin": "Origin",
         "status": "Status",
-        "receiptFrom" : "Receipt From",
-        "receiptTo" : "Receipt To",
-        "stock" : "Stock",
-        "WH" : "WH",
-        "grn" : "GRN",
-        "date" : "Date",
-        "print" : "Print"
+        "receiptFrom": "Receipt From",
+        "receiptTo": "Receipt To",
+        "stock": "Stock",
+        "WH": "WH",
+        "grn": "GRN",
+        "date": "Date",
+        "print": "Print"
       },
-      "delivery" : {
+      "delivery": {
         "warehouse": "Warehouse",
         "owner": "Owner",
         "poRefNo": "PO/Ref No",
@@ -524,31 +586,39 @@
         "batchNo": "Batch No",
         "drn": "DRN",
         "so": "SO",
-        "do" : "DO",
-        "status" : "Status",
-        "deliveryFrom" : "Delivery From",
-        "deliveryTo" : "Delivery To",
-        "dt" : "DT",
-        "WH" : "WH",
-        "date" : "Date",
-        "shipTo" : "Ship To",
-        "print" : "Print"
+        "do": "DO",
+        "status": "Status",
+        "deliveryFrom": "Delivery From",
+        "deliveryTo": "Delivery To",
+        "dt": "DT",
+        "WH": "WH",
+        "date": "Date",
+        "shipTo": "Ship To",
+        "print": "Print"
       }
     },
-    "Document" : {
+    "Document": {
       "warehouse": "Warehouse",
       "documenttype": "Document Type",
       "documentno": "Document No",
       "datefrom": "Date from",
       "dateto": "Date To",
       "owner": "Owner",
-      "operator":"Operator",
+      "operator": "Operator",
       "type": "Type",
       "number": "Number",
       "date": "Date",
       "code": "Code",
       "name": "name",
-      "document":"Document"
+      "document": "Document"
+    }
+  },
+  "dashboard": {
+    "mis": {
+      "locationutilization": "Location Utilization",
+      "capacity": "Capacity",
+      "ageing": "Ageing",
+      "type":"Type"
     }
   },
   "settings": {
@@ -560,7 +630,7 @@
       "normal": "Normal",
       "maintenance": "Maintenance"
     },
-    "consistencycheck":{
+    "consistencycheck": {
       "options": "Options",
       "stock": "Stock",
       "item": "Item",
@@ -568,7 +638,7 @@
       "delivery": "Delivery",
       "zerosubzero": "Zero/Sub Zero Quantity"
     },
-    "loginaudit":{
+    "loginaudit": {
       "options": "Options",
       "loginname": "Login Name",
       "ip": "IP/Node",
@@ -585,7 +655,7 @@
       "reason": "Reason",
       "source": "Source"
     },
-    "AuditTrail":{
+    "AuditTrail": {
       "actions": "Actions",
       "loginname": "Login Name",
       "ip": "IP/Node",
@@ -598,11 +668,11 @@
       "newvalue": "New Value",
       "actiondate": "Action Date",
       "actiontime": "Action Time",
-      "actionedby":"Actioned By",
+      "actionedby": "Actioned By",
       "status": "Actioned by",
       "keyvalue": "Key value",
-      "context":"Context",
-      "customer":"Customer"
+      "context": "Context",
+      "customer": "Customer"
     }
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { MatTabGroup } from '@angular/material/tabs';
 import { TranslateService } from '@ngx-translate/core';
 import { patternsHelper } from '../../../helpers/patterns.helper';
@@ -8,6 +9,7 @@ import { NotificationService } from '../../../services/notification.service';
 import { SiteTranslateService } from '../../../services/site-translate.service';
 import { TitleService } from '../../../services/title.service';
 import { RoutineInventorySearchModel } from '../models/inventory.model';
+import { RiAssignOperatorDialogComponent } from './dialogs/ri-assign-operator-dialog/ri-assign-operator-dialog.component';
 
 @Component({
   selector: 'ibe-routines-inventory-audit',
@@ -48,7 +50,8 @@ export class RoutinesInventoryAuditComponent implements OnInit {
     private siteTranslateService: SiteTranslateService,
     private translate: TranslateService,
     private titleService: TitleService,
-    private notification: NotificationService) {
+    private notification: NotificationService,
+    public dialog: MatDialog) {
     this.createroutinesInventoryForm()
     this.createSearchInventoryForm()
   }
@@ -64,7 +67,7 @@ export class RoutinesInventoryAuditComponent implements OnInit {
       row: [''],
       unit: [''],
       location: [''],
-      status: ['']        
+      status: ['']
     });
   }
 
@@ -82,13 +85,13 @@ export class RoutinesInventoryAuditComponent implements OnInit {
   deleteInventoryForm() { }
 
 
-  
+
   createSearchInventoryForm() {
     this.searchInventoryForm = this.fb.group({
       warehouse: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       auditstatus: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       ian: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
-      iandate: [''],      
+      iandate: [''],
     });
   }
 
@@ -110,7 +113,7 @@ export class RoutinesInventoryAuditComponent implements OnInit {
       const ian: string =
       this.searchInventoryForm.get('ian')?.value || '';
     const auditstatus: string =
-      this.searchInventoryForm.get('auditstatus')?.value || '';   
+      this.searchInventoryForm.get('auditstatus')?.value || '';
     if (warehouse.trim() === '' && iandate.trim() === '' &&
     ian.trim() === '' && auditstatus.trim() === '') {
       this.notification.error(this.filterErrorTranslated);
@@ -128,4 +131,14 @@ export class RoutinesInventoryAuditComponent implements OnInit {
     this.searchInventoryForm.reset();
     this.searchDataSource = [];
   }
+
+
+  openAssignOperatorDialog() {
+    this.dialog.open(RiAssignOperatorDialogComponent, {
+      width: '800px'
+    });
+  }
+
+
+
 }

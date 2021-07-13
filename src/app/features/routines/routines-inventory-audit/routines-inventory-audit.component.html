@@ -38,6 +38,9 @@
                 </div>
 
                 <div class="form-three-button-container" fxFlex>
+                  <button type="button" (click)="openAssignOperatorDialog()" mat-raised-button color="primary">
+                    <mat-icon >assignment_ind</mat-icon>
+                  </button>
                   <button mat-raised-button color="primary">
                     <mat-icon>cloud_upload</mat-icon>
                   </button>
@@ -210,7 +213,7 @@
             <div class="form-three-button-container" fxFlexOrder.lt-md="1" >
               <button mat-raised-button color="primary" type="submit" >
                 <mat-icon>save</mat-icon>
-              </button>              
+              </button>
             </div>
           </div>
         </mat-card-content>

@@ -26,7 +26,7 @@ export class BaseLocationComponent implements OnInit {
   filterErrorTranslated = '';
 
   dataLocationForm!: FormGroup
-
+  freezeLocationForm!: FormGroup
   searchLocationForm!: FormGroup;
   searchLocationDataSource: BaseLocationSearchModel[] = [];
   dummyLocationSearchModel: BaseLocationSearchModel[] = [
@@ -48,6 +48,7 @@ export class BaseLocationComponent implements OnInit {
   ) {
     this.createDataLocationForm();
     this.createSearchLocationForm();
+    this.createFreezeLocationForm();
   }
 
   ngOnInit(): void {
@@ -271,4 +272,36 @@ export class BaseLocationComponent implements OnInit {
     if (!tabGroup || !(tabGroup instanceof MatTabGroup)) return;
     tabGroup.selectedIndex = 0;
   }
+
+
+  // Freeze Tabs
+
+
+  createFreezeLocationForm() {
+    this.freezeLocationForm = this.fb.group({
+      warehouse: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      row: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      unit: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      location: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      storageType: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      nature: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      description: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      actions: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+    });
+  }
+
+  onFreezeLocationSubmit() {}
+
+
+  get FreezeLocationFormControls() {
+    return this.freezeLocationForm.controls;
+  }
+
+  resetLocationFreezeForm() {
+    this.freezeLocationForm.reset();
+  }
+
+
+
+
 }
