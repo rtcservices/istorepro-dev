@@ -13,9 +13,6 @@
   padding-top: 5px;
   margin-left: 5px;
   margin-right: 5px;
-  input:not(.normal) {
-    text-transform: uppercase;
-  }
   .row {
     font-size: 15px;
   }
@@ -28,6 +25,20 @@
   font-size: 12px;
 }
 .slim-form {
+  .mat-form-field-wrapper {
+    .mat-form-field-label,
+    .mat-form-field-outline,
+    .mat-select-arrow {
+      color: rgba($site-gray, 0.7);
+    }
+  }
+
+  .mat-focused {
+    .mat-form-field-label,
+    .mat-form-field-outline-thick {
+      color: rgba($site-primary, 0.7);
+    }
+  }
   input:not(.normal) {
     text-transform: uppercase;
   }
