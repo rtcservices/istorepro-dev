@@ -21,7 +21,7 @@ export class OrNetvolDialogComponent implements OnInit {
     this.createnetvolForm();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   onCancel(): void {
     this.dialogRef.close();
@@ -43,12 +43,25 @@ export class OrNetvolDialogComponent implements OnInit {
       ]
     });
   }
-  onnetvolFormSubmit() {}
+  onnetvolFormSubmit() { }
 
   resetnetvolForm() {
     this.netvolForm.reset();
   }
   get netvolFormControls() {
     return this.netvolForm.controls;
+  }
+
+  onDimensionsSelect(event: any) {
+    if (!this.netvolForm.controls['dimensions'].value) {
+      this.netvolForm.controls['length'].disable();
+      this.netvolForm.controls['breadth'].disable();
+      this.netvolForm.controls['unitvol'].disable();
+    }
+    else{
+      this.netvolForm.controls['length'].enable();
+      this.netvolForm.controls['breadth'].enable();
+      this.netvolForm.controls['unitvol'].enable();
+    }
   }
 }

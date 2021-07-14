@@ -20,7 +20,7 @@
               <label>{{ 'operations.receipt.quantity' | translate }}</label>
             </fieldset>
             <div fxLayout="row" fxFlex="20">
-              <mat-checkbox color="primary" formControlName="dimensions">
+              <mat-checkbox color="primary" formControlName="dimensions" (click)="onDimensionsSelect($event)">
                 {{ 'operations.receipt.dimensions' | translate }}
               </mat-checkbox>
             </div>

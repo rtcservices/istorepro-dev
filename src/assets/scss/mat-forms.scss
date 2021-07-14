@@ -104,6 +104,9 @@
     @include breakpoint(mobileonly) {
       height: auto;
     }
+    @include breakpoint(tablet) {
+      height: auto;
+    }
   }
   mat-error {
     float: right;
