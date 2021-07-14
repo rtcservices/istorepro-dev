@@ -1,3 +1,14 @@
-.page-content{
+@import '../../../../assets/scss/variables.scss';
+
+.page-content {
     margin-top: 50px;
+}
+
+.slim-form {
+    .input-row {
+        height: 42px !important;
+        @include breakpoint(mobileonly) {
+            height: auto !important;
+        }
+    }
 }

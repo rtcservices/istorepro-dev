@@ -6,7 +6,7 @@
 <div mat-dialog-content>
   <div>
     <form [formGroup]="GrnForm" fxLayout="column" class="slim-form">
-      <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+      <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
         <fieldset class="read-only-input" fxFlex.gt-sm="50">
           <legend>{{ 'operations.LocationManagement.warehouse' | translate }}</legend>
           <label>{{ GrnFormControls.warehouse.value }}</label>
@@ -30,7 +30,7 @@
         </mat-form-field>
 
       </div>
-      <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+      <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
 
         <mat-form-field appearance="outline" fxFlex fxFlex.gt-sm="10">
           <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="dateoperator">
@@ -83,7 +83,7 @@
         </mat-form-field>
 
       </div>
-      <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+      <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
         <mat-form-field appearance="outline" fxFlex.gt-sm="48.5" fxFlex>
           <mat-label>{{'operations.LocationManagement.status' | translate }}</mat-label>
           <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="status">

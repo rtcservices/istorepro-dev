@@ -98,9 +98,12 @@
     width: 133.33333%;
     padding-bottom: 2px;
   }
-  .row {
+  .row, .input-row {
     height: 55px;
     font-size: 15px;
+    @include breakpoint(mobileonly) {
+      height: auto;
+    }
   }
   mat-error {
     float: right;
@@ -187,7 +190,7 @@
 
 .filter-container {
   padding-bottom: 0px !important;
-  .input-row {
+  .input-row {    
     mat-form-field {
       @include breakpoint(mobileonly) {
         margin-bottom: 0px !important;
