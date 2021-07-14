@@ -1,0 +1,9 @@
+mat-dialog-container.mat-dialog-container {
+    ::ng-deep .mat-form-field-wrapper {
+        padding-bottom: 0em !important;
+    }
+    .mat-dialog-content {
+        padding: 0px 4px !important;
+        margin: 0 !important;        
+    }
+}

@@ -71,6 +71,11 @@
 
   <mat-card>
     <mat-card-content class="overflow-x">
+      <div class="form-three-button-container smaller-button-container-40 mb-1">
+        <button mat-raised-button color="primary">
+          L
+        </button>
+      </div>
       <table class="site-table w-100 mat-elevation-z8">
         <thead>
           <tr>
@@ -82,6 +87,9 @@
             <th>{{ 'operations.LocationManagement.qtygood' | translate}} </th>
             <th>{{ 'operations.LocationManagement.qtydmg' | translate}}</th>
             <th>{{ 'operations.LocationManagement.full' | translate}} </th>
+            <th style="text-align: center;">
+              <mat-icon style="padding-top: 3px;">add_circle_outline</mat-icon>
+            </th>
         </thead>
         <tbody>
           <td class="checkbox-column">  <mat-checkbox color="primary"></mat-checkbox></td>
@@ -89,6 +97,15 @@
           <td></td>
           <td></td>
           <td></td>
+          <td></td>
+          <td class="two-button-column">
+            <button mat-mini-fab color="primary" class="mdb-30">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-mini-fab color="warn" class="mdb-30">
+              <mat-icon>remove</mat-icon>
+            </button>
+          </td>
         </tbody>
       </table>
     </mat-card-content>

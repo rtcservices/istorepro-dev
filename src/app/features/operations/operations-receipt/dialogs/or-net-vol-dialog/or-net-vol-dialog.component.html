@@ -46,12 +46,10 @@
                       }}</mat-label>
             <input matInput type="text" formControlName="unitvol" />
           </mat-form-field>
-          <mat-form-field appearance="outline" fxFlex>
-            <mat-label>{{
-                      'operations.receipt.netvol' | translate
-                      }}</mat-label>
-            <input matInput type="text" formControlName="netvol" />
-          </mat-form-field>
+          <fieldset class="read-only-input" fxFlex>
+            <legend>{{ 'operations.receipt.netvol' | translate }}</legend>
+            <label>{{ 'operations.receipt.netvol' | translate }}</label>
+          </fieldset>
         </div>
 
       </mat-card-content>
