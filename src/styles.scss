@@ -99,6 +99,12 @@ small {
   }
 }
 
+.page-import-bottom{
+  @include breakpoint(mobileonly) {
+    margin-bottom : 38px !important;
+  }
+}
+
 .prefix-suffix-field {
   display: flex;
   margin-bottom: 4px !important;

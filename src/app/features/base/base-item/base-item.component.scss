@@ -148,3 +148,9 @@ button[mat-dialog-close] {
     }
   }
 }
+
+.page-import-bottom{
+  @include breakpoint(mobileonly) {
+    margin-bottom : 38px !important;
+  }
+}
