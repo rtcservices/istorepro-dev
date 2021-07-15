@@ -51,7 +51,7 @@ export class AppShellComponent implements OnInit {
         title: 'Some Title',
         subTitle: 'Posted by Ava',
         author: 'Ava',
-        avatar: 'http://lorempixel.com/200/200/people/1/',
+        avatar: 'https://lorempixel.com/200/200/people/1/',
         time: new Date(2021, 0, 21)
       },
       {
@@ -59,7 +59,7 @@ export class AppShellComponent implements OnInit {
         title: 'Some Title',
         subTitle: 'Posted by Ava',
         author: 'Ava',
-        avatar: 'http://lorempixel.com/200/200/people/2/',
+        avatar: 'https://lorempixel.com/200/200/people/2/',
         time: new Date(2021, 0, 21)
       },
       {
@@ -67,7 +67,7 @@ export class AppShellComponent implements OnInit {
         title: 'Some Title',
         subTitle: 'Posted by Ava',
         author: 'Ava',
-        avatar: 'http://lorempixel.com/200/200/people/3/',
+        avatar: 'https://lorempixel.com/200/200/people/3/',
         time: new Date(2021, 0, 21)
       },
       {
@@ -75,7 +75,7 @@ export class AppShellComponent implements OnInit {
         title: 'Some Title',
         subTitle: 'Posted by Ava',
         author: 'Ava',
-        avatar: 'http://lorempixel.com/200/200/people/4/',
+        avatar: 'https://lorempixel.com/200/200/people/4/',
         time: new Date(2021, 0, 21)
       },
       {
@@ -83,7 +83,7 @@ export class AppShellComponent implements OnInit {
         title: 'Some Title',
         subTitle: 'Posted by Ava',
         author: 'Ava',
-        avatar: 'http://lorempixel.com/200/200/people/5/',
+        avatar: 'https://lorempixel.com/200/200/people/5/',
         time: new Date(2021, 0, 21)
       },
       {
@@ -91,7 +91,7 @@ export class AppShellComponent implements OnInit {
         title: 'Some Title',
         subTitle: 'Posted by Ava',
         author: 'Ava',
-        avatar: 'http://lorempixel.com/200/200/people/6/',
+        avatar: 'https://lorempixel.com/200/200/people/6/',
         time: new Date(2021, 0, 21)
       },
       {
@@ -99,7 +99,7 @@ export class AppShellComponent implements OnInit {
         title: 'Some Title',
         subTitle: 'Posted by Ava',
         author: 'Ava',
-        avatar: 'http://lorempixel.com/200/200/people/7/',
+        avatar: 'https://lorempixel.com/200/200/people/7/',
         time: new Date(2021, 0, 21)
       },
       {
@@ -107,7 +107,7 @@ export class AppShellComponent implements OnInit {
         title: 'Some Title',
         subTitle: 'Posted by Ava',
         author: 'Ava',
-        avatar: 'http://lorempixel.com/200/200/people/8/',
+        avatar: 'https://lorempixel.com/200/200/people/8/',
         time: new Date(2021, 0, 21)
       },
       {
@@ -115,7 +115,7 @@ export class AppShellComponent implements OnInit {
         title: 'Some Title',
         subTitle: 'Posted by Ava',
         author: 'Ava',
-        avatar: 'http://lorempixel.com/200/200/people/9/',
+        avatar: 'https://lorempixel.com/200/200/people/9/',
         time: new Date(2021, 0, 21)
       },
       {
@@ -123,7 +123,7 @@ export class AppShellComponent implements OnInit {
         title: 'Some Title',
         subTitle: 'Posted by Ava',
         author: 'Ava',
-        avatar: 'http://lorempixel.com/200/200/people/10/',
+        avatar: 'https://lorempixel.com/200/200/people/10/',
         time: new Date(2021, 0, 21)
       }
     ];
