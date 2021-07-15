@@ -18,6 +18,9 @@
                           <mat-form-field appearance="outline" fxFlex="49">
                             <mat-label>{{'setup.security.loginName' | translate }}</mat-label>
                             <input matInput required type="text" formControlName="loginName" />
+                            <mat-error *ngIf="dataSetupSecurityFormControls.loginName.invalid">
+                              {{ 'error.field' | translate }}
+                            </mat-error>
                           </mat-form-field>
                           <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="49">
                             <mat-label>{{'setup.security.license' | translate}}</mat-label>
@@ -25,12 +28,15 @@
                               <mat-option value="license1">License 1</mat-option>
                               <mat-option value="license2">License 2</mat-option>
                             </mat-select>
+                            <mat-error *ngIf="dataSetupSecurityFormControls.license.invalid">
+                              {{ 'error.field' | translate }}
+                            </mat-error>
                           </mat-form-field>
                         </div>
                         <div fxLayout="row" class="row" fxLayoutGap="5px">
                           <mat-form-field appearance="outline" fxFlex>
                             <mat-label>{{'setup.security.fullName' | translate}}</mat-label>
-                            <input matInput type="text" formControlName="fullName" />
+                            <input matInput required type="text" formControlName="fullName" />
                             <mat-error *ngIf="dataSetupSecurityFormControls.fullName.invalid">
                               {{ 'error.field' | translate }}
                             </mat-error>
@@ -39,7 +45,7 @@
                         <div fxLayout="row" class="row" fxLayoutGap="5px">
                           <mat-form-field appearance="outline" fxFlex="49">
                             <mat-label>{{'setup.security.password' | translate}}</mat-label>
-                            <input matInput type="password" #securityPassword formControlName="password" />
+                            <input matInput required type="password" #securityPassword formControlName="password" />
                             <ibe-password-strength *ngIf="securityPassword.value" [password]="securityPassword.value"
                               (onStrengthChanged)="onStrengthChanged($event)">
                             </ibe-password-strength>
@@ -49,7 +55,7 @@
                           </mat-form-field>
                           <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="49">
                             <mat-label>{{'setup.security.confirmPassword' | translate}}</mat-label>
-                            <input matInput type="password" #securityConfirmPassword
+                            <input matInput required type="password" #securityConfirmPassword
                               formControlName="confirmPassword" />
                             <ibe-password-strength *ngIf="securityConfirmPassword.value"
                               [password]="securityConfirmPassword.value"
@@ -69,23 +75,35 @@
                         <div fxLayout="row" class="row" fxLayoutGap="5px">
                           <mat-form-field appearance="outline" fxFlex="49">
                             <mat-label>{{'setup.security.designation' | translate}}</mat-label>
-                            <input matInput type="text" formControlName="designation" />
+                            <input matInput required type="text" formControlName="designation" />
+                            <mat-error *ngIf="dataSetupSecurityFormControls.designation.invalid">
+                              {{ 'error.field' | translate }}
+                            </mat-error>
                           </mat-form-field>
                           <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="49">
                             <mat-label>{{'setup.security.department' | translate}}</mat-label>
-                            <input matInput type="text" formControlName="department" />
+                            <input matInput required type="text" formControlName="department" />
+                            <mat-error *ngIf="dataSetupSecurityFormControls.department.invalid">
+                              {{ 'error.field' | translate }}
+                            </mat-error>
                           </mat-form-field>
                         </div>
                         <div fxLayout="row" class="row" fxLayoutGap="5px">
                           <mat-form-field appearance="outline" fxFlex>
                             <mat-label>{{'setup.security.email' | translate}}</mat-label>
-                            <input matInput type="text" formControlName="email" />
+                            <input matInput required type="text" formControlName="email" />
+                            <mat-error *ngIf="dataSetupSecurityFormControls.email.invalid">
+                              {{ 'error.field' | translate }}
+                            </mat-error>
                           </mat-form-field>
                         </div>
                         <div fxLayout="row" class="row" fxLayoutGap="5px">
                           <mat-form-field appearance="outline" fxFlex="49">
                             <mat-label>{{'setup.security.telephone' | translate}}</mat-label>
-                            <input matInput type="text" formControlName="telephone" />
+                            <input matInput required type="text" formControlName="telephone" />
+                            <mat-error *ngIf="dataSetupSecurityFormControls.telephone.invalid">
+                              {{ 'error.field' | translate }}
+                            </mat-error>
                           </mat-form-field>
                         </div>
                         <div class="pale-border-box">

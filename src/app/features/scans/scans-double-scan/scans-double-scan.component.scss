@@ -6,38 +6,74 @@
   align-items: center;
   display: flex;
   justify-content: center;
-}
-
-
-@media (max-width:767.99px) {
-  .image-container {
-    padding: 21px 4px;
-    border-radius: 10%;
-    width: 64%;
+  mat-icon {
+    font-size: 59px;
+    margin-right: 36px;
+    margin-top: -21px;
+    margin-bottom: 17px;
   }
 }
 
-@media (min-width:768.2px) {
+@media (max-width: 767.99px) {
   .image-container {
-    padding: 33px 3px;
-    border-radius: 10%;
+    padding: 22px 16px;
+    border-radius: 29px 29px 29px 29px;
+    width: 100%;
+  }
+
+  .content {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    mat-icon {
+      font-size: 53px;
+      margin-right: 29px;
+      margin-top: -10px;
+      margin-bottom: 26px;
+    }
+  }
+
+}
+
+@media (min-width: 768.2px) {
+  .image-container {
+    padding: 36px 3px;
+    border-radius: 36px 38px 36px 38px;
     width: 50%;
   }
+
+  // .content {
+  //   align-items: center;
+  //   display: flex;
+  //   justify-content: center;
+  //   mat-icon {
+  //     font-size: 72px;
+  //     margin-right: 46px;
+  //     margin-top: -29px;
+  //     margin-bottom: 28px;
+  //   }
+  // }
+
 }
 
-
-
 .mt-sm {
-  @media (max-width:768px) {
+  @media (max-width: 768px) {
     margin-top: 37px;
   }
 }
 
 .badge {
   right: 10px;
+  height: 34px !important;
+  width: 34px !important;
   position: relative;
   top: -14px;
 }
+
+::ng-deep .mat-mini-fab .mat-button-wrapper{
+  padding-top: 0;
+}
+
 
 .hide {
   opacity: 0 !important;

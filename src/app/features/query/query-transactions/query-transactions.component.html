@@ -8,7 +8,7 @@
             <div>
                 <mat-card>
                     <mat-card-content>
-                        <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                        <div fxLayout="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
                             <div fxLayout="row" fxLayoutGap="5px" fxFlex>
                                 <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm="50">
                                     <mat-label>{{'query.transaction.receipt.warehouse' | translate }}</mat-label>
@@ -28,7 +28,7 @@
                                 </mat-form-field>
                             </div>
                         </div>
-                        <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                        <div fxLayout="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
                             <div fxLayout="row" fxLayoutGap="5px" fxFlex>
                                 <mat-form-field appearance="outline" fxFlex="60" fxFlex.lt-sm="50">
                                     <mat-label>{{'query.transaction.receipt.item' | translate}}</mat-label>
@@ -46,7 +46,7 @@
                                 </mat-form-field>
                             </div>
                             <div class="second-column" fxLayout="row" fxLayoutGap="5px" fxFlex="33">
-                                <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="50">
+                                <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm>
                                     <mat-label>{{'query.transaction.receipt.poRefNo' | translate}}</mat-label>
                                     <input matInput type="text" required formControlName="poRefNo" />
                                     <mat-error *ngIf="receiptFormControls.poRefNo.invalid">
@@ -55,7 +55,7 @@
                                 </mat-form-field>
                             </div>
                         </div>
-                        <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                        <div fxLayout="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
                             <div fxLayout="row" fxLayoutGap="5px" fxFlex>
                                 <mat-form-field appearance="outline" fxFlex="60" fxFlex.lt-sm="50">
                                     <mat-label>{{'query.transaction.receipt.origin' | translate }}</mat-label>
@@ -75,7 +75,7 @@
                                 </mat-form-field>
                             </div>
                             <div class="second-column" fxLayout="row" fxLayoutGap="5px" fxFlex="33">
-                                <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="50">
+                                <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm>
                                     <mat-label>{{'query.transaction.receipt.grn' | translate}}</mat-label>
                                     <input matInput type="text" required formControlName="grn" />
                                     <mat-error *ngIf="receiptFormControls.grn.invalid">
@@ -84,7 +84,7 @@
                                 </mat-form-field>
                             </div>
                         </div>
-                        <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                        <div fxLayout="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
                             <div fxLayout="row" fxLayoutGap="5px" fxFlex>
                                 <mat-form-field appearance="outline" fxFlex="60" fxFlex.lt-sm="50">
                                     <mat-label>{{ 'query.transaction.receipt.receiptFrom' | translate }}</mat-label>
@@ -110,7 +110,7 @@
                                 </mat-form-field>
                             </div>
                             <div class="second-column" fxLayout="row" fxLayoutGap="5px" fxFlex="33">
-                                <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="50">
+                                <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm>
                                     <mat-label>{{'query.transaction.receipt.stock' | translate }}</mat-label>
                                     <mat-select disableOptionCentering panelClass="slim-select-field" type="text"
                                         readonly formControlName="stock">

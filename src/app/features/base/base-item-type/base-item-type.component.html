@@ -62,7 +62,7 @@
               </div>
             </div>
             <div fxLayout="row" class="row" fxLayoutGap="5px">
-              <mat-form-field appearance="outline" fxFlex >
+              <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="50">
                 <mat-label>{{'base.itemType.consolidateOn' | translate}}</mat-label>
                 <mat-select disableOptionCentering panelClass="slim-select-field" type="text" readonly
                   formControlName="consolidateOn">
@@ -72,7 +72,7 @@
                 <mat-error *ngIf="dataItemTypeControls.consolidateOn.invalid">{{ 'error.field' | translate }}
                 </mat-error>
               </mat-form-field>
-              <mat-form-field appearance="outline" fxFlex >
+              <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="48">
                 <mat-label>{{'base.itemType.defaultPick' | translate }}</mat-label>
                 <mat-select disableOptionCentering panelClass="slim-select-field" type="text" readonly
                   formControlName="defaultPick">

@@ -8,14 +8,15 @@
       <div fxLayout="row" class="data-form">
         <mat-card class="w-100">
           <mat-card-content>
-            <!-- <div class="page-main-button">
+            
+            <div fxHide fxShow.gt-sm class="page-import-export-button smaller-button-container-40">
               <button mat-raised-button color="primary" type="submit">
                 <mat-icon>cloud_upload</mat-icon>
               </button>
               <button mat-raised-button color="primary" type="submit">
                 <mat-icon>cloud_download</mat-icon>
               </button>
-            </div> -->
+            </div>
 
             <mat-tab-group #baseLocationDataTab id="baseLocationDataTab">
               <mat-tab label="Location">
@@ -275,7 +276,7 @@
                           </div>
                         </div>
 
-                        <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                        <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
                           <mat-form-field appearance="outline" fxFlex>
                             <mat-label>{{'base.location.capacity.volumeSafePercentage' | translate}}
                             </mat-label>
@@ -283,7 +284,7 @@
                           </mat-form-field>
                         </div>
 
-                        <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                        <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
                           <mat-form-field appearance="outline" fxFlex>
                             <mat-label>{{'base.location.capacity.weightSafePercentage' | translate}}
                             </mat-label>
@@ -301,7 +302,7 @@
                           </div>
                         </div>
 
-                        <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                        <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
                           <mat-form-field appearance="outline" fxFlex>
                             <mat-label>{{'base.location.capacity.volumeFillPercentage' | translate}}
                             </mat-label>
@@ -309,7 +310,7 @@
                           </mat-form-field>
                         </div>
 
-                        <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                        <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
                           <mat-form-field appearance="outline" fxFlex>
                             <mat-label>{{'base.location.capacity.weightFillPercentage' | translate}}
                             </mat-label>
@@ -328,6 +329,18 @@
       </div>
       <mat-card class="form-action-section">
         <mat-card-content>
+
+          <div fxLayout.gt-sm="row" fxLayoutAlign="space-between" class="page-import-bottom">
+            <div fxShow fxHide.gt-sm fxLayout.gt-sm="row" class="page-import-export-button smaller-button-container-40">
+              <button mat-raised-button color="primary" type="submit">
+                <mat-icon>cloud_upload</mat-icon>
+              </button>
+              <button mat-raised-button color="primary" type="submit">
+                <mat-icon>cloud_download</mat-icon>
+              </button>
+            </div>
+          </div>
+
           <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="30px" fxLayoutAlign="space-between center">
             <div fxFlexOrder.lt-md="2">
               <ibe-data-audit insertedBy=""></ibe-data-audit>

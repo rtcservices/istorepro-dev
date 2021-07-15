@@ -1,4 +1,4 @@
-@import "../../../../assets/scss/variables.scss";
+@import "../../../../../../assets/scss/variables.scss";
 .form-import {
   margin-top: 0.5rem;
   // right: 0;
@@ -16,6 +16,14 @@
 .mat-column-action {
   width: 50px;
 }
+
+.mt {
+  margin-top: 10px !important;
+}
+.text-center {
+  text-align: center !important;
+}
+
 .company-logo {
   img {
     cursor: pointer;
@@ -78,8 +86,7 @@ select {
   padding-top: 6px;
 }
 
-.input-group-title,
-.prefix-data {
+.input-group-title {
   min-width: 83px;
 }
 
@@ -111,8 +118,9 @@ button[mat-dialog-close] {
   overflow-x: auto !important;
 }
 
+
 .lookup-column {
-  ::ng-deep .mat-form-field-wrapper {
+   ::ng-deep .mat-form-field-wrapper {
     padding-bottom: 0em;
   }
   mat-form-field {
@@ -122,35 +130,16 @@ button[mat-dialog-close] {
   }
 }
 
-.data-form {
-  mat-form-field {
-    ::ng-deep .mat-form-field-wrapper {
-      @include breakpoint(mobileonly) {
-        padding-bottom: 0em !important;
-      }
-    }
+@media (min-width:768px) {
+  .pad-top {
+    text-align: center;
+    padding-top: 40px;
   }
 }
 
-.first-row-section {
-  margin-bottom: 0px !important;
-  mat-form-field {
-    ::ng-deep .mat-form-field-wrapper {
-      padding-bottom: 20px !important;
-    }
+@media (max-width:768px) {
+  .pad-top {
+    text-align: center;
   }
 }
 
-.second-row-section {
-  mat-form-field {
-    ::ng-deep .mat-form-field-wrapper {
-      padding-bottom: 18px !important;
-    }
-  }
-}
-
-.page-import-bottom{
-  @include breakpoint(mobileonly) {
-    margin-bottom : 38px !important;
-  }
-}

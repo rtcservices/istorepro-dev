@@ -6,6 +6,8 @@ import { RoutinesInventoryAuditComponent } from './routines-inventory-audit/rout
 import { RoutinesStockAdjustComponent } from './routines-stock-adjust/routines-stock-adjust.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { RiAssignOperatorDialogComponent } from './routines-inventory-audit/dialogs/ri-assign-operator-dialog/ri-assign-operator-dialog.component';
+import { RsaItemDialogComponent } from './routines-stock-adjust/dialogs/rsa-item-dialog/rsa-item-dialog.component';
+import { RsaOwnerDialogComponent } from './routines-stock-adjust/dialogs/rsa-owner-dialog/rsa-owner-dialog.component';
 
 
 @NgModule({
@@ -13,7 +15,9 @@ import { RiAssignOperatorDialogComponent } from './routines-inventory-audit/dial
   
     RoutinesInventoryAuditComponent,
        RoutinesStockAdjustComponent,
-       RiAssignOperatorDialogComponent
+       RiAssignOperatorDialogComponent,
+       RsaItemDialogComponent,
+       RsaOwnerDialogComponent
   ],
   imports: [
     CommonModule,

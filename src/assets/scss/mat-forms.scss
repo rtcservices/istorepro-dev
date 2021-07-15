@@ -1,9 +1,7 @@
-@import './variables.scss';
-.filter-container {
-  padding-bottom: 0.5rem;
-}
+@import "./variables.scss";
+
 .search-container {
-  padding-top: 0px;
+  padding: 5px 16px !important;
 }
 .search-table {
   width: 100%;
@@ -51,6 +49,7 @@
     padding-left: 0 0 0 5px;
     margin: 0;
     margin-top: -6px;
+    margin-bottom: 15px !important;
     legend {
       font-size: 10.5px;
       margin: 0;
@@ -94,15 +93,20 @@
 }
 
 .slim-form {
-  .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
-    .mat-form-field-label {
+  .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
     transform: translateY(-1.1em) scale(0.75);
     width: 133.33333%;
     padding-bottom: 2px;
   }
-  .row {
+  .row, .input-row {
     height: 55px;
     font-size: 15px;
+    @include breakpoint(mobileonly) {
+      height: auto;
+    }
+    @include breakpoint(tablet) {
+      height: auto;
+    }
   }
   mat-error {
     float: right;
@@ -188,7 +192,8 @@
 }
 
 .filter-container {
-  .input-row {
+  padding-bottom: 0px !important;
+  .input-row {    
     mat-form-field {
       @include breakpoint(mobileonly) {
         margin-bottom: 0px !important;

@@ -1,123 +1,123 @@
 <button mat-raised-button class="dialog-close" [mat-dialog-close]="true" color="warn">
-    <mat-icon class="close-icon">close</mat-icon>
-  </button>
+  <mat-icon class="close-icon">close</mat-icon>
+</button>
 
+<h1 mat-dialog-title></h1>
+<div mat-dialog-content>
+  <div>
+    <form [formGroup]="GrnForm" fxLayout="column" class="slim-form">
+      <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+        <fieldset class="read-only-input" fxFlex.gt-sm="50">
+          <legend>{{ 'operations.LocationManagement.warehouse' | translate }}</legend>
+          <label>{{ GrnFormControls.warehouse.value }}</label>
+        </fieldset>
+        <mat-form-field appearance="outline" fxFlex.gt-sm="25">
+          <mat-label>{{'operations.LocationManagement.owner' | translate }}</mat-label>
+          <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="owner">
+          </mat-select>
+          <mat-error *ngIf="GrnFormControls.owner.invalid">{{
+            'error.field' | translate
+            }}</mat-error>
+        </mat-form-field>
 
-  <h1 mat-dialog-title></h1>
-  <div mat-dialog-content>
-    <div >
-        <form [formGroup]="GrnForm" fxLayout="column" class="slim-form">
-          <div fxLayout.gt-sm="row" fxLayout.lt-sm="column"  fxLayoutGap="5px">
-            <fieldset class="read-only-input"  fxFlex.gt-sm="50">
-                <legend>{{ 'operations.LocationManagement.warehouse' | translate }}</legend>
-                <label>{{ GrnFormControls.warehouse.value }}</label>
-              </fieldset>
-              <mat-form-field appearance="outline"  fxFlex.gt-sm="25">
-                <mat-label>{{'operations.LocationManagement.owner' | translate  }}</mat-label>
-                <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="owner">
-                </mat-select>
-                <mat-error *ngIf="GrnFormControls.owner.invalid">{{
-                                  'error.field' | translate
-                                  }}</mat-error>
-              </mat-form-field>
+        <mat-form-field appearance="outline" fxFlex.gt-sm="25">
+          <mat-label>{{
+            'operations.LocationManagement.grn' | translate
+            }}</mat-label>
+          <input matInput type="text" formControlName="grn" />
+          <mat-error *ngIf="GrnFormControls.grn.invalid">
+            {{ 'error.field' | translate }}</mat-error>
+        </mat-form-field>
 
-            <mat-form-field appearance="outline"  fxFlex.gt-sm="25">
-              <mat-label>{{
-                    'operations.LocationManagement.grn' | translate
-                    }}</mat-label>
-              <input matInput type="text" formControlName="grn" />
-              <mat-error *ngIf="GrnFormControls.grn.invalid">
-                {{ 'error.field' | translate }}</mat-error>
-            </mat-form-field>
-
-          </div>
-          <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
-
-            <mat-form-field appearance="outline" fxFlex fxFlex.gt-sm="10">
-                <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="dateoperator">
-                  <mat-option>></mat-option>
-                  <mat-option>
-                    <</mat-option> <mat-option>>=
-                  </mat-option>
-                  <mat-option>
-                    <=</mat-option> <mat-option>
-                      <>
-                  </mat-option>
-                  <mat-option>=</mat-option>
-                </mat-select>
-                <mat-error *ngIf="GrnFormControls.dateoperator.invalid">{{
-                                'error.field' | translate
-                                }}</mat-error>
-              </mat-form-field>
-              <mat-form-field appearance="outline" fxFlex fxFlex.gt-sm="40">
-                <mat-label>{{
-                      'query.Document.date' | translate
-                      }}</mat-label>
-                <input formControlName="date" matInput [matDatepicker]="picker1">
-                <mat-datepicker-toggle matSuffix [for]="picker1">
-                  <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
-                </mat-datepicker-toggle>
-                <mat-datepicker #picker1></mat-datepicker>
-                <mat-error *ngIf="GrnFormControls.date.invalid">
-                  {{ 'error.field' | translate }}
-                </mat-error>
-              </mat-form-field>
-
-
-              <mat-form-field appearance="outline" fxFlex fxFlex.gt-sm="25">
-                <mat-label>{{'operations.LocationManagement.po' | translate  }}</mat-label>
-                <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="po">
-                </mat-select>
-                <mat-error *ngIf="GrnFormControls.po.invalid">{{
-                                  'error.field' | translate
-                                  }}</mat-error>
-              </mat-form-field>
-
-            <mat-form-field appearance="outline" fxFlex fxFlex.gt-sm="25">
-              <mat-label>{{
-                    'operations.LocationManagement.item' | translate
-                    }}</mat-label>
-              <input matInput type="text" formControlName="item" />
-              <mat-error *ngIf="GrnFormControls.item.invalid">
-                {{ 'error.field' | translate }}</mat-error>
-            </mat-form-field>
-
-          </div>
-          <div fxLayout.gt-sm="row" fxLayout.lt-sm="column"  fxLayoutGap="5px">
-            <mat-form-field appearance="outline" fxFlex.gt-sm="70" fxFlex>
-                <mat-label>{{'operations.LocationManagement.status' | translate  }}</mat-label>
-                <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="status">
-                </mat-select>
-                <mat-error *ngIf="GrnFormControls.status.invalid">{{
-                                  'error.field' | translate
-                                  }}</mat-error>
-              </mat-form-field>
-
-            <div fxFlex.gt-sm="30" fxFlex>
-              <div class="form-three-button-container smaller-button-container-40" fxLayout="row">
-                <button type="button" mat-raised-button color="primary" fxflex>
-                  <mat-icon>search</mat-icon>
-                </button>
-                <button fxflex type="button" (click)="resetGrnForm()" mat-raised-button color="accent">
-                  <mat-icon>restart_alt</mat-icon>
-                </button>
-              </div>
-            </div>
-          </div>
-        </form>
-        <br>
-        <table class="site-table w-100">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>{{ 'operations.LocationManagement.grn' | translate}}</th>
-              <th >{{ 'operations.LocationManagement.date' | translate}}</th>
-              <th >{{ 'operations.LocationManagement.po' | translate}}</th>
-              <th>{{ 'operations.LocationManagement.status' | translate}}</th>
-            </tr>
-          </thead>
-
-        </table>
       </div>
+      <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
 
-    </div>
+        <mat-form-field appearance="outline" fxFlex fxFlex.gt-sm="10">
+          <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="dateoperator">
+            <mat-option>></mat-option>
+            <mat-option>
+              < </mat-option>
+                <mat-option>>=
+                </mat-option>
+                <mat-option>
+                  <= </mat-option>
+                    <mat-option>
+                      <>
+                    </mat-option>
+                    <mat-option>=</mat-option>
+          </mat-select>
+          <mat-error *ngIf="GrnFormControls.dateoperator.invalid">{{
+            'error.field' | translate
+            }}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" fxFlex fxFlex.gt-sm="40">
+          <mat-label>{{
+            'query.Document.date' | translate
+            }}</mat-label>
+          <input formControlName="date" matInput [matDatepicker]="picker1">
+          <mat-datepicker-toggle matSuffix [for]="picker1">
+            <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+          <mat-error *ngIf="GrnFormControls.date.invalid">
+            {{ 'error.field' | translate }}
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline" fxFlex fxFlex.gt-sm="25">
+          <mat-label>{{'operations.LocationManagement.po' | translate }}</mat-label>
+          <input matInput type="text" formControlName="po" />
+          <mat-error *ngIf="GrnFormControls.po.invalid">{{
+            'error.field' | translate
+            }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" fxFlex fxFlex.gt-sm="25">
+          <mat-label>{{
+            'operations.LocationManagement.item' | translate
+            }}</mat-label>
+          <input matInput type="text" formControlName="item" />
+          <mat-error *ngIf="GrnFormControls.item.invalid">
+            {{ 'error.field' | translate }}</mat-error>
+        </mat-form-field>
+
+      </div>
+      <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+        <mat-form-field appearance="outline" fxFlex.gt-sm="48.5" fxFlex>
+          <mat-label>{{'operations.LocationManagement.status' | translate }}</mat-label>
+          <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="status">
+          </mat-select>
+          <mat-error *ngIf="GrnFormControls.status.invalid">{{
+            'error.field' | translate
+            }}</mat-error>
+        </mat-form-field>
+
+        <div fxFlex.gt-sm fxFlex>
+          <div class="form-three-button-container smaller-button-container-40" fxLayout="row">
+            <button type="button" mat-raised-button color="primary" fxflex>
+              <mat-icon>search</mat-icon>
+            </button>
+            <button fxflex type="button" (click)="resetGrnForm()" mat-raised-button color="accent">
+              <mat-icon>restart_alt</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <br>
+    <table class="site-table w-100">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>{{ 'operations.LocationManagement.grn' | translate}}</th>
+          <th>{{ 'operations.LocationManagement.date' | translate}}</th>
+          <th>{{ 'operations.LocationManagement.po' | translate}}</th>
+          <th>{{ 'operations.LocationManagement.status' | translate}}</th>
+        </tr>
+      </thead>
+
+    </table>
+  </div>
+
+</div>

@@ -1,31 +1,25 @@
-@import "../../../../assets/scss/variables.scss";
+@import '../../../../../../assets/scss/variables.scss';
+
 .form-import {
   margin-top: 0.5rem;
-  // right: 0;
-  // margin-right: 10px;
-  // margin-top: 30px;
-  // position: absolute;
-  // top: 0;
-  // button {
-  //   color: $site-primary;
-  //   @include breakpoint(mobileonly) {
-  //     font-size: 0.9rem;
-  //   }
-  // }
 }
+
 .mat-column-action {
   width: 50px;
 }
+
 .company-logo {
   img {
     cursor: pointer;
     border: 1px solid $site-light-gray;
     padding: 0.25rem;
+
     &:hover {
       border-color: $site-black;
     }
   }
 }
+
 .license-subscription-alert {
   margin: 0.25rem 0;
 }
@@ -78,8 +72,7 @@ select {
   padding-top: 6px;
 }
 
-.input-group-title,
-.prefix-data {
+.input-group-title {
   min-width: 83px;
 }
 
@@ -92,17 +85,21 @@ select {
 .modal-button {
   margin-top: 0px;
   text-align: right;
+
   button {
     transform: scale(0.7);
   }
 }
+
 .modal-button-bottom {
   margin-top: 10px;
   text-align: right;
+
   button {
     transform: scale(0.7);
   }
 }
+
 button[mat-dialog-close] {
   transform: scale(0.7);
 }
@@ -115,42 +112,10 @@ button[mat-dialog-close] {
   ::ng-deep .mat-form-field-wrapper {
     padding-bottom: 0em;
   }
+
   mat-form-field {
     display: block;
     padding: 0;
     margin: 0;
-  }
-}
-
-.data-form {
-  mat-form-field {
-    ::ng-deep .mat-form-field-wrapper {
-      @include breakpoint(mobileonly) {
-        padding-bottom: 0em !important;
-      }
-    }
-  }
-}
-
-.first-row-section {
-  margin-bottom: 0px !important;
-  mat-form-field {
-    ::ng-deep .mat-form-field-wrapper {
-      padding-bottom: 20px !important;
-    }
-  }
-}
-
-.second-row-section {
-  mat-form-field {
-    ::ng-deep .mat-form-field-wrapper {
-      padding-bottom: 18px !important;
-    }
-  }
-}
-
-.page-import-bottom{
-  @include breakpoint(mobileonly) {
-    margin-bottom : 38px !important;
   }
 }

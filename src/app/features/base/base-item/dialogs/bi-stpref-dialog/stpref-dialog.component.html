@@ -1,8 +1,7 @@
-<mat-dialog-actions align="end">
-  <button mat-raised-button mat-dialog-close color="warn" type="submit">
-    <mat-icon>close</mat-icon>
-  </button>
-</mat-dialog-actions>
+<button mat-raised-button class="dialog-close" [mat-dialog-close]="true" color="warn">
+  <mat-icon class="close-icon">close</mat-icon>
+</button>
+
 
 <h1 mat-dialog-title></h1>
 
@@ -10,7 +9,7 @@
   <form [formGroup]="dataItemStForm" (ngSubmit)="onDataItemStSubmit()" class="slim-form">
     <mat-card>
       <mat-card-content>
-        <div class="input-row" fxLayout="column" fxLayoutGap="5px">
+        <div fxLayout="column" fxLayoutGap="5px">
           <fieldset class="read-only-input" fxFlex>
             <legend>{{ 'base.item.warehouse' | translate }}</legend>
             <label>Warehouse Name</label>
@@ -51,7 +50,7 @@
               </td>
             </tr>
           </tbody>
-        </table>        
+        </table>
       </mat-card-content>
     </mat-card>
     <div class="modal-button-bottom">

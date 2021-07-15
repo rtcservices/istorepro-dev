@@ -1,0 +1,7 @@
+@import "../../../assets/scss/variables.scss";
+
+.page-title {
+    @include breakpoint(mobileonly) {
+        margin-top: 0px;
+    }
+}

@@ -7,7 +7,7 @@
 <div mat-dialog-content>
   <div>
     <form [formGroup]="LocationForm" fxLayout="column" class="slim-form">
-      <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+      <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
         <fieldset class="read-only-input" fxFlex.gt-sm="50">
           <legend>{{ 'operations.LocationManagement.wh' | translate }}</legend>
           <label>{{ LocationFormControls.wh.value }}</label>
@@ -19,7 +19,7 @@
           <mat-error *ngIf="LocationFormControls.code.invalid">{{ 'error.field' | translate  }}</mat-error>
         </mat-form-field>
       </div>
-      <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+      <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
 
         <mat-form-field appearance="outline" fxFlex fxFlex.gt-sm="50">
           <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="type">
