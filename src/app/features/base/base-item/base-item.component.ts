@@ -193,7 +193,6 @@ export class BaseItemComponent implements OnInit {
         '',
         [
           Validators.maxLength(10),
-          Validators.required,
           Validators.pattern(patternsHelper.alphanumeric)
         ]
       ],
@@ -235,7 +234,7 @@ export class BaseItemComponent implements OnInit {
         '',
         [Validators.maxLength(5), Validators.pattern(patternsHelper.telephone)]
       ],
-      pickOption: ['', [Validators.maxLength(10)]]
+      pickOption: ['', [Validators.required, Validators.maxLength(10)]]
     });
   }
   get dataItemFormControls() {
@@ -253,17 +252,17 @@ export class BaseItemComponent implements OnInit {
   get dataItemFormStControls() {
     return this.dataItemStForm.controls;
   }
-  onDataItemStSubmit() {}
+  onDataItemStSubmit() { }
 
   resetItemDataStForm() {
     this.dataItemStForm.reset();
   }
 
-  saveItemData() {}
+  saveItemData() { }
 
-  deleteItemData() {}
+  deleteItemData() { }
 
-  onDataItemSubmit() {}
+  onDataItemSubmit() { }
 
   resetItemDataForm() {
     this.dataItemForm.reset();
@@ -280,7 +279,7 @@ export class BaseItemComponent implements OnInit {
       width: '800px'
     });
   }
- 
+
   createSearchItemForm() {
     this.searchItemForm = this.fb.group({
       item: ['', [Validators.pattern(patternsHelper.alphanumeric)]],

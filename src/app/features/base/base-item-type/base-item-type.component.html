@@ -10,13 +10,13 @@
             <div fxLayout="row" class="row" fxLayoutGap="5px">
               <mat-form-field appearance="outline" fxFlex="20" fxFlex.lt-sm="25">
                 <mat-label>{{'base.itemType.code' | translate}}</mat-label>
-                <input matInput type="text" formControlName="code" />
+                <input matInput required type="text" formControlName="code" />
                 <mat-error *ngIf="dataItemTypeControls.code.invalid">{{ 'error.field' | translate }}
                 </mat-error>
               </mat-form-field>
               <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="70">
                 <mat-label>{{'base.itemType.description' | translate }}</mat-label>
-                <input matInput type="text" formControlName="description" />
+                <input matInput required type="text" formControlName="description" />
                 <mat-error *ngIf="dataItemTypeControls.description.invalid">{{ 'error.field' | translate }}
                 </mat-error>
               </mat-form-field>
@@ -29,6 +29,8 @@
                   <mat-option>Pick 1</mat-option>
                   <mat-option>Pick 2</mat-option>
                 </mat-select>
+                <mat-error *ngIf="dataItemTypeControls.storageType.invalid">{{ 'error.field' | translate }}
+                </mat-error>
               </mat-form-field>
               <div class="read-only-description" fxFlex>
                 <label>{{ dataItemTypeControls.storageType.value }}</label>
@@ -66,8 +68,10 @@
                 <mat-label>{{'base.itemType.consolidateOn' | translate}}</mat-label>
                 <mat-select disableOptionCentering panelClass="slim-select-field" type="text" readonly
                   formControlName="consolidateOn">
-                  <mat-option>Pick 1</mat-option>
-                  <mat-option>Pick 2</mat-option>
+                  <mat-option>Owner</mat-option>
+                  <mat-option>Receipt Date</mat-option>
+                  <mat-option>Expiry Date</mat-option>
+                  <mat-option>BatchNo</mat-option>
                 </mat-select>
                 <mat-error *ngIf="dataItemTypeControls.consolidateOn.invalid">{{ 'error.field' | translate }}
                 </mat-error>

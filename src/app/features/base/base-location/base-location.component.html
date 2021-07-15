@@ -62,7 +62,7 @@
                       </mat-form-field>
                       <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="33">
                         <mat-label>{{'base.location.level' | translate}}</mat-label>
-                        <input matInput type="text" formControlName="level" />
+                        <input matInput required type="text" formControlName="level" />
                         <mat-error *ngIf="dataLocationControls.level.invalid">{{ 'error.field' | translate }}
                         </mat-error>
                       </mat-form-field>
@@ -74,7 +74,9 @@
                       </div>
                       <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="40">
                         <mat-label>{{'base.location.description' | translate}}</mat-label>
-                        <input matInput readonly type="text" formControlName="description" />
+                        <input matInput required readonly type="text" formControlName="description" />
+                        <mat-error *ngIf="dataLocationControls.description.invalid">{{ 'error.field' | translate }}
+                        </mat-error>
                       </mat-form-field>
                       <mat-form-field appearance="outline" fxFlex="33.2" fxFlex.lt-sm="30">
                         <mat-label>{{'base.location.nature' | translate }}</mat-label>

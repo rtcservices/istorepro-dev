@@ -30,7 +30,7 @@
                             <mat-label>{{
                               'base.item.item' | translate
                               }}</mat-label>
-                            <input matInput formControlName="item" />
+                            <input matInput required formControlName="item" />
                             <mat-error *ngIf="dataItemFormControls.item.invalid">{{ 'error.field' | translate }}
                             </mat-error>
                           </mat-form-field>
