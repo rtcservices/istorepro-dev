@@ -8,17 +8,17 @@
       <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
         <mat-form-field appearance="outline" fxFlex.gt-sm="30">
           <mat-label>{{
-                        'operations.HeatMap.warehouse' | translate
-                        }}</mat-label>
+            'operations.HeatMap.warehouse' | translate
+            }}</mat-label>
           <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="warehouse">
           </mat-select>
           <mat-error *ngIf="HeatMapFormControls.warehouse.invalid">{{
-                        'error.field' | translate
-                        }}</mat-error>
+            'error.field' | translate
+            }}</mat-error>
         </mat-form-field>
         <mat-form-field appearance="outline" fxFlex.gt-sm="30">
           <mat-label>{{'operations.HeatMap.po' | translate}}</mat-label>
-          <input matInput type="text" formControlName="po" />
+          <input matInput required type="text" formControlName="po" />
           <mat-error *ngIf="HeatMapFormControls.po.invalid">
             {{ 'error.field' | translate }}
           </mat-error>
@@ -31,7 +31,7 @@
       <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
         <mat-form-field appearance="outline" fxFlex.gt-sm="30">
           <mat-label>{{'operations.HeatMap.item' | translate}}</mat-label>
-          <input matInput type="text" formControlName="item" />
+          <input matInput required type="text" formControlName="item" />
           <mat-error *ngIf="HeatMapFormControls.item.invalid">
             {{ 'error.field' | translate }}
           </mat-error>
@@ -59,9 +59,9 @@
   <mat-card>
     <mat-card-content>
       <div fxLayout="row" class="pale-border-box">
-        <h3 class="red" fxFlex>{{ 'operations.HeatMap.full' | translate  }} (12)</h3>
-        <h3 class="green" fxFlex>{{ 'operations.HeatMap.free' | translate  }} (15)</h3>
-        <h3 class="blue" fxFlex>{{ 'operations.HeatMap.partial' | translate  }} (18)</h3>
+        <h3 class="red" fxFlex>{{ 'operations.HeatMap.full' | translate }} (12)</h3>
+        <h3 class="green" fxFlex>{{ 'operations.HeatMap.free' | translate }} (15)</h3>
+        <h3 class="blue" fxFlex>{{ 'operations.HeatMap.partial' | translate }} (18)</h3>
       </div>
     </mat-card-content>
   </mat-card>
@@ -72,7 +72,8 @@
         </thead>
         <tbody>
           <tr *ngFor="let row of dummydata">
-            <td [ngClass]="{'full': item.status=='full','partial':item.status=='partial','free':item.status=='free'}" *ngFor="let item of row" (click)="openCellDialog()"> {{item.value}}</td>
+            <td [ngClass]="{'full': item.status=='full','partial':item.status=='partial','free':item.status=='free'}"
+              *ngFor="let item of row" (click)="openCellDialog()"> {{item.value}}</td>
           </tr>
 
         </tbody>

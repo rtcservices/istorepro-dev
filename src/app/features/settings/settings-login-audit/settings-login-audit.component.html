@@ -3,59 +3,59 @@
     <div fxFlex>
       <mat-card class="h-100">
         <mat-card-content>
-            <div fxLayoutGap="15px">
-                <div fxLayout="column" fxLayoutGap="15px" fxFlex="60">
-                    <div fxLayout="row" fxLayoutGap="10px" fxFlex>
-                      <mat-form-field appearance="outline" fxFlex="70" fxFlex.lt-sm="60" fxFlex.lt-sm="50">
-                        <mat-label>{{'settings.loginaudit.loginname' | translate}}</mat-label>
-                        <input matInput type="text" required formControlName="loginname" />
-                        <mat-error *ngIf="LoginAuditFormControls.loginname.invalid">
-                          {{ 'error.field' | translate }}
-                        </mat-error>
-                      </mat-form-field>
-                      <mat-form-field appearance="outline" fxFlex="70" fxFlex.lt-sm="60" fxFlex.lt-sm="50">
-                        <mat-label>{{'settings.loginaudit.ip' | translate}}</mat-label>
-                        <input matInput type="text" required formControlName="ip" />
-                        <mat-error *ngIf="LoginAuditFormControls.ip.invalid">
-                          {{ 'error.field' | translate }}
-                        </mat-error>
-                      </mat-form-field>
-                    </div>
-                    <div fxLayout="row" fxLayoutGap="10px" fxFlex>
-                      <mat-form-field appearance="outline" fxFlex="30" fxFlex.lt-sm="40" fxFlex.lt-sm="48.5">
-                        <mat-label>{{ 'settings.loginaudit.datefrom' | translate }}</mat-label>
-                        <input formControlName="datefrom" matInput [matDatepicker]="picker1">
-                        <mat-datepicker-toggle matSuffix [for]="picker1">
-                          <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
-                        </mat-datepicker-toggle>
-                        <mat-datepicker #picker1></mat-datepicker>
-                        <mat-error *ngIf="LoginAuditFormControls.datefrom.invalid">
-                          {{ 'error.field' | translate }}
-                        </mat-error>
-                      </mat-form-field>
-                      <mat-form-field appearance="outline" fxFlex="30" fxFlex.lt-sm="40" fxFlex.lt-sm="48.5">
-                        <mat-label>{{ 'settings.loginaudit.dateto' | translate }}</mat-label>
-                        <input formControlName="dateto" matInput [matDatepicker]="picker2">
-                        <mat-datepicker-toggle matSuffix [for]="picker2">
-                          <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
-                        </mat-datepicker-toggle>
-                        <mat-datepicker #picker2></mat-datepicker>
-                        <mat-error *ngIf="LoginAuditFormControls.dateto.invalid">
-                          {{ 'error.field' | translate }}
-                        </mat-error>
-                      </mat-form-field>
-                    </div>
-                  </div>
-                  <div class="pale-border-box" fxLayout="column" fxLayoutGap="10px" fxFlex="40">
-                    <p><b>{{ 'settings.loginaudit.options' | translate }}</b></p>
-                    <mat-checkbox formControlName="success" fxFlex class="example-margin">
-                      {{'settings.loginaudit.success' | translate}}</mat-checkbox>
-                    <mat-checkbox formControlName="failure" fxFlex class="example-margin">
-                      {{'settings.loginaudit.failure' | translate}}</mat-checkbox>
-
-                  </div>
+          <div fxLayoutGap="15px">
+            <div fxLayout="column" fxLayoutGap="5px" fxFlex="60">
+              <div fxLayout="row" class="input-row" fxLayoutGap="5px" fxFlex>
+                <mat-form-field appearance="outline" fxFlex="70" fxFlex.lt-sm="60" fxFlex.lt-sm="50">
+                  <mat-label>{{'settings.loginaudit.loginname' | translate}}</mat-label>
+                  <input matInput type="text" required formControlName="loginname" />
+                  <mat-error *ngIf="LoginAuditFormControls.loginname.invalid">
+                    {{ 'error.field' | translate }}
+                  </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex="70" fxFlex.lt-sm="60" fxFlex.lt-sm="50">
+                  <mat-label>{{'settings.loginaudit.ip' | translate}}</mat-label>
+                  <input matInput type="text" required formControlName="ip" />
+                  <mat-error *ngIf="LoginAuditFormControls.ip.invalid">
+                    {{ 'error.field' | translate }}
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div fxLayout="row" class="input-row" fxLayoutGap="5px" fxFlex>
+                <mat-form-field appearance="outline" fxFlex="30" fxFlex.lt-sm="40" fxFlex.lt-sm="48.5">
+                  <mat-label>{{ 'settings.loginaudit.datefrom' | translate }}</mat-label>
+                  <input formControlName="datefrom" matInput [matDatepicker]="picker1">
+                  <mat-datepicker-toggle matSuffix [for]="picker1">
+                    <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+                  </mat-datepicker-toggle>
+                  <mat-datepicker #picker1></mat-datepicker>
+                  <mat-error *ngIf="LoginAuditFormControls.datefrom.invalid">
+                    {{ 'error.field' | translate }}
+                  </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex="30" fxFlex.lt-sm="40" fxFlex.lt-sm="48.5">
+                  <mat-label>{{ 'settings.loginaudit.dateto' | translate }}</mat-label>
+                  <input formControlName="dateto" matInput [matDatepicker]="picker2">
+                  <mat-datepicker-toggle matSuffix [for]="picker2">
+                    <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+                  </mat-datepicker-toggle>
+                  <mat-datepicker #picker2></mat-datepicker>
+                  <mat-error *ngIf="LoginAuditFormControls.dateto.invalid">
+                    {{ 'error.field' | translate }}
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="pale-border-box" fxLayout="column" fxLayoutGap="10px" fxFlex="40">
+              <p><b>{{ 'settings.loginaudit.options' | translate }}</b></p>
+              <mat-checkbox formControlName="success" fxFlex class="example-margin">
+                {{'settings.loginaudit.success' | translate}}</mat-checkbox>
+              <mat-checkbox formControlName="failure" fxFlex class="example-margin">
+                {{'settings.loginaudit.failure' | translate}}</mat-checkbox>
 
             </div>
+
+          </div>
 
         </mat-card-content>
       </mat-card>

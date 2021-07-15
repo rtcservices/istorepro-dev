@@ -39,7 +39,7 @@ export class OdShiptoDialogComponent implements OnInit {
   resetShiptoForm() {
     this.ShiptoForm.reset();
   }
-  get dataFormOwnerControls() {
+  get dataShipFormControls() {
     return this.ShiptoForm.controls;
   }
 }

@@ -119,3 +119,9 @@ button[mat-dialog-close] {
     margin: 0;
   }
 }
+
+.slim-form{
+  ::ng-deep .mat-form-field-subscript-wrapper {
+    margin-top: 3px !important;
+  }
+}

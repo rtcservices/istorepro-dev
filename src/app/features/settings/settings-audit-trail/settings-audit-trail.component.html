@@ -4,9 +4,9 @@
       <mat-card class="h-100">
         <mat-card-content>
 
-          <div fxLayout.lt-sm="column" fxLayout.gt-sm="row" fxLayoutGap="15px">
-            <div fxLayout="column" fxLayoutGap="15px" fxFlex.gt-sm="60">
-              <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="10px" fxFlex>
+          <div fxLayout.lt-sm="column" fxLayout.gt-sm="row" fxLayoutGap="5px">
+            <div fxLayout="column" fxLayoutGap="5px" fxFlex.gt-sm="60">
+              <div fxLayout.gt-sm="row"  class="input-row" fxLayout.lt-sm="column" fxLayoutGap="10px" fxFlex>
                 <mat-form-field appearance="outline" fxFlex="30" fxFlex.lt-sm="40" fxFlex.lt-sm="48.5">
                   <mat-label>{{ 'settings.AuditTrail.datefrom' | translate }}</mat-label>
                   <input formControlName="datefrom" matInput [matDatepicker]="picker1">
@@ -31,18 +31,18 @@
                 </mat-form-field>
                 <mat-form-field appearance="outline" fxFlex>
                   <mat-label>{{
-                            'settings.AuditTrail.context' | translate
-                            }}</mat-label>
+                    'settings.AuditTrail.context' | translate
+                    }}</mat-label>
                   <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="context">
                   </mat-select>
                   <mat-error *ngIf="AuditTrailFormControls.context.invalid">{{
-                            'error.field' | translate
-                            }}</mat-error>
+                    'error.field' | translate
+                    }}</mat-error>
                 </mat-form-field>
 
               </div>
               <div fxLayout="row" fxLayoutGap="10px" fxFlex>
-                <mat-form-field appearance="outline" fxFlex >
+                <mat-form-field appearance="outline" fxFlex>
                   <mat-label>{{'settings.AuditTrail.loginname' | translate}}</mat-label>
                   <input matInput type="text" formControlName="loginname" />
                   <mat-error *ngIf="AuditTrailFormControls.loginname.invalid">

@@ -45,7 +45,7 @@ export class OperationsHeatMapComponent implements OnInit {
   ngOnInit(): void {}
   createHeatMapForm() {
     this.HeatMapForm = this.fb.group({
-      warehouse: [''],
+      warehouse: ['', [Validators.required]],
       po: [''],
       rowsplit: [''],
       item: [''],

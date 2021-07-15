@@ -1,3 +1,9 @@
 .overflow-x {
   overflow-x: auto !important;
 }
+
+.slim-form{
+  ::ng-deep .mat-form-field-subscript-wrapper {
+    margin-top: 3px !important;
+  }
+}
