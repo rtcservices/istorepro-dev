@@ -20,6 +20,9 @@
                     <option value="Customer">Customer</option>
                     <option value="Vendor">Vendor</option>
                   </mat-select>
+                   <mat-error *ngIf="routinesInventoryFormControls.warehouse.invalid">{{
+                    'error.field' | translate
+                    }}</mat-error>
                 </mat-form-field>
                 <fieldset class="read-only-input" fxFlex>
                   <legend>{{ 'routines.inventory.ian' | translate }}</legend>
