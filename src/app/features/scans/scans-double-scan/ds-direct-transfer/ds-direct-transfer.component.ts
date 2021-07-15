@@ -72,6 +72,7 @@ export class DsDirectTransferComponent implements OnInit {
   onDirectTransferFormSubmit() {}
   resetDirectTransferForm() {
     this.DirectTransferForm.reset();
+    this.mode='putaway'
   }
    openItemAssistanceDialog() {
     this.dialog.open(DsDirectTransferItemAssistanceDialogComponent, {

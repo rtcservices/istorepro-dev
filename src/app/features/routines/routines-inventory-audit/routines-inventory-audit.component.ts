@@ -57,6 +57,12 @@ export class RoutinesInventoryAuditComponent implements OnInit {
   }
   ngOnInit(): void {
     this.searchDataSource = [...this.dummySearchModel];
+    this.titleService.changeTitleTranslated('menu.routinesInventoryAudit');
+    const language = this.siteTranslateService.defaultLanguage;
+    this.translate.use(language).subscribe((res) => {
+      this.formErrorTranslated = this.translate.instant('error.form');
+      this.filterErrorTranslated = this.translate.instant('error.filter');
+    });
   }
 
 

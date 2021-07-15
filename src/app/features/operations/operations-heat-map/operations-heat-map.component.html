@@ -11,6 +11,7 @@
             'operations.HeatMap.warehouse' | translate
             }}</mat-label>
           <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="warehouse">
+            <mat-option value="warehouse">{{'operations.HeatMap.warehouse' | translate}}</mat-option>
           </mat-select>
           <mat-error *ngIf="HeatMapFormControls.warehouse.invalid">{{
             'error.field' | translate
@@ -18,7 +19,7 @@
         </mat-form-field>
         <mat-form-field appearance="outline" fxFlex.gt-sm="30">
           <mat-label>{{'operations.HeatMap.po' | translate}}</mat-label>
-          <input matInput required type="text" formControlName="po" />
+          <input matInput  type="text" formControlName="po" />
           <mat-error *ngIf="HeatMapFormControls.po.invalid">
             {{ 'error.field' | translate }}
           </mat-error>
@@ -31,7 +32,7 @@
       <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
         <mat-form-field appearance="outline" fxFlex.gt-sm="30">
           <mat-label>{{'operations.HeatMap.item' | translate}}</mat-label>
-          <input matInput required type="text" formControlName="item" />
+          <input matInput  type="text" formControlName="item" />
           <mat-error *ngIf="HeatMapFormControls.item.invalid">
             {{ 'error.field' | translate }}
           </mat-error>

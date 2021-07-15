@@ -1,9 +1,13 @@
 .hide {
-    display: none !important;
+  display: none !important;
 }
 
-.slim-form{
-    ::ng-deep .mat-form-field-subscript-wrapper {
-      margin-top: 3px !important;
-    }
+.slim-form {
+  ::ng-deep .mat-form-field-subscript-wrapper {
+    margin-top: 3px !important;
   }
+}
+
+.cursor-style {
+  cursor: pointer;
+}

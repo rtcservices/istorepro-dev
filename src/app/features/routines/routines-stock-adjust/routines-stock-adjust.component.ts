@@ -11,6 +11,9 @@ import { LoaderService } from '../../../services/loader.service';
 import { NotificationService } from '../../../services/notification.service';
 import { RsaItemDialogComponent } from './dialogs/rsa-item-dialog/rsa-item-dialog.component';
 import { RsaOwnerDialogComponent } from './dialogs/rsa-owner-dialog/rsa-owner-dialog.component';
+import { TranslateService } from '@ngx-translate/core';
+import { TitleService } from 'src/app/services/title.service';
+import { SiteTranslateService } from 'src/app/services/site-translate.service';
 
 @Component({
   selector: 'ibe-routines-stock-adjust',
@@ -81,6 +84,9 @@ export class RoutinesStockAdjustComponent implements OnInit {
     private fb: FormBuilder,
     public dialog: MatDialog,
     private loader: LoaderService,
+    private siteTranslateService: SiteTranslateService,
+    private translate: TranslateService,
+    private titleService: TitleService,
     private notification: NotificationService
   ) {
     this.createDataStockAdjustForm();
@@ -89,6 +95,12 @@ export class RoutinesStockAdjustComponent implements OnInit {
 
   ngOnInit(): void {
     this.StockAdjustDataSource = this.dummyStockAdjustModel;
+    this.titleService.changeTitleTranslated('menu.routinesInventoryAudit');
+    const language = this.siteTranslateService.defaultLanguage;
+    this.translate.use(language).subscribe((res) => {
+      this.formErrorTranslated = this.translate.instant('error.form');
+      this.filterErrorTranslated = this.translate.instant('error.filter');
+    });
   }
 
   createDataStockAdjustForm() {

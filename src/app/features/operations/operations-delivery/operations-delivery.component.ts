@@ -10,6 +10,9 @@ import {
 import { LoaderService } from '../../../services/loader.service';
 import { NotificationService } from '../../../services/notification.service';
 import { OdShiptoDialogComponent } from './dialogs/od-shipto-dialog/od-shipto-dialog.component';
+import { TitleService } from 'src/app/services/title.service';
+import { TranslateService } from '@ngx-translate/core';
+import { SiteTranslateService } from 'src/app/services/site-translate.service';
 @Component({
   selector: 'ibe-operations-delivery',
   templateUrl: './operations-delivery.component.html',
@@ -89,6 +92,9 @@ export class OperationsDeliveryComponent implements OnInit {
     private fb: FormBuilder,
     public dialog: MatDialog,
     private loader: LoaderService,
+    private siteTranslateService: SiteTranslateService,
+    private translate: TranslateService,
+    private titleService: TitleService,
     private notification: NotificationService
   ) {
     this.createDataDeliveryForm();
@@ -97,6 +103,12 @@ export class OperationsDeliveryComponent implements OnInit {
 
   ngOnInit(): void {
     this.deliveryDataSource = this.dummydeliveryModel;
+    this.titleService.changeTitleTranslated('menu.operationsDelivery');
+    const language = this.siteTranslateService.defaultLanguage;
+    this.translate.use(language).subscribe((res) => {
+      this.formErrorTranslated = this.translate.instant('error.form');
+      this.filterErrorTranslated = this.translate.instant('error.filter');
+    });
   }
 
   createDataDeliveryForm() {
@@ -116,16 +128,13 @@ export class OperationsDeliveryComponent implements OnInit {
       item: ['', [Validators.required]],
       po: ['', [Validators.required]],
       batchnumber: ['', [Validators.required]],
-      receiptdateoperator: [
-        '',
-        [Validators.pattern(patternsHelper.alphanumeric)]
-      ],
-      receiptdate: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
-      expdateoperator: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
-      expdate: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
+      receiptdateoperator: [''],
+      receiptdate: [''],
+      expdateoperator: [''],
+      expdate: [''],
       pick: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       qty: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
-      reworkonly: ['', [Validators.pattern(patternsHelper.alphanumeric)]]
+      reworkonly: ['']
     });
   }
 
@@ -169,22 +178,18 @@ export class OperationsDeliveryComponent implements OnInit {
       this.notification.error(this.formErrorTranslated);
       return;
     }
-    const warehouse: string =
-      this.searchDeliveryForm.get('warehouse')?.value || '';
+    const warehouse: string = this.searchDeliveryForm.get('warehouse')?.value || '';
     const owner: string = this.searchDeliveryForm.get('owner')?.value || '';
     const drn: string = this.searchDeliveryForm.get('drn')?.value || '';
-    const dateoperator: string =
-      this.searchDeliveryForm.get('dateoperator')?.value || '';
-    const deliverydate: string =
-      this.searchDeliveryForm.get('deliverydate')?.value || '';
+    const dateoperator: string = this.searchDeliveryForm.get('dateoperator')?.value || '';
+    const deliverydate: string = this.searchDeliveryForm.get('deliverydate')?.value || '';
     const po: string = this.searchDeliveryForm.get('po')?.value || '';
     const doc: string = this.searchDeliveryForm.get('do')?.value || '';
     const so: string = this.searchDeliveryForm.get('so')?.value || '';
     const status: string = this.searchDeliveryForm.get('status')?.value || '';
     const item: string = this.searchDeliveryForm.get('item')?.value || '';
-    const shipto: string = this.searchDeliveryForm.get('item')?.value || '';
-    const batchnumber: string =
-      this.searchDeliveryForm.get('item')?.value || '';
+    const shipto: string = this.searchDeliveryForm.get('shipto')?.value || '';
+    const batchnumber: string = this.searchDeliveryForm.get('batchnumber')?.value || '';
     if (
       warehouse.trim() === '' &&
       owner.trim() === '' &&

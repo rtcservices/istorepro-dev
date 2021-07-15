@@ -32,7 +32,7 @@
           'scans.doubleScan.location' | translate
           }}</mat-label>
         <input matInput type="text" formControlName="location" />
-        <mat-icon type="button" (click)=" openLocationDialog()" matSuffix>search</mat-icon>
+        <mat-icon class="cursor-style" type="button" (click)=" openLocationDialog()" matSuffix>search</mat-icon>
         <mat-error *ngIf="putawayFormControls.location.invalid">
           {{ 'error.field' | translate }}</mat-error>
       </mat-form-field>
@@ -50,7 +50,7 @@
           'scans.doubleScan.item' | translate
           }}</mat-label>
         <input matInput type="text" formControlName="item" />
-        <mat-icon type="button" (click)="openItemAssistanceDialog()" matSuffix>search</mat-icon>
+        <mat-icon type="button"  class="cursor-style" (click)="openItemAssistanceDialog()" matSuffix>search</mat-icon>
         <mat-error *ngIf="putawayFormControls.item.invalid">
           {{ 'error.field' | translate }}</mat-error>
       </mat-form-field>

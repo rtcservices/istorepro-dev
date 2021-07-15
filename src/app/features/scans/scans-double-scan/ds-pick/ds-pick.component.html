@@ -34,7 +34,7 @@
         <mat-error *ngIf="pickFormControls.location.invalid">
           {{ 'error.field' | translate }}</mat-error>
       </mat-form-field>
-      
+
       <mat-form-field [ngClass]="{'hide': type!='grn'}" appearance="outline" fxFlex>
         <mat-label>{{
           'scans.doubleScan.grnsl' | translate
@@ -48,7 +48,7 @@
           'scans.doubleScan.item' | translate
           }}</mat-label>
         <input matInput type="text" formControlName="item" />
-        <mat-icon (click)="openItemAssistanceDialog()" type="button" matSuffix>search</mat-icon>
+        <mat-icon (click)="openItemAssistanceDialog()"  class="cursor-style" type="button" matSuffix>search</mat-icon>
         <mat-error *ngIf="pickFormControls.item.invalid">
           {{ 'error.field' | translate }}</mat-error>
       </mat-form-field>
@@ -75,7 +75,7 @@
           <button type="button" mat-raised-button color="primary" fxflex>
             <mat-icon>add</mat-icon>
           </button>
-          <button fxflex type="button" (click)="resetPickForm()" mat-raised-button color="accent">
+          <button fxflex type="button"  class="cursor-style" (click)="resetPickForm()" mat-raised-button color="accent">
             <mat-icon>restart_alt</mat-icon>
           </button>
         </div>

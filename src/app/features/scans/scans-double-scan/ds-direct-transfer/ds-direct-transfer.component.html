@@ -35,7 +35,7 @@
       <mat-form-field appearance="outline" class="input-row" fxFlex>
         <mat-label>{{ 'scans.doubleScan.location' | translate }}</mat-label>
         <input matInput type="text" formControlName="location" />
-        <mat-icon type="button" (click)="openLocationDialog()" matSuffix>search</mat-icon>
+        <mat-icon type="button" (click)="openLocationDialog()" class="cursor-style" matSuffix>search</mat-icon>
         <mat-error *ngIf="DirectTransferFormControls.location.invalid">
           {{ 'error.field' | translate }}</mat-error>
       </mat-form-field>
@@ -48,7 +48,7 @@
       <mat-form-field [ngClass]="{'hide': type!='item'}" class="input-row" appearance="outline" fxFlex>
         <mat-label>{{ 'scans.doubleScan.item' | translate }}</mat-label>
         <input matInput type="text" formControlName="item" />
-        <mat-icon type="button" (click)="openItemAssistanceDialog()" matSuffix>search</mat-icon>
+        <mat-icon type="button" (click)="openItemAssistanceDialog()" class="cursor-style" matSuffix>search</mat-icon>
         <mat-error *ngIf="DirectTransferFormControls.item.invalid">
           {{ 'error.field' | translate }}</mat-error>
       </mat-form-field>
