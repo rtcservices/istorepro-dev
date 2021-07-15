@@ -7,8 +7,8 @@
       <div>
         <mat-card class="filter-content">
           <mat-card-content>
-            <div fxLayout="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
-              <div fxLayout="row" fxLayoutGap="5px" fxFlex>
+            <div fxLayout="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+              <div fxLayout="row" fxLayoutGap="10px" fxFlex>
                 <mat-form-field appearance="outline" fxFlex="70" fxFlex.lt-sm="60" fxFlex.lt-sm="50">
                   <mat-label>{{'operations.receipt.warehouse' | translate}}</mat-label>
                   <mat-select disableOptionCentering panelClass="slim-select-field" type="text" readonly
@@ -16,6 +16,9 @@
                     <mat-option>Pick 1</mat-option>
                     <mat-option>Pick 2</mat-option>
                   </mat-select>
+                  <mat-error *ngIf="dataReceiptFormControls.warehouse.invalid">
+                    {{ 'error.field' | translate }}
+                  </mat-error>
                 </mat-form-field>
                 <mat-form-field appearance="outline" fxFlex="30" fxFlex.lt-sm="40" fxFlex.lt-sm="48.5">
                   <mat-label>{{ 'operations.receipt.receiptDate' | translate }}</mat-label>
@@ -52,7 +55,7 @@
                 </mat-form-field>
                 <mat-form-field appearance="outline" fxFlex="30" fxFlex.lt-sm="48.5">
                   <mat-label>{{'operations.receipt.po' | translate}}</mat-label>
-                  <input matInput type="text" required formControlName="po" />
+                  <input matInput type="text" formControlName="po" />
                   <mat-icon matSuffix>search</mat-icon>
                   <mat-error *ngIf="dataReceiptFormControls.po.invalid">
                     {{ 'error.field' | translate }}
@@ -62,7 +65,7 @@
               <div class="second-column" fxLayout="row" fxLayoutGap="5px" fxFlex>
                 <mat-form-field appearance="outline" fxFlex>
                   <mat-label>{{'operations.receipt.remarks' | translate}}</mat-label>
-                  <input matInput type="text" required formControlName="remarks" />
+                  <input matInput type="text" formControlName="remarks" />
                   <mat-error *ngIf="dataReceiptFormControls.remarks.invalid">
                     {{ 'error.field' | translate }}
                   </mat-error>
@@ -76,7 +79,7 @@
               <button type="button" (click)="openLabelDialog()" id="receiptLabel" mat-raised-button color="primary">
                 <mat-icon>new_label</mat-icon>
               </button>
-              <button id="receiptGrn" mat-raised-button color="primary">
+              <button type="button" id="receiptGrn" mat-raised-button color="primary">
                 <mat-icon>print</mat-icon>
               </button>
             </div>
@@ -169,10 +172,10 @@
                     <input type="number" class="w-100">
                   </td>
                   <td class="two-button-column" style="width: 90px;">
-                    <button mat-mini-fab color="primary" class="mdb-30">
+                    <button type="button" mat-mini-fab color="primary" class="mdb-30">
                       <mat-icon>edit</mat-icon>
                     </button>
-                    <button mat-mini-fab color="warn" class="mdb-30">
+                    <button type="button" mat-mini-fab color="warn" class="mdb-30">
                       <mat-icon>remove</mat-icon>
                     </button>
                   </td>

@@ -63,3 +63,7 @@
 .filter-content{
   padding-bottom: 5px !important;
 }
+
+::ng-deep .mat-form-field-subscript-wrapper {
+  margin-top: 2px !important;
+}

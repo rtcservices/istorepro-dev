@@ -136,16 +136,22 @@ button[mat-dialog-close] {
   margin-bottom: 0px !important;
   mat-form-field {
     ::ng-deep .mat-form-field-wrapper {
-      padding-bottom: 20px !important;
+      padding-bottom: 10px !important;
     }
+  }
+  ::ng-deep .mat-form-field-subscript-wrapper {
+    margin-top: 10px !important;
   }
 }
 
 .second-row-section {
   mat-form-field {
     ::ng-deep .mat-form-field-wrapper {
-      padding-bottom: 18px !important;
+      padding-bottom: 10px !important;
     }
+  }
+  ::ng-deep .mat-form-field-subscript-wrapper {
+    margin-top: 10px !important;
   }
 }
 
