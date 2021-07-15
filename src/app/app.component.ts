@@ -35,7 +35,7 @@ export class AppComponent {
       localStorage.setItem('user-location', JSON.stringify(startPos));
     };
     const geoError = (error: any) => {
-      console.log('Error occurred. Error code: ' + error);
+      // console.log('Error occurred. Error code: ' + error.code);
       // error.code can be:
       //   0: unknown error
       //   1: permission denied

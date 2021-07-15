@@ -73,10 +73,11 @@
           <mat-card-content>
             <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
 
-              <h3 fxFlex="90%"> Drag a column header here to group by that column</h3>
-
-              <div fxFlex="10%" class="form-three-button-container">
-                <button mat-raised-button color="warn">
+              <div fxFlex class="form-three-button-container">
+                <button mat-raised-button color="primary" type="button">
+                  <mat-icon>search</mat-icon>
+                </button>
+                <button mat-raised-button color="accent" type="button">
                   <mat-icon>loop</mat-icon>
                 </button>
               </div>
@@ -106,25 +107,4 @@
       </mat-card-content>
     </mat-card>
   </ng-container>
-
-  <mat-card>
-    <mat-card-content>
-      <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="30px" fxLayoutAlign="space-between center">
-        <div fxFlexOrder.lt-md="2">
-          <ibe-data-audit insertedBy=""></ibe-data-audit>
-        </div>
-        <div class="form-three-button-container" fxFlexOrder.lt-md="1">
-          <button mat-raised-button color="primary" type="submit" (click)="saveAuditTrailFormData()">
-            <mat-icon>task_alt</mat-icon>
-          </button>
-          <button mat-raised-button color="accent" type="reset" (click)="resetAuditTrailForm()">
-            <mat-icon>loop</mat-icon>
-          </button>
-        </div>
-      </div>
-    </mat-card-content>
-  </mat-card>
-
-
-
 </form>
