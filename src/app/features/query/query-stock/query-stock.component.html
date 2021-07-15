@@ -8,7 +8,7 @@
             <div>
                 <mat-card>
                     <mat-card-content>
-                        <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                        <div fxLayout="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
                             <div fxLayout="row" fxLayoutGap="5px" fxFlex>
                                 <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm="50">
                                     <mat-label>{{'query.stock.warehouse' | translate}}</mat-label>
@@ -27,7 +27,7 @@
                                 </mat-form-field>
                             </div>
                         </div>
-                        <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                        <div fxLayout="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
                             <div fxLayout="row" fxLayoutGap="5px" fxFlex>
                                 <mat-form-field appearance="outline" fxFlex="60" fxFlex.lt-sm="50">
                                     <mat-label>{{'query.stock.item' | translate}}</mat-label>
@@ -45,7 +45,7 @@
                                 </mat-form-field>
                             </div>
                             <div class="second-column" fxLayout="row" fxLayoutGap="5px" fxFlex="33">
-                                <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="50">
+                                <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm>
                                     <mat-label>{{'query.stock.poRefNo' | translate}}</mat-label>
                                     <input matInput type="text" required formControlName="poRefNo" />
                                     <mat-error *ngIf="dataStockFormControls.poRefNo.invalid">
@@ -54,7 +54,7 @@
                                 </mat-form-field>
                             </div>
                         </div>
-                        <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                        <div fxLayout="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
                             <div fxLayout="row" fxLayoutGap="5px" fxFlex>
                                 <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm="60" fxFlex.lt-sm="50">
                                     <mat-label>{{ 'query.stock.expiryFrom' | translate }}</mat-label>

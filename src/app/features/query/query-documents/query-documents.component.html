@@ -1,6 +1,6 @@
 <div class="page-title">
-    <h2>{{'menu.queryDocuments' | translate}}</h2>
-  </div>
+  <h2>{{'menu.queryDocuments' | translate}}</h2>
+</div>
 
 <form fxLayout="column" [formGroup]="DocumentForm" class="slim-form page-content">
   <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="stretch" fxLayoutGap="5px" class="data-form">
@@ -8,9 +8,9 @@
       <mat-card class="h-100">
         <mat-card-content>
 
-          <div fxLayout.lt-sm="column" fxLayout.gt-sm="row" fxLayoutGap="15px">
-            <div fxLayout="column" fxLayoutGap="15px" fxFlex>
-              <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="10px" fxFlex>
+          <div fxLayout.lt-sm="column" fxLayout.gt-sm="row" fxLayoutGap="10px">
+            <div fxLayout="column" fxLayoutGap="5px" fxFlex>
+              <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
                 <mat-form-field appearance="outline" fxFlex>
                   <mat-label>{{'query.Document.warehouse' | translate}}</mat-label>
                   <input matInput type="text" formControlName="warehouse" />
@@ -19,51 +19,53 @@
                   </mat-error>
                 </mat-form-field>
                 <mat-form-field appearance="outline" fxFlex>
-                    <mat-label>{{
-                                      'query.Document.documenttype' | translate
-                                      }}</mat-label>
-                    <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="documenttype">
-                    </mat-select>
-                    <mat-error *ngIf="DocumentFormControls.documenttype.invalid">{{
-                                      'error.field' | translate
-                                      }}</mat-error>
-                  </mat-form-field>
-                  <mat-form-field appearance="outline" fxFlex>
-                    <mat-label>{{
-                                      'query.Document.documentno' | translate
-                                      }}</mat-label>
-                    <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="documentnumber">
-                    </mat-select>
-                    <mat-error *ngIf="DocumentFormControls.documentnumber.invalid">{{
-                                      'error.field' | translate
-                                      }}</mat-error>
-                  </mat-form-field>
+                  <mat-label>{{
+                    'query.Document.documenttype' | translate
+                    }}</mat-label>
+                  <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="documenttype">
+                  </mat-select>
+                  <mat-error *ngIf="DocumentFormControls.documenttype.invalid">{{
+                    'error.field' | translate
+                    }}</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex>
+                  <mat-label>{{
+                    'query.Document.documentno' | translate
+                    }}</mat-label>
+                  <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="documentnumber">
+                  </mat-select>
+                  <mat-error *ngIf="DocumentFormControls.documentnumber.invalid">{{
+                    'error.field' | translate
+                    }}</mat-error>
+                </mat-form-field>
               </div>
 
-              <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="10px" fxFlex>
+              <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
                 <mat-form-field appearance="outline" fxFlex fxFlex.gt-sm="10">
                   <mat-label>{{
-                                  'query.Document.operator' | translate
-                                  }}</mat-label>
+                    'query.Document.operator' | translate
+                    }}</mat-label>
                   <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="datefromoperator">
                     <mat-option>></mat-option>
                     <mat-option>
-                      <</mat-option> <mat-option>>=
-                    </mat-option>
-                    <mat-option>
-                      <=</mat-option> <mat-option>
-                        <>
-                    </mat-option>
-                    <mat-option>=</mat-option>
+                      < </mat-option>
+                        <mat-option>>=
+                        </mat-option>
+                        <mat-option>
+                          <= </mat-option>
+                            <mat-option>
+                              <>
+                            </mat-option>
+                            <mat-option>=</mat-option>
                   </mat-select>
                   <mat-error *ngIf="DocumentFormControls.datefromoperator.invalid">{{
-                                  'error.field' | translate
-                                  }}</mat-error>
+                    'error.field' | translate
+                    }}</mat-error>
                 </mat-form-field>
                 <mat-form-field appearance="outline" fxFlex fxFlex.gt-sm="22">
                   <mat-label>{{
-                        'query.Document.datefrom' | translate
-                        }}</mat-label>
+                    'query.Document.datefrom' | translate
+                    }}</mat-label>
                   <input formControlName="datefrom" matInput [matDatepicker]="picker1">
                   <mat-datepicker-toggle matSuffix [for]="picker1">
                     <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
@@ -75,24 +77,27 @@
                 </mat-form-field>
                 <mat-form-field appearance="outline" fxFlex fxFlex.gt-sm="10">
                   <mat-label>{{
-                              'query.Document.operator' | translate
-                              }}</mat-label>
+                    'query.Document.operator' | translate
+                    }}</mat-label>
                   <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="datetooperator">
                     <mat-option>></mat-option>
                     <mat-option>
-                      <</mat-option> <mat-option>>=
-                    </mat-option>
-                    <mat-option>
-                      <=</mat-option> <mat-option>
-                        <>
-                    </mat-option>
-                    <mat-option>=</mat-option>
+                      < </mat-option>
+                        <mat-option>
+                          >=
+                        </mat-option>
+                        <mat-option>
+                          <= </mat-option>
+                            <mat-option>
+                              <>
+                            </mat-option>
+                            <mat-option>=</mat-option>
                   </mat-select>
                   <mat-error *ngIf="DocumentFormControls.datetooperator.invalid">{{
-                              'error.field' | translate
-                              }}</mat-error>
+                    'error.field' | translate
+                    }}</mat-error>
                 </mat-form-field>
-                <mat-form-field appearance="outline" fxFlex fxFlex.gt-sm="23" >
+                <mat-form-field appearance="outline" fxFlex fxFlex.gt-sm="23">
                   <mat-label>{{ 'query.Document.dateto' | translate }}</mat-label>
                   <input formControlName="dateto" matInput [matDatepicker]="picker2">
                   <mat-datepicker-toggle matSuffix [for]="picker2">
@@ -104,19 +109,16 @@
                   </mat-error>
                 </mat-form-field>
                 <mat-form-field appearance="outline" fxFlex fxFlex.gt-sm="33">
-                    <mat-label>{{'query.Document.owner' | translate}}</mat-label>
-                    <input matInput type="text"  formControlName="owner" />
-                    <mat-icon matSuffix type="button" (click)="openOwnerDialog()">search</mat-icon>
-                    <mat-error *ngIf="DocumentFormControls.owner.invalid">
-                      {{ 'error.field' | translate }}
-                    </mat-error>
-                  </mat-form-field>
+                  <mat-label>{{'query.Document.owner' | translate}}</mat-label>
+                  <input matInput type="text" formControlName="owner" />
+                  <mat-icon matSuffix type="button" (click)="openOwnerDialog()">search</mat-icon>
+                  <mat-error *ngIf="DocumentFormControls.owner.invalid">
+                    {{ 'error.field' | translate }}
+                  </mat-error>
+                </mat-form-field>
 
               </div>
 
-            <!--   <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="10px" fxFlex>
-
-              </div> -->
             </div>
           </div>
         </mat-card-content>
@@ -155,15 +157,15 @@
               <th class="text-center" colspan="3">{{ 'query.Document.document' | translate}}</th>
               <th class="text-center" colspan="2">{{ 'query.Document.owner' | translate}}</th>
             </tr>
-        <tr>
-          <th class="checkbox-column">
-            <mat-checkbox color="primary"></mat-checkbox>
-          </th>
-          <th >{{ 'query.Document.type' | translate}}</th>
-          <th>{{ 'query.Document.number' | translate}}</th>
-          <th>{{ 'query.Document.date' | translate}} </th>
-          <th>{{ 'query.Document.code' | translate}}</th>
-          <th>{{ 'query.Document.name' | translate}} </th>
+            <tr>
+              <th class="checkbox-column">
+                <mat-checkbox color="primary"></mat-checkbox>
+              </th>
+              <th>{{ 'query.Document.type' | translate}}</th>
+              <th>{{ 'query.Document.number' | translate}}</th>
+              <th>{{ 'query.Document.date' | translate}} </th>
+              <th>{{ 'query.Document.code' | translate}}</th>
+              <th>{{ 'query.Document.name' | translate}} </th>
           </thead>
         </table>
       </mat-card-content>

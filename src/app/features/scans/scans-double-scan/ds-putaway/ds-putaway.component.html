@@ -1,51 +1,54 @@
 <div class="mt-sm">
   <form [formGroup]="putawayForm" fxLayout="column" class="slim-form">
     <div fxLayout="column" fxLayoutGap="5px">
-      <mat-form-field appearance="outline" fxFlex="10" fxFlex.lt-md="34" fxFlex fxFlex.lt-sm="33">
+
+      <mat-form-field appearance="outline" class="input-row" fxFlex="10" fxFlex.lt-md="34" fxFlex fxFlex.lt-sm="33">
         <mat-select [(ngModel)]="type" placeholder="Type" disableOptionCentering panelClass="slim-select-field"
           formControlName="type">
           <mat-option value="item">{{
-                      'scans.doubleScan.item' | translate
-                      }}</mat-option>
+            'scans.doubleScan.item' | translate
+            }}</mat-option>
           <mat-option value="grn">{{
-                      'scans.doubleScan.grn' | translate
-                      }}</mat-option>
+            'scans.doubleScan.grn' | translate
+            }}</mat-option>
         </mat-select>
         <mat-error *ngIf="putawayFormControls.type.invalid">{{
-                    'error.field' | translate
-                    }}</mat-error>
+          'error.field' | translate
+          }}</mat-error>
       </mat-form-field>
-      <mat-form-field appearance="outline" fxFlex>
+
+      <mat-form-field appearance="outline" class="input-row" fxFlex>
         <mat-label>{{
-              'scans.doubleScan.scan' | translate
-              }}</mat-label>
+          'scans.doubleScan.scan' | translate
+          }}</mat-label>
         <input matInput type="text" formControlName="scan" />
         <mat-icon matSuffix type="button">search</mat-icon>
         <mat-error *ngIf="putawayFormControls.scan.invalid">
           {{ 'error.field' | translate }}</mat-error>
       </mat-form-field>
 
-      <mat-form-field appearance="outline" fxFlex>
+      <mat-form-field appearance="outline" class="input-row" fxFlex>
         <mat-label>{{
-              'scans.doubleScan.location' | translate
-              }}</mat-label>
+          'scans.doubleScan.location' | translate
+          }}</mat-label>
         <input matInput type="text" formControlName="location" />
         <mat-icon type="button" (click)=" openLocationDialog()" matSuffix>search</mat-icon>
         <mat-error *ngIf="putawayFormControls.location.invalid">
           {{ 'error.field' | translate }}</mat-error>
       </mat-form-field>
+
       <mat-form-field [ngClass]="{'hide': type!='grn'}" appearance="outline" fxFlex>
         <mat-label>{{
-              'scans.doubleScan.grnsl' | translate
-              }}</mat-label>
+          'scans.doubleScan.grnsl' | translate
+          }}</mat-label>
         <input matInput type="text" formControlName="grnsl" />
         <mat-error *ngIf="putawayFormControls.grnsl.invalid">
           {{ 'error.field' | translate }}</mat-error>
       </mat-form-field>
       <mat-form-field [ngClass]="{'hide': type!='item'}" appearance="outline" fxFlex>
         <mat-label>{{
-                'scans.doubleScan.item' | translate
-                }}</mat-label>
+          'scans.doubleScan.item' | translate
+          }}</mat-label>
         <input matInput type="text" formControlName="item" />
         <mat-icon type="button" (click)="openItemAssistanceDialog()" matSuffix>search</mat-icon>
         <mat-error *ngIf="putawayFormControls.item.invalid">
@@ -55,16 +58,16 @@
     <div fxLayout="row" fxLayoutGap="5px">
       <mat-form-field appearance="outline" fxFlex="35">
         <mat-label>{{
-                'scans.doubleScan.good' | translate
-                }}</mat-label>
+          'scans.doubleScan.good' | translate
+          }}</mat-label>
         <input matInput type="text" formControlName="good" />
         <mat-error *ngIf="putawayFormControls.good.invalid">
           {{ 'error.field' | translate }}</mat-error>
       </mat-form-field>
       <mat-form-field appearance="outline" fxFlex="35">
         <mat-label>{{
-                    'scans.doubleScan.dmg' | translate
-                    }}</mat-label>
+          'scans.doubleScan.dmg' | translate
+          }}</mat-label>
         <input matInput type="text" formControlName="dmg" />
         <mat-error *ngIf="putawayFormControls.dmg.invalid">
           {{ 'error.field' | translate }}</mat-error>

@@ -8,7 +8,7 @@
     <mat-card-content>
       <form [formGroup]="itemForm" (ngSubmit)="onItemFormSubmit()" class="slim-form">
         <div fxLayout="column" fxLayout.lt-sm="column" fxLayoutGap="5px">
-          <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
+          <div fxLayout="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
             <mat-form-field appearance="outline" fxFlex>
               <mat-label>{{'routines.stockadjust.code' | translate}}</mat-label>
               <input matInput type="text" formControlName="code" />
@@ -24,16 +24,16 @@
               </mat-error>
             </mat-form-field>
           </div>
-          <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px" fxFlex>
+          <div fxLayout="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="10px" fxFlex>
             <mat-form-field appearance="outline" fxFlex.gt-sm="60">
               <mat-label>{{
-                                          'routines.stockadjust.type' | translate
-                                          }}</mat-label>
+                'routines.stockadjust.type' | translate
+                }}</mat-label>
               <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="type">
               </mat-select>
               <mat-error *ngIf="itemFormControls.type.invalid">{{
-                                          'error.field' | translate
-                                          }}</mat-error>
+                'error.field' | translate
+                }}</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline" fxFlex.gt-sm="23">
               <mat-label>{{'routines.stockadjust.scancode' | translate}}</mat-label>
@@ -42,18 +42,18 @@
                 {{ 'error.field' | translate }}
               </mat-error>
             </mat-form-field>
-            <mat-checkbox fxLayoutAlign="start start" color="primary" formControlName="instock" fxFlex.gt-sm="25" >
+            <mat-checkbox fxLayoutAlign="start start" color="primary" formControlName="instock" fxFlex.gt-sm="25">
               {{'routines.stockadjust.instock' | translate}}</mat-checkbox>
           </div>
           <div fxLayout="row" fxLayoutAlign="end" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
-            <div   class="form-three-button-container">
-                <button mat-raised-button color="primary" type="submit" (click)="onItemFormSubmit()">
-                  <mat-icon>search</mat-icon>
-                </button>
-                <button mat-raised-button color="accent" type="reset" (click)="resetItemForm()">
-                  <mat-icon>loop</mat-icon>
-                </button>
-              </div>
+            <div class="form-three-button-container">
+              <button mat-raised-button color="primary" type="submit" (click)="onItemFormSubmit()">
+                <mat-icon>search</mat-icon>
+              </button>
+              <button mat-raised-button color="accent" type="reset" (click)="resetItemForm()">
+                <mat-icon>loop</mat-icon>
+              </button>
+            </div>
           </div>
         </div>
 

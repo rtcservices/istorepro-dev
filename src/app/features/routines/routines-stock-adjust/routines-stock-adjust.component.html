@@ -8,7 +8,7 @@
         <mat-card>
           <mat-card-content>
             <div fxLayout="column" fxLayout.lt-sm="column" fxLayoutGap="5px">
-              <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
+              <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
                 <mat-form-field appearance="outline" fxFlex>
                   <mat-label>{{
                                         'routines.stockadjust.warehouse' | translate
@@ -32,7 +32,7 @@
                   <label>{{ dataStockAdjustFormControls.san.value }}</label>
                 </fieldset>
               </div>
-              <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
+              <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
                 <mat-form-field appearance="outline" fxFlex="32.5">
                   <mat-label>{{ 'routines.stockadjust.date' | translate }}</mat-label>
                   <input formControlName="date" matInput [matDatepicker]="picker3">
@@ -62,7 +62,7 @@
             </div>
 
             <div fxLayout="column" fxLayout.lt-sm="column" fxLayoutGap="5px">
-              <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
+              <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
                 <mat-form-field appearance="outline" fxFlex="32.7">
                   <mat-label>{{'routines.stockadjust.item' | translate}}</mat-label>
                   <input matInput type="text" formControlName="item" />
@@ -91,7 +91,7 @@
                 </mat-form-field>
 
               </div>
-              <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
+              <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
                 <mat-form-field appearance="outline" fxFlex.gt-sm="10">
                   <mat-select disableOptionCentering panelClass="slim-select-field"
                     formControlName="receiptdateoperator">

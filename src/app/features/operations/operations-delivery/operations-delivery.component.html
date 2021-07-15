@@ -8,16 +8,16 @@
         <mat-card>
           <mat-card-content>
             <div fxLayout="column" fxLayout.lt-sm="column" fxLayoutGap="5px">
-              <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
+              <div fxLayout.gt-sm="row" class="input-row"  fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
                 <mat-form-field appearance="outline" fxFlex>
                   <mat-label>{{
-                                      'operations.delivery.warehouse' | translate
-                                      }}</mat-label>
+                    'operations.delivery.warehouse' | translate
+                    }}</mat-label>
                   <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="warehouse">
                   </mat-select>
                   <mat-error *ngIf="dataDeliveryFormControls.warehouse.invalid">{{
-                                      'error.field' | translate
-                                      }}</mat-error>
+                    'error.field' | translate
+                    }}</mat-error>
                 </mat-form-field>
                 <mat-form-field appearance="outline" fxFlex>
                   <mat-label>{{'operations.delivery.owner' | translate}}</mat-label>
@@ -32,7 +32,7 @@
                   <label>{{ dataDeliveryFormControls.drn.value }}</label>
                 </fieldset>
               </div>
-              <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
+              <div fxLayout.gt-sm="row" class="input-row"  fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
                 <mat-form-field appearance="outline" fxFlex="32.5">
                   <mat-label>{{ 'operations.delivery.date' | translate }}</mat-label>
                   <input formControlName="date" matInput [matDatepicker]="picker3">
@@ -59,7 +59,7 @@
                   </mat-error>
                 </mat-form-field>
               </div>
-              <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
+              <div fxLayout.gt-sm="row" class="input-row"  fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
                 <mat-form-field appearance="outline" fxFlex="32.7">
                   <mat-label>{{'operations.delivery.shipto' | translate}}</mat-label>
                   <input matInput type="text" formControlName="shipto" />
@@ -86,7 +86,7 @@
             </div>
 
             <div fxLayout="column" fxLayout.lt-sm="column" fxLayoutGap="5px">
-              <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
+              <div fxLayout.gt-sm="row" class="input-row"  fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
                 <mat-form-field appearance="outline" fxFlex="32.7">
                   <mat-label>{{'operations.delivery.item' | translate}}</mat-label>
                   <input matInput type="text" formControlName="item" />
@@ -97,13 +97,13 @@
                 </mat-form-field>
                 <mat-form-field appearance="outline" fxFlex="32.7">
                   <mat-label>{{
-                                      'operations.delivery.po' | translate
-                                      }}</mat-label>
+                    'operations.delivery.po' | translate
+                    }}</mat-label>
                   <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="po">
                   </mat-select>
                   <mat-error *ngIf="dataDeliveryFormControls.po.invalid">{{
-                                      'error.field' | translate
-                                      }}</mat-error>
+                    'error.field' | translate
+                    }}</mat-error>
                 </mat-form-field>
 
                 <mat-form-field appearance="outline" fxFlex>
@@ -115,19 +115,22 @@
                 </mat-form-field>
 
               </div>
-              <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
+              <div fxLayout.gt-sm="row" class="input-row"  fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
                 <mat-form-field appearance="outline" fxFlex.gt-sm="10">
                   <mat-select disableOptionCentering panelClass="slim-select-field"
                     formControlName="receiptdateoperator">
                     <mat-option>></mat-option>
                     <mat-option>
-                      <</mat-option> <mat-option>>=
-                    </mat-option>
-                    <mat-option>
-                      <=</mat-option> <mat-option>
-                        <>
-                    </mat-option>
-                    <mat-option>=</mat-option>
+                      < </mat-option>
+                        <mat-option>
+                          >=
+                        </mat-option>
+                        <mat-option>
+                          <= </mat-option>
+                            <mat-option>
+                              <>
+                            </mat-option>
+                            <mat-option>=</mat-option>
                   </mat-select>
                   <mat-error *ngIf="dataDeliveryFormControls.receiptdateoperator.invalid">{{
                     'error.field' | translate
@@ -148,13 +151,16 @@
                   <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="expdateoperator">
                     <mat-option>></mat-option>
                     <mat-option>
-                      <</mat-option> <mat-option>>=
-                    </mat-option>
-                    <mat-option>
-                      <=</mat-option> <mat-option>
-                        <>
-                    </mat-option>
-                    <mat-option>=</mat-option>
+                      < </mat-option>
+                        <mat-option>
+                          >=
+                        </mat-option>
+                        <mat-option>
+                          <= </mat-option>
+                            <mat-option>
+                              <>
+                            </mat-option>
+                            <mat-option>=</mat-option>
                   </mat-select>
                   <mat-error *ngIf="dataDeliveryFormControls.expdateoperator.invalid">{{
                     'error.field' | translate
@@ -186,7 +192,7 @@
                   </mat-error>
                 </mat-form-field>
               </div>
-              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
+              <div fxLayout="row" class="input-row"  fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
                 <div fxLayoutAlign="start" class="form-three-button-container smaller-button-container-40"
                   fxFlex.gt-sm="33">
                   <button type="button" mat-raised-button color="primary">
@@ -282,19 +288,19 @@
           <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
             <mat-form-field appearance="outline" fxFlex="10" fxFlex.lt-md="34" fxFlex fxFlex.lt-sm="33">
               <mat-label>{{
-                  'operations.delivery.warehouse' | translate
-                  }}</mat-label>
+                'operations.delivery.warehouse' | translate
+                }}</mat-label>
               <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="warehouse">
                 <mat-option>></mat-option>
               </mat-select>
               <mat-error *ngIf="searchDeliveryFormControls.warehouse.invalid">{{
-                  'error.field' | translate
-                  }}</mat-error>
+                'error.field' | translate
+                }}</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline" fxFlex>
               <mat-label>{{
-                  'operations.delivery.owner' | translate
-                  }}</mat-label>
+                'operations.delivery.owner' | translate
+                }}</mat-label>
               <input matInput type="text" formControlName="owner" />
               <mat-icon matSuffix>search</mat-icon>
               <mat-error *ngIf="searchDeliveryFormControls.owner.invalid">
@@ -302,8 +308,8 @@
             </mat-form-field>
             <mat-form-field appearance="outline" fxFlex>
               <mat-label>{{
-                  'operations.delivery.drn' | translate
-                  }}</mat-label>
+                'operations.delivery.drn' | translate
+                }}</mat-label>
               <input matInput type="text" formControlName="drn" />
               <mat-error *ngIf="searchDeliveryFormControls.drn.invalid">
                 {{ 'error.field' | translate }}</mat-error>
@@ -314,22 +320,25 @@
               <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="dateoperator">
                 <mat-option>></mat-option>
                 <mat-option>
-                  <</mat-option> <mat-option>>=
-                </mat-option>
-                <mat-option>
-                  <=</mat-option> <mat-option>
-                    <>
-                </mat-option>
-                <mat-option>=</mat-option>
+                  < </mat-option>
+                    <mat-option>
+                      >=
+                    </mat-option>
+                    <mat-option>
+                      <= </mat-option>
+                        <mat-option>
+                          <>
+                        </mat-option>
+                        <mat-option>=</mat-option>
               </mat-select>
               <mat-error *ngIf="searchDeliveryFormControls.dateoperator.invalid">{{
-                  'error.field' | translate
-                  }}</mat-error>
+                'error.field' | translate
+                }}</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline" fxFlex.gt-sm="21">
               <mat-label>{{
-                  'operations.delivery.deliverydate' | translate
-                  }}</mat-label>
+                'operations.delivery.deliverydate' | translate
+                }}</mat-label>
               <input formControlName="deliverydate" matInput [matDatepicker]="picker4">
               <mat-datepicker-toggle matSuffix [for]="picker4">
                 <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
@@ -341,16 +350,16 @@
             </mat-form-field>
             <mat-form-field appearance="outline" fxFlex.gt-sm="33">
               <mat-label>{{
-                  'operations.delivery.po' | translate
-                  }}</mat-label>
+                'operations.delivery.po' | translate
+                }}</mat-label>
               <input matInput type="text" formControlName="po" />
               <mat-error *ngIf="searchDeliveryFormControls.po.invalid">
                 {{ 'error.field' | translate }}</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline" fxFlex.gt-sm="33">
               <mat-label>{{
-                  'operations.delivery.so' | translate
-                  }}</mat-label>
+                'operations.delivery.so' | translate
+                }}</mat-label>
               <input matInput type="text" formControlName="so" />
               <mat-error *ngIf="searchDeliveryFormControls.so.invalid">
                 {{ 'error.field' | translate }}</mat-error>
@@ -359,24 +368,24 @@
           <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
             <mat-form-field appearance="outline" fxFlex>
               <mat-label>{{
-                  'operations.delivery.do' | translate
-                  }}</mat-label>
+                'operations.delivery.do' | translate
+                }}</mat-label>
               <input matInput type="text" formControlName="do" />
               <mat-error *ngIf="searchDeliveryFormControls.do.invalid">
                 {{ 'error.field' | translate }}</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline" fxFlex>
               <mat-label>{{
-                  'operations.delivery.item' | translate
-                  }}</mat-label>
+                'operations.delivery.item' | translate
+                }}</mat-label>
               <input matInput type="text" formControlName="item" />
               <mat-error *ngIf="searchDeliveryFormControls.item.invalid">
                 {{ 'error.field' | translate }}</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline" fxFlex>
               <mat-label>{{
-                  'operations.delivery.shipto' | translate
-                  }}</mat-label>
+                'operations.delivery.shipto' | translate
+                }}</mat-label>
               <input matInput type="text" formControlName="shipto" />
               <mat-error *ngIf="searchDeliveryFormControls.shipto.invalid">
                 {{ 'error.field' | translate }}</mat-error>
@@ -385,22 +394,22 @@
           <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
             <mat-form-field appearance="outline" fxFlex.gt-sm="32.5">
               <mat-label>{{
-                  'operations.delivery.batchnumber' | translate
-                  }}</mat-label>
+                'operations.delivery.batchnumber' | translate
+                }}</mat-label>
               <input matInput type="text" formControlName="batchnumber" />
               <mat-error *ngIf="searchDeliveryFormControls.batchnumber.invalid">
                 {{ 'error.field' | translate }}</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline" fxFlex.gt-sm="32.5">
               <mat-label>{{
-                  'operations.delivery.status' | translate
-                  }}</mat-label>
+                'operations.delivery.status' | translate
+                }}</mat-label>
               <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="status">
                 <mat-option value=""></mat-option>
               </mat-select>
               <mat-error *ngIf="searchDeliveryFormControls.status.invalid">{{
-                  'error.field' | translate
-                  }}</mat-error>
+                'error.field' | translate
+                }}</mat-error>
             </mat-form-field>
             <div class="form-button-container" fxFlex.gt-sm="32.5">
               <button (click)="onSearchDeliverySubmit()" mat-raised-button color="primary" type="submit">
