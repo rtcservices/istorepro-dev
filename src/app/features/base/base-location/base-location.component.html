@@ -143,7 +143,7 @@
                       </mat-form-field>
                       <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="25">
                         <mat-label>{{'base.location.walkSequence' | translate}}</mat-label>
-                        <input matInput type="text" formControlName="walkSequence" />
+                        <input matInput required type="text" formControlName="walkSequence" />
                         <mat-error *ngIf="dataLocationControls.walkSequence.invalid">{{
                           'error.field' |
                           translate }}
@@ -151,7 +151,7 @@
                       </mat-form-field>
                       <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="25">
                         <mat-label>{{'base.location.floorSequence' | translate}}</mat-label>
-                        <input matInput type="text" formControlName="floorSequence" />
+                        <input matInput required type="text" formControlName="floorSequence" />
                         <mat-error *ngIf="dataLocationControls.floorSequence.invalid">{{
                           'error.field' |
                           translate }}

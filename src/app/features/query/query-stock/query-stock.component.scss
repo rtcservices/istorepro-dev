@@ -1,3 +1,9 @@
 .page-content{
     margin-top: 50px;
 }
+
+.slim-form{
+    ::ng-deep .mat-form-field-subscript-wrapper {
+      margin-top: 3px !important;
+    }
+  }
