@@ -46,7 +46,7 @@
                 </mat-form-field>
                 <mat-form-field appearance="outline" fxFlex="32.7">
                   <mat-label>{{'routines.stockadjust.reason' | translate}}</mat-label>
-                  <input matInput type="text" formControlName="reason" />
+                  <input matInput required type="text" formControlName="reason" />
                   <mat-error *ngIf="dataStockAdjustFormControls.reason.invalid">
                     {{ 'error.field' | translate }}
                   </mat-error>

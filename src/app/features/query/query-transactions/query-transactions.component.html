@@ -17,10 +17,13 @@
                                         <mat-option>Pick 1</mat-option>
                                         <mat-option>Pick 2</mat-option>
                                     </mat-select>
+                                    <mat-error *ngIf="receiptFormControls.warehouse.invalid">
+                                        {{ 'error.field' | translate }}
+                                    </mat-error>
                                 </mat-form-field>
                                 <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm="50">
                                     <mat-label>{{'query.transaction.receipt.owner' | translate}}</mat-label>
-                                    <input matInput type="text" required formControlName="owner" />
+                                    <input matInput type="text" formControlName="owner" />
                                     <mat-icon matSuffix type="button" (click)="openOwnerDialog()">search</mat-icon>
                                     <mat-error *ngIf="receiptFormControls.owner.invalid">
                                         {{ 'error.field' | translate }}
@@ -32,14 +35,14 @@
                             <div fxLayout="row" fxLayoutGap="5px" fxFlex>
                                 <mat-form-field appearance="outline" fxFlex="60" fxFlex.lt-sm="50">
                                     <mat-label>{{'query.transaction.receipt.item' | translate}}</mat-label>
-                                    <input matInput type="text" required formControlName="item" />
+                                    <input matInput type="text" formControlName="item" />
                                     <mat-error *ngIf="receiptFormControls.item.invalid">
                                         {{ 'error.field' | translate }}
                                     </mat-error>
                                 </mat-form-field>
                                 <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="50">
                                     <mat-label>{{'query.transaction.receipt.batchNo' | translate}}</mat-label>
-                                    <input matInput type="text" required formControlName="batchNo" />
+                                    <input matInput type="text" formControlName="batchNo" />
                                     <mat-error *ngIf="receiptFormControls.batchNo.invalid">
                                         {{ 'error.field' | translate }}
                                     </mat-error>
@@ -48,7 +51,7 @@
                             <div class="second-column" fxLayout="row" fxLayoutGap="5px" fxFlex="33">
                                 <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm>
                                     <mat-label>{{'query.transaction.receipt.poRefNo' | translate}}</mat-label>
-                                    <input matInput type="text" required formControlName="poRefNo" />
+                                    <input matInput type="text" formControlName="poRefNo" />
                                     <mat-error *ngIf="receiptFormControls.poRefNo.invalid">
                                         {{ 'error.field' | translate }}
                                     </mat-error>
@@ -77,7 +80,7 @@
                             <div class="second-column" fxLayout="row" fxLayoutGap="5px" fxFlex="33">
                                 <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm>
                                     <mat-label>{{'query.transaction.receipt.grn' | translate}}</mat-label>
-                                    <input matInput type="text" required formControlName="grn" />
+                                    <input matInput type="text" formControlName="grn" />
                                     <mat-error *ngIf="receiptFormControls.grn.invalid">
                                         {{ 'error.field' | translate }}
                                     </mat-error>
@@ -172,7 +175,7 @@
             <div>
                 <mat-card>
                     <mat-card-content>
-                        <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                        <div fxLayout="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
                             <div fxLayout="row" fxLayoutGap="5px" fxFlex>
                                 <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm="50">
                                     <mat-label>{{'query.transaction.delivery.warehouse' | translate }}</mat-label>
@@ -181,10 +184,13 @@
                                         <mat-option>Pick 1</mat-option>
                                         <mat-option>Pick 2</mat-option>
                                     </mat-select>
+                                    <mat-error *ngIf="deliveryFormControls.warehouse.invalid">
+                                        {{ 'error.field' | translate }}
+                                    </mat-error>
                                 </mat-form-field>
                                 <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm="50">
                                     <mat-label>{{'query.transaction.delivery.owner' | translate}}</mat-label>
-                                    <input matInput type="text" required formControlName="owner" />
+                                    <input matInput type="text" formControlName="owner" />
                                     <mat-icon matSuffix type="button" (click)="openOwnerDialog()">search</mat-icon>
                                     <mat-error *ngIf="deliveryFormControls.owner.invalid">
                                         {{ 'error.field' | translate }}
@@ -192,18 +198,18 @@
                                 </mat-form-field>
                             </div>
                         </div>
-                        <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                        <div fxLayout="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
                             <div fxLayout="row" fxLayoutGap="5px" fxFlex>
                                 <mat-form-field appearance="outline" fxFlex="60" fxFlex.lt-sm="50">
                                     <mat-label>{{'query.transaction.delivery.item' | translate}}</mat-label>
-                                    <input matInput type="text" required formControlName="item" />
+                                    <input matInput type="text" formControlName="item" />
                                     <mat-error *ngIf="deliveryFormControls.item.invalid">
                                         {{ 'error.field' | translate }}
                                     </mat-error>
                                 </mat-form-field>
                                 <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="50">
                                     <mat-label>{{'query.transaction.delivery.poRefNo' | translate}}</mat-label>
-                                    <input matInput type="text" required formControlName="poRefNo" />
+                                    <input matInput type="text" formControlName="poRefNo" />
                                     <mat-error *ngIf="deliveryFormControls.poRefNo.invalid">
                                         {{ 'error.field' | translate }}
                                     </mat-error>
@@ -212,25 +218,25 @@
                             <div class="second-column" fxLayout="row" fxLayoutGap="5px" fxFlex="33">
                                 <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="50">
                                     <mat-label>{{'query.transaction.delivery.batchNo' | translate}}</mat-label>
-                                    <input matInput type="text" required formControlName="batchNo" />
+                                    <input matInput type="text" formControlName="batchNo" />
                                     <mat-error *ngIf="deliveryFormControls.batchNo.invalid">
                                         {{ 'error.field' | translate }}
                                     </mat-error>
                                 </mat-form-field>
                             </div>
                         </div>
-                        <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                        <div fxLayout="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
                             <div fxLayout="row" fxLayoutGap="5px" fxFlex>
                                 <mat-form-field appearance="outline" fxFlex="60" fxFlex.lt-sm="50">
                                     <mat-label>{{'query.transaction.delivery.drn' | translate}}</mat-label>
-                                    <input matInput type="text" required formControlName="drn" />
+                                    <input matInput type="text" formControlName="drn" />
                                     <mat-error *ngIf="deliveryFormControls.drn.invalid">
                                         {{ 'error.field' | translate }}
                                     </mat-error>
                                 </mat-form-field>
                                 <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="50">
                                     <mat-label>{{'query.transaction.delivery.so' | translate}}</mat-label>
-                                    <input matInput type="text" required formControlName="so" />
+                                    <input matInput type="text" formControlName="so" />
                                     <mat-error *ngIf="deliveryFormControls.so.invalid">
                                         {{ 'error.field' | translate }}
                                     </mat-error>
@@ -239,14 +245,14 @@
                             <div class="second-column" fxLayout="row" fxLayoutGap="5px" fxFlex="33">
                                 <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="50">
                                     <mat-label>{{'query.transaction.delivery.do' | translate}}</mat-label>
-                                    <input matInput type="text" required formControlName="do" />
+                                    <input matInput type="text" formControlName="do" />
                                     <mat-error *ngIf="deliveryFormControls.do.invalid">
                                         {{ 'error.field' | translate }}
                                     </mat-error>
                                 </mat-form-field>
                             </div>
                         </div>
-                        <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                        <div fxLayout="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
                             <div fxLayout="row" fxLayoutGap="5px" fxFlex>
                                 <mat-form-field appearance="outline" fxFlex="60" fxFlex.lt-sm="50">
                                     <mat-label>{{'query.transaction.delivery.status' | translate }}</mat-label>

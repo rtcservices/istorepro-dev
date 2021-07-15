@@ -27,7 +27,7 @@
                 </fieldset>
                 <div class="form-three-button-container">
                   <ng-container *ngIf="mode">
-                    <button (click)="mode=!mode" mat-raised-button color="primary">
+                    <button (click)="mode=!mode" type="button" mat-raised-button color="primary">
                       <mat-icon>visibility</mat-icon>
                     </button>
                   </ng-container>
@@ -35,13 +35,13 @@
                 </div>
 
                 <div class="form-three-button-container" fxFlex>
-                  <button type="button" (click)="openAssignOperatorDialog()" mat-raised-button color="primary">
+                  <button type="button" (click)="openAssignOperatorDialog()" type="button" mat-raised-button color="primary">
                     <mat-icon>assignment_ind</mat-icon>
                   </button>
-                  <button mat-raised-button color="primary">
+                  <button type="button" mat-raised-button color="primary">
                     <mat-icon>cloud_upload</mat-icon>
                   </button>
-                  <button mat-raised-button color="primary">
+                  <button type="button" mat-raised-button color="primary">
                     <mat-icon>cloud_download</mat-icon>
                   </button>
                 </div>
@@ -64,7 +64,7 @@
                   <h3 fxFlex="90%"> Drag a colum header here to group by that column</h3>
 
                   <div fxFlex="10%" class="form-three-button-container">
-                    <button mat-raised-button color="warn">
+                    <button type="button" mat-raised-button color="warn">
                       <mat-icon>loop</mat-icon>
                     </button>
                   </div>
@@ -203,12 +203,12 @@
         <mat-card-content>
           <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="30px" fxLayoutAlign="space-between center">
             <div fxFlexOrder.lt-md="2">
-              <button mat-raised-button color="accent" (click)="mode=!mode">
+              <button mat-raised-button color="accent" type="button" (click)="mode=!mode">
                 <mat-icon>arrow_back</mat-icon>
               </button>
             </div>
             <div class="form-three-button-container" fxFlexOrder.lt-md="1">
-              <button mat-raised-button color="primary" type="submit">
+              <button mat-raised-button color="primary" type="button">
                 <mat-icon>add</mat-icon>
               </button>
             </div>

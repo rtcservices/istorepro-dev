@@ -19,7 +19,7 @@
                                 </mat-form-field>
                                 <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm="50">
                                     <mat-label>{{'query.stock.owner' | translate}}</mat-label>
-                                    <input matInput type="text" required formControlName="owner" />
+                                    <input matInput type="text" formControlName="owner" />
                                     <mat-icon matSuffix type="button" (click)="openOwnerDialog()">search</mat-icon>
                                     <mat-error *ngIf="dataStockFormControls.owner.invalid">
                                         {{ 'error.field' | translate }}
@@ -31,14 +31,14 @@
                             <div fxLayout="row" fxLayoutGap="5px" fxFlex>
                                 <mat-form-field appearance="outline" fxFlex="60" fxFlex.lt-sm="50">
                                     <mat-label>{{'query.stock.item' | translate}}</mat-label>
-                                    <input matInput type="text" required formControlName="item" />
+                                    <input matInput type="text" formControlName="item" />
                                     <mat-error *ngIf="dataStockFormControls.item.invalid">
                                         {{ 'error.field' | translate }}
                                     </mat-error>
                                 </mat-form-field>
                                 <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="50">
                                     <mat-label>{{'query.stock.batchNo' | translate}}</mat-label>
-                                    <input matInput type="text" required formControlName="batchNo" />
+                                    <input matInput type="text" formControlName="batchNo" />
                                     <mat-error *ngIf="dataStockFormControls.batchNo.invalid">
                                         {{ 'error.field' | translate }}
                                     </mat-error>
@@ -47,7 +47,7 @@
                             <div class="second-column" fxLayout="row" fxLayoutGap="5px" fxFlex="33">
                                 <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm>
                                     <mat-label>{{'query.stock.poRefNo' | translate}}</mat-label>
-                                    <input matInput type="text" required formControlName="poRefNo" />
+                                    <input matInput type="text" formControlName="poRefNo" />
                                     <mat-error *ngIf="dataStockFormControls.poRefNo.invalid">
                                         {{ 'error.field' | translate }}
                                     </mat-error>
