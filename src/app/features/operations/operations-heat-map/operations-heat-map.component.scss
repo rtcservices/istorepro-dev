@@ -15,14 +15,17 @@
 
 .blue {
   color: blue !important;
+  margin: 0 0 2px;
 }
 
 .red {
   color: red !important;
+  margin: 0 0 2px;
 }
 
 .green {
   color: green !important;
+  margin: 0 0 2px;
 }
 
 
@@ -30,7 +33,7 @@ td {
   cursor: pointer;
 }
 
-.slim-form{
+.slim-form {
   ::ng-deep .mat-form-field-subscript-wrapper {
     margin-top: 3px !important;
   }

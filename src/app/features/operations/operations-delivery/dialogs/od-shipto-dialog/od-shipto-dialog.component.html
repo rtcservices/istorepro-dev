@@ -14,8 +14,8 @@
             <mat-label>{{
               'operations.delivery.select' | translate
               }}</mat-label>
-            <input matInput required type="text" formControlName="select" />
-            <mat-icon matSuffix>search</mat-icon>
+              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="select">
+              </mat-select>
             <mat-error *ngIf="dataShipFormControls.select.invalid">
               {{ 'error.field' | translate }}
             </mat-error>

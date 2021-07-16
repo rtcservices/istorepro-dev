@@ -5,7 +5,7 @@
   <mat-tab label="Data">
     <form fxLayout="column" [formGroup]="dataDeliveryForm" (ngSubmit)="onDataDeliverySubmit()" class="slim-form">
       <div>
-        <mat-card>
+        <mat-card class="field-form">
           <mat-card-content>
             <div fxLayout="column" fxLayout.lt-sm="column" fxLayoutGap="5px">
               <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
@@ -173,7 +173,8 @@
                 </mat-form-field>
                 <mat-form-field appearance="outline" fxFlex.gt-sm="23">
                   <mat-label>{{'operations.delivery.pick' | translate}}</mat-label>
-                  <input matInput type="text" formControlName="pick" />
+                  <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="pick">
+                  </mat-select>
                   <mat-error *ngIf="dataDeliveryFormControls.pick.invalid">
                     {{ 'error.field' | translate }}
                   </mat-error>

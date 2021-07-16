@@ -22,7 +22,9 @@ export class OperationsHeatMapComponent implements OnInit {
       {value:"2.7-2.3",status:"full"},
       {value:"2.7-2.3",status:"free"},
       {value:"2.7-2.3",status:"full"},
-      {value:"2.7-2.3",status:"partial"}
+      {value:"2.7-2.3",status:"partial"},
+      {value:"2.7-2.3",status:"partial"},
+      {value:"2.7-2.3",status:"partial"},
 
     ],
     [
@@ -35,7 +37,9 @@ export class OperationsHeatMapComponent implements OnInit {
       {value:"2.7-2.3",status:"partial"},
       {value:"2.7-2.3",status:"full"},
       {value:"2.7-2.3",status:"full"},
-      {value:"2.7-2.3",status:"full"}
+      {value:"2.7-2.3",status:"full"},
+      {value:"2.7-2.3",status:"full"},
+      {value:"2.7-2.3",status:"full"},
     ]
   ];
   constructor(private fb: FormBuilder, public dialog: MatDialog) {
