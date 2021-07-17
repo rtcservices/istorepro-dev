@@ -73,12 +73,7 @@ export class RoutinesStockAdjustComponent implements OnInit {
     }
   ];
 
-  displayedColumns = [
-    'warehouse',
-    'owner',
-    'date',
-    'san'
-  ];
+  displayedColumns = ['warehouse', 'owner', 'date', 'san'];
 
   constructor(
     private fb: FormBuilder,
@@ -209,15 +204,14 @@ export class RoutinesStockAdjustComponent implements OnInit {
   }
 
   openItemDialog() {
-     this.dialog.open(RsaItemDialogComponent, {
+    this.dialog.open(RsaItemDialogComponent, {
       width: '800px'
     });
   }
 
-
   openOwnerDialog() {
     this.dialog.open(RsaOwnerDialogComponent, {
-     width: '800px'
-   });
- }
+      width: '800px'
+    });
+  }
 }

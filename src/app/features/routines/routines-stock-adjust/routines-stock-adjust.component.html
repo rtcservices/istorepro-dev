@@ -10,14 +10,11 @@
             <div fxLayout="column" fxLayout.lt-sm="column" fxLayoutGap="5px">
               <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
                 <mat-form-field appearance="outline" fxFlex>
-                  <mat-label>{{
-                                        'routines.stockadjust.warehouse' | translate
-                                        }}</mat-label>
+                  <mat-label>{{ 'routines.stockadjust.warehouse' | translate }}</mat-label>
                   <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="warehouse">
                   </mat-select>
-                  <mat-error *ngIf="dataStockAdjustFormControls.warehouse.invalid">{{
-                                        'error.field' | translate
-                                        }}</mat-error>
+                  <mat-error *ngIf="dataStockAdjustFormControls.warehouse.invalid">
+                    {{ 'error.field' | translate }}</mat-error>
                 </mat-form-field>
                 <mat-form-field appearance="outline" fxFlex>
                   <mat-label>{{'routines.stockadjust.owner' | translate}}</mat-label>
@@ -96,10 +93,13 @@
                   <mat-select disableOptionCentering panelClass="slim-select-field"
                     formControlName="receiptdateoperator">
                     <mat-option value=">">></mat-option>
-                    <mat-option value="<"> < </mat-option>
-                     <mat-option value=">=">  >= </mat-option>
-                    <mat-option value="<=">  <= </mat-option>
-                     <mat-option value="<>"> <> </mat-option>
+                    <mat-option value="<">
+                      < </mat-option> <mat-option value=">="> >=
+                    </mat-option>
+                    <mat-option value="<=">
+                      <= </mat-option> <mat-option value="<>">
+                        <>
+                    </mat-option>
                     <mat-option value="="> = </mat-option>
                   </mat-select>
                   <mat-error *ngIf="dataStockAdjustFormControls.receiptdateoperator.invalid">{{
@@ -120,10 +120,13 @@
                 <mat-form-field appearance="outline" fxFlex.gt-sm="10">
                   <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="expdateoperator">
                     <mat-option value=">">></mat-option>
-                    <mat-option value="<"> < </mat-option>
-                     <mat-option value=">=">  >= </mat-option>
-                    <mat-option value="<=">  <= </mat-option>
-                     <mat-option value="<>"> <> </mat-option>
+                    <mat-option value="<">
+                      < </mat-option> <mat-option value=">="> >=
+                    </mat-option>
+                    <mat-option value="<=">
+                      <= </mat-option> <mat-option value="<>">
+                        <>
+                    </mat-option>
                     <mat-option value="="> = </mat-option>
                   </mat-select>
                   <mat-error *ngIf="dataStockAdjustFormControls.expdateoperator.invalid">{{
@@ -169,7 +172,7 @@
                 </div>
                 <div fxLayoutAlign="end" fxFlex.gt-sm="15">
                   <button type="button" mat-raised-button color="primary">
-                    {{'routines.stockadjust.adj' | translate}}
+                    {{'routines.stockadjust.alloc' | translate}}
                   </button>
                 </div>
               </div>
@@ -276,11 +279,14 @@
             <mat-form-field appearance="outline" fxFlex.gt-sm="10">
               <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="dateoperator">
                 <mat-option value=">">></mat-option>
-                    <mat-option value="<"> < </mat-option>
-                     <mat-option value=">=">  >= </mat-option>
-                    <mat-option value="<=">  <= </mat-option>
-                     <mat-option value="<>"> <> </mat-option>
-                    <mat-option value="="> = </mat-option>
+                <mat-option value="<">
+                  < </mat-option> <mat-option value=">="> >=
+                </mat-option>
+                <mat-option value="<=">
+                  <= </mat-option> <mat-option value="<>">
+                    <>
+                </mat-option>
+                <mat-option value="="> = </mat-option>
               </mat-select>
               <mat-error *ngIf="searchStockAdjustFormControls.dateoperator.invalid">{{
                     'error.field' | translate
@@ -308,13 +314,13 @@
                 {{ 'error.field' | translate }}</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline" fxFlex.gt-sm="33">
-                <mat-label>{{
+              <mat-label>{{
                       'routines.stockadjust.item' | translate
                       }}</mat-label>
-                <input matInput type="text" formControlName="item" />
-                <mat-error *ngIf="searchStockAdjustFormControls.item.invalid">
-                  {{ 'error.field' | translate }}</mat-error>
-              </mat-form-field>
+              <input matInput type="text" formControlName="item" />
+              <mat-error *ngIf="searchStockAdjustFormControls.item.invalid">
+                {{ 'error.field' | translate }}</mat-error>
+            </mat-form-field>
           </div>
           <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
             <mat-form-field appearance="outline" fxFlex.gt-sm="32.5">
@@ -325,9 +331,9 @@
               <mat-error *ngIf="searchStockAdjustFormControls.batchnumber.invalid">
                 {{ 'error.field' | translate }}</mat-error>
             </mat-form-field>
-          <div fxFlex.gt-sm="32.5">
+            <div fxFlex.gt-sm="32.5">
 
-          </div>
+            </div>
             <div class="form-button-container" fxFlex.gt-sm="32.5">
               <button (click)="onSearchStockAdjustSubmit()" mat-raised-button color="primary" type="submit">
                 <mat-icon>search</mat-icon>

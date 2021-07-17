@@ -12,7 +12,7 @@ export interface QueryTransactionReceiptModel {
     wh: string;
     owner: string;
     drn: string;
-    Date: string;
+    date: string;
     shipTo: string;
     do: string;
     so: string;

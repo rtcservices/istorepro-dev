@@ -31,8 +31,8 @@ export class QueryTransactionsComponent implements OnInit {
 
   deliveryDataSource: QueryTransactionDeliveryModel[] = [];
   dummyDeliveryModel: QueryTransactionDeliveryModel[] = [
-    { wh : "Warehouse" , owner : "Owner", shipTo : "Ship To", Date : "Date", do : "DO", so: "SO", dt : "DT", drn : "DRN"},
-    { wh : "Warehouse" , owner : "Owner", shipTo : "Ship To", Date : "Date", do : "DO", so: "SO", dt : "DT", drn : "DRN"}
+    { wh : "Warehouse" , owner : "Owner", shipTo : "Ship To", date : "Date", do : "DO", so: "SO", dt : "DT", drn : "DRN"},
+    { wh : "Warehouse" , owner : "Owner", shipTo : "Ship To", date : "Date", do : "DO", so: "SO", dt : "DT", drn : "DRN"}
   ];
 
   constructor(

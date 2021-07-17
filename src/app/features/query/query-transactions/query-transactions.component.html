@@ -124,7 +124,7 @@
                             </div>
                         </div>
 
-                        <div class="form-three-button-container smaller-button-container-40">
+                        <div class="form-three-button-container">
                             <button type="button" mat-raised-button color="primary">
                                 <mat-icon>search</mat-icon>
                             </button>
@@ -188,7 +188,7 @@
                                         {{ 'error.field' | translate }}
                                     </mat-error>
                                 </mat-form-field>
-                                <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm="50">
+                                <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm>
                                     <mat-label>{{'query.transaction.delivery.owner' | translate}}</mat-label>
                                     <input matInput type="text" formControlName="owner" />
                                     <mat-icon matSuffix type="button" (click)="openOwnerDialog()">search</mat-icon>
@@ -216,7 +216,7 @@
                                 </mat-form-field>
                             </div>
                             <div class="second-column" fxLayout="row" fxLayoutGap="5px" fxFlex="33">
-                                <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="50">
+                                <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm>
                                     <mat-label>{{'query.transaction.delivery.batchNo' | translate}}</mat-label>
                                     <input matInput type="text" formControlName="batchNo" />
                                     <mat-error *ngIf="deliveryFormControls.batchNo.invalid">
@@ -243,7 +243,7 @@
                                 </mat-form-field>
                             </div>
                             <div class="second-column" fxLayout="row" fxLayoutGap="5px" fxFlex="33">
-                                <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="50">
+                                <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm>
                                     <mat-label>{{'query.transaction.delivery.do' | translate}}</mat-label>
                                     <input matInput type="text" formControlName="do" />
                                     <mat-error *ngIf="deliveryFormControls.do.invalid">
@@ -275,7 +275,7 @@
                                 </mat-form-field>
                             </div>
                             <div class="second-column" fxLayout="row" fxLayoutGap="5px" fxFlex="33">
-                                <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="50">
+                                <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm>
                                     <mat-label>{{ 'query.transaction.delivery.deliveryTo' | translate }}</mat-label>
                                     <input formControlName="deliveryTo" matInput [matDatepicker]="deliveryTo">
                                     <mat-datepicker-toggle matSuffix [for]="deliveryTo">
@@ -289,7 +289,19 @@
                             </div>
                         </div>
 
-                        <div class="form-three-button-container smaller-button-container-40">
+                        <div fxLayout="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                            <div fxLayout="row" fxLayoutGap="5px" fxFlex>
+                                <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm>
+                                    <mat-label>{{'query.transaction.delivery.dt' | translate}}</mat-label>
+                                    <input matInput type="text" formControlName="dt" />
+                                    <mat-error *ngIf="deliveryFormControls.dt.invalid">
+                                        {{ 'error.field' | translate }}
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="form-three-button-container">
                             <button type="button" mat-raised-button color="primary">
                                 <mat-icon>search</mat-icon>
                             </button>
@@ -306,28 +318,30 @@
                     <table class="site-table w-100">
                         <thead>
                             <tr>
-                                <th>{{ 'query.transaction.receipt.WH' | translate}}</th>
-                                <th>{{ 'query.transaction.receipt.owner' | translate}}</th>
-                                <th>{{ 'query.transaction.receipt.grn' | translate}}</th>
-                                <th>{{ 'query.transaction.receipt.date' | translate}}</th>
-                                <th>{{ 'query.transaction.receipt.poRefNo' | translate}}</th>
-                                <th>{{ 'query.transaction.receipt.origin' | translate}}</th>
-                                <th>{{ 'query.transaction.receipt.status' | translate}}</th>
-                                <th>{{ 'query.transaction.receipt.print' | translate}}</th>
+                                <th>{{ 'query.transaction.delivery.WH' | translate}}</th>
+                                <th>{{ 'query.transaction.delivery.owner' | translate}}</th>
+                                <th>{{ 'query.transaction.delivery.drn' | translate}}</th>
+                                <th>{{ 'query.transaction.delivery.date' | translate}}</th>
+                                <th>{{ 'query.transaction.delivery.shipTo' | translate}}</th>
+                                <th>{{ 'query.transaction.delivery.do' | translate}}</th>
+                                <th>{{ 'query.transaction.delivery.so' | translate}}</th>
+                                <th>{{ 'query.transaction.delivery.dt' | translate}}</th>
+                                <th>{{ 'query.transaction.delivery.print' | translate}}</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <ng-template let-receipt ngFor [ngForOf]="receiptDataSource">
+                            <ng-template let-delivery ngFor [ngForOf]="deliveryDataSource">
                                 <tr>
-                                    <td class="column-150">{{receipt.wh}}</td>
-                                    <td>{{receipt.owner}}</td>
-                                    <td>{{receipt.grn}}</td>
-                                    <td>{{receipt.date}}</td>
-                                    <td>{{receipt.poRefNo}}</td>
-                                    <td class="column-100">{{receipt.origin}}</td>
-                                    <td class="column-100">{{receipt.status}}</td>
-                                    <td class="column-100">
-                                        <button id="receiptGrn" mat-raised-button color="primary">
+                                    <td class="column-150">{{delivery.wh}}</td>
+                                    <td>{{delivery.owner}}</td>
+                                    <td>{{delivery.drn}}</td>
+                                    <td>{{delivery.date}}</td>
+                                    <td>{{delivery.shipTo}}</td>
+                                    <td class="column-100">{{delivery.do}}</td>
+                                    <td class="column-100">{{delivery.so}}</td>
+                                    <td class="column-100">{{delivery.dt}}</td>
+                                    <td class="column-100" style="text-align: center;">
+                                        <button mat-raised-button color="primary">
                                             <mat-icon>print</mat-icon>
                                         </button>
                                     </td>
