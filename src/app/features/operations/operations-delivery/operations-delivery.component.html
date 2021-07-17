@@ -259,7 +259,13 @@
               </ng-template>
             </tbody>
           </table>
-          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="30px" fxLayoutAlign="space-between center">
+          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="30px" fxLayoutAlign="space-between">
+            <div class="progress-section" fxFlex>
+              <div class="progress-box"></div>
+              {{ 'operations.delivery.auditInProgress' | translate}}
+            </div>
+          </div>
+          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="30px" fxLayoutAlign="space-between">
             <div class="form-three-button-container" fxFlexOrder.lt-md="1">
               <button mat-raised-button color="warn" type="button" (click)="deleteDeliveryData()">
                 <mat-icon>remove_circle_outline</mat-icon>
