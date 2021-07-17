@@ -10,6 +10,8 @@ import {
 import { LoaderService } from '../../../services/loader.service';
 import { NotificationService } from '../../../services/notification.service';
 import { OdShiptoDialogComponent } from './dialogs/od-shipto-dialog/od-shipto-dialog.component';
+import { OdOwnerDialogComponent } from './dialogs/od-owner-dialog/od-owner-dialog.component'
+import { OdItemDialogComponent } from './dialogs/od-item-dialog/od-item-dialog.component'
 import { TitleService } from 'src/app/services/title.service';
 import { TranslateService } from '@ngx-translate/core';
 import { SiteTranslateService } from 'src/app/services/site-translate.service';
@@ -222,6 +224,18 @@ export class OperationsDeliveryComponent implements OnInit {
 
   openShiptoDialog() {
     this.dialog.open(OdShiptoDialogComponent, {
+      width: '800px'
+    });
+  }
+
+  openOwnerDialog() {
+    this.dialog.open(OdOwnerDialogComponent, {
+      width: '800px'
+    });
+  }
+
+  openItemDialog() {
+    this.dialog.open(OdItemDialogComponent, {
       width: '800px'
     });
   }

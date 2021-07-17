@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { patternsHelper } from 'src/app/helpers/patterns.helper';
 
 @Component({
-  selector: 'ibe-rsa-item-dialog',
-  templateUrl: './rsa-item-dialog.component.html',
-  styleUrls: ['./rsa-item-dialog.component.scss']
+  selector: 'ibe-od-item-dialog',
+  templateUrl: './od-item-dialog.component.html',
+  styleUrls: ['./od-item-dialog.component.scss']
 })
-export class RsaItemDialogComponent implements OnInit {
+export class OdItemDialogComponent implements OnInit {
   itemForm!: FormGroup;
+
   constructor(private fb: FormBuilder) {
     this.createItemForm()
    }

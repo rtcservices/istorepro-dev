@@ -22,7 +22,7 @@
                 <mat-form-field appearance="outline" fxFlex>
                   <mat-label>{{'operations.delivery.owner' | translate}}</mat-label>
                   <input matInput type="text" formControlName="owner" />
-                  <mat-icon matSuffix>search</mat-icon>
+                  <mat-icon (click)="openOwnerDialog()"  matSuffix>search</mat-icon>
                   <mat-error *ngIf="dataDeliveryFormControls.owner.invalid">
                     {{ 'error.field' | translate }}
                   </mat-error>
@@ -90,7 +90,7 @@
                 <mat-form-field appearance="outline" fxFlex="32.7">
                   <mat-label>{{'operations.delivery.item' | translate}}</mat-label>
                   <input matInput type="text" formControlName="item" />
-                  <mat-icon matSuffix>search</mat-icon>
+                  <mat-icon (click)="openItemDialog()" matSuffix>search</mat-icon>
                   <mat-error *ngIf="dataDeliveryFormControls.item.invalid">
                     {{ 'error.field' | translate }}
                   </mat-error>
@@ -299,7 +299,7 @@
                 'operations.delivery.owner' | translate
                 }}</mat-label>
               <input matInput type="text" formControlName="owner" />
-              <mat-icon matSuffix>search</mat-icon>
+              <mat-icon (click)="openOwnerDialog()"  matSuffix>search</mat-icon>
               <mat-error *ngIf="searchDeliveryFormControls.owner.invalid">
                 {{ 'error.field' | translate }}</mat-error>
             </mat-form-field>

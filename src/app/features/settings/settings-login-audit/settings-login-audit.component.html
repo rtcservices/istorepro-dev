@@ -3,7 +3,7 @@
     <div fxFlex>
       <mat-card class="h-100">
         <mat-card-content>
-          <div fxLayoutGap="15px">
+          <div fxLayoutGap="15px" fxLayout="row">
             <div fxLayout="column" fxLayoutGap="5px" fxFlex="60">
               <div fxLayout="row" class="input-row" fxLayoutGap="5px" fxFlex>
                 <mat-form-field appearance="outline" fxFlex="70" fxFlex.lt-sm="60" fxFlex.lt-sm="50">
@@ -56,33 +56,22 @@
             </div>
 
           </div>
-
+          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="30px" fxLayoutAlign="space-between">
+            <div class="form-three-button-container" fxFlex>
+              <button mat-raised-button color="primary" type="submit" (click)="saveLoginAuditFormData()">
+                <mat-icon>task_alt</mat-icon>
+              </button>
+              <button mat-raised-button color="accent" type="reset" (click)="resetLoginAuditForm()">
+                <mat-icon>loop</mat-icon>
+              </button>
+            </div>
+          </div>
         </mat-card-content>
       </mat-card>
     </div>
 
   </div>
   <ng-container>
-
-    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="stretch" fxLayoutGap="5px" class="data-form">
-      <div fxFlex>
-        <mat-card class="h-100">
-          <mat-card-content>
-            <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
-
-              <h3 fxFlex="90%"> Drag a column header here to group by that column</h3>
-
-              <div fxFlex="10%" class="form-three-button-container">
-                <button mat-raised-button color="warn">
-                  <mat-icon>loop</mat-icon>
-                </button>
-              </div>
-
-            </div>
-          </mat-card-content>
-        </mat-card>
-      </div>
-    </div>
 
     <mat-card>
       <mat-card-content class="overflow-x">
@@ -108,19 +97,7 @@
 
   <mat-card>
     <mat-card-content>
-      <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="30px" fxLayoutAlign="space-between center">
-        <div fxFlexOrder.lt-md="2">
-          <ibe-data-audit insertedBy=""></ibe-data-audit>
-        </div>
-        <div class="form-three-button-container" fxFlexOrder.lt-md="1">
-          <button mat-raised-button color="primary" type="submit" (click)="saveLoginAuditFormData()">
-            <mat-icon>task_alt</mat-icon>
-          </button>
-          <button mat-raised-button color="accent" type="reset" (click)="resetLoginAuditForm()">
-            <mat-icon>loop</mat-icon>
-          </button>
-        </div>
-      </div>
+     
     </mat-card-content>
   </mat-card>
 
