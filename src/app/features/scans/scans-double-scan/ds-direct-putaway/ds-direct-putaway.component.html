@@ -20,36 +20,6 @@
         <mat-error *ngIf="directPutawayFormControls.grnsl.invalid">
           {{ 'error.field' | translate }}</mat-error>
       </mat-form-field>
-      <mat-form-field appearance="outline" class="input-row" fxFlex="10" fxFlex.lt-md="34" fxFlex fxFlex.lt-sm="33">
-        <mat-label>{{
-          'scans.doubleScan.ruselect' | translate
-          }}</mat-label>
-        <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="ruselect">
-          <mat-option value="item">{{
-            'scans.doubleScan.item' | translate
-            }}</mat-option>
-
-        </mat-select>
-        <mat-error *ngIf="directPutawayFormControls.ruselect.invalid">{{
-          'error.field' | translate
-          }}</mat-error>
-      </mat-form-field>
-      <mat-form-field appearance="outline" class="input-row" fxFlex>
-        <mat-label>{{
-          'scans.doubleScan.rugood' | translate
-          }}</mat-label>
-        <input matInput type="text" formControlName="rugood" />
-        <mat-error *ngIf="directPutawayFormControls.rugood.invalid">
-          {{ 'error.field' | translate }}</mat-error>
-      </mat-form-field>
-      <mat-form-field appearance="outline" class="input-row" fxFlex>
-        <mat-label>{{
-          'scans.doubleScan.rudmg' | translate
-          }}</mat-label>
-        <input matInput type="text" formControlName="rudmg" />
-        <mat-error *ngIf="directPutawayFormControls.rudmg.invalid">
-          {{ 'error.field' | translate }}</mat-error>
-      </mat-form-field>
     </div>
     <div fxLayout="row" fxLayoutGap="5px">
       <mat-form-field appearance="outline" fxFlex="35">

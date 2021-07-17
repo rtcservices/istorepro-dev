@@ -34,10 +34,6 @@ export class DsInventoryAuditComponent implements OnInit {
         '',
         [Validators.required, Validators.pattern(patternsHelper.alphanumeric)]
       ],
-      inventorynature: [
-        '',
-        [Validators.required, Validators.pattern(patternsHelper.alphanumeric)]
-      ],
       item: [
         '',
         [Validators.required, Validators.pattern(patternsHelper.alphanumeric)]

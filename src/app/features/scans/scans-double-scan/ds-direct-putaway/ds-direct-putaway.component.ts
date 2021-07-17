@@ -30,18 +30,6 @@ export class DsDirectPutawayComponent implements OnInit {
         '',
         [Validators.required, Validators.pattern(patternsHelper.alphanumeric)]
       ],
-      rugood: [
-        '',
-        [Validators.required, Validators.pattern(patternsHelper.numeric)]
-      ],
-      ruselect: [
-        '',
-        [Validators.required, Validators.pattern(patternsHelper.numeric)]
-      ],
-      rudmg: [
-        '',
-        [Validators.required, Validators.pattern(patternsHelper.numeric)]
-      ],
       good: [
         '',
         [Validators.required, Validators.pattern(patternsHelper.numeric)]

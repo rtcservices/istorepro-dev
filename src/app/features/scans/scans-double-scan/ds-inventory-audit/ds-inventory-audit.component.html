@@ -30,13 +30,6 @@
         <mat-error *ngIf="inventoryAuditFormControls.item.invalid">
           {{ 'error.field' | translate }}</mat-error>
       </mat-form-field>
-      <mat-form-field appearance="outline" class="input-row" fxFlex>
-        <mat-label>{{ 'scans.doubleScan.inventorynature' | translate }}</mat-label>
-        <input matInput type="text" formControlName="inventorynature" />
-        <mat-error *ngIf="inventoryAuditFormControls.inventorynature.invalid">
-          {{ 'error.field' | translate }}</mat-error>
-      </mat-form-field>
-
     </div>
     <div fxLayout="row" fxLayoutGap="5px">
       <mat-form-field appearance="outline" fxFlex="35">

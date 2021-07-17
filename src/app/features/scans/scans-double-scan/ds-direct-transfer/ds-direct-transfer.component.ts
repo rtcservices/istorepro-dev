@@ -13,7 +13,7 @@ import { DsDirectTransferPutawayDialogComponent } from './dialogs/ds-direct-tran
 })
 export class DsDirectTransferComponent implements OnInit {
   DirectTransferForm!: FormGroup;
-  mode='putaway'
+  mode='pick'
   type:any
   constructor( private fb: FormBuilder,public dialog: MatDialog) {
     this.createDirectTransferForm()
@@ -31,6 +31,10 @@ export class DsDirectTransferComponent implements OnInit {
         '',
         [Validators.required, Validators.pattern(patternsHelper.alphanumeric)]
       ],
+      scan: [
+        '',
+        [Validators.required]
+      ],
       location: [
         '',
         [Validators.required, Validators.pattern(patternsHelper.alphanumeric)]
@@ -40,18 +44,6 @@ export class DsDirectTransferComponent implements OnInit {
         [Validators.required, Validators.pattern(patternsHelper.alphanumeric)]
       ],
       item: [
-        '',
-        [Validators.required, Validators.pattern(patternsHelper.alphanumeric)]
-      ],
-      ruselect: [
-        '',
-        [Validators.required, Validators.pattern(patternsHelper.alphanumeric)]
-      ],
-      rugood: [
-        '',
-        [Validators.required, Validators.pattern(patternsHelper.alphanumeric)]
-      ],
-      rudmg: [
         '',
         [Validators.required, Validators.pattern(patternsHelper.alphanumeric)]
       ],
