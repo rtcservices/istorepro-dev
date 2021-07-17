@@ -111,19 +111,16 @@
       <br>
       <div (click)="$event.stopPropagation();" fxLayout="column">
         <form fxLayout="column" [formGroup]="profileUpdateForm" (ngSubmit)="onProfileUpdateSubmit()" class="slim-form">
-          <mat-form-field appearance="outline" fxFlex>
-            <mat-label>{{
-            'general.fullName' | translate
-            }}</mat-label>
-            <input matInput type="text" formControlName="fullName" />
-            <mat-error *ngIf="profileUpdateFormControls.fullName.invalid">
-              {{ 'error.field' | translate }}</mat-error>
-          </mat-form-field>
+          <fieldset class="read-only-input" fxFlex>
+            <legend>{{ 'general.fullName' | translate }}</legend>
+            <label>{{ profileUpdateFormControls.fullName.value }}</label>
+          </fieldset>
           <mat-form-field appearance="outline" fxFlex>
             <mat-label>{{
             'general.loginName' | translate
             }}</mat-label>
-            <input matInput type="text" formControlName="loginName" />
+            <mat-select disableOptionCentering panelClass="slim-select-field" type="text" formControlName="loginName">
+            </mat-select>
             <mat-error *ngIf="profileUpdateFormControls.loginName.invalid">
               {{ 'error.field' | translate }}</mat-error>
           </mat-form-field>
@@ -186,7 +183,7 @@
   </mat-menu>
 
   <button mat-icon-button>
-    <mat-icon class="settings"  [routerLink]="['/settings']" >settings</mat-icon>
+    <mat-icon class="settings" [routerLink]="['/settings']">settings</mat-icon>
   </button>
   <!-- <button mat-icon-button [matTooltip]="settingsTranslated" [matMenuTriggerFor]="settingsMenu">
     <mat-icon class="settings">settings</mat-icon>

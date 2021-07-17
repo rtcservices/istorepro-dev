@@ -183,6 +183,10 @@
               </ng-template>
             </tbody>
           </table>
+        </mat-card-content>
+      </mat-card>
+      <mat-card>
+        <mat-card-content>
           <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="30px" fxLayoutAlign="space-between center">
             <div fxFlexOrder.lt-md="2">
               <ibe-data-audit insertedBy=""></ibe-data-audit>
@@ -240,10 +244,13 @@
                 }}</mat-label>
               <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="dateoperator">
                 <mat-option value=">">></mat-option>
-                <mat-option value="<"> < </mat-option>
-                 <mat-option value=">=">  >= </mat-option>
-                <mat-option value="<=">  <= </mat-option>
-                 <mat-option value="<>"> <> </mat-option>
+                <mat-option value="<">
+                  < </mat-option> <mat-option value=">="> >=
+                </mat-option>
+                <mat-option value="<=">
+                  <= </mat-option> <mat-option value="<>">
+                    <>
+                </mat-option>
                 <mat-option value="="> = </mat-option>
               </mat-select>
               <mat-error *ngIf="searchReceiptFormControls.dateoperator.invalid">{{
