@@ -10,8 +10,8 @@ import {
 import { LoaderService } from '../../../services/loader.service';
 import { NotificationService } from '../../../services/notification.service';
 import { OdShiptoDialogComponent } from './dialogs/od-shipto-dialog/od-shipto-dialog.component';
-import { OdOwnerDialogComponent } from './dialogs/od-owner-dialog/od-owner-dialog.component'
-import { OdItemDialogComponent } from './dialogs/od-item-dialog/od-item-dialog.component'
+import { OdOwnerDialogComponent } from './dialogs/od-owner-dialog/od-owner-dialog.component';
+import { OdItemDialogComponent } from './dialogs/od-item-dialog/od-item-dialog.component';
 import { TitleService } from 'src/app/services/title.service';
 import { TranslateService } from '@ngx-translate/core';
 import { SiteTranslateService } from 'src/app/services/site-translate.service';
@@ -180,18 +180,22 @@ export class OperationsDeliveryComponent implements OnInit {
       this.notification.error(this.formErrorTranslated);
       return;
     }
-    const warehouse: string = this.searchDeliveryForm.get('warehouse')?.value || '';
+    const warehouse: string =
+      this.searchDeliveryForm.get('warehouse')?.value || '';
     const owner: string = this.searchDeliveryForm.get('owner')?.value || '';
     const drn: string = this.searchDeliveryForm.get('drn')?.value || '';
-    const dateoperator: string = this.searchDeliveryForm.get('dateoperator')?.value || '';
-    const deliverydate: string = this.searchDeliveryForm.get('deliverydate')?.value || '';
+    const dateoperator: string =
+      this.searchDeliveryForm.get('dateoperator')?.value || '';
+    const deliverydate: string =
+      this.searchDeliveryForm.get('deliverydate')?.value || '';
     const po: string = this.searchDeliveryForm.get('po')?.value || '';
     const doc: string = this.searchDeliveryForm.get('do')?.value || '';
     const so: string = this.searchDeliveryForm.get('so')?.value || '';
     const status: string = this.searchDeliveryForm.get('status')?.value || '';
     const item: string = this.searchDeliveryForm.get('item')?.value || '';
     const shipto: string = this.searchDeliveryForm.get('shipto')?.value || '';
-    const batchnumber: string = this.searchDeliveryForm.get('batchnumber')?.value || '';
+    const batchnumber: string =
+      this.searchDeliveryForm.get('batchnumber')?.value || '';
     if (
       warehouse.trim() === '' &&
       owner.trim() === '' &&

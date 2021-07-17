@@ -22,7 +22,7 @@
                 <mat-form-field appearance="outline" fxFlex>
                   <mat-label>{{'operations.delivery.owner' | translate}}</mat-label>
                   <input matInput type="text" formControlName="owner" />
-                  <mat-icon (click)="openOwnerDialog()"  matSuffix>search</mat-icon>
+                  <mat-icon (click)="openOwnerDialog()" matSuffix>search</mat-icon>
                   <mat-error *ngIf="dataDeliveryFormControls.owner.invalid">
                     {{ 'error.field' | translate }}
                   </mat-error>
@@ -121,13 +121,15 @@
                     formControlName="receiptdateoperator">
                     <mat-option value=">">></mat-option>
                     <mat-option value="<">
-                      < </mat-option> <mat-option value=">="> >=
-                    </mat-option>
-                    <mat-option value="<=">
-                      <= </mat-option> <mat-option value="<>">
-                        <>
-                    </mat-option>
-                    <mat-option value="="> = </mat-option>
+                      < </mat-option>
+                        <mat-option value=">="> >=
+                        </mat-option>
+                        <mat-option value="<=">
+                          <= </mat-option>
+                            <mat-option value="<>">
+                              <>
+                            </mat-option>
+                            <mat-option value="="> = </mat-option>
                   </mat-select>
                   <mat-error *ngIf="dataDeliveryFormControls.receiptdateoperator.invalid">{{
                     'error.field' | translate
@@ -148,13 +150,15 @@
                   <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="expdateoperator">
                     <mat-option value=">">></mat-option>
                     <mat-option value="<">
-                      < </mat-option> <mat-option value=">="> >=
-                    </mat-option>
-                    <mat-option value="<=">
-                      <= </mat-option> <mat-option value="<>">
-                        <>
-                    </mat-option>
-                    <mat-option value="="> = </mat-option>
+                      < </mat-option>
+                        <mat-option value=">="> >=
+                        </mat-option>
+                        <mat-option value="<=">
+                          <= </mat-option>
+                            <mat-option value="<>">
+                              <>
+                            </mat-option>
+                            <mat-option value="="> = </mat-option>
                   </mat-select>
                   <mat-error *ngIf="dataDeliveryFormControls.expdateoperator.invalid">{{
                     'error.field' | translate
@@ -187,14 +191,13 @@
                   </mat-error>
                 </mat-form-field>
               </div>
-              <div fxLayout="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
-                <div fxLayoutAlign="start" class="form-three-button-container smaller-button-container-40"
-                  fxFlex.gt-sm="33">
+              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
+                <div fxLayoutAlign="start" class="form-three-button-container" fxFlex.gt-sm="33">
                   <button type="button" mat-raised-button color="primary">
-                    <mat-icon>add_shopping_cart</mat-icon>
+                    <mat-icon>list_alt</mat-icon>
                   </button>
-                  <button type="button" mat-raised-button color="primary">
-                    <mat-icon>new_label</mat-icon>
+                  <button class="text-button" type="button" mat-raised-button color="primary">
+                    DRN
                   </button>
                 </div>
                 <div fxFlex.gt-sm="33">
@@ -206,7 +209,7 @@
                 </div>
                 <div fxLayoutAlign="end" fxFlex.gt-sm="15">
                   <button type="button" mat-raised-button color="primary">
-                    <mat-icon>search</mat-icon>
+                    {{'operations.delivery.alloc' | translate}}
                   </button>
                 </div>
               </div>
@@ -257,18 +260,24 @@
             </tbody>
           </table>
           <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="30px" fxLayoutAlign="space-between center">
-            <div fxFlexOrder.lt-md="2">
-              <ibe-data-audit insertedBy=""></ibe-data-audit>
-            </div>
             <div class="form-three-button-container" fxFlexOrder.lt-md="1">
-              <button mat-raised-button color="primary" type="submit" (click)="saveDeliveryData()">
-                <mat-icon>task_alt</mat-icon>
-              </button>
               <button mat-raised-button color="warn" type="button" (click)="deleteDeliveryData()">
                 <mat-icon>remove_circle_outline</mat-icon>
               </button>
               <button mat-raised-button color="accent" type="reset" (click)="resetDeliveryDataForm()">
                 <mat-icon>loop</mat-icon>
+              </button>
+            </div>
+            <div fxFlex fxFlexOrder.lt-md="2" style="padding-left: 20px;">
+              <div>Del Wt : 110</div>
+              <div>Del Vol : 0</div>
+            </div>
+            <div fxFlex class="form-three-button-container" fxFlexOrder.lt-md="3">
+              <button mat-raised-button color="primary" type="submit" (click)="saveDeliveryData()">
+                <mat-icon>task_alt</mat-icon>
+              </button>
+              <button mat-raised-button color="primary" type="button">
+                <mat-icon>recommend</mat-icon>
               </button>
             </div>
           </div>
@@ -299,7 +308,7 @@
                 'operations.delivery.owner' | translate
                 }}</mat-label>
               <input matInput type="text" formControlName="owner" />
-              <mat-icon (click)="openOwnerDialog()"  matSuffix>search</mat-icon>
+              <mat-icon (click)="openOwnerDialog()" matSuffix>search</mat-icon>
               <mat-error *ngIf="searchDeliveryFormControls.owner.invalid">
                 {{ 'error.field' | translate }}</mat-error>
             </mat-form-field>
@@ -317,13 +326,15 @@
               <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="dateoperator">
                 <mat-option value=">">></mat-option>
                 <mat-option value="<">
-                  < </mat-option> <mat-option value=">="> >=
-                </mat-option>
-                <mat-option value="<=">
-                  <= </mat-option> <mat-option value="<>">
-                    <>
-                </mat-option>
-                <mat-option value="="> = </mat-option>
+                  < </mat-option>
+                    <mat-option value=">="> >=
+                    </mat-option>
+                    <mat-option value="<=">
+                      <= </mat-option>
+                        <mat-option value="<>">
+                          <>
+                        </mat-option>
+                        <mat-option value="="> = </mat-option>
               </mat-select>
               <mat-error *ngIf="searchDeliveryFormControls.dateoperator.invalid">{{
                 'error.field' | translate
