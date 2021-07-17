@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DsPickDialogComponent } from './ds-pick-dialog.component';
+import { DsPickScanDialogComponent } from './ds-pick-scan-dialog.component';
 
-describe('DsPickDialogComponent', () => {
-  let component: DsPickDialogComponent;
-  let fixture: ComponentFixture<DsPickDialogComponent>;
+describe('DsPickScanDialogComponent', () => {
+  let component: DsPickScanDialogComponent;
+  let fixture: ComponentFixture<DsPickScanDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DsPickDialogComponent ]
+      declarations: [ DsPickScanDialogComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DsPickDialogComponent);
+    fixture = TestBed.createComponent(DsPickScanDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

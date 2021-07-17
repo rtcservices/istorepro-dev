@@ -5,10 +5,10 @@ import { SharedModule } from '../../shared/shared.module';
 import { ScansRoutingModule } from './scans-routing.module';
 import { ScansDoubleScanComponent } from './scans-double-scan/scans-double-scan.component';
 import { DsPutawayComponent } from './scans-double-scan/ds-putaway/ds-putaway.component';
-import { DsPutawayDialogComponent } from './scans-double-scan/ds-putaway/dialogs/ds-putaway-dialog/ds-putaway-dialog.component';
+import { DsPutawayScanDialogComponent } from './scans-double-scan/ds-putaway/dialogs/ds-putaway-scan-dialog/ds-putaway-scan-dialog.component';
 import { DsPutawayItemAssistanceDialogComponent } from './scans-double-scan/ds-putaway/dialogs/ds-putaway-item-assistance-dialog/ds-putaway-item-assistance-dialog.component';
 import { DsPickComponent } from './scans-double-scan/ds-pick/ds-pick.component';
-import { DsPickDialogComponent } from './scans-double-scan/ds-pick/dialogs/ds-pick-dialog/ds-pick-dialog.component';
+import { DsPickScanDialogComponent } from './scans-double-scan/ds-pick/dialogs/ds-pick-scan-dialog/ds-pick-scan-dialog.component';
 import { DsPickItemAssistanceDialogComponent } from './scans-double-scan/ds-pick/dialogs/ds-pick-item-assistance-dialog/ds-pick-item-assistance-dialog.component';
 import { DsDirectPutawayComponent } from './scans-double-scan/ds-direct-putaway/ds-direct-putaway.component';
 import { DsInventoryAuditComponent } from './scans-double-scan/ds-inventory-audit/ds-inventory-audit.component';
@@ -26,10 +26,10 @@ import { DsDirectPutawayLocationDialogComponent } from './scans-double-scan/ds-d
   declarations: [
     ScansDoubleScanComponent,
     DsPutawayComponent,
-    DsPutawayDialogComponent,
+    DsPutawayScanDialogComponent,
     DsPutawayItemAssistanceDialogComponent,
     DsPickComponent,
-    DsPickDialogComponent,
+    DsPickScanDialogComponent,
     DsPickItemAssistanceDialogComponent,
     DsDirectPutawayComponent,
     DsInventoryAuditComponent,

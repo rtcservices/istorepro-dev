@@ -22,7 +22,7 @@
           'scans.doubleScan.scan' | translate
           }}</mat-label>
         <input matInput type="text" formControlName="scan" />
-        <mat-icon matSuffix type="button">search</mat-icon>
+        <mat-icon  (click)="openScanDialog()" matSuffix type="button">search</mat-icon>
         <mat-error *ngIf="putawayFormControls.scan.invalid">
           {{ 'error.field' | translate }}</mat-error>
       </mat-form-field>
@@ -84,7 +84,7 @@
       </div>
     </div>
     <div fxLayout="row">
-      <button type="button" (click)="openPutawayDialog()" fxFlex mat-raised-button color="primary">
+      <button type="button" fxFlex mat-raised-button color="primary">
         Putaway
       </button>
     </div>

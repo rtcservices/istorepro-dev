@@ -2,11 +2,11 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
-  selector: 'ibe-ds-pick-dialog',
-  templateUrl: './ds-pick-dialog.component.html',
-  styleUrls: ['./ds-pick-dialog.component.scss']
+  selector: 'ibe-ds-pick-scan-dialog',
+  templateUrl: './ds-pick-scan-dialog.component.html',
+  styleUrls: ['./ds-pick-scan-dialog.component.scss']
 })
-export class DsPickDialogComponent implements OnInit {
+export class DsPickScanDialogComponent implements OnInit {
   constructor(public dialog: MatDialog) {}
 
 

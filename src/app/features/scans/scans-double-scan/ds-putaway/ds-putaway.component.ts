@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { patternsHelper } from '../../../../helpers/patterns.helper';
 import { MatDialog } from '@angular/material/dialog';
-import { DsPutawayDialogComponent } from './dialogs/ds-putaway-dialog/ds-putaway-dialog.component';
+import { DsPutawayScanDialogComponent } from './dialogs/ds-putaway-scan-dialog/ds-putaway-scan-dialog.component';
 import { DsPutawayItemAssistanceDialogComponent } from './dialogs/ds-putaway-item-assistance-dialog/ds-putaway-item-assistance-dialog.component';
 import { DsPutawayLocationDialogComponent } from './dialogs/ds-putaway-location-dialog/ds-putaway-location-dialog.component';
 
@@ -66,9 +66,8 @@ export class DsPutawayComponent implements OnInit {
     this.type = 'item';
   }
 
-
-  openPutawayDialog() {
-    this.dialog.open(DsPutawayDialogComponent, {
+  openScanDialog() {
+    this.dialog.open(DsPutawayScanDialogComponent, {
       width: '800px'
     });
   }
@@ -79,14 +78,10 @@ export class DsPutawayComponent implements OnInit {
     });
   }
 
-
   openItemAssistanceDialog() {
     this.dialog.open(DsPutawayItemAssistanceDialogComponent, {
       width: '800px'
     });
   }
-
-
-
 
 }

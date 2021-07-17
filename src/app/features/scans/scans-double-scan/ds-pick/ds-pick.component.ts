@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { patternsHelper } from '../../../../helpers/patterns.helper';
 import { MatDialog } from '@angular/material/dialog';
-import { DsPickDialogComponent } from './dialogs/ds-pick-dialog/ds-pick-dialog.component';
+import { DsPickScanDialogComponent } from './dialogs/ds-pick-scan-dialog/ds-pick-scan-dialog.component';
 import { DsPickItemAssistanceDialogComponent } from './dialogs/ds-pick-item-assistance-dialog/ds-pick-item-assistance-dialog.component';
 
 @Component({
@@ -64,20 +64,15 @@ export class DsPickComponent implements OnInit {
     this.type = 'item';
   }
 
-
-
-  openPickDialog() {
-    this.dialog.open(DsPickDialogComponent, {
+  openScanDialog() {
+    this.dialog.open(DsPickScanDialogComponent, {
       width: '800px'
     });
   }
-
 
   openItemAssistanceDialog() {
     this.dialog.open(DsPickItemAssistanceDialogComponent, {
       width: '800px'
     });
   }
-
-
 }
