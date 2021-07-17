@@ -209,7 +209,7 @@
       <ibe-nav-list-item *ngFor="let item of headerNavItems" [item]="item"></ibe-nav-list-item>
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content [@routeAnimations]="prepareRoute(outlet)">
+  <mat-sidenav-content [@routeAnimations]="prepareRoute(outlet)" [ngClass]="production ? '' : 'radial-gradient'">
     <router-outlet #outlet="outlet" class="app-container"></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

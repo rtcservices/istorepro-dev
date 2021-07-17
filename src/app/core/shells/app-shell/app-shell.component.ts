@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router, RouterOutlet } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { patternsHelper } from 'src/app/helpers/patterns.helper';
+
+import { environment } from '../../../../environments/environment';
 
 import { slideInAnimation } from '../../../animations/animations';
 
@@ -26,6 +27,8 @@ export class AppShellComponent implements OnInit {
   settingsTranslated = '';
   logoutTranslated = '';
 
+  production = false;
+
   notifications: NotificationModel[] = [];
 
   constructor(
@@ -35,6 +38,7 @@ export class AppShellComponent implements OnInit {
     public headerNavService: HeaderNavService,
     public authService: AuthService
   ) {
+    this.production = environment.production;
     this.createProfileUpdateForm();
   }
 

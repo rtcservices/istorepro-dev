@@ -1,3 +1,4 @@
+@import './styles-dev.scss'; // remove in production
 @import './assets/scss/variables.scss';
 @import './assets/scss/buttons.scss';
 @import './assets/scss/mat-forms.scss';
@@ -99,9 +100,9 @@ small {
   }
 }
 
-.page-import-bottom{
+.page-import-bottom {
   @include breakpoint(mobileonly) {
-    margin-bottom : 38px !important;
+    margin-bottom: 38px !important;
   }
 }
 
