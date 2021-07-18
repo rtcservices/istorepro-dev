@@ -4,239 +4,227 @@
 <mat-tab-group #setupWarehouseTab>
   <mat-tab label="Data">
     <form [formGroup]="dataWarehouseForm" class="slim-form">
-      <div class="h-100">
-        <div class="bordered-section">
-          <section class="inner-tab">
-            <mat-tab-group #setupWarehouseDataTab id="setupWarehouseDataTab">
-              <mat-tab label="Warehouse">
-                <section>
-                  <div fxLayout="row" class="row" fxLayoutGap="5px">
-                    <mat-form-field appearance="outline" fxFlex="14" fxFlex.lt-sm="25">
-                      <mat-label>{{'setup.warehouse.code' | translate }}</mat-label>
-                      <input matInput required type="text" formControlName="code" />
-                      <mat-error *ngIf="dataWarehouseControls.code.invalid">{{ 'error.field' | translate }}
-                      </mat-error>
-                    </mat-form-field>
-                    <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="45">
-                      <mat-label>{{'setup.warehouse.description' | translate}}</mat-label>
-                      <input matInput required type="text" formControlName="description" />
-                      <mat-error *ngIf="dataWarehouseControls.description.invalid">{{ 'error.field' | translate }}
-                      </mat-error>
-                    </mat-form-field>
-                    <mat-form-field appearance="outline" fxFlex="20" fxFlex.lt-sm="27">
-                      <mat-label>{{'setup.warehouse.id' | translate}}</mat-label>
-                      <input matInput required type="text" formControlName="id" />
-                      <mat-error *ngIf="dataWarehouseControls.id.invalid">{{ 'error.field' | translate }}
-                      </mat-error>
-                    </mat-form-field>
-                  </div>
-                  <div fxLayout="row" class="row" fxLayoutGap="5px">
-                    <mat-form-field appearance="outline" fxFlex="49">
-                      <mat-label>{{'setup.warehouse.address1' | translate}}</mat-label>
-                      <input matInput required type="text" formControlName="address1" />
-                      <mat-error *ngIf="dataWarehouseControls.address1.invalid">
-                        {{'error.field' | translate }}</mat-error>
-                    </mat-form-field>
-                    <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="49.5">
-                      <mat-label>{{'setup.warehouse.address2' | translate }}</mat-label>
-                      <input matInput type="text" formControlName="address2" />
-                    </mat-form-field>
-                  </div>
-                  <div fxLayout="row" class="row" fxLayoutGap="5px">
-                    <mat-form-field appearance="outline" fxFlex="49">
-                      <mat-label>{{'setup.warehouse.address3' | translate}}</mat-label>
-                      <input matInput type="text" formControlName="address3" />
-                    </mat-form-field>
-                    <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="49.5">
-                      <mat-label>{{'setup.warehouse.address4' | translate}}</mat-label>
-                      <input matInput type="text" formControlName="address4" />
-                    </mat-form-field>
-                  </div>
-                  <div fxLayout="row" class="row" fxLayoutGap="5px">
-                    <mat-form-field appearance="outline" fxFlex="20">
-                      <mat-label>{{'setup.warehouse.zip' | translate}}</mat-label>
-                      <input matInput type="text" formControlName="zip" />
-                    </mat-form-field>
-                    <mat-form-field appearance="outline" fxFlex="38">
-                      <mat-label>{{'setup.warehouse.telephone' | translate}}</mat-label>
-                      <input matInput type="text" formControlName="telephone" />
-                    </mat-form-field>
-                    <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="39">
-                      <mat-label>{{'setup.warehouse.fax' | translate}}</mat-label>
-                      <input matInput type="text" formControlName="fax" />
-                    </mat-form-field>
-                  </div>
-                  <div fxLayout="row" class="row" fxLayoutGap="5px">
-                    <mat-form-field appearance="outline" fxFlex>
-                      <mat-label>{{'setup.warehouse.email' | translate}}</mat-label>
-                      <input matInput type="text" formControlName="email" />
-                    </mat-form-field>
-                  </div>
-                  <div class="pale-border-box">
-                    <b>{{'setup.warehouse.backDateLimit' | translate}}</b>
-                    <div fxFex fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
-                      <div class="input-group" fxFlex.lt-sm="49">
-                        <div class="input-group-title">{{'setup.warehouse.receipt' | translate}}</div>
-                        <div class="input-group-area">
-                          <input type="text" value="0">
-                        </div>
-                        <div class="input-group-icon">{{'general.days' | translate}}</div>
-                      </div>
-                      <div class="input-group" fxFlex.lt-sm="49">
-                        <div class="input-group-title">{{'setup.warehouse.delivery' | translate}}</div>
-                        <div class="input-group-area"><input type="text" value="0">
-                        </div>
-                        <div class="input-group-icon">{{'general.days' | translate}}</div>
-                      </div>
+      <div class="bordered-section">
+        <section class="inner-tab">
+          <mat-tab-group #setupWarehouseDataTab id="setupWarehouseDataTab">
+            <mat-tab label="Warehouse">
+              <div fxLayout="row" class="row" fxLayoutGap="5px">
+                <mat-form-field appearance="outline" fxFlex="14" fxFlex.lt-sm="25">
+                  <mat-label>{{'setup.warehouse.code' | translate }}</mat-label>
+                  <input matInput required type="text" formControlName="code" />
+                  <mat-error *ngIf="dataWarehouseControls.code.invalid">{{ 'error.field' | translate }}
+                  </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="45">
+                  <mat-label>{{'setup.warehouse.description' | translate}}</mat-label>
+                  <input matInput required type="text" formControlName="description" />
+                  <mat-error *ngIf="dataWarehouseControls.description.invalid">{{ 'error.field' | translate }}
+                  </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex="20" fxFlex.lt-sm="27">
+                  <mat-label>{{'setup.warehouse.id' | translate}}</mat-label>
+                  <input matInput required type="text" formControlName="id" />
+                  <mat-error *ngIf="dataWarehouseControls.id.invalid">{{ 'error.field' | translate }}
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div fxLayout="row" class="row" fxLayoutGap="5px">
+                <mat-form-field appearance="outline" fxFlex="49">
+                  <mat-label>{{'setup.warehouse.address1' | translate}}</mat-label>
+                  <input matInput required type="text" formControlName="address1" />
+                  <mat-error *ngIf="dataWarehouseControls.address1.invalid">
+                    {{'error.field' | translate }}</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="49.5">
+                  <mat-label>{{'setup.warehouse.address2' | translate }}</mat-label>
+                  <input matInput type="text" formControlName="address2" />
+                </mat-form-field>
+              </div>
+              <div fxLayout="row" class="row" fxLayoutGap="5px">
+                <mat-form-field appearance="outline" fxFlex="49">
+                  <mat-label>{{'setup.warehouse.address3' | translate}}</mat-label>
+                  <input matInput type="text" formControlName="address3" />
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="49.5">
+                  <mat-label>{{'setup.warehouse.address4' | translate}}</mat-label>
+                  <input matInput type="text" formControlName="address4" />
+                </mat-form-field>
+              </div>
+              <div fxLayout="row" class="row" fxLayoutGap="5px">
+                <mat-form-field appearance="outline" fxFlex="20">
+                  <mat-label>{{'setup.warehouse.zip' | translate}}</mat-label>
+                  <input matInput type="text" formControlName="zip" />
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex="38">
+                  <mat-label>{{'setup.warehouse.telephone' | translate}}</mat-label>
+                  <input matInput type="text" formControlName="telephone" />
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="39">
+                  <mat-label>{{'setup.warehouse.fax' | translate}}</mat-label>
+                  <input matInput type="text" formControlName="fax" />
+                </mat-form-field>
+              </div>
+              <div fxLayout="row" class="row" fxLayoutGap="5px">
+                <mat-form-field appearance="outline" fxFlex>
+                  <mat-label>{{'setup.warehouse.email' | translate}}</mat-label>
+                  <input matInput type="text" formControlName="email" />
+                </mat-form-field>
+              </div>
+              <div class="pale-border-box">
+                <b>{{'setup.warehouse.backDateLimit' | translate}}</b>
+                <div fxFex fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                  <div class="input-group" fxFlex.lt-sm="49">
+                    <div class="input-group-title">{{'setup.warehouse.receipt' | translate}}</div>
+                    <div class="input-group-area">
+                      <input type="text" value="0">
                     </div>
+                    <div class="input-group-icon">{{'general.days' | translate}}</div>
                   </div>
-                </section>
-              </mat-tab>
-              <mat-tab label="Document">
-                <section>
-                  <table class="site-table w-100 mat-elevation-z8">
-                    <thead>
-                      <tr>
-                        <th>{{ 'setup.warehouse.document.type' | translate}}</th>
-                        <th>{{ 'setup.warehouse.document.prefix' | translate}}</th>
-                        <th>{{ 'setup.warehouse.document.currentNo' | translate}}</th>
-                        <th>{{ 'setup.warehouse.document.autoEmail' | translate}}</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <ng-template let-document ngFor [ngForOf]="documentDataSource">
-                        <tr>
-                          <td>{{document.type}}</td>
-                          <td style="text-align: center; width: 200px;">
-                            <input type="text" style="width: auto;" [value]="document.prefix">
-                          </td>
-                          <td style="width: 70px;">{{document.currentNo}}</td>
-                          <td class="checkbox-column" style="text-align: center; width: 80px;">
-                            <mat-checkbox color="primary" [checked]="document.autoEmail" disabled></mat-checkbox>
-                          </td>
-                        </tr>
-                      </ng-template>
-                    </tbody>
-                  </table>
-                </section>
-              </mat-tab>
-              <mat-tab label="Rule Box">
-                <section>
-                  <div class="text-right">
-                    <mat-checkbox color="primary">{{ 'setup.warehouse.ruleBox.essential' | translate}}
-                    </mat-checkbox>
+                  <div class="input-group" fxFlex.lt-sm="49">
+                    <div class="input-group-title">{{'setup.warehouse.delivery' | translate}}</div>
+                    <div class="input-group-area"><input type="text" value="0">
+                    </div>
+                    <div class="input-group-icon">{{'general.days' | translate}}</div>
                   </div>
-                  <table class="site-table w-100 mat-elevation-z8">
-                    <thead>
-                      <tr>
-                        <th>#</th>
-                        <th>{{ 'setup.warehouse.ruleBox.rule' | translate}}</th>
-                        <th>{{ 'setup.warehouse.ruleBox.value' | translate}}</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <ng-template let-rule ngFor [ngForOf]="ruleBoxDataSource">
-                        <tr>
-                          <td style="width: 50px;">
-                            <input type="text" style="width: 100%;" [value]="rule.serialNo">
-                          </td>
-                          <td>
-                            <input type="text" style="width: 100%;" [value]="rule.rule">
-                          </td>
-                          <td style="width: 200px;">
-                            <input type="text" style="width: 100%;" [value]="rule.value">
-                          </td>
-                        </tr>
-                      </ng-template>
-                    </tbody>
-                  </table>
-                </section>
-              </mat-tab>
-              <mat-tab label="Contacts">
-                <section>
-                  <table class="site-table w-100 mat-elevation-z8">
-                    <thead>
-                      <tr>
-                        <th>{{ 'setup.warehouse.contact.name' | translate}}</th>
-                        <th>{{ 'setup.warehouse.contact.email' | translate}}</th>
-                        <th style="text-align: center;">
-                          <mat-icon style="padding-top: 3px;">add_circle_outline</mat-icon>
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <ng-template let-contact ngFor [ngForOf]="contactDataSource">
-                        <tr>
-                          <td class="column-150">
-                            <input type="text" class="w-100" [value]="contact.name">
-                          </td>
-                          <td>
-                            <input type="text" class="w-100" [value]="contact.email">
-                          </td>
-                          <td class="two-button-column">
-                            <button type="button" mat-mini-fab color="primary" class="mdb-30">
-                              <mat-icon>edit</mat-icon>
-                            </button>
-                            <button type="button" mat-mini-fab color="warn" class="mdb-30">
-                              <mat-icon>remove</mat-icon>
-                            </button>
-                          </td>
-                        </tr>
-                      </ng-template>
-                    </tbody>
-                  </table>
-                </section>
-              </mat-tab>
-              <mat-tab label="Operator">
-                <section>
-                  <table class="site-table w-100 mat-elevation-z8">
-                    <thead>
-                      <tr>
-                        <th>{{ 'setup.warehouse.operator.code' | translate}}</th>
-                        <th>{{ 'setup.warehouse.operator.name' | translate}}</th>
-                        <th>{{ 'setup.warehouse.operator.loginName' | translate}}</th>
-                        <th>{{ 'setup.warehouse.operator.inactive' | translate}}</th>
-                        <th style="text-align: center;">
-                          <mat-icon style="padding-top: 3px;">add_circle_outline</mat-icon>
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <ng-template let-operator ngFor [ngForOf]="operatorDataSource">
-                        <tr>
-                          <td class="column-100">
-                            <input type="text" class="w-100" [value]="operator.code">
-                          </td>
-                          <td>
-                            <input type="text" class="w-100" [value]="operator.name">
-                          </td>
-                          <td class="column-150">
-                            <select type="text" class="w-100" [value]="operator.name">
-                              <option value="l1">Login 1</option>
-                              <option value="l1">Login 2</option>
-                              <option value="l1">Login 3</option>
-                            </select>
-                          </td>
-                          <td class="checkbox-column" style="text-align: center;">
-                            <mat-checkbox color="warn"></mat-checkbox>
-                          </td>
-                          <td class="two-button-column">
-                            <button type="button" mat-mini-fab color="primary" class="mdb-30">
-                              <mat-icon>edit</mat-icon>
-                            </button>
-                            <button type="button" mat-mini-fab color="warn" class="mdb-30">
-                              <mat-icon>remove</mat-icon>
-                            </button>
-                          </td>
-                        </tr>
-                      </ng-template>
-                    </tbody>
-                  </table>
-                </section>
-              </mat-tab>
-            </mat-tab-group>
-          </section>
-        </div>
+                </div>
+              </div>
+            </mat-tab>
+            <mat-tab label="Document">
+              <table class="site-table w-100 mat-elevation-z8">
+                <thead>
+                  <tr>
+                    <th>{{ 'setup.warehouse.document.type' | translate}}</th>
+                    <th>{{ 'setup.warehouse.document.prefix' | translate}}</th>
+                    <th>{{ 'setup.warehouse.document.currentNo' | translate}}</th>
+                    <th>{{ 'setup.warehouse.document.autoEmail' | translate}}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <ng-template let-document ngFor [ngForOf]="documentDataSource">
+                    <tr>
+                      <td>{{document.type}}</td>
+                      <td style="text-align: center; width: 200px;">
+                        <input type="text" style="width: auto;" [value]="document.prefix">
+                      </td>
+                      <td style="width: 70px;">{{document.currentNo}}</td>
+                      <td class="checkbox-column" style="text-align: center; width: 80px;">
+                        <mat-checkbox color="primary" [checked]="document.autoEmail" disabled></mat-checkbox>
+                      </td>
+                    </tr>
+                  </ng-template>
+                </tbody>
+              </table>
+            </mat-tab>
+            <mat-tab label="Rule Box">
+              <div class="text-right">
+                <mat-checkbox color="primary">{{ 'setup.warehouse.ruleBox.essential' | translate}}
+                </mat-checkbox>
+              </div>
+              <table class="site-table w-100 mat-elevation-z8">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>{{ 'setup.warehouse.ruleBox.rule' | translate}}</th>
+                    <th>{{ 'setup.warehouse.ruleBox.value' | translate}}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <ng-template let-rule ngFor [ngForOf]="ruleBoxDataSource">
+                    <tr>
+                      <td style="width: 50px;">
+                        <input type="text" style="width: 100%;" [value]="rule.serialNo">
+                      </td>
+                      <td>
+                        <input type="text" style="width: 100%;" [value]="rule.rule">
+                      </td>
+                      <td style="width: 200px;">
+                        <input type="text" style="width: 100%;" [value]="rule.value">
+                      </td>
+                    </tr>
+                  </ng-template>
+                </tbody>
+              </table>
+            </mat-tab>
+            <mat-tab label="Contacts">
+              <table class="site-table w-100 mat-elevation-z8">
+                <thead>
+                  <tr>
+                    <th>{{ 'setup.warehouse.contact.name' | translate}}</th>
+                    <th>{{ 'setup.warehouse.contact.email' | translate}}</th>
+                    <th style="text-align: center;">
+                      <mat-icon style="padding-top: 3px;">add_circle_outline</mat-icon>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <ng-template let-contact ngFor [ngForOf]="contactDataSource">
+                    <tr>
+                      <td class="column-150">
+                        <input type="text" class="w-100" [value]="contact.name">
+                      </td>
+                      <td>
+                        <input type="text" class="w-100" [value]="contact.email">
+                      </td>
+                      <td class="two-button-column">
+                        <button type="button" mat-mini-fab color="primary" class="mdb-30">
+                          <mat-icon>edit</mat-icon>
+                        </button>
+                        <button type="button" mat-mini-fab color="warn" class="mdb-30">
+                          <mat-icon>remove</mat-icon>
+                        </button>
+                      </td>
+                    </tr>
+                  </ng-template>
+                </tbody>
+              </table>
+            </mat-tab>
+            <mat-tab label="Operator">
+              <table class="site-table w-100 mat-elevation-z8">
+                <thead>
+                  <tr>
+                    <th>{{ 'setup.warehouse.operator.code' | translate}}</th>
+                    <th>{{ 'setup.warehouse.operator.name' | translate}}</th>
+                    <th>{{ 'setup.warehouse.operator.loginName' | translate}}</th>
+                    <th>{{ 'setup.warehouse.operator.inactive' | translate}}</th>
+                    <th style="text-align: center;">
+                      <mat-icon style="padding-top: 3px;">add_circle_outline</mat-icon>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <ng-template let-operator ngFor [ngForOf]="operatorDataSource">
+                    <tr>
+                      <td class="column-100">
+                        <input type="text" class="w-100" [value]="operator.code">
+                      </td>
+                      <td>
+                        <input type="text" class="w-100" [value]="operator.name">
+                      </td>
+                      <td class="column-150">
+                        <select type="text" class="w-100" [value]="operator.name">
+                          <option value="l1">Login 1</option>
+                          <option value="l1">Login 2</option>
+                          <option value="l1">Login 3</option>
+                        </select>
+                      </td>
+                      <td class="checkbox-column" style="text-align: center;">
+                        <mat-checkbox color="warn"></mat-checkbox>
+                      </td>
+                      <td class="two-button-column">
+                        <button type="button" mat-mini-fab color="primary" class="mdb-30">
+                          <mat-icon>edit</mat-icon>
+                        </button>
+                        <button type="button" mat-mini-fab color="warn" class="mdb-30">
+                          <mat-icon>remove</mat-icon>
+                        </button>
+                      </td>
+                    </tr>
+                  </ng-template>
+                </tbody>
+              </table>
+            </mat-tab>
+          </mat-tab-group>
+        </section>
       </div>
       <section class="data-tab-footer with-inner">
         <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="space-between center"

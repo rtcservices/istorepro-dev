@@ -136,10 +136,7 @@ export class SetupCompanyComponent implements OnInit {
       licenseSubscriptionAlert: false,
       licenseAlertLimit: '',
       licenseAlertLimitType: 'days',
-      licenseEmail: [
-        '',
-        [Validators.email, Validators.maxLength(100)]
-      ]
+      licenseEmail: ['', [Validators.email, Validators.maxLength(100)]]
     });
   }
 

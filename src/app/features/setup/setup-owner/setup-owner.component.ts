@@ -4,14 +4,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatTabGroup, _MatTabGroupBase } from '@angular/material/tabs';
 
 import { TranslateService } from '@ngx-translate/core';
-import { LoaderService } from '../../../services/loader.service';
-
-import { TitleService } from '../../../services/title.service';
-import { SiteTranslateService } from '../../../services/site-translate.service';
 
 import { patternsHelper } from '../../../helpers/patterns.helper';
+import * as fromTabsHelper from '../../../helpers/tabs.helper';
+
+import { LoaderService } from '../../../services/loader.service';
 import { NotificationService } from 'src/app/services/notification.service';
-import { elementAt } from 'rxjs/operators';
+import { SiteTranslateService } from '../../../services/site-translate.service';
+import { TitleService } from '../../../services/title.service';
 
 import {
   SetupOwnerEmailModel,
@@ -130,20 +130,9 @@ export class SetupOwnerComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.setTabHeights();
-  }
-
-  setTabHeights() {
-    const tabCardBody = document.querySelectorAll(
+    fromTabsHelper.setTabHeights(
       'mat-tab-group#setupOwnerDataTab mat-tab-body'
     );
-    if (!tabCardBody) return;
-    const maxHeight = Math.max(
-      ...Array.from(tabCardBody).map((elm: any) => elm.clientHeight)
-    );
-    tabCardBody.forEach((itm) => {
-      itm.setAttribute('style', `height:${maxHeight}px;`);
-    });
   }
 
   createDataOwnerForm() {
@@ -337,7 +326,7 @@ export class SetupOwnerComponent implements OnInit, AfterViewInit {
     return this.searchItemForm.controls;
   }
 
-  onSearchItemSubmit() {
+  onSearchOwnerSubmit() {
     if (!this.searchItemForm.valid) {
       this.notification.error(this.formErrorTranslated);
       return;
@@ -374,7 +363,7 @@ export class SetupOwnerComponent implements OnInit, AfterViewInit {
     tabGroup.selectedIndex = 0;
   }
 
-  resetItemSearchForm() {
+  resetOwnerSearchForm() {
     this.searchItemForm.reset();
     this.searchDataSource = [];
   }

@@ -4,7 +4,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatTabGroup, _MatTabGroupBase } from '@angular/material/tabs';
 
 import { TranslateService } from '@ngx-translate/core';
-import { LoaderService } from '../../../services/loader.service';
 import {
   SetupWarehouseModel,
   SetupWarehouseDocumentModel,
@@ -13,12 +12,14 @@ import {
   SetupWarehouseOperatorModel,
   SetupWarehouseSearchModel
 } from '../models/setup-warehouse.model';
-import { TitleService } from '../../../services/title.service';
-import { SiteTranslateService } from '../../../services/site-translate.service';
 
 import { patternsHelper } from '../../../helpers/patterns.helper';
+import * as fromTabsHelper from '../../../helpers/tabs.helper';
+
+import { TitleService } from '../../../services/title.service';
+import { LoaderService } from '../../../services/loader.service';
 import { NotificationService } from 'src/app/services/notification.service';
-import { elementAt } from 'rxjs/operators';
+import { SiteTranslateService } from '../../../services/site-translate.service';
 
 @Component({
   selector: 'ibe-setup-warehouse',
@@ -192,20 +193,9 @@ export class SetupWarehouseComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.setTabHeights();
-  }
-
-  setTabHeights() {
-    const tabCardBody = document.querySelectorAll(
+    fromTabsHelper.setTabHeights(
       'mat-tab-group#setupWarehouseDataTab mat-tab-body'
     );
-    if (!tabCardBody) return;
-    const maxHeight = Math.max(
-      ...Array.from(tabCardBody).map((elm: any) => elm.clientHeight)
-    );
-    tabCardBody.forEach((itm) => {
-      itm.setAttribute('style', `height:${maxHeight}px;`);
-    });
   }
 
   createDataWarehouseForm() {
