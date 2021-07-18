@@ -6,7 +6,7 @@
 
     <form fxLayout="column" [formGroup]="routinesInventoryForm" (ngSubmit)="onroutinesInventorySubmit()"
       class="slim-form">
-      <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="stretch" fxLayoutGap="5px" class="data-form">
+      <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="stretch" fxLayoutGap="5px">
         <div fxFlex>
           <mat-card class="h-100">
             <mat-card-content>
@@ -58,7 +58,7 @@
       </div>
       <ng-container *ngIf="mode">
 
-        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="stretch" fxLayoutGap="5px" class="data-form">
+        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="stretch" fxLayoutGap="5px">
           <div fxFlex>
             <mat-card class="h-100">
               <mat-card-content>
@@ -103,7 +103,7 @@
       </ng-container>
 
       <ng-container *ngIf="!mode">
-        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="stretch" fxLayoutGap="5px" class="data-form">
+        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="stretch" fxLayoutGap="5px">
           <div fxFlex>
             <mat-card class="h-100">
               <h3>Filters</h3>

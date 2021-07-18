@@ -1,4 +1,4 @@
-@import "./variables.scss";
+@import './variables.scss';
 
 .search-container {
   padding: 5px 16px !important;
@@ -6,23 +6,38 @@
 .search-table {
   width: 100%;
 }
-.data-form {
+.slim-form {
   padding-bottom: 2px;
   padding-top: 5px;
   margin-left: 5px;
   margin-right: 5px;
+  .data-tab-footer {
+    background-color: $site-white;
+    border: 1px solid $site-light-gray;
+    border-radius: 5px;
+    margin-top: 2px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    &.with-inner {
+      padding-top: 0;
+    }
+  }
+  .inner-tab {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+  .bordered-section {
+    background-color: $site-white;
+    border: 1px solid $site-light-gray;
+    border-radius: 5px;
+    padding: 5px;
+  }
   .row {
     font-size: 15px;
   }
   .mat-form-field-subscript-wrapper {
     margin-top: 2px !important;
   }
-}
-
-.form-12px {
-  font-size: 12px;
-}
-.slim-form {
   .mat-form-field-wrapper {
     .mat-form-field-label,
     .mat-form-field-outline,
@@ -45,7 +60,7 @@
     border: 1px solid $site-light-gray;
     border-radius: 5px;
     color: $site-gray;
-    height: 44px;
+    height: 47.25px;
     padding-left: 0 0 0 5px;
     margin: 0;
     margin-top: -6px;
@@ -93,12 +108,14 @@
 }
 
 .slim-form {
-  .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+  .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
+    .mat-form-field-label {
     transform: translateY(-1.1em) scale(0.75);
     width: 133.33333%;
     padding-bottom: 2px;
   }
-  .row, .input-row {
+  .row,
+  .input-row {
     height: 55px;
     font-size: 15px;
     @include breakpoint(mobileonly) {
@@ -142,8 +159,11 @@
 
 .form-three-button-container {
   text-align: right;
+  margin-bottom: 0;
   button {
-    margin-left: 0.5rem;
+    + button {
+      margin-left: 0.25rem;
+    }
     @include breakpoint(mobileonly) {
       width: 25%;
     }
@@ -152,8 +172,11 @@
 
 .form-four-button-container {
   text-align: right;
+  margin-bottom: 0px;
   button {
-    margin-left: 0.5rem;
+    + button {
+      margin-left: 0.25rem;
+    }
     @include breakpoint(mobileonly) {
       width: 20%;
     }
@@ -193,7 +216,7 @@
 
 .filter-container {
   padding-bottom: 0px !important;
-  .input-row {    
+  .input-row {
     mat-form-field {
       @include breakpoint(mobileonly) {
         margin-bottom: 0px !important;

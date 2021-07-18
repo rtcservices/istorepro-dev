@@ -4,15 +4,10 @@
     margin-left: 20px;
   }
 }
-.owner-type {
-  margin-left: 5px;
-}
-.radio-button-row {
-  height: 35px;
-  .form-radio-button {
-    mat-radio-button {
-      padding-right: 50px;
-      margin-top: 5px;
-    }
+.owner-type-radio {
+  width: 300px;
+  mat-radio-button {
+    padding-right: 50px;
+    margin-top: 5px;
   }
 }

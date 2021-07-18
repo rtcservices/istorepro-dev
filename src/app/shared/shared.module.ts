@@ -38,6 +38,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 
 import { PasswordStrengthComponent } from './password-strength/password-strength.component';
 import { DataAuditComponent } from './data-audit/data-audit.component';
+import { FocusInvalidInputDirective } from './directives/focus-invalid-input.directive';
 @NgModule({
   imports: [
     CommonModule,
@@ -75,7 +76,12 @@ import { DataAuditComponent } from './data-audit/data-audit.component';
     MatRadioModule,
     MatExpansionModule
   ],
-  declarations: [PasswordStrengthComponent, DataAuditComponent],
+  declarations: [
+    PasswordStrengthComponent,
+    DataAuditComponent,
+
+    FocusInvalidInputDirective
+  ],
   exports: [
     CommonModule,
     FormsModule,
@@ -114,7 +120,9 @@ import { DataAuditComponent } from './data-audit/data-audit.component';
     MatExpansionModule,
 
     PasswordStrengthComponent,
-    DataAuditComponent
+    DataAuditComponent,
+
+    FocusInvalidInputDirective
   ]
 })
 export class SharedModule {}

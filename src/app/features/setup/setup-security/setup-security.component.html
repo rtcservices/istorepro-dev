@@ -1,10 +1,10 @@
 <div class="page-title">
   <h2>{{'menu.setupSecurity' | translate}}</h2>
 </div>
-<mat-tab-group #setupSecurityTab dynamicHeight>
+<mat-tab-group #setupSecurityTab>
   <mat-tab label="Data">
     <form [formGroup]="dataSetupSecurityForm" (ngSubmit)="onDataSetupSecuritySubmit()" class="slim-form">
-      <div fxLayout="row" class="data-form">
+      <div fxLayout="row">
         <mat-card class="w-100">
           <mat-card-content>
             <mat-tab-group #setupSecurityDataTab id="setupSecurityDataTab">
@@ -12,7 +12,7 @@
                 <mat-card>
                   <mat-card-content>
                     <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="stretch" fxLayoutGap="5px"
-                      class="data-form">
+                     >
                       <div fxFlex="80%">
                         <div fxLayout="row" class="row" fxLayoutGap="5px">
                           <mat-form-field appearance="outline" fxFlex="49">
@@ -210,7 +210,7 @@
           </mat-card-content>
         </mat-card>
       </div>
-      <mat-card class="form-action-section">
+      <mat-card class="data-tab-footer">
         <mat-card-content>
           <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="30px" fxLayoutAlign="space-between center">
             <div fxFlexOrder.lt-md="2">

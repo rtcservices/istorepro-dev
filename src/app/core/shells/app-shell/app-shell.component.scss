@@ -1,7 +1,4 @@
 @import '../../../../assets/scss/variables.scss';
-.app-container {
-  padding: 0.25rem;
-}
 
 .app-navbar {
   position: fixed;
@@ -220,8 +217,6 @@
   }
 }
 
-
-
 ::ng-deep.mat-menu-panel {
   max-width: none !important;
 }
@@ -235,5 +230,5 @@
 }
 
 .padding {
-  padding:10px !important;
+  padding: 10px !important;
 }

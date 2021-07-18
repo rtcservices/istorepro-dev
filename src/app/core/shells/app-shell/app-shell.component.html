@@ -210,7 +210,7 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content [@routeAnimations]="prepareRoute(outlet)" [ngClass]="production ? '' : 'radial-gradient'">
-    <router-outlet #outlet="outlet" class="app-container"></router-outlet>
+    <router-outlet #outlet="outlet"></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
 

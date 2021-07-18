@@ -1,45 +1,45 @@
 <form [formGroup]="SystemControlForm" class="slim-form">
-    <div fxLayout="row" class="data-form">
-      <mat-card class="w-100">
-        <mat-card-content>
-          <div fxLayout="row" class="row" fxLayoutGap="10px">
-            <fieldset class="read-only-input" fxFlex>
-                <legend>{{ 'settings.systemcontrol.companyCode' | translate }}</legend>
-                <label>{{ SystemControlForm.value.companyCode }}</label>
-              </fieldset>
-              <fieldset class="read-only-input" fxFlex>
-                <legend>{{ 'settings.systemcontrol.companyDescription' | translate }}</legend>
-                <label>{{ SystemControlForm.value.companydescription}}</label>
-              </fieldset>
-
-          </div>
-          <div fxLayout="column" class="pale-border-box"  fxLayoutGap="5px">
-                <label id="example-radio-group-label">Select Option</label>
-                <mat-radio-group fxLayout="column" class="form-radio-button"   aria-labelledby="example-radio-group-label">
-                    <label for=""></label>
-                  <mat-radio-button  color="primary" value="customer" checked >
-                    {{'settings.systemcontrol.normal' | translate}}
-                  </mat-radio-button>
-                  <mat-radio-button color="primary" value="vendor" >
-                    {{'settings.systemcontrol.block' | translate}}
-                  </mat-radio-button>
-                  <mat-radio-button color="primary" valumaintainenacee="vendor" >
-                    {{'settings.systemcontrol.maintenance' | translate}}
-                  </mat-radio-button>
-                </mat-radio-group>
-          </div>
-        </mat-card-content>
-      </mat-card>
-    </div>
-    <mat-card>
+  <div fxLayout="row">
+    <mat-card class="w-100">
       <mat-card-content>
-        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="30px" fxLayoutAlign="space-between center">
-          <div class="form-three-button-container" fxFlex>
-            <button mat-raised-button color="primary" type="submit" (click)="saveSystemControlFormData()">
-              <mat-icon>task_alt</mat-icon>
-            </button>
-          </div>
+        <div fxLayout="row" class="row" fxLayoutGap="10px">
+          <fieldset class="read-only-input" fxFlex>
+            <legend>{{ 'settings.systemcontrol.companyCode' | translate }}</legend>
+            <label>{{ SystemControlForm.value.companyCode }}</label>
+          </fieldset>
+          <fieldset class="read-only-input" fxFlex>
+            <legend>{{ 'settings.systemcontrol.companyDescription' | translate }}</legend>
+            <label>{{ SystemControlForm.value.companydescription}}</label>
+          </fieldset>
+
+        </div>
+        <div fxLayout="column" class="pale-border-box" fxLayoutGap="5px">
+          <label id="example-radio-group-label">Select Option</label>
+          <mat-radio-group fxLayout="column" aria-labelledby="example-radio-group-label">
+            <label for=""></label>
+            <mat-radio-button color="primary" value="customer" checked>
+              {{'settings.systemcontrol.normal' | translate}}
+            </mat-radio-button>
+            <mat-radio-button color="primary" value="vendor">
+              {{'settings.systemcontrol.block' | translate}}
+            </mat-radio-button>
+            <mat-radio-button color="primary" valumaintainenacee="vendor">
+              {{'settings.systemcontrol.maintenance' | translate}}
+            </mat-radio-button>
+          </mat-radio-group>
         </div>
       </mat-card-content>
     </mat-card>
-  </form>
+  </div>
+  <mat-card>
+    <mat-card-content>
+      <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="30px" fxLayoutAlign="space-between center">
+        <div class="form-three-button-container" fxFlex>
+          <button mat-raised-button color="primary" type="submit" (click)="saveSystemControlFormData()">
+            <mat-icon>task_alt</mat-icon>
+          </button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</form>

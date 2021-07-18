@@ -1,12 +1,17 @@
 @import '../../../assets/scss/variables';
 .audit-box {
-  align-items: center;
   color: $site-primary;
   display: flex;
+  align-items: center;
   font-size: 0.9rem;
-  min-width: 300px;
-  text-align: left;
-  label {
+  min-width: 250px;
+  @include breakpoint(mobileonly) {
+    &.first {
+      margin-top: 10px;
+    }
+  }
+  label,
+  mat-icon {
     margin-left: 5px;
     &.green {
       color: $site-accent;

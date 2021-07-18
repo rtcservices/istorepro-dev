@@ -1,17 +1,6 @@
-@import "../../../../../../assets/scss/variables.scss";
+@import '../../../../../../assets/scss/variables.scss';
 .form-import {
   margin-top: 0.5rem;
-  // right: 0;
-  // margin-right: 10px;
-  // margin-top: 30px;
-  // position: absolute;
-  // top: 0;
-  // button {
-  //   color: $site-primary;
-  //   @include breakpoint(mobileonly) {
-  //     font-size: 0.9rem;
-  //   }
-  // }
 }
 .mat-column-action {
   width: 50px;
@@ -62,10 +51,6 @@ select {
   padding: 0px !important;
 }
 
-// .wh-control-table {
-//   margin-top: 50px;
-// }
-
 .inventory-alert-table,
 .matrix-table {
   table {
@@ -73,14 +58,6 @@ select {
     padding-top: 10px;
   }
 }
-
-/* .input-group {
-  padding-top: 6px;
-}
-
-.input-group-title {
-  min-width: 83px;
-} */
 
 .pale-border-box {
   ::ng-deep .mat-form-field-wrapper {
@@ -111,7 +88,7 @@ button[mat-dialog-close] {
 }
 
 .lookup-column {
-   ::ng-deep .mat-form-field-wrapper {
+  ::ng-deep .mat-form-field-wrapper {
     padding-bottom: 0em;
   }
   mat-form-field {
@@ -121,14 +98,14 @@ button[mat-dialog-close] {
   }
 }
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .pad-top {
     text-align: center;
     padding-top: 40px;
   }
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .pad-top {
     text-align: center;
   }
@@ -141,4 +118,3 @@ button[mat-dialog-close] {
 .mt {
   margin-top: 10px !important;
 }
-
