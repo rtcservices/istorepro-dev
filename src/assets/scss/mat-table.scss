@@ -33,9 +33,10 @@ tr.mat-row {
   height: 28px !important;
 }
 .site-table {
+  background-color: $site-white;
   border-collapse: collapse;
   margin-bottom: 5px;
-  width: 100;
+  width: 100%;
   th {
     color: $site-white;
     background-color: $site-primary;

@@ -212,7 +212,7 @@
       class="slim-form">
       <section class="bordered-section">
         <div class="row" fxLayout="row" fxLayoutGap="5px">
-          <mat-form-field appearance="outline" fxFlex>
+          <mat-form-field appearance="outline" fxFlex="33">
             <mat-label>{{
                 'setup.security.loginName' | translate
                 }}</mat-label>
@@ -220,7 +220,7 @@
             <mat-error *ngIf="searchSetupSecurityFormControls.loginName.invalid">
               {{ 'error.field' | translate }}</mat-error>
           </mat-form-field>
-          <mat-form-field appearance="outline" fxFlex>
+          <mat-form-field appearance="outline" fxFlex="33">
             <mat-label>{{
                 'setup.security.fullName' | translate
                 }}</mat-label>
@@ -228,9 +228,9 @@
             <mat-error *ngIf="searchSetupSecurityFormControls.fullName.invalid">
               {{ 'error.field' | translate }}</mat-error>
           </mat-form-field>
-          <mat-form-field appearance="outline" fxFlex>
+          <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="32">
             <mat-label>{{
-                'setup.security.loginName' | translate
+                'setup.security.suspended' | translate
                 }}</mat-label>
             <input matInput type="text" formControlName="suspended" />
             <mat-error *ngIf="searchSetupSecurityFormControls.suspended.invalid">
