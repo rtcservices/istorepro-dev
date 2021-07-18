@@ -81,7 +81,7 @@
                   <div fxLayout="row" class="row" fxLayoutGap="5px">
                     <mat-form-field appearance="outline" fxFlex>
                       <mat-label>{{'setup.security.email' | translate}}</mat-label>
-                      <input matInput required type="text" formControlName="email" />
+                      <input matInput required type="text" formControlName="email" class="normal" />
                       <mat-error *ngIf="dataSetupSecurityFormControls.email.invalid">
                         {{ 'error.field' | translate }}
                       </mat-error>
