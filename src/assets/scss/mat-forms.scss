@@ -3,9 +3,6 @@
 .search-container {
   padding: 5px 16px !important;
 }
-.search-table {
-  width: 100%;
-}
 .slim-form {
   padding-bottom: 2px;
   padding-top: 5px;
@@ -26,15 +23,18 @@
   .inner-tab {
     padding-bottom: 0;
     padding-top: 0;
+    .mat-tab-header {
+      height: 40px;
+    }
+    .mat-tab-body-content {
+      padding-top: 5px;
+    }
   }
   .bordered-section {
     background-color: $site-white;
     border: 1px solid $site-light-gray;
     border-radius: 5px;
-    padding: 0 5px;
-  }
-  .row {
-    font-size: 15px;
+    padding: 5px;
   }
   .mat-form-field-subscript-wrapper {
     margin-top: 2px !important;
@@ -119,6 +119,9 @@
   .input-row {
     height: 55px;
     font-size: 15px;
+    &.first {
+      margin-top: 5px;
+    }
     @include breakpoint(mobileonly) {
       height: auto;
     }

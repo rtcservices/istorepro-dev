@@ -499,7 +499,7 @@
     </form>
     <mat-card class="mat-elevation-z10">
       <mat-card-content>
-        <table mat-table [dataSource]="searchLocationDataSource" class="mat-elevation-z8 search-table">
+        <table mat-table [dataSource]="searchLocationDataSource" class="mat-elevation-z8 site-table">
           <ng-container matColumnDef="warehouse">
             <th mat-header-cell *matHeaderCellDef style="width: 300px;">{{
               'base.location.warehouse' | translate
@@ -665,7 +665,7 @@
             </div>
           </div>
           <br>
-          <table class="site-table w-100 mat-elevation-z8">
+          <table class="site-table mat-elevation-z8">
             <thead>
               <tr>
                 <th class="checkbox-column">

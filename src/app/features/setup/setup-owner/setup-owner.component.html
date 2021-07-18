@@ -129,7 +129,7 @@
                 </div>
               </div>
               <div fxLayout="row" class="row" fxLayoutGap="5px">
-                <mat-form-field appearance="outline" fxFlex="80.5" fxFlex.lt-sm="99.5">
+                <mat-form-field appearance="outline" fxFlex="80.25" fxFlex.lt-sm="99.5">
                   <mat-label>{{'setup.owner.email' | translate }}</mat-label>
                   <input matInput required type="text" formControlName="email" />
                   <mat-error *ngIf="dataOwnerControls.email.invalid">{{ 'error.field' |
@@ -139,7 +139,7 @@
               </div>
             </mat-tab>
             <mat-tab label="Document">
-              <table class="site-table w-100 mat-elevation-z8">
+              <table class="site-table mat-elevation-z8">
                 <thead>
                   <tr>
                     <th>{{ 'setup.owner.documents.type' | translate}}</th>
@@ -272,7 +272,7 @@
               </table>
             </mat-tab>
             <mat-tab label="WH Control">
-              <table class="site-table w-100 mat-elevation-z8">
+              <table class="site-table mat-elevation-z8">
                 <thead>
                   <tr>
                     <th></th>
@@ -296,7 +296,7 @@
           </mat-tab-group>
         </section>
       </div>
-      <section class="data-tab-footer with-inner">
+      <section class="data-tab-footer">
         <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="space-between center"
           fxLayoutAlign.lt-md="space-between center">
           <div fxFlexOrder.lt-md="2">
@@ -384,7 +384,7 @@
     </form>
     <mat-card class="bordered-section">
       <section>
-        <table mat-table [dataSource]="searchDataSource" class="search-table">
+        <table mat-table [dataSource]="searchDataSource" class="site-table">
           <ng-container matColumnDef="code">
             <th mat-header-cell *matHeaderCellDef>Code</th>
             <td mat-cell *matCellDef="let element; let idx=index">

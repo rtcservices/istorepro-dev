@@ -1,17 +1,6 @@
 import { SelectionModel } from '@angular/cdk/collections';
-import {
-  AfterViewInit,
-  Component,
-  Injectable,
-  OnInit,
-  ViewChild
-} from '@angular/core';
-import {
-  AbstractControl,
-  FormBuilder,
-  FormGroup,
-  Validators
-} from '@angular/forms';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FlatTreeControl } from '@angular/cdk/tree';
 import {
   MatTreeFlatDataSource,
@@ -25,10 +14,10 @@ import { patternsHelper } from '../../../helpers/patterns.helper';
 import { SelectItemModel } from '../../../models/select-item.model';
 import {
   PrevilegeNode,
-  FlattenedPrevilegeNode,
-  SetupSecuritySearchModel
+  FlattenedPrevilegeNode
 } from '../models/setup-security.model';
 import { TitleService } from '../../../services/title.service';
+import * as fromTabsHelper from '../../../helpers/tabs.helper';
 
 @Component({
   selector: 'ibe-setup-security',
@@ -128,7 +117,11 @@ export class SetupSecurityComponent implements OnInit, AfterViewInit {
     this.createSearchSetupSecurityForm();
   }
 
-  ngAfterViewInit() {}
+  ngAfterViewInit() {
+    fromTabsHelper.setTabHeights(
+      'mat-tab-group#setupSecurityDataTab mat-tab-body'
+    );
+  }
   //#endregion
 
   //#region "Data Tab"

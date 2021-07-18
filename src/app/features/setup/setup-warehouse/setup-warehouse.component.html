@@ -90,7 +90,7 @@
               </div>
             </mat-tab>
             <mat-tab label="Document">
-              <table class="site-table w-100 mat-elevation-z8">
+              <table class="site-table mat-elevation-z8">
                 <thead>
                   <tr>
                     <th>{{ 'setup.warehouse.document.type' | translate}}</th>
@@ -120,7 +120,7 @@
                 <mat-checkbox color="primary">{{ 'setup.warehouse.ruleBox.essential' | translate}}
                 </mat-checkbox>
               </div>
-              <table class="site-table w-100 mat-elevation-z8">
+              <table class="site-table mat-elevation-z8">
                 <thead>
                   <tr>
                     <th>#</th>
@@ -146,7 +146,7 @@
               </table>
             </mat-tab>
             <mat-tab label="Contacts">
-              <table class="site-table w-100 mat-elevation-z8">
+              <table class="site-table mat-elevation-z8">
                 <thead>
                   <tr>
                     <th>{{ 'setup.warehouse.contact.name' | translate}}</th>
@@ -179,7 +179,7 @@
               </table>
             </mat-tab>
             <mat-tab label="Operator">
-              <table class="site-table w-100 mat-elevation-z8">
+              <table class="site-table mat-elevation-z8">
                 <thead>
                   <tr>
                     <th>{{ 'setup.warehouse.operator.code' | translate}}</th>
@@ -226,7 +226,7 @@
           </mat-tab-group>
         </section>
       </div>
-      <section class="data-tab-footer with-inner">
+      <section class="data-tab-footer">
         <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="space-between center"
           fxLayoutAlign.lt-md="space-between center">
           <div fxFlexOrder.lt-md="2">
@@ -289,7 +289,7 @@
       </section>
     </form>
     <section class="bordered-section">
-      <table mat-table [dataSource]="searchDataSource" class="search-table">
+      <table mat-table [dataSource]="searchDataSource" class="site-table">
         <ng-container matColumnDef="warehouseCode">
           <th mat-header-cell *matHeaderCellDef>Code</th>
           <td mat-cell *matCellDef="let element; let idx=index">

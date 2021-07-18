@@ -76,7 +76,7 @@
 
         <mat-card>
           <mat-card-content>
-            <table class="site-table w-100 mat-elevation-z8">
+            <table class="site-table mat-elevation-z8">
               <thead>
                 <tr>
                   <th colspan="1"></th>
@@ -159,7 +159,7 @@
         </div>
         <mat-card class="overflow-x">
           <mat-card-content>
-            <table class="site-table w-100 mat-elevation-z8">
+            <table class="site-table mat-elevation-z8">
               <thead>
                 <tr>
                   <th>{{ 'routines.inventory.row' | translate}}</th>
@@ -277,7 +277,7 @@
     </form>
     <mat-card class="mat-elevation-z10 overflow-x">
       <mat-card-content>
-        <table mat-table [dataSource]="searchDataSource" class="mat-elevation-z8 search-table">
+        <table mat-table [dataSource]="searchDataSource" class="mat-elevation-z8 site-table">
           <ng-container matColumnDef="warehouse">
             <th mat-header-cell *matHeaderCellDef>{{ 'routines.inventory.warehouse' | translate}}</th>
             <td mat-cell *matCellDef="let element;">
