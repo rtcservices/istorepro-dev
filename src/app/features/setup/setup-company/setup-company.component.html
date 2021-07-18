@@ -129,7 +129,7 @@
           </section>
         </div>
         <div fxFlex="30%" class="bordered-section">
-          <section fxLayout="column" class="company-card">
+          <section fxLayout="column">
             <div class="company-logo">
               <p><b>{{ 'setup.company.companyLogo' | translate }}</b></p>
               <img [src]="companyLogo" (click)="file.click()" />
@@ -209,66 +209,60 @@
     </form>
   </mat-tab>
   <mat-tab label="Search">
-    <form fxLayout="column" [formGroup]="searchCompanyForm" (ngSubmit)="onSearchCompanySubmit()" class="slim-form">
-      <mat-card class="filter-container">
-        <mat-card-content>
-          <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
-            <mat-form-field appearance="outline" fxFlex="43">
-              <mat-label>{{
-                'setup.company.companyCode' | translate
-                }}</mat-label>
-              <input matInput type="text" formControlName="companyCode" />
-              <mat-error *ngIf="searchCompanyFormControls.companyCode.invalid">
-                {{ 'error.field' | translate }}</mat-error>
-            </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex>
-              <mat-label>{{
-                'setup.company.companyName' | translate
-                }}</mat-label>
-              <input matInput type="text" formControlName="companyName" />
-              <mat-error *ngIf="searchCompanyFormControls.companyName.invalid">
-                {{ 'error.field' | translate }}</mat-error>
-            </mat-form-field>
-          </div>
-        </mat-card-content>
-      </mat-card>
-      <mat-card class="search-container">
-        <mat-card-content>
-          <div class="form-button-container">
-            <button mat-raised-button color="primary" type="submit">
-              <mat-icon>search</mat-icon>
-            </button>
-            <button mat-raised-button color="accent" type="reset" (click)="resetCompanySearchForm()">
-              <mat-icon>restart_alt</mat-icon>
-            </button>
-          </div>
-        </mat-card-content>
-      </mat-card>
+    <form ibeFocusInvalidInput [formGroup]="searchCompanyForm" (ngSubmit)="onSearchCompanySubmit()" class="slim-form">
+      <section class="bordered-section">
+        <div class="row" fxLayout="row" fxLayoutGap="5px">
+          <mat-form-field appearance="outline" fxFlex="43">
+            <mat-label>{{
+                  'setup.company.companyCode' | translate
+                  }}</mat-label>
+            <input matInput type="text" formControlName="companyCode" />
+            <mat-error *ngIf="searchCompanyFormControls.companyCode.invalid">
+              {{ 'error.field' | translate }}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>{{
+                  'setup.company.companyName' | translate
+                  }}</mat-label>
+            <input matInput type="text" formControlName="companyName" />
+            <mat-error *ngIf="searchCompanyFormControls.companyName.invalid">
+              {{ 'error.field' | translate }}</mat-error>
+          </mat-form-field>
+        </div>
+      </section>
+      <section class="search-tab-footer">
+        <div class="form-button-container">
+          <button mat-raised-button color="primary" type="submit">
+            <mat-icon>search</mat-icon>
+          </button>
+          <button mat-raised-button color="accent" type="reset" (click)="resetCompanySearchForm()">
+            <mat-icon>restart_alt</mat-icon>
+          </button>
+        </div>
+      </section>
     </form>
-    <mat-card class="mat-elevation-z10">
-      <mat-card-content>
-        <table mat-table [dataSource]="searchDataSource" class="mat-elevation-z8 search-table">
-          <ng-container matColumnDef="companyCode">
-            <th mat-header-cell *matHeaderCellDef>Company Code</th>
-            <td mat-cell *matCellDef="let element; let idx=index">
-              <button mat-button disableRipple class="primary-button link-button"
-                (click)="searchItemClick($event, element, idx)">{{ element.companyCode }}</button>
-            </td>
-          </ng-container>
-          <ng-container matColumnDef="companyName">
-            <th mat-header-cell *matHeaderCellDef>Company Name</th>
-            <td mat-cell *matCellDef="let element">
-              {{ element.companyName }}
-            </td>
-          </ng-container>
+    <section class="bordered-section">
+      <table mat-table [dataSource]="searchDataSource" class="search-table">
+        <ng-container matColumnDef="companyCode">
+          <th mat-header-cell *matHeaderCellDef>Company Code</th>
+          <td mat-cell *matCellDef="let element; let idx=index">
+            <button mat-button disableRipple class="primary-button link-button"
+              (click)="searchItemClick($event, element, idx)">{{ element.companyCode }}</button>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="companyName">
+          <th mat-header-cell *matHeaderCellDef>Company Name</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.companyName }}
+          </td>
+        </ng-container>
 
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-        </table>
-        <small *ngIf="searchDataSource.length === 0" class="empty-table">
-          No records found
-        </small>
-      </mat-card-content>
-    </mat-card>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+      <small *ngIf="searchDataSource.length === 0" class="empty-table">
+        No records found
+      </small>
+    </section>
   </mat-tab>
 </mat-tab-group>

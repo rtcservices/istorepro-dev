@@ -183,7 +183,8 @@
 
       <mat-card *ngIf="mode">
         <mat-card-content>
-          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="30px" fxLayoutAlign="space-between center">
+          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="space-between center"
+          fxLayoutAlign.lt-md="space-between center">
             <div fxFlexOrder.lt-md="2">
             </div>
             <div class="form-three-button-container" fxFlexOrder.lt-md="1">
@@ -200,7 +201,8 @@
 
       <mat-card *ngIf="!mode">
         <mat-card-content>
-          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="30px" fxLayoutAlign="space-between center">
+          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="space-between center"
+          fxLayoutAlign.lt-md="space-between center">
             <div fxFlexOrder.lt-md="2">
               <button mat-raised-button color="accent" type="button" (click)="mode=!mode">
                 <mat-icon>arrow_back</mat-icon>

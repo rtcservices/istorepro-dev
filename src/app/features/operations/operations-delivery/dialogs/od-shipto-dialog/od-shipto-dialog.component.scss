@@ -20,10 +20,6 @@
   }
 }
 
-.license-subscription-alert {
-  margin: 0.25rem 0;
-}
-
 .border-none {
   border: none !important;
 }
@@ -120,7 +116,7 @@ button[mat-dialog-close] {
   }
 }
 
-.slim-form{
+.slim-form {
   ::ng-deep .mat-form-field-subscript-wrapper {
     margin-top: 3px !important;
   }

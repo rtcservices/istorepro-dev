@@ -1,4 +1,4 @@
-@import "../../../../../../assets/scss/variables.scss";
+@import '../../../../../../assets/scss/variables.scss';
 .form-import {
   margin-top: 0.5rem;
   // right: 0;
@@ -33,9 +33,6 @@
       border-color: $site-black;
     }
   }
-}
-.license-subscription-alert {
-  margin: 0.25rem 0;
 }
 
 .border-none {
@@ -118,9 +115,8 @@ button[mat-dialog-close] {
   overflow-x: auto !important;
 }
 
-
 .lookup-column {
-   ::ng-deep .mat-form-field-wrapper {
+  ::ng-deep .mat-form-field-wrapper {
     padding-bottom: 0em;
   }
   mat-form-field {
@@ -130,16 +126,15 @@ button[mat-dialog-close] {
   }
 }
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .pad-top {
     text-align: center;
     padding-top: 40px;
   }
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .pad-top {
     text-align: center;
   }
 }
-

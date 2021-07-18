@@ -1,4 +1,4 @@
-@import "../../../../assets/scss/variables.scss";
+@import '../../../../assets/scss/variables.scss';
 .form-import {
   margin-top: 0.5rem;
   // right: 0;
@@ -25,9 +25,6 @@
       border-color: $site-black;
     }
   }
-}
-.license-subscription-alert {
-  margin: 0.25rem 0;
 }
 
 .border-none {
@@ -155,8 +152,8 @@ button[mat-dialog-close] {
   }
 }
 
-.page-import-bottom{
+.page-import-bottom {
   @include breakpoint(mobileonly) {
-    margin-bottom : 38px !important;
+    margin-bottom: 38px !important;
   }
 }
