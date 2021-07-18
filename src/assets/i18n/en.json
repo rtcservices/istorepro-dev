@@ -428,12 +428,11 @@
       "qtydmg": "Qty Dmg",
       "full": "Full",
       "owner": "Owner"
-
     },
     "HeatMap": {
       "warehouse": "Warehouse",
       "item": "Item",
-      "description": "Item",
+      "description": "Description",
       "stkgood": "Stk Good",
       "stkdmg": "Stk Dmg",
       "full": "Full",
@@ -457,7 +456,6 @@
       "lbh": "LBH",
       "batchnumber": "Batch Number",
       "rowsplit": "Row Split"
-
     },
     "delivery": {
       "warehouse": "WH",
