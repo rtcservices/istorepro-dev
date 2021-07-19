@@ -1,58 +1,55 @@
-<div class="page-title">
+<div class="page-title-untabbed">
   <h2>{{'menu.baseReason' | translate}}</h2>
 </div>
-<mat-card class="reason-table">
-  <mat-card-content>
-    <table class="site-table mat-elevation-z8">
-      <thead>
+<section class="bordered-section">
+  <table class="site-table mat-elevation-z8">
+    <thead>
+      <tr>
+        <th>{{ 'base.reason.code' | translate}}</th>
+        <th>{{ 'base.reason.description' | translate}}</th>
+        <th>{{ 'base.reason.type' | translate}}</th>
+        <th style="text-align: center;">
+          <mat-icon style="padding-top: 3px;">add_circle_outline</mat-icon>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-template let-reason ngFor [ngForOf]="reasonDataSource">
         <tr>
-          <th>{{ 'base.reason.code' | translate}}</th>
-          <th>{{ 'base.reason.description' | translate}}</th>
-          <th>{{ 'base.reason.type' | translate}}</th>
-          <th style="text-align: center;">
-            <mat-icon style="padding-top: 3px;">add_circle_outline</mat-icon>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <ng-template let-reason ngFor [ngForOf]="reasonDataSource">
-          <tr>
-            <td class="column-100">
-              {{reason.code}}
-            </td>
-            <td>
-              {{reason.description}}
-            </td>
-            <td class="column-150">
-              <select type="text" class="w-100" [value]="reason.type">
-                <option value="COMMON">COMMON</option>
-              </select>
-            </td>
-            <td class="two-button-column">
-              <button mat-mini-fab color="primary" class="mdb-30">
-                <mat-icon>edit</mat-icon>
-              </button>
-              <button mat-mini-fab color="warn" class="mdb-30">
-                <mat-icon>remove</mat-icon>
-              </button>
-            </td>
-          </tr>
-        </ng-template>
-        <tr>
-          <td>
-            <input type="text" class="w-100">
+          <td class="column-100">
+            {{reason.code}}
           </td>
           <td>
-            <input type="text" class="w-100">
+            {{reason.description}}
           </td>
-          <td>
-            <select type="text" class="w-100">
+          <td class="column-150">
+            <select type="text" class="w-100" [value]="reason.type">
               <option value="COMMON">COMMON</option>
             </select>
           </td>
+          <td class="two-button-column">
+            <button mat-mini-fab color="primary" class="mdb-30">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-mini-fab color="warn" class="mdb-30">
+              <mat-icon>remove</mat-icon>
+            </button>
+          </td>
         </tr>
-      </tbody>
-    </table>
-  </mat-card-content>
-</mat-card>
-<!-- <ibe-data-audit insertedBy=""></ibe-data-audit> -->
+      </ng-template>
+      <tr>
+        <td>
+          <input type="text" class="w-100">
+        </td>
+        <td>
+          <input type="text" class="w-100">
+        </td>
+        <td>
+          <select type="text" class="w-100">
+            <option value="COMMON">COMMON</option>
+          </select>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

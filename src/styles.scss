@@ -96,6 +96,20 @@ small {
   }
 }
 
+.page-title-untabbed {
+  right: 0;
+  margin-right: 10px;
+  margin-top: 7px;
+  top: 0;
+  float: right;
+  h2 {
+    color: $site-primary;
+    @include breakpoint(mobileonly) {
+      font-size: 0.9rem;
+    }
+  }
+}
+
 .page-import-export-button {
   right: 0;
   margin-right: 10px;

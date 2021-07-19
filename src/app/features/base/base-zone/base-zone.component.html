@@ -1,49 +1,46 @@
-<div class="page-title">
+<div class="page-title-untabbed">
   <h2>{{'menu.baseZone' | translate}}</h2>
 </div>
-<mat-card class="zone-table">
-  <mat-card-content>
-    <table class="site-table mat-elevation-z8">
-      <thead>
+<section class="bordered-section">
+  <table class="site-table mat-elevation-z8">
+    <thead>
+      <tr>
+        <th>{{ 'base.zone.code' | translate}}</th>
+        <th>{{ 'base.zone.description' | translate}}</th>
+        <th style="text-align: center;">
+          <mat-icon style="padding-top: 3px;">add_circle_outline</mat-icon>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-template let-zone ngFor [ngForOf]="zoneDataSource">
         <tr>
-          <th>{{ 'base.zone.code' | translate}}</th>
-          <th>{{ 'base.zone.description' | translate}}</th>
-          <th style="text-align: center;">
-            <mat-icon style="padding-top: 3px;">add_circle_outline</mat-icon>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <ng-template let-zone ngFor [ngForOf]="zoneDataSource">
-          <tr>
-            <td class="column-100">
-              {{zone.code}}
-            </td>
-            <td>
-              {{zone.description}}
-            </td>
-            <td class="two-button-column">
-              <button mat-mini-fab color="primary" class="mdb-30">
-                <mat-icon>edit</mat-icon>
-              </button>
-              <button mat-mini-fab color="warn" class="mdb-30">
-                <mat-icon>remove</mat-icon>
-              </button>
-            </td>
-          </tr>
-        </ng-template>
-        <tr>
-          <td>
-            <input type="text" class="w-100">
+          <td class="column-100">
+            {{zone.code}}
           </td>
           <td>
-            <input type="text" class="w-100">
+            {{zone.description}}
           </td>
-          <td>
+          <td class="two-button-column">
+            <button mat-mini-fab color="primary" class="mdb-30">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-mini-fab color="warn" class="mdb-30">
+              <mat-icon>remove</mat-icon>
+            </button>
           </td>
         </tr>
-      </tbody>
-    </table>
-  </mat-card-content>
-</mat-card>
-<!-- <ibe-data-audit insertedBy=""></ibe-data-audit> -->
+      </ng-template>
+      <tr>
+        <td>
+          <input type="text" class="w-100">
+        </td>
+        <td>
+          <input type="text" class="w-100">
+        </td>
+        <td>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
