@@ -48,13 +48,15 @@
                   <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="datefromoperator">
                     <mat-option>></mat-option>
                     <mat-option>
-                      < </mat-option> <mat-option>>=
-                    </mat-option>
-                    <mat-option>
-                      <= </mat-option> <mat-option>
-                        <>
-                    </mat-option>
-                    <mat-option>=</mat-option>
+                      < </mat-option>
+                        <mat-option>>=
+                        </mat-option>
+                        <mat-option>
+                          <= </mat-option>
+                            <mat-option>
+                              <>
+                            </mat-option>
+                            <mat-option>=</mat-option>
                   </mat-select>
                   <mat-error *ngIf="DocumentFormControls.datefromoperator.invalid">{{
                     'error.field' | translate
@@ -80,14 +82,16 @@
                   <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="datetooperator">
                     <mat-option>></mat-option>
                     <mat-option>
-                      < </mat-option> <mat-option>
-                        >=
-                    </mat-option>
-                    <mat-option>
-                      <= </mat-option> <mat-option>
-                        <>
-                    </mat-option>
-                    <mat-option>=</mat-option>
+                      < </mat-option>
+                        <mat-option>
+                          >=
+                        </mat-option>
+                        <mat-option>
+                          <= </mat-option>
+                            <mat-option>
+                              <>
+                            </mat-option>
+                            <mat-option>=</mat-option>
                   </mat-select>
                   <mat-error *ngIf="DocumentFormControls.datetooperator.invalid">{{
                     'error.field' | translate
@@ -117,7 +121,7 @@
           </div>
 
           <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="space-between center"
-          fxLayoutAlign.lt-md="space-between center">
+            fxLayoutAlign.lt-md="space-between center">
 
             <div class="form-three-button-container" fxFlex>
               <button mat-raised-button color="primary" type="submit" (click)="saveDocumentFormData()">
@@ -158,5 +162,50 @@
       </mat-card-content>
     </mat-card>
   </ng-container>
-
+  <mat-card>
+    <mat-card-content>
+      <div fxLayout="row" fxLayout.lt-md="column">
+        <div class="pale-border-box" fxFlex fxLayout="row">
+          <b>{{ 'query.Document.reportOptions' | translate }}</b>
+          <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+            <div fxFex class="radio-content">
+              <mat-radio-group fxLayout="row" fxLayoutGap="10px">
+                <mat-radio-button color="primary" value="preview" checked>
+                  {{ 'query.Document.preview' | translate}}
+                </mat-radio-button>
+                <mat-radio-button color="primary" value="pdf">
+                  {{'query.Document.pdf' | translate}}
+                </mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <div fxFex class="radio-button">
+              <button mat-raised-button color="primary" type="submit">
+                <mat-icon>summarize</mat-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="pale-border-box" fxFlex fxLayout="row">
+          <b>{{ 'query.Document.emailOptions' | translate }}</b>
+          <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+            <div fxFex class="radio-content">
+              <mat-radio-group fxLayout="row" fxLayoutGap="10px">
+                <mat-radio-button color="primary" value="email" checked>
+                  {{ 'query.Document.email' | translate}}
+                </mat-radio-button>
+                <mat-radio-button color="primary" value="self">
+                  {{'query.Document.self' | translate}}
+                </mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <div fxFex class="radio-button">
+              <button mat-raised-button color="primary" type="submit">
+                <mat-icon>email</mat-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
 </form>

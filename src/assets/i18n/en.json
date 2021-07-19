@@ -663,7 +663,13 @@
       "date": "Date",
       "code": "Code",
       "name": "name",
-      "document": "Document"
+      "document": "Document",
+      "reportOptions" : "Report Options",
+      "preview" : "Preview",
+      "pdf" : "PDF",
+      "emailOptions" : "Email Options",
+      "email" : "Email",
+      "self" : "Self"
     }
   },
   "dashboard": {
