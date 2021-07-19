@@ -4,384 +4,380 @@
 <mat-tab-group #RoutinesStockAdjustTab>
   <mat-tab label="Data">
     <form fxLayout="column" [formGroup]="dataStockAdjustForm" (ngSubmit)="onDataStockAdjustSubmit()" class="slim-form">
-      <div>
-        <mat-card>
-          <mat-card-content>
-            <div fxLayout="column" fxLayout.lt-sm="column" fxLayoutGap="5px">
-              <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
-                <mat-form-field appearance="outline" fxFlex>
-                  <mat-label>{{ 'routines.stockadjust.warehouse' | translate }}</mat-label>
-                  <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="warehouse">
-                  </mat-select>
-                  <mat-error *ngIf="dataStockAdjustFormControls.warehouse.invalid">
-                    {{ 'error.field' | translate }}</mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="outline" fxFlex>
-                  <mat-label>{{'routines.stockadjust.owner' | translate}}</mat-label>
-                  <input matInput type="text" formControlName="owner" />
-                  <mat-icon (click)="openOwnerDialog()" matSuffix>search</mat-icon>
-                  <mat-error *ngIf="dataStockAdjustFormControls.owner.invalid">
-                    {{ 'error.field' | translate }}
-                  </mat-error>
-                </mat-form-field>
-                <fieldset class="read-only-input" fxFlex>
-                  <legend>{{ 'routines.stockadjust.san' | translate }}</legend>
-                  <label>{{ dataStockAdjustFormControls.san.value }}</label>
-                </fieldset>
-              </div>
-              <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
-                <mat-form-field appearance="outline" fxFlex="32.5">
-                  <mat-label>{{ 'routines.stockadjust.date' | translate }}</mat-label>
-                  <input formControlName="date" matInput [matDatepicker]="picker3">
-                  <mat-datepicker-toggle matSuffix [for]="picker3">
-                    <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
-                  </mat-datepicker-toggle>
-                  <mat-datepicker #picker3></mat-datepicker>
-                  <mat-error *ngIf="dataStockAdjustFormControls.date.invalid">
-                    {{ 'error.field' | translate }}
-                  </mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="outline" fxFlex="32.7">
-                  <mat-label>{{'routines.stockadjust.reason' | translate}}</mat-label>
-                  <input matInput required type="text" formControlName="reason" />
-                  <mat-error *ngIf="dataStockAdjustFormControls.reason.invalid">
-                    {{ 'error.field' | translate }}
-                  </mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="outline" fxFlex="35">
-                  <mat-label>{{'routines.stockadjust.remarks' | translate}}</mat-label>
-                  <input matInput type="text" formControlName="remarks" />
-                  <mat-error *ngIf="dataStockAdjustFormControls.remarks.invalid">
-                    {{ 'error.field' | translate }}
-                  </mat-error>
-                </mat-form-field>
-              </div>
-            </div>
+      <div fxFlex class="bordered-section">
+        <div fxLayout="column" fxLayout.lt-sm="column" fxLayoutGap="5px">
+          <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
+            <mat-form-field appearance="outline" fxFlex>
+              <mat-label>{{ 'routines.stockadjust.warehouse' | translate }}</mat-label>
+              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="warehouse">
+              </mat-select>
+              <mat-error *ngIf="dataStockAdjustFormControls.warehouse.invalid">
+                {{ 'error.field' | translate }}</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex>
+              <mat-label>{{'routines.stockadjust.owner' | translate}}</mat-label>
+              <input matInput type="text" formControlName="owner" />
+              <mat-icon (click)="openOwnerDialog()" matSuffix>search</mat-icon>
+              <mat-error *ngIf="dataStockAdjustFormControls.owner.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+            <fieldset class="read-only-input" fxFlex>
+              <legend>{{ 'routines.stockadjust.san' | translate }}</legend>
+              <label>{{ dataStockAdjustFormControls.san.value }}</label>
+            </fieldset>
+          </div>
+          <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
+            <mat-form-field appearance="outline" fxFlex="32.5">
+              <mat-label>{{ 'routines.stockadjust.date' | translate }}</mat-label>
+              <input formControlName="date" matInput [matDatepicker]="picker3">
+              <mat-datepicker-toggle matSuffix [for]="picker3">
+                <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+              </mat-datepicker-toggle>
+              <mat-datepicker #picker3></mat-datepicker>
+              <mat-error *ngIf="dataStockAdjustFormControls.date.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex="32.7">
+              <mat-label>{{'routines.stockadjust.reason' | translate}}</mat-label>
+              <input matInput required type="text" formControlName="reason" />
+              <mat-error *ngIf="dataStockAdjustFormControls.reason.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex="35">
+              <mat-label>{{'routines.stockadjust.remarks' | translate}}</mat-label>
+              <input matInput type="text" formControlName="remarks" />
+              <mat-error *ngIf="dataStockAdjustFormControls.remarks.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
 
-            <div fxLayout="column" fxLayout.lt-sm="column" fxLayoutGap="5px">
-              <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
-                <mat-form-field appearance="outline" fxFlex="32.7">
-                  <mat-label>{{'routines.stockadjust.item' | translate}}</mat-label>
-                  <input matInput type="text" formControlName="item" />
-                  <mat-icon (click)="openItemDialog()" matSuffix>search</mat-icon>
-                  <mat-error *ngIf="dataStockAdjustFormControls.item.invalid">
-                    {{ 'error.field' | translate }}
-                  </mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="outline" fxFlex="32.7">
-                  <mat-label>{{
-                                        'routines.stockadjust.po' | translate
-                                        }}</mat-label>
-                  <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="po">
-                  </mat-select>
-                  <mat-error *ngIf="dataStockAdjustFormControls.po.invalid">{{
-                                        'error.field' | translate
-                                        }}</mat-error>
-                </mat-form-field>
+        <div fxLayout="column" fxLayout.lt-sm="column" fxLayoutGap="5px">
+          <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
+            <mat-form-field appearance="outline" fxFlex="32.7">
+              <mat-label>{{'routines.stockadjust.item' | translate}}</mat-label>
+              <input matInput type="text" formControlName="item" />
+              <mat-icon (click)="openItemDialog()" matSuffix>search</mat-icon>
+              <mat-error *ngIf="dataStockAdjustFormControls.item.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex="32.7">
+              <mat-label>{{
+                'routines.stockadjust.po' | translate
+                }}</mat-label>
+              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="po">
+              </mat-select>
+              <mat-error *ngIf="dataStockAdjustFormControls.po.invalid">{{
+                'error.field' | translate
+                }}</mat-error>
+            </mat-form-field>
 
-                <mat-form-field appearance="outline" fxFlex>
-                  <mat-label>{{'routines.stockadjust.batchnumber' | translate}}</mat-label>
-                  <input matInput type="text" formControlName="batchnumber" />
-                  <mat-error *ngIf="dataStockAdjustFormControls.batchnumber.invalid">
-                    {{ 'error.field' | translate }}
-                  </mat-error>
-                </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex>
+              <mat-label>{{'routines.stockadjust.batchnumber' | translate}}</mat-label>
+              <input matInput type="text" formControlName="batchnumber" />
+              <mat-error *ngIf="dataStockAdjustFormControls.batchnumber.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
 
-              </div>
-              <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
-                <mat-form-field appearance="outline" fxFlex.gt-sm="10">
-                  <mat-select disableOptionCentering panelClass="slim-select-field"
-                    formControlName="receiptdateoperator">
-                    <mat-option value=">">></mat-option>
-                    <mat-option value="<">
-                      < </mat-option> <mat-option value=">="> >=
+          </div>
+          <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
+            <mat-form-field appearance="outline" fxFlex.gt-sm="10">
+              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="receiptdateoperator">
+                <mat-option value=">">></mat-option>
+                <mat-option value="<">
+                  < </mat-option>
+                    <mat-option value=">="> >=
                     </mat-option>
                     <mat-option value="<=">
-                      <= </mat-option> <mat-option value="<>">
-                        <>
-                    </mat-option>
-                    <mat-option value="="> = </mat-option>
-                  </mat-select>
-                  <mat-error *ngIf="dataStockAdjustFormControls.receiptdateoperator.invalid">{{
-                      'error.field' | translate
-                      }}</mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="outline" fxFlex.gt-sm="22.5">
-                  <mat-label>{{ 'routines.stockadjust.receiptdate' | translate }}</mat-label>
-                  <input formControlName="receiptdate" matInput [matDatepicker]="picker1">
-                  <mat-datepicker-toggle matSuffix [for]="picker1">
-                    <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
-                  </mat-datepicker-toggle>
-                  <mat-datepicker #picker1></mat-datepicker>
-                  <mat-error *ngIf="dataStockAdjustFormControls.receiptdate.invalid">
-                    {{ 'error.field' | translate }}
-                  </mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="outline" fxFlex.gt-sm="10">
-                  <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="expdateoperator">
-                    <mat-option value=">">></mat-option>
-                    <mat-option value="<">
-                      < </mat-option> <mat-option value=">="> >=
+                      <= </mat-option>
+                        <mat-option value="<>">
+                          <>
+                        </mat-option>
+                        <mat-option value="="> = </mat-option>
+              </mat-select>
+              <mat-error *ngIf="dataStockAdjustFormControls.receiptdateoperator.invalid">{{
+                'error.field' | translate
+                }}</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex.gt-sm="22.5">
+              <mat-label>{{ 'routines.stockadjust.receiptdate' | translate }}</mat-label>
+              <input formControlName="receiptdate" matInput [matDatepicker]="picker1">
+              <mat-datepicker-toggle matSuffix [for]="picker1">
+                <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+              </mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+              <mat-error *ngIf="dataStockAdjustFormControls.receiptdate.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex.gt-sm="10">
+              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="expdateoperator">
+                <mat-option value=">">></mat-option>
+                <mat-option value="<">
+                  < </mat-option>
+                    <mat-option value=">="> >=
                     </mat-option>
                     <mat-option value="<=">
-                      <= </mat-option> <mat-option value="<>">
-                        <>
-                    </mat-option>
-                    <mat-option value="="> = </mat-option>
-                  </mat-select>
-                  <mat-error *ngIf="dataStockAdjustFormControls.expdateoperator.invalid">{{
-                      'error.field' | translate
-                      }}</mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="outline" fxFlex.gt-sm="22.4">
-                  <mat-label>{{ 'routines.stockadjust.expdate' | translate }}</mat-label>
-                  <input formControlName="expdate" matInput [matDatepicker]="picker2">
-                  <mat-datepicker-toggle matSuffix [for]="picker2">
-                    <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
-                  </mat-datepicker-toggle>
-                  <mat-datepicker #picker2></mat-datepicker>
-                  <mat-error *ngIf="dataStockAdjustFormControls.expdate.invalid">
-                    {{ 'error.field' | translate }}
-                  </mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="outline" fxFlex.gt-sm="23">
-                  <mat-label>{{'routines.stockadjust.pick' | translate}}</mat-label>
-                  <input matInput type="text" formControlName="pick" />
-                  <mat-error *ngIf="dataStockAdjustFormControls.pick.invalid">
-                    {{ 'error.field' | translate }}
-                  </mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="outline" fxFlex.gt-sm="11.5">
-                  <mat-label>{{'routines.stockadjust.qty' | translate}}</mat-label>
-                  <input matInput type="text" formControlName="qty" />
-                  <mat-error *ngIf="dataStockAdjustFormControls.qty.invalid">
-                    {{ 'error.field' | translate }}
-                  </mat-error>
-                </mat-form-field>
-              </div>
-              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
-                <div fxLayoutAlign="start" fxFlex.gt-sm="33">
+                      <= </mat-option>
+                        <mat-option value="<>">
+                          <>
+                        </mat-option>
+                        <mat-option value="="> = </mat-option>
+              </mat-select>
+              <mat-error *ngIf="dataStockAdjustFormControls.expdateoperator.invalid">{{
+                'error.field' | translate
+                }}</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex.gt-sm="22.4">
+              <mat-label>{{ 'routines.stockadjust.expdate' | translate }}</mat-label>
+              <input formControlName="expdate" matInput [matDatepicker]="picker2">
+              <mat-datepicker-toggle matSuffix [for]="picker2">
+                <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+              </mat-datepicker-toggle>
+              <mat-datepicker #picker2></mat-datepicker>
+              <mat-error *ngIf="dataStockAdjustFormControls.expdate.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex.gt-sm="23">
+              <mat-label>{{'routines.stockadjust.pick' | translate}}</mat-label>
+              <input matInput type="text" formControlName="pick" />
+              <mat-error *ngIf="dataStockAdjustFormControls.pick.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex.gt-sm="11.5">
+              <mat-label>{{'routines.stockadjust.qty' | translate}}</mat-label>
+              <input matInput type="text" formControlName="qty" />
+              <mat-error *ngIf="dataStockAdjustFormControls.qty.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
+            <div fxLayoutAlign="start" fxFlex.gt-sm="33">
 
-                </div>
-                <div fxFlex.gt-sm="33">
-                  <h5> Status : TDN</h5>
-                </div>
-                <div fxFlex.gt-sm="18">
-                  <mat-checkbox color="primary" formControlName="reworkonly">
-                    {{'routines.stockadjust.reworkonly' | translate}}</mat-checkbox>
-                </div>
-                <div fxLayoutAlign="end" fxFlex.gt-sm="15">
-                  <button type="button" mat-raised-button color="primary">
-                    {{'routines.stockadjust.alloc' | translate}}
-                  </button>
-                </div>
-              </div>
             </div>
-            <br>
-          </mat-card-content>
-        </mat-card>
-      </div>
-      <hr>
-      <mat-card>
-        <mat-card-content class="overflow-x">
-          <table class="site-table w-100">
-            <thead>
-              <tr>
-                <th></th>
-                <th>{{ 'routines.stockadjust.grn' | translate}}</th>
-                <th>{{ 'routines.stockadjust.item' | translate}}</th>
-                <th>{{ 'routines.stockadjust.description' | translate}}</th>
-                <th>{{ 'routines.stockadjust.po' | translate}}</th>
-                <th>{{ 'routines.stockadjust.sku' | translate}}</th>
-                <th>{{ 'routines.stockadjust.batchnumber' | translate}}</th>
-                <th>{{ 'routines.stockadjust.mfg' | translate}}</th>
-                <th>{{ 'routines.stockadjust.expiry' | translate}}</th>
-                <th>{{ 'routines.stockadjust.location' | translate}}</th>
-                <th>{{ 'routines.stockadjust.stock' | translate}} </th>
-                <th>{{ 'routines.stockadjust.adj' | translate}} </th>
-              </tr>
-            </thead>
-            <tbody>
-              <ng-template let-operator ngFor [ngForOf]="StockAdjustDataSource">
-                <tr>
-                  <td></td>
-                  <td> {{operator.grn}} </td>
-                  <td>{{operator.item}} </td>
-                  <td>{{operator.description}} </td>
-                  <td> {{operator.po}} </td>
-                  <td>{{operator.sku}} </td>
-                  <td>{{operator.batchnumber}} </td>
-                  <td>{{operator.mfg}} </td>
-                  <td>{{operator.expiry}} </td>
-                  <td> {{operator.location}} </td>
-                  <td>{{operator.stock}} </td>
-                  <td>{{operator.adj}} </td>
-                </tr>
-              </ng-template>
-            </tbody>
-          </table>
-          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="space-between center"
-          fxLayoutAlign.lt-md="space-between center">
-            <div fxFlexOrder.lt-md="2">
-              <ibe-data-audit insertedBy=""></ibe-data-audit>
+            <div fxFlex.gt-sm="33">
+              <h5> Status : TDN</h5>
             </div>
-            <div class="form-three-button-container" fxFlexOrder.lt-md="1">
-              <button mat-raised-button color="primary" type="submit" (click)="saveStockAdjustData()">
-                <mat-icon>task_alt</mat-icon>
-              </button>
-              <button mat-raised-button color="warn" type="button" (click)="deleteStockAdjustData()">
-                <mat-icon>remove_circle_outline</mat-icon>
-              </button>
-              <button mat-raised-button color="accent" type="reset" (click)="resetStockAdjustDataForm()">
-                <mat-icon>loop</mat-icon>
+            <div fxFlex.gt-sm="18">
+              <mat-checkbox color="primary" formControlName="reworkonly">
+                {{'routines.stockadjust.reworkonly' | translate}}</mat-checkbox>
+            </div>
+            <div fxLayoutAlign="end" fxFlex.gt-sm="15">
+              <button type="button" mat-raised-button color="primary">
+                {{'routines.stockadjust.alloc' | translate}}
               </button>
             </div>
           </div>
-        </mat-card-content>
-      </mat-card>
+        </div>
+        <br>
+      </div>
+      <hr>
+
+      <section class="data-tab-footer">
+        <table class="site-table w-100">
+          <thead>
+            <tr>
+              <th></th>
+              <th>{{ 'routines.stockadjust.grn' | translate}}</th>
+              <th>{{ 'routines.stockadjust.item' | translate}}</th>
+              <th>{{ 'routines.stockadjust.description' | translate}}</th>
+              <th>{{ 'routines.stockadjust.po' | translate}}</th>
+              <th>{{ 'routines.stockadjust.sku' | translate}}</th>
+              <th>{{ 'routines.stockadjust.batchnumber' | translate}}</th>
+              <th>{{ 'routines.stockadjust.mfg' | translate}}</th>
+              <th>{{ 'routines.stockadjust.expiry' | translate}}</th>
+              <th>{{ 'routines.stockadjust.location' | translate}}</th>
+              <th>{{ 'routines.stockadjust.stock' | translate}} </th>
+              <th>{{ 'routines.stockadjust.adj' | translate}} </th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-template let-operator ngFor [ngForOf]="StockAdjustDataSource">
+              <tr>
+                <td></td>
+                <td> {{operator.grn}} </td>
+                <td>{{operator.item}} </td>
+                <td>{{operator.description}} </td>
+                <td> {{operator.po}} </td>
+                <td>{{operator.sku}} </td>
+                <td>{{operator.batchnumber}} </td>
+                <td>{{operator.mfg}} </td>
+                <td>{{operator.expiry}} </td>
+                <td> {{operator.location}} </td>
+                <td>{{operator.stock}} </td>
+                <td>{{operator.adj}} </td>
+              </tr>
+            </ng-template>
+          </tbody>
+        </table>
+        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="space-between center"
+          fxLayoutAlign.lt-md="space-between center">
+          <div fxFlexOrder.lt-md="2">
+            <ibe-data-audit insertedBy=""></ibe-data-audit>
+          </div>
+          <div class="form-three-button-container" fxFlexOrder.lt-md="1">
+            <button mat-raised-button color="primary" type="submit" (click)="saveStockAdjustData()">
+              <mat-icon>task_alt</mat-icon>
+            </button>
+            <button mat-raised-button color="warn" type="button" (click)="deleteStockAdjustData()">
+              <mat-icon>remove_circle_outline</mat-icon>
+            </button>
+            <button mat-raised-button color="accent" type="reset" (click)="resetStockAdjustDataForm()">
+              <mat-icon>loop</mat-icon>
+            </button>
+          </div>
+        </div>
+      </section>
     </form>
   </mat-tab>
   <mat-tab label="Search">
     <form fxLayout="column" [formGroup]="searchStockAdjustForm" (ngSubmit)="onSearchStockAdjustSubmit()"
       class="slim-form">
-      <mat-card class="filter-container ">
-        <mat-card-content>
-          <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
-            <mat-form-field appearance="outline" fxFlex="10" fxFlex.lt-md="34" fxFlex fxFlex.lt-sm="33">
-              <mat-label>{{
-                    'routines.stockadjust.warehouse' | translate
-                    }}</mat-label>
-              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="warehouse">
-                <mat-option>></mat-option>
-              </mat-select>
-              <mat-error *ngIf="searchStockAdjustFormControls.warehouse.invalid">{{
-                    'error.field' | translate
-                    }}</mat-error>
-            </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex>
-              <mat-label>{{
-                    'routines.stockadjust.owner' | translate
-                    }}</mat-label>
-              <input matInput type="text" formControlName="owner" />
-              <mat-icon (click)="openOwnerDialog()" matSuffix>search</mat-icon>
-              <mat-error *ngIf="searchStockAdjustFormControls.owner.invalid">
-                {{ 'error.field' | translate }}</mat-error>
-            </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex>
-              <mat-label>{{
-                    'routines.stockadjust.san' | translate
-                    }}</mat-label>
-              <input matInput type="text" formControlName="san" />
-              <mat-error *ngIf="searchStockAdjustFormControls.san.invalid">
-                {{ 'error.field' | translate }}</mat-error>
-            </mat-form-field>
-          </div>
-          <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
-            <mat-form-field appearance="outline" fxFlex.gt-sm="10">
-              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="dateoperator">
-                <mat-option value=">">></mat-option>
-                <mat-option value="<">
-                  < </mat-option> <mat-option value=">="> >=
-                </mat-option>
-                <mat-option value="<=">
-                  <= </mat-option> <mat-option value="<>">
-                    <>
-                </mat-option>
-                <mat-option value="="> = </mat-option>
-              </mat-select>
-              <mat-error *ngIf="searchStockAdjustFormControls.dateoperator.invalid">{{
-                    'error.field' | translate
-                    }}</mat-error>
-            </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex.gt-sm="21">
-              <mat-label>{{
-                    'routines.stockadjust.StockAdjustdate' | translate
-                    }}</mat-label>
-              <input formControlName="StockAdjustdate" matInput [matDatepicker]="picker4">
-              <mat-datepicker-toggle matSuffix [for]="picker4">
-                <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
-              </mat-datepicker-toggle>
-              <mat-datepicker #picker4></mat-datepicker>
-              <mat-error *ngIf="searchStockAdjustFormControls.StockAdjustdate.invalid">
-                {{ 'error.field' | translate }}
-              </mat-error>
-            </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex.gt-sm="33">
-              <mat-label>{{
-                    'routines.stockadjust.po' | translate
-                    }}</mat-label>
-              <input matInput type="text" formControlName="po" />
-              <mat-error *ngIf="searchStockAdjustFormControls.po.invalid">
-                {{ 'error.field' | translate }}</mat-error>
-            </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex.gt-sm="33">
-              <mat-label>{{
-                      'routines.stockadjust.item' | translate
-                      }}</mat-label>
-              <input matInput type="text" formControlName="item" />
-              <mat-error *ngIf="searchStockAdjustFormControls.item.invalid">
-                {{ 'error.field' | translate }}</mat-error>
-            </mat-form-field>
-          </div>
-          <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
-            <mat-form-field appearance="outline" fxFlex.gt-sm="32.5">
-              <mat-label>{{
-                    'routines.stockadjust.batchnumber' | translate
-                    }}</mat-label>
-              <input matInput type="text" formControlName="batchnumber" />
-              <mat-error *ngIf="searchStockAdjustFormControls.batchnumber.invalid">
-                {{ 'error.field' | translate }}</mat-error>
-            </mat-form-field>
-            <div fxFlex.gt-sm="32.5">
+      <section class="bordered-section">
+        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+          <mat-form-field appearance="outline" fxFlex="10" fxFlex.lt-md="34" fxFlex fxFlex.lt-sm="33">
+            <mat-label>{{
+              'routines.stockadjust.warehouse' | translate
+              }}</mat-label>
+            <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="warehouse">
+              <mat-option>></mat-option>
+            </mat-select>
+            <mat-error *ngIf="searchStockAdjustFormControls.warehouse.invalid">{{
+              'error.field' | translate
+              }}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>{{
+              'routines.stockadjust.owner' | translate
+              }}</mat-label>
+            <input matInput type="text" formControlName="owner" />
+            <mat-icon (click)="openOwnerDialog()" matSuffix>search</mat-icon>
+            <mat-error *ngIf="searchStockAdjustFormControls.owner.invalid">
+              {{ 'error.field' | translate }}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>{{
+              'routines.stockadjust.san' | translate
+              }}</mat-label>
+            <input matInput type="text" formControlName="san" />
+            <mat-error *ngIf="searchStockAdjustFormControls.san.invalid">
+              {{ 'error.field' | translate }}</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+          <mat-form-field appearance="outline" fxFlex.gt-sm="10">
+            <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="dateoperator">
+              <mat-option value=">">></mat-option>
+              <mat-option value="<">
+                < </mat-option>
+                  <mat-option value=">="> >=
+                  </mat-option>
+                  <mat-option value="<=">
+                    <= </mat-option>
+                      <mat-option value="<>">
+                        <>
+                      </mat-option>
+                      <mat-option value="="> = </mat-option>
+            </mat-select>
+            <mat-error *ngIf="searchStockAdjustFormControls.dateoperator.invalid">{{
+              'error.field' | translate
+              }}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex.gt-sm="21">
+            <mat-label>{{
+              'routines.stockadjust.StockAdjustdate' | translate
+              }}</mat-label>
+            <input formControlName="StockAdjustdate" matInput [matDatepicker]="picker4">
+            <mat-datepicker-toggle matSuffix [for]="picker4">
+              <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker4></mat-datepicker>
+            <mat-error *ngIf="searchStockAdjustFormControls.StockAdjustdate.invalid">
+              {{ 'error.field' | translate }}
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex.gt-sm="33">
+            <mat-label>{{
+              'routines.stockadjust.po' | translate
+              }}</mat-label>
+            <input matInput type="text" formControlName="po" />
+            <mat-error *ngIf="searchStockAdjustFormControls.po.invalid">
+              {{ 'error.field' | translate }}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex.gt-sm="33">
+            <mat-label>{{
+              'routines.stockadjust.item' | translate
+              }}</mat-label>
+            <input matInput type="text" formControlName="item" />
+            <mat-error *ngIf="searchStockAdjustFormControls.item.invalid">
+              {{ 'error.field' | translate }}</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+          <mat-form-field appearance="outline" fxFlex.gt-sm="32.5">
+            <mat-label>{{
+              'routines.stockadjust.batchnumber' | translate
+              }}</mat-label>
+            <input matInput type="text" formControlName="batchnumber" />
+            <mat-error *ngIf="searchStockAdjustFormControls.batchnumber.invalid">
+              {{ 'error.field' | translate }}</mat-error>
+          </mat-form-field>
+          <div fxFlex.gt-sm="32.5">
 
-            </div>
-            <div class="form-button-container" fxFlex.gt-sm="32.5">
-              <button (click)="onSearchStockAdjustSubmit()" mat-raised-button color="primary" type="submit">
-                <mat-icon>search</mat-icon>
-              </button>
-              <button mat-raised-button color="accent" type="reset" (click)="resetStockAdjustSearchForm()">
-                <mat-icon>restart_alt</mat-icon>
-              </button>
-            </div>
           </div>
-        </mat-card-content>
-      </mat-card>
-
+          <div class="form-button-container" fxFlex.gt-sm="32.5">
+            <button (click)="onSearchStockAdjustSubmit()" mat-raised-button color="primary" type="submit">
+              <mat-icon>search</mat-icon>
+            </button>
+            <button mat-raised-button color="accent" type="reset" (click)="resetStockAdjustSearchForm()">
+              <mat-icon>restart_alt</mat-icon>
+            </button>
+          </div>
+        </div>
+      </section>
     </form>
-    <mat-card class="mat-elevation-z10 overflow-x">
-      <mat-card-content class="overflow-x">
-        <table mat-table [dataSource]="searchDataSource" class="mat-elevation-z8 site-table">
-          <ng-container matColumnDef="warehouse">
-            <th mat-header-cell *matHeaderCellDef>{{ 'routines.stockadjust.warehouse' | translate}}</th>
-            <td mat-cell *matCellDef="let element;">
-              {{ element.warehouse }}
-            </td>
-          </ng-container>
-          <ng-container matColumnDef="owner">
-            <th mat-header-cell *matHeaderCellDef>{{ 'routines.stockadjust.owner' | translate}}</th>
-            <td mat-cell *matCellDef="let element">
-              {{ element.owner }}
-            </td>
-          </ng-container>
-          <ng-container matColumnDef="date">
-            <th mat-header-cell *matHeaderCellDef>{{ 'routines.stockadjust.date' | translate}}</th>
-            <td mat-cell *matCellDef="let element">
-              {{ element.date }}
-            </td>
-          </ng-container>
-          <ng-container matColumnDef="san">
-            <th mat-header-cell *matHeaderCellDef>{{ 'routines.stockadjust.san' | translate}}</th>
-            <td mat-cell *matCellDef="let element">
-              {{ element.san }}
-            </td>
-          </ng-container>
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-        </table>
-        <small *ngIf="searchDataSource.length === 0" class="empty-table">
-          No records found
-        </small>
-      </mat-card-content>
-    </mat-card>
+
+    <section class="bordered-section">
+      <table mat-table [dataSource]="searchDataSource" class="mat-elevation-z8 site-table">
+        <ng-container matColumnDef="warehouse">
+          <th mat-header-cell *matHeaderCellDef>{{ 'routines.stockadjust.warehouse' | translate}}</th>
+          <td mat-cell *matCellDef="let element;">
+            {{ element.warehouse }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="owner">
+          <th mat-header-cell *matHeaderCellDef>{{ 'routines.stockadjust.owner' | translate}}</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.owner }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef>{{ 'routines.stockadjust.date' | translate}}</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.date }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="san">
+          <th mat-header-cell *matHeaderCellDef>{{ 'routines.stockadjust.san' | translate}}</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.san }}
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+      <small *ngIf="searchDataSource.length === 0" class="empty-table">
+        No records found
+      </small>
+    </section>
   </mat-tab>
 </mat-tab-group>
