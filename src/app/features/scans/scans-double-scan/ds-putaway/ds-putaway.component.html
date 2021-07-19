@@ -2,7 +2,7 @@
   <form [formGroup]="putawayForm" fxLayout="column" class="slim-form">
     <div fxLayout="column" fxLayoutGap="5px">
 
-      <mat-form-field appearance="outline" class="input-row" fxFlex="10" fxFlex.lt-md="34" fxFlex fxFlex.lt-sm="33">
+      <mat-form-field appearance="outline" class="row" fxFlex="10" fxFlex.lt-md="34" fxFlex fxFlex.lt-sm="33">
         <mat-select [(ngModel)]="type" placeholder="Type" disableOptionCentering panelClass="slim-select-field"
           formControlName="type">
           <mat-option value="item">{{
@@ -17,7 +17,7 @@
           }}</mat-error>
       </mat-form-field>
 
-      <mat-form-field appearance="outline" class="input-row" fxFlex>
+      <mat-form-field appearance="outline" class="row" fxFlex>
         <mat-label>{{
           'scans.doubleScan.scan' | translate
           }}</mat-label>
@@ -27,7 +27,7 @@
           {{ 'error.field' | translate }}</mat-error>
       </mat-form-field>
 
-      <mat-form-field appearance="outline" class="input-row" fxFlex>
+      <mat-form-field appearance="outline" class="row" fxFlex>
         <mat-label>{{
           'scans.doubleScan.location' | translate
           }}</mat-label>

@@ -1,8 +1,7 @@
 <div class="mt-sm">
   <form [formGroup]="directPutawayForm" fxLayout="column" class="slim-form">
     <div fxLayout="column" fxLayoutGap="5px">
-
-      <mat-form-field appearance="outline" class="input-row" fxFlex>
+      <mat-form-field appearance="outline" class="row" fxFlex>
         <mat-label>{{
           'scans.doubleScan.location' | translate
           }}</mat-label>
@@ -11,8 +10,7 @@
         <mat-error *ngIf="directPutawayFormControls.location.invalid">
           {{ 'error.field' | translate }}</mat-error>
       </mat-form-field>
-
-      <mat-form-field appearance="outline" class="input-row" fxFlex>
+      <mat-form-field appearance="outline" class="row" fxFlex>
         <mat-label>{{
           'scans.doubleScan.grnsl' | translate
           }}</mat-label>
@@ -54,7 +52,6 @@
         }}
       </button>
     </div>
-
   </form>
   <br>
 </div>

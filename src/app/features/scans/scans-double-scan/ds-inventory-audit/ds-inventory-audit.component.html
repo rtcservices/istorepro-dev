@@ -1,13 +1,13 @@
 <div class="mt-sm">
   <form [formGroup]="inventoryAuditForm" fxLayout="column" class="slim-form">
     <div fxLayout="row" fxLayoutGap="5px">
-      <mat-form-field appearance="outline" class="input-row" fxFlex="50">
+      <mat-form-field appearance="outline" class="row" fxFlex="50">
         <mat-label>{{'scans.doubleScan.warehouse' | translate }}</mat-label>
         <input matInput type="text" formControlName="warehouse" />
         <mat-error *ngIf="inventoryAuditFormControls.warehouse.invalid">
           {{ 'error.field' | translate }}</mat-error>
       </mat-form-field>
-      <mat-form-field appearance="outline" class="input-row" fxFlex="50">
+      <mat-form-field appearance="outline" class="row" fxFlex="50">
         <mat-label>{{ 'scans.doubleScan.ian' | translate}}</mat-label>
         <input matInput type="text" formControlName="ianscan" />
         <mat-icon type="button" class="cursor-style" (click)="openIanDialog()" matSuffix>search</mat-icon>
@@ -16,14 +16,14 @@
       </mat-form-field>
     </div>
     <div fxLayout="column" fxLayoutGap="5px">
-      <mat-form-field appearance="outline" class="input-row" fxFlex>
+      <mat-form-field appearance="outline" class="row" fxFlex>
         <mat-label>{{ 'scans.doubleScan.location' | translate }}</mat-label>
         <input matInput type="text" formControlName="location" />
         <mat-icon class="cursor-style" (click)="openLocationDialog()" type="button" matSuffix>search</mat-icon>
         <mat-error *ngIf="inventoryAuditFormControls.location.invalid">
           {{ 'error.field' | translate }}</mat-error>
       </mat-form-field>
-      <mat-form-field appearance="outline" class="input-row" fxFlex>
+      <mat-form-field appearance="outline" class="row" fxFlex>
         <mat-label>{{ 'scans.doubleScan.item' | translate }}</mat-label>
         <input matInput type="text" formControlName="item" />
         <mat-icon class="cursor-style" (click)=" openItemAssistanceDialog()" type="button" matSuffix>search</mat-icon>
