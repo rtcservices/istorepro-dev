@@ -11,14 +11,14 @@
           <div fxLayout.lt-sm="column" fxLayout.gt-sm="row" fxLayoutGap="10px">
             <div fxLayout="column" fxLayoutGap="5px" fxFlex>
               <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
-                <mat-form-field appearance="outline" fxFlex>
+                <mat-form-field appearance="outline" fxFlex="32.5">
                   <mat-label>{{'query.Document.warehouse' | translate}}</mat-label>
                   <input matInput required type="text" formControlName="warehouse" />
                   <mat-error *ngIf="DocumentFormControls.warehouse.invalid">
                     {{ 'error.field' | translate }}
                   </mat-error>
                 </mat-form-field>
-                <mat-form-field appearance="outline" fxFlex>
+                <mat-form-field appearance="outline" fxFlex="33">
                   <mat-label>{{
                     'query.Document.documenttype' | translate
                     }}</mat-label>
@@ -28,7 +28,7 @@
                     'error.field' | translate
                     }}</mat-error>
                 </mat-form-field>
-                <mat-form-field appearance="outline" fxFlex>
+                <mat-form-field appearance="outline" fxFlex="33">
                   <mat-label>{{
                     'query.Document.documentno' | translate
                     }}</mat-label>
