@@ -4,332 +4,118 @@
 <mat-tab-group #OperationDeliveryTab>
   <mat-tab label="Data">
     <form fxLayout="column" [formGroup]="dataDeliveryForm" (ngSubmit)="onDataDeliverySubmit()" class="slim-form">
-      <div>
-        <mat-card class="field-form">
-          <mat-card-content>
-            <div fxLayout="column" fxLayout.lt-sm="column" fxLayoutGap="5px">
-              <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
-                <mat-form-field appearance="outline" fxFlex>
-                  <mat-label>{{
-                    'operations.delivery.warehouse' | translate
-                    }}</mat-label>
-                  <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="warehouse">
-                  </mat-select>
-                  <mat-error *ngIf="dataDeliveryFormControls.warehouse.invalid">{{
-                    'error.field' | translate
-                    }}</mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="outline" fxFlex>
-                  <mat-label>{{'operations.delivery.owner' | translate}}</mat-label>
-                  <input matInput type="text" formControlName="owner" />
-                  <mat-icon (click)="openOwnerDialog()" matSuffix>search</mat-icon>
-                  <mat-error *ngIf="dataDeliveryFormControls.owner.invalid">
-                    {{ 'error.field' | translate }}
-                  </mat-error>
-                </mat-form-field>
-                <fieldset class="read-only-input" fxFlex>
-                  <legend>{{ 'operations.delivery.drn' | translate }}</legend>
-                  <label>{{ dataDeliveryFormControls.drn.value }}</label>
-                </fieldset>
-              </div>
-              <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
-                <mat-form-field appearance="outline" fxFlex="32.5">
-                  <mat-label>{{ 'operations.delivery.date' | translate }}</mat-label>
-                  <input formControlName="date" matInput [matDatepicker]="picker3">
-                  <mat-datepicker-toggle matSuffix [for]="picker3">
-                    <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
-                  </mat-datepicker-toggle>
-                  <mat-datepicker #picker3></mat-datepicker>
-                  <mat-error *ngIf="dataDeliveryFormControls.date.invalid">
-                    {{ 'error.field' | translate }}
-                  </mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="outline" fxFlex="32.7">
-                  <mat-label>{{'operations.delivery.do' | translate}}</mat-label>
-                  <input matInput type="text" formControlName="do" />
-                  <mat-error *ngIf="dataDeliveryFormControls.do.invalid">
-                    {{ 'error.field' | translate }}
-                  </mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="outline" fxFlex="35">
-                  <mat-label>{{'operations.delivery.dt' | translate}}</mat-label>
-                  <input matInput type="text" formControlName="dt" />
-                  <mat-error *ngIf="dataDeliveryFormControls.dt.invalid">
-                    {{ 'error.field' | translate }}
-                  </mat-error>
-                </mat-form-field>
-              </div>
-              <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
-                <mat-form-field appearance="outline" fxFlex="32.7">
-                  <mat-label>{{'operations.delivery.shipto' | translate}}</mat-label>
-                  <input matInput type="text" formControlName="shipto" />
-                  <mat-icon (click)="openShiptoDialog()" class="cursor-style" type="button" matSuffix>search</mat-icon>
-                  <mat-error *ngIf="dataDeliveryFormControls.shipto.invalid">
-                    {{ 'error.field' | translate }}
-                  </mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="outline" fxFlex="32.8">
-                  <mat-label>{{'operations.delivery.so' | translate}}</mat-label>
-                  <input matInput type="text" formControlName="so" />
-                  <mat-error *ngIf="dataDeliveryFormControls.so.invalid">
-                    {{ 'error.field' | translate }}
-                  </mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="outline" fxFlex="35">
-                  <mat-label>{{'operations.delivery.remarks' | translate}}</mat-label>
-                  <input matInput type="text" formControlName="remarks" />
-                  <mat-error *ngIf="dataDeliveryFormControls.remarks.invalid">
-                    {{ 'error.field' | translate }}
-                  </mat-error>
-                </mat-form-field>
-              </div>
-            </div>
-
-            <div fxLayout="column" fxLayout.lt-sm="column" fxLayoutGap="5px">
-              <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
-                <mat-form-field appearance="outline" fxFlex="32.7">
-                  <mat-label>{{'operations.delivery.item' | translate}}</mat-label>
-                  <input matInput type="text" formControlName="item" />
-                  <mat-icon (click)="openItemDialog()" matSuffix>search</mat-icon>
-                  <mat-error *ngIf="dataDeliveryFormControls.item.invalid">
-                    {{ 'error.field' | translate }}
-                  </mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="outline" fxFlex="32.7">
-                  <mat-label>{{
-                    'operations.delivery.po' | translate
-                    }}</mat-label>
-                  <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="po">
-                  </mat-select>
-                  <mat-error *ngIf="dataDeliveryFormControls.po.invalid">{{
-                    'error.field' | translate
-                    }}</mat-error>
-                </mat-form-field>
-
-                <mat-form-field appearance="outline" fxFlex>
-                  <mat-label>{{'operations.delivery.batchnumber' | translate}}</mat-label>
-                  <input matInput type="text" formControlName="batchnumber" />
-                  <mat-error *ngIf="dataDeliveryFormControls.batchnumber.invalid">
-                    {{ 'error.field' | translate }}
-                  </mat-error>
-                </mat-form-field>
-
-              </div>
-              <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
-                <mat-form-field appearance="outline" fxFlex.gt-sm="10">
-                  <mat-select disableOptionCentering panelClass="slim-select-field"
-                    formControlName="receiptdateoperator">
-                    <mat-option value=">">></mat-option>
-                    <mat-option value="<">
-                      < </mat-option>
-                        <mat-option value=">="> >=
-                        </mat-option>
-                        <mat-option value="<=">
-                          <= </mat-option>
-                            <mat-option value="<>">
-                              <>
-                            </mat-option>
-                            <mat-option value="="> = </mat-option>
-                  </mat-select>
-                  <mat-error *ngIf="dataDeliveryFormControls.receiptdateoperator.invalid">{{
-                    'error.field' | translate
-                    }}</mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="outline" fxFlex.gt-sm="22.5">
-                  <mat-label>{{ 'operations.delivery.receiptdate' | translate }}</mat-label>
-                  <input formControlName="receiptdate" matInput [matDatepicker]="picker1">
-                  <mat-datepicker-toggle matSuffix [for]="picker1">
-                    <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
-                  </mat-datepicker-toggle>
-                  <mat-datepicker #picker1></mat-datepicker>
-                  <mat-error *ngIf="dataDeliveryFormControls.receiptdate.invalid">
-                    {{ 'error.field' | translate }}
-                  </mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="outline" fxFlex.gt-sm="10">
-                  <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="expdateoperator">
-                    <mat-option value=">">></mat-option>
-                    <mat-option value="<">
-                      < </mat-option>
-                        <mat-option value=">="> >=
-                        </mat-option>
-                        <mat-option value="<=">
-                          <= </mat-option>
-                            <mat-option value="<>">
-                              <>
-                            </mat-option>
-                            <mat-option value="="> = </mat-option>
-                  </mat-select>
-                  <mat-error *ngIf="dataDeliveryFormControls.expdateoperator.invalid">{{
-                    'error.field' | translate
-                    }}</mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="outline" fxFlex.gt-sm="22.4">
-                  <mat-label>{{ 'operations.delivery.expdate' | translate }}</mat-label>
-                  <input formControlName="expdate" matInput [matDatepicker]="picker2">
-                  <mat-datepicker-toggle matSuffix [for]="picker2">
-                    <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
-                  </mat-datepicker-toggle>
-                  <mat-datepicker #picker2></mat-datepicker>
-                  <mat-error *ngIf="dataDeliveryFormControls.expdate.invalid">
-                    {{ 'error.field' | translate }}
-                  </mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="outline" fxFlex.gt-sm="23">
-                  <mat-label>{{'operations.delivery.pick' | translate}}</mat-label>
-                  <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="pick">
-                  </mat-select>
-                  <mat-error *ngIf="dataDeliveryFormControls.pick.invalid">
-                    {{ 'error.field' | translate }}
-                  </mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="outline" fxFlex.gt-sm="11.5">
-                  <mat-label>{{'operations.delivery.qty' | translate}}</mat-label>
-                  <input matInput type="text" formControlName="qty" />
-                  <mat-error *ngIf="dataDeliveryFormControls.qty.invalid">
-                    {{ 'error.field' | translate }}
-                  </mat-error>
-                </mat-form-field>
-              </div>
-              <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
-                <div fxLayoutAlign="start" class="form-three-button-container" fxFlex.gt-sm="33">
-                  <button type="button" mat-raised-button color="primary">
-                    <mat-icon>list_alt</mat-icon>
-                  </button>
-                  <button class="text-button" type="button" mat-raised-button color="primary">
-                    DRN
-                  </button>
-                </div>
-                <div fxFlex.gt-sm="33">
-                  <h5> Status : TDN</h5>
-                </div>
-                <div fxFlex.gt-sm="18">
-                  <mat-checkbox color="primary" formControlName="reworkonly">
-                    {{'operations.delivery.reworkonly' | translate}}</mat-checkbox>
-                </div>
-                <div fxLayoutAlign="end" fxFlex.gt-sm="15">
-                  <button type="button" mat-raised-button color="primary">
-                    {{'operations.delivery.alloc' | translate}}
-                  </button>
-                </div>
-              </div>
-            </div>
-            <br>
-          </mat-card-content>
-        </mat-card>
-      </div>
-      <hr>
-      <mat-card>
-        <mat-card-content class="overflow-x">
-          <table class="site-table w-100">
-            <thead>
-              <tr>
-                <th></th>
-                <th>{{ 'operations.delivery.grn' | translate}}</th>
-                <th>{{ 'operations.delivery.item' | translate}}</th>
-                <th>{{ 'operations.delivery.description' | translate}}</th>
-                <th>{{ 'operations.delivery.po' | translate}}</th>
-                <th>{{ 'operations.delivery.sku' | translate}}</th>
-                <th>{{ 'operations.delivery.batchnumber' | translate}}</th>
-                <th>{{ 'operations.delivery.mfg' | translate}}</th>
-                <th>{{ 'operations.delivery.expiry' | translate}}</th>
-                <th>{{ 'operations.delivery.location' | translate}}</th>
-                <th>{{ 'operations.delivery.stock' | translate}} </th>
-                <th>{{ 'operations.delivery.alloc' | translate}} </th>
-                <th>{{ 'operations.delivery.pkd' | translate}}</th>
-              </tr>
-            </thead>
-            <tbody>
-              <ng-template let-operator ngFor [ngForOf]="deliveryDataSource">
-                <tr>
-                  <td></td>
-                  <td> {{operator.grn}} </td>
-                  <td>{{operator.item}} </td>
-                  <td>{{operator.description}} </td>
-                  <td> {{operator.po}} </td>
-                  <td>{{operator.sku}} </td>
-                  <td>{{operator.batchnumber}} </td>
-                  <td>{{operator.mfg}} </td>
-                  <td>{{operator.expiry}} </td>
-                  <td> {{operator.location}} </td>
-                  <td>{{operator.stock}} </td>
-                  <td>{{operator.alloc}} </td>
-                  <td>{{operator.pkd}} </td>
-                </tr>
-              </ng-template>
-            </tbody>
-          </table>
-          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="30px" fxLayoutAlign="space-between">
-            <div class="progress-section" fxFlex>
-              <div class="progress-box"></div>
-              {{ 'operations.delivery.auditInProgress' | translate}}
-            </div>
-          </div>
-          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="30px" fxLayoutAlign="space-between">
-            <div class="form-three-button-container" fxFlexOrder.lt-md="1">
-              <button mat-raised-button color="warn" type="button" (click)="deleteDeliveryData()">
-                <mat-icon>remove_circle_outline</mat-icon>
-              </button>
-              <button mat-raised-button color="accent" type="reset" (click)="resetDeliveryDataForm()">
-                <mat-icon>loop</mat-icon>
-              </button>
-            </div>
-            <div fxFlex fxFlexOrder.lt-md="2" style="padding-left: 20px;">
-              <div>Del Wt : 110</div>
-              <div>Del Vol : 0</div>
-            </div>
-            <div fxFlex class="form-three-button-container" fxFlexOrder.lt-md="3">
-              <button mat-raised-button color="primary" type="submit" (click)="saveDeliveryData()">
-                <mat-icon>task_alt</mat-icon>
-              </button>
-              <button mat-raised-button color="primary" type="button">
-                <mat-icon>recommend</mat-icon>
-              </button>
-            </div>
-          </div>
-        </mat-card-content>
-      </mat-card>
-    </form>
-  </mat-tab>
-  <mat-tab label="Search">
-    <form fxLayout="column" [formGroup]="searchDeliveryForm" (ngSubmit)="onSearchDeliverySubmit()" class="slim-form">
-      <mat-card class="filter-container ">
-        <mat-card-content>
-          <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
-            <mat-form-field appearance="outline" fxFlex="10" fxFlex.lt-md="34" fxFlex fxFlex.lt-sm="33">
+      <div fxFlex class="bordered-section">
+        <div fxLayout="column" fxLayout.lt-sm="column" fxLayoutGap="5px">
+          <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
+            <mat-form-field appearance="outline" fxFlex>
               <mat-label>{{
                 'operations.delivery.warehouse' | translate
                 }}</mat-label>
               <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="warehouse">
-                <mat-option value="warehouse">{{
-                  'operations.delivery.warehouse' | translate
-                  }}</mat-option>
               </mat-select>
-              <mat-error *ngIf="searchDeliveryFormControls.warehouse.invalid">{{
+              <mat-error *ngIf="dataDeliveryFormControls.warehouse.invalid">{{
                 'error.field' | translate
                 }}</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline" fxFlex>
-              <mat-label>{{
-                'operations.delivery.owner' | translate
-                }}</mat-label>
+              <mat-label>{{'operations.delivery.owner' | translate}}</mat-label>
               <input matInput type="text" formControlName="owner" />
               <mat-icon (click)="openOwnerDialog()" matSuffix>search</mat-icon>
-              <mat-error *ngIf="searchDeliveryFormControls.owner.invalid">
-                {{ 'error.field' | translate }}</mat-error>
+              <mat-error *ngIf="dataDeliveryFormControls.owner.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
             </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex>
-              <mat-label>{{
-                'operations.delivery.drn' | translate
-                }}</mat-label>
-              <input matInput type="text" formControlName="drn" />
-              <mat-error *ngIf="searchDeliveryFormControls.drn.invalid">
-                {{ 'error.field' | translate }}</mat-error>
+            <fieldset class="read-only-input" fxFlex>
+              <legend>{{ 'operations.delivery.drn' | translate }}</legend>
+              <label>{{ dataDeliveryFormControls.drn.value }}</label>
+            </fieldset>
+          </div>
+          <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
+            <mat-form-field appearance="outline" fxFlex="32.5">
+              <mat-label>{{ 'operations.delivery.date' | translate }}</mat-label>
+              <input formControlName="date" matInput [matDatepicker]="picker3">
+              <mat-datepicker-toggle matSuffix [for]="picker3">
+                <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+              </mat-datepicker-toggle>
+              <mat-datepicker #picker3></mat-datepicker>
+              <mat-error *ngIf="dataDeliveryFormControls.date.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex="32.7">
+              <mat-label>{{'operations.delivery.do' | translate}}</mat-label>
+              <input matInput type="text" formControlName="do" />
+              <mat-error *ngIf="dataDeliveryFormControls.do.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex="35">
+              <mat-label>{{'operations.delivery.dt' | translate}}</mat-label>
+              <input matInput type="text" formControlName="dt" />
+              <mat-error *ngIf="dataDeliveryFormControls.dt.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
             </mat-form-field>
           </div>
-          <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+          <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
+            <mat-form-field appearance="outline" fxFlex="32.7">
+              <mat-label>{{'operations.delivery.shipto' | translate}}</mat-label>
+              <input matInput type="text" formControlName="shipto" />
+              <mat-icon (click)="openShiptoDialog()" class="cursor-style" type="button" matSuffix>search</mat-icon>
+              <mat-error *ngIf="dataDeliveryFormControls.shipto.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex="32.8">
+              <mat-label>{{'operations.delivery.so' | translate}}</mat-label>
+              <input matInput type="text" formControlName="so" />
+              <mat-error *ngIf="dataDeliveryFormControls.so.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex="35">
+              <mat-label>{{'operations.delivery.remarks' | translate}}</mat-label>
+              <input matInput type="text" formControlName="remarks" />
+              <mat-error *ngIf="dataDeliveryFormControls.remarks.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div fxLayout="column" fxLayout.lt-sm="column" fxLayoutGap="5px">
+          <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
+            <mat-form-field appearance="outline" fxFlex="32.7">
+              <mat-label>{{'operations.delivery.item' | translate}}</mat-label>
+              <input matInput type="text" formControlName="item" />
+              <mat-icon (click)="openItemDialog()" matSuffix>search</mat-icon>
+              <mat-error *ngIf="dataDeliveryFormControls.item.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex="32.7">
+              <mat-label>{{
+                'operations.delivery.po' | translate
+                }}</mat-label>
+              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="po">
+              </mat-select>
+              <mat-error *ngIf="dataDeliveryFormControls.po.invalid">{{
+                'error.field' | translate
+                }}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" fxFlex>
+              <mat-label>{{'operations.delivery.batchnumber' | translate}}</mat-label>
+              <input matInput type="text" formControlName="batchnumber" />
+              <mat-error *ngIf="dataDeliveryFormControls.batchnumber.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+
+          </div>
+          <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
             <mat-form-field appearance="outline" fxFlex.gt-sm="10">
-              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="dateoperator">
+              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="receiptdateoperator">
                 <mat-option value=">">></mat-option>
                 <mat-option value="<">
                   < </mat-option>
@@ -342,147 +128,350 @@
                         </mat-option>
                         <mat-option value="="> = </mat-option>
               </mat-select>
-              <mat-error *ngIf="searchDeliveryFormControls.dateoperator.invalid">{{
+              <mat-error *ngIf="dataDeliveryFormControls.receiptdateoperator.invalid">{{
                 'error.field' | translate
                 }}</mat-error>
             </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex.gt-sm="21">
-              <mat-label>{{
-                'operations.delivery.deliverydate' | translate
-                }}</mat-label>
-              <input formControlName="deliverydate" matInput [matDatepicker]="picker4">
-              <mat-datepicker-toggle matSuffix [for]="picker4">
+            <mat-form-field appearance="outline" fxFlex.gt-sm="22.5">
+              <mat-label>{{ 'operations.delivery.receiptdate' | translate }}</mat-label>
+              <input formControlName="receiptdate" matInput [matDatepicker]="picker1">
+              <mat-datepicker-toggle matSuffix [for]="picker1">
                 <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
               </mat-datepicker-toggle>
-              <mat-datepicker #picker4></mat-datepicker>
-              <mat-error *ngIf="searchDeliveryFormControls.deliverydate.invalid">
+              <mat-datepicker #picker1></mat-datepicker>
+              <mat-error *ngIf="dataDeliveryFormControls.receiptdate.invalid">
                 {{ 'error.field' | translate }}
               </mat-error>
             </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex.gt-sm="33">
-              <mat-label>{{
-                'operations.delivery.po' | translate
-                }}</mat-label>
-              <input matInput type="text" formControlName="po" />
-              <mat-error *ngIf="searchDeliveryFormControls.po.invalid">
-                {{ 'error.field' | translate }}</mat-error>
-            </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex.gt-sm="33">
-              <mat-label>{{
-                'operations.delivery.so' | translate
-                }}</mat-label>
-              <input matInput type="text" formControlName="so" />
-              <mat-error *ngIf="searchDeliveryFormControls.so.invalid">
-                {{ 'error.field' | translate }}</mat-error>
-            </mat-form-field>
-          </div>
-          <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
-            <mat-form-field appearance="outline" fxFlex>
-              <mat-label>{{
-                'operations.delivery.do' | translate
-                }}</mat-label>
-              <input matInput type="text" formControlName="do" />
-              <mat-error *ngIf="searchDeliveryFormControls.do.invalid">
-                {{ 'error.field' | translate }}</mat-error>
-            </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex>
-              <mat-label>{{
-                'operations.delivery.item' | translate
-                }}</mat-label>
-              <input matInput type="text" formControlName="item" />
-              <mat-error *ngIf="searchDeliveryFormControls.item.invalid">
-                {{ 'error.field' | translate }}</mat-error>
-            </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex>
-              <mat-label>{{
-                'operations.delivery.shipto' | translate
-                }}</mat-label>
-              <input matInput type="text" formControlName="shipto" />
-              <mat-error *ngIf="searchDeliveryFormControls.shipto.invalid">
-                {{ 'error.field' | translate }}</mat-error>
-            </mat-form-field>
-          </div>
-          <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
-            <mat-form-field appearance="outline" fxFlex.gt-sm="32.5">
-              <mat-label>{{
-                'operations.delivery.batchnumber' | translate
-                }}</mat-label>
-              <input matInput type="text" formControlName="batchnumber" />
-              <mat-error *ngIf="searchDeliveryFormControls.batchnumber.invalid">
-                {{ 'error.field' | translate }}</mat-error>
-            </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex.gt-sm="32.5">
-              <mat-label>{{
-                'operations.delivery.status' | translate
-                }}</mat-label>
-              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="status">
-                <mat-option value="active">{{
-                  'operations.delivery.status' | translate
-                  }}</mat-option>
+            <mat-form-field appearance="outline" fxFlex.gt-sm="10">
+              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="expdateoperator">
+                <mat-option value=">">></mat-option>
+                <mat-option value="<">
+                  < </mat-option>
+                    <mat-option value=">="> >=
+                    </mat-option>
+                    <mat-option value="<=">
+                      <= </mat-option>
+                        <mat-option value="<>">
+                          <>
+                        </mat-option>
+                        <mat-option value="="> = </mat-option>
               </mat-select>
-              <mat-error *ngIf="searchDeliveryFormControls.status.invalid">{{
+              <mat-error *ngIf="dataDeliveryFormControls.expdateoperator.invalid">{{
                 'error.field' | translate
                 }}</mat-error>
             </mat-form-field>
-            <div class="form-button-container" fxFlex.gt-sm="32.5">
-              <button (click)="onSearchDeliverySubmit()" mat-raised-button color="primary" type="submit">
-                <mat-icon>search</mat-icon>
+            <mat-form-field appearance="outline" fxFlex.gt-sm="22.4">
+              <mat-label>{{ 'operations.delivery.expdate' | translate }}</mat-label>
+              <input formControlName="expdate" matInput [matDatepicker]="picker2">
+              <mat-datepicker-toggle matSuffix [for]="picker2">
+                <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+              </mat-datepicker-toggle>
+              <mat-datepicker #picker2></mat-datepicker>
+              <mat-error *ngIf="dataDeliveryFormControls.expdate.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex.gt-sm="23">
+              <mat-label>{{'operations.delivery.pick' | translate}}</mat-label>
+              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="pick">
+              </mat-select>
+              <mat-error *ngIf="dataDeliveryFormControls.pick.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex.gt-sm="11.5">
+              <mat-label>{{'operations.delivery.qty' | translate}}</mat-label>
+              <input matInput type="text" formControlName="qty" />
+              <mat-error *ngIf="dataDeliveryFormControls.qty.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
+            <div fxLayoutAlign="start" class="form-three-button-container" fxFlex.gt-sm="33">
+              <button type="button" mat-raised-button color="primary">
+                <mat-icon>list_alt</mat-icon>
               </button>
-              <button mat-raised-button color="accent" type="reset" (click)="resetDeliverySearchForm()">
-                <mat-icon>restart_alt</mat-icon>
+              <button class="text-button" type="button" mat-raised-button color="primary">
+                DRN
+              </button>
+            </div>
+            <div fxFlex.gt-sm="33">
+              <h5> Status : TDN</h5>
+            </div>
+            <div fxFlex.gt-sm="18">
+              <mat-checkbox color="primary" formControlName="reworkonly">
+                {{'operations.delivery.reworkonly' | translate}}</mat-checkbox>
+            </div>
+            <div fxLayoutAlign="end" fxFlex.gt-sm="15">
+              <button type="button" mat-raised-button color="primary">
+                {{'operations.delivery.alloc' | translate}}
               </button>
             </div>
           </div>
-        </mat-card-content>
-      </mat-card>
-
-    </form>
-    <mat-card class="mat-elevation-z10 overflow-x">
-      <mat-card-content class="overflow-x">
-        <table mat-table [dataSource]="searchDataSource" class="mat-elevation-z8 site-table">
-          <ng-container matColumnDef="warehouse">
-            <th mat-header-cell *matHeaderCellDef>{{ 'operations.delivery.warehouse' | translate}}</th>
-            <td mat-cell *matCellDef="let element;">
-              {{ element.warehouse }}
-            </td>
-          </ng-container>
-          <ng-container matColumnDef="owner">
-            <th mat-header-cell *matHeaderCellDef>{{ 'operations.delivery.owner' | translate}}</th>
-            <td mat-cell *matCellDef="let element">
-              {{ element.owner }}
-            </td>
-          </ng-container>
-          <ng-container matColumnDef="drn">
-            <th mat-header-cell *matHeaderCellDef>{{ 'operations.delivery.drn' | translate}}</th>
-            <td mat-cell *matCellDef="let element">
-              {{ element.drn }}
-            </td>
-          </ng-container>
-          <ng-container matColumnDef="shipto">
-            <th mat-header-cell *matHeaderCellDef>{{ 'operations.delivery.shipto' | translate}}</th>
-            <td mat-cell *matCellDef="let element">
-              {{ element.shipto }}
-            </td>
-          </ng-container>
-          <ng-container matColumnDef="status">
-            <th mat-header-cell *matHeaderCellDef>{{ 'operations.delivery.status' | translate}}</th>
-            <td mat-cell *matCellDef="let element">
-              {{ element.status }}
-            </td>
-          </ng-container>
-          <ng-container matColumnDef="return">
-            <th mat-header-cell *matHeaderCellDef>{{ 'operations.delivery.return' | translate}}</th>
-            <td mat-cell *matCellDef="let element">
-              {{ element.return }}
-            </td>
-          </ng-container>
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </div>
+        <br>
+      </div>
+      <hr>
+      <section class="data-tab-footer">
+        <table class="site-table w-100">
+          <thead>
+            <tr>
+              <th></th>
+              <th>{{ 'operations.delivery.grn' | translate}}</th>
+              <th>{{ 'operations.delivery.item' | translate}}</th>
+              <th>{{ 'operations.delivery.description' | translate}}</th>
+              <th>{{ 'operations.delivery.po' | translate}}</th>
+              <th>{{ 'operations.delivery.sku' | translate}}</th>
+              <th>{{ 'operations.delivery.batchnumber' | translate}}</th>
+              <th>{{ 'operations.delivery.mfg' | translate}}</th>
+              <th>{{ 'operations.delivery.expiry' | translate}}</th>
+              <th>{{ 'operations.delivery.location' | translate}}</th>
+              <th>{{ 'operations.delivery.stock' | translate}} </th>
+              <th>{{ 'operations.delivery.alloc' | translate}} </th>
+              <th>{{ 'operations.delivery.pkd' | translate}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-template let-operator ngFor [ngForOf]="deliveryDataSource">
+              <tr>
+                <td></td>
+                <td> {{operator.grn}} </td>
+                <td>{{operator.item}} </td>
+                <td>{{operator.description}} </td>
+                <td> {{operator.po}} </td>
+                <td>{{operator.sku}} </td>
+                <td>{{operator.batchnumber}} </td>
+                <td>{{operator.mfg}} </td>
+                <td>{{operator.expiry}} </td>
+                <td> {{operator.location}} </td>
+                <td>{{operator.stock}} </td>
+                <td>{{operator.alloc}} </td>
+                <td>{{operator.pkd}} </td>
+              </tr>
+            </ng-template>
+          </tbody>
         </table>
-        <small *ngIf="searchDataSource.length === 0" class="empty-table">
-          No records found
-        </small>
-      </mat-card-content>
-    </mat-card>
+        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="30px" fxLayoutAlign="space-between">
+          <div class="progress-section" fxFlex>
+            <div class="progress-box"></div>
+            {{ 'operations.delivery.auditInProgress' | translate}}
+          </div>
+        </div>
+        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="30px" fxLayoutAlign="space-between">
+          <div class="form-three-button-container" fxFlexOrder.lt-md="1">
+            <button mat-raised-button color="warn" type="button" (click)="deleteDeliveryData()">
+              <mat-icon>remove_circle_outline</mat-icon>
+            </button>
+            <button mat-raised-button color="accent" type="reset" (click)="resetDeliveryDataForm()">
+              <mat-icon>loop</mat-icon>
+            </button>
+          </div>
+          <div fxFlex fxFlexOrder.lt-md="2" style="padding-left: 20px;">
+            <div>Del Wt : 110</div>
+            <div>Del Vol : 0</div>
+          </div>
+          <div fxFlex class="form-three-button-container" fxFlexOrder.lt-md="3">
+            <button mat-raised-button color="primary" type="submit" (click)="saveDeliveryData()">
+              <mat-icon>task_alt</mat-icon>
+            </button>
+            <button mat-raised-button color="primary" type="button">
+              <mat-icon>recommend</mat-icon>
+            </button>
+          </div>
+        </div>
+      </section>
+    </form>
+  </mat-tab>
+  <mat-tab label="Search">
+    <form fxLayout="column" [formGroup]="searchDeliveryForm" (ngSubmit)="onSearchDeliverySubmit()" class="slim-form">
+      <section class="bordered-section">
+        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+          <mat-form-field appearance="outline" fxFlex="10" fxFlex.lt-md="34" fxFlex fxFlex.lt-sm="33">
+            <mat-label>{{
+              'operations.delivery.warehouse' | translate
+              }}</mat-label>
+            <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="warehouse">
+              <mat-option value="warehouse">{{
+                'operations.delivery.warehouse' | translate
+                }}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="searchDeliveryFormControls.warehouse.invalid">{{
+              'error.field' | translate
+              }}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>{{
+              'operations.delivery.owner' | translate
+              }}</mat-label>
+            <input matInput type="text" formControlName="owner" />
+            <mat-icon (click)="openOwnerDialog()" matSuffix>search</mat-icon>
+            <mat-error *ngIf="searchDeliveryFormControls.owner.invalid">
+              {{ 'error.field' | translate }}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>{{
+              'operations.delivery.drn' | translate
+              }}</mat-label>
+            <input matInput type="text" formControlName="drn" />
+            <mat-error *ngIf="searchDeliveryFormControls.drn.invalid">
+              {{ 'error.field' | translate }}</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+          <mat-form-field appearance="outline" fxFlex.gt-sm="10">
+            <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="dateoperator">
+              <mat-option value=">">></mat-option>
+              <mat-option value="<">
+                < </mat-option>
+                  <mat-option value=">="> >=
+                  </mat-option>
+                  <mat-option value="<=">
+                    <= </mat-option>
+                      <mat-option value="<>">
+                        <>
+                      </mat-option>
+                      <mat-option value="="> = </mat-option>
+            </mat-select>
+            <mat-error *ngIf="searchDeliveryFormControls.dateoperator.invalid">{{
+              'error.field' | translate
+              }}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex.gt-sm="21">
+            <mat-label>{{
+              'operations.delivery.deliverydate' | translate
+              }}</mat-label>
+            <input formControlName="deliverydate" matInput [matDatepicker]="picker4">
+            <mat-datepicker-toggle matSuffix [for]="picker4">
+              <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker4></mat-datepicker>
+            <mat-error *ngIf="searchDeliveryFormControls.deliverydate.invalid">
+              {{ 'error.field' | translate }}
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex.gt-sm="33">
+            <mat-label>{{
+              'operations.delivery.po' | translate
+              }}</mat-label>
+            <input matInput type="text" formControlName="po" />
+            <mat-error *ngIf="searchDeliveryFormControls.po.invalid">
+              {{ 'error.field' | translate }}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex.gt-sm="33">
+            <mat-label>{{
+              'operations.delivery.so' | translate
+              }}</mat-label>
+            <input matInput type="text" formControlName="so" />
+            <mat-error *ngIf="searchDeliveryFormControls.so.invalid">
+              {{ 'error.field' | translate }}</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>{{
+              'operations.delivery.do' | translate
+              }}</mat-label>
+            <input matInput type="text" formControlName="do" />
+            <mat-error *ngIf="searchDeliveryFormControls.do.invalid">
+              {{ 'error.field' | translate }}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>{{
+              'operations.delivery.item' | translate
+              }}</mat-label>
+            <input matInput type="text" formControlName="item" />
+            <mat-error *ngIf="searchDeliveryFormControls.item.invalid">
+              {{ 'error.field' | translate }}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>{{
+              'operations.delivery.shipto' | translate
+              }}</mat-label>
+            <input matInput type="text" formControlName="shipto" />
+            <mat-error *ngIf="searchDeliveryFormControls.shipto.invalid">
+              {{ 'error.field' | translate }}</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+          <mat-form-field appearance="outline" fxFlex.gt-sm="32.5">
+            <mat-label>{{
+              'operations.delivery.batchnumber' | translate
+              }}</mat-label>
+            <input matInput type="text" formControlName="batchnumber" />
+            <mat-error *ngIf="searchDeliveryFormControls.batchnumber.invalid">
+              {{ 'error.field' | translate }}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex.gt-sm="32.5">
+            <mat-label>{{
+              'operations.delivery.status' | translate
+              }}</mat-label>
+            <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="status">
+              <mat-option value="active">{{
+                'operations.delivery.status' | translate
+                }}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="searchDeliveryFormControls.status.invalid">{{
+              'error.field' | translate
+              }}</mat-error>
+          </mat-form-field>
+          <div class="form-button-container" fxFlex.gt-sm="32.5">
+            <button (click)="onSearchDeliverySubmit()" mat-raised-button color="primary" type="submit">
+              <mat-icon>search</mat-icon>
+            </button>
+            <button mat-raised-button color="accent" type="reset" (click)="resetDeliverySearchForm()">
+              <mat-icon>restart_alt</mat-icon>
+            </button>
+          </div>
+        </div>
+      </section>
+    </form>
+
+    <section class="bordered-section">
+      <table mat-table [dataSource]="searchDataSource" class="mat-elevation-z8 site-table">
+        <ng-container matColumnDef="warehouse">
+          <th mat-header-cell *matHeaderCellDef>{{ 'operations.delivery.warehouse' | translate}}</th>
+          <td mat-cell *matCellDef="let element;">
+            {{ element.warehouse }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="owner">
+          <th mat-header-cell *matHeaderCellDef>{{ 'operations.delivery.owner' | translate}}</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.owner }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="drn">
+          <th mat-header-cell *matHeaderCellDef>{{ 'operations.delivery.drn' | translate}}</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.drn }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="shipto">
+          <th mat-header-cell *matHeaderCellDef>{{ 'operations.delivery.shipto' | translate}}</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.shipto }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef>{{ 'operations.delivery.status' | translate}}</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.status }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="return">
+          <th mat-header-cell *matHeaderCellDef>{{ 'operations.delivery.return' | translate}}</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.return }}
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+      <small *ngIf="searchDataSource.length === 0" class="empty-table">
+        No records found
+      </small>
+    </section>
   </mat-tab>
 </mat-tab-group>

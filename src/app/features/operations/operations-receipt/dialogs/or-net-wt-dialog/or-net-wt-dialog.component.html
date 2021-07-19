@@ -2,41 +2,35 @@
   <mat-icon class="close-icon">close</mat-icon>
 </button>
 
-<h1 mat-dialog-title></h1>
-<div mat-dialog-content>
-  <form [formGroup]="netwtForm" (ngSubmit)="onnetwtFormSubmit()" class="slim-form">
-    <mat-card>
-      <mat-card-content>
-        <div fxLayout="column" fxLayoutGap="5px">
-          <fieldset class="read-only-input" fxFlex>
-            <legend>{{ 'operations.receipt.item' | translate }}</legend>
-            <label>{{ 'operations.receipt.item' | translate }}</label>
-          </fieldset>
+<form [formGroup]="netwtForm" (ngSubmit)="onnetwtFormSubmit()" class="slim-form">
+  <section class="bordered-section">
+    <div fxLayout="column" fxLayoutGap="5px">
+      <fieldset class="read-only-input" fxFlex>
+        <legend>{{ 'operations.receipt.item' | translate }}</legend>
+        <label>{{ 'operations.receipt.item' | translate }}</label>
+      </fieldset>
 
-          <mat-form-field class="input-row" appearance="outline" fxFlex>
-            <mat-label>{{
-                  'operations.receipt.unitWeight' | translate
-                  }}</mat-label>
-            <input matInput type="text" formControlName="unitweight" />
-          </mat-form-field>
-          <fieldset class="read-only-input" fxFlex>
-            <legend>{{ 'operations.receipt.quantity' | translate }}</legend>
-            <label>{{ 'operations.receipt.quantity' | translate }}</label>
-          </fieldset>
-          <mat-form-field class="input-row" appearance="outline" fxFlex>
-            <mat-label>{{
-                  'operations.receipt.netwt' | translate
-                  }}</mat-label>
-            <input matInput type="text" formControlName="netwt" />
-          </mat-form-field>
-        </div>
-
-      </mat-card-content>
-    </mat-card>
-    <div class="modal-button-bottom">
-      <button mat-raised-button color="primary" type="submit">
-        <mat-icon>task_alt</mat-icon>
-      </button>
+      <mat-form-field class="row" appearance="outline" fxFlex>
+        <mat-label>{{
+          'operations.receipt.unitWeight' | translate
+          }}</mat-label>
+        <input matInput type="text" formControlName="unitweight" />
+      </mat-form-field>
+      <fieldset class="read-only-input" fxFlex>
+        <legend>{{ 'operations.receipt.quantity' | translate }}</legend>
+        <label>{{ 'operations.receipt.quantity' | translate }}</label>
+      </fieldset>
+      <mat-form-field class="row" appearance="outline" fxFlex>
+        <mat-label>{{
+          'operations.receipt.netwt' | translate
+          }}</mat-label>
+        <input matInput type="text" formControlName="netwt" />
+      </mat-form-field>
     </div>
-  </form>
-</div>
+  </section>
+  <div class="modal-button-bottom">
+    <button mat-raised-button color="primary" type="submit">
+      <mat-icon>task_alt</mat-icon>
+    </button>
+  </div>
+</form>

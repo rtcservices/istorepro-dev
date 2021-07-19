@@ -1,64 +1,58 @@
 <button mat-raised-button class="dialog-close" [mat-dialog-close]="true" color="warn">
   <mat-icon class="close-icon">close</mat-icon>
 </button>
-
-<h1 mat-dialog-title></h1>
-<div mat-dialog-content>
-    <mat-card>
-      <mat-card-content>
-        <form [formGroup]="labelForm"  class="slim-form">
-        <div fxLayout="row" fxLayoutGap="5px">
-          <fieldset class="read-only-input" fxFlex>
-            <legend>{{ 'operations.receipt.warehouse' | translate }}</legend>
-            <label>{{ labelFormControls.warehouse.value }}</label>
-          </fieldset>
-          <fieldset class="read-only-input" fxFlex>
-            <legend>{{ 'operations.receipt.po' | translate }}</legend>
-            <label>{{ labelFormControls.po.value }}</label>
-          </fieldset>
-
-        </div>
-        <div fxLayout="row" fxLayoutGap="5px">
-          <fieldset class="read-only-input" fxFlex>
-            <legend>{{ 'operations.receipt.owner' | translate }}</legend>
-            <label>{{ labelFormControls.owner.value }}</label>
-          </fieldset>
-          <fieldset class="read-only-input" fxFlex>
-            <legend>{{ 'operations.receipt.grn' | translate }}</legend>
-            <label>{{ labelFormControls.grn.value }}</label>
-          </fieldset>
-
-        </div>
-        </form>
-        <table class="site-table text-center w-100 mt">
-            <thead>
-              <tr>
-                <th class="checkbox-column">
-                  <mat-checkbox color="primary"></mat-checkbox>
-                </th>
-                <th>{{ 'operations.receipt.item' | translate}}</th>
-                <th>{{ 'operations.receipt.description' | translate}}</th>
-                <th>{{ 'operations.receipt.sku' | translate}} </th>
-                <th class="text-center" colspan="3">{{ 'operations.receipt.qty' | translate}} </th>
-              </tr>
-              <tr>
-                <th class="checkbox-column">
-                  <mat-checkbox color="primary"></mat-checkbox>
-                </th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th>{{ 'operations.receipt.qtygood' | translate}}</th>
-                <th>{{ 'operations.receipt.qtydmg' | translate}}</th>
-
-              </tr>
-            </thead>
-          </table>
-      </mat-card-content>
-    </mat-card>
-    <div class="modal-button-bottom">
-      <button mat-raised-button color="primary" type="submit">
-        <mat-icon>task_alt</mat-icon>
-      </button>
+<form [formGroup]="labelForm" class="slim-form">
+  <section class="bordered-section">
+    <div fxLayout="row" fxLayoutGap="5px">
+      <fieldset class="read-only-input" fxFlex>
+        <legend>{{ 'operations.receipt.warehouse' | translate }}</legend>
+        <label>{{ labelFormControls.warehouse.value }}</label>
+      </fieldset>
+      <fieldset class="read-only-input" fxFlex>
+        <legend>{{ 'operations.receipt.po' | translate }}</legend>
+        <label>{{ labelFormControls.po.value }}</label>
+      </fieldset>
     </div>
-</div>
+
+    <div fxLayout="row" fxLayoutGap="5px">
+      <fieldset class="read-only-input" fxFlex="48.1">
+        <legend>{{ 'operations.receipt.owner' | translate }}</legend>
+        <label>{{ labelFormControls.owner.value }}</label>
+      </fieldset>
+      <fieldset class="read-only-input" fxFlex="48.3">
+        <legend>{{ 'operations.receipt.grn' | translate }}</legend>
+        <label>{{ labelFormControls.grn.value }}</label>
+      </fieldset>
+    </div>
+    <table class="site-table text-center w-100 mt">
+      <thead>
+        <tr>
+          <th class="checkbox-column">
+            <mat-checkbox color="primary"></mat-checkbox>
+          </th>
+          <th>{{ 'operations.receipt.item' | translate}}</th>
+          <th>{{ 'operations.receipt.description' | translate}}</th>
+          <th>{{ 'operations.receipt.sku' | translate}} </th>
+          <th class="text-center" colspan="3">{{ 'operations.receipt.qty' | translate}} </th>
+        </tr>
+        <tr>
+          <th class="checkbox-column">
+            <mat-checkbox color="primary"></mat-checkbox>
+          </th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th>{{ 'operations.receipt.qtygood' | translate}}</th>
+          <th>{{ 'operations.receipt.qtydmg' | translate}}</th>
+
+        </tr>
+      </thead>
+    </table>
+
+  </section>
+  <div class="modal-button-bottom">
+    <button mat-raised-button color="primary" type="submit">
+      <mat-icon>task_alt</mat-icon>
+    </button>
+  </div>
+</form>

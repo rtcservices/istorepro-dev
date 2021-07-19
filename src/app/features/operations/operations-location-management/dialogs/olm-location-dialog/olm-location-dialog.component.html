@@ -2,56 +2,52 @@
   <mat-icon class="close-icon">close</mat-icon>
 </button>
 
+<form [formGroup]="LocationForm" fxLayout="column" class="slim-form">
+  <section class="bordered-section">
+    <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+      <fieldset class="read-only-input" fxFlex.gt-sm="50">
+        <legend>{{ 'operations.LocationManagement.wh' | translate }}</legend>
+        <label>{{ LocationFormControls.wh.value }}</label>
+      </fieldset>
+      <mat-form-field appearance="outline" fxFlex.gt-sm="50">
+        <mat-label>{{'operations.LocationManagement.code' | translate }}</mat-label>
+        <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="code">
+        </mat-select>
+        <mat-error *ngIf="LocationFormControls.code.invalid">{{ 'error.field' | translate }}</mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
 
-<h1 mat-dialog-title></h1>
-<div mat-dialog-content>
-  <div>
-    <form [formGroup]="LocationForm" fxLayout="column" class="slim-form">
-      <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
-        <fieldset class="read-only-input" fxFlex.gt-sm="50">
-          <legend>{{ 'operations.LocationManagement.wh' | translate }}</legend>
-          <label>{{ LocationFormControls.wh.value }}</label>
-        </fieldset>
-        <mat-form-field appearance="outline" fxFlex.gt-sm="50">
-          <mat-label>{{'operations.LocationManagement.code' | translate  }}</mat-label>
-          <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="code">
-          </mat-select>
-          <mat-error *ngIf="LocationFormControls.code.invalid">{{ 'error.field' | translate  }}</mat-error>
-        </mat-form-field>
-      </div>
-      <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+      <mat-form-field appearance="outline" fxFlex fxFlex.gt-sm="50">
+        <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="type">
+          <mat-option></mat-option>
+        </mat-select>
+        <mat-error *ngIf="LocationFormControls.type.invalid">{{
+          'error.field' | translate
+          }}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" fxFlex fxFlex.gt-sm="50">
+        <mat-label>{{'operations.LocationManagement.status' | translate }}</mat-label>
+        <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="status">
+        </mat-select>
+        <mat-error *ngIf="LocationFormControls.status.invalid">{{
+          'error.field' | translate
+          }}</mat-error>
+      </mat-form-field>
 
-        <mat-form-field appearance="outline" fxFlex fxFlex.gt-sm="50">
-          <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="type">
-            <mat-option></mat-option>
-          </mat-select>
-          <mat-error *ngIf="LocationFormControls.type.invalid">{{
-                                'error.field' | translate
-                                }}</mat-error>
-        </mat-form-field>
-        <mat-form-field appearance="outline" fxFlex fxFlex.gt-sm="50">
-          <mat-label>{{'operations.LocationManagement.status' | translate  }}</mat-label>
-          <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="status">
-          </mat-select>
-          <mat-error *ngIf="LocationFormControls.status.invalid">{{
-                                  'error.field' | translate
-                                  }}</mat-error>
-        </mat-form-field>
-
-      </div>
-      <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxLayoutAlign="end end">
-        <div >
-          <div class="form-three-button-container smaller-button-container-40"  fxLayout="row">
-            <button type="button" mat-raised-button color="primary" fxflex>
-              <mat-icon>search</mat-icon>
-            </button>
-            <button fxflex type="button" (click)="resetLocationForm()" mat-raised-button color="accent">
-              <mat-icon>restart_alt</mat-icon>
-            </button>
-          </div>
+    </div>
+    <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxLayoutAlign="end end">
+      <div>
+        <div class="form-three-button-container smaller-button-container-40" fxLayout="row">
+          <button type="button" mat-raised-button color="primary" fxflex>
+            <mat-icon>search</mat-icon>
+          </button>
+          <button fxflex type="button" (click)="resetLocationForm()" mat-raised-button color="accent">
+            <mat-icon>restart_alt</mat-icon>
+          </button>
         </div>
       </div>
-    </form>
+    </div>
     <br>
     <table class="site-table w-100">
       <thead>
@@ -65,6 +61,5 @@
       </thead>
 
     </table>
-  </div>
-
-</div>
+  </section>
+</form>

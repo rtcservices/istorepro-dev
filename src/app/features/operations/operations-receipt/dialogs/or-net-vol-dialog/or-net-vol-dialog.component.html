@@ -2,68 +2,63 @@
   <mat-icon class="close-icon">close</mat-icon>
 </button>
 
-<h1 mat-dialog-title></h1>
-<div mat-dialog-content>
-  <form [formGroup]="netvolForm" (ngSubmit)="onnetvolFormSubmit()" class="slim-form">
-    <mat-card>
-      <mat-card-content>
-        <div fxLayout="column" fxLayoutGap="5px">
-          <fieldset class="read-only-input" fxFlex>
-            <legend>{{ 'operations.receipt.item' | translate }}</legend>
-            <label>{{ 'operations.receipt.item' | translate }}</label>
-          </fieldset>
+<form [formGroup]="netvolForm" (ngSubmit)="onnetvolFormSubmit()" class="slim-form">
+  <section class="bordered-section">
+    <div fxLayout="column" fxLayoutGap="5px">
+      <fieldset class="read-only-input" fxFlex>
+        <legend>{{ 'operations.receipt.item' | translate }}</legend>
+        <label>{{ 'operations.receipt.item' | translate }}</label>
+      </fieldset>
 
-
-          <div fxLayout="row" fxLayoutGap="5px">
-            <fieldset class="read-only-input" fxFlex>
-              <legend>{{ 'operations.receipt.quantity' | translate }}</legend>
-              <label>{{ 'operations.receipt.quantity' | translate }}</label>
-            </fieldset>
-            <div fxLayout="row" fxFlex="20">
-              <mat-checkbox color="primary" formControlName="dimensions" (click)="onDimensionsSelect($event)">
-                {{ 'operations.receipt.dimensions' | translate }}
-              </mat-checkbox>
-            </div>
-          </div>
-
-          <mat-form-field class="input-row" appearance="outline" fxFlex>
-            <mat-label>{{
-              'operations.receipt.length' | translate
-              }}</mat-label>
-            <input matInput type="text" formControlName="length" />
-          </mat-form-field>
-          <mat-form-field class="input-row" appearance="outline" fxFlex>
-            <mat-label>{{
-              'operations.receipt.breadth' | translate
-              }}</mat-label>
-            <input matInput type="text" formControlName="breadth" />
-          </mat-form-field>
-          <mat-form-field class="input-row" appearance="outline" fxFlex>
-            <mat-label>{{
-              'operations.receipt.height' | translate
-              }}</mat-label>
-            <input matInput type="text" formControlName="height" />
-          </mat-form-field>
-          <mat-divider class="field-divider"></mat-divider>
-          <mat-form-field class="input-row" appearance="outline" fxFlex>
-            <mat-label>{{
-              'operations.receipt.unitVolume' | translate
-              }}</mat-label>
-            <input matInput type="text" formControlName="unitvol" />
-          </mat-form-field>
-          <mat-divider class="field-divider"></mat-divider>
-          <fieldset class="read-only-input" fxFlex>
-            <legend>{{ 'operations.receipt.netvol' | translate }}</legend>
-            <label>{{ 'operations.receipt.netvol' | translate }}</label>
-          </fieldset>
+      <div fxLayout="row" fxLayoutGap="5px">
+        <fieldset class="read-only-input" fxFlex>
+          <legend>{{ 'operations.receipt.quantity' | translate }}</legend>
+          <label>{{ 'operations.receipt.quantity' | translate }}</label>
+        </fieldset>
+        <div fxLayout="row" fxFlex="20">
+          <mat-checkbox color="primary" formControlName="dimensions" (click)="onDimensionsSelect($event)">
+            {{ 'operations.receipt.dimensions' | translate }}
+          </mat-checkbox>
         </div>
+      </div>
 
-      </mat-card-content>
-    </mat-card>
-    <div class="modal-button-bottom">
-      <button mat-raised-button color="primary" type="submit">
-        <mat-icon>task_alt</mat-icon>
-      </button>
+      <mat-form-field class="row" appearance="outline" fxFlex>
+        <mat-label>{{
+          'operations.receipt.length' | translate
+          }}</mat-label>
+        <input matInput type="text" formControlName="length" />
+      </mat-form-field>
+      <mat-form-field class="row" appearance="outline" fxFlex>
+        <mat-label>{{
+          'operations.receipt.breadth' | translate
+          }}</mat-label>
+        <input matInput type="text" formControlName="breadth" />
+      </mat-form-field>
+      <mat-form-field class="row" appearance="outline" fxFlex>
+        <mat-label>{{
+          'operations.receipt.height' | translate
+          }}</mat-label>
+        <input matInput type="text" formControlName="height" />
+      </mat-form-field>
+      <mat-divider class="field-divider"></mat-divider>
+      <mat-form-field class="row" appearance="outline" fxFlex>
+        <mat-label>{{
+          'operations.receipt.unitVolume' | translate
+          }}</mat-label>
+        <input matInput type="text" formControlName="unitvol" />
+      </mat-form-field>
+      <mat-divider class="field-divider"></mat-divider>
+      <fieldset class="read-only-input" fxFlex>
+        <legend>{{ 'operations.receipt.netvol' | translate }}</legend>
+        <label>{{ 'operations.receipt.netvol' | translate }}</label>
+      </fieldset>
+
     </div>
-  </form>
-</div>
+  </section>
+  
+  <div class="modal-button-bottom">
+    <button mat-raised-button color="primary" type="submit">
+      <mat-icon>task_alt</mat-icon>
+    </button>
+  </div>
+</form>
