@@ -7,7 +7,7 @@
 <form [formGroup]="itemForm" (ngSubmit)="onItemFormSubmit()" class="slim-form">
   <section class="bordered-section">
     <div fxLayout="column" fxLayout.lt-sm="column" fxLayoutGap="5px">
-      <div fxLayout="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
+      <div fxLayout="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
         <mat-form-field appearance="outline" fxFlex>
           <mat-label>{{'routines.stockadjust.code' | translate}}</mat-label>
           <input matInput type="text" formControlName="code" />
@@ -23,7 +23,7 @@
           </mat-error>
         </mat-form-field>
       </div>
-      <div fxLayout="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="10px" fxFlex>
+      <div fxLayout="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="10px" fxFlex>
         <mat-form-field appearance="outline" fxFlex.gt-sm="60">
           <mat-label>{{
             'routines.stockadjust.type' | translate
