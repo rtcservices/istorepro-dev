@@ -2,85 +2,80 @@
   <mat-icon class="close-icon">close</mat-icon>
 </button>
 
-<h1 mat-dialog-title></h1>
-<div mat-dialog-content>
-  <form [formGroup]="dataItemOwnerForm" (ngSubmit)="onDataItemOwnerSubmit()" class="slim-form">
-    <mat-card>
-      <mat-card-content>
-        <div class="input-row row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="10px" fxLayoutGap.lt-md="0px">
-          <fieldset class="read-only-input" fxFlex="49">
-            <legend>{{ 'base.item.warehouse' | translate }}</legend>
-            <label>Warehouse Name</label>
-          </fieldset>
-          <fieldset class="read-only-input" fxFlex="47">
-            <legend>{{ 'base.item.item' | translate }}</legend>
-            <label>Item Name</label>
-          </fieldset>
-        </div>
-        <div class="input-row row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px" fxLayoutGap.lt-md="0px">
-          <mat-form-field appearance="outline" fxFlex="33">
-            <mat-label>{{
-              'base.item.type' | translate
-              }}</mat-label>
-            <mat-select formControlName="type">
-              <option value=""></option>
-              <option value="Customer">Customer</option>
-              <option value="Vendor">Vendor</option>
-            </mat-select>
-          </mat-form-field>
-          <mat-form-field appearance="outline" fxFlex="33">
-            <mat-label>{{
-              'base.item.owner' | translate
-              }}</mat-label>
-            <input matInput type="text" formControlName="owner" />
-          </mat-form-field>
-          <mat-form-field appearance="outline" fxFlex="30.5">
-            <mat-label>{{
-              'base.item.ownerName' | translate
-              }}</mat-label>
-            <input matInput type="text" formControlName="ownerName" />
-          </mat-form-field>
-        </div>
-        <div class="modal-button">
-          <button mat-raised-button color="primary" type="submit">
-            <mat-icon>search</mat-icon>
-          </button>
-          <button mat-raised-button color="accent" type="reset" (click)="resetItemDataOwnerForm()">
-            <mat-icon>restart_alt</mat-icon>
-          </button>
-        </div>
-        <table class="site-table text-center w-100">
-          <thead>
-            <tr class="checkbox-column">
-              <th>
-                <mat-checkbox color="primary"></mat-checkbox>
-              </th>
-              <th>{{ 'base.item.type' | translate}}</th>
-              <th>{{ 'base.item.owner' | translate}}</th>
-              <th>{{ 'base.item.ownerName' | translate}} </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="display: none;">
-              <td class="checkbox-column">
-                <mat-checkbox color="primary"></mat-checkbox>
-              </td>
-              <td class="column-150"><input type="text" class="w-100"></td>
-              <td class="column-150"><input type="text" class="w-100"></td>
-              <td>
-                <select class="column-200">
-                  <option value=""></option>
-                </select>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </mat-card-content>
-    </mat-card>
-    <div class="modal-button-bottom">
-      <button mat-raised-button type="submit">
-        <mat-icon>add</mat-icon>
+<form [formGroup]="dataItemOwnerForm" (ngSubmit)="onDataItemOwnerSubmit()" class="slim-form">
+  <section class="bordered-section">
+    <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="10px" fxLayoutGap.lt-md="0px">
+      <fieldset class="read-only-input" fxFlex="49">
+        <legend>{{ 'base.item.warehouse' | translate }}</legend>
+        <label>Warehouse Name</label>
+      </fieldset>
+      <fieldset class="read-only-input" fxFlex="47">
+        <legend>{{ 'base.item.item' | translate }}</legend>
+        <label>Item Name</label>
+      </fieldset>
+    </div>
+    <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px" fxLayoutGap.lt-md="0px">
+      <mat-form-field appearance="outline" fxFlex="33">
+        <mat-label>{{
+          'base.item.type' | translate
+          }}</mat-label>
+        <mat-select formControlName="type">
+          <option value=""></option>
+          <option value="Customer">Customer</option>
+          <option value="Vendor">Vendor</option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline" fxFlex="33">
+        <mat-label>{{
+          'base.item.owner' | translate
+          }}</mat-label>
+        <input matInput type="text" formControlName="owner" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" fxFlex="30.5">
+        <mat-label>{{
+          'base.item.ownerName' | translate
+          }}</mat-label>
+        <input matInput type="text" formControlName="ownerName" />
+      </mat-form-field>
+    </div>
+    <div class="modal-button">
+      <button mat-raised-button color="primary" type="submit">
+        <mat-icon>search</mat-icon>
+      </button>
+      <button mat-raised-button color="accent" type="reset" (click)="resetItemDataOwnerForm()">
+        <mat-icon>restart_alt</mat-icon>
       </button>
     </div>
-  </form>
-</div>
+    <table class="site-table text-center w-100">
+      <thead>
+        <tr class="checkbox-column">
+          <th>
+            <mat-checkbox color="primary"></mat-checkbox>
+          </th>
+          <th>{{ 'base.item.type' | translate}}</th>
+          <th>{{ 'base.item.owner' | translate}}</th>
+          <th>{{ 'base.item.ownerName' | translate}} </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="display: none;">
+          <td class="checkbox-column">
+            <mat-checkbox color="primary"></mat-checkbox>
+          </td>
+          <td class="column-150"><input type="text" class="w-100"></td>
+          <td class="column-150"><input type="text" class="w-100"></td>
+          <td>
+            <select class="column-200">
+              <option value=""></option>
+            </select>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <div class="modal-button-bottom">
+    <button mat-raised-button type="submit">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+</form>
