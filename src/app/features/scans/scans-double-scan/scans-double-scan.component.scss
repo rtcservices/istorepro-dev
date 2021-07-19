@@ -17,11 +17,11 @@
   }
 }
 
-@media (max-width: 767.99px) {
+// @media (max-width: 767.99px) {
   .image-container {
     padding: 24px 19px;
     border-radius: 29px 29px 29px 29px;
-    width: 100%;
+    min-width: 40px;
   }
 
   .content {
@@ -36,28 +36,15 @@
     }
   }
 
-}
+// }
 
-@media (min-width: 768.2px) {
-  .image-container {
-    padding: 36px 3px;
-    border-radius: 36px 38px 36px 38px;
-    width: 50%;
-  }
-
-  // .content {
-  //   align-items: center;
-  //   display: flex;
-  //   justify-content: center;
-  //   mat-icon {
-  //     font-size: 72px;
-  //     margin-right: 46px;
-  //     margin-top: -29px;
-  //     margin-bottom: 28px;
-  //   }
-  // }
-
-}
+// @media (min-width: 768.2px) {
+//   .image-container {
+//     padding: 36px 3px;
+//     border-radius: 36px 38px 36px 38px;
+//     width: 50%;
+//   }
+// }
 
 .mt-sm {
   @media (max-width: 768px) {

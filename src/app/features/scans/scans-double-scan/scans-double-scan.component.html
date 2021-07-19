@@ -7,7 +7,7 @@
     <form fxLayout="column" class="slim-form">
       <div fxLayout="row" fxLayoutAlign="center center">
         <div fxFlex.gt-sm="40%" fxFlex.lt-sm="100%">
-          <mat-card class="h-100">
+          <section class="bordered-section">
             <div fxLayout="row">
               <div fxFlex fxLayoutAlign="left"></div>
               <div fxFlex fxLayoutAlign="center">
@@ -15,63 +15,63 @@
               </div>
               <div fxFlex fxLayoutAlign="end"></div>
             </div>
-            <mat-card-content>
-              <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
-                <mat-form-field appearance="outline" fxFlex>
-                  <mat-label>{{
-                    'scans.doubleScan.warehouse' | translate
+
+            <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+              <mat-form-field appearance="outline" fxFlex>
+                <mat-label>{{
+                  'scans.doubleScan.warehouse' | translate
                   }}</mat-label>
-                  <input matInput type="text" required />
-                  <mat-icon matSuffix type="button">search</mat-icon>
-                </mat-form-field>
-              </div>
+                <input matInput type="text" required />
+                <mat-icon matSuffix type="button">search</mat-icon>
+              </mat-form-field>
+            </div>
 
-              <div fxLayout.gt-sm="row" fxLayoutGap="5px">
-                <div (click)="clickType = 'putAway'" class="image-box" fxFlex fxLayoutAlign="center">
-                  <div class="content image-container" style="background-color: #fb6e0e">
-                    <mat-icon>read_more</mat-icon>
-                  </div>
-                  <button matBadge class="badge" color="warn" mat-mini-fab>
-                    10
-                  </button>
+            <div>
+              <div (click)="clickType = 'putAway'" class="image-box" fxFlex fxLayoutAlign="center">
+                <div class="content image-container" style="background-color: #fb6e0e">
+                  <mat-icon>read_more</mat-icon>
                 </div>
-                <div (click)="clickType = 'pick'" class="image-box" fxFlex fxLayoutAlign="center">
-                  <div class="content image-container" style="background-color: #097e48">
-                    <mat-icon>qr_code_scanner</mat-icon>
-                  </div>
-                  <button matBadge class="badge" color="warn" mat-mini-fab>
-                    10
-                  </button>
+                <button matBadge class="badge" color="warn" mat-mini-fab>
+                  10
+                </button>
+              </div>
+              <div (click)="clickType = 'pick'" class="image-box" fxFlex fxLayoutAlign="center">
+                <div class="content image-container" style="background-color: #097e48">
+                  <mat-icon>qr_code_scanner</mat-icon>
                 </div>
-                <div (click)="clickType = 'direct'" class="image-box" fxFlex fxLayoutAlign="center">
-                  <div class="content image-container" style="background-color: #615cdc">
-                    <mat-icon>double_arrow</mat-icon>
-                  </div>
+                <button matBadge class="badge" color="warn" mat-mini-fab>
+                  10
+                </button>
+              </div>
+              <div (click)="clickType = 'direct'" class="image-box" fxFlex fxLayoutAlign="center">
+                <div class="content image-container" style="background-color: #615cdc">
+                  <mat-icon>double_arrow</mat-icon>
                 </div>
               </div>
+            </div>
 
-              <div  fxLayout.gt-sm="row" fxLayoutGap="5px">
-                <div  (click)="clickType = 'inventory'" class="image-box" fxFlex fxLayoutAlign="center">
-                  <div class="content image-container" style="background-color: #40505d">
-                    <mat-icon>checklist</mat-icon>
-                  </div>
-                  <button matBadge class="badge" color="warn" mat-mini-fab>
-                    10
-                  </button>
+            <div>
+              <div (click)="clickType = 'inventory'" class="image-box" fxFlex fxLayoutAlign="center">
+                <div class="content image-container" style="background-color: #40505d">
+                  <mat-icon>checklist</mat-icon>
                 </div>
-                <div (click)="clickType = 'transfer'"  class="image-box" fxFlex fxLayoutAlign="center">
-                  <div class="content image-container" style="background-color: #826a6a">
-                    <mat-icon>transfer_within_a_station</mat-icon>
-                  </div>
-
-                  <button matBadge class="badge hide" color="warning" mat-mini-fab>
-                    10
-                  </button>
-                </div>
-                <div class="image-box" fxFlex fxLayoutAlign="center"></div>
+                <button matBadge class="badge" color="warn" mat-mini-fab>
+                  10
+                </button>
               </div>
-            </mat-card-content>
-          </mat-card>
+              <div (click)="clickType = 'transfer'" class="image-box" fxFlex fxLayoutAlign="center">
+                <div class="content image-container" style="background-color: #826a6a">
+                  <mat-icon>transfer_within_a_station</mat-icon>
+                </div>
+
+                <button matBadge class="badge hide" color="warning" mat-mini-fab>
+                  10
+                </button>
+              </div>
+              <div class="image-box" fxFlex fxLayoutAlign="center">
+              </div>
+            </div>
+          </section>
         </div>
       </div>
     </form>
