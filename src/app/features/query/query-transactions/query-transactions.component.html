@@ -5,352 +5,339 @@
 <mat-tab-group #QueryTransactionsTab>
     <mat-tab label="Receipt">
         <form fxLayout="column" [formGroup]="receiptForm" (ngSubmit)="onReceiptSubmit()" class="slim-form">
-            <div>
-                <mat-card>
-                    <mat-card-content>
-                        <div fxLayout="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
-                            <div fxLayout="row" fxLayoutGap="5px" fxFlex>
-                                <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm="50">
-                                    <mat-label>{{'query.transaction.receipt.warehouse' | translate }}</mat-label>
-                                    <mat-select disableOptionCentering panelClass="slim-select-field" type="text"
-                                        readonly formControlName="warehouse">
-                                        <mat-option>Pick 1</mat-option>
-                                        <mat-option>Pick 2</mat-option>
-                                    </mat-select>
-                                    <mat-error *ngIf="receiptFormControls.warehouse.invalid">
-                                        {{ 'error.field' | translate }}
-                                    </mat-error>
-                                </mat-form-field>
-                                <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm="50">
-                                    <mat-label>{{'query.transaction.receipt.owner' | translate}}</mat-label>
-                                    <input matInput type="text" formControlName="owner" />
-                                    <mat-icon matSuffix type="button" (click)="openOwnerDialog()">search</mat-icon>
-                                    <mat-error *ngIf="receiptFormControls.owner.invalid">
-                                        {{ 'error.field' | translate }}
-                                    </mat-error>
-                                </mat-form-field>
-                            </div>
-                        </div>
-                        <div fxLayout="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
-                            <div fxLayout="row" fxLayoutGap="5px" fxFlex>
-                                <mat-form-field appearance="outline" fxFlex="60" fxFlex.lt-sm="50">
-                                    <mat-label>{{'query.transaction.receipt.item' | translate}}</mat-label>
-                                    <input matInput type="text" formControlName="item" />
-                                    <mat-error *ngIf="receiptFormControls.item.invalid">
-                                        {{ 'error.field' | translate }}
-                                    </mat-error>
-                                </mat-form-field>
-                                <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="50">
-                                    <mat-label>{{'query.transaction.receipt.batchNo' | translate}}</mat-label>
-                                    <input matInput type="text" formControlName="batchNo" />
-                                    <mat-error *ngIf="receiptFormControls.batchNo.invalid">
-                                        {{ 'error.field' | translate }}
-                                    </mat-error>
-                                </mat-form-field>
-                            </div>
-                            <div class="second-column" fxLayout="row" fxLayoutGap="5px" fxFlex="33">
-                                <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm>
-                                    <mat-label>{{'query.transaction.receipt.poRefNo' | translate}}</mat-label>
-                                    <input matInput type="text" formControlName="poRefNo" />
-                                    <mat-error *ngIf="receiptFormControls.poRefNo.invalid">
-                                        {{ 'error.field' | translate }}
-                                    </mat-error>
-                                </mat-form-field>
-                            </div>
-                        </div>
-                        <div fxLayout="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
-                            <div fxLayout="row" fxLayoutGap="5px" fxFlex>
-                                <mat-form-field appearance="outline" fxFlex="60" fxFlex.lt-sm="50">
-                                    <mat-label>{{'query.transaction.receipt.origin' | translate }}</mat-label>
-                                    <mat-select disableOptionCentering panelClass="slim-select-field" type="text"
-                                        readonly formControlName="origin">
-                                        <mat-option>Pick 1</mat-option>
-                                        <mat-option>Pick 2</mat-option>
-                                    </mat-select>
-                                </mat-form-field>
-                                <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="50">
-                                    <mat-label>{{'query.transaction.receipt.status' | translate }}</mat-label>
-                                    <mat-select disableOptionCentering panelClass="slim-select-field" type="text"
-                                        readonly formControlName="status">
-                                        <mat-option>Pick 1</mat-option>
-                                        <mat-option>Pick 2</mat-option>
-                                    </mat-select>
-                                </mat-form-field>
-                            </div>
-                            <div class="second-column" fxLayout="row" fxLayoutGap="5px" fxFlex="33">
-                                <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm>
-                                    <mat-label>{{'query.transaction.receipt.grn' | translate}}</mat-label>
-                                    <input matInput type="text" formControlName="grn" />
-                                    <mat-error *ngIf="receiptFormControls.grn.invalid">
-                                        {{ 'error.field' | translate }}
-                                    </mat-error>
-                                </mat-form-field>
-                            </div>
-                        </div>
-                        <div fxLayout="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
-                            <div fxLayout="row" fxLayoutGap="5px" fxFlex>
-                                <mat-form-field appearance="outline" fxFlex="60" fxFlex.lt-sm="50">
-                                    <mat-label>{{ 'query.transaction.receipt.receiptFrom' | translate }}</mat-label>
-                                    <input formControlName="receiptFrom" matInput [matDatepicker]="receiptFrom">
-                                    <mat-datepicker-toggle matSuffix [for]="receiptFrom">
-                                        <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
-                                    </mat-datepicker-toggle>
-                                    <mat-datepicker #receiptFrom></mat-datepicker>
-                                    <mat-error *ngIf="receiptFormControls.receiptFrom.invalid">
-                                        {{ 'error.field' | translate }}
-                                    </mat-error>
-                                </mat-form-field>
-                                <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="50">
-                                    <mat-label>{{ 'query.transaction.receipt.receiptTo' | translate }}</mat-label>
-                                    <input formControlName="receiptTo" matInput [matDatepicker]="receiptTo">
-                                    <mat-datepicker-toggle matSuffix [for]="receiptTo">
-                                        <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
-                                    </mat-datepicker-toggle>
-                                    <mat-datepicker #receiptTo></mat-datepicker>
-                                    <mat-error *ngIf="receiptFormControls.receiptTo.invalid">
-                                        {{ 'error.field' | translate }}
-                                    </mat-error>
-                                </mat-form-field>
-                            </div>
-                            <div class="second-column" fxLayout="row" fxLayoutGap="5px" fxFlex="33">
-                                <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm>
-                                    <mat-label>{{'query.transaction.receipt.stock' | translate }}</mat-label>
-                                    <mat-select disableOptionCentering panelClass="slim-select-field" type="text"
-                                        readonly formControlName="stock">
-                                        <mat-option>Pick 1</mat-option>
-                                        <mat-option>Pick 2</mat-option>
-                                    </mat-select>
-                                </mat-form-field>
-                            </div>
-                        </div>
+            <div fxFlex class="bordered-section">
+                <div fxLayout="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                    <div fxLayout="row" fxLayoutGap="5px" fxFlex>
+                        <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm="50">
+                            <mat-label>{{'query.transaction.receipt.warehouse' | translate }}</mat-label>
+                            <mat-select disableOptionCentering panelClass="slim-select-field" type="text" readonly
+                                formControlName="warehouse">
+                                <mat-option>Pick 1</mat-option>
+                                <mat-option>Pick 2</mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="receiptFormControls.warehouse.invalid">
+                                {{ 'error.field' | translate }}
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm="50">
+                            <mat-label>{{'query.transaction.receipt.owner' | translate}}</mat-label>
+                            <input matInput type="text" formControlName="owner" />
+                            <mat-icon matSuffix type="button" (click)="openOwnerDialog()">search</mat-icon>
+                            <mat-error *ngIf="receiptFormControls.owner.invalid">
+                                {{ 'error.field' | translate }}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div fxLayout="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                    <div fxLayout="row" fxLayoutGap="5px" fxFlex>
+                        <mat-form-field appearance="outline" fxFlex="60" fxFlex.lt-sm="50">
+                            <mat-label>{{'query.transaction.receipt.item' | translate}}</mat-label>
+                            <input matInput type="text" formControlName="item" />
+                            <mat-error *ngIf="receiptFormControls.item.invalid">
+                                {{ 'error.field' | translate }}
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="50">
+                            <mat-label>{{'query.transaction.receipt.batchNo' | translate}}</mat-label>
+                            <input matInput type="text" formControlName="batchNo" />
+                            <mat-error *ngIf="receiptFormControls.batchNo.invalid">
+                                {{ 'error.field' | translate }}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="second-column" fxLayout="row" fxLayoutGap="5px" fxFlex="33">
+                        <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm>
+                            <mat-label>{{'query.transaction.receipt.poRefNo' | translate}}</mat-label>
+                            <input matInput type="text" formControlName="poRefNo" />
+                            <mat-error *ngIf="receiptFormControls.poRefNo.invalid">
+                                {{ 'error.field' | translate }}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div fxLayout="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                    <div fxLayout="row" fxLayoutGap="5px" fxFlex>
+                        <mat-form-field appearance="outline" fxFlex="60" fxFlex.lt-sm="50">
+                            <mat-label>{{'query.transaction.receipt.origin' | translate }}</mat-label>
+                            <mat-select disableOptionCentering panelClass="slim-select-field" type="text" readonly
+                                formControlName="origin">
+                                <mat-option>Pick 1</mat-option>
+                                <mat-option>Pick 2</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="50">
+                            <mat-label>{{'query.transaction.receipt.status' | translate }}</mat-label>
+                            <mat-select disableOptionCentering panelClass="slim-select-field" type="text" readonly
+                                formControlName="status">
+                                <mat-option>Pick 1</mat-option>
+                                <mat-option>Pick 2</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="second-column" fxLayout="row" fxLayoutGap="5px" fxFlex="33">
+                        <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm>
+                            <mat-label>{{'query.transaction.receipt.grn' | translate}}</mat-label>
+                            <input matInput type="text" formControlName="grn" />
+                            <mat-error *ngIf="receiptFormControls.grn.invalid">
+                                {{ 'error.field' | translate }}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div fxLayout="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                    <div fxLayout="row" fxLayoutGap="5px" fxFlex>
+                        <mat-form-field appearance="outline" fxFlex="60" fxFlex.lt-sm="50">
+                            <mat-label>{{ 'query.transaction.receipt.receiptFrom' | translate }}</mat-label>
+                            <input formControlName="receiptFrom" matInput [matDatepicker]="receiptFrom">
+                            <mat-datepicker-toggle matSuffix [for]="receiptFrom">
+                                <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+                            </mat-datepicker-toggle>
+                            <mat-datepicker #receiptFrom></mat-datepicker>
+                            <mat-error *ngIf="receiptFormControls.receiptFrom.invalid">
+                                {{ 'error.field' | translate }}
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="50">
+                            <mat-label>{{ 'query.transaction.receipt.receiptTo' | translate }}</mat-label>
+                            <input formControlName="receiptTo" matInput [matDatepicker]="receiptTo">
+                            <mat-datepicker-toggle matSuffix [for]="receiptTo">
+                                <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+                            </mat-datepicker-toggle>
+                            <mat-datepicker #receiptTo></mat-datepicker>
+                            <mat-error *ngIf="receiptFormControls.receiptTo.invalid">
+                                {{ 'error.field' | translate }}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="second-column" fxLayout="row" fxLayoutGap="5px" fxFlex="33">
+                        <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm>
+                            <mat-label>{{'query.transaction.receipt.stock' | translate }}</mat-label>
+                            <mat-select disableOptionCentering panelClass="slim-select-field" type="text" readonly
+                                formControlName="stock">
+                                <mat-option>Pick 1</mat-option>
+                                <mat-option>Pick 2</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
 
-                        <div class="form-three-button-container">
-                            <button type="button" mat-raised-button color="primary">
-                                <mat-icon>search</mat-icon>
-                            </button>
-                            <button color="accent" type="reset" mat-raised-button>
-                                <mat-icon>loop</mat-icon>
-                            </button>
-                        </div>
-                    </mat-card-content>
-                </mat-card>
+                <div class="form-three-button-container">
+                    <button type="button" mat-raised-button color="primary">
+                        <mat-icon>search</mat-icon>
+                    </button>
+                    <button color="accent" type="reset" mat-raised-button>
+                        <mat-icon>loop</mat-icon>
+                    </button>
+                </div>
             </div>
-            <hr>
-            <mat-card>
-                <mat-card-content>
-                    <table class="site-table w-100">
-                        <thead>
+
+            <section class="data-tab-footer">
+                <table class="site-table w-100">
+                    <thead>
+                        <tr>
+                            <th>{{ 'query.transaction.receipt.WH' | translate}}</th>
+                            <th>{{ 'query.transaction.receipt.owner' | translate}}</th>
+                            <th>{{ 'query.transaction.receipt.grn' | translate}}</th>
+                            <th>{{ 'query.transaction.receipt.date' | translate}}</th>
+                            <th>{{ 'query.transaction.receipt.poRefNo' | translate}}</th>
+                            <th>{{ 'query.transaction.receipt.origin' | translate}}</th>
+                            <th>{{ 'query.transaction.receipt.status' | translate}}</th>
+                            <th>{{ 'query.transaction.receipt.print' | translate}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <ng-template let-receipt ngFor [ngForOf]="receiptDataSource">
                             <tr>
-                                <th>{{ 'query.transaction.receipt.WH' | translate}}</th>
-                                <th>{{ 'query.transaction.receipt.owner' | translate}}</th>
-                                <th>{{ 'query.transaction.receipt.grn' | translate}}</th>
-                                <th>{{ 'query.transaction.receipt.date' | translate}}</th>
-                                <th>{{ 'query.transaction.receipt.poRefNo' | translate}}</th>
-                                <th>{{ 'query.transaction.receipt.origin' | translate}}</th>
-                                <th>{{ 'query.transaction.receipt.status' | translate}}</th>
-                                <th>{{ 'query.transaction.receipt.print' | translate}}</th>
+                                <td class="column-150">{{receipt.wh}}</td>
+                                <td>{{receipt.owner}}</td>
+                                <td>{{receipt.grn}}</td>
+                                <td>{{receipt.date}}</td>
+                                <td>{{receipt.poRefNo}}</td>
+                                <td class="column-100">{{receipt.origin}}</td>
+                                <td class="column-100">{{receipt.status}}</td>
+                                <td class="column-100"></td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            <ng-template let-receipt ngFor [ngForOf]="receiptDataSource">
-                                <tr>
-                                    <td class="column-150">{{receipt.wh}}</td>
-                                    <td>{{receipt.owner}}</td>
-                                    <td>{{receipt.grn}}</td>
-                                    <td>{{receipt.date}}</td>
-                                    <td>{{receipt.poRefNo}}</td>
-                                    <td class="column-100">{{receipt.origin}}</td>
-                                    <td class="column-100">{{receipt.status}}</td>
-                                    <td class="column-100"></td>
-                                </tr>
-                            </ng-template>
-                        </tbody>
-                    </table>
-                </mat-card-content>
-            </mat-card>
+                        </ng-template>
+                    </tbody>
+                </table>
+            </section>
         </form>
     </mat-tab>
     <mat-tab label="Delivery">
         <form fxLayout="column" [formGroup]="deliveryForm" (ngSubmit)="onDeliverySubmit()" class="slim-form">
-            <div>
-                <mat-card>
-                    <mat-card-content>
-                        <div fxLayout="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
-                            <div fxLayout="row" fxLayoutGap="5px" fxFlex>
-                                <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm="50">
-                                    <mat-label>{{'query.transaction.delivery.warehouse' | translate }}</mat-label>
-                                    <mat-select disableOptionCentering panelClass="slim-select-field" type="text"
-                                        readonly formControlName="warehouse">
-                                        <mat-option>Pick 1</mat-option>
-                                        <mat-option>Pick 2</mat-option>
-                                    </mat-select>
-                                    <mat-error *ngIf="deliveryFormControls.warehouse.invalid">
-                                        {{ 'error.field' | translate }}
-                                    </mat-error>
-                                </mat-form-field>
-                                <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm>
-                                    <mat-label>{{'query.transaction.delivery.owner' | translate}}</mat-label>
-                                    <input matInput type="text" formControlName="owner" />
-                                    <mat-icon matSuffix type="button" (click)="openOwnerDialog()">search</mat-icon>
-                                    <mat-error *ngIf="deliveryFormControls.owner.invalid">
-                                        {{ 'error.field' | translate }}
-                                    </mat-error>
-                                </mat-form-field>
-                            </div>
-                        </div>
-                        <div fxLayout="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
-                            <div fxLayout="row" fxLayoutGap="5px" fxFlex>
-                                <mat-form-field appearance="outline" fxFlex="60" fxFlex.lt-sm="50">
-                                    <mat-label>{{'query.transaction.delivery.item' | translate}}</mat-label>
-                                    <input matInput type="text" formControlName="item" />
-                                    <mat-error *ngIf="deliveryFormControls.item.invalid">
-                                        {{ 'error.field' | translate }}
-                                    </mat-error>
-                                </mat-form-field>
-                                <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="50">
-                                    <mat-label>{{'query.transaction.delivery.poRefNo' | translate}}</mat-label>
-                                    <input matInput type="text" formControlName="poRefNo" />
-                                    <mat-error *ngIf="deliveryFormControls.poRefNo.invalid">
-                                        {{ 'error.field' | translate }}
-                                    </mat-error>
-                                </mat-form-field>
-                            </div>
-                            <div class="second-column" fxLayout="row" fxLayoutGap="5px" fxFlex="33">
-                                <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm>
-                                    <mat-label>{{'query.transaction.delivery.batchNo' | translate}}</mat-label>
-                                    <input matInput type="text" formControlName="batchNo" />
-                                    <mat-error *ngIf="deliveryFormControls.batchNo.invalid">
-                                        {{ 'error.field' | translate }}
-                                    </mat-error>
-                                </mat-form-field>
-                            </div>
-                        </div>
-                        <div fxLayout="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
-                            <div fxLayout="row" fxLayoutGap="5px" fxFlex>
-                                <mat-form-field appearance="outline" fxFlex="60" fxFlex.lt-sm="50">
-                                    <mat-label>{{'query.transaction.delivery.drn' | translate}}</mat-label>
-                                    <input matInput type="text" formControlName="drn" />
-                                    <mat-error *ngIf="deliveryFormControls.drn.invalid">
-                                        {{ 'error.field' | translate }}
-                                    </mat-error>
-                                </mat-form-field>
-                                <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="50">
-                                    <mat-label>{{'query.transaction.delivery.so' | translate}}</mat-label>
-                                    <input matInput type="text" formControlName="so" />
-                                    <mat-error *ngIf="deliveryFormControls.so.invalid">
-                                        {{ 'error.field' | translate }}
-                                    </mat-error>
-                                </mat-form-field>
-                            </div>
-                            <div class="second-column" fxLayout="row" fxLayoutGap="5px" fxFlex="33">
-                                <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm>
-                                    <mat-label>{{'query.transaction.delivery.do' | translate}}</mat-label>
-                                    <input matInput type="text" formControlName="do" />
-                                    <mat-error *ngIf="deliveryFormControls.do.invalid">
-                                        {{ 'error.field' | translate }}
-                                    </mat-error>
-                                </mat-form-field>
-                            </div>
-                        </div>
-                        <div fxLayout="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
-                            <div fxLayout="row" fxLayoutGap="5px" fxFlex>
-                                <mat-form-field appearance="outline" fxFlex="60" fxFlex.lt-sm="50">
-                                    <mat-label>{{'query.transaction.delivery.status' | translate }}</mat-label>
-                                    <mat-select disableOptionCentering panelClass="slim-select-field" type="text"
-                                        readonly formControlName="status">
-                                        <mat-option>Pick 1</mat-option>
-                                        <mat-option>Pick 2</mat-option>
-                                    </mat-select>
-                                </mat-form-field>
-                                <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="50">
-                                    <mat-label>{{ 'query.transaction.delivery.deliveryFrom' | translate }}</mat-label>
-                                    <input formControlName="deliveryFrom" matInput [matDatepicker]="deliveryFrom">
-                                    <mat-datepicker-toggle matSuffix [for]="deliveryFrom">
-                                        <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
-                                    </mat-datepicker-toggle>
-                                    <mat-datepicker #deliveryFrom></mat-datepicker>
-                                    <mat-error *ngIf="deliveryFormControls.deliveryFrom.invalid">
-                                        {{ 'error.field' | translate }}
-                                    </mat-error>
-                                </mat-form-field>
-                            </div>
-                            <div class="second-column" fxLayout="row" fxLayoutGap="5px" fxFlex="33">
-                                <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm>
-                                    <mat-label>{{ 'query.transaction.delivery.deliveryTo' | translate }}</mat-label>
-                                    <input formControlName="deliveryTo" matInput [matDatepicker]="deliveryTo">
-                                    <mat-datepicker-toggle matSuffix [for]="deliveryTo">
-                                        <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
-                                    </mat-datepicker-toggle>
-                                    <mat-datepicker #deliveryTo></mat-datepicker>
-                                    <mat-error *ngIf="deliveryFormControls.deliveryTo.invalid">
-                                        {{ 'error.field' | translate }}
-                                    </mat-error>
-                                </mat-form-field>
-                            </div>
-                        </div>
+            <div fxFlex class="bordered-section">
+                <div fxLayout="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                    <div fxLayout="row" fxLayoutGap="5px" fxFlex>
+                        <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm="50">
+                            <mat-label>{{'query.transaction.delivery.warehouse' | translate }}</mat-label>
+                            <mat-select disableOptionCentering panelClass="slim-select-field" type="text" readonly
+                                formControlName="warehouse">
+                                <mat-option>Pick 1</mat-option>
+                                <mat-option>Pick 2</mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="deliveryFormControls.warehouse.invalid">
+                                {{ 'error.field' | translate }}
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm>
+                            <mat-label>{{'query.transaction.delivery.owner' | translate}}</mat-label>
+                            <input matInput type="text" formControlName="owner" />
+                            <mat-icon matSuffix type="button" (click)="openOwnerDialog()">search</mat-icon>
+                            <mat-error *ngIf="deliveryFormControls.owner.invalid">
+                                {{ 'error.field' | translate }}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div fxLayout="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                    <div fxLayout="row" fxLayoutGap="5px" fxFlex>
+                        <mat-form-field appearance="outline" fxFlex="60" fxFlex.lt-sm="50">
+                            <mat-label>{{'query.transaction.delivery.item' | translate}}</mat-label>
+                            <input matInput type="text" formControlName="item" />
+                            <mat-error *ngIf="deliveryFormControls.item.invalid">
+                                {{ 'error.field' | translate }}
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="50">
+                            <mat-label>{{'query.transaction.delivery.poRefNo' | translate}}</mat-label>
+                            <input matInput type="text" formControlName="poRefNo" />
+                            <mat-error *ngIf="deliveryFormControls.poRefNo.invalid">
+                                {{ 'error.field' | translate }}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="second-column" fxLayout="row" fxLayoutGap="5px" fxFlex="33">
+                        <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm>
+                            <mat-label>{{'query.transaction.delivery.batchNo' | translate}}</mat-label>
+                            <input matInput type="text" formControlName="batchNo" />
+                            <mat-error *ngIf="deliveryFormControls.batchNo.invalid">
+                                {{ 'error.field' | translate }}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div fxLayout="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                    <div fxLayout="row" fxLayoutGap="5px" fxFlex>
+                        <mat-form-field appearance="outline" fxFlex="60" fxFlex.lt-sm="50">
+                            <mat-label>{{'query.transaction.delivery.drn' | translate}}</mat-label>
+                            <input matInput type="text" formControlName="drn" />
+                            <mat-error *ngIf="deliveryFormControls.drn.invalid">
+                                {{ 'error.field' | translate }}
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="50">
+                            <mat-label>{{'query.transaction.delivery.so' | translate}}</mat-label>
+                            <input matInput type="text" formControlName="so" />
+                            <mat-error *ngIf="deliveryFormControls.so.invalid">
+                                {{ 'error.field' | translate }}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="second-column" fxLayout="row" fxLayoutGap="5px" fxFlex="33">
+                        <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm>
+                            <mat-label>{{'query.transaction.delivery.do' | translate}}</mat-label>
+                            <input matInput type="text" formControlName="do" />
+                            <mat-error *ngIf="deliveryFormControls.do.invalid">
+                                {{ 'error.field' | translate }}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div fxLayout="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                    <div fxLayout="row" fxLayoutGap="5px" fxFlex>
+                        <mat-form-field appearance="outline" fxFlex="60" fxFlex.lt-sm="50">
+                            <mat-label>{{'query.transaction.delivery.status' | translate }}</mat-label>
+                            <mat-select disableOptionCentering panelClass="slim-select-field" type="text" readonly
+                                formControlName="status">
+                                <mat-option>Pick 1</mat-option>
+                                <mat-option>Pick 2</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="50">
+                            <mat-label>{{ 'query.transaction.delivery.deliveryFrom' | translate }}</mat-label>
+                            <input formControlName="deliveryFrom" matInput [matDatepicker]="deliveryFrom">
+                            <mat-datepicker-toggle matSuffix [for]="deliveryFrom">
+                                <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+                            </mat-datepicker-toggle>
+                            <mat-datepicker #deliveryFrom></mat-datepicker>
+                            <mat-error *ngIf="deliveryFormControls.deliveryFrom.invalid">
+                                {{ 'error.field' | translate }}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="second-column" fxLayout="row" fxLayoutGap="5px" fxFlex="33">
+                        <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm>
+                            <mat-label>{{ 'query.transaction.delivery.deliveryTo' | translate }}</mat-label>
+                            <input formControlName="deliveryTo" matInput [matDatepicker]="deliveryTo">
+                            <mat-datepicker-toggle matSuffix [for]="deliveryTo">
+                                <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+                            </mat-datepicker-toggle>
+                            <mat-datepicker #deliveryTo></mat-datepicker>
+                            <mat-error *ngIf="deliveryFormControls.deliveryTo.invalid">
+                                {{ 'error.field' | translate }}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
 
-                        <div fxLayout="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
-                            <div fxLayout="row" fxLayoutGap="5px" fxFlex>
-                                <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm>
-                                    <mat-label>{{'query.transaction.delivery.dt' | translate}}</mat-label>
-                                    <input matInput type="text" formControlName="dt" />
-                                    <mat-error *ngIf="deliveryFormControls.dt.invalid">
-                                        {{ 'error.field' | translate }}
-                                    </mat-error>
-                                </mat-form-field>
-                            </div>
-                        </div>
+                <div fxLayout="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                    <div fxLayout="row" fxLayoutGap="5px" fxFlex>
+                        <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm>
+                            <mat-label>{{'query.transaction.delivery.dt' | translate}}</mat-label>
+                            <input matInput type="text" formControlName="dt" />
+                            <mat-error *ngIf="deliveryFormControls.dt.invalid">
+                                {{ 'error.field' | translate }}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
 
-                        <div class="form-three-button-container">
-                            <button type="button" mat-raised-button color="primary">
-                                <mat-icon>search</mat-icon>
-                            </button>
-                            <button color="accent" type="reset" mat-raised-button>
-                                <mat-icon>loop</mat-icon>
-                            </button>
-                        </div>
-                    </mat-card-content>
-                </mat-card>
+                <div class="form-three-button-container">
+                    <button type="button" mat-raised-button color="primary">
+                        <mat-icon>search</mat-icon>
+                    </button>
+                    <button color="accent" type="reset" mat-raised-button>
+                        <mat-icon>loop</mat-icon>
+                    </button>
+                </div>
             </div>
-            <hr>
-            <mat-card>
-                <mat-card-content>
-                    <table class="site-table w-100">
-                        <thead>
+            <section class="data-tab-footer">
+                <table class="site-table w-100">
+                    <thead>
+                        <tr>
+                            <th>{{ 'query.transaction.delivery.WH' | translate}}</th>
+                            <th>{{ 'query.transaction.delivery.owner' | translate}}</th>
+                            <th>{{ 'query.transaction.delivery.drn' | translate}}</th>
+                            <th>{{ 'query.transaction.delivery.date' | translate}}</th>
+                            <th>{{ 'query.transaction.delivery.shipTo' | translate}}</th>
+                            <th>{{ 'query.transaction.delivery.do' | translate}}</th>
+                            <th>{{ 'query.transaction.delivery.so' | translate}}</th>
+                            <th>{{ 'query.transaction.delivery.dt' | translate}}</th>
+                            <th>{{ 'query.transaction.delivery.print' | translate}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <ng-template let-delivery ngFor [ngForOf]="deliveryDataSource">
                             <tr>
-                                <th>{{ 'query.transaction.delivery.WH' | translate}}</th>
-                                <th>{{ 'query.transaction.delivery.owner' | translate}}</th>
-                                <th>{{ 'query.transaction.delivery.drn' | translate}}</th>
-                                <th>{{ 'query.transaction.delivery.date' | translate}}</th>
-                                <th>{{ 'query.transaction.delivery.shipTo' | translate}}</th>
-                                <th>{{ 'query.transaction.delivery.do' | translate}}</th>
-                                <th>{{ 'query.transaction.delivery.so' | translate}}</th>
-                                <th>{{ 'query.transaction.delivery.dt' | translate}}</th>
-                                <th>{{ 'query.transaction.delivery.print' | translate}}</th>
+                                <td class="column-150">{{delivery.wh}}</td>
+                                <td>{{delivery.owner}}</td>
+                                <td>{{delivery.drn}}</td>
+                                <td>{{delivery.date}}</td>
+                                <td>{{delivery.shipTo}}</td>
+                                <td class="column-100">{{delivery.do}}</td>
+                                <td class="column-100">{{delivery.so}}</td>
+                                <td class="column-100">{{delivery.dt}}</td>
+                                <td class="column-100" style="text-align: center;">
+                                    <button mat-raised-button color="primary">
+                                        <mat-icon>print</mat-icon>
+                                    </button>
+                                </td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            <ng-template let-delivery ngFor [ngForOf]="deliveryDataSource">
-                                <tr>
-                                    <td class="column-150">{{delivery.wh}}</td>
-                                    <td>{{delivery.owner}}</td>
-                                    <td>{{delivery.drn}}</td>
-                                    <td>{{delivery.date}}</td>
-                                    <td>{{delivery.shipTo}}</td>
-                                    <td class="column-100">{{delivery.do}}</td>
-                                    <td class="column-100">{{delivery.so}}</td>
-                                    <td class="column-100">{{delivery.dt}}</td>
-                                    <td class="column-100" style="text-align: center;">
-                                        <button mat-raised-button color="primary">
-                                            <mat-icon>print</mat-icon>
-                                        </button>
-                                    </td>
-                                </tr>
-                            </ng-template>
-                        </tbody>
-                    </table>
-                </mat-card-content>
-            </mat-card>
+                        </ng-template>
+                    </tbody>
+                </table>
+            </section>
         </form>
     </mat-tab>
 </mat-tab-group>

@@ -2,51 +2,47 @@
   <mat-icon class="close-icon">close</mat-icon>
 </button>
 
-<h1 mat-dialog-title></h1>
-<div mat-dialog-content>
-  <form [formGroup]="dataOwnerForm" (ngSubmit)="onDataOwnerSubmit()" class="slim-form">
-    <mat-card>
-      <mat-card-content>
-        <div class="input-row row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px" fxLayoutGap.lt-md="0px">
-          <mat-form-field appearance="outline" fxFlex="33">
-            <mat-label>{{
-              'query.Document.code' | translate
-              }}</mat-label>
-            <input matInput type="text" formControlName="code" />
-          </mat-form-field>
-          <mat-form-field appearance="outline" fxFlex="30.5">
-            <mat-label>{{
-              'query.Document.name' | translate
-              }}</mat-label>
-            <input matInput type="text" formControlName="name" />
-          </mat-form-field>
-        </div>
-        <div class="modal-button">
-          <button mat-raised-button color="primary" type="submit">
-            <mat-icon>search</mat-icon>
-          </button>
-          <button mat-raised-button color="accent" type="reset" (click)="resetDataOwnerForm()">
-            <mat-icon>restart_alt</mat-icon>
-          </button>
-        </div>
-        <table class="site-table text-center w-100">
-          <thead>
-            <tr>
-              <th class="checkbox-column">
-                <mat-checkbox color="primary"></mat-checkbox>
-              </th>
-              <th>{{ 'query.Document.type' | translate}}</th>
-              <th>{{ 'query.Document.code' | translate}}</th>
-              <th>{{ 'query.Document.name' | translate}} </th>
-            </tr>
-          </thead>
-        </table>
-      </mat-card-content>
-    </mat-card>
-    <div class="modal-button-bottom">
+<form [formGroup]="dataOwnerForm" (ngSubmit)="onDataOwnerSubmit()" class="slim-form">
+  <section class="bordered-section">
+    <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px" fxLayoutGap.lt-md="0px">
+      <mat-form-field appearance="outline" fxFlex="33">
+        <mat-label>{{
+          'query.Document.code' | translate
+          }}</mat-label>
+        <input matInput type="text" formControlName="code" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" fxFlex="30.5">
+        <mat-label>{{
+          'query.Document.name' | translate
+          }}</mat-label>
+        <input matInput type="text" formControlName="name" />
+      </mat-form-field>
+    </div>
+    <div class="modal-button">
       <button mat-raised-button color="primary" type="submit">
-        <mat-icon>task_alt</mat-icon>
+        <mat-icon>search</mat-icon>
+      </button>
+      <button mat-raised-button color="accent" type="reset" (click)="resetDataOwnerForm()">
+        <mat-icon>restart_alt</mat-icon>
       </button>
     </div>
-  </form>
+    <table class="site-table text-center w-100">
+      <thead>
+        <tr>
+          <th class="checkbox-column">
+            <mat-checkbox color="primary"></mat-checkbox>
+          </th>
+          <th>{{ 'query.Document.type' | translate}}</th>
+          <th>{{ 'query.Document.code' | translate}}</th>
+          <th>{{ 'query.Document.name' | translate}} </th>
+        </tr>
+      </thead>
+    </table>
+  </section>
+</form>
+
+<div class="modal-button-bottom">
+  <button mat-raised-button color="primary" type="submit">
+    <mat-icon>task_alt</mat-icon>
+  </button>
 </div>
