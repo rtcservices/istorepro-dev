@@ -7,7 +7,7 @@
       <div fxFlex class="bordered-section">
         <div fxLayout="column" fxLayout.lt-sm="column" fxLayoutGap="5px">
           <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
-            <mat-form-field appearance="outline" fxFlex>
+            <mat-form-field appearance="outline" fxFlex="32.7">
               <mat-label>{{
                 'operations.delivery.warehouse' | translate
                 }}</mat-label>
@@ -17,7 +17,7 @@
                 'error.field' | translate
                 }}</mat-error>
             </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex>
+            <mat-form-field appearance="outline" fxFlex="32.7">
               <mat-label>{{'operations.delivery.owner' | translate}}</mat-label>
               <input matInput type="text" formControlName="owner" />
               <mat-icon (click)="openOwnerDialog()" matSuffix>search</mat-icon>
@@ -31,7 +31,7 @@
             </fieldset>
           </div>
           <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
-            <mat-form-field appearance="outline" fxFlex="32.5">
+            <mat-form-field appearance="outline" fxFlex="32.7">
               <mat-label>{{ 'operations.delivery.date' | translate }}</mat-label>
               <input formControlName="date" matInput [matDatepicker]="picker3">
               <mat-datepicker-toggle matSuffix [for]="picker3">
@@ -66,7 +66,7 @@
                 {{ 'error.field' | translate }}
               </mat-error>
             </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex="32.8">
+            <mat-form-field appearance="outline" fxFlex="32.7">
               <mat-label>{{'operations.delivery.so' | translate}}</mat-label>
               <input matInput type="text" formControlName="so" />
               <mat-error *ngIf="dataDeliveryFormControls.so.invalid">

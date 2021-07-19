@@ -52,7 +52,6 @@
 
                 <div fxFlex>
                   <div fxLayout.gt-sm="row" fxLayoutGap="10px" fxLayout.lt-sm="column">
-
                     <div fxFlex.gt-sm="70%">
                       <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" class="second-row-section" fxLayoutGap="5px">
                         <mat-form-field appearance="outline" fxFlex>
@@ -97,7 +96,6 @@
                           <b>{{'base.item.sku' | translate}}</b>
 
                           <div fxFex fxLayout="column" fxLayout.lt-sm="column" fxLayoutGap="10px">
-
                             <div class="prefix-suffix-field">
                               <div class="prefix-data">
                                 {{'base.item.sku' | translate}}
@@ -121,6 +119,7 @@
                                 <span class="text-center ">{{'general.kg' | translate}} </span>
                               </div>
                             </div>
+                            
                             <div class="input-group" fxFlex>
                               <div class="input-group-title">{{'base.item.shelfLife' | translate}}</div>
                               <div class="input-group-area">
@@ -209,10 +208,7 @@
                         </div>
                       </div>
                     </div>
-
                   </div>
-
-
                 </div>
 
               </div>
@@ -400,7 +396,7 @@
       <section class="bordered-section">
 
         <div class="row" fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
-          <mat-form-field appearance="outline" fxFlex="33" fxLayout.lt-sm="50">
+          <mat-form-field appearance="outline" fxFlex="32.8" fxLayout.lt-sm="50">
             <mat-label>{{ 'base.item.item' | translate }} </mat-label>
             <input matInput type="text" formControlName="item" />
             <mat-error *ngIf="searchItemFormControls.item.invalid">
