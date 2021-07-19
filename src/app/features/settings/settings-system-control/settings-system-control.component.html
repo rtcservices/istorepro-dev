@@ -1,46 +1,40 @@
 <form [formGroup]="SystemControlForm" class="slim-form">
-  <div fxLayout="row">
-    <mat-card class="w-100">
-      <mat-card-content>
-        <div fxLayout="row" class="row" fxLayoutGap="10px">
-          <fieldset class="read-only-input" fxFlex>
-            <legend>{{ 'settings.systemcontrol.companyCode' | translate }}</legend>
-            <label>{{ SystemControlForm.value.companyCode }}</label>
-          </fieldset>
-          <fieldset class="read-only-input" fxFlex>
-            <legend>{{ 'settings.systemcontrol.companyDescription' | translate }}</legend>
-            <label>{{ SystemControlForm.value.companydescription}}</label>
-          </fieldset>
+  <div class="bordered-section">
+    <div fxLayout="row" class="row" fxLayoutGap="10px">
+      <fieldset class="read-only-input" fxFlex>
+        <legend>{{ 'settings.systemcontrol.companyCode' | translate }}</legend>
+        <label>{{ SystemControlForm.value.companyCode }}</label>
+      </fieldset>
+      <fieldset class="read-only-input" fxFlex>
+        <legend>{{ 'settings.systemcontrol.companyDescription' | translate }}</legend>
+        <label>{{ SystemControlForm.value.companydescription}}</label>
+      </fieldset>
 
-        </div>
-        <div fxLayout="column" class="pale-border-box" fxLayoutGap="5px">
-          <label id="example-radio-group-label">Select Option</label>
-          <mat-radio-group fxLayout="column" aria-labelledby="example-radio-group-label">
-            <label for=""></label>
-            <mat-radio-button color="primary" value="customer" checked>
-              {{'settings.systemcontrol.normal' | translate}}
-            </mat-radio-button>
-            <mat-radio-button color="primary" value="vendor">
-              {{'settings.systemcontrol.block' | translate}}
-            </mat-radio-button>
-            <mat-radio-button color="primary" valumaintainenacee="vendor">
-              {{'settings.systemcontrol.maintenance' | translate}}
-            </mat-radio-button>
-          </mat-radio-group>
-        </div>
-      </mat-card-content>
-    </mat-card>
+    </div>
+    <div fxLayout="column" class="pale-border-box" fxLayoutGap="5px">
+      <label id="example-radio-group-label">Select Option</label>
+      <mat-radio-group fxLayout="column" aria-labelledby="example-radio-group-label">
+        <label for=""></label>
+        <mat-radio-button color="primary" value="customer" checked>
+          {{'settings.systemcontrol.normal' | translate}}
+        </mat-radio-button>
+        <mat-radio-button color="primary" value="vendor">
+          {{'settings.systemcontrol.block' | translate}}
+        </mat-radio-button>
+        <mat-radio-button color="primary" valumaintainenacee="vendor">
+          {{'settings.systemcontrol.maintenance' | translate}}
+        </mat-radio-button>
+      </mat-radio-group>
+    </div>
   </div>
-  <mat-card>
-    <mat-card-content>
-      <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="space-between center"
-          fxLayoutAlign.lt-md="space-between center">
-        <div class="form-three-button-container" fxFlex>
-          <button mat-raised-button color="primary" type="submit" (click)="saveSystemControlFormData()">
-            <mat-icon>task_alt</mat-icon>
-          </button>
-        </div>
+  <section class="bordered-section">
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="space-between center"
+      fxLayoutAlign.lt-md="space-between center">
+      <div class="form-three-button-container" fxFlex>
+        <button mat-raised-button color="primary" type="submit" (click)="saveSystemControlFormData()">
+          <mat-icon>task_alt</mat-icon>
+        </button>
       </div>
-    </mat-card-content>
-  </mat-card>
+    </div>
+  </section>
 </form>

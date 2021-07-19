@@ -1,112 +1,93 @@
 <form fxLayout="column" [formGroup]="AuditTrailForm" class="slim-form">
   <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="stretch" fxLayoutGap="5px">
-    <div fxFlex>
-      <mat-card class="h-100">
-        <mat-card-content>
-
-          <div fxLayout.lt-sm="column" fxLayout.gt-sm="row" fxLayoutGap="5px">
-            <div fxLayout="column" fxLayoutGap="5px" fxFlex.gt-sm="60">
-              <div fxLayout.gt-sm="row"  class="input-row" fxLayout.lt-sm="column" fxLayoutGap="10px" fxFlex>
-                <mat-form-field appearance="outline" fxFlex="30" fxFlex.lt-sm="40" fxFlex.lt-sm="48.5">
-                  <mat-label>{{ 'settings.AuditTrail.datefrom' | translate }}</mat-label>
-                  <input formControlName="datefrom" matInput [matDatepicker]="picker1">
-                  <mat-datepicker-toggle matSuffix [for]="picker1">
-                    <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
-                  </mat-datepicker-toggle>
-                  <mat-datepicker #picker1></mat-datepicker>
-                  <mat-error *ngIf="AuditTrailFormControls.datefrom.invalid">
-                    {{ 'error.field' | translate }}
-                  </mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="outline" fxFlex="30" fxFlex.lt-sm="40" fxFlex.lt-sm="48.5">
-                  <mat-label>{{ 'settings.AuditTrail.dateto' | translate }}</mat-label>
-                  <input formControlName="dateto" matInput [matDatepicker]="picker2">
-                  <mat-datepicker-toggle matSuffix [for]="picker2">
-                    <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
-                  </mat-datepicker-toggle>
-                  <mat-datepicker #picker2></mat-datepicker>
-                  <mat-error *ngIf="AuditTrailFormControls.dateto.invalid">
-                    {{ 'error.field' | translate }}
-                  </mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="outline" fxFlex>
-                  <mat-label>{{
-                    'settings.AuditTrail.context' | translate
-                    }}</mat-label>
-                  <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="context">
-                  </mat-select>
-                  <mat-error *ngIf="AuditTrailFormControls.context.invalid">{{
-                    'error.field' | translate
-                    }}</mat-error>
-                </mat-form-field>
-
-              </div>
-              <div fxLayout="row" fxLayoutGap="10px" fxFlex>
-                <mat-form-field appearance="outline" fxFlex>
-                  <mat-label>{{'settings.AuditTrail.loginname' | translate}}</mat-label>
-                  <input matInput type="text" formControlName="loginname" />
-                  <mat-error *ngIf="AuditTrailFormControls.loginname.invalid">
-                    {{ 'error.field' | translate }}
-                  </mat-error>
-                </mat-form-field>
-              </div>
-            </div>
-            <div class="pale-border-box" fxLayout="column" fxLayoutGap="10px" fxFlex.gt-sm="40">
-              <p><b>{{ 'settings.AuditTrail.actions' | translate }}</b></p>
-              <mat-checkbox formControlName="update" fxFlex class="example-margin">
-                {{'settings.AuditTrail.update' | translate}}</mat-checkbox>
-              <mat-checkbox formControlName="delete" fxFlex class="example-margin">
-                {{'settings.AuditTrail.delete' | translate}}</mat-checkbox>
-
-            </div>
-          </div>
-
-          <div fxLayout.gt-sm="row" fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
-
-            <div fxFlex class="form-three-button-container">
-              <button mat-raised-button color="primary" type="button">
-                <mat-icon>search</mat-icon>
-              </button>
-              <button mat-raised-button color="accent" type="button">
-                <mat-icon>loop</mat-icon>
-              </button>
-            </div>
+    <div class="bordered-section" fxFlex>
+      <div fxLayout.lt-sm="column" fxLayout.gt-sm="row" fxLayoutGap="5px">
+        <div fxLayout="column" fxLayoutGap="5px" fxFlex.gt-sm="60">
+          <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="10px" fxFlex>
+            <mat-form-field appearance="outline" fxFlex="30" fxFlex.lt-sm="40" fxFlex.lt-sm="48.5">
+              <mat-label>{{ 'settings.AuditTrail.datefrom' | translate }}</mat-label>
+              <input formControlName="datefrom" matInput [matDatepicker]="picker1">
+              <mat-datepicker-toggle matSuffix [for]="picker1">
+                <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+              </mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+              <mat-error *ngIf="AuditTrailFormControls.datefrom.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex="30" fxFlex.lt-sm="40" fxFlex.lt-sm="48.5">
+              <mat-label>{{ 'settings.AuditTrail.dateto' | translate }}</mat-label>
+              <input formControlName="dateto" matInput [matDatepicker]="picker2">
+              <mat-datepicker-toggle matSuffix [for]="picker2">
+                <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+              </mat-datepicker-toggle>
+              <mat-datepicker #picker2></mat-datepicker>
+              <mat-error *ngIf="AuditTrailFormControls.dateto.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex>
+              <mat-label>{{
+                'settings.AuditTrail.context' | translate
+                }}</mat-label>
+              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="context">
+              </mat-select>
+              <mat-error *ngIf="AuditTrailFormControls.context.invalid">{{
+                'error.field' | translate
+                }}</mat-error>
+            </mat-form-field>
 
           </div>
-        </mat-card-content>
-      </mat-card>
-    </div>
+          <div fxLayout="row" fxLayoutGap="10px" fxFlex>
+            <mat-form-field appearance="outline" fxFlex>
+              <mat-label>{{'settings.AuditTrail.loginname' | translate}}</mat-label>
+              <input matInput type="text" formControlName="loginname" />
+              <mat-error *ngIf="AuditTrailFormControls.loginname.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="pale-border-box" fxLayout="column" fxLayoutGap="10px" fxFlex.gt-sm="40">
+          <p><b>{{ 'settings.AuditTrail.actions' | translate }}</b></p>
+          <mat-checkbox formControlName="update" fxFlex class="example-margin">
+            {{'settings.AuditTrail.update' | translate}}</mat-checkbox>
+          <mat-checkbox formControlName="delete" fxFlex class="example-margin">
+            {{'settings.AuditTrail.delete' | translate}}</mat-checkbox>
 
-  </div>
-  <ng-container>
+        </div>
+      </div>
 
-    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="stretch" fxLayoutGap="5px">
-      <div fxFlex>
-        <mat-card class="h-100">
-          <mat-card-content>
+      <div fxLayout.gt-sm="row" fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
 
-          </mat-card-content>
-        </mat-card>
+        <div fxFlex class="form-three-button-container">
+          <button mat-raised-button color="primary" type="button">
+            <mat-icon>search</mat-icon>
+          </button>
+          <button mat-raised-button color="accent" type="button">
+            <mat-icon>loop</mat-icon>
+          </button>
+        </div>
+
       </div>
     </div>
-
-    <mat-card>
-      <mat-card-content class="overflow-x">
-        <table class="site-table mat-elevation-z8">
-          <thead>
-            <tr>
-              <th>{{ 'settings.AuditTrail.field' | translate}}</th>
-              <th>{{ 'settings.AuditTrail.oldvalue' | translate}}</th>
-              <th>{{ 'settings.AuditTrail.newvalue' | translate}}</th>
-              <th>{{ 'settings.AuditTrail.actiondate' | translate}}</th>
-              <th>{{ 'settings.AuditTrail.actiontime' | translate}}</th>
-              <th>{{ 'settings.AuditTrail.actionedby' | translate}}</th>
-              <th>{{ 'settings.AuditTrail.ip' | translate}}</th>
-              <th>{{ 'settings.AuditTrail.keyvalue' | translate}}</th>
-            </tr>
-          </thead>
-        </table>
-      </mat-card-content>
-    </mat-card>
+  </div>
+  <ng-container>
+    <section class="bordered-section">
+      <table class="site-table mat-elevation-z8">
+        <thead>
+          <tr>
+            <th>{{ 'settings.AuditTrail.field' | translate}}</th>
+            <th>{{ 'settings.AuditTrail.oldvalue' | translate}}</th>
+            <th>{{ 'settings.AuditTrail.newvalue' | translate}}</th>
+            <th>{{ 'settings.AuditTrail.actiondate' | translate}}</th>
+            <th>{{ 'settings.AuditTrail.actiontime' | translate}}</th>
+            <th>{{ 'settings.AuditTrail.actionedby' | translate}}</th>
+            <th>{{ 'settings.AuditTrail.ip' | translate}}</th>
+            <th>{{ 'settings.AuditTrail.keyvalue' | translate}}</th>
+          </tr>
+        </thead>
+      </table>
+    </section>
   </ng-container>
 </form>
