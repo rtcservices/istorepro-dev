@@ -62,14 +62,14 @@ export class DsInventoryAuditComponent implements OnInit {
 
   openIanDialog() {
     this.dialog.open(DsInventoryAuditIanDialogComponent, {
-      width: '800px'
+      width: '615px'
     });
   }
 
 
   openItemAssistanceDialog() {
     this.dialog.open(DsInventoryAuditItemAssistanceDialogComponent, {
-      width: '800px'
+      width: '615px'
     });
   }
 
@@ -78,7 +78,7 @@ export class DsInventoryAuditComponent implements OnInit {
 
   openLocationDialog() {
     this.dialog.open(DsInventoryAuditLocationDialogComponent, {
-      width: '800px'
+      width: '615px'
     });
   }
 

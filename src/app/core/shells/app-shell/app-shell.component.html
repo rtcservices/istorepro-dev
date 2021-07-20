@@ -110,7 +110,7 @@
       </div>
       <br>
       <div (click)="$event.stopPropagation();" fxLayout="column">
-        <form fxLayout="column" [formGroup]="profileUpdateForm" (ngSubmit)="onProfileUpdateSubmit()" class="slim-form">
+        <form (keydown.tab)="$event.stopPropagation()" fxLayout="column" [formGroup]="profileUpdateForm" (ngSubmit)="onProfileUpdateSubmit()" class="slim-form">
           <fieldset class="read-only-input" fxFlex>
             <legend>{{ 'general.fullName' | translate }}</legend>
             <label>{{ profileUpdateFormControls.fullName.value }}</label>

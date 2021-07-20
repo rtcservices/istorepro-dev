@@ -66,13 +66,13 @@ export class DsPickComponent implements OnInit {
 
   openScanDialog() {
     this.dialog.open(DsPickScanDialogComponent, {
-      width: '800px'
+      width: '615px'
     });
   }
 
   openItemAssistanceDialog() {
     this.dialog.open(DsPickItemAssistanceDialogComponent, {
-      width: '800px'
+      width: '615px'
     });
   }
 }

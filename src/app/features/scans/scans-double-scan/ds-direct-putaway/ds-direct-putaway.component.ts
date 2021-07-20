@@ -53,7 +53,7 @@ export class DsDirectPutawayComponent implements OnInit {
 
   openLocationDialog() {
     this.dialog.open(DsDirectPutawayLocationDialogComponent, {
-      width: '800px'
+      width: '615px'
     });
   }
 
