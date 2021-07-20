@@ -21,6 +21,17 @@
                 'error.field' | translate
                 }}</mat-error>
             </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex>
+              <mat-label>{{ 'routines.inventory.ianDate' | translate }}</mat-label>
+              <input formControlName="ianDate" matInput [matDatepicker]="ianDate">
+              <mat-datepicker-toggle matSuffix [for]="ianDate">
+                <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+              </mat-datepicker-toggle>
+              <mat-datepicker #ianDate></mat-datepicker>
+              <mat-error *ngIf="routinesInventoryFormControls.ianDate.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
             <fieldset class="read-only-input" fxFlex>
               <legend>{{ 'routines.inventory.ian' | translate }}</legend>
               <label>{{ routinesInventoryFormControls.ian.value }}</label>
@@ -46,8 +57,6 @@
                 <mat-icon>cloud_download</mat-icon>
               </button>
             </div>
-
-
           </div>
         </div>
 

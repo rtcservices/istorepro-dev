@@ -502,6 +502,7 @@
   "routines": {
     "inventory": {
       "warehouse": "倉庫",
+      "ianDate": "IAN日付",
       "ian": "IAN",
       "qtygood": "数量良い",
       "qtydmg": "数量ダメージ",

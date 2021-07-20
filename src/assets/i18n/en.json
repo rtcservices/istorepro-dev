@@ -502,6 +502,7 @@
   "routines": {
     "inventory": {
       "warehouse": "Warehouse",
+      "ianDate": "IAN Date",
       "ian": "IAN",
       "qtygood": "Qty Good",
       "qtydmg": "Qty Dmg",

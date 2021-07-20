@@ -69,6 +69,7 @@ export class RoutinesInventoryAuditComponent implements OnInit {
   createroutinesInventoryForm() {
     this.routinesInventoryForm = this.fb.group({
       warehouse: ['', [Validators.required, Validators.pattern(patternsHelper.alphanumeric)]],
+      ianDate: ['', [Validators.required]],
       ian: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       row: [''],
       unit: [''],
