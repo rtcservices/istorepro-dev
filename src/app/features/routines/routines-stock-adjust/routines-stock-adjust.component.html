@@ -219,20 +219,25 @@
             </ng-template>
           </tbody>
         </table>
-        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="space-between center"
-          fxLayoutAlign.lt-md="space-between center">
-          <div fxFlexOrder.lt-md="2">
-            <ibe-data-audit insertedBy=""></ibe-data-audit>
+        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="30px" fxLayoutAlign="space-between">
+          <div class="progress-section" fxFlex>
+            <div class="progress-box"></div>
+            {{ 'operations.delivery.auditInProgress' | translate}}
           </div>
+        </div>
+        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="30px" fxLayoutAlign="space-between">
           <div class="form-three-button-container" fxFlexOrder.lt-md="1">
-            <button mat-raised-button color="primary" type="submit" (click)="saveStockAdjustData()">
-              <mat-icon>task_alt</mat-icon>
-            </button>
-            <button mat-raised-button color="warn" type="button" (click)="deleteStockAdjustData()">
-              <mat-icon>remove_circle_outline</mat-icon>
-            </button>
             <button mat-raised-button color="accent" type="reset" (click)="resetStockAdjustDataForm()">
               <mat-icon>loop</mat-icon>
+            </button>
+          </div>
+          <div fxFlex fxFlexOrder.lt-md="2" style="padding-left: 20px;">
+            <div>Del Wt : 110</div>
+            <div>Del Vol : 0</div>
+          </div>
+          <div fxFlex class="form-three-button-container" fxFlexOrder.lt-md="3">
+            <button mat-raised-button color="primary" type="button"  matTooltip="DRN">
+              DRN
             </button>
           </div>
         </div>
@@ -294,7 +299,7 @@
           </mat-form-field>
           <mat-form-field appearance="outline" fxFlex.gt-sm="21">
             <mat-label>{{
-              'routines.stockadjust.StockAdjustdate' | translate
+              'routines.stockadjust.stockAdjustdate' | translate
               }}</mat-label>
             <input formControlName="StockAdjustdate" matInput [matDatepicker]="picker4">
             <mat-datepicker-toggle matSuffix [for]="picker4">

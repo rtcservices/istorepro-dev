@@ -556,12 +556,13 @@
       "telephone": "電話",
       "fax": "ファックス",
       "email": "Eメール",
-      "StockAdjustdate": "在庫調整日",
+      "stockAdjustdate": "在庫調整日",
       "adj": "Adj",
       "type": "タイプ",
       "scancode": "スキャンコード",
       "instock": "在庫あり",
-      "code": "コード"
+      "code": "コード",
+      "auditInProgress": "進行中の監査"
     }
   },
   "scans": {

@@ -1,7 +1,12 @@
-@import "../../../assets/scss/variables.scss";
+@import '../../../assets/scss/variables.scss';
 
 .page-title {
-    @include breakpoint(mobileonly) {
-        margin-top: 0px;
+  @include breakpoint(mobileonly) {
+    margin-top: 0px;
+    position: relative;
+    text-align: right;
+    h2{
+        margin-bottom: 0px;
     }
+  }
 }

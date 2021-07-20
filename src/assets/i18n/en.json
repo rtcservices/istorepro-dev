@@ -494,9 +494,9 @@
       "zip": "Zip",
       "telephone": "Telephone",
       "fax": "Fax",
-      "email":"Email",
-      "return":"Return",
-      "auditInProgress":"Audit in progress"
+      "email": "Email",
+      "return": "Return",
+      "auditInProgress": "Audit in progress"
     }
   },
   "routines": {
@@ -555,13 +555,14 @@
       "zip": "Zip",
       "telephone": "Telephone",
       "fax": "Fax",
-      "email":"Email",
-      "StockAdjustdate":"Stock Adjust Date",
+      "email": "Email",
+      "stockAdjustdate": "Stock Adjust Date",
       "adj": "Adj",
-      "type":"Type",
-      "scancode":"Scan Code",
-      "instock":"In Stock",
-       "code":"Code"
+      "type": "Type",
+      "scancode": "Scan Code",
+      "instock": "In Stock",
+      "code": "Code",
+      "auditInProgress": "Audit In Progress"
     }
   },
   "scans": {
@@ -664,12 +665,12 @@
       "code": "Code",
       "name": "name",
       "document": "Document",
-      "reportOptions" : "Report Options",
-      "preview" : "Preview",
-      "pdf" : "PDF",
-      "emailOptions" : "Email Options",
-      "email" : "Email",
-      "self" : "Self"
+      "reportOptions": "Report Options",
+      "preview": "Preview",
+      "pdf": "PDF",
+      "emailOptions": "Email Options",
+      "email": "Email",
+      "self": "Self"
     }
   },
   "dashboard": {

@@ -60,7 +60,7 @@
           <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
             <mat-form-field appearance="outline" fxFlex="32.7">
               <mat-label>{{'operations.delivery.shipto' | translate}}</mat-label>
-              <input matInput type="text" formControlName="shipto" />
+              <input matInput required type="text" formControlName="shipto" />
               <mat-icon (click)="openShiptoDialog()" class="cursor-style" type="button" matSuffix>search</mat-icon>
               <mat-error *ngIf="dataDeliveryFormControls.shipto.invalid">
                 {{ 'error.field' | translate }}
@@ -97,7 +97,7 @@
               <mat-label>{{
                 'operations.delivery.po' | translate
                 }}</mat-label>
-              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="po">
+              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="po" [required]="true">
               </mat-select>
               <mat-error *ngIf="dataDeliveryFormControls.po.invalid">{{
                 'error.field' | translate
@@ -106,7 +106,7 @@
 
             <mat-form-field appearance="outline" fxFlex>
               <mat-label>{{'operations.delivery.batchnumber' | translate}}</mat-label>
-              <input matInput type="text" formControlName="batchnumber" />
+              <input matInput required type="text" formControlName="batchnumber" />
               <mat-error *ngIf="dataDeliveryFormControls.batchnumber.invalid">
                 {{ 'error.field' | translate }}
               </mat-error>
@@ -190,7 +190,7 @@
           </div>
           <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
             <div fxLayoutAlign="start" class="form-three-button-container" fxFlex.gt-sm="33">
-              <button type="button" mat-raised-button color="primary">
+              <button type="button" mat-raised-button color="primary" matTooltip="Pick List">
                 <mat-icon>list_alt</mat-icon>
               </button>
               <button class="text-button" type="button" mat-raised-button color="primary">
@@ -218,7 +218,9 @@
         <table class="site-table w-100">
           <thead>
             <tr>
-              <th></th>
+              <th class="checkbox-column">
+                <mat-checkbox color="accent" formControlName="reworkonly"></mat-checkbox>
+              </th>
               <th>{{ 'operations.delivery.grn' | translate}}</th>
               <th>{{ 'operations.delivery.item' | translate}}</th>
               <th>{{ 'operations.delivery.description' | translate}}</th>
@@ -236,11 +238,13 @@
           <tbody>
             <ng-template let-operator ngFor [ngForOf]="deliveryDataSource">
               <tr>
-                <td></td>
-                <td> {{operator.grn}} </td>
+                <td class="checkbox-column">
+                  <mat-checkbox color="primary" formControlName="reworkonly"></mat-checkbox>
+                </td>
+                <td class="column-200"> {{operator.grn}} </td>
                 <td>{{operator.item}} </td>
                 <td>{{operator.description}} </td>
-                <td> {{operator.po}} </td>
+                <td class="column-100"> {{operator.po}} </td>
                 <td>{{operator.sku}} </td>
                 <td>{{operator.batchnumber}} </td>
                 <td>{{operator.mfg}} </td>
@@ -276,7 +280,7 @@
             <button mat-raised-button color="primary" type="submit" (click)="saveDeliveryData()">
               <mat-icon>task_alt</mat-icon>
             </button>
-            <button mat-raised-button color="primary" type="button">
+            <button mat-raised-button color="primary" type="button" matTooltip="DRN">
               <mat-icon>recommend</mat-icon>
             </button>
           </div>
