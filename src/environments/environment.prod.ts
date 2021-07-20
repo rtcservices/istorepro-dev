@@ -10,8 +10,8 @@ export const environment = {
   production: true,
   test: false,
   appName: 'iStoreProBE',
-  appVersion: 'v1.0.0.55',
-  appTimeStamp: '20-07-21 1:41:20 PM',
+  appVersion: 'v1.0.0.56',
+  appTimeStamp: '20-07-21 8:49:42 PM',
   i18nPrefix: '',
   versions: {
     app: packageJson.version,
