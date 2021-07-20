@@ -68,19 +68,19 @@ export class DsDirectTransferComponent implements OnInit {
   }
    openItemAssistanceDialog() {
     this.dialog.open(DsDirectTransferItemAssistanceDialogComponent, {
-      width: '800px'
+      width: '615px'
     });
   }
 
   openPutawayDialog() {
     this.dialog.open(DsDirectTransferPutawayDialogComponent, {
-      width: '800px'
+      width: '615px'
     });
   }
 
   openLocationDialog() {
     this.dialog.open(DsDirectTransferLocationDialogComponent, {
-      width: '800px'
+      width: '615px'
     });
   }
 }

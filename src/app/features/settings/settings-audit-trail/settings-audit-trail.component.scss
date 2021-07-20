@@ -5,3 +5,13 @@
 .form-three-button-container{
   margin-top: 7px;
 }
+
+.custom-margin-top {
+  margin-top: 0.20rem !important;
+}
+
+@media (min-width:768px) {
+  .max-height {
+    height: 95px !important;
+  }
+  }
