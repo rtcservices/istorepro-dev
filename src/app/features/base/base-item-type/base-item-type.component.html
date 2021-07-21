@@ -13,7 +13,7 @@
               <mat-error *ngIf="dataItemTypeControls.code.invalid">{{ 'error.field' | translate }}
               </mat-error>
             </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="70">
+            <mat-form-field appearance="outline" fxFlex>
               <mat-label>{{'base.itemType.description' | translate }}</mat-label>
               <input matInput required type="text" formControlName="description" />
               <mat-error *ngIf="dataItemTypeControls.description.invalid">{{ 'error.field' | translate }}

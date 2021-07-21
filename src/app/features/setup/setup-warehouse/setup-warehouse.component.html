@@ -251,7 +251,7 @@
     <form fxLayout="column" [formGroup]="searchWarehouseForm" (ngSubmit)="onSearchWarehouseSubmit()" class="slim-form">
       <section class="bordered-section">
         <div class="row" fxLayout="row" fxLayoutGap="5px">
-          <mat-form-field appearance="outline" fxFlex="20">
+          <mat-form-field appearance="outline" fxFlex="20" fxFlex.lt-sm="22">
             <mat-label>{{
                 'setup.warehouse.code' | translate
                 }}</mat-label>
@@ -259,7 +259,7 @@
             <mat-error *ngIf="searchWarehouseFormControls.warehouseCode.invalid">
               {{ 'error.field' | translate }}</mat-error>
           </mat-form-field>
-          <mat-form-field appearance="outline" fxFlex>
+          <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="55">
             <mat-label>{{
                 'setup.warehouse.description' | translate
                 }}</mat-label>
@@ -267,7 +267,7 @@
             <mat-error *ngIf="searchWarehouseFormControls.description.invalid">
               {{ 'error.field' | translate }}</mat-error>
           </mat-form-field>
-          <mat-form-field appearance="outline" fxFlex="20">
+          <mat-form-field appearance="outline" fxFlex="20" fxFlex.lt-sm="20">
             <mat-label>{{
                 'setup.warehouse.id' | translate
                 }}</mat-label>

@@ -21,7 +21,7 @@
 
                 <div fxFlex class="first-row-section">
                   <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
-                    <mat-form-field appearance="outline" fxFlex fxFlex.gt-sm="33">
+                    <mat-form-field appearance="outline" fxFlex>
                       <mat-label>{{
                         'base.item.item' | translate
                         }}</mat-label>
@@ -396,7 +396,7 @@
       <section class="bordered-section">
 
         <div class="row" fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
-          <mat-form-field appearance="outline" fxFlex="32.8" fxLayout.lt-sm="50">
+          <mat-form-field appearance="outline" fxFlex="32.8">
             <mat-label>{{ 'base.item.item' | translate }} </mat-label>
             <input matInput type="text" formControlName="item" />
             <mat-error *ngIf="searchItemFormControls.item.invalid">

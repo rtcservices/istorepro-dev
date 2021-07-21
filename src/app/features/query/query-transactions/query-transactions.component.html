@@ -19,7 +19,7 @@
                                 {{ 'error.field' | translate }}
                             </mat-error>
                         </mat-form-field>
-                        <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm="50">
+                        <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm="49">
                             <mat-label>{{'query.transaction.receipt.owner' | translate}}</mat-label>
                             <input matInput type="text" formControlName="owner" />
                             <mat-icon matSuffix type="button" (click)="openOwnerDialog()">search</mat-icon>
@@ -38,7 +38,7 @@
                                 {{ 'error.field' | translate }}
                             </mat-error>
                         </mat-form-field>
-                        <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="50">
+                        <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="49">
                             <mat-label>{{'query.transaction.receipt.batchNo' | translate}}</mat-label>
                             <input matInput type="text" formControlName="batchNo" />
                             <mat-error *ngIf="receiptFormControls.batchNo.invalid">
@@ -66,7 +66,7 @@
                                 <mat-option>Pick 2</mat-option>
                             </mat-select>
                         </mat-form-field>
-                        <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="50">
+                        <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="49">
                             <mat-label>{{'query.transaction.receipt.status' | translate }}</mat-label>
                             <mat-select disableOptionCentering panelClass="slim-select-field" type="text" readonly
                                 formControlName="status">
@@ -98,7 +98,7 @@
                                 {{ 'error.field' | translate }}
                             </mat-error>
                         </mat-form-field>
-                        <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="50">
+                        <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="49">
                             <mat-label>{{ 'query.transaction.receipt.receiptTo' | translate }}</mat-label>
                             <input formControlName="receiptTo" matInput [matDatepicker]="receiptTo">
                             <mat-datepicker-toggle matSuffix [for]="receiptTo">
@@ -180,7 +180,7 @@
                                 {{ 'error.field' | translate }}
                             </mat-error>
                         </mat-form-field>
-                        <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm>
+                        <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm="49">
                             <mat-label>{{'query.transaction.delivery.owner' | translate}}</mat-label>
                             <input matInput type="text" formControlName="owner" />
                             <mat-icon matSuffix type="button" (click)="openOwnerDialog()">search</mat-icon>
@@ -199,7 +199,7 @@
                                 {{ 'error.field' | translate }}
                             </mat-error>
                         </mat-form-field>
-                        <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="50">
+                        <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="49">
                             <mat-label>{{'query.transaction.delivery.poRefNo' | translate}}</mat-label>
                             <input matInput type="text" formControlName="poRefNo" />
                             <mat-error *ngIf="deliveryFormControls.poRefNo.invalid">
@@ -226,7 +226,7 @@
                                 {{ 'error.field' | translate }}
                             </mat-error>
                         </mat-form-field>
-                        <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="50">
+                        <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="49">
                             <mat-label>{{'query.transaction.delivery.so' | translate}}</mat-label>
                             <input matInput type="text" formControlName="so" />
                             <mat-error *ngIf="deliveryFormControls.so.invalid">
@@ -254,7 +254,7 @@
                                 <mat-option>Pick 2</mat-option>
                             </mat-select>
                         </mat-form-field>
-                        <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="50">
+                        <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="49">
                             <mat-label>{{ 'query.transaction.delivery.deliveryFrom' | translate }}</mat-label>
                             <input formControlName="deliveryFrom" matInput [matDatepicker]="deliveryFrom">
                             <mat-datepicker-toggle matSuffix [for]="deliveryFrom">
