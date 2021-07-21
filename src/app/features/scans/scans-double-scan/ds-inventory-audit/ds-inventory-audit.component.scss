@@ -1,9 +1,14 @@
-.slim-form{
-    ::ng-deep .mat-form-field-subscript-wrapper {
-      margin-top: 3px !important;
-    }
+.slim-form {
+  ::ng-deep .mat-form-field-subscript-wrapper {
+    margin-top: 3px !important;
   }
+}
 
-  .cursor-style {
-    cursor: pointer;
+.cursor-style {
+  cursor: pointer;
+}
+
+.form-three-button-container {
+  margin-top: 4px;
+  justify-content: center;
 }

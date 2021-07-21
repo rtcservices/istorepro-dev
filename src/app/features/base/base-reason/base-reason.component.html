@@ -17,18 +17,20 @@
       <tbody>
         <ng-template let-reason ngFor [ngForOf]="reasonDataSource">
           <tr>
-            <td class="column-100">
+            <td class="column-80">
               {{reason.code}}
             </td>
             <td>
               {{reason.description}}
             </td>
-            <td class="column-150">
-              <select type="text" class="w-100" [value]="reason.type">
-                <option value="COMMON">COMMON</option>
-              </select>
+            <td class="column-150 lookup-column">
+              <mat-form-field appearance="outline" style="width: 150px;">
+                <mat-select disableOptionCentering panelClass="slim-select-field">
+                  <mat-option>COMMON</mat-option>
+                </mat-select>
+              </mat-form-field>
             </td>
-            <td class="two-button-column">
+            <td class="two-button-column" style="width: 103px;">
               <button mat-mini-fab color="primary" class="mdb-30">
                 <mat-icon>edit</mat-icon>
               </button>
@@ -45,17 +47,19 @@
           <td>
             <input type="text" class="w-100">
           </td>
-          <td>
-            <select type="text" class="w-100">
-              <option value="COMMON">COMMON</option>
-            </select>
+          <td class="column-100 lookup-column">
+            <mat-form-field appearance="outline" style="width: 150px;">
+              <mat-select disableOptionCentering panelClass="slim-select-field">
+                <mat-option>COMMON</mat-option>
+              </mat-select>
+            </mat-form-field>
           </td>
         </tr>
       </tbody>
     </table>
   </section>
   <section class="data-tab-footer">
-    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="space-between center"
+    <div fxLayout="row" fxLayoutAlign.gt-sm="space-between center"
       fxLayoutAlign.lt-md="space-between center" fxFlex>
       <div class="form-three-button-container" fxFlex>
         <button mat-raised-button color="primary" type="submit">
