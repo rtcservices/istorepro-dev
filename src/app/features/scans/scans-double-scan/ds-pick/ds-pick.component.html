@@ -1,7 +1,7 @@
 <div class="mt-sm">
   <form [formGroup]="pickForm" fxLayout="column" class="slim-form">
-    <div fxLayout="column" fxLayoutGap="5px">
-
+    
+    <div fxLayout="row" fxLayoutGap="5px">
       <mat-form-field appearance="outline" class="row" fxFlex="10" fxFlex.lt-md="34" fxFlex fxFlex.lt-sm="33">
         <mat-select [(ngModel)]="type" placeholder="Type" disableOptionCentering panelClass="slim-select-field"
           formControlName="type">
@@ -16,6 +16,9 @@
           'error.field' | translate
           }}</mat-error>
       </mat-form-field>
+    </div>
+     
+    <div fxLayout="row" fxLayoutGap="5px">
       <mat-form-field appearance="outline" class="row" fxFlex>
         <mat-label>{{
           'scans.doubleScan.scan' | translate
@@ -25,7 +28,9 @@
         <mat-error *ngIf="pickFormControls.scan.invalid">
           {{ 'error.field' | translate }}</mat-error>
       </mat-form-field>
+    </div>
 
+    <div fxLayout="row" fxLayoutGap="5px">
       <mat-form-field appearance="outline" class="row" fxFlex>
         <mat-label>{{
           'scans.doubleScan.location' | translate
@@ -34,8 +39,10 @@
         <mat-error *ngIf="pickFormControls.location.invalid">
           {{ 'error.field' | translate }}</mat-error>
       </mat-form-field>
+    </div>
 
-      <mat-form-field [ngClass]="{'hide': type!='grn'}" appearance="outline" fxFlex>
+    <div fxLayout="row" fxLayoutGap="5px">
+      <mat-form-field [ngClass]="{'hide': type!='grn'}" class="row" appearance="outline" fxFlex>
         <mat-label>{{
           'scans.doubleScan.grnsl' | translate
           }}</mat-label>
@@ -43,7 +50,7 @@
         <mat-error *ngIf="pickFormControls.grnsl.invalid">
           {{ 'error.field' | translate }}</mat-error>
       </mat-form-field>
-      <mat-form-field [ngClass]="{'hide': type!='item'}" appearance="outline" fxFlex>
+      <mat-form-field [ngClass]="{'hide': type!='item'}" class="row" appearance="outline" fxFlex>
         <mat-label>{{
           'scans.doubleScan.item' | translate
           }}</mat-label>
@@ -53,6 +60,7 @@
           {{ 'error.field' | translate }}</mat-error>
       </mat-form-field>
     </div>
+    
     <div fxLayout="row" fxLayoutGap="5px">
       <mat-form-field appearance="outline" fxFlex="35">
         <mat-label>{{
