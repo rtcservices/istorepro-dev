@@ -1,25 +1,28 @@
 <button mat-raised-button class="dialog-close" [mat-dialog-close]="true" color="warn">
-    <mat-icon class="close-icon">close</mat-icon>
-  </button>
+  <mat-icon class="close-icon">close</mat-icon>
+</button>
 
-  <h1 mat-dialog-title>{{ 'routines.stockadjust.owner' | translate}}</h1>
-  <div mat-dialog-content>
-    <mat-card class="overflow-x">
-      <mat-card-content>
-        <table class="site-table text-center w-100 mt">
-          <thead>
-            <tr>
-              <th></th>
-              <th>{{ 'routines.stockadjust.code' | translate}}</th>
-              <th>{{ 'routines.stockadjust.description' | translate}}</th>
-            </tr>
-          </thead>
-        </table>
-      </mat-card-content>
-    </mat-card>
-    <div class="modal-button-bottom">
-      <button mat-raised-button color="primary" >
-        <mat-icon>task_alt</mat-icon>
-      </button>
-    </div>
-  </div>
+<h1 mat-dialog-title>{{ 'routines.stockadjust.owner' | translate}}</h1>
+<section class="bordered-section">
+  <table class="site-table text-center w-100 mt">
+    <thead>
+      <tr>
+        <th></th>
+        <th>{{ 'routines.stockadjust.code' | translate}}</th>
+        <th>{{ 'routines.stockadjust.description' | translate}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td>Code</td>
+        <td>Description</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<div class="modal-button-bottom">
+  <button mat-raised-button color="primary">
+    <mat-icon>task_alt</mat-icon>
+  </button>
+</div>

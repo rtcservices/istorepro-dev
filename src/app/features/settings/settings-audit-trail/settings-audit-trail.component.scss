@@ -2,6 +2,16 @@
   margin-top: 10px;
 }
 
-.form-three-button-container{
+.form-three-button-container {
   margin-top: 7px;
+}
+
+.custom-margin-top {
+  margin-top: 0.2rem !important;
+}
+
+@media (min-width: 768px) {
+  .max-height {
+    height: 86px !important;
+  }
 }

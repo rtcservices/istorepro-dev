@@ -1,8 +1,8 @@
-<div class="page-title">
+<div class="page-title-untabbed">
   <h2>{{'menu.baseStorageType' | translate}}</h2>
 </div>
-<mat-card class="storage-type-table">
-  <mat-card-content>
+<div class="slim-form">
+  <section class="bordered-section">
     <table class="site-table mat-elevation-z8">
       <thead>
         <tr>
@@ -44,6 +44,15 @@
         </tr>
       </tbody>
     </table>
-  </mat-card-content>
-</mat-card>
-<!-- <ibe-data-audit insertedBy=""></ibe-data-audit> -->
+  </section>
+  <section class="data-tab-footer">
+    <div fxLayout="row" fxLayoutAlign.gt-sm="space-between center"
+      fxLayoutAlign.lt-md="space-between center" fxFlex>
+      <div class="form-three-button-container" fxFlex>
+        <button mat-raised-button color="primary" type="submit">
+          <mat-icon>task_alt</mat-icon>
+        </button>
+      </div>
+    </div>
+  </section>
+</div>

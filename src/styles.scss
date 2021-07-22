@@ -39,16 +39,19 @@ small {
 .input-group-title {
   white-space: nowrap;
   padding: 0 12px;
-  font-size: 14px;
+  font-size: $fontsize;
 }
 .input-group-area {
   width: 100%;
+  input {
+    font-size: $fontsize;
+  }
 }
 .input-group-icon {
   background: $site-light-gray;
   color: $site-gray;
   padding: 0 12px;
-  font-size: 14px;
+  font-size: $fontsize;
 }
 .input-group input {
   border: 0;
@@ -96,6 +99,20 @@ small {
   }
 }
 
+.page-title-untabbed {
+  right: 0;
+  margin-right: 10px;
+  margin-top: 7px;
+  top: 0;
+  float: right;
+  h2 {
+    color: $site-primary;
+    @include breakpoint(mobileonly) {
+      font-size: 0.9rem;
+    }
+  }
+}
+
 .page-import-export-button {
   right: 0;
   margin-right: 10px;
@@ -109,7 +126,8 @@ small {
 
 .page-import-bottom {
   @include breakpoint(mobileonly) {
-    margin-bottom: 38px !important;
+    margin: 12px !important;
+    text-align: right;
   }
 }
 
@@ -126,7 +144,7 @@ small {
     height: 35px;
     padding: 0 10px;
     white-space: nowrap;
-    font-size: 14px;
+    font-size: $fontsize;
   }
   mat-form-field {
     width: 86.5%;
@@ -151,4 +169,13 @@ small {
   top: -24px;
   right: -24px;
   @include smaller-button(30px, 24px);
+}
+
+.mat-tab-label {
+  font-size: $fontsize;
+}
+
+.summary-section{
+  padding-left: 20px;
+  font-size: $fontsize;
 }

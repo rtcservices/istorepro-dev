@@ -4,134 +4,119 @@
 
 <form fxLayout="column" [formGroup]="LocationManagementForm" class="slim-form page-content">
   <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="stretch" fxLayoutGap="5px">
-    <div fxFlex>
-      <mat-card class="h-100">
-        <mat-card-content>
-
-          <div fxLayout.lt-sm="column" fxLayout.gt-sm="row" fxLayoutGap="15px">
-            <div fxLayout="column" fxLayoutGap="15px" fxFlex>
-              <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="10px" fxFlex>
-                <mat-form-field appearance="outline" fxFlex>
-                  <mat-label>{{
-                    'operations.LocationManagement.warehouse' | translate
-                    }}</mat-label>
-                  <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="warehouse">
-                  </mat-select>
-                  <mat-error *ngIf="LocationManagementFormControls.warehouse.invalid">{{
-                    'error.field' | translate
-                    }}</mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="outline" fxFlex>
-                  <mat-label>{{'operations.LocationManagement.grn' | translate}}</mat-label>
-                  <input matInput required type="text" formControlName="grn" />
-                  <mat-icon (click)="openGrnDialog()" matSuffix type="button">search</mat-icon>
-                  <mat-error *ngIf="LocationManagementFormControls.grn.invalid">
-                    {{ 'error.field' | translate }}
-                  </mat-error>
-                </mat-form-field>
-
-              </div>
-
-              <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="10px" fxFlex>
-                <mat-form-field appearance="outline" fxFlex.gt-sm="60">
-                  <mat-label>{{
-                    'operations.LocationManagement.item' | translate
-                    }}</mat-label>
-                  <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="item">
-                  </mat-select>
-                  <mat-error *ngIf="LocationManagementFormControls.item.invalid">{{
-                    'error.field' | translate
-                    }}</mat-error>
-                </mat-form-field>
-                <fieldset class="read-only-input" fxFlex.gt-sm="10">
-                  <legend>{{ 'operations.LocationManagement.sku' | translate }}</legend>
-                  <label>{{ LocationManagementFormControls.sku.value }}</label>
-                </fieldset>
-                <fieldset class="read-only-input" fxFlex.gt-sm="19">
-                  <legend>{{ 'operations.LocationManagement.totalqty' | translate }}</legend>
-                  <label>{{ LocationManagementFormControls.totalqty.value }}</label>
-                </fieldset>
-                <fieldset class="read-only-input" fxFlex.gt-sm="19">
-                  <legend>{{ 'operations.LocationManagement.untrackedqty' | translate }}</legend>
-                  <label>{{ LocationManagementFormControls.untrackedqty.value }}</label>
-                </fieldset>
-
-              </div>
-
-            </div>
+    <div fxFlex class="bordered-section">
+      <div fxLayout.lt-sm="column" fxLayout.gt-sm="row" fxLayoutGap="15px">
+        <div fxLayout="column" fxLayoutGap="15px" fxFlex>
+          <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="10px" fxFlex>
+            <mat-form-field appearance="outline" fxFlex>
+              <mat-label>{{
+                'operations.LocationManagement.warehouse' | translate
+                }}</mat-label>
+              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="warehouse">
+              </mat-select>
+              <mat-error *ngIf="LocationManagementFormControls.warehouse.invalid">{{
+                'error.field' | translate
+                }}</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex>
+              <mat-label>{{'operations.LocationManagement.grn' | translate}}</mat-label>
+              <input matInput required type="text" formControlName="grn" />
+              <mat-icon (click)="openGrnDialog()" matSuffix type="button">search</mat-icon>
+              <mat-error *ngIf="LocationManagementFormControls.grn.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
           </div>
-        </mat-card-content>
-      </mat-card>
-    </div>
 
+          <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="10px" fxFlex>
+            <mat-form-field appearance="outline" fxFlex.gt-sm="60">
+              <mat-label>{{
+                'operations.LocationManagement.item' | translate
+                }}</mat-label>
+              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="item">
+              </mat-select>
+              <mat-error *ngIf="LocationManagementFormControls.item.invalid">{{
+                'error.field' | translate
+                }}</mat-error>
+            </mat-form-field>
+            <fieldset class="read-only-input" fxFlex.gt-sm="10">
+              <legend>{{ 'operations.LocationManagement.sku' | translate }}</legend>
+              <label>{{ LocationManagementFormControls.sku.value }}</label>
+            </fieldset>
+            <fieldset class="read-only-input" fxFlex.gt-sm="19">
+              <legend>{{ 'operations.LocationManagement.totalqty' | translate }}</legend>
+              <label>{{ LocationManagementFormControls.totalqty.value }}</label>
+            </fieldset>
+            <fieldset class="read-only-input" fxFlex.gt-sm="19">
+              <legend>{{ 'operations.LocationManagement.untrackedqty' | translate }}</legend>
+              <label>{{ LocationManagementFormControls.untrackedqty.value }}</label>
+            </fieldset>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
   </div>
 
-  <mat-card>
-    <mat-card-content class="overflow-x">
-      <div class="form-three-button-container smaller-button-container-40 mb-1">
-        <button type="button" mat-raised-button color="primary">
-          L
+  <section class="bordered-section">
+    <div class="form-three-button-container smaller-button-container-40 mb-1">
+      <button type="button" mat-raised-button color="primary">
+        L
+      </button>
+    </div>
+    <table class="site-table mat-elevation-z8">
+      <thead>
+        <tr>
+          <th class="checkbox-column">
+            <mat-checkbox color="primary"></mat-checkbox>
+          </th>
+          <th>{{ 'operations.LocationManagement.location' | translate}}</th>
+          <th>{{ 'operations.LocationManagement.status' | translate}}</th>
+          <th>{{ 'operations.LocationManagement.qtygood' | translate}} </th>
+          <th>{{ 'operations.LocationManagement.qtydmg' | translate}}</th>
+          <th>{{ 'operations.LocationManagement.full' | translate}} </th>
+          <th style="text-align: center;">
+            <mat-icon style="padding-top: 3px;">add_circle_outline</mat-icon>
+          </th>
+      </thead>
+      <tbody>
+        <td class="checkbox-column">
+          <mat-checkbox color="primary"></mat-checkbox>
+        </td>
+        <td fxLayoutAlign="end end" (click)="openLocationDialog()">
+          <mat-icon>search</mat-icon>
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="two-button-column">
+          <button type="button" mat-mini-fab color="primary" class="mdb-30">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button type="button" mat-mini-fab color="warn" class="mdb-30">
+            <mat-icon>remove</mat-icon>
+          </button>
+        </td>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="data-tab-footer">
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="space-between center"
+      fxLayoutAlign.lt-md="space-between center">
+      <div fxFlexOrder.lt-md="2">
+        <ibe-data-audit insertedBy=""></ibe-data-audit>
+      </div>
+      <div class="form-three-button-container" fxFlexOrder.lt-md="1">
+        <button mat-raised-button color="primary" type="submit" (click)="saveLocationManagementFormData()">
+          <mat-icon>search</mat-icon>
+        </button>
+        <button mat-raised-button color="accent" type="reset" (click)="resetLocationManagementForm()">
+          <mat-icon>loop</mat-icon>
         </button>
       </div>
-      <table class="site-table mat-elevation-z8">
-        <thead>
-          <tr>
-            <th class="checkbox-column">
-              <mat-checkbox color="primary"></mat-checkbox>
-            </th>
-            <th>{{ 'operations.LocationManagement.location' | translate}}</th>
-            <th>{{ 'operations.LocationManagement.status' | translate}}</th>
-            <th>{{ 'operations.LocationManagement.qtygood' | translate}} </th>
-            <th>{{ 'operations.LocationManagement.qtydmg' | translate}}</th>
-            <th>{{ 'operations.LocationManagement.full' | translate}} </th>
-            <th style="text-align: center;">
-              <mat-icon style="padding-top: 3px;">add_circle_outline</mat-icon>
-            </th>
-        </thead>
-        <tbody>
-          <td class="checkbox-column">
-            <mat-checkbox color="primary"></mat-checkbox>
-          </td>
-          <td fxLayoutAlign="end end" (click)="openLocationDialog()">
-            <mat-icon>search</mat-icon>
-          </td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td class="two-button-column">
-            <button type="button" mat-mini-fab color="primary" class="mdb-30">
-              <mat-icon>edit</mat-icon>
-            </button>
-            <button type="button" mat-mini-fab color="warn" class="mdb-30">
-              <mat-icon>remove</mat-icon>
-            </button>
-          </td>
-        </tbody>
-      </table>
-    </mat-card-content>
-  </mat-card>
-
-
-  <mat-card>
-    <mat-card-content>
-      <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="space-between center"
-          fxLayoutAlign.lt-md="space-between center">
-        <div fxFlexOrder.lt-md="2">
-          <ibe-data-audit insertedBy=""></ibe-data-audit>
-        </div>
-        <div class="form-three-button-container" fxFlexOrder.lt-md="1">
-          <button mat-raised-button color="primary" type="submit" (click)="saveLocationManagementFormData()">
-            <mat-icon>search</mat-icon>
-          </button>
-          <button mat-raised-button color="accent" type="reset" (click)="resetLocationManagementForm()">
-            <mat-icon>loop</mat-icon>
-          </button>
-        </div>
-      </div>
-    </mat-card-content>
-  </mat-card>
-
-
-
+    </div>
+  </section>
 </form>

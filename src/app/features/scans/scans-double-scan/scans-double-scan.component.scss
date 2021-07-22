@@ -17,47 +17,34 @@
   }
 }
 
-@media (max-width: 767.99px) {
-  .image-container {
-    padding: 24px 19px;
-    border-radius: 29px 29px 29px 29px;
-    width: 100%;
-  }
-
-  .content {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    mat-icon {
-      font-size: 53px;
-      margin-right: 29px;
-      margin-top: -10px;
-      margin-bottom: 26px;
-    }
-  }
-
+// @media (max-width: 767.99px) {
+.image-container {
+  padding: 24px 19px;
+  border-radius: 29px 29px 29px 29px;
+  min-width: 40px;
 }
 
-@media (min-width: 768.2px) {
-  .image-container {
-    padding: 36px 3px;
-    border-radius: 36px 38px 36px 38px;
-    width: 50%;
+.content {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  mat-icon {
+    font-size: 53px;
+    margin-right: 29px;
+    margin-top: -10px;
+    margin-bottom: 26px;
   }
-
-  // .content {
-  //   align-items: center;
-  //   display: flex;
-  //   justify-content: center;
-  //   mat-icon {
-  //     font-size: 72px;
-  //     margin-right: 46px;
-  //     margin-top: -29px;
-  //     margin-bottom: 28px;
-  //   }
-  // }
-
 }
+
+// }
+
+// @media (min-width: 768.2px) {
+//   .image-container {
+//     padding: 36px 3px;
+//     border-radius: 36px 38px 36px 38px;
+//     width: 50%;
+//   }
+// }
 
 .mt-sm {
   @media (max-width: 768px) {
@@ -75,23 +62,29 @@
 
 .badge {
   right: 16px;
-    height: 24px;
-    width: 24px;
-    font-size: 12px;
-    position: relative;
-    top: -10px;
+  height: 24px;
+  width: 24px;
+  font-size: 12px;
+  position: relative;
+  top: -10px;
 }
 
-::ng-deep .mat-mini-fab .mat-button-wrapper{
+::ng-deep .mat-mini-fab .mat-button-wrapper {
   position: relative;
   top: -7px;
 }
-
 
 .hide {
   opacity: 0 !important;
 }
 
-mat-icon{
+mat-icon {
   color: $site-white;
+}
+
+.bordered-section {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 5px;
 }

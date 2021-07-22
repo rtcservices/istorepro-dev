@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router, RouterOutlet } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
@@ -18,7 +18,8 @@ import { HeaderNavService } from '../../../services/header-nav.service';
   styleUrls: ['./app-shell.component.scss'],
   animations: [slideInAnimation]
 })
-export class AppShellComponent implements OnInit {
+export class AppShellComponent implements OnInit, AfterViewInit {
+  @ViewChild('sidenav') appDrawer: ElementRef | undefined;
   headerNavItems!: HeaderNavItem[];
   menu: any;
   profileUpdateForm!: FormGroup;
@@ -46,6 +47,10 @@ export class AppShellComponent implements OnInit {
     this.getNotifications();
     this.setTranslations();
     this.setTranslations();
+  }
+
+  ngAfterViewInit(){
+    this.headerNavService.appDrawer = this.appDrawer;
   }
 
   getNotifications() {

@@ -4,252 +4,242 @@
 <mat-tab-group #baseItemTypeTab>
   <mat-tab label="Data">
     <form [formGroup]="dataItemTypeForm" class="slim-form">
-      <div fxLayout="row">
-        <mat-card class="w-100">
-          <mat-card-content>
-            <div fxLayout="row" class="row" fxLayoutGap="5px">
-              <mat-form-field appearance="outline" fxFlex="20" fxFlex.lt-sm="25">
-                <mat-label>{{'base.itemType.code' | translate}}</mat-label>
-                <input matInput required type="text" formControlName="code" />
-                <mat-error *ngIf="dataItemTypeControls.code.invalid">{{ 'error.field' | translate }}
-                </mat-error>
-              </mat-form-field>
-              <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="70">
-                <mat-label>{{'base.itemType.description' | translate }}</mat-label>
-                <input matInput required type="text" formControlName="description" />
-                <mat-error *ngIf="dataItemTypeControls.description.invalid">{{ 'error.field' | translate }}
-                </mat-error>
-              </mat-form-field>
-            </div>
-            <div fxLayout="row" class="row" fxLayoutGap="5px">
-              <mat-form-field appearance="outline" fxFlex="20" fxFlex.lt-sm="25">
-                <mat-label>{{'base.itemType.storageType' | translate }}</mat-label>
-                <mat-select disableOptionCentering panelClass="slim-select-field" type="text" readonly
-                  formControlName="storageType">
-                  <mat-option>Pick 1</mat-option>
-                  <mat-option>Pick 2</mat-option>
-                </mat-select>
-                <mat-error *ngIf="dataItemTypeControls.storageType.invalid">{{ 'error.field' | translate }}
-                </mat-error>
-              </mat-form-field>
-              <div class="read-only-description" fxFlex>
-                <label>{{ dataItemTypeControls.storageType.value }}</label>
-              </div>
-            </div>
-            <div class="pale-border-box" fxFex fxLayout="row">
-              <b>{{ 'base.itemType.mandatory' | translate }}</b>
-              <div class="row" fxFex fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
-                <div>
-                  <mat-checkbox color="primary" formControlName="manufacturingDate">{{
-                    'base.itemType.manufacturingDate' | translate
-                    }}</mat-checkbox>
-                </div>
-                <div>
-                  <mat-checkbox color="primary" formControlName="batchNo">{{
-                    'base.itemType.batchNo' | translate
-                    }}</mat-checkbox>
-                </div>
-                <div>
-                  <mat-checkbox color="primary" formControlName="expiry">{{
-                    'base.itemType.expiry' | translate
-                    }}</mat-checkbox>
-                  <mat-form-field fxLayout="column" appearance="outline" fxFlex="60" fxFlex.lt-sm="35">
-                    <mat-label>{{'base.itemType.alertDays' | translate}}</mat-label>
-                    <input matInput required type="text" formControlName="expiryAlertDays" />
-                    <mat-error *ngIf="dataItemTypeControls.expiryAlertDays.invalid">{{ 'error.field' | translate }}
-                    </mat-error>
-                  </mat-form-field>
-                </div>
-
-              </div>
-            </div>
-            <div fxLayout="row" class="row" fxLayoutGap="5px">
-              <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="50">
-                <mat-label>{{'base.itemType.consolidateOn' | translate}}</mat-label>
-                <mat-select disableOptionCentering panelClass="slim-select-field" type="text" readonly
-                  formControlName="consolidateOn">
-                  <mat-option>Owner</mat-option>
-                  <mat-option>Receipt Date</mat-option>
-                  <mat-option>Expiry Date</mat-option>
-                  <mat-option>BatchNo</mat-option>
-                </mat-select>
-                <mat-error *ngIf="dataItemTypeControls.consolidateOn.invalid">{{ 'error.field' | translate }}
-                </mat-error>
-              </mat-form-field>
-              <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="48">
-                <mat-label>{{'base.itemType.defaultPick' | translate }}</mat-label>
-                <mat-select disableOptionCentering panelClass="slim-select-field" type="text" readonly
-                  formControlName="defaultPick">
-                  <mat-option>Pick 1</mat-option>
-                  <mat-option>Pick 2</mat-option>
-                </mat-select>
-                <mat-error *ngIf="dataItemTypeControls.defaultPick.invalid">{{ 'error.field' | translate }}
-                </mat-error>
-              </mat-form-field>
-            </div>
-            <mat-card class="w-100">
-              <mat-card-content>
-                <p><b>{{'base.itemType.WHControl.whControl' | translate}}</b></p>
-                <table class="site-table w-100">
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th>{{ 'base.itemType.WHControl.code' | translate}}</th>
-                      <th>{{ 'base.itemType.WHControl.description' | translate}}</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <ng-template let-control ngFor [ngForOf]="whControlDataSource">
-                      <tr>
-                        <td class="checkbox-column checkbox-column">
-                          <mat-checkbox color="primary"></mat-checkbox>
-                        </td>
-                        <td>{{control.code}}</td>
-                        <td>{{control.name}}</td>
-                      </tr>
-                    </ng-template>
-                  </tbody>
-                </table>
-              </mat-card-content>
-            </mat-card>
-          </mat-card-content>
-        </mat-card>
-      </div>
-      <mat-card>
-        <mat-card-content>
-          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="space-between center"
-          fxLayoutAlign.lt-md="space-between center">
-            <div fxFlexOrder.lt-md="2">
-              <ibe-data-audit insertedBy=""></ibe-data-audit>
-            </div>
-            <div class="form-three-button-container" fxFlexOrder.lt-md="1">
-              <button mat-raised-button color="primary" type="submit" (click)="saveCompanyData()">
-                <mat-icon>task_alt</mat-icon>
-              </button>
-              <button mat-raised-button color="warn" type="button" (click)="deleteCompanyData()">
-                <mat-icon>remove_circle_outline</mat-icon>
-              </button>
-              <button mat-raised-button color="accent" type="reset" (click)="resetCompanyDataForm()">
-                <mat-icon>loop</mat-icon>
-              </button>
+      <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="stretch" fxLayoutGap="5px">
+        <div fxFlex class="bordered-section">
+          <div fxLayout="row" class="row" fxLayoutGap="5px">
+            <mat-form-field appearance="outline" fxFlex="20" fxFlex.lt-sm="25">
+              <mat-label>{{'base.itemType.code' | translate}}</mat-label>
+              <input matInput required type="text" formControlName="code" />
+              <mat-error *ngIf="dataItemTypeControls.code.invalid">{{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex>
+              <mat-label>{{'base.itemType.description' | translate }}</mat-label>
+              <input matInput required type="text" formControlName="description" />
+              <mat-error *ngIf="dataItemTypeControls.description.invalid">{{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout="row" class="row" fxLayoutGap="5px">
+            <mat-form-field appearance="outline" fxFlex="20" fxFlex.lt-sm="25">
+              <mat-label>{{'base.itemType.storageType' | translate }}</mat-label>
+              <mat-select disableOptionCentering panelClass="slim-select-field" type="text" readonly
+                formControlName="storageType">
+                <mat-option>Pick 1</mat-option>
+                <mat-option>Pick 2</mat-option>
+              </mat-select>
+              <mat-error *ngIf="dataItemTypeControls.storageType.invalid">{{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+            <div class="read-only-description" fxFlex>
+              <label>{{ dataItemTypeControls.storageType.value }}</label>
             </div>
           </div>
-        </mat-card-content>
-      </mat-card>
+          <div class="pale-border-box" fxFex fxLayout="row">
+            <b>{{ 'base.itemType.mandatory' | translate }}</b>
+            <div class="row" fxFex fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+              <div>
+                <mat-checkbox color="primary" formControlName="manufacturingDate">{{
+                  'base.itemType.manufacturingDate' | translate
+                  }}</mat-checkbox>
+              </div>
+              <div>
+                <mat-checkbox color="primary" formControlName="batchNo">{{
+                  'base.itemType.batchNo' | translate
+                  }}</mat-checkbox>
+              </div>
+              <div>
+                <mat-checkbox color="primary" formControlName="expiry">{{
+                  'base.itemType.expiry' | translate
+                  }}</mat-checkbox>
+                <mat-form-field fxLayout="column" appearance="outline" fxFlex="60" fxFlex.lt-sm="35">
+                  <mat-label>{{'base.itemType.alertDays' | translate}}</mat-label>
+                  <input matInput required type="text" formControlName="expiryAlertDays" />
+                  <mat-error *ngIf="dataItemTypeControls.expiryAlertDays.invalid">{{ 'error.field' | translate }}
+                  </mat-error>
+                </mat-form-field>
+              </div>
+
+            </div>
+          </div>
+          <div fxLayout="row" class="row" fxLayoutGap="5px">
+            <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="50">
+              <mat-label>{{'base.itemType.consolidateOn' | translate}}</mat-label>
+              <mat-select disableOptionCentering panelClass="slim-select-field" type="text" readonly
+                formControlName="consolidateOn">
+                <mat-option>Owner</mat-option>
+                <mat-option>Receipt Date</mat-option>
+                <mat-option>Expiry Date</mat-option>
+                <mat-option>BatchNo</mat-option>
+              </mat-select>
+              <mat-error *ngIf="dataItemTypeControls.consolidateOn.invalid">{{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="48">
+              <mat-label>{{'base.itemType.defaultPick' | translate }}</mat-label>
+              <mat-select disableOptionCentering panelClass="slim-select-field" type="text" readonly
+                formControlName="defaultPick">
+                <mat-option>Pick 1</mat-option>
+                <mat-option>Pick 2</mat-option>
+              </mat-select>
+              <mat-error *ngIf="dataItemTypeControls.defaultPick.invalid">{{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="stretch" fxLayoutGap="5px">
+        <div fxFlex class="bordered-section">
+          <p><b>{{'base.itemType.WHControl.whControl' | translate}}</b></p>
+          <table class="site-table w-100">
+            <thead>
+              <tr>
+                <th></th>
+                <th>{{ 'base.itemType.WHControl.code' | translate}}</th>
+                <th>{{ 'base.itemType.WHControl.description' | translate}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <ng-template let-control ngFor [ngForOf]="whControlDataSource">
+                <tr>
+                  <td class="checkbox-column checkbox-column">
+                    <mat-checkbox color="primary"></mat-checkbox>
+                  </td>
+                  <td>{{control.code}}</td>
+                  <td>{{control.name}}</td>
+                </tr>
+              </ng-template>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <section class="data-tab-footer">
+        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="space-between center"
+          fxLayoutAlign.lt-md="space-between center">
+          <div fxFlexOrder.lt-md="2">
+            <ibe-data-audit insertedBy=""></ibe-data-audit>
+          </div>
+          <div class="form-three-button-container" fxFlexOrder.lt-md="1">
+            <button mat-raised-button color="primary" type="submit" (click)="saveCompanyData()">
+              <mat-icon>task_alt</mat-icon>
+            </button>
+            <button mat-raised-button color="warn" type="button" (click)="deleteCompanyData()">
+              <mat-icon>remove_circle_outline</mat-icon>
+            </button>
+            <button mat-raised-button color="accent" type="reset" (click)="resetCompanyDataForm()">
+              <mat-icon>loop</mat-icon>
+            </button>
+          </div>
+        </div>
+      </section>
     </form>
   </mat-tab>
   <!-- Search -->
   <mat-tab label="Search">
     <form fxLayout="column" [formGroup]="searchItemTypeForm" (ngSubmit)="onSearchItemTypeSubmit()" class="slim-form">
-      <mat-card class="filter-container">
-        <mat-card-content>
-          <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
-            <mat-form-field appearance="outline" fxFlex="30">
-              <mat-label>{{
-                'base.itemType.code' | translate
-                }}</mat-label>
-              <input matInput type="text" formControlName="code" />
-              <mat-error *ngIf="searchItemTypeFormControls.code.invalid">
-                {{ 'error.field' | translate }}</mat-error>
-            </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex>
-              <mat-label>{{
-                'base.itemType.description' | translate
-                }}</mat-label>
-              <input matInput type="text" formControlName="description" />
-              <mat-error *ngIf="searchItemTypeFormControls.description.invalid">
-                {{ 'error.field' | translate }}</mat-error>
-            </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex="22">
-              <mat-label>{{
-                'base.itemType.storageType' | translate
-                }}</mat-label>
-              <input matInput type="text" formControlName="storageType" />
-              <mat-error *ngIf="searchItemTypeFormControls.storageType.invalid">
-                {{ 'error.field' | translate }}</mat-error>
-            </mat-form-field>
-          </div>
-          <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
-            <mat-form-field appearance="outline" fxFlex="30">
-              <mat-label>{{
-                'base.itemType.warehouse' | translate
-                }}</mat-label>
-              <input matInput type="text" formControlName="warehouse" />
-              <mat-error *ngIf="searchItemTypeFormControls.warehouse.invalid">
-                {{ 'error.field' | translate }}</mat-error>
-            </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex>
-              <mat-label>Expiry</mat-label>
-              <mat-select disableOptionCentering panelClass="slim-select-field" type="text" formControlName="expiry">
-                <mat-option value="yes">Yes</mat-option>
-                <mat-option value="no">No</mat-option>
-              </mat-select>
-              <mat-error *ngIf="searchItemTypeFormControls.expiry.invalid">{{ 'error.field' | translate }}</mat-error>
-            </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex>
-              <mat-label>Mfg Date ?.</mat-label>
-              <mat-select disableOptionCentering panelClass="slim-select-field" type="text" formControlName="MfgDate">
-                <mat-option value="yes">Yes</mat-option>
-                <mat-option value="no">No</mat-option>
-              </mat-select>
-              <mat-error *ngIf="searchItemTypeFormControls.MfgDate.invalid">{{ 'error.field' | translate }}
-              </mat-error>
-            </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex>
-              <mat-label>Batch No ?</mat-label>
-              <mat-select disableOptionCentering panelClass="slim-select-field" type="text" formControlName="batchNo">
-                <mat-option value="yes">Yes</mat-option>
-                <mat-option value="no">No</mat-option>
-              </mat-select>
-              <mat-error *ngIf="searchItemTypeFormControls.batchNo.invalid">{{ 'error.field' | translate }}
-              </mat-error>
-            </mat-form-field>
-          </div>
-        </mat-card-content>
-      </mat-card>
-      <mat-card class="search-container">
-        <mat-card-content>
-          <div class="form-button-container">
-            <button mat-raised-button color="primary" type="submit">
-              <mat-icon>search</mat-icon>
-            </button>
-            <button mat-raised-button color="accent" type="reset" (click)="resetItemTypeSearchForm()">
-              <mat-icon>restart_alt</mat-icon>
-            </button>
-          </div>
-        </mat-card-content>
-      </mat-card>
+      <section class="bordered-section">
+        <div class="row" fxLayout.lt-md="column" fxLayout="row" fxLayoutGap="5px">
+          <mat-form-field appearance="outline" fxFlex="30">
+            <mat-label>{{
+              'base.itemType.code' | translate
+              }}</mat-label>
+            <input matInput type="text" formControlName="code" />
+            <mat-error *ngIf="searchItemTypeFormControls.code.invalid">
+              {{ 'error.field' | translate }}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>{{
+              'base.itemType.description' | translate
+              }}</mat-label>
+            <input matInput type="text" formControlName="description" />
+            <mat-error *ngIf="searchItemTypeFormControls.description.invalid">
+              {{ 'error.field' | translate }}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex="22">
+            <mat-label>{{
+              'base.itemType.storageType' | translate
+              }}</mat-label>
+            <input matInput type="text" formControlName="storageType" />
+            <mat-error *ngIf="searchItemTypeFormControls.storageType.invalid">
+              {{ 'error.field' | translate }}</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="row" fxLayout.lt-md="column" fxLayout="row" fxLayoutGap="5px">
+          <mat-form-field appearance="outline" fxFlex="30">
+            <mat-label>{{
+              'base.itemType.warehouse' | translate
+              }}</mat-label>
+            <input matInput type="text" formControlName="warehouse" />
+            <mat-error *ngIf="searchItemTypeFormControls.warehouse.invalid">
+              {{ 'error.field' | translate }}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>Expiry</mat-label>
+            <mat-select disableOptionCentering panelClass="slim-select-field" type="text" formControlName="expiry">
+              <mat-option value="yes">Yes</mat-option>
+              <mat-option value="no">No</mat-option>
+            </mat-select>
+            <mat-error *ngIf="searchItemTypeFormControls.expiry.invalid">{{ 'error.field' | translate }}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>Mfg Date ?.</mat-label>
+            <mat-select disableOptionCentering panelClass="slim-select-field" type="text" formControlName="MfgDate">
+              <mat-option value="yes">Yes</mat-option>
+              <mat-option value="no">No</mat-option>
+            </mat-select>
+            <mat-error *ngIf="searchItemTypeFormControls.MfgDate.invalid">{{ 'error.field' | translate }}
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>Batch No ?</mat-label>
+            <mat-select disableOptionCentering panelClass="slim-select-field" type="text" formControlName="batchNo">
+              <mat-option value="yes">Yes</mat-option>
+              <mat-option value="no">No</mat-option>
+            </mat-select>
+            <mat-error *ngIf="searchItemTypeFormControls.batchNo.invalid">{{ 'error.field' | translate }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </section>
+      <section class="search-tab-footer">
+        <div class="form-button-container">
+          <button mat-raised-button color="primary" type="submit">
+            <mat-icon>search</mat-icon>
+          </button>
+          <button mat-raised-button color="accent" type="reset" (click)="resetItemTypeSearchForm()">
+            <mat-icon>restart_alt</mat-icon>
+          </button>
+        </div>
+      </section>
     </form>
-    <mat-card class="mat-elevation-z10">
-      <mat-card-content>
-        <table mat-table [dataSource]="searchItemTypeDataSource" class="mat-elevation-z8 site-table">
-          <ng-container matColumnDef="code">
-            <th mat-header-cell *matHeaderCellDef>Code</th>
-            <td mat-cell *matCellDef="let element; let idx=index">
-              <button mat-button disableRipple class="primary-button link-button"
-                (click)="searchItemClick($event, element, idx)">{{ element.code }}</button>
-            </td>
-          </ng-container>
-          <ng-container matColumnDef="description">
-            <th mat-header-cell *matHeaderCellDef>Description</th>
-            <td mat-cell *matCellDef="let element">
-              {{ element.description }}
-            </td>
-          </ng-container>
-          <ng-container matColumnDef="storageType">
-            <th mat-header-cell *matHeaderCellDef>Storage Type</th>
-            <td mat-cell *matCellDef="let element">
-              {{ element.storageType }}
-            </td>
-          </ng-container>
+    <section class="bordered-section">
+      <table mat-table [dataSource]="searchItemTypeDataSource" class="mat-elevation-z8 site-table">
+        <ng-container matColumnDef="code">
+          <th mat-header-cell *matHeaderCellDef>Code</th>
+          <td mat-cell *matCellDef="let element; let idx=index">
+            <button mat-button disableRipple class="primary-button link-button"
+              (click)="searchItemClick($event, element, idx)">{{ element.code }}</button>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef>Description</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.description }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="storageType">
+          <th mat-header-cell *matHeaderCellDef>Storage Type</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.storageType }}
+          </td>
+        </ng-container>
 
-          <tr mat-header-row *matHeaderRowDef="displayedSearchItemTypeColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedSearchItemTypeColumns"></tr>
-        </table>
-        <small *ngIf="searchItemTypeDataSource.length === 0" class="empty-table">
-          No records found
-        </small>
-      </mat-card-content>
-    </mat-card>
+        <tr mat-header-row *matHeaderRowDef="displayedSearchItemTypeColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedSearchItemTypeColumns"></tr>
+      </table>
+      <small *ngIf="searchItemTypeDataSource.length === 0" class="empty-table">
+        No records found
+      </small>
+    </section>
   </mat-tab>
 </mat-tab-group>

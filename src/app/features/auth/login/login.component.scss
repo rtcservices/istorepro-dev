@@ -27,7 +27,7 @@
     }
   }
   .login-card {
-    max-width: 550px;
+    max-width: 500px;
     width: 80%;
     @include breakpoint(tablet) {
       max-width: 700px !important;
@@ -72,7 +72,7 @@
   }
   .forgot-password {
     color: $site-primary !important;
-    font-size: 15px;
+    font-size: $fontsize;
     @include breakpoint(mobileonly) {
       float: right;
       margin-top: 15px;

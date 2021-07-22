@@ -1,18 +1,19 @@
 <div class="mt-sm">
   <form [formGroup]="directPutawayForm" fxLayout="column" class="slim-form">
-    <div fxLayout="column" fxLayoutGap="5px">
-
-      <mat-form-field appearance="outline" class="input-row" fxFlex>
+    <div fxLayout="row" fxLayoutGap="5px">
+      <mat-form-field appearance="outline" class="row" fxFlex>
         <mat-label>{{
           'scans.doubleScan.location' | translate
           }}</mat-label>
         <input matInput type="text" formControlName="location" />
-        <mat-icon matSuffix type="button" class="cursor-style" (click)="openLocationDialog()">search</mat-icon>
+        <!-- <mat-icon matSuffix type="button" class="cursor-style" (click)="openLocationDialog()">search</mat-icon> -->
         <mat-error *ngIf="directPutawayFormControls.location.invalid">
           {{ 'error.field' | translate }}</mat-error>
       </mat-form-field>
+    </div>
 
-      <mat-form-field appearance="outline" class="input-row" fxFlex>
+    <div fxLayout="row" fxLayoutGap="5px">
+      <mat-form-field appearance="outline" class="row" fxFlex>
         <mat-label>{{
           'scans.doubleScan.grnsl' | translate
           }}</mat-label>
@@ -21,6 +22,7 @@
           {{ 'error.field' | translate }}</mat-error>
       </mat-form-field>
     </div>
+
     <div fxLayout="row" fxLayoutGap="5px">
       <mat-form-field appearance="outline" fxFlex="35">
         <mat-label>{{
@@ -54,7 +56,6 @@
         }}
       </button>
     </div>
-
   </form>
   <br>
 </div>

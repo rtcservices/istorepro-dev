@@ -1,5 +1,25 @@
-.slim-form{
-    ::ng-deep .mat-form-field-subscript-wrapper {
-      margin-top: 3px !important;
-    }
+@import '../../../../assets/scss/variables.scss';
+
+.slim-form {
+  ::ng-deep .mat-form-field-subscript-wrapper {
+    margin-top: 3px !important;
   }
+}
+
+.progress-section {
+  margin: 10px;
+  font-size: $fontsize;
+  .progress-box {
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background: #13b4ff;
+    margin-top: 0px;
+  }
+}
+
+.form-three-button-container {
+  margin: 0px 5px;
+}

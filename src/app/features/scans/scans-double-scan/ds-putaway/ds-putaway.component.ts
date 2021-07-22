@@ -68,19 +68,19 @@ export class DsPutawayComponent implements OnInit {
 
   openScanDialog() {
     this.dialog.open(DsPutawayScanDialogComponent, {
-      width: '800px'
+     width: '615px'
     });
   }
 
   openLocationDialog() {
     this.dialog.open(DsPutawayLocationDialogComponent, {
-      width: '800px'
+      width: '615px'
     });
   }
 
   openItemAssistanceDialog() {
     this.dialog.open(DsPutawayItemAssistanceDialogComponent, {
-      width: '800px'
+     width: '615px'
     });
   }
 

@@ -3,73 +3,74 @@
 </button>
 
 <h1 mat-dialog-title>B16-02-01</h1>
-<div mat-dialog-content>
-  <mat-card>
-    <mat-card-content>
-      <table class="site-table text-center w-100">
-        <thead>
-          <tr>
-            <th>{{ 'operations.HeatMap.zone' | translate}}</th>
-            <th>{{ 'operations.HeatMap.storagetype' | translate}}</th>
-            <th>{{ 'operations.HeatMap.abctag' | translate}} </th>
-            <th>{{ 'operations.HeatMap.storagestatus' | translate}} </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>NO-EZ</td>
-            <td>RACK</td>
-            <td></td>
-            <td>PARTIAL</td>
-          </tr>
-        </tbody>
-      </table>
-      <hr>
-      <table class="site-table text-center w-100">
-        <thead>
-          <tr>
-            <th></th>
-            <th>{{ 'operations.HeatMap.weight' | translate}}</th>
-            <th>{{ 'operations.HeatMap.volume' | translate}} </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Net</td>
-            <td>900</td>
-            <td>5</td>
-          </tr>
-          <tr>
-            <td>Balance</td>
-            <td>100</td>
-            <td>5</td>
-          </tr>
-          <tr>
-            <td>Percentage</td>
-            <td>89%</td>
-            <td>0%</td>
-          </tr>
-          <tr>
-            <td>LBH</td>
-            <td>1610*1140*1610</td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-      <hr>
-      <table class="site-table text-center w-100">
-        <thead>
-          <tr>
-            <th>{{ 'operations.HeatMap.item' | translate}}</th>
-            <th>{{ 'operations.HeatMap.description' | translate}}</th>
-            <th>{{ 'operations.HeatMap.sku' | translate}} </th>
-            <th>{{ 'operations.HeatMap.stkgood' | translate}} </th>
-            <th>{{ 'operations.HeatMap.stkdmg' | translate}}</th>
-            <th>{{ 'operations.HeatMap.locgood' | translate}} </th>
-            <th>{{ 'operations.HeatMap.netwt' | translate}} </th>
-          </tr>
-        </thead>
-      </table>
-    </mat-card-content>
-  </mat-card>
-</div>
+<section class="bordered-section">
+  <table class="site-table text-center w-100">
+    <thead>
+      <tr>
+        <th>{{ 'operations.HeatMap.zone' | translate}}</th>
+        <th>{{ 'operations.HeatMap.storagetype' | translate}}</th>
+        <th>{{ 'operations.HeatMap.abctag' | translate}} </th>
+        <th>{{ 'operations.HeatMap.storagestatus' | translate}} </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="left-align">
+        <td>NO-EZ</td>
+        <td>RACK</td>
+        <td></td>
+        <td>PARTIAL</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <br>
+  <hr>
+
+  <table class="site-table text-center w-100">
+    <thead>
+      <tr class="left-align" >
+        <th></th>
+        <th >{{ 'operations.HeatMap.weight' | translate}}</th>
+        <th >{{ 'operations.HeatMap.volume' | translate}} </th>
+      </tr>
+    </thead>
+    <tbody class="left-align">
+      <tr>
+        <td class="text-bold">Net</td>
+        <td >900</td>
+        <td >5</td>
+      </tr>
+      <tr>
+        <td class="text-bold">Balance</td>
+        <td >100</td>
+        <td >5</td>
+      </tr>
+      <tr>
+        <td class="text-bold">Percentage</td>
+        <td >89%</td>
+        <td >0%</td>
+      </tr>
+      <tr>
+        <td class="text-bold">LBH</td>
+        <td >1610*1140*1610</td>
+        <td ></td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+  <br>
+  <br>
+  <table class="site-table text-center w-100">
+    <thead>
+      <tr>
+        <th>{{ 'operations.HeatMap.item' | translate}}</th>
+        <th>{{ 'operations.HeatMap.description' | translate}}</th>
+        <th>{{ 'operations.HeatMap.sku' | translate}} </th>
+        <th>{{ 'operations.HeatMap.stkgood' | translate}} </th>
+        <th>{{ 'operations.HeatMap.stkdmg' | translate}}</th>
+        <th>{{ 'operations.HeatMap.locgood' | translate}} </th>
+        <th>{{ 'operations.HeatMap.netwt' | translate}} </th>
+      </tr>
+    </thead>
+  </table>
+</section>

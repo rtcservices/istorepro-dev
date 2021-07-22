@@ -5,105 +5,96 @@
 <h1 mat-dialog-title>{{
   'operations.delivery.shipto' | translate
   }}</h1>
-<div mat-dialog-content>
-  <form [formGroup]="ShiptoForm" (ngSubmit)="onShiptoSubmit()" class="slim-form">
-    <mat-card>
-      <mat-card-content>
-        <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
-          <mat-form-field appearance="outline" fxFlex>
-            <mat-label>{{
-              'operations.delivery.select' | translate
-              }}</mat-label>
-              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="select">
-              </mat-select>
-            <mat-error *ngIf="dataShipFormControls.select.invalid">
-              {{ 'error.field' | translate }}
-            </mat-error>
-          </mat-form-field>
-          <mat-form-field appearance="outline" fxFlex>
-            <mat-label>{{
-              'operations.delivery.shipto' | translate
-              }}</mat-label>
-            <input matInput required type="text" formControlName="shipto" />
-            <mat-error *ngIf="dataShipFormControls.shipto.invalid">
-              {{ 'error.field' | translate }}
-            </mat-error>
-          </mat-form-field>
-        </div>
-        <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
-          <mat-form-field appearance="outline" fxFlex>
-            <mat-label>{{
-              'operations.delivery.address1' | translate
-              }}</mat-label>
-            <input matInput required type="text" formControlName="address1" />
-            <mat-error *ngIf="dataShipFormControls.address1.invalid">
-              {{ 'error.field' | translate }}
-            </mat-error>
-          </mat-form-field>
-          <mat-form-field appearance="outline" fxFlex>
-            <mat-label>{{
-              'operations.delivery.address2' | translate
-              }}</mat-label>
-            <input matInput type="text" formControlName="address2" />
-          </mat-form-field>
-        </div>
-        <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
-          <mat-form-field appearance="outline" fxFlex>
-            <mat-label>{{
-              'operations.delivery.address3' | translate
-              }}</mat-label>
-            <input matInput type="text" formControlName="address3" />
-          </mat-form-field>
-          <mat-form-field appearance="outline" fxFlex>
-            <mat-label>{{
-              'operations.delivery.address4' | translate
-              }}</mat-label>
-            <input matInput type="text" formControlName="address4" />
-          </mat-form-field>
-        </div>
-        <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
-
-          <mat-form-field appearance="outline" fxFlex>
-            <mat-label>{{
-              'operations.delivery.zip' | translate
-              }}</mat-label>
-            <input matInput type="text" formControlName="zip" />
-          </mat-form-field>
-          <mat-form-field appearance="outline" fxFlex>
-            <mat-label>{{
-              'operations.delivery.telephone' | translate
-              }}</mat-label>
-            <input matInput type="text" formControlName="telephone" />
-          </mat-form-field>
-        </div>
-        <div fxLayout.gt-sm="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
-          <mat-form-field appearance="outline" fxFlex>
-            <mat-label>{{
-              'operations.delivery.fax' | translate
-              }}</mat-label>
-            <input matInput type="text" formControlName="fax" />
-          </mat-form-field>
-          <mat-form-field appearance="outline" fxFlex>
-            <mat-label>{{
-              'operations.delivery.email' | translate
-              }}</mat-label>
-            <input matInput type="text" formControlName="email" />
-          </mat-form-field>
-        </div>
-        <div class="modal-button">
-          <button mat-raised-button color="primary" type="submit">
-            <mat-icon>search</mat-icon>
-          </button>
-          <button mat-raised-button color="accent" type="reset" (click)="resetShiptoForm()">
-            <mat-icon>restart_alt</mat-icon>
-          </button>
-        </div>
-      </mat-card-content>
-    </mat-card>
-    <div class="modal-button-bottom">
-      <button mat-raised-button color="primary" type="submit">
-        <mat-icon>task_alt</mat-icon>
-      </button>
+<form [formGroup]="ShiptoForm" (ngSubmit)="onShiptoSubmit()" class="slim-form">
+  <section class="bordered-section">
+    <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+      <mat-form-field appearance="outline" fxFlex>
+        <mat-label>{{
+          'operations.delivery.select' | translate
+          }}</mat-label>
+        <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="select">
+        </mat-select>
+        <mat-error *ngIf="dataShipFormControls.select.invalid">
+          {{ 'error.field' | translate }}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" fxFlex>
+        <mat-label>{{
+          'operations.delivery.shipto' | translate
+          }}</mat-label>
+        <input matInput required type="text" formControlName="shipto" />
+        <mat-error *ngIf="dataShipFormControls.shipto.invalid">
+          {{ 'error.field' | translate }}
+        </mat-error>
+      </mat-form-field>
     </div>
-  </form>
-</div>
+    <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+      <mat-form-field appearance="outline" fxFlex>
+        <mat-label>{{
+          'operations.delivery.address1' | translate
+          }}</mat-label>
+        <input matInput required type="text" formControlName="address1" />
+        <mat-error *ngIf="dataShipFormControls.address1.invalid">
+          {{ 'error.field' | translate }}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" fxFlex>
+        <mat-label>{{
+          'operations.delivery.address2' | translate
+          }}</mat-label>
+        <input matInput type="text" formControlName="address2" />
+      </mat-form-field>
+    </div>
+    <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+      <mat-form-field appearance="outline" fxFlex>
+        <mat-label>{{
+          'operations.delivery.address3' | translate
+          }}</mat-label>
+        <input matInput type="text" formControlName="address3" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" fxFlex>
+        <mat-label>{{
+          'operations.delivery.address4' | translate
+          }}</mat-label>
+        <input matInput type="text" formControlName="address4" />
+      </mat-form-field>
+    </div>
+    <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+
+      <mat-form-field appearance="outline" fxFlex>
+        <mat-label>{{
+          'operations.delivery.zip' | translate
+          }}</mat-label>
+        <input matInput type="text" formControlName="zip" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" fxFlex>
+        <mat-label>{{
+          'operations.delivery.telephone' | translate
+          }}</mat-label>
+        <input matInput type="text" formControlName="telephone" />
+      </mat-form-field>
+    </div>
+    <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+      <mat-form-field appearance="outline" fxFlex>
+        <mat-label>{{
+          'operations.delivery.fax' | translate
+          }}</mat-label>
+        <input matInput type="text" formControlName="fax" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" fxFlex>
+        <mat-label>{{
+          'operations.delivery.email' | translate
+          }}</mat-label>
+        <input matInput type="text" formControlName="email" />
+      </mat-form-field>
+    </div>
+  </section>
+  <div class="modal-button-bottom">
+    <button mat-raised-button color="primary" type="submit">
+      <mat-icon>task_alt</mat-icon>
+    </button>
+    <button mat-raised-button color="accent" type="reset" (click)="resetShiptoForm()">
+      <mat-icon>restart_alt</mat-icon>
+    </button>
+  </div>
+</form>

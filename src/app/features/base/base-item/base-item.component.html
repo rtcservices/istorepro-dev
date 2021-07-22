@@ -4,589 +4,556 @@
 <mat-tab-group #baseItemTab>
   <mat-tab label="Data">
     <form [formGroup]="dataItemForm" (ngSubmit)="onDataItemSubmit()" class="slim-form">
-      <div fxLayout="row">
-        <mat-card class="w-100">
-          <mat-card-content>
+      <div class="bordered-section">
+        <section class="inner-tab">
 
-            <div fxHide fxShow.gt-sm class="page-import-export-button smaller-button-container-40">
-              <button mat-raised-button color="primary" type="submit">
-                <mat-icon>cloud_upload</mat-icon>
-              </button>
-              <button mat-raised-button color="primary" type="submit">
-                <mat-icon>cloud_download</mat-icon>
-              </button>
-            </div>
+          <!-- <div fxHide fxShow.gt-sm class="page-import-export-button smaller-button-container-40">
+            <button mat-raised-button color="primary" type="submit">
+              <mat-icon>cloud_upload</mat-icon>
+            </button>
+            <button mat-raised-button color="primary" type="submit">
+              <mat-icon>cloud_download</mat-icon>
+            </button>
+          </div> -->
 
-            <mat-tab-group #baseItemdataTab id="baseItemdataTab">
-              <mat-tab label="Item">
-                <mat-card>
-                  <mat-card-content>
-                    <div fxLayout.gt-sm="column" fxLayout.lt-sm="column" fxLayoutAlign="stretch" fxLayoutGap="10px"
-                     >
+          <mat-tab-group #baseItemdataTab id="baseItemdataTab">
+            <mat-tab label="Item">
+              <div fxLayout.gt-sm="column" fxLayout.lt-sm="column" fxLayoutAlign="stretch" fxLayoutGap="10px">
 
-                      <div fxFlex class="first-row-section">
-                        <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
-                          <mat-form-field appearance="outline" fxFlex fxFlex.gt-sm="33">
-                            <mat-label>{{
-                              'base.item.item' | translate
-                              }}</mat-label>
-                            <input matInput required formControlName="item" />
-                            <mat-error *ngIf="dataItemFormControls.item.invalid">{{ 'error.field' | translate }}
-                            </mat-error>
-                          </mat-form-field>
-                          <mat-form-field appearance="outline" fxFlex>
-                            <mat-label>{{
-                              'base.item.description' | translate
-                              }}</mat-label>
-                            <input matInput required formControlName="description" />
-                            <mat-error *ngIf="dataItemFormControls.description.invalid">{{ 'error.field' | translate }}
-                            </mat-error>
-                          </mat-form-field>
-                          <mat-form-field appearance="outline" fxFlex>
-                            <mat-label>{{
-                              'base.item.hscode' | translate
-                              }}</mat-label>
-                            <input matInput formControlName="hscode" />
-                            <mat-error *ngIf="dataItemFormControls.hscode.invalid">{{
-                              'error.field' | translate
-                              }}</mat-error>
-                          </mat-form-field>
+                <div fxFlex class="first-row-section">
+                  <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                    <mat-form-field appearance="outline" fxFlex>
+                      <mat-label>{{
+                        'base.item.item' | translate
+                        }}</mat-label>
+                      <input matInput required formControlName="item" />
+                      <mat-error *ngIf="dataItemFormControls.item.invalid">{{ 'error.field' | translate }}
+                      </mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" fxFlex>
+                      <mat-label>{{
+                        'base.item.description' | translate
+                        }}</mat-label>
+                      <input matInput required formControlName="description" />
+                      <mat-error *ngIf="dataItemFormControls.description.invalid">{{ 'error.field' | translate }}
+                      </mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" fxFlex.gt-sm="30.2">
+                      <mat-label>{{
+                        'base.item.hscode' | translate
+                        }}</mat-label>
+                      <input matInput formControlName="hscode" />
+                      <mat-error *ngIf="dataItemFormControls.hscode.invalid">{{
+                        'error.field' | translate
+                        }}</mat-error>
+                    </mat-form-field>
 
-                        </div>
+                  </div>
+                </div>
+
+                <div fxFlex>
+                  <div fxLayout.gt-sm="row" fxLayoutGap="10px" fxLayout.lt-sm="column">
+                    <div fxFlex.gt-sm="70%">
+                      <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" class="second-row-section row" fxLayoutGap="5px">
+                        <mat-form-field appearance="outline" fxFlex>
+                          <mat-label>{{
+                            'base.item.itemType' | translate
+                            }}</mat-label>
+                          <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="itemType">
+                          </mat-select>
+                          <mat-error *ngIf="dataItemFormControls.itemType.invalid">{{
+                            'error.field' | translate
+                            }}</mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" fxFlex>
+                          <mat-label>{{
+                            'base.item.scanType' | translate
+                            }}</mat-label>
+                          <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="scanType">
+                            <mat-option>{{
+                              'base.item.barCode' | translate
+                              }}</mat-option>
+                            <mat-option>{{
+                              'base.item.qrCode' | translate
+                              }}</mat-option>
+                          </mat-select>
+                          <mat-error *ngIf="dataItemFormControls.scanType.invalid">{{
+                            'error.field' | translate
+                            }}</mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" fxFlex>
+                          <mat-label>{{
+                            'base.item.scanCode' | translate
+                            }}</mat-label>
+                          <input matInput formControlName="scanCode" />
+                          <mat-error *ngIf="dataItemFormControls.scanCode.invalid">{{
+                            'error.field' | translate
+                            }}</mat-error>
+                        </mat-form-field>
                       </div>
 
-                      <div fxFlex>
-                        <div fxLayout.gt-sm="row" fxLayoutGap="10px" fxLayout.lt-sm="column">
+                      <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                        <div fxFlex.gt-sm="50%" fxFlex class="pale-border-box">
+                          <p><b>{{'base.item.sku' | translate}}</b></p>
 
-                          <div fxFlex.gt-sm="70%">
-                            <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" class="second-row-section"
-                              fxLayoutGap="5px">
-                              <mat-form-field appearance="outline" fxFlex>
-                                <mat-label>{{
-                                  'base.item.itemType' | translate
-                                  }}</mat-label>
-                                <mat-select disableOptionCentering panelClass="slim-select-field"
-                                  formControlName="itemType">
-                                </mat-select>
-                                <mat-error *ngIf="dataItemFormControls.itemType.invalid">{{
-                                  'error.field' | translate
-                                  }}</mat-error>
-                              </mat-form-field>
-                              <mat-form-field appearance="outline" fxFlex>
-                                <mat-label>{{
-                                  'base.item.scanType' | translate
-                                  }}</mat-label>
-                                <mat-select disableOptionCentering panelClass="slim-select-field"
-                                  formControlName="scanType">
-                                  <mat-option>{{
-                                    'base.item.barCode' | translate
-                                    }}</mat-option>
-                                  <mat-option>{{
-                                    'base.item.qrCode' | translate
-                                    }}</mat-option>
-                                </mat-select>
-                                <mat-error *ngIf="dataItemFormControls.scanType.invalid">{{
-                                  'error.field' | translate
-                                  }}</mat-error>
-                              </mat-form-field>
-                              <mat-form-field appearance="outline" fxFlex>
-                                <mat-label>{{
-                                  'base.item.scanCode' | translate
-                                  }}</mat-label>
-                                <input matInput formControlName="scanCode" />
-                                <mat-error *ngIf="dataItemFormControls.scanCode.invalid">{{
-                                  'error.field' | translate
-                                  }}</mat-error>
-                              </mat-form-field>
-                            </div>
-
-                            <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
-                              <div fxFlex.gt-sm="50%" fxFlex class="pale-border-box">
-                                <b>{{'base.item.sku' | translate}}</b>
-
-                                <div fxFex fxLayout="column" fxLayout.lt-sm="column" fxLayoutGap="10px">
-
-                                  <div class="prefix-suffix-field">
-                                    <div class="prefix-data">
-                                      {{'base.item.sku' | translate}}
-                                    </div>
-                                    <mat-form-field appearance="outline">
-                                      <mat-label>{{ 'base.item.unit' | translate }}</mat-label>
-                                      <mat-select formControlName="unit">
-                                      </mat-select>
-                                    </mat-form-field>
-                                  </div>
-
-                                  <div class="input-group" fxFlex>
-                                    <div class="input-group-title">{{'base.item.unitWeight' | translate}}</div>
-                                    <div class="input-group-area">
-                                      <input formControlName="unitWeight">
-                                      <mat-error *ngIf="dataItemFormControls.unitWeight.invalid">
-                                        {{ 'error.field' | translate }}
-                                      </mat-error>
-                                    </div>
-                                    <div class="input-group-icon input-ic-padding ">
-                                      <span class="text-center ">{{'general.kg' | translate}} </span>
-                                    </div>
-                                  </div>
-                                  <div class="input-group" fxFlex>
-                                    <div class="input-group-title">{{'base.item.shelfLife' | translate}}</div>
-                                    <div class="input-group-area">
-                                      <input formControlName="shelfLife">
-                                      <mat-error *ngIf="dataItemFormControls.shelfLife.invalid">{{ 'error.field' |
-                                        translate
-                                        }}
-                                      </mat-error>
-                                    </div>
-                                    <div class="input-group-icon">{{'general.days' | translate}}</div>
-                                  </div>
-
-                                  <div class="prefix-suffix-field">
-                                    <div class="prefix-data">
-                                      {{'base.item.shelfLife' | translate}}
-                                    </div>
-                                    <mat-form-field appearance="outline">
-                                      <mat-label>{{ 'base.item.pickOption' | translate }}</mat-label>
-                                      <mat-select formControlName="pickOption">
-                                      </mat-select>
-                                    </mat-form-field>
-                                  </div>
-
-                                </div>
+                          <div fxFex fxLayout="column" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                            <div class="prefix-suffix-field">
+                              <div class="prefix-data">
+                                {{'base.item.sku' | translate}}
                               </div>
-                              <div fxFlex.gt-sm="50%" fxFlex class="pale-border-box">
-                                <b>{{'base.item.dimension' | translate}}</b>
-                                <div fxFex fxLayout="column" fxLayout.lt-sm="column" fxLayoutGap="10px">
-                                  <div class="input-group" fxFlex.lt-sm="50">
-                                    <div class="input-group-title">{{'base.item.length' | translate}}</div>
-                                    <div class="input-group-area">
-                                      <input type="text" value="0">
-
-                                    </div>
-                                    <div class="input-group-icon input-ic-padding-b">{{'general.mm' | translate}}</div>
-                                  </div>
-                                  <div class="input-group" fxFlex.lt-sm="50">
-                                    <div class="input-group-title">{{'base.item.breadth' | translate}}</div>
-                                    <div class="input-group-area"><input type="text" value="0">
-
-                                    </div>
-                                    <div class="input-group-icon input-ic-padding-b">{{'general.mm' | translate}}</div>
-                                  </div>
-                                  <div class="input-group" fxFlex.lt-sm="50">
-                                    <div class="input-group-title">{{'base.item.height' | translate}}</div>
-                                    <div class="input-group-area"><input type="text" value="0">
-
-                                    </div>
-                                    <div class="input-group-icon input-ic-padding-b">{{'general.mm' | translate}}</div>
-                                  </div>
-                                  <div class="input-group" fxFlex.lt-sm="50">
-                                    <div class="input-group-title">{{'base.item.volume' | translate}}</div>
-                                    <div class="input-group-area"><input type="text" value="0">
-
-                                    </div>
-                                    <div class="input-group-icon">{{'general.cbm' | translate}}</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div fxFlex.gt-sm="30%">
-                            <div fxLayout="column">
-
-
-                              <div class="pale-border-box" fxFlex>
-                                <h4><b>{{
-                                    'base.item.controls' | translate
-                                    }}</b></h4>
-                                <p>
-                                  <mat-checkbox color="primary" formControlName="validateStorageType">{{
-                                    'base.item.validateStorageType' | translate
-                                    }}</mat-checkbox>
-                                </p>
-                                <p>
-                                  <mat-checkbox color="primary" formControlName="inventoryAlert">{{
-                                    'base.item.inventoryAlert' | translate
-                                    }}</mat-checkbox>
-                                </p>
-                                <p>
-                                  <mat-checkbox color="warn" formControlName="inactive">{{
-                                    'base.item.inactive' | translate
-                                    }}</mat-checkbox>
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-
-                        </div>
-
-
-                      </div>
-
-                    </div>
-                    <div fxLayout="row" fxLayoutAlign="stretch" fxLayoutGap="10px">
-                      <div fxFlex class="pale-border-box">
-                        <b>{{'base.item.inventoryAudit' | translate}}</b>
-                        <div fxLayout.gt-sm="row" fxLayout.lt-sm="column">
-                          <div fxFlex.gt-sm="50%" fxFlex>
-                            <p>{{'base.item.lastAudit' | translate}} : </p>
-                          </div>
-                          <div fxFlex.gt-sm="50%" fxFlex>
-                            <p>{{'base.item.currentAudit' | translate}} : </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </mat-card-content>
-                </mat-card>
-              </mat-tab>
-              <mat-tab label="WH. Control">
-                <mat-card class="wh-control-table overflow-x">
-                  <mat-card-content>
-                    <table class="site-table mat-elevation-z8">
-                      <thead>
-                        <tr>
-                          <th></th>
-                          <th>{{ 'base.item.WHControl.code' | translate}}</th>
-                          <th>{{ 'base.item.WHControl.name' | translate}}</th>
-                          <th>{{ 'base.item.WHControl.customers' | translate}}</th>
-                          <th>{{ 'base.item.WHControl.vendors' | translate}}</th>
-                          <th></th>
-                          <th>{{ 'base.item.WHControl.stpref' | translate}}</th>
-                          <th>{{ 'base.item.WHControl.sku' | translate}}</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <ng-template let-control ngFor [ngForOf]="whControlDataSource">
-                          <tr>
-                            <td class="checkbox-column">
-                              <mat-checkbox color="primary"></mat-checkbox>
-                            </td>
-                            <td style="margin-left: 5px !important;">{{control.code}}</td>
-                            <td style="margin-left: 5px !important;">{{control.name}}</td>
-                            <td class="checkbox-column">
-                              <mat-checkbox color="primary"></mat-checkbox>
-                            </td>
-                            <td class="checkbox-column">
-                              <mat-checkbox color="primary"></mat-checkbox>
-                            </td>
-                            <td style="width: 70px; text-align: center;">
-                              <button type="button" (click)="openownerDialog()" mat-icon-button
-                                aria-label="Example icon button with a vertical three dot icon">
-                                <mat-icon>more_horiz</mat-icon>
-                              </button>
-                            </td>
-                            <td style="width: 70px; text-align: center;">
-                              <button type="button" (click)="openstoreDialog()" mat-icon-button
-                                aria-label="Example icon button with a vertical three dot icon">
-                                <mat-icon>more_horiz</mat-icon>
-                              </button>
-                            </td>
-                            <td style="width:100px">{{control.sku}}</td>
-                          </tr>
-                        </ng-template>
-                      </tbody>
-                    </table>
-                  </mat-card-content>
-                </mat-card>
-              </mat-tab>
-
-              <mat-tab label="Inventory Alert">
-                <mat-card class="inventory-alert-table overflow-x">
-                  <mat-card-content>
-                    <table class="site-table text-center w-100 mat-elevation-z8">
-                      <thead>
-                        <tr>
-                          <th></th>
-                          <th colspan="3" style="text-align: center;">{{ 'base.item.InventoryAlert.level' | translate}}
-                          </th>
-                          <th></th>
-                        </tr>
-                        <tr>
-                          <th>{{ 'base.item.InventoryAlert.warehouse' | translate}}</th>
-                          <th>{{ 'base.item.InventoryAlert.min' | translate}}</th>
-                          <th>{{ 'base.item.InventoryAlert.reorder' | translate}}</th>
-                          <th>{{ 'base.item.InventoryAlert.max' | translate}}</th>
-                          <th>{{ 'base.item.InventoryAlert.lastalert' | translate}}</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <ng-template let-control ngFor [ngForOf]=" InventoryAlertDataSource">
-                          <tr>
-                            <td class="lookup-column">
-                              <!-- <input type="text" style="width: 100%;" [value]="control.warehouse"> -->
                               <mat-form-field appearance="outline">
-                                <mat-label>{{ 'base.item.warehouse' | translate }}</mat-label>
-                                <mat-select disableOptionCentering panelClass="slim-select-field">
-                                  <mat-option>Warehouse 1</mat-option>
-                                  <mat-option>Warehouse 2</mat-option>
+                                <mat-label>{{ 'base.item.unit' | translate }}</mat-label>
+                                <mat-select formControlName="unit">
                                 </mat-select>
                               </mat-form-field>
-                            </td>
-                            <td> <input type="number" style="width: 100%;" [value]="control.min"></td>
-                            <td> <input type="number" style="width: 100%;" [value]="control.reorder"></td>
-                            <td> <input type="number" style="width: 100%;" [value]="control.max"></td>
-                            <td>{{control.lastalert}}</td>
-                          </tr>
-                        </ng-template>
-                      </tbody>
-                    </table>
-                  </mat-card-content>
-                </mat-card>
-              </mat-tab>
-              <mat-tab label="Matrix">
-                <mat-card class="matrix-table overflow-x">
-                  <mat-card-content>
-                    <table class="site-table text-center w-100 mat-elevation-z8">
-                      <thead>
-                        <tr>
-                          <th></th>
-                          <th colspan="2">{{ 'base.item.matrix.from' | translate}}</th>
-                          <th></th>
-                          <th colspan="7">{{ 'base.item.matrix.to' | translate}}</th>
-                        </tr>
-                        <tr>
-                          <th>#</th>
-                          <th>{{ 'base.item.matrix.value' | translate}}</th>
-                          <th>{{ 'base.item.matrix.unit' | translate}}</th>
-                          <th></th>
-                          <th>{{ 'base.item.matrix.value' | translate}}</th>
-                          <th>{{ 'base.item.matrix.unit' | translate}}</th>
-                          <th>{{ 'base.item.matrix.weight' | translate}}</th>
-                          <th>{{ 'base.item.matrix.length' | translate}}</th>
-                          <th>{{ 'base.item.matrix.breadth' | translate}}</th>
-                          <th>{{ 'base.item.matrix.height' | translate}}</th>
-                          <th>{{ 'base.item.matrix.volume' | translate}}</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <ng-template let-control ngFor [ngForOf]="MatrixDataSource">
-                          <td></td>
-                          <td><input type="number" style="width: 100%;" [value]="control.from.value"></td>
-                          <td><input type="text" style="width: 100%;" [value]="control.from.unit"></td>
-                          <td></td>
-                          <td><input disabled type="number" style="width: 100%;" [value]="control.to.value"></td>
-                          <td><input type="text" style="width: 100%;" [value]="control.to.unit"></td>
-                          <td><input type="number" style="width: 100%;" [value]="control.to.weight"></td>
-                          <td><input type="number" style="width: 100%;" [value]="control.to.length"></td>
-                          <td><input type="number" style="width: 100%;" [value]="control.to.breadth"></td>
-                          <td><input type="number" style="width: 100%;" [value]="control.to.height"></td>
-                          <td><input disabled type="number" style="width: 100%;" [value]="control.to.volume"></td>
-                        </ng-template>
-                      </tbody>
-                    </table>
-                  </mat-card-content>
-                </mat-card>
-              </mat-tab>
-            </mat-tab-group>
+                            </div>
 
-          </mat-card-content>
-        </mat-card>
-      </div>
-      <mat-card>
-        <mat-card-content>
+                            <div class="input-group" fxFlex>
+                              <div class="input-group-title">{{'base.item.unitWeight' | translate}}</div>
+                              <div class="input-group-area">
+                                <input formControlName="unitWeight">
+                                <mat-error *ngIf="dataItemFormControls.unitWeight.invalid">
+                                  {{ 'error.field' | translate }}
+                                </mat-error>
+                              </div>
+                              <div class="input-group-icon input-ic-padding ">
+                                <span class="text-center ">{{'general.kg' | translate}} </span>
+                              </div>
+                            </div>
 
-          <div fxLayout.gt-sm="row" fxLayoutAlign="space-between" class="page-import-bottom">
-            <div fxShow fxHide.gt-sm fxLayout.gt-sm="row" class="page-import-export-button smaller-button-container-40">
-              <button mat-raised-button color="primary" type="submit">
-                <mat-icon>cloud_upload</mat-icon>
-              </button>
-              <button mat-raised-button color="primary" type="submit">
-                <mat-icon>cloud_download</mat-icon>
-              </button>
-            </div>
-          </div>
+                            <div class="input-group" fxFlex>
+                              <div class="input-group-title">{{'base.item.shelfLife' | translate}}</div>
+                              <div class="input-group-area">
+                                <input formControlName="shelfLife">
+                                <mat-error *ngIf="dataItemFormControls.shelfLife.invalid">{{ 'error.field' |
+                                  translate
+                                  }}
+                                </mat-error>
+                              </div>
+                              <div class="input-group-icon">{{'general.days' | translate}}</div>
+                            </div>
 
-          <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap.lt-md="30px"
-            fxLayoutAlign="space-between center">
-            <div fxFlexOrder.lt-md="2">
-              <ibe-data-audit insertedBy=""></ibe-data-audit>
-            </div>
+                            <div class="prefix-suffix-field">
+                              <div class="prefix-data">
+                                {{'base.item.pickOption' | translate}}
+                              </div>
+                              <mat-form-field appearance="outline">
+                                <mat-label>{{ 'base.item.pickOption' | translate }}</mat-label>
+                                <mat-select formControlName="pickOption">
+                                </mat-select>
+                              </mat-form-field>
+                            </div>
 
-            <div class="form-four-button-container" fxFlexOrder.lt-md="1">
-              <div fxLayout.gt-sm="row">
-                <button fxFlex mat-raised-button color="primary" type="submit" (click)="saveItemData()">
-                  <mat-icon>task_alt</mat-icon>
-                </button>
-                <button fxFlex mat-raised-button color="warn" type="button" (click)="deleteItemData()">
-                  <mat-icon>remove_circle_outline</mat-icon>
-                </button>
-                <button fxFlex mat-raised-button color="accent" type="reset" (click)=" resetItemDataForm()">
-                  <mat-icon>loop</mat-icon>
-                </button>
+                          </div>
+                        </div>
+                        <div fxFlex.gt-sm="50%" fxFlex class="pale-border-box">
+                          <p><b>{{'base.item.dimension' | translate}}</b></p>
+                          <div fxFex fxLayout="column" fxLayout.lt-sm="column" fxLayoutGap="10px">
+                            <div class="input-group" fxFlex.lt-sm="50">
+                              <div class="input-group-title">{{'base.item.length' | translate}}</div>
+                              <div class="input-group-area">
+                                <input type="text" value="0">
+
+                              </div>
+                              <div class="input-group-icon input-ic-padding-b">{{'general.mm' | translate}}</div>
+                            </div>
+                            <div class="input-group" fxFlex.lt-sm="50">
+                              <div class="input-group-title">{{'base.item.breadth' | translate}}</div>
+                              <div class="input-group-area"><input type="text" value="0">
+
+                              </div>
+                              <div class="input-group-icon input-ic-padding-b">{{'general.mm' | translate}}</div>
+                            </div>
+                            <div class="input-group" fxFlex.lt-sm="50">
+                              <div class="input-group-title">{{'base.item.height' | translate}}</div>
+                              <div class="input-group-area"><input type="text" value="0">
+
+                              </div>
+                              <div class="input-group-icon input-ic-padding-b">{{'general.mm' | translate}}</div>
+                            </div>
+                            <div class="input-group" fxFlex.lt-sm="50">
+                              <div class="input-group-title">{{'base.item.volume' | translate}}</div>
+                              <div class="input-group-area"><input type="text" value="0">
+
+                              </div>
+                              <div class="input-group-icon">{{'general.cbm' | translate}}</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div fxFlex.gt-sm="30%">
+                      <div fxLayout="column">
+
+
+                        <div class="pale-border-box" fxFlex>
+                          <p><b>{{
+                              'base.item.controls' | translate
+                              }}</b></p>
+                          <p>
+                            <mat-checkbox color="primary" formControlName="validateStorageType">{{
+                              'base.item.validateStorageType' | translate
+                              }}</mat-checkbox>
+                          </p>
+                          <p>
+                            <mat-checkbox color="primary" formControlName="inventoryAlert">{{
+                              'base.item.inventoryAlert' | translate
+                              }}</mat-checkbox>
+                          </p>
+                          <p>
+                            <mat-checkbox color="warn" formControlName="inactive">{{
+                              'base.item.inactive' | translate
+                              }}</mat-checkbox>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
-            </div>
+              <div fxLayout="row" fxLayoutAlign="stretch" fxLayoutGap="10px">
+                <div fxFlex class="pale-border-box">
+                  <b>{{'base.item.inventoryAudit' | translate}}</b>
+                  <div fxLayout.gt-sm="row" fxLayout.lt-sm="column">
+                    <div fxFlex.gt-sm="50%" fxFlex>
+                      <p>{{'base.item.lastAudit' | translate}} : </p>
+                    </div>
+                    <div fxFlex.gt-sm="50%" fxFlex>
+                      <p>{{'base.item.currentAudit' | translate}} : </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </mat-tab>
+
+            <mat-tab label="WH. Control">
+              <table class="site-table mat-elevation-z8">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>{{ 'base.item.WHControl.code' | translate}}</th>
+                    <th>{{ 'base.item.WHControl.name' | translate}}</th>
+                    <th>{{ 'base.item.WHControl.customers' | translate}}</th>
+                    <th>{{ 'base.item.WHControl.vendors' | translate}}</th>
+                    <th></th>
+                    <th>{{ 'base.item.WHControl.stpref' | translate}}</th>
+                    <th>{{ 'base.item.WHControl.sku' | translate}}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <ng-template let-control ngFor [ngForOf]="whControlDataSource">
+                    <tr>
+                      <td class="checkbox-column">
+                        <mat-checkbox color="primary"></mat-checkbox>
+                      </td>
+                      <td style="margin-left: 5px !important;">{{control.code}}</td>
+                      <td style="margin-left: 5px !important;">{{control.name}}</td>
+                      <td class="checkbox-column">
+                        <mat-checkbox color="primary"></mat-checkbox>
+                      </td>
+                      <td class="checkbox-column">
+                        <mat-checkbox color="primary"></mat-checkbox>
+                      </td>
+                      <td style="width: 70px; text-align: center;">
+                        <button type="button" (click)="openownerDialog()" mat-icon-button
+                          aria-label="Example icon button with a vertical three dot icon">
+                          <mat-icon>more_horiz</mat-icon>
+                        </button>
+                      </td>
+                      <td style="width: 70px; text-align: center;">
+                        <button type="button" (click)="openstoreDialog()" mat-icon-button
+                          aria-label="Example icon button with a vertical three dot icon">
+                          <mat-icon>more_horiz</mat-icon>
+                        </button>
+                      </td>
+                      <td style="width:100px">{{control.sku}}</td>
+                    </tr>
+                  </ng-template>
+                </tbody>
+              </table>
+            </mat-tab>
+
+            <mat-tab label="Inventory Alert">
+              <table class="site-table text-center w-100 mat-elevation-z8">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th colspan="3" style="text-align: center;">{{ 'base.item.InventoryAlert.level' | translate}}
+                    </th>
+                    <th></th>
+                  </tr>
+                  <tr>
+                    <th>{{ 'base.item.InventoryAlert.warehouse' | translate}}</th>
+                    <th>{{ 'base.item.InventoryAlert.min' | translate}}</th>
+                    <th>{{ 'base.item.InventoryAlert.reorder' | translate}}</th>
+                    <th>{{ 'base.item.InventoryAlert.max' | translate}}</th>
+                    <th>{{ 'base.item.InventoryAlert.lastalert' | translate}}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <ng-template let-control ngFor [ngForOf]=" InventoryAlertDataSource">
+                    <tr>
+                      <td class="lookup-column">
+                        <!-- <input type="text" style="width: 100%;" [value]="control.warehouse"> -->
+                        <mat-form-field appearance="outline">
+                          <mat-label>{{ 'base.item.warehouse' | translate }}</mat-label>
+                          <mat-select disableOptionCentering panelClass="slim-select-field">
+                            <mat-option>Warehouse 1</mat-option>
+                            <mat-option>Warehouse 2</mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                      </td>
+                      <td> <input type="number" style="width: 100%;" [value]="control.min"></td>
+                      <td> <input type="number" style="width: 100%;" [value]="control.reorder"></td>
+                      <td> <input type="number" style="width: 100%;" [value]="control.max"></td>
+                      <td>{{control.lastalert}}</td>
+                    </tr>
+                  </ng-template>
+                </tbody>
+              </table>
+            </mat-tab>
+
+            <mat-tab label="Matrix">
+              <table class="site-table text-center w-100 mat-elevation-z8">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th colspan="2">{{ 'base.item.matrix.from' | translate}}</th>
+                    <th></th>
+                    <th colspan="7">{{ 'base.item.matrix.to' | translate}}</th>
+                  </tr>
+                  <tr>
+                    <th>#</th>
+                    <th>{{ 'base.item.matrix.value' | translate}}</th>
+                    <th>{{ 'base.item.matrix.unit' | translate}}</th>
+                    <th></th>
+                    <th>{{ 'base.item.matrix.value' | translate}}</th>
+                    <th>{{ 'base.item.matrix.unit' | translate}}</th>
+                    <th>{{ 'base.item.matrix.weight' | translate}}</th>
+                    <th>{{ 'base.item.matrix.length' | translate}}</th>
+                    <th>{{ 'base.item.matrix.breadth' | translate}}</th>
+                    <th>{{ 'base.item.matrix.height' | translate}}</th>
+                    <th>{{ 'base.item.matrix.volume' | translate}}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <ng-template let-control ngFor [ngForOf]="MatrixDataSource">
+                    <td></td>
+                    <td><input type="number" style="width: 100%;" [value]="control.from.value"></td>
+                    <td><input type="text" style="width: 100%;" [value]="control.from.unit"></td>
+                    <td></td>
+                    <td><input disabled type="number" style="width: 100%;" [value]="control.to.value"></td>
+                    <td><input type="text" style="width: 100%;" [value]="control.to.unit"></td>
+                    <td><input type="number" style="width: 100%;" [value]="control.to.weight"></td>
+                    <td><input type="number" style="width: 100%;" [value]="control.to.length"></td>
+                    <td><input type="number" style="width: 100%;" [value]="control.to.breadth"></td>
+                    <td><input type="number" style="width: 100%;" [value]="control.to.height"></td>
+                    <td><input disabled type="number" style="width: 100%;" [value]="control.to.volume"></td>
+                  </ng-template>
+                </tbody>
+              </table>
+            </mat-tab>
+          </mat-tab-group>
+        </section>
+      </div>
+
+      <section class="data-tab-footer">
+
+        <div fxLayout.gt-sm="row" class="page-import-bottom">
+          <div fxShow fxHide.gt-sm fxLayout.gt-sm="row" class="smaller-button-container-40">
+            <button mat-raised-button color="primary" type="submit">
+              <mat-icon>cloud_upload</mat-icon>
+            </button>
+            <button mat-raised-button color="primary" type="submit">
+              <mat-icon>cloud_download</mat-icon>
+            </button>
+          </div>
+        </div>
+
+        <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap.lt-md="30px" fxLayoutAlign="space-between center">
+          <div fxFlexOrder.lt-md="2">
+            <ibe-data-audit insertedBy=""></ibe-data-audit>
           </div>
 
-        </mat-card-content>
-      </mat-card>
+          <div class="form-four-button-container" fxFlexOrder.lt-md="1">
+            <div fxLayout.gt-sm="row">
+              <button fxFlex mat-raised-button color="primary" type="submit" (click)="saveItemData()">
+                <mat-icon>task_alt</mat-icon>
+              </button>
+              <button fxFlex mat-raised-button color="warn" type="button" (click)="deleteItemData()">
+                <mat-icon>remove_circle_outline</mat-icon>
+              </button>
+              <button fxFlex mat-raised-button color="accent" type="reset" (click)=" resetItemDataForm()">
+                <mat-icon>loop</mat-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </form>
   </mat-tab>
   <mat-tab label="Search">
     <form fxLayout="column" [formGroup]="searchItemForm" (ngSubmit)="onSearchItemSubmit()" class="slim-form">
-      <mat-card class="filter-container overflow-x">
-        <mat-card-content>
+      <section class="bordered-section">
 
-          <div class="input-row" fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
-            <mat-form-field appearance="outline" fxFlex="33" fxLayout.lt-sm="50">
-              <mat-label>{{ 'base.item.item' | translate }} </mat-label>
-              <input matInput type="text" formControlName="item" />
-              <mat-error *ngIf="searchItemFormControls.item.invalid">
-                {{ 'error.field' | translate }}</mat-error>
-            </mat-form-field>
+        <div class="row" fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+          <mat-form-field appearance="outline" fxFlex="32.8">
+            <mat-label>{{ 'base.item.item' | translate }} </mat-label>
+            <input matInput type="text" formControlName="item" />
+            <mat-error *ngIf="searchItemFormControls.item.invalid">
+              {{ 'error.field' | translate }}</mat-error>
+          </mat-form-field>
 
-            <mat-form-field appearance="outline" fxFlex>
-              <mat-label>{{ 'base.item.description' | translate }} </mat-label>
-              <input matInput type="text" formControlName="description" />
-              <mat-error *ngIf="searchItemFormControls.description.invalid">
-                {{ 'error.field' | translate }}</mat-error>
-            </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>{{ 'base.item.description' | translate }} </mat-label>
+            <input matInput type="text" formControlName="description" />
+            <mat-error *ngIf="searchItemFormControls.description.invalid">
+              {{ 'error.field' | translate }}</mat-error>
+          </mat-form-field>
 
+        </div>
+
+        <div class="row" fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>{{
+              'base.item.warehouse' | translate
+              }}</mat-label>
+            <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="warehouse">
+            </mat-select>
+            <mat-error *ngIf="searchItemFormControls.warehouse.invalid">{{
+              'error.field' | translate
+              }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>{{
+              'base.item.sku' | translate
+              }}</mat-label>
+            <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="sku">
+            </mat-select>
+            <mat-error *ngIf="searchItemFormControls.sku.invalid">{{
+              'error.field' | translate
+              }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>{{ 'base.item.itemType' | translate }} </mat-label>
+            <input matInput type="text" formControlName="itemType" />
+            <mat-error *ngIf="searchItemFormControls.itemType.invalid">
+              {{ 'error.field' | translate }}</mat-error>
+          </mat-form-field>
+
+        </div>
+
+        <div class="row" fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap="10px">
+
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>{{ 'base.item.ownerCode' | translate }} </mat-label>
+            <input matInput type="text" formControlName="ownerCode" />
+            <mat-error *ngIf="searchItemFormControls.ownerCode.invalid">
+              {{ 'error.field' | translate }}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" fxFlex>
+            <mat-label>{{ 'base.item.scanCode' | translate }} </mat-label>
+            <input matInput type="text" formControlName="scanCode" />
+            <mat-error *ngIf="searchItemFormControls.scanCode.invalid">
+              {{ 'error.field' | translate }}</mat-error>
+          </mat-form-field>
+
+        </div>
+
+        <div class="row" fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap="10px">
+
+          <div fxFlex="15">
+            <mat-checkbox color="primary" formControlName="validateStorageType">
+              {{ 'base.item.validateStorageType' | translate }}
+            </mat-checkbox>
           </div>
 
-          <div class="input-row" fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
-
-            <mat-form-field appearance="outline" fxFlex>
-              <mat-label>{{
-                'base.item.warehouse' | translate
-                }}</mat-label>
-              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="warehouse">
-              </mat-select>
-              <mat-error *ngIf="searchItemFormControls.warehouse.invalid">{{
-                'error.field' | translate
-                }}</mat-error>
-            </mat-form-field>
-
-            <mat-form-field appearance="outline" fxFlex>
-              <mat-label>{{
-                'base.item.sku' | translate
-                }}</mat-label>
-              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="sku">
-              </mat-select>
-              <mat-error *ngIf="searchItemFormControls.sku.invalid">{{
-                'error.field' | translate
-                }}</mat-error>
-            </mat-form-field>
-
-            <mat-form-field appearance="outline" fxFlex>
-              <mat-label>{{ 'base.item.itemType' | translate }} </mat-label>
-              <input matInput type="text" formControlName="itemType" />
-              <mat-error *ngIf="searchItemFormControls.itemType.invalid">
-                {{ 'error.field' | translate }}</mat-error>
-            </mat-form-field>
-
+          <div fxFlex="10">
+            <mat-checkbox color="primary" formControlName="inventoryAlert">
+              {{ 'base.item.inventoryAlert' | translate }}
+            </mat-checkbox>
           </div>
 
-          <div class="input-row" fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap="10px">
-
-            <mat-form-field appearance="outline" fxFlex>
-              <mat-label>{{ 'base.item.ownerCode' | translate }} </mat-label>
-              <input matInput type="text" formControlName="ownerCode" />
-              <mat-error *ngIf="searchItemFormControls.ownerCode.invalid">
-                {{ 'error.field' | translate }}</mat-error>
-            </mat-form-field>
-
-            <mat-form-field appearance="outline" fxFlex>
-              <mat-label>{{ 'base.item.scanCode' | translate }} </mat-label>
-              <input matInput type="text" formControlName="scanCode" />
-              <mat-error *ngIf="searchItemFormControls.scanCode.invalid">
-                {{ 'error.field' | translate }}</mat-error>
-            </mat-form-field>
-
+          <div fxFlex="10">
+            <mat-checkbox color="primary" formControlName="inactive">
+              {{ 'base.item.inactive' | translate }}
+            </mat-checkbox>
           </div>
 
-          <div class="input-row" fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap="10px">
-
-            <div fxFlex="15">
-              <mat-checkbox color="primary" formControlName="validateStorageType">
-                {{ 'base.item.validateStorageType' | translate }}
-              </mat-checkbox>
-            </div>
-
-            <div fxFlex="10">
-              <mat-checkbox color="primary" formControlName="inventoryAlert">
-                {{ 'base.item.inventoryAlert' | translate }}
-              </mat-checkbox>
-            </div>
-
-            <div fxFlex="10">
-              <mat-checkbox color="primary" formControlName="inactive">
-                {{ 'base.item.inactive' | translate }}
-              </mat-checkbox>
-            </div>
-
-            <div fxFlex="10">
-              <mat-checkbox color="primary" formControlName="instock">
-                {{ 'base.item.instock' | translate }}
-              </mat-checkbox>
-            </div>
-
+          <div fxFlex="10">
+            <mat-checkbox color="primary" formControlName="instock">
+              {{ 'base.item.instock' | translate }}
+            </mat-checkbox>
           </div>
 
-        </mat-card-content>
-      </mat-card>
-      <mat-card class="search-container">
-        <mat-card-content>
-          <div class="form-button-container">
-            <button mat-raised-button color="primary" type="submit">
-              <mat-icon>search</mat-icon>
-            </button>
-            <button mat-raised-button color="accent" type="reset" (click)="resetItemSearchForm()">
-              <mat-icon>restart_alt</mat-icon>
-            </button>
-          </div>
-        </mat-card-content>
-      </mat-card>
+        </div>
+      </section>
+
+      <section class="search-tab-footer">
+        <div class="form-button-container">
+          <button mat-raised-button color="primary" type="submit">
+            <mat-icon>search</mat-icon>
+          </button>
+          <button mat-raised-button color="accent" type="reset" (click)="resetItemSearchForm()">
+            <mat-icon>restart_alt</mat-icon>
+          </button>
+        </div>
+      </section>
     </form>
-    <mat-card class="mat-elevation-z10">
-      <mat-card-content class="overflow-x">
-        <table mat-table [dataSource]="searchDataSource" class="mat-elevation-z8 site-table">
-          <ng-container matColumnDef="item">
-            <th mat-header-cell *matHeaderCellDef>Item</th>
-            <td mat-cell *matCellDef="let element; let idx=index">
-              <button mat-button disableRipple class="primary-button link-button"
-                (click)="searchItemClick($event, element, idx)">{{ element.item }}</button>
-            </td>
-          </ng-container>
-          <ng-container matColumnDef="description">
-            <th style="width: 40%;" mat-header-cell *matHeaderCellDef>Description</th>
-            <td style="width: 40%;" mat-cell *matCellDef="let element">
-              {{ element.description }}
-            </td>
-          </ng-container>
-          <ng-container matColumnDef="itemType">
-            <th mat-header-cell *matHeaderCellDef> Item Type </th>
-            <td mat-cell *matCellDef="let element">
-              {{ element.itemType }}
-            </td>
-          </ng-container>
-          <ng-container matColumnDef="sku">
-            <th mat-header-cell *matHeaderCellDef>SKU</th>
-            <td mat-cell *matCellDef="let element">
-              {{ element.sku }}
-            </td>
-          </ng-container>
 
-          <ng-container matColumnDef="inactive">
-            <th style="width: 75px" mat-header-cell *matHeaderCellDef>Inactive</th>
-            <td style="width: 75px" mat-cell *matCellDef="let element">
-              {{ element.inactive }}
-            </td>
-          </ng-container>
-          <ng-container matColumnDef="instock">
-            <th style="width: 90px;" mat-header-cell *matHeaderCellDef>In Stock</th>
-            <td style="width: 90px;" mat-cell *matCellDef="let element">
-              {{ element.instock }}
-            </td>
-          </ng-container>
+    <section class="bordered-section">
+      <table mat-table [dataSource]="searchDataSource" class="mat-elevation-z8 site-table">
+        <ng-container matColumnDef="item">
+          <th mat-header-cell *matHeaderCellDef>Item</th>
+          <td mat-cell *matCellDef="let element; let idx=index">
+            <button mat-button disableRipple class="primary-button link-button"
+              (click)="searchItemClick($event, element, idx)">{{ element.item }}</button>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="description">
+          <th style="width: 40%;" mat-header-cell *matHeaderCellDef>Description</th>
+          <td style="width: 40%;" mat-cell *matCellDef="let element">
+            {{ element.description }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="itemType">
+          <th mat-header-cell *matHeaderCellDef> Item Type </th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.itemType }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="sku">
+          <th mat-header-cell *matHeaderCellDef>SKU</th>
+          <td mat-cell *matCellDef="let element">
+            {{ element.sku }}
+          </td>
+        </ng-container>
 
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-        </table>
-        <small *ngIf="searchDataSource.length === 0" class="empty-table">
-          No records found
-        </small>
-      </mat-card-content>
-    </mat-card>
+        <ng-container matColumnDef="inactive">
+          <th style="width: 75px" mat-header-cell *matHeaderCellDef>Inactive</th>
+          <td style="width: 75px" mat-cell *matCellDef="let element">
+            {{ element.inactive }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="instock">
+          <th style="width: 90px;" mat-header-cell *matHeaderCellDef>In Stock</th>
+          <td style="width: 90px;" mat-cell *matCellDef="let element">
+            {{ element.instock }}
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+      <small *ngIf="searchDataSource.length === 0" class="empty-table">
+        No records found
+      </small>
+    </section>
   </mat-tab>
 </mat-tab-group>

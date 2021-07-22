@@ -4,10 +4,10 @@
   background-color: $site-primary;
   color: $site-white;
   border-left: 1px solid $site-white;
-  font-size: 15px;
+  font-size: $fontsize;
   padding-left: 10px !important;
   @include breakpoint(mobileonly) {
-    font-size: 15px;
+    font-size: $fontsize;
   }
 }
 
@@ -23,7 +23,7 @@
   justify-content: center;
   margin-left: 1px;
   padding: 7px 0;
-  font-size: 16px;
+  font-size: $fontsize;
 }
 tr.mat-header-row {
   height: 28px !important;
@@ -44,13 +44,18 @@ tr.mat-row {
     font-weight: normal;
     padding-left: 0.25rem;
     text-align: left;
+    font-size: $fontsize;
   }
   td {
     border: 1px solid $site-light-gray;
     padding-left: 0.25rem;
+    font-size: $fontsize;
   }
   .column-60 {
     width: 60px;
+  }
+  .column-80 {
+    width: 80px;
   }
   .column-100 {
     width: 100px;
@@ -79,14 +84,14 @@ tr.mat-row {
     background-color: $site-light-gray;
     border: 1px solid $site-light-gray;
     border-radius: 2px;
-    font-size: 0.6rem;
+    font-size: $fontsize;
     height: 20px;
     text-align: center;
     &:hover {
       cursor: pointer;
     }
     span {
-      font-size: 12px;
+      font-size: $fontsize;
       text-transform: uppercase;
     }
   }
@@ -94,9 +99,9 @@ tr.mat-row {
     text-align: center;
     width: 90px;
     button {
-      transform: scale(0.75);
+      transform: scale(0.65);
       &:hover {
-        transform: scale(0.85);
+        transform: scale(0.75);
       }
     }
   }

@@ -211,7 +211,7 @@
     <form ibeFocusInvalidInput [formGroup]="searchCompanyForm" (ngSubmit)="onSearchCompanySubmit()" class="slim-form">
       <section class="bordered-section">
         <div class="row" fxLayout="row" fxLayoutGap="5px">
-          <mat-form-field appearance="outline" fxFlex="43">
+          <mat-form-field appearance="outline" fxFlex="43" fxFlex.lt-sm="25">
             <mat-label>{{
                   'setup.company.companyCode' | translate
                   }}</mat-label>

@@ -2,132 +2,122 @@
     <h2>{{'menu.queryStock' | translate}}</h2>
 </div>
 
-<mat-card class="page-content w-100">
-    <mat-card-content>
-        <form fxLayout="column" [formGroup]="stockForm" (ngSubmit)="onStockSubmit()" class="slim-form">
-            <div>
-                <mat-card>
-                    <mat-card-content>
-                        <div fxLayout="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
-                            <div fxLayout="row" fxLayoutGap="5px" fxFlex>
-                                <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm="50">
-                                    <mat-label>{{'query.stock.warehouse' | translate}}</mat-label>
-                                    <input matInput type="text" required formControlName="warehouse" />
-                                    <mat-error *ngIf="dataStockFormControls.warehouse.invalid">
-                                        {{ 'error.field' | translate }}
-                                    </mat-error>
-                                </mat-form-field>
-                                <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm="50">
-                                    <mat-label>{{'query.stock.owner' | translate}}</mat-label>
-                                    <input matInput type="text" formControlName="owner" />
-                                    <mat-icon matSuffix type="button" (click)="openOwnerDialog()">search</mat-icon>
-                                    <mat-error *ngIf="dataStockFormControls.owner.invalid">
-                                        {{ 'error.field' | translate }}
-                                    </mat-error>
-                                </mat-form-field>
-                            </div>
-                        </div>
-                        <div fxLayout="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
-                            <div fxLayout="row" fxLayoutGap="5px" fxFlex>
-                                <mat-form-field appearance="outline" fxFlex="60" fxFlex.lt-sm="50">
-                                    <mat-label>{{'query.stock.item' | translate}}</mat-label>
-                                    <input matInput type="text" formControlName="item" />
-                                    <mat-error *ngIf="dataStockFormControls.item.invalid">
-                                        {{ 'error.field' | translate }}
-                                    </mat-error>
-                                </mat-form-field>
-                                <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="50">
-                                    <mat-label>{{'query.stock.batchNo' | translate}}</mat-label>
-                                    <input matInput type="text" formControlName="batchNo" />
-                                    <mat-error *ngIf="dataStockFormControls.batchNo.invalid">
-                                        {{ 'error.field' | translate }}
-                                    </mat-error>
-                                </mat-form-field>
-                            </div>
-                            <div class="second-column" fxLayout="row" fxLayoutGap="5px" fxFlex="33">
-                                <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm>
-                                    <mat-label>{{'query.stock.poRefNo' | translate}}</mat-label>
-                                    <input matInput type="text" formControlName="poRefNo" />
-                                    <mat-error *ngIf="dataStockFormControls.poRefNo.invalid">
-                                        {{ 'error.field' | translate }}
-                                    </mat-error>
-                                </mat-form-field>
-                            </div>
-                        </div>
-                        <div fxLayout="row" class="input-row" fxLayout.lt-sm="column" fxLayoutGap="5px">
-                            <div fxLayout="row" fxLayoutGap="5px" fxFlex>
-                                <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm="60" fxFlex.lt-sm="50">
-                                    <mat-label>{{ 'query.stock.expiryFrom' | translate }}</mat-label>
-                                    <input formControlName="expiryFrom" matInput [matDatepicker]="expiryFrom">
-                                    <mat-datepicker-toggle matSuffix [for]="expiryFrom">
-                                        <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
-                                    </mat-datepicker-toggle>
-                                    <mat-datepicker #expiryFrom></mat-datepicker>
-                                    <mat-error *ngIf="dataStockFormControls.expiryFrom.invalid">
-                                        {{ 'error.field' | translate }}
-                                    </mat-error>
-                                </mat-form-field>
-                                <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm="50">
-                                    <mat-label>{{ 'query.stock.expiryTo' | translate }}</mat-label>
-                                    <input formControlName="expiryTo" matInput [matDatepicker]="expiryTo">
-                                    <mat-datepicker-toggle matSuffix [for]="expiryTo">
-                                        <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
-                                    </mat-datepicker-toggle>
-                                    <mat-datepicker #expiryTo></mat-datepicker>
-                                    <mat-error *ngIf="dataStockFormControls.expiryTo.invalid">
-                                        {{ 'error.field' | translate }}
-                                    </mat-error>
-                                </mat-form-field>
-                            </div>
-                        </div>
-                        <div class="form-three-button-container">
-                            <button type="button" mat-raised-button color="primary">
-                                <mat-icon>search</mat-icon>
-                            </button>
-                            <button color="accent" type="reset" mat-raised-button>
-                                <mat-icon>loop</mat-icon>
-                            </button>
-                        </div>
-                    </mat-card-content>
-                </mat-card>
+<form fxLayout="column" [formGroup]="stockForm" (ngSubmit)="onStockSubmit()" class="slim-form page-content">
+    <div fxFlex class="bordered-section">
+        <div fxLayout="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+            <div fxLayout="row" fxLayoutGap="5px" fxFlex>
+                <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm="50">
+                    <mat-label>{{'query.stock.warehouse' | translate}}</mat-label>
+                    <input matInput type="text" required formControlName="warehouse" />
+                    <mat-error *ngIf="dataStockFormControls.warehouse.invalid">
+                        {{ 'error.field' | translate }}
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm="49">
+                    <mat-label>{{'query.stock.owner' | translate}}</mat-label>
+                    <input matInput type="text" formControlName="owner" />
+                    <mat-icon matSuffix type="button" (click)="openOwnerDialog()">search</mat-icon>
+                    <mat-error *ngIf="dataStockFormControls.owner.invalid">
+                        {{ 'error.field' | translate }}
+                    </mat-error>
+                </mat-form-field>
             </div>
-            <hr>
-            <mat-card>
-                <mat-card-content>
-                    <table class="site-table w-100">
-                        <thead>
-                            <tr>
-                                <th>{{ 'query.stock.WH' | translate}}</th>
-                                <th>{{ 'query.stock.owner' | translate}}</th>
-                                <th>{{ 'query.stock.item' | translate}}</th>
-                                <th>{{ 'query.stock.description' | translate}}</th>
-                                <th>{{ 'query.stock.type' | translate}}</th>
-                                <th>{{ 'query.stock.sku' | translate}}</th>
-                                <th>{{ 'query.stock.stock' | translate}}</th>
-                                <th>{{ 'query.stock.allocated' | translate}}</th>
-                                <th>{{ 'query.stock.balGood' | translate}}</th>
-                                <th>{{ 'query.stock.balDmgExp' | translate}}</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <ng-template let-stock ngFor [ngForOf]="stockDataSource">
-                                <tr>
-                                    <td class="column-150">{{stock.wh}}</td>
-                                    <td>{{stock.owner}}</td>
-                                    <td>{{stock.item}}</td>
-                                    <td>{{stock.description}}</td>
-                                    <td>{{stock.type}}</td>
-                                    <td>{{stock.sku}}</td>
-                                    <td class="column-60">{{stock.stock}}</td>
-                                    <td class="column-100">{{stock.allocated}}</td>
-                                    <td class="column-100">{{stock.balGood}}</td>
-                                    <td class="column-100">{{stock.balDmgOrExp}}</td>
-                                </tr>
-                            </ng-template>
-                        </tbody>
-                    </table>
-                </mat-card-content>
-            </mat-card>
-        </form>
-    </mat-card-content>
-</mat-card>
+        </div>
+        <div fxLayout="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+            <div fxLayout="row" fxLayoutGap="5px" fxFlex>
+                <mat-form-field appearance="outline" fxFlex="60" fxFlex.lt-sm="50">
+                    <mat-label>{{'query.stock.item' | translate}}</mat-label>
+                    <input matInput type="text" formControlName="item" />
+                    <mat-error *ngIf="dataStockFormControls.item.invalid">
+                        {{ 'error.field' | translate }}
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="49">
+                    <mat-label>{{'query.stock.batchNo' | translate}}</mat-label>
+                    <input matInput type="text" formControlName="batchNo" />
+                    <mat-error *ngIf="dataStockFormControls.batchNo.invalid">
+                        {{ 'error.field' | translate }}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="second-column" fxLayout="row" fxLayoutGap="5px" fxFlex="33">
+                <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm>
+                    <mat-label>{{'query.stock.poRefNo' | translate}}</mat-label>
+                    <input matInput type="text" formControlName="poRefNo" />
+                    <mat-error *ngIf="dataStockFormControls.poRefNo.invalid">
+                        {{ 'error.field' | translate }}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+            <div fxLayout="row" fxLayoutGap="5px" fxFlex>
+                <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm="60" fxFlex.lt-sm="50">
+                    <mat-label>{{ 'query.stock.expiryFrom' | translate }}</mat-label>
+                    <input formControlName="expiryFrom" matInput [matDatepicker]="expiryFrom">
+                    <mat-datepicker-toggle matSuffix [for]="expiryFrom">
+                        <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+                    </mat-datepicker-toggle>
+                    <mat-datepicker #expiryFrom></mat-datepicker>
+                    <mat-error *ngIf="dataStockFormControls.expiryFrom.invalid">
+                        {{ 'error.field' | translate }}
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm="49">
+                    <mat-label>{{ 'query.stock.expiryTo' | translate }}</mat-label>
+                    <input formControlName="expiryTo" matInput [matDatepicker]="expiryTo">
+                    <mat-datepicker-toggle matSuffix [for]="expiryTo">
+                        <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+                    </mat-datepicker-toggle>
+                    <mat-datepicker #expiryTo></mat-datepicker>
+                    <mat-error *ngIf="dataStockFormControls.expiryTo.invalid">
+                        {{ 'error.field' | translate }}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="form-three-button-container">
+            <button type="button" mat-raised-button color="primary">
+                <mat-icon>search</mat-icon>
+            </button>
+            <button color="accent" type="reset" mat-raised-button>
+                <mat-icon>loop</mat-icon>
+            </button>
+        </div>
+    </div>
+
+    <section class="data-tab-footer">
+        <table class="site-table w-100">
+            <thead>
+                <tr>
+                    <th>{{ 'query.stock.WH' | translate}}</th>
+                    <th>{{ 'query.stock.owner' | translate}}</th>
+                    <th>{{ 'query.stock.item' | translate}}</th>
+                    <th>{{ 'query.stock.description' | translate}}</th>
+                    <th>{{ 'query.stock.type' | translate}}</th>
+                    <th>{{ 'query.stock.sku' | translate}}</th>
+                    <th>{{ 'query.stock.stock' | translate}}</th>
+                    <th>{{ 'query.stock.allocated' | translate}}</th>
+                    <th>{{ 'query.stock.balGood' | translate}}</th>
+                    <th>{{ 'query.stock.balDmgExp' | translate}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-template let-stock ngFor [ngForOf]="stockDataSource">
+                    <tr>
+                        <td class="column-150">{{stock.wh}}</td>
+                        <td>{{stock.owner}}</td>
+                        <td>{{stock.item}}</td>
+                        <td>{{stock.description}}</td>
+                        <td>{{stock.type}}</td>
+                        <td>{{stock.sku}}</td>
+                        <td class="column-60">{{stock.stock}}</td>
+                        <td class="column-100">{{stock.allocated}}</td>
+                        <td class="column-100">{{stock.balGood}}</td>
+                        <td class="column-100">{{stock.balDmgOrExp}}</td>
+                    </tr>
+                </ng-template>
+            </tbody>
+        </table>
+    </section>
+</form>

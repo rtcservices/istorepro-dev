@@ -1,7 +1,7 @@
 <div class="mt-sm">
   <form [formGroup]="DirectTransferForm" fxLayout="column" class="slim-form">
     <div fxLayout="row" fxLayoutGap="5px">
-      <mat-form-field appearance="outline" class="input-row" fxFlex="10" fxFlex.lt-md="34" fxFlex fxFlex.lt-sm="33">
+      <mat-form-field appearance="outline" class="row" fxFlex="10" fxFlex.lt-md="34" fxFlex fxFlex.lt-sm="33">
         <mat-label>{{ 'scans.doubleScan.mode' | translate }}</mat-label>
         <mat-select [(ngModel)]="mode" placeholder="Mode" disableOptionCentering panelClass="slim-select-field"
           formControlName="mode">
@@ -16,7 +16,7 @@
           'error.field' | translate
           }}</mat-error>
       </mat-form-field>
-      <mat-form-field appearance="outline" class="input-row" fxFlex="10" fxFlex.lt-md="34" fxFlex fxFlex.lt-sm="33">
+      <mat-form-field appearance="outline" class="row" fxFlex="10" fxFlex.lt-md="34" fxFlex fxFlex.lt-sm="33">
         <mat-label>{{ 'scans.doubleScan.type' | translate }}</mat-label>
         <mat-select [(ngModel)]="type" disableOptionCentering panelClass="slim-select-field" formControlName="type">
           <mat-option value="item">{{
@@ -32,38 +32,43 @@
       </mat-form-field>
     </div>
 
-    <div fxLayout="column" fxLayoutGap="5px">
-
-      <mat-form-field  *ngIf="mode=='putaway'"  appearance="outline" class="input-row" fxFlex>
+    <div fxLayout="row" fxLayoutGap="5px">
+      <mat-form-field *ngIf="mode=='putaway'" appearance="outline" class="row" fxFlex>
         <input matInput type="text" formControlName="scan" />
         <mat-error *ngIf="DirectTransferFormControls.scan.invalid">
           {{ 'error.field' | translate }}</mat-error>
       </mat-form-field>
+    </div>
 
-      <mat-form-field appearance="outline" class="input-row" fxFlex>
+    <div fxLayout="row" fxLayoutGap="5px">
+      <mat-form-field appearance="outline" class="row" fxFlex>
         <mat-label>{{ 'scans.doubleScan.location' | translate }}</mat-label>
         <input matInput type="text" formControlName="location" />
         <mat-icon type="button" (click)="openLocationDialog()" class="cursor-style" matSuffix>search</mat-icon>
         <mat-error *ngIf="DirectTransferFormControls.location.invalid">
           {{ 'error.field' | translate }}</mat-error>
       </mat-form-field>
+    </div>
 
-      <mat-form-field [ngClass]="{'hide': type!='grn'}" class="input-row" appearance="outline" fxFlex>
+    <div fxLayout="row" fxLayoutGap="5px">
+      <mat-form-field [ngClass]="{'hide': type!='grn'}" class="row" appearance="outline" fxFlex>
         <mat-label>{{ 'scans.doubleScan.grnsl' | translate }}</mat-label>
         <input matInput type="text" formControlName="grnsl" />
         <mat-error *ngIf="DirectTransferFormControls.grnsl.invalid">
           {{ 'error.field' | translate }}</mat-error>
       </mat-form-field>
+    </div>
 
-      <mat-form-field [ngClass]="{'hide': type!='item'}" class="input-row" appearance="outline" fxFlex>
+    <div fxLayout="row" fxLayoutGap="5px">
+      <mat-form-field [ngClass]="{'hide': type!='item'}" class="row" appearance="outline" fxFlex>
         <mat-label>{{ 'scans.doubleScan.item' | translate }}</mat-label>
         <input matInput type="text" formControlName="item" />
         <mat-icon type="button" (click)="openItemAssistanceDialog()" class="cursor-style" matSuffix>search</mat-icon>
         <mat-error *ngIf="DirectTransferFormControls.item.invalid">
           {{ 'error.field' | translate }}</mat-error>
       </mat-form-field>
-
     </div>
+
     <div fxLayout="row" fxLayoutGap="5px">
 
       <mat-form-field appearance="outline" fxFlex="35">
