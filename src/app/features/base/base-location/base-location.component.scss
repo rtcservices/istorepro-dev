@@ -14,12 +14,13 @@ div.form-checkbox-input {
 
 .validate-checkbox {
   margin-left: 30px;
-  padding-top: 12px;
+  // padding-top: 12px;
   @include breakpoint(mobileonly) {
     margin-left: 0px;
     padding-top: 0px;
   }
 }
+
 .autoFill-checkbox {
   padding-top: 12px;
 }
@@ -69,4 +70,11 @@ div.form-checkbox-input {
 
 .form-three-button-container{
   float: right;
+}
+
+.input-right-section{
+  margin-top: 15px;
+  .validate-checkbox{
+    margin-top: 6px;
+  }
 }
