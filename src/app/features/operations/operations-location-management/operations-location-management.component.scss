@@ -12,3 +12,12 @@
         }
     }
 }
+
+.form-four-button-container {
+    button {
+    
+      @include breakpoint(mobileonly) {
+        width: 15%;
+      }
+    }
+  }

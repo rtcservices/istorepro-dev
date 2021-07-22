@@ -67,3 +67,11 @@
 ::ng-deep .mat-form-field-subscript-wrapper {
   margin-top: 2px !important;
 }
+
+.form-four-button-container {
+  button {
+    @include breakpoint(mobileonly) {
+      width: 15%;
+    }
+  }
+}

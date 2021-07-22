@@ -260,12 +260,12 @@
                   </div>
 
                   <div fxLayout.gt-sm="row" class="row input-right-section" fxLayout.lt-sm="column" fxLayoutGap="5px">
-                    <div class="validate-checkbox" fxFlex.gt-md="40">
+                    <div class="validate-checkbox" fxFlex.gt-md="40" fxFlex.gt-sm>
                       <mat-checkbox color="primary" formControlName="volumeValidate">{{
                         'base.location.capacity.volumeValidate' | translate
                         }}</mat-checkbox>
                     </div>
-                    <mat-form-field appearance="outline" fxFlex>
+                    <mat-form-field appearance="outline" fxFlex fxFlex.gt-sm>
                       <mat-label>{{'base.location.capacity.volumeSafePercentage' | translate}}
                       </mat-label>
                       <input matInput type="text" formControlName="volumeSafePercentage" />
@@ -273,12 +273,12 @@
                   </div>
 
                   <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
-                    <div class="validate-checkbox" fxFlex.gt-md="40">
+                    <div class="validate-checkbox" fxFlex.gt-md="40" fxFlex.gt-sm>
                       <mat-checkbox color="primary" formControlName="volumeValidate">{{
                         'base.location.capacity.weightValidate' | translate
                         }}</mat-checkbox>
                     </div>
-                    <mat-form-field appearance="outline" fxFlex>
+                    <mat-form-field appearance="outline" fxFlex fxFlex.gt-sm>
                       <mat-label>{{'base.location.capacity.weightSafePercentage' | translate}}
                       </mat-label>
                       <input matInput type="text" formControlName="weightSafePercentage" />
@@ -296,7 +296,7 @@
                   </div>
 
                   <div fxLayout.gt-sm="row" class="row input-right-section" fxLayout.lt-sm="column" fxLayoutGap="5px">
-                    <mat-form-field appearance="outline" fxFlex>
+                    <mat-form-field appearance="outline" fxFlex fxFlex.gt-sm>
                       <mat-label>{{'base.location.capacity.volumeFillPercentage' | translate}}
                       </mat-label>
                       <input matInput readonly type="text" formControlName="volumeFillPercentage" />
@@ -304,7 +304,7 @@
                   </div>
 
                   <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
-                    <mat-form-field appearance="outline" fxFlex>
+                    <mat-form-field appearance="outline" fxFlex fxFlex.gt-sm>
                       <mat-label>{{'base.location.capacity.weightFillPercentage' | translate}}
                       </mat-label>
                       <input matInput readonly type="text" formControlName="weightFillPercentage" />

@@ -62,39 +62,37 @@
 
       </div>
       <ng-container *ngIf="mode">
-        <mat-card>
-          <mat-card-content>
-            <table class="mat-elevation-z8 site-table">
-              <thead>
-                <tr>
-                  <th colspan="1"></th>
-                  <th class="text-align-center" colspan="5">System</th>
-                  <th class="text-align-center" colspan="5">Physical</th>
-                </tr>
-                <tr>
-                  <th>{{ 'routines.inventory.location' | translate}}</th>
-                  <th>{{ 'routines.inventory.itemcode' | translate}}</th>
-                  <th>{{ 'routines.inventory.description' | translate}}</th>
-                  <th>{{ 'routines.inventory.sku' | translate}}</th>
-                  <th>{{ 'routines.inventory.qtygood' | translate}}</th>
-                  <th>{{ 'routines.inventory.qtydmg' | translate}}</th>
-                  <th>{{ 'routines.inventory.itemcode' | translate}}</th>
-                  <th>{{ 'routines.inventory.description' | translate}}</th>
-                  <th>{{ 'routines.inventory.sku' | translate}}</th>
-                  <th>{{ 'routines.inventory.qtygood' | translate}}</th>
-                  <th>{{ 'routines.inventory.qtydmg' | translate}}</th>
-                </tr>
-              </thead>
-            </table>
-          </mat-card-content>
-        </mat-card>
+        <section class="bordered-section">
+          <table class="mat-elevation-z8 site-table">
+            <thead>
+              <tr>
+                <th colspan="1"></th>
+                <th class="text-align-center" colspan="5">System</th>
+                <th class="text-align-center" colspan="5">Physical</th>
+              </tr>
+              <tr>
+                <th>{{ 'routines.inventory.location' | translate}}</th>
+                <th>{{ 'routines.inventory.itemcode' | translate}}</th>
+                <th>{{ 'routines.inventory.description' | translate}}</th>
+                <th>{{ 'routines.inventory.sku' | translate}}</th>
+                <th>{{ 'routines.inventory.qtygood' | translate}}</th>
+                <th>{{ 'routines.inventory.qtydmg' | translate}}</th>
+                <th>{{ 'routines.inventory.itemcode' | translate}}</th>
+                <th>{{ 'routines.inventory.description' | translate}}</th>
+                <th>{{ 'routines.inventory.sku' | translate}}</th>
+                <th>{{ 'routines.inventory.qtygood' | translate}}</th>
+                <th>{{ 'routines.inventory.qtydmg' | translate}}</th>
+              </tr>
+            </thead>
+          </table>
+        </section>
       </ng-container>
 
       <ng-container *ngIf="!mode">
         <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="stretch" fxLayoutGap="5px">
           <div fxFlex>
-            <mat-card class="h-100">
-              <h3>Filters</h3>
+            <section class="bordered-section">
+              <b>Filters</b>
               <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
 
                 <mat-form-field appearance="outline" fxFlex>
@@ -141,30 +139,27 @@
                   </button>
                 </div>
               </div>
-            </mat-card>
+            </section>
           </div>
 
         </div>
-        <mat-card class="overflow-x">
-          <mat-card-content>
-            <table class="site-table mat-elevation-z8">
-              <thead>
-                <tr>
-                  <th>{{ 'routines.inventory.row' | translate}}</th>
-                  <th>{{ 'routines.inventory.unit' | translate}}</th>
-                  <th>{{ 'routines.inventory.location' | translate}}</th>
-                  <th>{{ 'routines.inventory.locationzone' | translate}}</th>
-                  <th>{{ 'routines.inventory.status' | translate}}</th>
-                  <th>{{ 'routines.inventory.lastaudit' | translate}}</th>
-                  <th>{{ 'routines.inventory.currentaudit' | translate}}</th>
-                </tr>
-              </thead>
+        <section class="bordered-section">
+          <table class="site-table mat-elevation-z8">
+            <thead>
+              <tr>
+                <th>{{ 'routines.inventory.row' | translate}}</th>
+                <th>{{ 'routines.inventory.unit' | translate}}</th>
+                <th>{{ 'routines.inventory.location' | translate}}</th>
+                <th>{{ 'routines.inventory.locationzone' | translate}}</th>
+                <th>{{ 'routines.inventory.status' | translate}}</th>
+                <th>{{ 'routines.inventory.lastaudit' | translate}}</th>
+                <th>{{ 'routines.inventory.currentaudit' | translate}}</th>
+              </tr>
+            </thead>
 
 
-            </table>
-          </mat-card-content>
-
-        </mat-card>
+          </table>
+        </section>
 
       </ng-container>
 
@@ -182,8 +177,7 @@
       </section>
 
       <section class="data-tab-footer" *ngIf="!mode">
-        <div fxLayout="row" fxLayoutAlign.gt-sm="space-between center"
-          fxLayoutAlign.lt-md="space-between center">
+        <div fxLayout="row" fxLayoutAlign.gt-sm="space-between center" fxLayoutAlign.lt-md="space-between center">
           <div fxFlexOrder="1">
             <button mat-raised-button color="accent" type="button" (click)="mode=!mode">
               <mat-icon>arrow_back</mat-icon>
