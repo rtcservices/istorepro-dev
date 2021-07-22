@@ -232,3 +232,9 @@
 .padding {
   padding: 10px !important;
 }
+
+.read-only-input {
+  @include breakpoint(mobileonly) {
+    padding: 10px 0px;
+  }
+}
