@@ -152,9 +152,3 @@ button[mat-dialog-close] {
     margin-top: 10px !important;
   }
 }
-
-.page-import-bottom {
-  @include breakpoint(mobileonly) {
-    margin-bottom: 38px !important;
-  }
-}

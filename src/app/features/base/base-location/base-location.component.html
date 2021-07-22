@@ -317,8 +317,8 @@
         </section>
       </div>
       <section class="data-tab-footer">
-        <div fxLayout.gt-sm="row" fxLayoutAlign="space-between" class="page-import-bottom">
-          <div fxShow fxHide.gt-sm fxLayout.gt-sm="row" class="page-import-export-button smaller-button-container-40">
+        <div fxLayout.gt-sm="row" class="page-import-bottom">
+          <div fxShow fxHide.gt-sm fxLayout.gt-sm="row" class="smaller-button-container-40">
             <button mat-raised-button color="primary" type="submit">
               <mat-icon>cloud_upload</mat-icon>
             </button>
@@ -352,7 +352,7 @@
   <mat-tab label="Search">
     <form fxLayout="column" [formGroup]="searchLocationForm" (ngSubmit)="onSearchLocationSubmit()" class="slim-form">
       <section class="bordered-section">
-        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px" fxLayoutGap.lt-md="0px">
           <mat-form-field appearance="outline" fxFlex>
             <mat-label>{{
               'base.location.warehouse' | translate
@@ -384,7 +384,7 @@
           </mat-form-field>
         </div>
 
-        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px" fxLayoutGap.lt-md="0px">
           <mat-form-field appearance="outline" fxFlex>
             <mat-label>{{
               'base.location.zone' | translate
@@ -421,7 +421,7 @@
           </mat-form-field>
         </div>
 
-        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px" fxLayoutGap.lt-md="0px">
           <mat-form-field appearance="outline" fxFlex>
             <mat-label>{{
               'base.location.nature' | translate
@@ -445,7 +445,7 @@
           </mat-form-field>
         </div>
 
-        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px" fxLayoutGap.lt-md="0px">
           <div fxFlex="10">
             <mat-checkbox color="primary" formControlName="freeze">
               {{ 'base.location.freeze' | translate }}
@@ -533,7 +533,7 @@
   <mat-tab label="Freeze">
     <form fxLayout="column" [formGroup]="freezeLocationForm" (ngSubmit)="onFreezeLocationSubmit()" class="slim-form">
       <section class="bordered-section">
-        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px" fxLayoutGap.lt-md="0px">
           <mat-form-field appearance="outline" fxFlex>
             <mat-label>{{
               'base.location.warehouse' | translate
@@ -572,7 +572,7 @@
           </mat-form-field>
 
         </div>
-        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px" fxLayoutGap.lt-md="0px">
           <mat-form-field appearance="outline" fxFlex>
             <mat-label>{{'base.location.location' | translate}}</mat-label>
             <input matInput type="text" formControlName="location" />
@@ -604,7 +604,7 @@
           </mat-form-field>
 
         </div>
-        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px" fxLayoutGap.lt-md="0px">
           <mat-form-field appearance="outline" fxFlex>
             <mat-label>{{'base.location.description' | translate}}</mat-label>
             <input matInput type="text" formControlName="description" />

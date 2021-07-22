@@ -1,6 +1,7 @@
 @import './variables';
+
 .link-button {
-  font-size: 12px;
+  font-size: $fontsize;
   line-height: 24px !important;
   &:hover {
     text-decoration: underline;
