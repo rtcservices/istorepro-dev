@@ -234,7 +234,5 @@
 }
 
 .read-only-input {
-  @include breakpoint(mobileonly) {
-    padding: 10px 0px;
-  }
+  padding: 10px 0px;
 }
