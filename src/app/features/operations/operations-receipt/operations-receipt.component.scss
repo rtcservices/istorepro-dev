@@ -22,7 +22,7 @@
 }
 .second-column-readonly {
   @include breakpoint(mobileonly) {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     margin-top: -5px;
   }
 }
