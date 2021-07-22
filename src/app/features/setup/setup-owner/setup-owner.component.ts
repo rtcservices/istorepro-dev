@@ -132,7 +132,7 @@ export class SetupOwnerComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     fromTabsHelper.setTabHeights(
       'mat-tab-group#setupOwnerDataTab mat-tab-body',
-      7
+      8
     );
   }
 
