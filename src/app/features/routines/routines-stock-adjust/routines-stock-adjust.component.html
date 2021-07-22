@@ -28,7 +28,7 @@
             </fieldset>
           </div>
           <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
-            <mat-form-field appearance="outline" fxFlex="32.8">
+            <mat-form-field appearance="outline" fxFlex="33.1">
               <mat-label>{{ 'routines.stockadjust.date' | translate }}</mat-label>
               <input formControlName="date" matInput [matDatepicker]="picker3">
               <mat-datepicker-toggle matSuffix [for]="picker3">
@@ -58,7 +58,7 @@
 
         <div fxLayout="column" fxLayout.lt-sm="column" fxLayoutGap="5px">
           <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
-            <mat-form-field appearance="outline" fxFlex="32.8">
+            <mat-form-field appearance="outline" fxFlex="33.1">
               <mat-label>{{'routines.stockadjust.item' | translate}}</mat-label>
               <input matInput type="text" formControlName="item" />
               <mat-icon (click)="openItemDialog()" matSuffix>search</mat-icon>
@@ -105,7 +105,7 @@
                 'error.field' | translate
                 }}</mat-error>
             </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex.gt-sm="21.6">
+            <mat-form-field appearance="outline" fxFlex.gt-sm="21.7">
               <mat-label>{{ 'routines.stockadjust.receiptdate' | translate }}</mat-label>
               <input formControlName="receiptdate" matInput [matDatepicker]="picker1">
               <mat-datepicker-toggle matSuffix [for]="picker1">
@@ -134,7 +134,7 @@
                 'error.field' | translate
                 }}</mat-error>
             </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex.gt-sm="22.4">
+            <mat-form-field appearance="outline" fxFlex.gt-sm="25">
               <mat-label>{{ 'routines.stockadjust.expdate' | translate }}</mat-label>
               <input formControlName="expdate" matInput [matDatepicker]="picker2">
               <mat-datepicker-toggle matSuffix [for]="picker2">
@@ -145,7 +145,7 @@
                 {{ 'error.field' | translate }}
               </mat-error>
             </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex.gt-sm="23">
+            <mat-form-field appearance="outline" fxFlex.gt-sm="21.7">
               <mat-label>{{'routines.stockadjust.pick' | translate}}</mat-label>
               <input matInput type="text" formControlName="pick" />
               <mat-error *ngIf="dataStockAdjustFormControls.pick.invalid">

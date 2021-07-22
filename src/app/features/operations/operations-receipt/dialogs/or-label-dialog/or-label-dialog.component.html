@@ -3,7 +3,8 @@
 </button>
 <form [formGroup]="labelForm" class="slim-form">
   <section class="bordered-section">
-    <div fxLayout="row" fxLayoutGap="5px">
+
+    <div fxLayout="row" fxLayoutGap="5px" style="width: 100%;">
       <fieldset class="read-only-input" fxFlex>
         <legend>{{ 'operations.receipt.warehouse' | translate }}</legend>
         <label>{{ labelFormControls.warehouse.value }}</label>
@@ -15,11 +16,11 @@
     </div>
 
     <div fxLayout="row" fxLayoutGap="5px">
-      <fieldset class="read-only-input" fxFlex="48.1">
+      <fieldset class="read-only-input" fxFlex>
         <legend>{{ 'operations.receipt.owner' | translate }}</legend>
         <label>{{ labelFormControls.owner.value }}</label>
       </fieldset>
-      <fieldset class="read-only-input" fxFlex="48.3">
+      <fieldset class="read-only-input" fxFlex>
         <legend>{{ 'operations.receipt.grn' | translate }}</legend>
         <label>{{ labelFormControls.grn.value }}</label>
       </fieldset>

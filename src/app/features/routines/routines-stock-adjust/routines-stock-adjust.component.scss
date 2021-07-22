@@ -23,3 +23,9 @@
 .form-three-button-container {
   margin: 0px 5px;
 }
+
+.read-only-input {
+  @include breakpoint(mobileonly) {
+    padding: 10px 0px;
+  }
+}

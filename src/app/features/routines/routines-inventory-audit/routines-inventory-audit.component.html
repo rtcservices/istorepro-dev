@@ -64,7 +64,7 @@
       <ng-container *ngIf="mode">
         <mat-card>
           <mat-card-content>
-            <table class="site-table mat-elevation-z8">
+            <table class="mat-elevation-z8 site-table">
               <thead>
                 <tr>
                   <th colspan="1"></th>
@@ -166,15 +166,11 @@
 
         </mat-card>
 
-
       </ng-container>
 
       <section class="data-tab-footer" *ngIf="mode">
-        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="space-between center"
-          fxLayoutAlign.lt-md="space-between center">
-          <div fxFlexOrder.lt-md="2">
-          </div>
-          <div class="form-three-button-container" fxFlexOrder.lt-md="1">
+        <div fxLayout="row">
+          <div class="form-three-button-container" fxFlex>
             <button mat-raised-button color="primary" type="submit" (click)="saveInventoryForm()">
               <mat-icon>task_alt</mat-icon>
             </button>
@@ -186,14 +182,14 @@
       </section>
 
       <section class="data-tab-footer" *ngIf="!mode">
-        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="space-between center"
+        <div fxLayout="row" fxLayoutAlign.gt-sm="space-between center"
           fxLayoutAlign.lt-md="space-between center">
-          <div fxFlexOrder.lt-md="2">
+          <div fxFlexOrder="1">
             <button mat-raised-button color="accent" type="button" (click)="mode=!mode">
               <mat-icon>arrow_back</mat-icon>
             </button>
           </div>
-          <div class="form-three-button-container" fxFlexOrder.lt-md="1">
+          <div class="form-three-button-container" fxFlexOrder="2">
             <button mat-raised-button color="primary" type="button">
               <mat-icon>add</mat-icon>
             </button>
