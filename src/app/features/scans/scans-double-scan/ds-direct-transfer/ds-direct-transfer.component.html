@@ -1,7 +1,7 @@
 <div class="mt-sm">
   <form [formGroup]="DirectTransferForm" fxLayout="column" class="slim-form">
     <div fxLayout="row" fxLayoutGap="5px">
-      <mat-form-field appearance="outline" class="row" fxFlex="10" fxFlex.lt-md="34" fxFlex fxFlex.lt-sm="33">
+      <mat-form-field appearance="outline" class="row" fxFlex fxFlex.lt-sm="50">
         <mat-label>{{ 'scans.doubleScan.mode' | translate }}</mat-label>
         <mat-select [(ngModel)]="mode" placeholder="Mode" disableOptionCentering panelClass="slim-select-field"
           formControlName="mode">
@@ -16,7 +16,7 @@
           'error.field' | translate
           }}</mat-error>
       </mat-form-field>
-      <mat-form-field appearance="outline" class="row" fxFlex="10" fxFlex.lt-md="34" fxFlex fxFlex.lt-sm="33">
+      <mat-form-field appearance="outline" class="row" fxFlex fxFlex.lt-sm="49">
         <mat-label>{{ 'scans.doubleScan.type' | translate }}</mat-label>
         <mat-select [(ngModel)]="type" disableOptionCentering panelClass="slim-select-field" formControlName="type">
           <mat-option value="item">{{

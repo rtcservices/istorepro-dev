@@ -88,7 +88,7 @@
                     </mat-form-field>
                   </div>
                   <div fxLayout="row" class="row" fxLayoutGap="5px">
-                    <mat-form-field appearance="outline" fxFlex="49">
+                    <mat-form-field appearance="outline" fxFlex="49" fxFlex.lt-sm>
                       <mat-label>{{'setup.security.telephone' | translate}}</mat-label>
                       <input matInput required type="text" formControlName="telephone" />
                       <mat-error *ngIf="dataSetupSecurityFormControls.telephone.invalid">
