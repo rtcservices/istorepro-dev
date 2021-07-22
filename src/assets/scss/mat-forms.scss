@@ -62,10 +62,10 @@
     border: 1px solid $site-light-gray;
     border-radius: 5px;
     color: $site-gray;
-    height: 38.25px;
-    padding-left: 0 0 0 5px;
+    height: 39.5px;
+    padding: 0 0 0 3px;
     margin: 0;
-    margin-top: -6px;
+    margin-top: -6.5px;
     margin-bottom: 15px !important;
     legend {
       font-size: 10.5px;
@@ -229,6 +229,7 @@
   }
 }
 
-.mat-checkbox-label, .mat-radio-label-content{
+.mat-checkbox-label,
+.mat-radio-label-content {
   font-size: $fontsize;
 }
