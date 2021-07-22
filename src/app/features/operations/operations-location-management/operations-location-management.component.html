@@ -7,7 +7,7 @@
     <div fxFlex class="bordered-section">
       <div fxLayout.lt-sm="column" fxLayout.gt-sm="row" fxLayoutGap="15px">
         <div fxLayout="column" fxFlex>
-          <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="10px" fxFlex>
+          <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
             <mat-form-field appearance="outline" fxFlex>
               <mat-label>{{
                 'operations.LocationManagement.warehouse' | translate
@@ -28,8 +28,8 @@
             </mat-form-field>
           </div>
 
-          <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="10px" fxFlex>
-            <mat-form-field appearance="outline" fxFlex.gt-sm="60">
+          <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
+            <mat-form-field appearance="outline" fxFlex.gt-sm="50">
               <mat-label>{{
                 'operations.LocationManagement.item' | translate
                 }}</mat-label>
@@ -39,7 +39,7 @@
                 'error.field' | translate
                 }}</mat-error>
             </mat-form-field>
-            <fieldset class="read-only-input" fxFlex.gt-sm="10">
+            <fieldset class="read-only-input" fxFlex.gt-sm>
               <legend>{{ 'operations.LocationManagement.sku' | translate }}</legend>
               <label>{{ LocationManagementFormControls.sku.value }}</label>
             </fieldset>

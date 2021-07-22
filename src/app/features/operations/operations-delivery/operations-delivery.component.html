@@ -291,7 +291,7 @@
   <mat-tab label="Search">
     <form fxLayout="column" [formGroup]="searchDeliveryForm" (ngSubmit)="onSearchDeliverySubmit()" class="slim-form">
       <section class="bordered-section">
-        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px" fxLayoutGap.lt-md="0px">
           <mat-form-field appearance="outline" fxFlex="10" fxFlex.lt-md="34" fxFlex fxFlex.lt-sm="33">
             <mat-label>{{
               'operations.delivery.warehouse' | translate
@@ -323,7 +323,7 @@
               {{ 'error.field' | translate }}</mat-error>
           </mat-form-field>
         </div>
-        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px" fxLayoutGap.lt-md="0px">
           <mat-form-field appearance="outline" fxFlex.gt-sm="10">
             <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="dateoperator">
               <mat-option value=">">></mat-option>
@@ -342,7 +342,7 @@
               'error.field' | translate
               }}</mat-error>
           </mat-form-field>
-          <mat-form-field appearance="outline" fxFlex.gt-sm="21">
+          <mat-form-field appearance="outline" fxFlex.gt-sm="22.9">
             <mat-label>{{
               'operations.delivery.deliverydate' | translate
               }}</mat-label>
@@ -355,7 +355,7 @@
               {{ 'error.field' | translate }}
             </mat-error>
           </mat-form-field>
-          <mat-form-field appearance="outline" fxFlex.gt-sm="33">
+          <mat-form-field appearance="outline" fxFlex.gt-sm="33.1">
             <mat-label>{{
               'operations.delivery.po' | translate
               }}</mat-label>
@@ -372,7 +372,7 @@
               {{ 'error.field' | translate }}</mat-error>
           </mat-form-field>
         </div>
-        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px" fxLayoutGap.lt-md="0px">
           <mat-form-field appearance="outline" fxFlex>
             <mat-label>{{
               'operations.delivery.do' | translate
@@ -398,8 +398,8 @@
               {{ 'error.field' | translate }}</mat-error>
           </mat-form-field>
         </div>
-        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
-          <mat-form-field appearance="outline" fxFlex.gt-sm="32.5">
+        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px" fxLayoutGap.lt-md="0px">
+          <mat-form-field appearance="outline" fxFlex.gt-sm="33.2">
             <mat-label>{{
               'operations.delivery.batchnumber' | translate
               }}</mat-label>
@@ -407,7 +407,7 @@
             <mat-error *ngIf="searchDeliveryFormControls.batchnumber.invalid">
               {{ 'error.field' | translate }}</mat-error>
           </mat-form-field>
-          <mat-form-field appearance="outline" fxFlex.gt-sm="32.5">
+          <mat-form-field appearance="outline" fxFlex.gt-sm="33.2">
             <mat-label>{{
               'operations.delivery.status' | translate
               }}</mat-label>

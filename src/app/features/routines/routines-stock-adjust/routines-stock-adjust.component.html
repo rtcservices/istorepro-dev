@@ -28,7 +28,7 @@
             </fieldset>
           </div>
           <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
-            <mat-form-field appearance="outline" fxFlex="32.5">
+            <mat-form-field appearance="outline" fxFlex="32.8">
               <mat-label>{{ 'routines.stockadjust.date' | translate }}</mat-label>
               <input formControlName="date" matInput [matDatepicker]="picker3">
               <mat-datepicker-toggle matSuffix [for]="picker3">
@@ -58,7 +58,7 @@
 
         <div fxLayout="column" fxLayout.lt-sm="column" fxLayoutGap="5px">
           <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
-            <mat-form-field appearance="outline" fxFlex="32.5">
+            <mat-form-field appearance="outline" fxFlex="32.8">
               <mat-label>{{'routines.stockadjust.item' | translate}}</mat-label>
               <input matInput type="text" formControlName="item" />
               <mat-icon (click)="openItemDialog()" matSuffix>search</mat-icon>
@@ -87,7 +87,7 @@
 
           </div>
           <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
-            <mat-form-field appearance="outline" fxFlex.gt-sm="10">
+            <mat-form-field appearance="outline" fxFlex.gt-sm="11">
               <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="receiptdateoperator">
                 <mat-option value=">">></mat-option>
                 <mat-option value="<">
@@ -105,7 +105,7 @@
                 'error.field' | translate
                 }}</mat-error>
             </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex.gt-sm="22.5">
+            <mat-form-field appearance="outline" fxFlex.gt-sm="21.6">
               <mat-label>{{ 'routines.stockadjust.receiptdate' | translate }}</mat-label>
               <input formControlName="receiptdate" matInput [matDatepicker]="picker1">
               <mat-datepicker-toggle matSuffix [for]="picker1">
@@ -248,7 +248,7 @@
     <form fxLayout="column" [formGroup]="searchStockAdjustForm" (ngSubmit)="onSearchStockAdjustSubmit()"
       class="slim-form">
       <section class="bordered-section">
-        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px" fxLayoutGap.lt-md="0px">
           <mat-form-field appearance="outline" fxFlex="10" fxFlex.lt-md="34" fxFlex fxFlex.lt-sm="33">
             <mat-label>{{
               'routines.stockadjust.warehouse' | translate
@@ -278,7 +278,7 @@
               {{ 'error.field' | translate }}</mat-error>
           </mat-form-field>
         </div>
-        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px" fxLayoutGap.lt-md="0px">
           <mat-form-field appearance="outline" fxFlex.gt-sm="10">
             <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="dateoperator">
               <mat-option value=">">></mat-option>
@@ -297,7 +297,7 @@
               'error.field' | translate
               }}</mat-error>
           </mat-form-field>
-          <mat-form-field appearance="outline" fxFlex.gt-sm="21">
+          <mat-form-field appearance="outline" fxFlex.gt-sm="22.9">
             <mat-label>{{
               'routines.stockadjust.stockAdjustdate' | translate
               }}</mat-label>
@@ -310,7 +310,7 @@
               {{ 'error.field' | translate }}
             </mat-error>
           </mat-form-field>
-          <mat-form-field appearance="outline" fxFlex.gt-sm="33">
+          <mat-form-field appearance="outline" fxFlex.gt-sm="33.2">
             <mat-label>{{
               'routines.stockadjust.po' | translate
               }}</mat-label>
@@ -327,8 +327,8 @@
               {{ 'error.field' | translate }}</mat-error>
           </mat-form-field>
         </div>
-        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
-          <mat-form-field appearance="outline" fxFlex.gt-sm="32.5">
+        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px" fxLayoutGap.lt-md="0px">
+          <mat-form-field appearance="outline" fxFlex.gt-sm="33.2">
             <mat-label>{{
               'routines.stockadjust.batchnumber' | translate
               }}</mat-label>

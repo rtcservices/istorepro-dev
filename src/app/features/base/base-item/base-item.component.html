@@ -398,8 +398,8 @@
     <form fxLayout="column" [formGroup]="searchItemForm" (ngSubmit)="onSearchItemSubmit()" class="slim-form">
       <section class="bordered-section">
 
-        <div class="row" fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
-          <mat-form-field appearance="outline" fxFlex="32.8">
+        <div class="row" fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+          <mat-form-field appearance="outline" fxFlex="33.2">
             <mat-label>{{ 'base.item.item' | translate }} </mat-label>
             <input matInput type="text" formControlName="item" />
             <mat-error *ngIf="searchItemFormControls.item.invalid">
@@ -415,7 +415,7 @@
 
         </div>
 
-        <div class="row" fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+        <div class="row" fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
 
           <mat-form-field appearance="outline" fxFlex>
             <mat-label>{{
@@ -448,7 +448,7 @@
 
         </div>
 
-        <div class="row" fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap="10px">
+        <div class="row" fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap="5px">
 
           <mat-form-field appearance="outline" fxFlex>
             <mat-label>{{ 'base.item.ownerCode' | translate }} </mat-label>
@@ -466,7 +466,7 @@
 
         </div>
 
-        <div class="row" fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap="10px">
+        <div class="row" fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap="5px">
 
           <div fxFlex="15">
             <mat-checkbox color="primary" formControlName="validateStorageType">

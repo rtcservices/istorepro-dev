@@ -4,7 +4,7 @@
 <br> <br>
 <form fxLayout="column" [formGroup]="HeatMapForm" (ngSubmit)="onHeatMapFormSubmit()" class="slim-form">
   <section class="bordered-section">
-    <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+    <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px" fxLayoutGap.lt-md="0px">
       <mat-form-field appearance="outline" fxFlex.gt-sm="30">
         <mat-label>{{
           'operations.HeatMap.warehouse' | translate
@@ -28,7 +28,7 @@
       </mat-checkbox>
 
     </div>
-    <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+    <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px" fxLayoutGap.lt-md="0px">
       <mat-form-field appearance="outline" fxFlex.gt-sm="30">
         <mat-label>{{'operations.HeatMap.item' | translate}}</mat-label>
         <input matInput type="text" formControlName="item" />

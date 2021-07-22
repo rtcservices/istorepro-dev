@@ -7,8 +7,8 @@
     <form fxLayout="column" [formGroup]="dataReceiptForm" (ngSubmit)="onDataReceiptSubmit()" class="slim-form">
       <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="stretch" fxLayoutGap="5px">
         <div fxFlex class="bordered-section">
-          <div fxLayout="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
-            <div fxLayout="row" fxLayoutGap="10px" fxFlex>
+          <div fxLayout="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+            <div fxLayout="row" fxLayoutGap="5px" fxFlex>
               <mat-form-field appearance="outline" fxFlex="70" fxFlex.lt-sm="50">
                 <mat-label>{{'operations.receipt.warehouse' | translate}}</mat-label>
                 <mat-select disableOptionCentering panelClass="slim-select-field" type="text" readonly
@@ -32,7 +32,7 @@
                 </mat-error>
               </mat-form-field>
             </div>
-            <div class="second-column-readonly" fxLayout="row" fxLayoutGap="10px" fxFlex>
+            <div class="second-column-readonly" fxLayout="row" fxLayoutGap="5px" fxFlex>
               <fieldset class="read-only-input" fxFlex="50">
                 <legend>{{ 'operations.receipt.trn' | translate }}</legend>
                 <label>{{ dataReceiptFormControls.trn.value }}</label>
@@ -43,9 +43,9 @@
               </fieldset>
             </div>
           </div>
-          <div fxLayout="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
-            <div fxLayout="row" fxLayoutGap="10px" fxFlex>
-              <mat-form-field appearance="outline" fxFlex="69" fxFlex.lt-sm="50">
+          <div fxLayout="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+            <div fxLayout="row" fxLayoutGap="5px" fxFlex>
+              <mat-form-field appearance="outline" fxFlex="69.5" fxFlex.lt-sm="50">
                 <mat-label>{{'operations.receipt.owner' | translate}}</mat-label>
                 <input matInput type="text" required formControlName="owner" />
                 <mat-icon matSuffix type="button" (click)="openOwnerDialog()">search</mat-icon>
@@ -62,7 +62,7 @@
                 </mat-error>
               </mat-form-field>
             </div>
-            <div class="second-column" fxLayout="row" fxLayoutGap="10px" fxFlex>
+            <div class="second-column" fxLayout="row" fxLayoutGap="5px" fxFlex>
               <mat-form-field appearance="outline" fxFlex>
                 <mat-label>{{'operations.receipt.remarks' | translate}}</mat-label>
                 <input matInput type="text" formControlName="remarks" />
@@ -207,7 +207,7 @@
   <mat-tab label="Search">
     <form fxLayout="column" [formGroup]="searchReceiptForm" (ngSubmit)="onSearchReceiptSubmit()" class="slim-form">
       <section class="bordered-section">
-        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="10px" fxLayoutGap.lt-md="0px">
+        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px" fxLayoutGap.lt-md="0px">
           <mat-form-field appearance="outline" fxFlex="32.5">
             <mat-label>{{
               'operations.receipt.warehouse' | translate
@@ -233,7 +233,7 @@
               {{ 'error.field' | translate }}</mat-error>
           </mat-form-field>
         </div>
-        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="10px" fxLayoutGap.lt-md="0px">
+        <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px" fxLayoutGap.lt-md="0px">
           <mat-form-field appearance="outline" fxFlex="10" fxFlex.lt-md="34" fxFlex.lt-sm="33">
             <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="dateoperator">
               <mat-option value=">">></mat-option>
@@ -252,12 +252,12 @@
               'error.field' | translate
               }}</mat-error>
           </mat-form-field>
-          <mat-form-field appearance="outline" fxFlex="22">
+          <mat-form-field appearance="outline" fxFlex="22.3">
             <input matInput type="date" formControlName="receiptDate" />
             <mat-error *ngIf="searchReceiptFormControls.receiptDate.invalid">
               {{ 'error.field' | translate }}</mat-error>
           </mat-form-field>
-          <mat-form-field appearance="outline" fxFlex="15">
+          <mat-form-field appearance="outline" fxFlex="15.5">
             <mat-label>{{
               'operations.receipt.po' | translate
               }}</mat-label>

@@ -174,15 +174,19 @@
               {{ 'error.field' | translate }}</mat-error>
           </mat-form-field>
           <mat-form-field appearance="outline" fxFlex>
-            <mat-label>Expiry</mat-label>
+            <mat-label>{{
+              'base.itemType.expiry' | translate
+              }}</mat-label>
             <mat-select disableOptionCentering panelClass="slim-select-field" type="text" formControlName="expiry">
               <mat-option value="yes">Yes</mat-option>
               <mat-option value="no">No</mat-option>
             </mat-select>
             <mat-error *ngIf="searchItemTypeFormControls.expiry.invalid">{{ 'error.field' | translate }}</mat-error>
           </mat-form-field>
-          <mat-form-field appearance="outline" fxFlex>
-            <mat-label>Mfg Date ?.</mat-label>
+          <mat-form-field appearance="outline" fxFlex="25.2">
+            <mat-label>{{
+              'base.itemType.manufacturingDate' | translate
+              }}</mat-label>
             <mat-select disableOptionCentering panelClass="slim-select-field" type="text" formControlName="MfgDate">
               <mat-option value="yes">Yes</mat-option>
               <mat-option value="no">No</mat-option>
@@ -191,7 +195,9 @@
             </mat-error>
           </mat-form-field>
           <mat-form-field appearance="outline" fxFlex>
-            <mat-label>Batch No ?</mat-label>
+            <mat-label>{{
+              'base.itemType.batchNo' | translate
+              }}</mat-label>
             <mat-select disableOptionCentering panelClass="slim-select-field" type="text" formControlName="batchNo">
               <mat-option value="yes">Yes</mat-option>
               <mat-option value="no">No</mat-option>
