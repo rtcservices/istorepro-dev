@@ -45,6 +45,6 @@ testem.log
 Thumbs.db
 
 ### Firebase ###
-/.firebase
+.firebase/
 **/.firebaserc
 firebase.json
