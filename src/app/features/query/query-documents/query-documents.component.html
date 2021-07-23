@@ -5,9 +5,9 @@
 <form fxLayout="column" [formGroup]="DocumentForm" class="slim-form page-content">
   <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="stretch" fxLayoutGap="5px">
     <div fxFlex class="bordered-section">
-      <div fxLayout.lt-sm="column" fxLayout.gt-sm="row" fxLayoutGap="10px">
-        <div fxLayout="column" fxLayoutGap="5px" fxFlex>
-          <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
+      <div fxLayout.lt-sm="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="5px">
+        <div fxLayout="column" fxLayoutGap.gt-sm="5px" fxFlex>
+          <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap.gt-sm="5px" fxFlex>
             <mat-form-field appearance="outline" fxFlex="32.5">
               <mat-label>{{'query.Document.warehouse' | translate}}</mat-label>
               <input matInput required type="text" formControlName="warehouse" />
@@ -37,7 +37,7 @@
             </mat-form-field>
           </div>
 
-          <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
+          <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap.gt-sm="5px" fxFlex>
             <mat-form-field appearance="outline" fxFlex fxFlex.gt-sm="10">
               <mat-label>{{
                 'query.Document.operator' | translate

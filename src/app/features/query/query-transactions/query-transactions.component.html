@@ -6,7 +6,7 @@
     <mat-tab label="Receipt">
         <form fxLayout="column" [formGroup]="receiptForm" (ngSubmit)="onReceiptSubmit()" class="slim-form">
             <div fxFlex class="bordered-section">
-                <div fxLayout="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                <div fxLayout="row" class="row" fxLayout.lt-sm="column" fxLayoutGap.gt-sm="5px">
                     <div fxLayout="row" fxLayoutGap="5px" fxFlex>
                         <mat-form-field appearance="outline" fxFlex="33.1" fxFlex.lt-sm="50">
                             <mat-label>{{'query.transaction.receipt.warehouse' | translate }}</mat-label>
@@ -29,7 +29,7 @@
                         </mat-form-field>
                     </div>
                 </div>
-                <div fxLayout="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                <div fxLayout="row" class="row" fxLayout.lt-sm="column" fxLayoutGap.gt-sm="5px">
                     <div fxLayout="row" fxLayoutGap="5px" fxFlex>
                         <mat-form-field appearance="outline" fxFlex="60" fxFlex.lt-sm="50">
                             <mat-label>{{'query.transaction.receipt.item' | translate}}</mat-label>
@@ -56,7 +56,7 @@
                         </mat-form-field>
                     </div>
                 </div>
-                <div fxLayout="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                <div fxLayout="row" class="row" fxLayout.lt-sm="column" fxLayoutGap.gt-sm="5px">
                     <div fxLayout="row" fxLayoutGap="5px" fxFlex>
                         <mat-form-field appearance="outline" fxFlex="60" fxFlex.lt-sm="50">
                             <mat-label>{{'query.transaction.receipt.origin' | translate }}</mat-label>
@@ -85,7 +85,7 @@
                         </mat-form-field>
                     </div>
                 </div>
-                <div fxLayout="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+                <div fxLayout="row" class="row" fxLayout.lt-sm="column" fxLayoutGap.gt-sm="5px">
                     <div fxLayout="row" fxLayoutGap="5px" fxFlex>
                         <mat-form-field appearance="outline" fxFlex="60" fxFlex.lt-sm="50">
                             <mat-label>{{ 'query.transaction.receipt.receiptFrom' | translate }}</mat-label>

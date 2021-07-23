@@ -88,3 +88,28 @@ mat-icon {
   border-radius: 5px;
   padding: 5px;
 }
+
+
+@media (max-width:767.99px) {
+  ::ng-deep .cdk-overlay-pane {
+    width: 90% !important;
+    }
+
+}
+
+@media (min-width:768px) {
+  ::ng-deep .cdk-overlay-pane {
+    width: 66% !important;
+    }
+
+}
+
+
+@media (min-width:1024px) {
+  ::ng-deep .cdk-overlay-pane {
+    width: 40% !important;
+    }
+
+}
+
+

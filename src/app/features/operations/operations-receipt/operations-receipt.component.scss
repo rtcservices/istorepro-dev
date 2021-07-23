@@ -1,7 +1,7 @@
 @import '../../../../assets/scss/variables.scss';
-// .overflow-x {
-//   overflow-x: auto !important;
-// }
+.overflow-x {
+   overflow-x: auto !important;
+}
 
 // .data-table {
 //   table {
@@ -74,4 +74,8 @@
       width: 15%;
     }
   }
+}
+
+.display {
+  display: flex !important;
 }

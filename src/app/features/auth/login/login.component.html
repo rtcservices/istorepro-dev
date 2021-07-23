@@ -19,7 +19,7 @@
           <input matInput required type="password"
             formControlName="password">
           <mat-icon matPrefix>lock</mat-icon>
-          <mat-error *ngIf="loginFormControl.username.invalid">{{'login.passwordError' | translate}}</mat-error>
+          <mat-error *ngIf="loginFormControl.password.invalid">{{'login.passwordError' | translate}}</mat-error>
         </mat-form-field>
         <mat-error *ngIf="loginInvalid">
           {{'login.loginFormError' | translate}}
