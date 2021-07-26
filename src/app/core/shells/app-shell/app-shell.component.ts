@@ -1,4 +1,10 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  ElementRef,
+  AfterViewInit
+} from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router, RouterOutlet } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
@@ -49,7 +55,7 @@ export class AppShellComponent implements OnInit, AfterViewInit {
     this.setTranslations();
   }
 
-  ngAfterViewInit(){
+  ngAfterViewInit() {
     this.headerNavService.appDrawer = this.appDrawer;
   }
 
@@ -219,10 +225,6 @@ export class AppShellComponent implements OnInit, AfterViewInit {
             route: 'operations/location-management'
           },
           {
-            displayName: this.translate.instant('menu.operationsHeatMap'),
-            route: 'operations/heat-map'
-          },
-          {
             displayName: this.translate.instant('menu.operationsDelivery'),
             route: 'operations/delivery'
           }
@@ -277,6 +279,10 @@ export class AppShellComponent implements OnInit, AfterViewInit {
           {
             displayName: this.translate.instant('menu.dashboardsMIS'),
             route: 'dashboards/mis'
+          },
+          {
+            displayName: this.translate.instant('menu.operationsHeatMap'),
+            route: 'dashboards/heat-map'
           }
         ]
       }

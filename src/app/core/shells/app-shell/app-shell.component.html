@@ -45,8 +45,6 @@
       <a mat-menu-item routerLinkActive="active-link"
         [routerLink]="['/operations/location-management']">{{'menu.operationsLocationManagement' | translate}}</a>
       <a mat-menu-item routerLinkActive="active-link"
-        [routerLink]="['/operations/heat-map']">{{'menu.operationsHeatMap' | translate}}</a>
-      <a mat-menu-item routerLinkActive="active-link"
         [routerLink]="['/operations/delivery']">{{'menu.operationsDelivery' | translate}}</a>
     </mat-menu>
     <button mat-button [matMenuTriggerFor]="scansMenu">
@@ -82,6 +80,8 @@
     <mat-menu #dashboardsMenu="matMenu" backdropClass="top-menu">
       <a mat-menu-item routerLinkActive="active-link"
         [routerLink]="['/dashboards/mis']">{{'menu.dashboardsMIS' | translate}}</a>
+        <a mat-menu-item routerLinkActive="active-link"
+        [routerLink]="['/dashboards/heat-map']">{{'menu.dashboardsHeatMap' | translate}}</a>
     </mat-menu>
     <!-- <button mat-button [matMenuTriggerFor]="adminMenu">
       {{'menu.admin' | translate}} <mat-icon>expand_more</mat-icon>

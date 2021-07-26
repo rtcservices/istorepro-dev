@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { OperationsRoutingModule } from './operations-routing.module';
 import { OperationsReceiptComponent } from './operations-receipt/operations-receipt.component';
 import { OperationsLocationManagementComponent } from './operations-location-management/operations-location-management.component';
-import { OperationsHeatMapComponent } from './operations-heat-map/operations-heat-map.component';
 import { OperationsDeliveryComponent } from './operations-delivery/operations-delivery.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { OrOwnerDialogComponent } from './operations-receipt/dialogs/or-owner-dialog/or-owner-dialog.component';
@@ -16,7 +15,6 @@ import { OrPutawayDialogComponent } from './operations-receipt/dialogs/or-putawa
 import { OrLabelDialogComponent } from './operations-receipt/dialogs/or-label-dialog/or-label-dialog.component';
 import { OlmGrnDialogComponent } from './operations-location-management/dialogs/olm-grn-dialog/olm-grn-dialog.component';
 import { OlmLocationDialogComponent } from './operations-location-management/dialogs/olm-location-dialog/olm-location-dialog.component';
-import { OhmCellDialogComponent } from './operations-heat-map/dialogs/ohm-cell-dialog/ohm-cell-dialog.component';
 import { OdShiptoDialogComponent } from './operations-delivery/dialogs/od-shipto-dialog/od-shipto-dialog.component';
 import { OdOwnerDialogComponent } from './operations-delivery/dialogs/od-owner-dialog/od-owner-dialog.component';
 import { OdItemDialogComponent } from './operations-delivery/dialogs/od-item-dialog/od-item-dialog.component';
@@ -25,7 +23,6 @@ import { OdItemDialogComponent } from './operations-delivery/dialogs/od-item-dia
   declarations: [
     OperationsReceiptComponent,
     OperationsLocationManagementComponent,
-    OperationsHeatMapComponent,
     OperationsDeliveryComponent,
     OrOwnerDialogComponent,
     OrItemDialogComponent,
@@ -36,7 +33,6 @@ import { OdItemDialogComponent } from './operations-delivery/dialogs/od-item-dia
     OrLabelDialogComponent,
     OlmGrnDialogComponent,
     OlmLocationDialogComponent,
-    OhmCellDialogComponent,
     OdShiptoDialogComponent,
     OdOwnerDialogComponent,
     OdItemDialogComponent

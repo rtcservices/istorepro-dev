@@ -1,0 +1,76 @@
+<button mat-raised-button class="dialog-close" [mat-dialog-close]="true" color="warn">
+    <mat-icon class="close-icon">close</mat-icon>
+  </button>
+  
+  <h1 mat-dialog-title>B16-02-01</h1>
+  <section class="bordered-section">
+    <table class="site-table text-center w-100">
+      <thead>
+        <tr>
+          <th>{{ 'dashboard.HeatMap.zone' | translate}}</th>
+          <th>{{ 'dashboard.HeatMap.storagetype' | translate}}</th>
+          <th>{{ 'dashboard.HeatMap.abctag' | translate}} </th>
+          <th>{{ 'dashboard.HeatMap.storagestatus' | translate}} </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="left-align">
+          <td>NO-EZ</td>
+          <td>RACK</td>
+          <td></td>
+          <td>PARTIAL</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <br>
+    <hr>
+  
+    <table class="site-table text-center w-100">
+      <thead>
+        <tr class="left-align" >
+          <th></th>
+          <th >{{ 'dashboard.HeatMap.weight' | translate}}</th>
+          <th >{{ 'dashboard.HeatMap.volume' | translate}} </th>
+        </tr>
+      </thead>
+      <tbody class="left-align">
+        <tr>
+          <td class="text-bold">Net</td>
+          <td >900</td>
+          <td >5</td>
+        </tr>
+        <tr>
+          <td class="text-bold">Balance</td>
+          <td >100</td>
+          <td >5</td>
+        </tr>
+        <tr>
+          <td class="text-bold">Percentage</td>
+          <td >89%</td>
+          <td >0%</td>
+        </tr>
+        <tr>
+          <td class="text-bold">LBH</td>
+          <td >1610*1140*1610</td>
+          <td ></td>
+        </tr>
+      </tbody>
+    </table>
+    <hr>
+    <br>
+    <br>
+    <table class="site-table text-center w-100">
+      <thead>
+        <tr>
+          <th>{{ 'dashboard.HeatMap.item' | translate}}</th>
+          <th>{{ 'dashboard.HeatMap.description' | translate}}</th>
+          <th>{{ 'dashboard.HeatMap.sku' | translate}} </th>
+          <th>{{ 'dashboard.HeatMap.stkgood' | translate}} </th>
+          <th>{{ 'dashboard.HeatMap.stkdmg' | translate}}</th>
+          <th>{{ 'dashboard.HeatMap.locgood' | translate}} </th>
+          <th>{{ 'dashboard.HeatMap.netwt' | translate}} </th>
+        </tr>
+      </thead>
+    </table>
+  </section>

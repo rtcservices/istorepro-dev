@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { patternsHelper } from 'src/app/helpers/patterns.helper';
-import { OhmCellDialogComponent } from './dialogs/ohm-cell-dialog/ohm-cell-dialog.component';
+import { DhmCellDialogComponent } from './dialog/dhm-cell-dialog/dhm-cell-dialog.component';
 
 @Component({
-  selector: 'ibe-operations-heat-map',
-  templateUrl: './operations-heat-map.component.html',
-  styleUrls: ['./operations-heat-map.component.scss']
+  selector: 'ibe-dashboards-heatmap',
+  templateUrl: './dashboards-heatmap.component.html',
+  styleUrls: ['./dashboards-heatmap.component.scss']
 })
-export class OperationsHeatMapComponent implements OnInit {
+export class DashboardsHeatmapComponent implements OnInit {
   HeatMapForm!: FormGroup;
   dummydata: any = [
     [
@@ -69,7 +69,7 @@ export class OperationsHeatMapComponent implements OnInit {
 
 
   openCellDialog () {
-    this.dialog.open(OhmCellDialogComponent, {
+    this.dialog.open(DhmCellDialogComponent, {
       width: '800px'
     });
   }
