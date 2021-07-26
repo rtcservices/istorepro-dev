@@ -182,7 +182,7 @@
     </div>
   </mat-menu>
 
-  <button mat-icon-button>
+  <button mat-icon-button [matTooltip]="settingsTranslated">
     <mat-icon class="settings" [routerLink]="['/settings']">settings</mat-icon>
   </button>
   <!-- <button mat-icon-button [matTooltip]="settingsTranslated" [matMenuTriggerFor]="settingsMenu">

@@ -34,5 +34,6 @@
 .read-only-input {
   @include breakpoint(mobileonly) {
     padding: 10px 0px;
+    margin-bottom: 22px !important;
   }
 }

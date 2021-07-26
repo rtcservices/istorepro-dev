@@ -5,7 +5,7 @@
 <mat-tab-group #OperationReceiptTab>
   <mat-tab label="Data">
     <form fxLayout="column" [formGroup]="dataReceiptForm" (ngSubmit)="onDataReceiptSubmit()" class="slim-form">
-      <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="stretch" fxLayoutGap="5px">
+      <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="stretch" fxLayoutGap.gt-sm="5px">
         <div fxFlex class="bordered-section">
           <div fxLayout="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
             <div fxLayout="row" fxLayoutGap="5px" fxFlex>
@@ -167,9 +167,9 @@
                   <input type="text" class="w-100">
                 </td>
                 <td fxHide fxShow.gt-sm style="width: 200px;">
-                  <input type="number" class="w-100">
+                  <input type="text" class="w-100">
                 </td>
-                <td class="two-button-column display" >
+                <td class="two-button-column" >
                   <button type="button" mat-mini-fab color="primary" class="mdb-30">
                     <mat-icon>edit</mat-icon>
                   </button>
@@ -186,10 +186,10 @@
       <section class="data-tab-footer">
         <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="space-between center"
           fxLayoutAlign.lt-md="space-between center">
-          <div fxFlexOrder.lt-md="2">
+          <div fxFlexOrder.lt-sm="2">
             <ibe-data-audit insertedBy=""></ibe-data-audit>
           </div>
-          <div class="form-three-button-container" fxFlexOrder.lt-md="1">
+          <div class="form-three-button-container" fxFlexOrder.lt-sm="1">
             <button mat-raised-button color="primary" type="submit" (click)="saveReceiptData()">
               <mat-icon>task_alt</mat-icon>
             </button>

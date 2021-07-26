@@ -16,7 +16,7 @@ export class OdShiptoDialogComponent implements OnInit {
 
   createShiptoForm() {
     this.ShiptoForm = this.fb.group({
-      select: [''],
+      select: ['', [Validators.required]],
       shipto: [
         '',
         [Validators.required, Validators.pattern(patternsHelper.alphanumeric)]

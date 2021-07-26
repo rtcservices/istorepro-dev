@@ -1,6 +1,6 @@
 @import '../../../../assets/scss/variables.scss';
 .overflow-x {
-   overflow-x: auto !important;
+  overflow-x: auto !important;
 }
 
 // .data-table {
@@ -56,11 +56,11 @@
 //   }
 // }
 
-.grid-content{
+.grid-content {
   padding-top: 5px !important;
 }
 
-.filter-content{
+.filter-content {
   padding-bottom: 5px !important;
 }
 
@@ -78,4 +78,10 @@
 
 .display {
   display: flex !important;
+}
+
+@include breakpoint(mobileonly) {
+  .two-button-column {
+    display: flex;
+  }
 }
