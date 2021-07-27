@@ -8,6 +8,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatBadgeModule } from '@angular/material/badge';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
@@ -51,6 +52,7 @@ import { FocusInvalidInputDirective } from './directives/focus-invalid-input.dir
     FlexLayoutModule,
 
     MatAutocompleteModule,
+    MatBadgeModule,
     MatButtonModule,
     MatDialogModule,
     MatSelectModule,
@@ -93,6 +95,7 @@ import { FocusInvalidInputDirective } from './directives/focus-invalid-input.dir
     FlexLayoutModule,
 
     MatAutocompleteModule,
+    MatBadgeModule,
     MatButtonModule,
     MatDialogModule,
     MatMenuModule,

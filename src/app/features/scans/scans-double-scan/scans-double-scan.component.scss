@@ -35,3 +35,14 @@
 .scan-button.transfer {
   background: #826a6a;
 }
+
+.bordered-section {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.mat-badge-large .mat-badge-content {
+  font-size: 12px !important;
+}
