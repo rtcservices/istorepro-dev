@@ -9,14 +9,14 @@
 
 .scan-button {
   border-radius: 30px;
-  height: 100px;
+  height: 89px;
   padding: 24px;
-  width: 100px;
+  width: 92px;
   .mat-icon {
     color: #fff;
-    font-size: 3rem;
-    margin-left: -20px;
-    margin-top: -24px;
+    font-size: 3.313rem;
+    margin-left: -31px;
+    margin-top: -32px;
   }
 }
 
@@ -43,8 +43,8 @@
   padding: 5px;
 }
 
-.scan-buttons {
-  ::ng-deep .mat-badge-content {
-    font-size: 12px !important;
+// :host {
+  .mat-badge-medium.mat-badge-above .mat-badge-content {
+    top: -7px !important;
   }
-}
+// }

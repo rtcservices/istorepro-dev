@@ -188,7 +188,7 @@
 
             <mat-tab label="Capacity">
               <div fxLayout.lt-sm="column" fxLayoutAlign="stretch" fxLayoutGap="5px" fxLayout.lt-sm="column">
-                <div class="input-group" fxFlex.gt-md="20" fxFlex.lt-md="26">
+                <div class="input-group" fxFlex.gt-md="20">
                   <div class="input-group-title">{{'base.location.capacity.length' |
                     translate}}</div>
                   <div class="input-group-area">
@@ -200,7 +200,7 @@
               </div>
 
               <div fxLayout.lt-sm="column" fxLayoutAlign="stretch" fxLayoutGap="5px" fxLayout.lt-sm="column">
-                <div class="input-group" fxFlex.gt-md="20" fxFlex.lt-md="26">
+                <div class="input-group" fxFlex.gt-md="20">
                   <div class="input-group-title">{{'base.location.capacity.breadth' |
                     translate}}</div>
                   <div class="input-group-area">
@@ -318,8 +318,8 @@
         </section>
       </div>
       <section class="data-tab-footer">
-        <div fxLayout.gt-sm="row" class="page-import-bottom">
-          <div fxShow fxHide.gt-sm fxLayout.gt-sm="row" class="smaller-button-container-40">
+        <div fxShow fxHide.gt-sm fxLayout="row" fxLayoutAlign="end" class="page-import-bottom">
+          <div fxLayout="row" class="smaller-button-container-40">
             <button mat-raised-button color="primary" type="submit">
               <mat-icon>cloud_upload</mat-icon>
             </button>
