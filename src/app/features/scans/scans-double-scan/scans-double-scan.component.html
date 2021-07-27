@@ -2,7 +2,7 @@
   <h2>{{ 'menu.scansDoubleScan' | translate }}</h2>
 </div>
 
-<div class="mt-sm" [ngSwitch]="clickType">
+<div class="mt-sm" [ngSwitch]="scanType">
   <ng-container *ngSwitchDefault>
     <form fxLayout="column" class="slim-form">
       <div fxLayout="row" fxLayoutAlign="center center">
@@ -25,66 +25,40 @@
                 <mat-icon matSuffix type="button">search</mat-icon>
               </mat-form-field>
             </div>
-
-            <div>
-              <div (click)="clickType = 'putAway'" class="image-box" fxFlex fxLayoutAlign="center">
-                <div class="content image-container" style="background-color: #fb6e0e">
-                  <mat-icon>read_more</mat-icon>
-                </div>
-                <button matBadge class="badge" color="warn" mat-mini-fab>
-                  10
-                </button>
-              </div>
-              <div (click)="clickType = 'pick'" class="image-box" fxFlex fxLayoutAlign="center">
-                <div class="content image-container" style="background-color: #097e48">
-                  <mat-icon>qr_code_scanner</mat-icon>
-                </div>
-                <button matBadge class="badge" color="warn" mat-mini-fab>
-                  10
-                </button>
-              </div>
-              <div (click)="clickType = 'direct'" class="image-box" fxFlex fxLayoutAlign="center">
-                <div class="content image-container" style="background-color: #615cdc">
-                  <mat-icon>double_arrow</mat-icon>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div (click)="clickType = 'inventory'" class="image-box" fxFlex fxLayoutAlign="center">
-                <div class="content image-container" style="background-color: #40505d">
-                  <mat-icon>checklist</mat-icon>
-                </div>
-                <button matBadge class="badge" color="warn" mat-mini-fab>
-                  10
-                </button>
-              </div>
-              <div (click)="clickType = 'transfer'" class="image-box" fxFlex fxLayoutAlign="center">
-                <div class="content image-container" style="background-color: #826a6a">
-                  <mat-icon>transfer_within_a_station</mat-icon>
-                </div>
-
-                <button matBadge class="badge hide" color="warning" mat-mini-fab>
-                  10
-                </button>
-              </div>
-              <div class="image-box" fxFlex fxLayoutAlign="center">
-              </div>
-            </div>
+            <section class="scan-buttons">
+              <button mat-raised-button (click)="changeScanType('putaway')" class="scan-button putaway" matBadge="10"
+                matBadgeColor="danger">
+                <mat-icon>read_more</mat-icon>
+              </button>
+              <button mat-raised-button (click)="changeScanType('pickup')" matBadge="10" class="scan-button pickup"
+                matBadge="10" matBadgeColor="accent">
+                <mat-icon>qr_code_scanner</mat-icon>
+              </button>
+              <button mat-raised-button (click)="changeScanType('direct')" class="scan-button direct">
+                <mat-icon>double_arrow</mat-icon>
+              </button>
+              <button mat-raised-button (click)="changeScanType('inventory')" class="scan-button inventory"
+                matBadge="10" matBadgeColor="accent">
+                <mat-icon>checklist</mat-icon>
+              </button>
+              <button mat-raised-button (click)="changeScanType('transfer')" class="scan-button transfer">
+                <mat-icon>transfer_within_a_station</mat-icon>
+              </button>
+            </section>
           </section>
         </div>
       </div>
     </form>
   </ng-container>
 
-  <ng-container *ngSwitchCase="'putAway'">
+  <ng-container *ngSwitchCase="'putaway'">
     <div fxLayout="row" fxLayoutAlign="center center">
       <div fxFlex.gt-sm="40%" fxFlex.lt-sm="100%">
         <section class="bordered-section">
           <div fxLayout="row">
             <div fxFlex fxLayoutAlign="left">
               <div class="form-three-button-container smaller-button-container-40">
-                <button type="button" (click)="clickType = ''" mat-raised-button color="primary">
+                <button type="button" (click)="changeScanType('')" mat-raised-button color="primary">
                   <mat-icon>arrow_back</mat-icon>
                 </button>
               </div>
@@ -100,14 +74,14 @@
     </div>
   </ng-container>
 
-  <ng-container *ngSwitchCase="'pick'">
+  <ng-container *ngSwitchCase="'pickup'">
     <div fxLayout="row" fxLayoutAlign="center center">
       <div fxFlex.gt-sm="40%" fxFlex.lt-sm="100%">
         <section class="bordered-section">
           <div fxLayout="row">
             <div fxFlex fxLayoutAlign="left">
               <div class="form-three-button-container smaller-button-container-40">
-                <button type="button" (click)="clickType = ''" mat-raised-button color="primary">
+                <button type="button" (click)="changeScanType('')" mat-raised-button color="primary">
                   <mat-icon>arrow_back</mat-icon>
                 </button>
               </div>
@@ -130,7 +104,7 @@
           <div fxLayout="row">
             <div fxFlex fxLayoutAlign="left">
               <div class="form-three-button-container smaller-button-container-40">
-                <button type="button" (click)="clickType = ''" mat-raised-button color="primary">
+                <button type="button" (click)="changeScanType('')" mat-raised-button color="primary">
                   <mat-icon>arrow_back</mat-icon>
                 </button>
               </div>
@@ -153,7 +127,7 @@
           <div fxLayout="row">
             <div fxFlex fxLayoutAlign="left">
               <div class="form-three-button-container smaller-button-container-40">
-                <button type="button" (click)="clickType = ''" mat-raised-button color="primary">
+                <button type="button" (click)="changeScanType('')" mat-raised-button color="primary">
                   <mat-icon>arrow_back</mat-icon>
                 </button>
               </div>
@@ -176,7 +150,7 @@
           <div fxLayout="row">
             <div fxFlex fxLayoutAlign="left">
               <div class="form-three-button-container smaller-button-container-40">
-                <button type="button" (click)="clickType = ''" mat-raised-button color="primary">
+                <button type="button" (click)="changeScanType('')" mat-raised-button color="primary">
                   <mat-icon>arrow_back</mat-icon>
                 </button>
               </div>

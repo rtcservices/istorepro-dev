@@ -1,115 +1,37 @@
 @import '../../../../assets/scss/variables.scss';
 
-.image-box {
-  margin-bottom: 10px;
-  cursor: pointer;
+.scan-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  place-items: center;
 }
 
-.content {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  mat-icon {
-    font-size: 59px;
-    margin-right: 36px;
-    margin-top: -21px;
-    margin-bottom: 17px;
+.scan-button {
+  border-radius: 30px;
+  height: 100px;
+  padding: 24px;
+  width: 100px;
+  .mat-icon {
+    color: #fff;
+    font-size: 3rem;
+    margin-left: -20px;
+    margin-top: -24px;
   }
 }
 
-// @media (max-width: 767.99px) {
-.image-container {
-  padding: 24px 19px;
-  border-radius: 29px 29px 29px 29px;
-  min-width: 40px;
+.scan-button.putaway {
+  background: #fb6e0e;
 }
-
-.content {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  mat-icon {
-    font-size: 53px;
-    margin-right: 29px;
-    margin-top: -10px;
-    margin-bottom: 26px;
-  }
+.scan-button.pickup {
+  background: #097e48;
 }
-
-// }
-
-// @media (min-width: 768.2px) {
-//   .image-container {
-//     padding: 36px 3px;
-//     border-radius: 36px 38px 36px 38px;
-//     width: 50%;
-//   }
-// }
-
-.mt-sm {
-  @media (max-width: 768px) {
-    margin-top: 37px;
-  }
+.scan-button.direct {
+  background: #615cdc;
 }
-
-/* .badge {
-  right: 10px;
-  height: 34px !important;
-  width: 34px !important;
-  position: relative;
-  top: -14px;
-} */
-
-.badge {
-  right: 16px;
-  height: 24px;
-  width: 24px;
-  font-size: 12px;
-  position: relative;
-  top: -10px;
+.scan-button.inventory {
+  background: #40505d;
 }
-
-::ng-deep .mat-mini-fab .mat-button-wrapper {
-  position: relative;
-  top: -7px;
+.scan-button.transfer {
+  background: #826a6a;
 }
-
-.hide {
-  opacity: 0 !important;
-}
-
-mat-icon {
-  color: $site-white;
-}
-
-.bordered-section {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 5px;
-}
-
-
-@media (max-width:767.99px) {
-  ::ng-deep .cdk-overlay-pane {
-    width: 90% !important;
-    }
-
-}
-
-@media (min-width:768px) {
-  ::ng-deep .cdk-overlay-pane {
-    width: 66% !important;
-    }
-
-}
-
-
-@media (min-width:1024px) {
-  ::ng-deep .cdk-overlay-pane {
-    width: 40% !important;
-    }
-
-}
-
-

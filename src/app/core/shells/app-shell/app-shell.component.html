@@ -80,17 +80,13 @@
     <mat-menu #dashboardsMenu="matMenu" backdropClass="top-menu">
       <a mat-menu-item routerLinkActive="active-link"
         [routerLink]="['/dashboards/mis']">{{'menu.dashboardsMIS' | translate}}</a>
-        <a mat-menu-item routerLinkActive="active-link"
+      <a mat-menu-item routerLinkActive="active-link"
         [routerLink]="['/dashboards/heat-map']">{{'menu.dashboardsHeatMap' | translate}}</a>
     </mat-menu>
-    <!-- <button mat-button [matMenuTriggerFor]="adminMenu">
-      {{'menu.admin' | translate}} <mat-icon>expand_more</mat-icon>
-    </button> -->
   </div>
   <span class="spacer"></span>
   <button mat-icon-button [matTooltip]="userAccountTranslated" [matMenuTriggerFor]="userAccountMenu">
     <mat-icon>account_circle</mat-icon>
-    <!-- <img src="../../../../assets/avatars/person.png" class="user-avatar" alt="user-logo" height="30"> -->
   </button>
   <mat-menu class="profile" #userAccountMenu="matMenu" backdropClass="top-menu">
     <div class="padding">
@@ -110,7 +106,8 @@
       </div>
       <br>
       <div (click)="$event.stopPropagation();" fxLayout="column">
-        <form (keydown.tab)="$event.stopPropagation()" fxLayout="column" [formGroup]="profileUpdateForm" (ngSubmit)="onProfileUpdateSubmit()" class="slim-form">
+        <form (keydown.tab)="$event.stopPropagation()" fxLayout="column" [formGroup]="profileUpdateForm"
+          (ngSubmit)="onProfileUpdateSubmit()" class="slim-form">
           <fieldset class="read-only-input" fxFlex>
             <legend>{{ 'general.fullName' | translate }}</legend>
             <label>{{ profileUpdateFormControls.fullName.value }}</label>
@@ -174,7 +171,7 @@
     <mat-icon class="bell">notifications</mat-icon>
     <span matBadge="15" matBadgeSize="medium" class="mat-badge" matBadgeColor="warn"></span>
   </button>
-  <mat-menu #notificationMenu="matMenu" xPosition="before" class="notification-menu">
+  <mat-menu #notificationMenu="matMenu" xPosition="before">
     <div *ngFor="let n of notifications;" class="notification-item">
       <img [src]="n.avatar" [alt]="n.author">
       <span>{{ n.title }}</span>
@@ -185,20 +182,6 @@
   <button mat-icon-button [matTooltip]="settingsTranslated">
     <mat-icon class="settings" [routerLink]="['/settings']">settings</mat-icon>
   </button>
-  <!-- <button mat-icon-button [matTooltip]="settingsTranslated" [matMenuTriggerFor]="settingsMenu">
-    <mat-icon class="settings">settings</mat-icon>
-  </button>
-  <mat-menu #settingsMenu="matMenu" backdropClass="top-menu">
-    <a mat-menu-item routerLinkActive="active-link"
-      [routerLink]="['/admin/system-control']">{{'menu.adminSystemControl' | translate}}</a>
-    <a mat-menu-item routerLinkActive="active-link"
-      [routerLink]="['/admin/consistency']">{{'menu.adminConsistency' | translate}}</a>
-    <a mat-menu-item routerLinkActive="active-link"
-      [routerLink]="['/admin/login-audit']">{{'menu.adminLoginAudit' | translate}}</a>
-    <a mat-menu-item routerLinkActive="active-link"
-      [routerLink]="['/admin/audit-trail']">{{'menu.adminAuditTrail' | translate}}</a>
-  </mat-menu> -->
-
   <button mat-icon-button class="logout-button" [matTooltip]="logoutTranslated" (click)="logout()">
     <mat-icon>logout</mat-icon>
   </button>

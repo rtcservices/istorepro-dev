@@ -6,13 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./scans-double-scan.component.scss']
 })
 export class ScansDoubleScanComponent implements OnInit {
-  clickType:any='ds'
-  constructor() { }
+  scanType: any = '';
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  changeScanType(scanType: string) {
+    this.scanType = scanType;
   }
-
-
-
-
 }
