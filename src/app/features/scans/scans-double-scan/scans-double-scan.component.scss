@@ -43,6 +43,8 @@
   padding: 5px;
 }
 
-.mat-badge-large .mat-badge-content {
-  font-size: 12px !important;
+.scan-buttons {
+  ::ng-deep .mat-badge-content {
+    font-size: 12px !important;
+  }
 }
