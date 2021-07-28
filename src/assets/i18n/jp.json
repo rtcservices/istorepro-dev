@@ -54,6 +54,7 @@
     "back": "ログインに戻る"
   },
   "menu": {
+    "home": "家",
     "setup": "セットアップ",
     "setupCompany": "会社",
     "setupWarehouse": "倉庫",

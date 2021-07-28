@@ -2,47 +2,36 @@
   <section class="login-banner" fxShow fxHide.lt-md></section>
   <section fxLayout="column" fxLayoutAlign="center center">
     <figure fxHide.gt-md class="mobile-brand">
-      <img src="../../../../assets/images/Be-Logo.PNG"
-           alt="BE Logo">
+      <img src="../../../../assets/images/Be-Logo.PNG" alt="BE Logo">
     </figure>
     <mat-card class="login-card high-shadow">
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
         <mat-form-field appearance="standard">
           <mat-label>{{ 'login.userNameLabel' | translate }}</mat-label>
-          <input matInput required type="text"
-            formControlName="username">
+          <input matInput required type="text" formControlName="username">
           <mat-icon matPrefix>person</mat-icon>
           <mat-error *ngIf="loginFormControl.username.invalid">{{'login.userNameError' | translate}}</mat-error>
         </mat-form-field>
         <mat-form-field appearance="standard">
           <mat-label>{{ 'login.passwordLabel' | translate }}</mat-label>
-          <input matInput required type="password"
-            formControlName="password">
+          <input matInput required type="password" formControlName="password">
           <mat-icon matPrefix>lock</mat-icon>
           <mat-error *ngIf="loginFormControl.password.invalid">{{'login.passwordError' | translate}}</mat-error>
         </mat-form-field>
         <mat-error *ngIf="loginInvalid">
           {{'login.loginFormError' | translate}}
         </mat-error>
-        <div class="dvlogin" fxLayoutAlign="space-between center">
+        <div fxLayoutAlign="space-between center" class="dvbutton">
           <div class="login-button-container">
-            <button mat-raised-button
-              type="submit"
-            >
-            <mat-icon>input</mat-icon>
+            <button mat-raised-button color="primary" type="submit">
+              <mat-icon> input</mat-icon>
               {{ 'login.title' | translate }}
             </button>
           </div>
-
-          <button mat-button class="forgot-password" color="primary"
-            type="button"
-            (click)="gotoForgotPasswordPage()">
-            {{ 'login.forgotPassword' | translate }}</button>
-          <!-- <a
-            [routerLink]="['/auth/forgot-password']"
-          >
-            {{ 'login.forgotPassword' | translate }}
-          </a> -->
+          <div class="back-to-login">
+            <button mat-button color="primary" type="button" (click)="gotoForgotPasswordPage()">
+              {{ 'login.forgotPassword' | translate }}</button>
+          </div>
         </div>
       </form>
     </mat-card>

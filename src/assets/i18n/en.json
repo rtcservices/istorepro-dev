@@ -54,6 +54,7 @@
     "back": "Back to Login"
   },
   "menu": {
+    "home": "Home",
     "setup": "Setup",
     "setupCompany": "Company",
     "setupWarehouse": "Warehouse",

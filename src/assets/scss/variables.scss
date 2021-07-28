@@ -44,6 +44,10 @@ $fontsize: 0.75rem;
     @media (max-width: 37.5em) {
       @content;
     }
+  } @else if $point == mobilekeyboardopen {
+    @media (max-width: 37.5em) and (max-height: 400px) {
+      @content;
+    }
   }
 }
 

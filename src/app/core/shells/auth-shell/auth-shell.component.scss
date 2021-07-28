@@ -1,4 +1,4 @@
-@import "../../../../assets/scss/variables.scss";
+@import '../../../../assets/scss/variables.scss';
 
 .app-navbar {
   background-color: $site-primary;
@@ -13,15 +13,12 @@
     margin-left: -20px;
     @include breakpoint(mobileonly) {
       clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%) !important;
-      // width: 230px !important;
     }
     @include breakpoint(tablet) {
       clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%) !important;
-      // width: 330px !important;
     }
     a {
       @include breakpoint(mobileonly) {
-        // width: 220px !important;
         padding: 0% !important;
       }
     }
@@ -33,9 +30,6 @@
         margin-top: 3px !important;
       }
     }
-    // img:nth-child(1) {
-    //   margin-left: 10px;
-    // }
   }
   .app-logo {
     height: 50px;
@@ -54,6 +48,9 @@
   display: block;
   height: calc(100% - 175px);
   width: 100%;
+  @include breakpoint(mobileonly) {
+    height: calc(100% - 125px);
+  }
 }
 
 .footer {
@@ -69,6 +66,9 @@
   span {
     margin-top: 0.25rem;
   }
+  @include breakpoint(mobileonly) {
+    height: 70px;
+  }
 }
 .app-version {
   color: $site-primary;
@@ -81,4 +81,10 @@
   position: fixed;
   bottom: 5px;
   right: 5px;
+}
+.app-screen-resolution {
+  color: $site-white;
+  position: fixed;
+  bottom: 5px;
+  left: 5px;
 }
