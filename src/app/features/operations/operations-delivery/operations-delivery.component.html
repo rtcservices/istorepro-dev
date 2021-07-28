@@ -189,7 +189,7 @@
             </mat-form-field>
           </div>
           <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap.gt-sm="5px" fxFlex>
-            <div fxLayoutAlign="start" class="form-three-button-container" fxFlex.gt-sm="33">
+            <div fxLayoutAlign="start" class="form-three-button-container smaller-button-container-40" fxFlex.gt-sm="33">
               <button type="button" mat-raised-button color="primary" matTooltip="Pick List">
                 <mat-icon>list_alt</mat-icon>
               </button>
@@ -204,7 +204,7 @@
               <mat-checkbox color="primary" formControlName="reworkonly">
                 {{'operations.delivery.reworkonly' | translate}}</mat-checkbox>
             </div>
-            <div fxLayoutAlign="end" fxFlex.gt-sm="15">
+            <div fxLayoutAlign="end" fxFlex.gt-sm="15" class="form-three-button-container smaller-button-container-40">
               <button type="button" mat-raised-button color="primary">
                 {{'operations.delivery.alloc' | translate}}
               </button>
@@ -420,7 +420,7 @@
               'error.field' | translate
               }}</mat-error>
           </mat-form-field>
-          <div class="form-button-container" fxFlex.gt-sm="32.5">
+          <div class="form-three-button-container" fxFlex.gt-sm="32.5">
             <button (click)="onSearchDeliverySubmit()" mat-raised-button color="primary" type="submit">
               <mat-icon>search</mat-icon>
             </button>

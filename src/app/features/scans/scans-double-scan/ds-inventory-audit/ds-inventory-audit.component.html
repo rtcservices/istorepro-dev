@@ -7,7 +7,7 @@
         <mat-error *ngIf="inventoryAuditFormControls.warehouse.invalid">
           {{ 'error.field' | translate }}</mat-error>
       </mat-form-field>
-      <mat-form-field appearance="outline" class="row" fxFlex="50">
+      <mat-form-field appearance="outline" class="row" fxFlex="50" fxFlex.lt-sm="49">
         <mat-label>{{ 'scans.doubleScan.ian' | translate}}</mat-label>
         <input matInput type="text" formControlName="ianscan" />
         <mat-icon type="button" class="cursor-style" (click)="openIanDialog()" matSuffix>search</mat-icon>
