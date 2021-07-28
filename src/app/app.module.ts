@@ -29,6 +29,7 @@ import { AuthShellComponent } from './core/shells/auth-shell/auth-shell.componen
 import { AppShellComponent } from './core/shells/app-shell/app-shell.component';
 import { LoadingComponent } from './core/components/loading/loading.component';
 import { SharedModule } from './shared/shared.module';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 
 export function httpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(
@@ -62,7 +63,6 @@ export function httpLoaderFactory(http: HttpClient) {
     MatToolbarModule,
     MatTooltipModule,
 
-
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -72,7 +72,7 @@ export function httpLoaderFactory(http: HttpClient) {
     }),
     AppRoutingModule
   ],
-  providers: [],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'en-GB' }],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

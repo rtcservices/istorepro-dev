@@ -103,11 +103,19 @@
                     <div fxLayout="row" fxLayout.lt-sm="column" class="row" fxLayoutGap="5px" fxLayoutGap.lt-sm="5px">
                       <mat-form-field appearance="outline" fxFlex>
                         <mat-label>{{'setup.security.suspendFrom' | translate }}</mat-label>
-                        <input matInput type="text" formControlName="suspendFrom" [readonly]="!suspendRevoke" />
+                        <input formControlName="suspendFrom" matInput [matDatepicker]="suspendFrom"  [readonly]="!suspendRevoke">
+                        <mat-datepicker-toggle matSuffix [for]="suspendFrom">
+                          <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+                        </mat-datepicker-toggle>
+                        <mat-datepicker #suspendFrom></mat-datepicker>
                       </mat-form-field>
                       <mat-form-field appearance="outline" fxFlex>
                         <mat-label>{{'setup.security.suspendTo' | translate}}</mat-label>
-                        <input matInput type="text" formControlName="suspendTo" [readonly]="!suspendRevoke" />
+                        <input formControlName="suspendTo" matInput [matDatepicker]="suspendTo"  [readonly]="!suspendRevoke">
+                        <mat-datepicker-toggle matSuffix [for]="suspendTo">
+                          <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+                        </mat-datepicker-toggle>
+                        <mat-datepicker #suspendTo></mat-datepicker>
                       </mat-form-field>
                       <fieldset class="read-only-input" fxFlex>
                         <legend>{{ 'setup.security.lastSuspended' | translate }}</legend>
@@ -214,25 +222,26 @@
         <div class="row" fxLayout="row" fxLayoutGap="5px">
           <mat-form-field appearance="outline" fxFlex="33">
             <mat-label>{{
-                'setup.security.loginName' | translate
-                }}</mat-label>
+              'setup.security.loginName' | translate
+              }}</mat-label>
             <input matInput type="text" formControlName="loginName" />
             <mat-error *ngIf="searchSetupSecurityFormControls.loginName.invalid">
               {{ 'error.field' | translate }}</mat-error>
           </mat-form-field>
           <mat-form-field appearance="outline" fxFlex="33">
             <mat-label>{{
-                'setup.security.fullName' | translate
-                }}</mat-label>
+              'setup.security.fullName' | translate
+              }}</mat-label>
             <input matInput type="text" formControlName="fullName" />
             <mat-error *ngIf="searchSetupSecurityFormControls.fullName.invalid">
               {{ 'error.field' | translate }}</mat-error>
           </mat-form-field>
           <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="32">
-            <mat-label>{{
-                'setup.security.suspended' | translate
-                }}</mat-label>
-            <input matInput type="text" formControlName="suspended" />
+            <mat-label>{{'setup.security.suspended' | translate}}</mat-label>
+            <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="suspended">
+              <mat-option value="yes">Yes</mat-option>
+              <mat-option value="no">No</mat-option>
+            </mat-select>
             <mat-error *ngIf="searchSetupSecurityFormControls.suspended.invalid">
               {{ 'error.field' | translate }}</mat-error>
           </mat-form-field>

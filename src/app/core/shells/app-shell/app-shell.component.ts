@@ -281,7 +281,7 @@ export class AppShellComponent implements OnInit, AfterViewInit {
             route: 'dashboards/mis'
           },
           {
-            displayName: this.translate.instant('menu.operationsHeatMap'),
+            displayName: this.translate.instant('menu.dashboardsHeatMap'),
             route: 'dashboards/heat-map'
           }
         ]

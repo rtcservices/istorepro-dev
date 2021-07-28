@@ -15,6 +15,7 @@ import { OdItemDialogComponent } from './dialogs/od-item-dialog/od-item-dialog.c
 import { TitleService } from 'src/app/services/title.service';
 import { TranslateService } from '@ngx-translate/core';
 import { SiteTranslateService } from 'src/app/services/site-translate.service';
+
 @Component({
   selector: 'ibe-operations-delivery',
   templateUrl: './operations-delivery.component.html',
