@@ -5,7 +5,7 @@
 <form [formGroup]="dataOwnerForm" (ngSubmit)="onDataOwnerSubmit()" class="slim-form">
   <section class="bordered-section">
     <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px" fxLayoutGap.lt-md="0px">
-      <mat-form-field appearance="outline" fxFlex="33">
+      <mat-form-field appearance="outline" fxFlex="33" fxFlex.lt-sm="100">
         <mat-label>{{
           'operations.receipt.code' | translate
           }}</mat-label>

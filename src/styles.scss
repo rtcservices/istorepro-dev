@@ -137,7 +137,7 @@ small {
   .prefix-data,
   .suffix-data {
     align-items: center;
-    border: 1px solid #ddd;
+    border: 1px solid rgba(119, 119, 119, 0.7);
     display: flex;
     justify-content: center;
     margin-top: 6px;
@@ -175,7 +175,7 @@ small {
   font-size: $fontsize;
 }
 
-.summary-section{
+.summary-section {
   padding-left: 20px;
   font-size: $fontsize;
 }

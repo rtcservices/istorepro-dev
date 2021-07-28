@@ -1,4 +1,5 @@
 @import '../../../../../../assets/scss/variables.scss';
+
 .form-import {
   margin-top: 0.5rem;
 }
@@ -48,10 +49,6 @@ select {
   padding: 0px !important;
 }
 
-// .wh-control-table {
-//   margin-top: 50px;
-// }
-
 .inventory-alert-table,
 .matrix-table {
   table {
@@ -62,10 +59,6 @@ select {
 
 .input-group {
   padding-top: 6px;
-}
-
-.input-group-title {
-  min-width: 83px;
 }
 
 .modal-button {
@@ -84,19 +77,4 @@ select {
 }
 button[mat-dialog-close] {
   transform: scale(0.7);
-}
-
-.overflow-x {
-  overflow-x: auto !important;
-}
-
-.lookup-column {
-  ::ng-deep .mat-form-field-wrapper {
-    padding-bottom: 0em;
-  }
-  mat-form-field {
-    display: block;
-    padding: 0;
-    margin: 0;
-  }
 }
