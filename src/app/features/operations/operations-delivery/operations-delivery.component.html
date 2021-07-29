@@ -328,35 +328,37 @@
           </mat-form-field>
         </div>
         <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px" fxLayoutGap.lt-md="0px">
-          <mat-form-field appearance="outline" fxFlex.gt-sm="10">
-            <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="dateoperator">
-              <mat-option value=">">></mat-option>
-              <mat-option value="<">
-                < </mat-option>
-                  <mat-option value=">="> >=
-                  </mat-option>
-                  <mat-option value="<=">
-                    <= </mat-option>
-                      <mat-option value="<>">
-                        <>
-                      </mat-option>
-                      <mat-option value="="> = </mat-option>
-            </mat-select>
-            <mat-error *ngIf="searchDeliveryFormControls.dateoperator.invalid">{{
-              'error.field' | translate
-              }}</mat-error>
-          </mat-form-field>
-          <mat-form-field appearance="outline" fxFlex.gt-sm="22.9">
-            <mat-label>{{ 'operations.delivery.deliverydate' | translate }}</mat-label>
-            <input formControlName="deliverydate" matInput [matDatepicker]="picker4">
-            <mat-datepicker-toggle matSuffix [for]="picker4">
-              <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
-            </mat-datepicker-toggle>
-            <mat-datepicker #picker4></mat-datepicker>
-            <mat-error *ngIf="searchDeliveryFormControls.deliverydate.invalid">
-              {{ 'error.field' | translate }}
-            </mat-error>
-          </mat-form-field>
+          <div fxLayout="row" fxFlex.gt-sm="33.1" fxLayoutGap="5px">
+            <mat-form-field appearance="outline" fxFlex="30">
+              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="dateoperator">
+                <mat-option value=">">></mat-option>
+                <mat-option value="<">
+                  < </mat-option>
+                    <mat-option value=">="> >=
+                    </mat-option>
+                    <mat-option value="<=">
+                      <= </mat-option>
+                        <mat-option value="<>">
+                          <>
+                        </mat-option>
+                        <mat-option value="="> = </mat-option>
+              </mat-select>
+              <mat-error *ngIf="searchDeliveryFormControls.dateoperator.invalid">{{
+                'error.field' | translate
+                }}</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex>
+              <mat-label>{{ 'operations.delivery.deliverydate' | translate }}</mat-label>
+              <input formControlName="deliverydate" matInput [matDatepicker]="picker4">
+              <mat-datepicker-toggle matSuffix [for]="picker4">
+                <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+              </mat-datepicker-toggle>
+              <mat-datepicker #picker4></mat-datepicker>
+              <mat-error *ngIf="searchDeliveryFormControls.deliverydate.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+          </div>
           <mat-form-field appearance="outline" fxFlex.gt-sm="33.1">
             <mat-label>{{
               'operations.delivery.po' | translate

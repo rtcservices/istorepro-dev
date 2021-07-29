@@ -237,29 +237,32 @@
           </mat-form-field>
         </div>
         <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px" fxLayoutGap.lt-md="0px">
-          <mat-form-field appearance="outline" fxFlex="10" fxFlex.lt-md="34" fxFlex.lt-sm="33">
-            <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="dateoperator">
-              <mat-option value=">">></mat-option>
-              <mat-option value="<">
-                < </mat-option>
-                  <mat-option value=">="> >=
-                  </mat-option>
-                  <mat-option value="<=">
-                    <= </mat-option>
-                      <mat-option value="<>">
-                        <>
-                      </mat-option>
-                      <mat-option value="="> = </mat-option>
-            </mat-select>
-            <mat-error *ngIf="searchReceiptFormControls.dateoperator.invalid">{{
-              'error.field' | translate
-              }}</mat-error>
-          </mat-form-field>
-          <mat-form-field appearance="outline" fxFlex="22.2">
-            <input matInput type="date" formControlName="receiptDate" />
-            <mat-error *ngIf="searchReceiptFormControls.receiptDate.invalid">
-              {{ 'error.field' | translate }}</mat-error>
-          </mat-form-field>
+          <div fxLayout="row" fxFlex="32.5" fxLayoutGap="5px">
+            <mat-form-field appearance="outline" fxFlex="30" fxFlex.lt-md="34" fxFlex.lt-sm="33">
+              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="dateoperator">
+                <mat-option value=">">></mat-option>
+                <mat-option value="<">
+                  < </mat-option>
+                    <mat-option value=">="> >=
+                    </mat-option>
+                    <mat-option value="<=">
+                      <= </mat-option>
+                        <mat-option value="<>">
+                          <>
+                        </mat-option>
+                        <mat-option value="="> = </mat-option>
+              </mat-select>
+              <mat-error *ngIf="searchReceiptFormControls.dateoperator.invalid">{{
+                'error.field' | translate
+                }}</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex>
+              <input matInput type="date" formControlName="receiptDate" />
+              <mat-error *ngIf="searchReceiptFormControls.receiptDate.invalid">
+                {{ 'error.field' | translate }}</mat-error>
+            </mat-form-field>
+          </div>
+          
           <mat-form-field appearance="outline" fxFlex="15.5">
             <mat-label>{{
               'operations.receipt.po' | translate
