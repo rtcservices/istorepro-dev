@@ -178,4 +178,14 @@ small {
 .summary-section {
   padding-left: 20px;
   font-size: $fontsize;
+  span{
+    margin: 0px 5px;
+  }
+}
+
+.scan-section-header{
+  h4{
+    color: $site-primary;
+    font-weight: 500;
+  }
 }

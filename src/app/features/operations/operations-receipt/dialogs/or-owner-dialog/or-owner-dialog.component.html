@@ -26,12 +26,9 @@
         <mat-icon>restart_alt</mat-icon>
       </button>
     </div>
-    <table class="site-table text-center w-100">
+    <table class="site-table w-100">
       <thead>
         <tr>
-          <th class="checkbox-column">
-            <mat-checkbox color="primary"></mat-checkbox>
-          </th>
           <th>{{ 'operations.receipt.type' | translate}}</th>
           <th>{{ 'operations.receipt.code' | translate}}</th>
           <th>{{ 'operations.receipt.name' | translate}} </th>
@@ -39,9 +36,6 @@
       </thead>
       <ng-template let-control ngFor [ngForOf]="searchDataSource">
         <tr>
-          <td class="checkbox-column">
-            <mat-checkbox color="primary"></mat-checkbox>
-          </td>
           <td>
             {{control.type}}
           </td>

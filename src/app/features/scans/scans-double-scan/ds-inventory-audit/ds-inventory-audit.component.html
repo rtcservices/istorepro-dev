@@ -1,12 +1,10 @@
 <div class="mt-sm">
   <form [formGroup]="inventoryAuditForm" fxLayout="column" class="slim-form">
     <div fxLayout="row" fxLayoutGap="5px">
-      <mat-form-field appearance="outline" class="row" fxFlex="50">
-        <mat-label>{{'scans.doubleScan.warehouse' | translate }}</mat-label>
-        <input matInput type="text" formControlName="warehouse" />
-        <mat-error *ngIf="inventoryAuditFormControls.warehouse.invalid">
-          {{ 'error.field' | translate }}</mat-error>
-      </mat-form-field>
+      <fieldset class="read-only-input" fxFlex="50">
+        <legend>{{'scans.doubleScan.warehouse' | translate }}</legend>
+        <label>{{'scans.doubleScan.warehouse' | translate }}</label>
+      </fieldset>
       <mat-form-field appearance="outline" class="row" fxFlex="50" fxFlex.lt-sm="49">
         <mat-label>{{ 'scans.doubleScan.ian' | translate}}</mat-label>
         <input matInput type="text" formControlName="ianscan" />

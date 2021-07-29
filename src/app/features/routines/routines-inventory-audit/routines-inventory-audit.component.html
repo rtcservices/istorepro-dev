@@ -226,7 +226,7 @@
             <mat-label>{{
               'routines.inventory.auditstatus' | translate
               }}</mat-label>
-            <input matInput type="text" formControlName="auditstatus" />
+              <mat-select formControlName="auditstatus"></mat-select>
             <mat-error *ngIf="searchInventoryFormControls.auditstatus.invalid">
               {{ 'error.field' | translate }}</mat-error>
           </mat-form-field>

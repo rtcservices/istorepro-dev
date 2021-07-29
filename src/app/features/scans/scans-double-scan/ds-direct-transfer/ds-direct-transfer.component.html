@@ -35,6 +35,7 @@
     <div fxLayout="row" fxLayoutGap="5px">
       <mat-form-field *ngIf="mode=='putaway'" appearance="outline" class="row" fxFlex>
         <input matInput type="text" formControlName="scan" />
+        <mat-icon type="button" class="cursor-style" matSuffix>search</mat-icon>
         <mat-error *ngIf="DirectTransferFormControls.scan.invalid">
           {{ 'error.field' | translate }}</mat-error>
       </mat-form-field>
