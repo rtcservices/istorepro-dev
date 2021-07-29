@@ -15,8 +15,7 @@
     border: 1px solid $site-light-gray;
     border-radius: 5px;
     margin-top: 2px;
-    padding-bottom: 5px;
-    padding-top: 5px;
+    padding: 5px;
     &.with-inner {
       padding-top: 0;
     }
@@ -35,7 +34,7 @@
     background-color: $site-white;
     border: 1px solid $site-light-gray;
     border-radius: 5px;
-    padding: 5px;
+    padding: 5px !important;
   }
   .mat-form-field-subscript-wrapper {
     margin-top: 2px !important;
