@@ -347,11 +347,16 @@
                     <td></td>
                     <td><input disabled type="number" style="width: 100%;" [value]="control.to.value"></td>
                     <td><input type="text" style="width: 100%;" [value]="control.to.unit"></td>
-                    <td><input type="number" style="width: 100%;" [value]="control.to.weight" onkeydown="return event.keyCode !== 69"></td>
-                    <td><input type="number" style="width: 100%;" [value]="control.to.length" onkeydown="return event.keyCode !== 69"></td>
-                    <td><input type="number" style="width: 100%;" [value]="control.to.breadth" onkeydown="return event.keyCode !== 69"></td>
-                    <td><input type="number" style="width: 100%;" [value]="control.to.height" onkeydown="return event.keyCode !== 69"></td>
-                    <td><input disabled type="number" style="width: 100%;" [value]="control.to.volume"  onkeydown="return event.keyCode !== 69"></td>
+                    <td><input type="number" style="width: 100%;" [value]="control.to.weight"
+                        onkeydown="return event.keyCode !== 69"></td>
+                    <td><input type="number" style="width: 100%;" [value]="control.to.length"
+                        onkeydown="return event.keyCode !== 69"></td>
+                    <td><input type="number" style="width: 100%;" [value]="control.to.breadth"
+                        onkeydown="return event.keyCode !== 69"></td>
+                    <td><input type="number" style="width: 100%;" [value]="control.to.height"
+                        onkeydown="return event.keyCode !== 69"></td>
+                    <td><input disabled type="number" style="width: 100%;" [value]="control.to.volume"
+                        onkeydown="return event.keyCode !== 69"></td>
                   </ng-template>
                 </tbody>
               </table>
@@ -497,13 +502,15 @@
       </section>
 
       <section class="search-tab-footer">
-        <div class="form-three-button-container">
-          <button mat-raised-button color="primary" type="submit">
-            <mat-icon>search</mat-icon>
-          </button>
-          <button mat-raised-button color="accent" type="reset" (click)="resetItemSearchForm()">
-            <mat-icon>restart_alt</mat-icon>
-          </button>
+        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="end center" fxLayoutAlign.lt-sm="end end">
+          <div class="form-three-button-container">
+            <button mat-raised-button color="primary" type="submit">
+              <mat-icon>search</mat-icon>
+            </button>
+            <button mat-raised-button color="accent" type="reset" (click)="resetItemSearchForm()">
+              <mat-icon>restart_alt</mat-icon>
+            </button>
+          </div>
         </div>
       </section>
     </form>

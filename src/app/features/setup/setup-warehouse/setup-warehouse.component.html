@@ -253,24 +253,24 @@
         <div class="row" fxLayout="row" fxLayoutGap="5px">
           <mat-form-field appearance="outline" fxFlex="20" fxFlex.lt-sm="22">
             <mat-label>{{
-                'setup.warehouse.code' | translate
-                }}</mat-label>
+              'setup.warehouse.code' | translate
+              }}</mat-label>
             <input matInput type="text" formControlName="warehouseCode" />
             <mat-error *ngIf="searchWarehouseFormControls.warehouseCode.invalid">
               {{ 'error.field' | translate }}</mat-error>
           </mat-form-field>
           <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm="55">
             <mat-label>{{
-                'setup.warehouse.description' | translate
-                }}</mat-label>
+              'setup.warehouse.description' | translate
+              }}</mat-label>
             <input matInput type="text" formControlName="description" />
             <mat-error *ngIf="searchWarehouseFormControls.description.invalid">
               {{ 'error.field' | translate }}</mat-error>
           </mat-form-field>
           <mat-form-field appearance="outline" fxFlex="20" fxFlex.lt-sm="20">
             <mat-label>{{
-                'setup.warehouse.id' | translate
-                }}</mat-label>
+              'setup.warehouse.id' | translate
+              }}</mat-label>
             <input matInput type="text" formControlName="id" />
             <mat-error *ngIf="searchWarehouseFormControls.id.invalid">
               {{ 'error.field' | translate }}</mat-error>
@@ -278,13 +278,15 @@
         </div>
       </section>
       <section class="search-tab-footer">
-        <div class="form-three-button-container">
-          <button mat-raised-button color="primary" type="submit">
-            <mat-icon>search</mat-icon>
-          </button>
-          <button mat-raised-button color="accent" type="reset" (click)="resetWarehouseSearchForm()">
-            <mat-icon>restart_alt</mat-icon>
-          </button>
+        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="end center" fxLayoutAlign.lt-sm="end end">
+          <div class="form-three-button-container">
+            <button mat-raised-button color="primary" type="submit">
+              <mat-icon>search</mat-icon>
+            </button>
+            <button mat-raised-button color="accent" type="reset" (click)="resetWarehouseSearchForm()">
+              <mat-icon>restart_alt</mat-icon>
+            </button>
+          </div>
         </div>
       </section>
     </form>

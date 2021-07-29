@@ -234,7 +234,7 @@
             <span>Del Vol : 0</span>
           </div>
           <div fxFlex class="form-three-button-container" fxFlexOrder.lt-md="2">
-            <button mat-raised-button color="primary" type="button"  matTooltip="DRN">
+            <button mat-raised-button color="primary" type="button" matTooltip="DRN">
               DRN
             </button>
             <button mat-raised-button color="accent" type="reset" (click)="resetStockAdjustDataForm()">
@@ -340,13 +340,15 @@
           <div fxFlex.gt-sm="32.5">
 
           </div>
-          <div class="form-button-container" fxFlex.gt-sm="32.5">
-            <button (click)="onSearchStockAdjustSubmit()" mat-raised-button color="primary" type="submit">
-              <mat-icon>search</mat-icon>
-            </button>
-            <button mat-raised-button color="accent" type="reset" (click)="resetStockAdjustSearchForm()">
-              <mat-icon>restart_alt</mat-icon>
-            </button>
+          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="end center" fxLayoutAlign.lt-sm="end end">
+            <div class="form-button-container" fxFlex.gt-sm="32.5">
+              <button (click)="onSearchStockAdjustSubmit()" mat-raised-button color="primary" type="submit">
+                <mat-icon>search</mat-icon>
+              </button>
+              <button mat-raised-button color="accent" type="reset" (click)="resetStockAdjustSearchForm()">
+                <mat-icon>restart_alt</mat-icon>
+              </button>
+            </div>
           </div>
         </div>
       </section>

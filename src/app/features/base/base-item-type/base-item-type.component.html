@@ -208,13 +208,15 @@
         </div>
       </section>
       <section class="search-tab-footer">
-        <div class="form-three-button-container">
-          <button mat-raised-button color="primary" type="submit">
-            <mat-icon>search</mat-icon>
-          </button>
-          <button mat-raised-button color="accent" type="reset" (click)="resetItemTypeSearchForm()">
-            <mat-icon>restart_alt</mat-icon>
-          </button>
+        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="end center" fxLayoutAlign.lt-sm="end end">
+          <div class="form-three-button-container">
+            <button mat-raised-button color="primary" type="submit">
+              <mat-icon>search</mat-icon>
+            </button>
+            <button mat-raised-button color="accent" type="reset" (click)="resetItemTypeSearchForm()">
+              <mat-icon>restart_alt</mat-icon>
+            </button>
+          </div>
         </div>
       </section>
     </form>

@@ -189,7 +189,8 @@
             </mat-form-field>
           </div>
           <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap.gt-sm="5px" fxFlex>
-            <div fxLayoutAlign="start" class="form-three-button-container smaller-button-container-40" fxFlex.gt-sm="33">
+            <div fxLayoutAlign="start" class="form-three-button-container smaller-button-container-40"
+              fxFlex.gt-sm="33">
               <button type="button" mat-raised-button color="primary" matTooltip="Pick List">
                 <mat-icon>list_alt</mat-icon>
               </button>
@@ -263,7 +264,8 @@
             {{ 'operations.delivery.auditInProgress' | translate}}
           </div>
         </div>
-        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="30px" fxLayoutAlign="space-between">
+        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="space-between center"
+          fxLayoutAlign.lt-md="space-between center" fxLayoutGap.lt-md="30px">
           <div fxFlex fxLayoutAlign="start" fxFlexOrder.lt-md="3">
             <ibe-data-audit insertedBy=""></ibe-data-audit>
           </div>
@@ -420,13 +422,15 @@
               'error.field' | translate
               }}</mat-error>
           </mat-form-field>
-          <div class="form-three-button-container" fxFlex.gt-sm="32.5">
-            <button (click)="onSearchDeliverySubmit()" mat-raised-button color="primary" type="submit">
-              <mat-icon>search</mat-icon>
-            </button>
-            <button mat-raised-button color="accent" type="reset" (click)="resetDeliverySearchForm()">
-              <mat-icon>restart_alt</mat-icon>
-            </button>
+          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="end center" fxLayoutAlign.lt-sm="end end">
+            <div class="form-three-button-container" fxFlex.gt-sm="32.5">
+              <button (click)="onSearchDeliverySubmit()" mat-raised-button color="primary" type="submit">
+                <mat-icon>search</mat-icon>
+              </button>
+              <button mat-raised-button color="accent" type="reset" (click)="resetDeliverySearchForm()">
+                <mat-icon>restart_alt</mat-icon>
+              </button>
+            </div>
           </div>
         </div>
       </section>

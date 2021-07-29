@@ -103,7 +103,8 @@
                     <div fxLayout="row" fxLayout.lt-sm="column" class="row" fxLayoutGap="5px" fxLayoutGap.lt-sm="5px">
                       <mat-form-field appearance="outline" fxFlex>
                         <mat-label>{{'setup.security.suspendFrom' | translate }}</mat-label>
-                        <input formControlName="suspendFrom" matInput [matDatepicker]="suspendFrom"  [readonly]="!suspendRevoke">
+                        <input formControlName="suspendFrom" matInput [matDatepicker]="suspendFrom"
+                          [readonly]="!suspendRevoke">
                         <mat-datepicker-toggle matSuffix [for]="suspendFrom">
                           <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
                         </mat-datepicker-toggle>
@@ -111,7 +112,8 @@
                       </mat-form-field>
                       <mat-form-field appearance="outline" fxFlex>
                         <mat-label>{{'setup.security.suspendTo' | translate}}</mat-label>
-                        <input formControlName="suspendTo" matInput [matDatepicker]="suspendTo"  [readonly]="!suspendRevoke">
+                        <input formControlName="suspendTo" matInput [matDatepicker]="suspendTo"
+                          [readonly]="!suspendRevoke">
                         <mat-datepicker-toggle matSuffix [for]="suspendTo">
                           <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
                         </mat-datepicker-toggle>
@@ -248,13 +250,15 @@
         </div>
       </section>
       <section class="search-tab-footer">
-        <div class="form-three-button-container">
-          <button mat-raised-button color="primary" type="submit">
-            <mat-icon>search</mat-icon>
-          </button>
-          <button mat-raised-button color="accent" type="reset" (click)="resetSetupSecuritySearchForm()">
-            <mat-icon>restart_alt</mat-icon>
-          </button>
+        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="end center" fxLayoutAlign.lt-sm="end end">
+          <div class="form-three-button-container">
+            <button mat-raised-button color="primary" type="submit">
+              <mat-icon>search</mat-icon>
+            </button>
+            <button mat-raised-button color="accent" type="reset" (click)="resetSetupSecuritySearchForm()">
+              <mat-icon>restart_alt</mat-icon>
+            </button>
+          </div>
         </div>
       </section>
     </form>

@@ -1,67 +1,68 @@
 <form fxLayout="column" [formGroup]="LoginAuditForm" class="slim-form">
   <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="stretch" fxLayoutGap="5px">
     <div fxFlex class="bordered-section">
-        <div fxLayoutGap="15px" fxLayout="row">
-          <div fxLayout="column" fxLayoutGap="5px" fxFlex="60">
-            <div fxLayout="row" class="row" fxLayoutGap="5px" fxFlex>
-              <mat-form-field appearance="outline" fxFlex="70" fxFlex.lt-sm="60" fxFlex.lt-sm="50">
-                <mat-label>{{'settings.loginaudit.loginname' | translate}}</mat-label>
-                <input matInput type="text" required formControlName="loginname" />
-                <mat-error *ngIf="LoginAuditFormControls.loginname.invalid">
-                  {{ 'error.field' | translate }}
-                </mat-error>
-              </mat-form-field>
-              <mat-form-field appearance="outline" fxFlex="70" fxFlex.lt-sm="60" fxFlex.lt-sm="50">
-                <mat-label>{{'settings.loginaudit.ip' | translate}}</mat-label>
-                <input matInput type="text" required formControlName="ip" />
-                <mat-error *ngIf="LoginAuditFormControls.ip.invalid">
-                  {{ 'error.field' | translate }}
-                </mat-error>
-              </mat-form-field>
-            </div>
-            <div fxLayout="row" class="row" fxLayoutGap="5px" fxFlex>
-              <mat-form-field appearance="outline" fxFlex="30" fxFlex.lt-sm="40" fxFlex.lt-sm="48.5">
-                <mat-label>{{ 'settings.loginaudit.datefrom' | translate }}</mat-label>
-                <input formControlName="datefrom" matInput [matDatepicker]="picker1">
-                <mat-datepicker-toggle matSuffix [for]="picker1">
-                  <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
-                </mat-datepicker-toggle>
-                <mat-datepicker #picker1></mat-datepicker>
-                <mat-error *ngIf="LoginAuditFormControls.datefrom.invalid">
-                  {{ 'error.field' | translate }}
-                </mat-error>
-              </mat-form-field>
-              <mat-form-field appearance="outline" fxFlex="30" fxFlex.lt-sm="40" fxFlex.lt-sm="48.5">
-                <mat-label>{{ 'settings.loginaudit.dateto' | translate }}</mat-label>
-                <input formControlName="dateto" matInput [matDatepicker]="picker2">
-                <mat-datepicker-toggle matSuffix [for]="picker2">
-                  <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
-                </mat-datepicker-toggle>
-                <mat-datepicker #picker2></mat-datepicker>
-                <mat-error *ngIf="LoginAuditFormControls.dateto.invalid">
-                  {{ 'error.field' | translate }}
-                </mat-error>
-              </mat-form-field>
-            </div>
+      <div fxLayoutGap="15px" fxLayout="row">
+        <div fxLayout="column" fxLayoutGap="5px" fxFlex="60">
+          <div fxLayout="row" class="row" fxLayoutGap="5px" fxFlex>
+            <mat-form-field appearance="outline" fxFlex="70" fxFlex.lt-sm="60" fxFlex.lt-sm="50">
+              <mat-label>{{'settings.loginaudit.loginname' | translate}}</mat-label>
+              <input matInput type="text" required formControlName="loginname" />
+              <mat-error *ngIf="LoginAuditFormControls.loginname.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex="70" fxFlex.lt-sm="60" fxFlex.lt-sm="50">
+              <mat-label>{{'settings.loginaudit.ip' | translate}}</mat-label>
+              <input matInput type="text" required formControlName="ip" />
+              <mat-error *ngIf="LoginAuditFormControls.ip.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
           </div>
-          <div class="pale-border-box custom-margin-top max-height" fxLayout="column" fxLayoutGap="5px" fxFlex="40">
-            <p><b>{{ 'settings.loginaudit.options' | translate }}</b></p>
-            <mat-checkbox formControlName="success" fxFlex class="example-margin">
-              {{'settings.loginaudit.success' | translate}}</mat-checkbox>
-            <mat-checkbox formControlName="failure" fxFlex class="example-margin">
-              {{'settings.loginaudit.failure' | translate}}</mat-checkbox>
+          <div fxLayout="row" class="row" fxLayoutGap="5px" fxFlex>
+            <mat-form-field appearance="outline" fxFlex="30" fxFlex.lt-sm="40" fxFlex.lt-sm="48.5">
+              <mat-label>{{ 'settings.loginaudit.datefrom' | translate }}</mat-label>
+              <input formControlName="datefrom" matInput [matDatepicker]="picker1">
+              <mat-datepicker-toggle matSuffix [for]="picker1">
+                <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+              </mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+              <mat-error *ngIf="LoginAuditFormControls.datefrom.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex="30" fxFlex.lt-sm="40" fxFlex.lt-sm="48.5">
+              <mat-label>{{ 'settings.loginaudit.dateto' | translate }}</mat-label>
+              <input formControlName="dateto" matInput [matDatepicker]="picker2">
+              <mat-datepicker-toggle matSuffix [for]="picker2">
+                <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+              </mat-datepicker-toggle>
+              <mat-datepicker #picker2></mat-datepicker>
+              <mat-error *ngIf="LoginAuditFormControls.dateto.invalid">
+                {{ 'error.field' | translate }}
+              </mat-error>
+            </mat-form-field>
           </div>
         </div>
-        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="30px" fxLayoutAlign="space-between">
-          <div class="form-three-button-container" fxFlex>
-            <button mat-raised-button color="primary" type="submit" (click)="saveLoginAuditFormData()">
-              <mat-icon>search</mat-icon>
-            </button>
-            <button mat-raised-button color="accent" type="reset" (click)="resetLoginAuditForm()">
-              <mat-icon>loop</mat-icon>
-            </button>
-          </div>
+        <div class="pale-border-box custom-margin-top max-height" fxLayout="column" fxLayoutGap="5px" fxFlex="40">
+          <p><b>{{ 'settings.loginaudit.options' | translate }}</b></p>
+          <mat-checkbox formControlName="success" fxFlex class="example-margin">
+            {{'settings.loginaudit.success' | translate}}</mat-checkbox>
+          <mat-checkbox formControlName="failure" fxFlex class="example-margin">
+            {{'settings.loginaudit.failure' | translate}}</mat-checkbox>
         </div>
+      </div>
+      <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign.gt-sm="end center" fxLayoutAlign.lt-sm="end end"
+        fxLayoutGap.lt-md="30px">
+        <div class="form-three-button-container" fxFlex>
+          <button mat-raised-button color="primary" type="submit" (click)="saveLoginAuditFormData()">
+            <mat-icon>search</mat-icon>
+          </button>
+          <button mat-raised-button color="accent" type="reset" (click)="resetLoginAuditForm()">
+            <mat-icon>loop</mat-icon>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
   <ng-container>

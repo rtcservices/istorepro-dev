@@ -226,7 +226,7 @@
             <mat-label>{{
               'routines.inventory.auditstatus' | translate
               }}</mat-label>
-              <mat-select formControlName="auditstatus"></mat-select>
+            <mat-select formControlName="auditstatus"></mat-select>
             <mat-error *ngIf="searchInventoryFormControls.auditstatus.invalid">
               {{ 'error.field' | translate }}</mat-error>
           </mat-form-field>
@@ -234,13 +234,15 @@
       </section>
 
       <section class="search-tab-footer">
-        <div class="form-button-container">
-          <button mat-raised-button color="primary" type="submit">
-            <mat-icon>search</mat-icon>
-          </button>
-          <button mat-raised-button color="accent" type="reset" (click)="resetInventorySearchForm()">
-            <mat-icon>restart_alt</mat-icon>
-          </button>
+        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="end center" fxLayoutAlign.lt-sm="end end">
+          <div class="form-button-container">
+            <button mat-raised-button color="primary" type="submit">
+              <mat-icon>search</mat-icon>
+            </button>
+            <button mat-raised-button color="accent" type="reset" (click)="resetInventorySearchForm()">
+              <mat-icon>restart_alt</mat-icon>
+            </button>
+          </div>
         </div>
       </section>
 
