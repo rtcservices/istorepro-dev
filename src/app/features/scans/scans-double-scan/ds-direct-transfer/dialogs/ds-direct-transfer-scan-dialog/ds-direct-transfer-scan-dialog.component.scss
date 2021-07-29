@@ -1,0 +1,17 @@
+.modal-button {
+  margin-top: 0px;
+  text-align: right;
+  button {
+    transform: scale(0.7);
+  }
+}
+.modal-button-bottom {
+  margin-top: 10px;
+  text-align: right;
+  button {
+    transform: scale(0.7);
+  }
+}
+button[mat-dialog-close] {
+  transform: scale(0.7);
+}

@@ -5,6 +5,7 @@ import { patternsHelper } from 'src/app/helpers/patterns.helper';
 import { DsDirectTransferItemAssistanceDialogComponent } from './dialogs/ds-direct-transfer-item-assistance-dialog/ds-direct-transfer-item-assistance-dialog.component';
 import { DsDirectTransferLocationDialogComponent } from './dialogs/ds-direct-transfer-location-dialog/ds-direct-transfer-location-dialog.component';
 import { DsDirectTransferPutawayDialogComponent } from './dialogs/ds-direct-transfer-putaway-dialog/ds-direct-transfer-putaway-dialog.component';
+import { DsDirectTransferScanDialogComponent } from './dialogs/ds-direct-transfer-scan-dialog/ds-direct-transfer-scan-dialog.component';
 
 @Component({
   selector: 'ibe-ds-direct-transfer',
@@ -80,6 +81,12 @@ export class DsDirectTransferComponent implements OnInit {
 
   openLocationDialog() {
     this.dialog.open(DsDirectTransferLocationDialogComponent, {
+      width: '615px'
+    });
+  }
+
+  openScanDialog() {
+    this.dialog.open(DsDirectTransferScanDialogComponent, {
       width: '615px'
     });
   }

@@ -21,6 +21,7 @@ import { DsDirectTransferItemAssistanceDialogComponent } from './scans-double-sc
 import { DsDirectTransferLocationDialogComponent } from './scans-double-scan/ds-direct-transfer/dialogs/ds-direct-transfer-location-dialog/ds-direct-transfer-location-dialog.component';
 import { DsPutawayLocationDialogComponent } from './scans-double-scan/ds-putaway/dialogs/ds-putaway-location-dialog/ds-putaway-location-dialog.component';
 import { DsDirectPutawayLocationDialogComponent } from './scans-double-scan/ds-direct-putaway/dialogs/ds-direct-putaway-location-dialog/ds-direct-putaway-location-dialog.component';
+import { DsDirectTransferScanDialogComponent } from './scans-double-scan/ds-direct-transfer/dialogs/ds-direct-transfer-scan-dialog/ds-direct-transfer-scan-dialog.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { DsDirectPutawayLocationDialogComponent } from './scans-double-scan/ds-d
     DsDirectTransferItemAssistanceDialogComponent,
     DsDirectTransferLocationDialogComponent,
     DsPutawayLocationDialogComponent,
-    DsDirectPutawayLocationDialogComponent
+    DsDirectPutawayLocationDialogComponent,
+    DsDirectTransferScanDialogComponent
   ],
   imports: [CommonModule, ScansRoutingModule, SharedModule]
 })
