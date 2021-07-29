@@ -73,13 +73,16 @@
             </div>
           </div>
           <div class="form-four-button-container smaller-button-container-40">
-            <button type="button" (click)="openPutawayDialog()" id="receiptPutaway" mat-raised-button matTooltip="Putaway" color="primary" [matTooltipPosition]="'above'">
+            <button type="button" (click)="openPutawayDialog()" id="receiptPutaway" mat-raised-button
+              matTooltip="Putaway" color="primary" [matTooltipPosition]="'above'">
               <mat-icon>add_shopping_cart</mat-icon>
             </button>
-            <button type="button" (click)="openLabelDialog()" id="receiptLabel" mat-raised-button matTooltip="Label" color="primary" [matTooltipPosition]="'above'">
+            <button type="button" (click)="openLabelDialog()" id="receiptLabel" mat-raised-button matTooltip="Label"
+              color="primary" [matTooltipPosition]="'above'">
               <mat-icon>new_label</mat-icon>
             </button>
-            <button type="button" id="receiptGrn" mat-raised-button color="primary" matTooltip="GRN" [matTooltipPosition]="'above'">
+            <button type="button" id="receiptGrn" mat-raised-button color="primary" matTooltip="GRN"
+              [matTooltipPosition]="'above'">
               <mat-icon>print</mat-icon>
             </button>
           </div>
@@ -169,7 +172,7 @@
                 <td fxHide fxShow.gt-sm style="width: 200px;">
                   <input type="text" class="w-100">
                 </td>
-                <td class="two-button-column" >
+                <td class="two-button-column">
                   <button type="button" mat-mini-fab color="primary" class="mdb-30">
                     <mat-icon>edit</mat-icon>
                   </button>
@@ -287,13 +290,15 @@
         </div>
       </section>
       <section class="search-tab-footer">
-        <div class="form-three-button-container">
-          <button mat-raised-button color="primary" type="submit">
-            <mat-icon>search</mat-icon>
-          </button>
-          <button mat-raised-button color="accent" type="reset" (click)="resetReceiptSearchForm()">
-            <mat-icon>restart_alt</mat-icon>
-          </button>
+        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="end center" fxLayoutAlign.lt-sm="end end">
+          <div class="form-three-button-container">
+            <button mat-raised-button color="primary" type="submit">
+              <mat-icon>search</mat-icon>
+            </button>
+            <button mat-raised-button color="accent" type="reset" (click)="resetReceiptSearchForm()">
+              <mat-icon>restart_alt</mat-icon>
+            </button>
+          </div>
         </div>
       </section>
     </form>
