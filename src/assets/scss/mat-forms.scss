@@ -232,3 +232,11 @@
 .mat-radio-label-content {
   font-size: $fontsize;
 }
+
+.search-result-bordered-section {
+  background-color: $site-white;
+  border: 1px solid $site-light-gray;
+  border-radius: 5px;
+  padding: 5px !important;
+  margin: 0px 5px;
+}
