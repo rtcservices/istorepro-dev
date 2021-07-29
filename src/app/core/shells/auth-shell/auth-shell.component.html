@@ -14,10 +14,11 @@
   <router-outlet #outlet="outlet"></router-outlet>
 </main>
 <div class="footer">
-    <img src="../../../../assets/images/gemini-logo-white.png" />
-    <span>&copy; 2021. {{ 'general.copyright' | translate }}</span>
+  <img src="../../../../assets/images/gemini-logo-white.png" />
+  <span>&copy; {{ copyrightYearDisplay }}. {{ 'general.copyright' | translate }}</span>
 </div>
 <div class="app-version">{{ appVersion }}</div>
 <small class="app-timestamp">{{ appTimeStamp }}</small>
+<small class="app-screen-resolution">{{ appScreenResolution }}</small>
 
 <ibe-loading></ibe-loading>
