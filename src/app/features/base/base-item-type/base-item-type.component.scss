@@ -6,13 +6,13 @@
 }
 
 .pale-border-box {
-  height: 64px;
+  height: 68px;
   margin-bottom: 15px;
   @include breakpoint(mobileonly) {
     height: 135px;
   }
   div.row {
-    margin-top: 10px;
+    // margin-top: 10px;
     & > div {
       margin-left: 10px;
       margin-right: 20px !important;

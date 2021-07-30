@@ -104,7 +104,7 @@
                     <tr>
                       <td>{{document.type}}</td>
                       <td style="text-align: center; width: 200px;">
-                        <input type="text" style="width: auto;" [value]="document.prefix">
+                        <input type="text" style="width: auto;font-size: 12px;" [value]="document.prefix">
                       </td>
                       <td style="width: 70px;">{{document.currentNo}}</td>
                       <td class="checkbox-column" style="text-align: center; width: 80px; margin-top: 3px;">
@@ -131,14 +131,14 @@
                 <tbody>
                   <ng-template let-rule ngFor [ngForOf]="ruleBoxDataSource">
                     <tr>
-                      <td style="width: 50px;">
-                        <input type="text" style="width: 100%;" [value]="rule.serialNo">
+                      <td style="width: 100px;">
+                        <input type="text" style="width: 100%;font-size: 12px;" [value]="rule.serialNo">
                       </td>
                       <td>
-                        <input type="text" style="width: 100%;" [value]="rule.rule">
+                        <input type="text" style="width: 100%;font-size: 12px;" [value]="rule.rule">
                       </td>
-                      <td style="width: 200px;">
-                        <input type="text" style="width: 100%;" [value]="rule.value">
+                      <td style="width: 35%;">
+                        <input type="text" style="width: 100%;font-size: 12px;" [value]="rule.value">
                       </td>
                     </tr>
                   </ng-template>
@@ -159,7 +159,7 @@
                 <tbody>
                   <ng-template let-contact ngFor [ngForOf]="contactDataSource">
                     <tr>
-                      <td class="column-150">
+                      <td style="width: 30%;">
                         <input type="text" class="w-100" [value]="contact.name">
                       </td>
                       <td>
@@ -194,7 +194,7 @@
                 <tbody>
                   <ng-template let-operator ngFor [ngForOf]="operatorDataSource">
                     <tr>
-                      <td class="column-100">
+                      <td style="width: 20%;">
                         <input type="text" class="w-100" [value]="operator.code">
                       </td>
                       <td>
