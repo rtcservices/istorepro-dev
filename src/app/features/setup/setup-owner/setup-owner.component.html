@@ -6,6 +6,15 @@
     <form [formGroup]="dataOwnerForm" class="slim-form">
       <div class="bordered-section">
         <section class="inner-tab">
+          <div fxHide fxShow.gt-sm class="page-import-export-button smaller-button-container-40">
+            <button mat-raised-button color="primary" type="submit">
+              <mat-icon>cloud_upload</mat-icon>
+            </button>
+            <button mat-raised-button color="primary" type="submit">
+              <mat-icon>cloud_download</mat-icon>
+            </button>
+          </div>
+
           <mat-tab-group #setupOwnerDataTab id="setupOwnerDataTab">
             <mat-tab label="Owner">
               <mat-radio-group class="owner-type-radio" (change)="changeOwnerType($event)">
@@ -296,6 +305,17 @@
         </section>
       </div>
       <section class="data-tab-footer">
+        <div fxShow fxHide.gt-sm fxLayout="row" fxLayoutAlign="end" class="page-import-bottom">
+          <div fxLayout="row" class="smaller-button-container-40" fxLayoutGap="5px">
+            <button mat-raised-button color="primary" type="submit">
+              <mat-icon>cloud_upload</mat-icon>
+            </button>
+            <button mat-raised-button color="primary" type="submit">
+              <mat-icon>cloud_download</mat-icon>
+            </button>
+          </div>
+        </div>
+
         <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="space-between center"
           fxLayoutAlign.lt-md="space-between center">
           <div fxFlexOrder.lt-md="2">

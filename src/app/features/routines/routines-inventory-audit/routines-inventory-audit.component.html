@@ -67,18 +67,20 @@
             <thead>
               <tr>
                 <th colspan="1"></th>
-                <th class="text-align-center" colspan="5">System</th>
-                <th class="text-align-center" colspan="5">Physical</th>
+                <th fxHide.lt-sm class="text-align-center" colspan="5">System</th>
+                <th fxHide.gt-sm class="text-align-center" colspan="3">System</th>
+                <th fxHide.lt-sm class="text-align-center" colspan="5">Physical</th>
+                <th fxHide.gt-sm class="text-align-center" colspan="3">Physical</th>
               </tr>
               <tr>
                 <th>{{ 'routines.inventory.location' | translate}}</th>
-                <th>{{ 'routines.inventory.itemcode' | translate}}</th>
-                <th>{{ 'routines.inventory.description' | translate}}</th>
+                <th fxHide.lt-sm>{{ 'routines.inventory.itemcode' | translate}}</th>
+                <th fxHide.lt-sm>{{ 'routines.inventory.description' | translate}}</th>
                 <th>{{ 'routines.inventory.sku' | translate}}</th>
                 <th>{{ 'routines.inventory.qtygood' | translate}}</th>
                 <th>{{ 'routines.inventory.qtydmg' | translate}}</th>
-                <th>{{ 'routines.inventory.itemcode' | translate}}</th>
-                <th>{{ 'routines.inventory.description' | translate}}</th>
+                <th fxHide.lt-sm>{{ 'routines.inventory.itemcode' | translate}}</th>
+                <th fxHide.lt-sm>{{ 'routines.inventory.description' | translate}}</th>
                 <th>{{ 'routines.inventory.sku' | translate}}</th>
                 <th>{{ 'routines.inventory.qtygood' | translate}}</th>
                 <th>{{ 'routines.inventory.qtydmg' | translate}}</th>
