@@ -1,0 +1,30 @@
+<button mat-raised-button class="dialog-close" [mat-dialog-close]="true" color="warn">
+    <mat-icon class="close-icon">close</mat-icon>
+</button>
+
+<section class="bordered-section">
+    <h2>{{ 'scans.doubleScan.warehouse' | translate}}</h2>
+    <table class="site-table text-center w-100">
+        <thead>
+            <tr>
+                <th>{{ 'scans.doubleScan.wh' | translate}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="text-align: left;"><a href="#">WH 1</a></td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"><a href="#">WH 2</a></td>
+            </tr>
+            <tr>
+                <td style="text-align: left;"><a href="#">WH 3</a></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+<div class="modal-button-bottom">
+    <button mat-raised-button color="primary" type="submit">
+        <mat-icon>task_alt</mat-icon>
+    </button>
+</div>

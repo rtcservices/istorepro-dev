@@ -542,6 +542,7 @@
   "scans": {
     "doubleScan": {
       "warehouse": "Warehouse",
+      "wh": "WH",
       "putaway": "Putaway",
       "item": "Item",
       "itemType": "Item Type",
