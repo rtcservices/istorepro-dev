@@ -113,6 +113,9 @@
                   <mat-checkbox color="primary" *ngIf="ownerType==='customer'" formControlName="blockCustomer">
                     {{ 'setup.owner.blockCustomer' | translate }}
                   </mat-checkbox>
+                    <mat-checkbox color="primary" *ngIf="ownerType==='vendor'" formControlName="actAsCustomer">
+                      {{ 'setup.owner.actAsCustomer' | translate }}
+                    </mat-checkbox>
                 </div>
               </div>
               <div fxLayout="row" class="row" fxLayoutGap="5px">
@@ -130,11 +133,6 @@
                     translate }}
                   </mat-error>
                 </mat-form-field>
-                <div class="form-checkbox-input" fxFlex="20" fxFlex.lt-sm="10">
-                  <mat-checkbox color="primary" *ngIf="ownerType==='vendor'" formControlName="actAsCustomer">
-                    {{ 'setup.owner.actAsCustomer' | translate }}
-                  </mat-checkbox>
-                </div>
               </div>
               <div fxLayout="row" class="row" fxLayoutGap="5px">
                 <mat-form-field appearance="outline" fxFlex="80.25" fxFlex.lt-sm="99.5">

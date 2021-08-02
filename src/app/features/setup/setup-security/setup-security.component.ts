@@ -1,5 +1,5 @@
 import { SelectionModel } from '@angular/cdk/collections';
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FlatTreeControl } from '@angular/cdk/tree';
 import {
@@ -22,7 +22,8 @@ import * as fromTabsHelper from '../../../helpers/tabs.helper';
 @Component({
   selector: 'ibe-setup-security',
   templateUrl: './setup-security.component.html',
-  styleUrls: ['./setup-security.component.scss']
+  styleUrls: ['./setup-security.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class SetupSecurityComponent implements OnInit, AfterViewInit {
   //#region "Data Tab Variables"

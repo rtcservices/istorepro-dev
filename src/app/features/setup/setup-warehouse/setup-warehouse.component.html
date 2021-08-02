@@ -160,10 +160,10 @@
                   <ng-template let-contact ngFor [ngForOf]="contactDataSource">
                     <tr>
                       <td style="width: 30%;">
-                        <input type="text" class="w-100" [value]="contact.name">
+                        <input type="text" style="font-size: 12px;" class="w-100" [value]="contact.name">
                       </td>
                       <td>
-                        <input type="text" class="w-100" [value]="contact.email">
+                        <input type="text" style="font-size: 12px;" class="w-100" [value]="contact.email">
                       </td>
                       <td class="two-button-column">
                         <button type="button" mat-mini-fab color="primary" class="mdb-30">
@@ -195,13 +195,13 @@
                   <ng-template let-operator ngFor [ngForOf]="operatorDataSource">
                     <tr>
                       <td style="width: 20%;">
-                        <input type="text" class="w-100" [value]="operator.code">
+                        <input type="text" style="font-size: 12px;" class="w-100" [value]="operator.code">
                       </td>
                       <td>
-                        <input type="text" class="w-100" [value]="operator.name">
+                        <input type="text" style="font-size: 12px;" class="w-100" [value]="operator.name">
                       </td>
                       <td class="column-150">
-                        <select type="text" class="w-100" [value]="operator.name">
+                        <select type="text" class="w-100" [value]="operator.name"  style="font-size: 12px;">
                           <option value="l1">Login 1</option>
                           <option value="l1">Login 2</option>
                           <option value="l1">Login 3</option>
