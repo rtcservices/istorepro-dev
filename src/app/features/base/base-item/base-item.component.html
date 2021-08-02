@@ -103,8 +103,8 @@
                                 {{'base.item.sku' | translate}}
                               </div>
                               <mat-form-field appearance="outline">
-                                <mat-label>{{ 'base.item.unit' | translate }}</mat-label>
-                                <mat-select formControlName="unit">
+                                <!-- <mat-label>{{ 'base.item.unit' | translate }}</mat-label> -->
+                                <mat-select formControlName="unit" disableOptionCentering panelClass="slim-select-field">
                                 </mat-select>
                               </mat-form-field>
                             </div>
@@ -137,8 +137,8 @@
                                 {{'base.item.pickOption' | translate}}
                               </div>
                               <mat-form-field appearance="outline">
-                                <mat-label>{{ 'base.item.pickOption' | translate }}</mat-label>
-                                <mat-select formControlName="pickOption">
+                                <!-- <mat-label>{{ 'base.item.pickOption' | translate }}</mat-label> -->
+                                <mat-select disableOptionCentering formControlName="pickOption"  panelClass="slim-select-field">
                                 </mat-select>
                               </mat-form-field>
                             </div>

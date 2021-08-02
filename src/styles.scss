@@ -28,9 +28,9 @@ small {
   font-size: 0.8rem;
   margin-bottom: 0.25rem;
 }
-.input-group {
-  border-collapse: collapse;
-}
+// .input-group {
+//   border-collapse: collapse;
+// }
 .input-group > div {
   display: table-cell;
   border: 1px solid rgba($site-gray, 0.7);
@@ -40,6 +40,8 @@ small {
   white-space: nowrap;
   padding: 0 12px;
   font-size: $fontsize;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 .input-group-area {
   width: 100%;
@@ -52,6 +54,8 @@ small {
   color: $site-gray;
   padding: 0 12px;
   font-size: $fontsize;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 .input-group input {
   border: 0;
@@ -157,9 +161,10 @@ small {
   }
   .prefix-data {
     border-right-width: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
   }
-  .mat-form-field-outline-start,
-  .mat-form-field-outline-end {
+  .mat-form-field-outline-start{
     border-radius: 0 !important;
   }
 }
@@ -178,13 +183,13 @@ small {
 .summary-section {
   padding-left: 20px;
   font-size: $fontsize;
-  span{
+  span {
     margin: 0px 5px;
   }
 }
 
-.scan-section-header{
-  h4{
+.scan-section-header {
+  h4 {
     color: $site-primary;
     font-weight: 500;
   }
