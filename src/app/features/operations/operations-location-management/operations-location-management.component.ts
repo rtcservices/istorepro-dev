@@ -4,6 +4,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { patternsHelper } from 'src/app/helpers/patterns.helper';
 import { OlmGrnDialogComponent } from './dialogs/olm-grn-dialog/olm-grn-dialog.component';
 import { OlmLocationDialogComponent } from './dialogs/olm-location-dialog/olm-location-dialog.component';
+import { TitleService } from '../../../services/title.service';
+import { TranslateService } from '@ngx-translate/core';
+import { SiteTranslateService } from '../../../services/site-translate.service';
 
 @Component({
   selector: 'ibe-operations-location-management',
@@ -12,19 +15,35 @@ import { OlmLocationDialogComponent } from './dialogs/olm-location-dialog/olm-lo
 })
 export class OperationsLocationManagementComponent implements OnInit {
   LocationManagementForm!: FormGroup;
-  constructor(  private fb: FormBuilder, public dialog: MatDialog) {
-    this.createLocationManagementForm()
+  
+  formErrorTranslated = '';
+  filterErrorTranslated = '';
+
+  constructor(
+    private fb: FormBuilder,
+    private siteTranslateService: SiteTranslateService,
+    private translate: TranslateService,
+    private titleService: TitleService,
+    public dialog: MatDialog
+  ) {
+    this.createLocationManagementForm();
   }
 
   ngOnInit(): void {
+    this.titleService.changeTitleTranslated('menu.operationsLocationManagement');
+    const language = this.siteTranslateService.defaultLanguage;
+    this.translate.use(language).subscribe((res) => {
+      this.formErrorTranslated = this.translate.instant('error.form');
+      this.filterErrorTranslated = this.translate.instant('error.filter');
+    });
   }
 
   createLocationManagementForm() {
     this.LocationManagementForm = this.fb.group({
-      warehouse: ['',  [Validators.required]],
-      grn: ['',  [Validators.required]],
-      item: ['',  [Validators.required]],
-      sku: ['',  [ Validators.pattern(patternsHelper.alphanumeric)]],
+      warehouse: ['', [Validators.required]],
+      grn: ['', [Validators.required]],
+      item: ['', [Validators.required]],
+      sku: ['', [Validators.pattern(patternsHelper.alphanumeric)]],
       totalqty: [''],
       untrackedqty: ['']
     });
@@ -51,5 +70,4 @@ export class OperationsLocationManagementComponent implements OnInit {
       width: '800px'
     });
   }
-
 }

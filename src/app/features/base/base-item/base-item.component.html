@@ -323,7 +323,7 @@
                     <th></th>
                     <th colspan="2">{{ 'base.item.matrix.from' | translate}}</th>
                     <th></th>
-                    <th colspan="7">{{ 'base.item.matrix.to' | translate}}</th>
+                    <th colspan="7" style="text-align: center;">{{ 'base.item.matrix.to' | translate}}</th>
                   </tr>
                   <tr>
                     <th>#</th>
@@ -404,7 +404,7 @@
     <form fxLayout="column" [formGroup]="searchItemForm" (ngSubmit)="onSearchItemSubmit()" class="slim-form">
       <section class="bordered-section">
 
-        <div class="row" fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+        <div class="row" fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap.gt-sm="5px">
           <mat-form-field appearance="outline" fxFlex.gt-sm="33.2">
             <mat-label>{{ 'base.item.item' | translate }} </mat-label>
             <input matInput type="text" formControlName="item" />
@@ -421,7 +421,7 @@
 
         </div>
 
-        <div class="row" fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+        <div class="row" fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap.gt-sm="5px">
 
           <mat-form-field appearance="outline" fxFlex>
             <mat-label>{{
@@ -454,7 +454,7 @@
 
         </div>
 
-        <div class="row" fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap="5px">
+        <div class="row" fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap.gt-sm="5px">
 
           <mat-form-field appearance="outline" fxFlex>
             <mat-label>{{ 'base.item.ownerCode' | translate }} </mat-label>

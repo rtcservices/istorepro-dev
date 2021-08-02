@@ -481,7 +481,7 @@
       "qtydmg": "Qty Dmg",
       "location": "Location",
       "locationzone": "Location Zone",
-      "itemcode": "Item Code",
+      "itemcode": "Item",
       "row": "Row",
       "unit": "Unit",
       "sku": "SKU",
@@ -496,6 +496,7 @@
       "assignoperator": "Assign Operator"
     },
     "stockadjust": {
+      "stockAdjust": "Stock Adjust",
       "warehouse": "WH",
       "owner": "Owner",
       "date": "Date",

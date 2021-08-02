@@ -90,7 +90,7 @@ export class RoutinesStockAdjustComponent implements OnInit {
 
   ngOnInit(): void {
     this.StockAdjustDataSource = this.dummyStockAdjustModel;
-    this.titleService.changeTitleTranslated('menu.routinesInventoryAudit');
+    this.titleService.changeTitleTranslated('menu.routinesStockAdjust');
     const language = this.siteTranslateService.defaultLanguage;
     this.translate.use(language).subscribe((res) => {
       this.formErrorTranslated = this.translate.instant('error.form');

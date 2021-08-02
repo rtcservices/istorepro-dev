@@ -29,3 +29,9 @@
     padding: 10px 0px;
   }
 }
+
+.long-text-button{
+  @include breakpoint(mobileonly) {
+    width: 112px;
+  }
+}

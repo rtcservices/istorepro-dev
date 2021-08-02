@@ -219,9 +219,7 @@ export class AppShellComponent implements OnInit, AfterViewInit {
             route: 'operations/receipt'
           },
           {
-            displayName: this.translate.instant(
-              'menu.operationsLocationManagement'
-            ),
+            displayName: this.translate.instant('menu.operationsLocationManagement'),
             route: 'operations/location-management'
           },
           {

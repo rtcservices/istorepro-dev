@@ -136,6 +136,9 @@ button[mat-dialog-close] {
 
 .first-row-section {
   margin-bottom: 0px !important;
+  @include breakpoint(mobileonly) {
+    margin-bottom: 4px !important;
+  }
   mat-form-field {
     ::ng-deep .mat-form-field-wrapper {
       padding-bottom: 10px !important;
@@ -168,8 +171,8 @@ button[mat-dialog-close] {
   text-align: right;
 }
 
-.input-group-area{
-  input{
+.input-group-area {
+  input {
     text-align: right;
   }
 }

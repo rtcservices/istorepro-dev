@@ -14,7 +14,7 @@
               <mat-error *ngIf="dataStockAdjustFormControls.warehouse.invalid">
                 {{ 'error.field' | translate }}</mat-error>
             </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex="32.7">
+            <mat-form-field appearance="outline" fxFlex.gt-sm="32.7">
               <mat-label>{{'routines.stockadjust.owner' | translate}}</mat-label>
               <input matInput type="text" formControlName="owner" />
               <mat-icon (click)="openOwnerDialog()" matSuffix>search</mat-icon>
@@ -28,7 +28,7 @@
             </fieldset>
           </div>
           <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
-            <mat-form-field appearance="outline" fxFlex="33.1">
+            <mat-form-field appearance="outline" fxFlex.gt-sm="33.1">
               <mat-label>{{ 'routines.stockadjust.date' | translate }}</mat-label>
               <input formControlName="date" matInput [matDatepicker]="picker3">
               <mat-datepicker-toggle matSuffix [for]="picker3">
@@ -39,14 +39,14 @@
                 {{ 'error.field' | translate }}
               </mat-error>
             </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex="32.7">
+            <mat-form-field appearance="outline" fxFlex.gt-sm="32.7">
               <mat-label>{{'routines.stockadjust.reason' | translate}}</mat-label>
               <input matInput required type="text" formControlName="reason" />
               <mat-error *ngIf="dataStockAdjustFormControls.reason.invalid">
                 {{ 'error.field' | translate }}
               </mat-error>
             </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex="35">
+            <mat-form-field appearance="outline" fxFlex.gt-sm="35">
               <mat-label>{{'routines.stockadjust.remarks' | translate}}</mat-label>
               <input matInput type="text" formControlName="remarks" />
               <mat-error *ngIf="dataStockAdjustFormControls.remarks.invalid">
@@ -58,7 +58,7 @@
 
         <div fxLayout="column" fxLayout.lt-sm="column" fxLayoutGap="5px">
           <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
-            <mat-form-field appearance="outline" fxFlex="33.1">
+            <mat-form-field appearance="outline" fxFlex.gt-sm="33.1">
               <mat-label>{{'routines.stockadjust.item' | translate}}</mat-label>
               <input matInput type="text" formControlName="item" />
               <mat-icon (click)="openItemDialog()" matSuffix>search</mat-icon>
@@ -66,7 +66,7 @@
                 {{ 'error.field' | translate }}
               </mat-error>
             </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex="32.7">
+            <mat-form-field appearance="outline" fxFlex.gt-sm="32.7">
               <mat-label>{{
                 'routines.stockadjust.po' | translate
                 }}</mat-label>
@@ -234,8 +234,8 @@
             <span>Del Vol : 0</span>
           </div>
           <div fxFlex class="form-three-button-container" fxFlexOrder.lt-md="2">
-            <button mat-raised-button color="primary" type="button" matTooltip="DRN">
-              DRN
+            <button class="long-text-button" mat-raised-button color="primary" type="button" matTooltip="DRN">
+              {{ 'routines.stockadjust.stockAdjust' | translate }}
             </button>
             <button mat-raised-button color="accent" type="reset" (click)="resetStockAdjustDataForm()">
               <mat-icon>loop</mat-icon>
@@ -280,7 +280,7 @@
           </mat-form-field>
         </div>
         <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px" fxLayoutGap.lt-md="0px">
-          <div fxLayout="row" fxFlex="33.1" fxLayoutGap="5px">
+          <div fxLayout="row" fxFlex.gt-sm="33.1" fxLayoutGap="5px">
             <mat-form-field appearance="outline" fxFlex="30">
               <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="dateoperator">
                 <mat-option value=">">></mat-option>

@@ -159,7 +159,11 @@
                                 <td>{{receipt.poRefNo}}</td>
                                 <td class="column-100">{{receipt.origin}}</td>
                                 <td class="column-100">{{receipt.status}}</td>
-                                <td class="column-100"></td>
+                                <td class="column-100">
+                                    <button class="smaller-button-40" mat-raised-button color="primary">
+                                        <mat-icon>print</mat-icon>
+                                    </button>
+                                </td>
                             </tr>
                         </ng-template>
                     </tbody>
@@ -250,13 +254,17 @@
                 <div fxLayout="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
                     <div fxLayout="row" fxLayoutGap="5px" fxFlex>
                         <mat-form-field appearance="outline" fxFlex="60" fxFlex.lt-sm="50">
-                            <mat-label>{{'query.transaction.delivery.status' | translate }}</mat-label>
-                            <mat-select disableOptionCentering panelClass="slim-select-field" type="text" readonly
-                                formControlName="status">
-                                <mat-option>Pick 1</mat-option>
-                                <mat-option>Pick 2</mat-option>
-                            </mat-select>
+                            <mat-label>{{ 'query.transaction.delivery.deliveryTo' | translate }}</mat-label>
+                            <input formControlName="deliveryTo" matInput [matDatepicker]="deliveryTo">
+                            <mat-datepicker-toggle matSuffix [for]="deliveryTo">
+                                <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+                            </mat-datepicker-toggle>
+                            <mat-datepicker #deliveryTo></mat-datepicker>
+                            <mat-error *ngIf="deliveryFormControls.deliveryTo.invalid">
+                                {{ 'error.field' | translate }}
+                            </mat-error>
                         </mat-form-field>
+                       
                         <mat-form-field appearance="outline" fxFlex="50" fxFlex.lt-sm="49">
                             <mat-label>{{ 'query.transaction.delivery.deliveryFrom' | translate }}</mat-label>
                             <input formControlName="deliveryFrom" matInput [matDatepicker]="deliveryFrom">
@@ -270,16 +278,13 @@
                         </mat-form-field>
                     </div>
                     <div class="second-column" fxLayout="row" fxLayoutGap="5px" fxFlex="33">
-                        <mat-form-field appearance="outline" fxFlex fxFlex.lt-sm>
-                            <mat-label>{{ 'query.transaction.delivery.deliveryTo' | translate }}</mat-label>
-                            <input formControlName="deliveryTo" matInput [matDatepicker]="deliveryTo">
-                            <mat-datepicker-toggle matSuffix [for]="deliveryTo">
-                                <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
-                            </mat-datepicker-toggle>
-                            <mat-datepicker #deliveryTo></mat-datepicker>
-                            <mat-error *ngIf="deliveryFormControls.deliveryTo.invalid">
-                                {{ 'error.field' | translate }}
-                            </mat-error>
+                        <mat-form-field appearance="outline"fxFlex fxFlex.lt-sm>
+                            <mat-label>{{'query.transaction.delivery.status' | translate }}</mat-label>
+                            <mat-select disableOptionCentering panelClass="slim-select-field" type="text" readonly
+                                formControlName="status">
+                                <mat-option>Pick 1</mat-option>
+                                <mat-option>Pick 2</mat-option>
+                            </mat-select>
                         </mat-form-field>
                     </div>
                 </div>
@@ -335,7 +340,7 @@
                                 <td class="column-100">{{delivery.so}}</td>
                                 <td class="column-100">{{delivery.dt}}</td>
                                 <td class="column-100" style="text-align: center;">
-                                    <button mat-raised-button color="primary">
+                                    <button class="smaller-button-40" mat-raised-button color="primary">
                                         <mat-icon>print</mat-icon>
                                     </button>
                                 </td>

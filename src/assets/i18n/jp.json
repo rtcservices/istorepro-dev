@@ -496,6 +496,7 @@
       "assignoperator": "演算子の割り当て"
     },
     "stockadjust": {
+      "stockAdjust": "在庫調整",
       "warehouse": "WH",
       "owner": "オーナー",
       "date": "日付",
