@@ -4,7 +4,7 @@
 <mat-tab-group #OperationDeliveryTab>
   <mat-tab label="Data">
     <form fxLayout="column" [formGroup]="dataDeliveryForm" (ngSubmit)="onDataDeliverySubmit()" class="slim-form">
-      <div fxFlex class="bordered-section">
+      <div fxFlex class="bordered-section first-section">
         <div fxLayout="column" fxLayout.lt-sm="column" fxLayoutGap.gt-sm="5px">
           <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap.gt-sm="5px" fxFlex>
             <mat-form-field appearance="outline" fxFlex.gt-sm="32.7">
@@ -82,6 +82,8 @@
             </mat-form-field>
           </div>
         </div>
+      </div>
+      <div fxFlex class="bordered-section">
 
         <div fxLayout="column" fxLayout.lt-sm="column" fxLayoutGap.gt-sm="5px">
           <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap.gt-sm="5px" fxFlex>
@@ -424,8 +426,9 @@
               'error.field' | translate
               }}</mat-error>
           </mat-form-field>
-          <div fxLayout="row" fxLayout.lt-md="column" fxFlex.gt-sm="32.5" fxLayoutAlign.gt-sm="end center" fxLayoutAlign.lt-sm="end end">
-            <div class="form-three-button-container" >
+          <div fxLayout="row" fxLayout.lt-md="column" fxFlex.gt-sm="32.5" fxLayoutAlign.gt-sm="end center"
+            fxLayoutAlign.lt-sm="end end">
+            <div class="form-three-button-container">
               <button (click)="onSearchDeliverySubmit()" mat-raised-button color="primary" type="submit">
                 <mat-icon>search</mat-icon>
               </button>
