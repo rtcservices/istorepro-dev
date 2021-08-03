@@ -256,13 +256,13 @@
                         <mat-checkbox color="primary"></mat-checkbox>
                       </td>
                       <td style="width: 70px; text-align: center;">
-                        <button class="smaller-button-40" type="button" (click)="openownerDialog()" mat-icon-button
+                        <button class="smaller-button-20" type="button" (click)="openownerDialog()" mat-icon-button
                           aria-label="Example icon button with a vertical three dot icon">
                           <mat-icon>more_horiz</mat-icon>
                         </button>
                       </td>
                       <td style="width: 70px; text-align: center;">
-                        <button class="smaller-button-40" type="button" (click)="openstoreDialog()" mat-icon-button
+                        <button class="smaller-button-20" type="button" (click)="openstoreDialog()" mat-icon-button
                           aria-label="Example icon button with a vertical three dot icon">
                           <mat-icon>more_horiz</mat-icon>
                         </button>
@@ -322,14 +322,12 @@
                   <tr>
                     <th></th>
                     <th colspan="2">{{ 'base.item.matrix.from' | translate}}</th>
-                    <th></th>
                     <th colspan="7" style="text-align: center;">{{ 'base.item.matrix.to' | translate}}</th>
                   </tr>
                   <tr>
                     <th>#</th>
                     <th>{{ 'base.item.matrix.value' | translate}}</th>
                     <th>{{ 'base.item.matrix.unit' | translate}}</th>
-                    <th></th>
                     <th>{{ 'base.item.matrix.value' | translate}}</th>
                     <th>{{ 'base.item.matrix.unit' | translate}}</th>
                     <th>{{ 'base.item.matrix.weight' | translate}}</th>
@@ -344,7 +342,6 @@
                     <td></td>
                     <td><input type="number" style="width: 100%;" [value]="control.from.value"></td>
                     <td><input type="text" style="width: 100%;" [value]="control.from.unit"></td>
-                    <td></td>
                     <td><input disabled type="number" style="width: 100%;" [value]="control.to.value"></td>
                     <td><input type="text" style="width: 100%;" [value]="control.to.unit"></td>
                     <td><input type="number" style="width: 100%;" [value]="control.to.weight"

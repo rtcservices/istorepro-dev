@@ -188,9 +188,8 @@
               </mat-error>
             </mat-form-field>
           </div>
-          <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap.gt-sm="5px" fxFlex>
-            <div fxLayoutAlign="start" class="form-three-button-container smaller-button-container-40"
-              fxFlex.gt-sm="33">
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div class="form-three-button-container smaller-button-container-40">
               <button type="button" mat-raised-button color="primary" matTooltip="Pick List">
                 <mat-icon>list_alt</mat-icon>
               </button>
@@ -198,18 +197,19 @@
                 DRN
               </button>
             </div>
-            <div fxFlex.gt-sm="33">
+            <div>
               <h5> Status : TDN</h5>
             </div>
-            <div fxFlex.gt-sm="18">
+            <div>
               <mat-checkbox color="primary" formControlName="reworkonly">
                 {{'operations.delivery.reworkonly' | translate}}</mat-checkbox>
             </div>
-            <div fxLayoutAlign="end" fxFlex.gt-sm="15" class="form-three-button-container smaller-button-container-40">
+            <div class="form-three-button-container smaller-button-container-40">
               <button type="button" mat-raised-button color="primary">
                 {{'operations.delivery.alloc' | translate}}
               </button>
             </div>
+
           </div>
         </div>
         <br>

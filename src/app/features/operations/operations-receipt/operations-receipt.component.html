@@ -257,9 +257,15 @@
                 }}</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline" fxFlex>
-              <input matInput type="date" formControlName="receiptDate" />
-              <mat-error *ngIf="searchReceiptFormControls.receiptDate.invalid">
-                {{ 'error.field' | translate }}</mat-error>
+                <mat-label>{{ 'operations.receipt.receiptDate' | translate }}</mat-label>
+                <input formControlName="receiptDate" matInput [matDatepicker]="receiptDate">
+                <mat-datepicker-toggle matSuffix [for]="receiptDate">
+                  <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+                </mat-datepicker-toggle>
+                <mat-datepicker #receiptDate></mat-datepicker>
+                <mat-error *ngIf="searchReceiptFormControls.receiptDate.invalid">
+                  {{ 'error.field' | translate }}
+                </mat-error>
             </mat-form-field>
           </div>
           
@@ -284,7 +290,7 @@
               'operations.receipt.status' | translate
               }}</mat-label>
             <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="status">
-              <mat-option value=""></mat-option>
+              <mat-option value="Status">Status</mat-option>
             </mat-select>
             <mat-error *ngIf="searchReceiptFormControls.status.invalid">{{
               'error.field' | translate
