@@ -13,24 +13,26 @@ import { SiteTranslateService } from './services/site-translate.service';
 export class AppComponent {
   constructor(
     private translate: TranslateService,
-    private siteTranslate: SiteTranslateService) {
-      this.translate.addLangs(this.siteTranslate.languages);
-      this.translate.setDefaultLang(this.siteTranslate.defaultLanguage);
-      const language = localStorage.getItem('site-lang') || this.siteTranslate.defaultLanguage;
-      this.translate.use(language);
-      this.getUserLocation();
+    private siteTranslate: SiteTranslateService
+  ) {
+    this.translate.addLangs(this.siteTranslate.languages);
+    this.translate.setDefaultLang(this.siteTranslate.defaultLanguage);
+    const language =
+      localStorage.getItem('site-lang') || this.siteTranslate.defaultLanguage;
+    this.translate.use(language);
+    this.getUserLocation();
   }
   getUserLocation() {
     let startPos: SiteGeolocationPosition;
     const geoOptions = {
-      maximumAge: 5 * 60 * 1000,
-    }
+      maximumAge: 5 * 60 * 1000
+    };
 
     const geoSuccess = (position: GeolocationPosition) => {
       startPos = {
         latitude: position.coords.latitude,
         longitude: position.coords.longitude,
-        timestamp: position.timestamp,
+        timestamp: position.timestamp
       };
       localStorage.setItem('user-location', JSON.stringify(startPos));
     };
