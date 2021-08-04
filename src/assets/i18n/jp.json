@@ -433,7 +433,7 @@
     "delivery": {
       "warehouse": "WH",
       "owner": "オーナー",
-      "date": "日付",
+      "deliveryDate": "配送日",
       "drn": "DRN",
       "do": "DO",
       "dt": "DT",

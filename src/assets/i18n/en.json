@@ -433,7 +433,7 @@
     "delivery": {
       "warehouse": "WH",
       "owner": "Owner",
-      "date": "Date",
+      "deliveryDate": "Delivery Date",
       "drn": "DRN",
       "do": "DO",
       "dt": "DT",

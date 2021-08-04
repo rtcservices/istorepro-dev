@@ -32,13 +32,13 @@
           </div>
           <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap.gt-sm="5px" fxFlex>
             <mat-form-field appearance="outline" fxFlex.gt-sm="32.7">
-              <mat-label>{{ 'operations.delivery.date' | translate }}</mat-label>
-              <input formControlName="date" matInput [matDatepicker]="picker3">
-              <mat-datepicker-toggle matSuffix [for]="picker3">
+              <mat-label>{{ 'operations.delivery.deliveryDate' | translate }}</mat-label>
+              <input formControlName="deliveryDate" matInput [matDatepicker]="deliveryDate">
+              <mat-datepicker-toggle matSuffix [for]="deliveryDate">
                 <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
               </mat-datepicker-toggle>
-              <mat-datepicker #picker3></mat-datepicker>
-              <mat-error *ngIf="dataDeliveryFormControls.date.invalid">
+              <mat-datepicker #deliveryDate></mat-datepicker>
+              <mat-error *ngIf="dataDeliveryFormControls.deliveryDate.invalid">
                 {{ 'error.field' | translate }}
               </mat-error>
             </mat-form-field>
@@ -99,19 +99,13 @@
               <mat-label>{{
                 'operations.delivery.po' | translate
                 }}</mat-label>
-              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="po" [required]="true">
+              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="po">
               </mat-select>
-              <mat-error *ngIf="dataDeliveryFormControls.po.invalid">{{
-                'error.field' | translate
-                }}</mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="outline" fxFlex>
               <mat-label>{{'operations.delivery.batchnumber' | translate}}</mat-label>
-              <input matInput required type="text" formControlName="batchnumber" />
-              <mat-error *ngIf="dataDeliveryFormControls.batchnumber.invalid">
-                {{ 'error.field' | translate }}
-              </mat-error>
+              <input matInput type="text" formControlName="batchnumber" />
             </mat-form-field>
 
           </div>
