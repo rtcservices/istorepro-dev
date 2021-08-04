@@ -56,7 +56,6 @@
               <mat-form-field appearance="outline" fxFlex="30" fxFlex.lt-sm="48.5">
                 <mat-label>{{'operations.receipt.po' | translate}}</mat-label>
                 <input matInput type="text" formControlName="po" />
-                <mat-icon matSuffix>search</mat-icon>
                 <mat-error *ngIf="dataReceiptFormControls.po.invalid">
                   {{ 'error.field' | translate }}
                 </mat-error>
@@ -142,13 +141,13 @@
                   <input disabled type="text" class="w-100">
                 </td>
                 <td fxHide fxShow.gt-md class="column-80">
-                  <input type="text" size="50" class="w-100">
+                  <input type="text" size="50" style="text-align: right;" class="w-100">
                 </td>
                 <td class="column-80">
-                  <input type="text" class="w-100">
+                  <input type="text" class="w-100" style="text-align: right;">
                 </td>
                 <td class="column-80">
-                  <input type="text" class="w-100">
+                  <input type="text" class="w-100" style="text-align: right;">
                 </td>
                 <td fxHide fxShow.gt-md class="text-center">
                   <button type="button" class="text-button" (click)="openNetWtDialog()">
@@ -189,10 +188,14 @@
       <section class="data-tab-footer">
         <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="space-between center"
           fxLayoutAlign.lt-md="space-between center">
-          <div fxFlexOrder.lt-sm="2">
+          <div fxFlexOrder.lt-sm="3">
             <ibe-data-audit insertedBy=""></ibe-data-audit>
           </div>
-          <div class="form-three-button-container" fxFlexOrder.lt-sm="1">
+          <div fxFlex fxFlexOrder.lt-md="1" class="summary-section">
+            <span>Del Wt : 110</span>
+            <span>Del Vol : 0</span>
+          </div>
+          <div class="form-three-button-container" fxFlexOrder.lt-sm="2">
             <button mat-raised-button color="primary" type="submit" (click)="saveReceiptData()">
               <mat-icon>task_alt</mat-icon>
             </button>
@@ -257,9 +260,15 @@
                 }}</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline" fxFlex>
-              <input matInput type="date" formControlName="receiptDate" />
-              <mat-error *ngIf="searchReceiptFormControls.receiptDate.invalid">
-                {{ 'error.field' | translate }}</mat-error>
+                <mat-label>{{ 'operations.receipt.receiptDate' | translate }}</mat-label>
+                <input formControlName="receiptDate" matInput [matDatepicker]="receiptDate">
+                <mat-datepicker-toggle matSuffix [for]="receiptDate">
+                  <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+                </mat-datepicker-toggle>
+                <mat-datepicker #receiptDate></mat-datepicker>
+                <mat-error *ngIf="searchReceiptFormControls.receiptDate.invalid">
+                  {{ 'error.field' | translate }}
+                </mat-error>
             </mat-form-field>
           </div>
           
@@ -284,7 +293,7 @@
               'operations.receipt.status' | translate
               }}</mat-label>
             <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="status">
-              <mat-option value=""></mat-option>
+              <mat-option value="Status">Status</mat-option>
             </mat-select>
             <mat-error *ngIf="searchReceiptFormControls.status.invalid">{{
               'error.field' | translate

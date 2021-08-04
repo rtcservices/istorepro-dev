@@ -420,7 +420,7 @@
       "wh": "WH",
       "date": "Date",
       "po": "PO/Ref No.",
-      "type": "Type",
+      "type": "Storage Type",
       "code": "Code",
       "description": "Description",
       "location": "Location",
@@ -433,7 +433,7 @@
     "delivery": {
       "warehouse": "WH",
       "owner": "Owner",
-      "date": "Date",
+      "deliveryDate": "Delivery Date",
       "drn": "DRN",
       "do": "DO",
       "dt": "DT",
@@ -481,7 +481,7 @@
       "qtydmg": "Qty Dmg",
       "location": "Location",
       "locationzone": "Location Zone",
-      "itemcode": "Item Code",
+      "itemcode": "Item",
       "row": "Row",
       "unit": "Unit",
       "sku": "SKU",
@@ -496,6 +496,7 @@
       "assignoperator": "Assign Operator"
     },
     "stockadjust": {
+      "stockAdjust": "Stock Adjust",
       "warehouse": "WH",
       "owner": "Owner",
       "date": "Date",

@@ -13,15 +13,15 @@
                 <mat-label>{{
                   'operations.receipt.qtyexp' | translate
                   }}</mat-label>
-                <input matInput type="text" formControlName="rulength" />
+                <input class="text-right" matInput type="text" formControlName="rulength" />
               </mat-form-field>
               <mat-form-field appearance="outline" fxFlex="30">
                 <mat-label>{{'operations.receipt.qtygood' | translate }}</mat-label>
-                <input matInput type="text" formControlName="rubreadth" />
+                <input class="text-right" matInput type="text" formControlName="rubreadth" />
               </mat-form-field>
               <mat-form-field appearance="outline" fxFlex="30">
                 <mat-label>{{'operations.receipt.qtydmg' | translate }}</mat-label>
-                <input matInput type="text" formControlName="ruheight" />
+                <input class="text-right" matInput type="text" formControlName="ruheight" />
               </mat-form-field>
             </div>
           </div>
@@ -54,15 +54,15 @@
             <div fxLayout="row" class="row" fxLayoutGap="5px">
               <mat-form-field appearance="outline" fxFlex="30">
                 <mat-label>{{'operations.receipt.length' | translate }}</mat-label>
-                <input matInput type="text" formControlName="skulength" />
+                <input class="text-right" matInput type="text" formControlName="skulength" />
               </mat-form-field>
               <mat-form-field appearance="outline" fxFlex="30">
                 <mat-label>{{'operations.receipt.breadth' | translate }}</mat-label>
-                <input matInput type="text" formControlName="skubreadth" />
+                <input class="text-right" matInput type="text" formControlName="skubreadth" />
               </mat-form-field>
               <mat-form-field appearance="outline" fxFlex="30">
                 <mat-label>{{'operations.receipt.height' | translate }}</mat-label>
-                <input matInput type="text" formControlName="skuheight" />
+                <input class="text-right" matInput type="text" formControlName="skuheight" />
               </mat-form-field>
             </div>
           </div>
@@ -70,7 +70,7 @@
             <div fxLayout="row" class="row" fxLayoutGap="5px">
               <fieldset class="read-only-input" fxFlex fxLayout.lt-sm>
                 <legend>{{ 'operations.receipt.unit' | translate }}</legend>
-                <label>{{ 'operations.receipt.unit' | translate }}</label>
+                <label class="float-right-with-space">0.00</label>
               </fieldset>
             </div>
           </div>

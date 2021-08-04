@@ -21,3 +21,9 @@
 .input-group input {
   width: 50px !important;
 }
+
+.search-section {
+  .mat-form-field-wrapper {
+    padding-bottom: 0px !important;
+  }
+}

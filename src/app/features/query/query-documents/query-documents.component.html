@@ -29,8 +29,7 @@
               <mat-label>{{
                 'query.Document.documentno' | translate
                 }}</mat-label>
-              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="documentnumber">
-              </mat-select>
+              <input matInput required type="text" formControlName="documentnumber" />
               <mat-error *ngIf="DocumentFormControls.documentnumber.invalid">{{
                 'error.field' | translate
                 }}</mat-error>
@@ -39,10 +38,7 @@
 
           <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap.gt-sm="5px" fxFlex>
             <div fxLayout="row" fxFlex="32.49" fxLayoutGap="5px">
-              <mat-form-field appearance="outline" fxFlex="30" fxFlex.lt-sm="95">
-                <mat-label>{{
-                  'query.Document.operator' | translate
-                  }}</mat-label>
+              <mat-form-field appearance="outline" fxFlex="15" fxFlex.lt-sm="25">
                 <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="datefromoperator">
                   <mat-option>></mat-option>
                   <mat-option>
@@ -75,10 +71,7 @@
               </mat-form-field>
             </div>
             <div fxLayout="row" fxFlex="33.2" fxLayoutGap="5px">
-              <mat-form-field appearance="outline" fxFlex="30" fxFlex.lt-sm="95">
-                <mat-label>{{
-                  'query.Document.operator' | translate
-                  }}</mat-label>
+              <mat-form-field appearance="outline" fxFlex="15" fxFlex.lt-sm="25">
                 <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="datetooperator">
                   <mat-option>></mat-option>
                   <mat-option>
@@ -173,7 +166,7 @@
             </mat-radio-group>
           </div>
           <div fxFex class="radio-button">
-            <button mat-raised-button color="primary" type="submit">
+            <button class="smaller-button-40" mat-raised-button color="primary" type="submit">
               <mat-icon>summarize</mat-icon>
             </button>
           </div>
@@ -193,7 +186,7 @@
             </mat-radio-group>
           </div>
           <div fxFex class="radio-button">
-            <button mat-raised-button color="primary" type="submit">
+            <button class="smaller-button-40" mat-raised-button color="primary" type="submit">
               <mat-icon>email</mat-icon>
             </button>
           </div>

@@ -4,7 +4,7 @@
 <mat-tab-group #OperationDeliveryTab>
   <mat-tab label="Data">
     <form fxLayout="column" [formGroup]="dataDeliveryForm" (ngSubmit)="onDataDeliverySubmit()" class="slim-form">
-      <div fxFlex class="bordered-section">
+      <div fxFlex class="bordered-section first-section">
         <div fxLayout="column" fxLayout.lt-sm="column" fxLayoutGap.gt-sm="5px">
           <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap.gt-sm="5px" fxFlex>
             <mat-form-field appearance="outline" fxFlex.gt-sm="32.7">
@@ -32,13 +32,13 @@
           </div>
           <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap.gt-sm="5px" fxFlex>
             <mat-form-field appearance="outline" fxFlex.gt-sm="32.7">
-              <mat-label>{{ 'operations.delivery.date' | translate }}</mat-label>
-              <input formControlName="date" matInput [matDatepicker]="picker3">
-              <mat-datepicker-toggle matSuffix [for]="picker3">
+              <mat-label>{{ 'operations.delivery.deliveryDate' | translate }}</mat-label>
+              <input formControlName="deliveryDate" matInput [matDatepicker]="deliveryDate">
+              <mat-datepicker-toggle matSuffix [for]="deliveryDate">
                 <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
               </mat-datepicker-toggle>
-              <mat-datepicker #picker3></mat-datepicker>
-              <mat-error *ngIf="dataDeliveryFormControls.date.invalid">
+              <mat-datepicker #deliveryDate></mat-datepicker>
+              <mat-error *ngIf="dataDeliveryFormControls.deliveryDate.invalid">
                 {{ 'error.field' | translate }}
               </mat-error>
             </mat-form-field>
@@ -82,6 +82,8 @@
             </mat-form-field>
           </div>
         </div>
+      </div>
+      <div fxFlex class="bordered-section">
 
         <div fxLayout="column" fxLayout.lt-sm="column" fxLayoutGap.gt-sm="5px">
           <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap.gt-sm="5px" fxFlex>
@@ -97,19 +99,13 @@
               <mat-label>{{
                 'operations.delivery.po' | translate
                 }}</mat-label>
-              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="po" [required]="true">
+              <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="po">
               </mat-select>
-              <mat-error *ngIf="dataDeliveryFormControls.po.invalid">{{
-                'error.field' | translate
-                }}</mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="outline" fxFlex>
               <mat-label>{{'operations.delivery.batchnumber' | translate}}</mat-label>
-              <input matInput required type="text" formControlName="batchnumber" />
-              <mat-error *ngIf="dataDeliveryFormControls.batchnumber.invalid">
-                {{ 'error.field' | translate }}
-              </mat-error>
+              <input matInput type="text" formControlName="batchnumber" />
             </mat-form-field>
 
           </div>
@@ -188,9 +184,8 @@
               </mat-error>
             </mat-form-field>
           </div>
-          <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap.gt-sm="5px" fxFlex>
-            <div fxLayoutAlign="start" class="form-three-button-container smaller-button-container-40"
-              fxFlex.gt-sm="33">
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div class="form-three-button-container smaller-button-container-40">
               <button type="button" mat-raised-button color="primary" matTooltip="Pick List">
                 <mat-icon>list_alt</mat-icon>
               </button>
@@ -198,18 +193,19 @@
                 DRN
               </button>
             </div>
-            <div fxFlex.gt-sm="33">
+            <div>
               <h5> Status : TDN</h5>
             </div>
-            <div fxFlex.gt-sm="18">
+            <div>
               <mat-checkbox color="primary" formControlName="reworkonly">
                 {{'operations.delivery.reworkonly' | translate}}</mat-checkbox>
             </div>
-            <div fxLayoutAlign="end" fxFlex.gt-sm="15" class="form-three-button-container smaller-button-container-40">
+            <div class="form-three-button-container smaller-button-container-40">
               <button type="button" mat-raised-button color="primary">
                 {{'operations.delivery.alloc' | translate}}
               </button>
             </div>
+
           </div>
         </div>
         <br>
@@ -424,8 +420,9 @@
               'error.field' | translate
               }}</mat-error>
           </mat-form-field>
-          <div fxLayout="row" fxLayout.lt-md="column" fxFlex.gt-sm="32.5" fxLayoutAlign.gt-sm="end center" fxLayoutAlign.lt-sm="end end">
-            <div class="form-three-button-container" >
+          <div fxLayout="row" fxLayout.lt-md="column" fxFlex.gt-sm="32.5" fxLayoutAlign.gt-sm="end center"
+            fxLayoutAlign.lt-sm="end end">
+            <div class="form-three-button-container">
               <button (click)="onSearchDeliverySubmit()" mat-raised-button color="primary" type="submit">
                 <mat-icon>search</mat-icon>
               </button>

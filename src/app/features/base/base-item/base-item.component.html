@@ -95,7 +95,7 @@
 
                       <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
                         <div fxFlex.gt-sm="50%" fxFlex class="pale-border-box">
-                          <p><b>{{'base.item.sku' | translate}}</b></p>
+                          <b>{{'base.item.sku' | translate}}</b>
 
                           <div fxFex fxLayout="column" fxLayout.lt-sm="column" fxLayoutGap="10px">
                             <div class="prefix-suffix-field">
@@ -103,8 +103,8 @@
                                 {{'base.item.sku' | translate}}
                               </div>
                               <mat-form-field appearance="outline">
-                                <mat-label>{{ 'base.item.unit' | translate }}</mat-label>
-                                <mat-select formControlName="unit">
+                                <!-- <mat-label>{{ 'base.item.unit' | translate }}</mat-label> -->
+                                <mat-select formControlName="unit" disableOptionCentering panelClass="slim-select-field">
                                 </mat-select>
                               </mat-form-field>
                             </div>
@@ -137,8 +137,8 @@
                                 {{'base.item.pickOption' | translate}}
                               </div>
                               <mat-form-field appearance="outline">
-                                <mat-label>{{ 'base.item.pickOption' | translate }}</mat-label>
-                                <mat-select formControlName="pickOption">
+                                <!-- <mat-label>{{ 'base.item.pickOption' | translate }}</mat-label> -->
+                                <mat-select disableOptionCentering formControlName="pickOption"  panelClass="slim-select-field">
                                 </mat-select>
                               </mat-form-field>
                             </div>
@@ -146,7 +146,7 @@
                           </div>
                         </div>
                         <div fxFlex.gt-sm="50%" fxFlex class="pale-border-box">
-                          <p><b>{{'base.item.dimension' | translate}}</b></p>
+                          <b>{{'base.item.dimension' | translate}}</b>
                           <div fxFex fxLayout="column" fxLayout.lt-sm="column" fxLayoutGap="10px">
                             <div class="input-group" fxFlex.lt-sm="50">
                               <div class="input-group-title">{{'base.item.length' | translate}}</div>
@@ -187,9 +187,9 @@
 
 
                         <div class="pale-border-box" fxFlex>
-                          <p><b>{{
-                              'base.item.controls' | translate
-                              }}</b></p>
+                          <b>{{
+                            'base.item.controls' | translate
+                            }}</b>
                           <p>
                             <mat-checkbox color="primary" formControlName="validateStorageType">{{
                               'base.item.validateStorageType' | translate
@@ -256,19 +256,19 @@
                         <mat-checkbox color="primary"></mat-checkbox>
                       </td>
                       <td style="width: 70px; text-align: center;">
-                        <button type="button" (click)="openownerDialog()" mat-icon-button
+                        <button class="smaller-button-20" type="button" (click)="openownerDialog()" mat-icon-button
                           aria-label="Example icon button with a vertical three dot icon">
                           <mat-icon>more_horiz</mat-icon>
                         </button>
                       </td>
                       <td style="width: 70px; text-align: center;">
-                        <button type="button" (click)="openstoreDialog()" mat-icon-button
+                        <button class="smaller-button-20" type="button" (click)="openstoreDialog()" mat-icon-button
                           aria-label="Example icon button with a vertical three dot icon">
                           <mat-icon>more_horiz</mat-icon>
                         </button>
                       </td>
                       <td style="width:100px">
-                        <input type="text" />
+                        <input type="number" class="text-right"/>
                       </td>
                     </tr>
                   </ng-template>
@@ -322,14 +322,12 @@
                   <tr>
                     <th></th>
                     <th colspan="2">{{ 'base.item.matrix.from' | translate}}</th>
-                    <th></th>
-                    <th colspan="7">{{ 'base.item.matrix.to' | translate}}</th>
+                    <th colspan="7" style="text-align: center;">{{ 'base.item.matrix.to' | translate}}</th>
                   </tr>
                   <tr>
                     <th>#</th>
                     <th>{{ 'base.item.matrix.value' | translate}}</th>
                     <th>{{ 'base.item.matrix.unit' | translate}}</th>
-                    <th></th>
                     <th>{{ 'base.item.matrix.value' | translate}}</th>
                     <th>{{ 'base.item.matrix.unit' | translate}}</th>
                     <th>{{ 'base.item.matrix.weight' | translate}}</th>
@@ -344,7 +342,6 @@
                     <td></td>
                     <td><input type="number" style="width: 100%;" [value]="control.from.value"></td>
                     <td><input type="text" style="width: 100%;" [value]="control.from.unit"></td>
-                    <td></td>
                     <td><input disabled type="number" style="width: 100%;" [value]="control.to.value"></td>
                     <td><input type="text" style="width: 100%;" [value]="control.to.unit"></td>
                     <td><input type="number" style="width: 100%;" [value]="control.to.weight"
@@ -404,7 +401,7 @@
     <form fxLayout="column" [formGroup]="searchItemForm" (ngSubmit)="onSearchItemSubmit()" class="slim-form">
       <section class="bordered-section">
 
-        <div class="row" fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+        <div class="row" fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap.gt-sm="5px">
           <mat-form-field appearance="outline" fxFlex.gt-sm="33.2">
             <mat-label>{{ 'base.item.item' | translate }} </mat-label>
             <input matInput type="text" formControlName="item" />
@@ -421,7 +418,7 @@
 
         </div>
 
-        <div class="row" fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="5px">
+        <div class="row" fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap.gt-sm="5px">
 
           <mat-form-field appearance="outline" fxFlex>
             <mat-label>{{
@@ -454,7 +451,7 @@
 
         </div>
 
-        <div class="row" fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap="5px">
+        <div class="row" fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap.gt-sm="5px">
 
           <mat-form-field appearance="outline" fxFlex>
             <mat-label>{{ 'base.item.ownerCode' | translate }} </mat-label>

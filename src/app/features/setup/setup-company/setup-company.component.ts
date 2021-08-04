@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatTabGroup } from '@angular/material/tabs';
 
@@ -15,7 +15,8 @@ import { TitleService } from '../../../services/title.service';
 @Component({
   selector: 'ibe-setup-company',
   templateUrl: './setup-company.component.html',
-  styleUrls: ['./setup-company.component.scss']
+  styleUrls: ['./setup-company.component.scss'],
+  encapsulation : ViewEncapsulation.None
 })
 export class SetupCompanyComponent implements OnInit {
   @ViewChild('setupCompanyTab', { static: false })

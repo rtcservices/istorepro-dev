@@ -4,7 +4,7 @@
 <mat-tab-group #RoutinesStockAdjustTab>
   <mat-tab label="Data">
     <form fxLayout="column" [formGroup]="dataStockAdjustForm" (ngSubmit)="onDataStockAdjustSubmit()" class="slim-form">
-      <div fxFlex class="bordered-section">
+      <div fxFlex class="bordered-section first-section">
         <div fxLayout="column" fxLayout.lt-sm="column" fxLayoutGap="5px">
           <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
             <mat-form-field appearance="outline" fxFlex>
@@ -14,7 +14,7 @@
               <mat-error *ngIf="dataStockAdjustFormControls.warehouse.invalid">
                 {{ 'error.field' | translate }}</mat-error>
             </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex="32.7">
+            <mat-form-field appearance="outline" fxFlex.gt-sm="32.7">
               <mat-label>{{'routines.stockadjust.owner' | translate}}</mat-label>
               <input matInput type="text" formControlName="owner" />
               <mat-icon (click)="openOwnerDialog()" matSuffix>search</mat-icon>
@@ -28,7 +28,7 @@
             </fieldset>
           </div>
           <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
-            <mat-form-field appearance="outline" fxFlex="33.1">
+            <mat-form-field appearance="outline" fxFlex.gt-sm="33.1">
               <mat-label>{{ 'routines.stockadjust.date' | translate }}</mat-label>
               <input formControlName="date" matInput [matDatepicker]="picker3">
               <mat-datepicker-toggle matSuffix [for]="picker3">
@@ -39,14 +39,14 @@
                 {{ 'error.field' | translate }}
               </mat-error>
             </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex="32.7">
+            <mat-form-field appearance="outline" fxFlex.gt-sm="32.7">
               <mat-label>{{'routines.stockadjust.reason' | translate}}</mat-label>
               <input matInput required type="text" formControlName="reason" />
               <mat-error *ngIf="dataStockAdjustFormControls.reason.invalid">
                 {{ 'error.field' | translate }}
               </mat-error>
             </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex="35">
+            <mat-form-field appearance="outline" fxFlex.gt-sm="35">
               <mat-label>{{'routines.stockadjust.remarks' | translate}}</mat-label>
               <input matInput type="text" formControlName="remarks" />
               <mat-error *ngIf="dataStockAdjustFormControls.remarks.invalid">
@@ -55,10 +55,11 @@
             </mat-form-field>
           </div>
         </div>
-
+      </div>
+      <div fxFlex class="bordered-section">
         <div fxLayout="column" fxLayout.lt-sm="column" fxLayoutGap="5px">
           <div fxLayout.gt-sm="row" class="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
-            <mat-form-field appearance="outline" fxFlex="33.1">
+            <mat-form-field appearance="outline" fxFlex.gt-sm="33.1">
               <mat-label>{{'routines.stockadjust.item' | translate}}</mat-label>
               <input matInput type="text" formControlName="item" />
               <mat-icon (click)="openItemDialog()" matSuffix>search</mat-icon>
@@ -66,7 +67,7 @@
                 {{ 'error.field' | translate }}
               </mat-error>
             </mat-form-field>
-            <mat-form-field appearance="outline" fxFlex="32.7">
+            <mat-form-field appearance="outline" fxFlex.gt-sm="32.7">
               <mat-label>{{
                 'routines.stockadjust.po' | translate
                 }}</mat-label>
@@ -161,11 +162,8 @@
             </mat-form-field>
           </div>
           <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="5px" fxFlex>
-            <div fxLayoutAlign="start" fxFlex.gt-sm="33">
+            <div fxLayoutAlign="start" fxFlex.gt-sm="67">
 
-            </div>
-            <div fxFlex.gt-sm="33">
-              <h5> Status : TDN</h5>
             </div>
             <div fxFlex.gt-sm="18">
               <mat-checkbox color="primary" formControlName="reworkonly">
@@ -234,8 +232,8 @@
             <span>Del Vol : 0</span>
           </div>
           <div fxFlex class="form-three-button-container" fxFlexOrder.lt-md="2">
-            <button mat-raised-button color="primary" type="button" matTooltip="DRN">
-              DRN
+            <button class="long-text-button" mat-raised-button color="primary" type="button" matTooltip="DRN">
+              {{ 'routines.stockadjust.stockAdjust' | translate }}
             </button>
             <button mat-raised-button color="accent" type="reset" (click)="resetStockAdjustDataForm()">
               <mat-icon>loop</mat-icon>
@@ -280,7 +278,7 @@
           </mat-form-field>
         </div>
         <div class="row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5px" fxLayoutGap.lt-md="0px">
-          <div fxLayout="row" fxFlex="33.1" fxLayoutGap="5px">
+          <div fxLayout="row" fxFlex.gt-sm="33.1" fxLayoutGap="5px">
             <mat-form-field appearance="outline" fxFlex="30">
               <mat-select disableOptionCentering panelClass="slim-select-field" formControlName="dateoperator">
                 <mat-option value=">">></mat-option>
@@ -342,7 +340,8 @@
           <div fxFlex.gt-sm="32.5">
 
           </div>
-          <div fxLayout="row" fxFlex.gt-sm="32.5" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="end center" fxLayoutAlign.lt-sm="end end">
+          <div fxLayout="row" fxFlex.gt-sm="32.5" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="end center"
+            fxLayoutAlign.lt-sm="end end">
             <div class="form-button-container">
               <button (click)="onSearchStockAdjustSubmit()" mat-raised-button color="primary" type="submit">
                 <mat-icon>search</mat-icon>

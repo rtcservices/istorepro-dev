@@ -217,6 +217,15 @@
   @include smaller-button(40px, 32px);
 }
 
+.smaller-button-30 {
+  @include smaller-button(30px, 25px);
+}
+
+.smaller-button-20 {
+  @include smaller-button(20px, 16px);
+  height: 0 !important;
+}
+
 .filter-container {
   padding-bottom: 0px !important;
   .input-row {

@@ -217,10 +217,12 @@
               {{ 'error.field' | translate }}</mat-error>
           </mat-form-field>
           <mat-form-field appearance="outline" fxFlex>
-            <mat-label>{{
-              'routines.inventory.iandate' | translate
-              }}</mat-label>
-            <input matInput type="date" formControlName="iandate" />
+            <mat-label>{{ 'routines.inventory.ianDate' | translate }}</mat-label>
+            <input formControlName="ianDate" matInput [matDatepicker]="ianDateSearch">
+            <mat-datepicker-toggle matSuffix [for]="ianDateSearch">
+              <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #ianDateSearch></mat-datepicker>
             <mat-error *ngIf="searchInventoryFormControls.iandate.invalid">
               {{ 'error.field' | translate }}</mat-error>
           </mat-form-field>

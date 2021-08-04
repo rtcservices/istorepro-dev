@@ -14,17 +14,17 @@
         <mat-label>{{
           'operations.receipt.unitWeight' | translate
           }}</mat-label>
-        <input matInput type="text" formControlName="unitweight" />
+        <input class="text-right" matInput type="text" formControlName="unitweight" />
       </mat-form-field>
       <fieldset class="read-only-input" fxFlex>
         <legend>{{ 'operations.receipt.quantity' | translate }}</legend>
-        <label>{{ 'operations.receipt.quantity' | translate }}</label>
+        <label class="float-right-with-space">{{ 'operations.receipt.quantity' | translate }}</label>
       </fieldset>
       <mat-form-field class="row" appearance="outline" fxFlex>
         <mat-label>{{
           'operations.receipt.netwt' | translate
           }}</mat-label>
-        <input matInput type="text" formControlName="netwt" />
+        <input class="text-right" matInput type="text" formControlName="netwt" />
       </mat-form-field>
     </div>
   </section>

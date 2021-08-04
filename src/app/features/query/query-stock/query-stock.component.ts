@@ -40,7 +40,7 @@ export class QueryStockComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.titleService.changeTitleTranslated('menu.setupWarehouse');
+    this.titleService.changeTitleTranslated('menu.queryStock');
     const language = this.siteTranslateService.defaultLanguage;
     this.translate.use(language).subscribe((res) => {
       this.formErrorTranslated = this.translate.instant('error.form');

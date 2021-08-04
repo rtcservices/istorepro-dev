@@ -3,6 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { patternsHelper } from 'src/app/helpers/patterns.helper';
 import { QdOwnerDialogComponent } from './dialogs/qd-owner-dialog/qd-owner-dialog.component';
+import { TitleService } from '../../../services/title.service';
+import { TranslateService } from '@ngx-translate/core';
+import { SiteTranslateService } from '../../../services/site-translate.service';
 
 @Component({
   selector: 'ibe-query-documents',
@@ -11,11 +14,25 @@ import { QdOwnerDialogComponent } from './dialogs/qd-owner-dialog/qd-owner-dialo
 })
 export class QueryDocumentsComponent implements OnInit {
   DocumentForm!: FormGroup;
-  constructor(  private fb: FormBuilder, public dialog: MatDialog) {
-    this.createDocumentForm()
+  
+  formErrorTranslated = '';
+  filterErrorTranslated = '';
+
+  constructor(private fb: FormBuilder,
+    private siteTranslateService: SiteTranslateService,
+    private translate: TranslateService,
+    private titleService: TitleService,
+     public dialog: MatDialog) {
+    this.createDocumentForm();
   }
 
   ngOnInit(): void {
+    this.titleService.changeTitleTranslated('menu.queryDocuments');
+    const language = this.siteTranslateService.defaultLanguage;
+    this.translate.use(language).subscribe((res) => {
+      this.formErrorTranslated = this.translate.instant('error.form');
+      this.filterErrorTranslated = this.translate.instant('error.filter');
+    });
   }
 
   createDocumentForm() {
@@ -46,5 +63,4 @@ export class QueryDocumentsComponent implements OnInit {
       width: '800px'
     });
   }
-
 }

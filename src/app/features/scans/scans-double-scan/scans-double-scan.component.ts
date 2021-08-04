@@ -1,6 +1,9 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DsWarehouseDialogComponent } from './dialogs/ds-warehouse-dialog/ds-warehouse-dialog.component';
+import { TitleService } from '../../../services/title.service';
+import { TranslateService } from '@ngx-translate/core';
+import { SiteTranslateService } from '../../../services/site-translate.service';
 
 @Component({
   selector: 'ibe-scans-double-scan',
@@ -10,10 +13,24 @@ import { DsWarehouseDialogComponent } from './dialogs/ds-warehouse-dialog/ds-war
 })
 export class ScansDoubleScanComponent implements OnInit {
   scanType: any = '';
-    
-    constructor(public dialog: MatDialog) {}
+  formErrorTranslated = '';
+  filterErrorTranslated = '';
 
-  ngOnInit(): void {}
+  constructor(
+    public dialog: MatDialog,
+    private siteTranslateService: SiteTranslateService,
+    private translate: TranslateService,
+    private titleService: TitleService
+  ) {}
+
+  ngOnInit(): void {
+    this.titleService.changeTitleTranslated('menu.scansDoubleScan');
+    const language = this.siteTranslateService.defaultLanguage;
+    this.translate.use(language).subscribe((res) => {
+      this.formErrorTranslated = this.translate.instant('error.form');
+      this.filterErrorTranslated = this.translate.instant('error.filter');
+    });
+  }
 
   changeScanType(scanType: string) {
     this.scanType = scanType;

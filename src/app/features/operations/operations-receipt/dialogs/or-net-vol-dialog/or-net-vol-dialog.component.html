@@ -13,7 +13,7 @@
       <div fxLayout="row" fxLayoutGap="5px">
         <fieldset class="read-only-input" fxFlex>
           <legend>{{ 'operations.receipt.quantity' | translate }}</legend>
-          <label>{{ 'operations.receipt.quantity' | translate }}</label>
+          <label class="float-right-with-space">{{ 'operations.receipt.quantity' | translate }}</label>
         </fieldset>
         <div fxLayout="row" fxFlex="20">
           <mat-checkbox color="primary" formControlName="dimensions" (click)="onDimensionsSelect($event)">
@@ -26,31 +26,31 @@
         <mat-label>{{
           'operations.receipt.length' | translate
           }}</mat-label>
-        <input matInput type="text" formControlName="length" />
+        <input class="text-right" matInput type="text" formControlName="length" />
       </mat-form-field>
       <mat-form-field class="row" appearance="outline" fxFlex>
         <mat-label>{{
           'operations.receipt.breadth' | translate
           }}</mat-label>
-        <input matInput type="text" formControlName="breadth" />
+        <input class="text-right" matInput type="text" formControlName="breadth" />
       </mat-form-field>
       <mat-form-field class="row" appearance="outline" fxFlex>
         <mat-label>{{
           'operations.receipt.height' | translate
           }}</mat-label>
-        <input matInput type="text" formControlName="height" />
+        <input class="text-right" matInput type="text" formControlName="height" />
       </mat-form-field>
       <mat-divider class="field-divider"></mat-divider>
       <mat-form-field class="row" appearance="outline" fxFlex>
         <mat-label>{{
           'operations.receipt.unitVolume' | translate
           }}</mat-label>
-        <input matInput type="text" formControlName="unitvol" />
+        <input class="text-right" matInput type="text" formControlName="unitvol" />
       </mat-form-field>
       <mat-divider class="field-divider"></mat-divider>
       <fieldset class="read-only-input" fxFlex>
         <legend>{{ 'operations.receipt.netvol' | translate }}</legend>
-        <label>{{ 'operations.receipt.netvol' | translate }}</label>
+        <label class="float-right-with-space">{{ 'operations.receipt.netvol' | translate }}</label>
       </fieldset>
 
     </div>
