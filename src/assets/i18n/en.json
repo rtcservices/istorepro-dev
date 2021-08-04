@@ -420,7 +420,7 @@
       "wh": "WH",
       "date": "Date",
       "po": "PO/Ref No.",
-      "type": "Type",
+      "type": "Storage Type",
       "code": "Code",
       "description": "Description",
       "location": "Location",
